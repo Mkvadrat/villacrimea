@@ -144,6 +144,16 @@
                     </div>
                   </div>
                   <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-description<?php echo $language['language_id']; ?>">Краткое описание сайта</label>
+                    <div class="col-sm-10">
+                      <textarea name="config_langdata[<?php echo $language['language_id']; ?>][short_descr_site]" placeholder="Краткое описание сайта" rows="5" id="input-address<?php echo $language['language_id']; ?>" class="form-control summernote"><?php echo isset($config_langdata[$language['language_id']]) ? $config_langdata[$language['language_id']]['short_descr_site'] : ''; ?></textarea>
+                  </div>
+                  </div>
+                  
+                  
+                  
+                  
+                  <div class="form-group">
                     <label class="col-sm-2 control-label" for="input-open<?php echo $language['language_id']; ?>"><span data-toggle="tooltip" data-container="#tab-general" title="<?php echo $help_open; ?>"><?php echo $entry_open; ?></span></label>
                     <div class="col-sm-10">
                       <textarea name="config_langdata[<?php echo $language['language_id']; ?>][open]" rows="5" placeholder="<?php echo $entry_open; ?>" id="input-open<?php echo $language['language_id']; ?>" class="form-control"><?php echo isset($config_langdata[$language['language_id']]) ? $config_langdata[$language['language_id']]['open'] : ''; ?></textarea>
@@ -192,6 +202,29 @@
                 <label class="col-sm-2 control-label" for="input-image"><?php echo $entry_image; ?></label>
                 <div class="col-sm-10"><a href="" id="thumb-image" data-toggle="image" class="img-thumbnail"><img src="<?php echo $thumb; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a>
                   <input type="hidden" name="config_image" value="<?php echo $config_image; ?>" id="input-image" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-process-status">Презентация</label>
+                <div class="col-sm-10">
+                  <div class="well well-sm" style="height: 150px; overflow: auto;">
+                    <?php foreach ($downloads as $download) { ?>
+                    <div class="checkbox">
+                      <label>
+                        <?php if (in_array($download['download_id'], $config_download_status)) { ?>
+                        <input type="checkbox" name="config_download_status[]" value="<?php echo $download['download_id']; ?>" checked="checked" />
+                        <?php echo $download['name']; ?>
+                        <?php } else { ?>
+                        <input type="checkbox" name="config_download_status[]" value="<?php echo $download['download_id']; ?>" />
+                        <?php echo $download['name']; ?>
+                        <?php } ?>
+                      </label>
+                    </div>
+                    <?php } ?>
+                  </div>
+                  <?php if ($error_processing_status) { ?>
+                  <div class="text-danger"><?php echo $error_processing_status; ?></div>
+                  <?php } ?>
                 </div>
               </div>
               <?php if ($locations) { ?>
@@ -1647,7 +1680,7 @@
                     </select>
                     <br />
                     <img src="" alt="" id="template" class="img-thumbnail" />
-				  </div>
+                </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-2 control-label" for="input-config-sms-from"><span data-toggle="tooltip" title="<?php echo $help_sms_from; ?>"><?php echo $entry_sms_from; ?></span></label>
@@ -1693,6 +1726,10 @@
       </div>
     </div>
   </div>
+  <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+  <link href="view/javascript/summernote/summernote.css" rel="stylesheet" />
+  <script type="text/javascript" src="view/javascript/summernote/opencart.js"></script>
+  
   <script type="text/javascript"><!--
 $('select[name=\'config_theme\']').on('change', function() {
 	$.ajax({
@@ -1757,5 +1794,7 @@ $('select[name=\'config_country_id\']').trigger('change');
 
 $('#store-language a:first').tab('show');
 $('#content-language a:first').tab('show');
-//--></script></div>
+//--></script>
+  
+</div>
 <?php echo $footer; ?>

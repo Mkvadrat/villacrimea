@@ -21,6 +21,7 @@ class ControllerSettingSetting extends Controller {
       $this->request->post['config_name'] = $this->request->post['config_langdata'][$front_language_id]['name'];
       $this->request->post['config_owner'] = $this->request->post['config_langdata'][$front_language_id]['owner'];
       $this->request->post['config_address'] = $this->request->post['config_langdata'][$front_language_id]['address'];
+	  $this->request->post['config_short_descr'] = $this->request->post['config_langdata'][$front_language_id]['short_descr_site'];
       $this->request->post['config_address'] = $this->request->post['config_langdata'][$front_language_id]['open'];
       $this->request->post['config_address'] = $this->request->post['config_langdata'][$front_language_id]['comment'];
 	  $this->request->post['config_mail_regexp'] = trim($this->request->post['config_mail_regexp']);
@@ -628,7 +629,20 @@ class ControllerSettingSetting extends Controller {
 		} else {
 			$data['config_language'] = $this->config->get('config_language');
 		}
+		
+		$this->load->model('catalog/download');
+		
+		$results = $this->model_catalog_download->getDownloads();
 
+		foreach ($results as $result) {
+			$data['downloads'][] = array(
+				'download_id' => $result['download_id'],
+				'name'        => $result['name'],
+				'date_added'  => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
+				'edit'        => $this->url->link('catalog/download/edit', 'token=' . $this->session->data['token'] . '&download_id=' . $result['download_id'], true)
+			);
+		}
+		
 		$this->load->model('localisation/language');
 
 		$data['languages'] = $this->model_localisation_language->getLanguages();
@@ -857,6 +871,14 @@ class ControllerSettingSetting extends Controller {
 			$data['config_processing_status'] = $this->config->get('config_processing_status');
 		} else {
 			$data['config_processing_status'] = array();
+		}
+		
+		if (isset($this->request->post['config_download_status'])) {
+			$data['config_download_status'] = $this->request->post['config_download_status'];
+		} elseif ($this->config->get('config_download_status')) {
+			$data['config_download_status'] = $this->config->get('config_download_status');
+		} else {
+			$data['config_download_status'] = array();
 		}
 
 		if (isset($this->request->post['config_complete_status'])) {

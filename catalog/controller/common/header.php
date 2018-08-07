@@ -87,7 +87,58 @@ class ControllerCommonHeader extends Controller {
 		$data['checkout'] = $this->url->link('checkout/checkout', '', true);
 		$data['contact'] = $this->url->link('information/contact');
 		$data['telephone'] = $this->config->get('config_telephone');
-
+		$data['address'] = nl2br($this->config->get('config_address'));
+		$data['short_descr'] = html_entity_decode(nl2br($this->config->get('config_short_descr')), ENT_QUOTES, 'UTF-8');
+		
+		$this->load->model('account/download');
+		
+		$download_ids = $this->config->get('config_download_status');
+		
+		$data['downloads'] = array();
+		
+		$download_data = array();
+		
+		if($download_ids){
+			foreach($download_ids as $download_id){
+				$results = $this->model_account_download->getDownloadData($download_id);
+				
+				$download_data = array(
+					'download_id' => $results['download_id'],
+					'filename'    => $results['filename'],
+					'name'        => $results['name'],
+				);
+	
+				if (file_exists(DIR_DOWNLOAD . $download_data['filename'])) {
+					$size = filesize(DIR_DOWNLOAD . $download_data['filename']);
+						
+					$i = 0;
+	
+					$suffix = array(
+						'B',
+						'KB',
+						'MB',
+						'GB',
+						'TB',
+						'PB',
+						'EB',
+						'ZB',
+						'YB'
+					);
+	
+					while (($size / 1024) > 1) {
+						$size = $size / 1024;
+						$i++;
+					}
+	
+					$data['downloads'][] = array(
+						'name'       => $download_data['name'],
+						'href'       => $this->url->link('common/header/download', 'download_id=' . $download_data['download_id'], true)
+					);
+				
+				}
+			}
+		}
+		
 		// Menu
 		$this->load->model('design/custommenu');
 		$this->load->model('catalog/category');
@@ -193,5 +244,100 @@ class ControllerCommonHeader extends Controller {
 		}
 
 		return $this->load->view('common/header', $data);
+	}
+	
+	public function getcustommenuLink($parent, $child = null) {
+		 if ($this->config->get('configcustommenu_custommenu')) {
+        $item = empty($child) ? $parent : $child;
+
+        switch ($item['custommenu_type']) {
+            case 'category':
+                $route = 'product/category';
+
+                if (!empty($child)) {
+                    $args = 'path=' . $parent['link'] . '_' . $item['link'];
+                } else {
+                    $args = 'path='.$item['link'];
+                }
+                break;
+            case 'product':
+                $route = 'product/product';
+                $args = 'product_id='.$item['link'];
+                break;
+            case 'manufacturer':
+                $route = 'product/manufacturer/info';
+                $args = 'manufacturer_id='.$item['link'];
+                break;
+            case 'information':
+                $route = 'information/information';
+                $args = 'information_id='.$item['link'];
+                break;
+            default:
+                $tmp = explode('&', str_replace('index.php?route=', '', $item['link']));
+
+                if (!empty($tmp)) {
+                    $route = $tmp[0];
+                    unset($tmp[0]);
+                    $args = (!empty($tmp)) ? implode('&', $tmp) : '';
+                }
+                else {
+                    $route = $item['link'];
+                    $args = '';
+                }
+
+                break;
+        }
+
+        $check = stripos($item['link'], 'http');
+        $checkbase = strpos($item['link'], '/');
+        if ( $check === 0 || $checkbase === 0 ) {
+			$link = $item['link'];
+        } else {
+            $link = $this->url->link($route, $args);
+        }
+        return $link;
+    }
+	}
+	
+	public function download() {
+		$this->load->model('account/download');
+
+		if (isset($this->request->get['download_id'])) {
+			$download_id = $this->request->get['download_id'];
+		} else {
+			$download_id = 0;
+		}
+
+		$download_info = $this->model_account_download->getDownloadData($download_id);
+		
+		if ($download_info) {
+			$file = DIR_DOWNLOAD . $download_info['filename'];
+			$mask = basename($download_info['mask']);
+
+			if (!headers_sent()) {
+				if (file_exists($file)) {
+					header('Content-Type: application/octet-stream');
+					header('Content-Disposition: attachment; filename="' . ($mask ? $mask : basename($file)) . '"');
+					header('Expires: 0');
+					header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+					header('Pragma: public');
+					header('Content-Length: ' . filesize($file));
+
+					if (ob_get_level()) {
+						ob_end_clean();
+					}
+
+					readfile($file, 'rb');
+
+					exit();
+				} else {
+					exit('Error: Could not find file ' . $file . '!');
+				}
+			} else {
+				exit('Error: Headers already sent out!');
+			}
+		} else {
+			$this->response->redirect($this->url->link('common/home', '', true));
+		}
 	}
 }
