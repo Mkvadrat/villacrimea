@@ -22,6 +22,9 @@ class ControllerSettingSetting extends Controller {
       $this->request->post['config_owner'] = $this->request->post['config_langdata'][$front_language_id]['owner'];
       $this->request->post['config_address'] = $this->request->post['config_langdata'][$front_language_id]['address'];
 	  $this->request->post['config_short_descr'] = $this->request->post['config_langdata'][$front_language_id]['short_descr_site'];
+	  $this->request->post['config_contact_header'] = $this->request->post['config_langdata'][$front_language_id]['contact_header_inf'];
+	  $this->request->post['config_contact_footer'] = $this->request->post['config_langdata'][$front_language_id]['contact_footer_inf'];
+	  $this->request->post['config_powered'] = $this->request->post['config_langdata'][$front_language_id]['powered'];
       $this->request->post['config_address'] = $this->request->post['config_langdata'][$front_language_id]['open'];
       $this->request->post['config_address'] = $this->request->post['config_langdata'][$front_language_id]['comment'];
 	  $this->request->post['config_mail_regexp'] = trim($this->request->post['config_mail_regexp']);

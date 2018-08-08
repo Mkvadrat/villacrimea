@@ -157,3 +157,6 @@
 2018-08-07 17:08:06 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\villacrimea.loc\catalog\controller\common\header.php:312) in D:\OpenServer\domains\villacrimea.loc\system\library\response.php on line 12
 2018-08-07 17:14:11 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\villacrimea.loc\catalog\controller\common\header.php:313) in D:\OpenServer\domains\villacrimea.loc\system\library\response.php on line 12
 2018-08-07 17:19:13 - PHP Warning:  Invalid argument supplied for foreach() in D:\OpenServer\domains\villacrimea.loc\catalog\controller\common\header.php on line 101
+2018-08-08 12:16:55 - PHP Notice:  Undefined index: contact_header_inf in D:\OpenServer\domains\villacrimea.loc\admin\view\template\setting\setting.tpl on line 155
+2018-08-08 12:16:55 - PHP Notice:  Undefined index: contact_footer_inf in D:\OpenServer\domains\villacrimea.loc\admin\view\template\setting\setting.tpl on line 161
+2018-08-08 12:20:09 - PHP Notice:  Undefined index: powered in D:\OpenServer\domains\villacrimea.loc\admin\view\template\setting\setting.tpl on line 167

@@ -225,6 +225,14 @@ class ControllerCommonColumnLeft extends Controller {
 					'children' => array()		
 				);	
 			}
+			
+			if ($this->user->hasPermission('access', 'design/custommenu_footer')) {
+				$design[] = array(
+					'name'	   => $this->language->get('text_custommenu_footer'),
+					'href'     => $this->url->link('design/custommenu_footer', 'token=' . $this->session->data['token'], true),
+					'children' => array()		
+				);	
+			}
 			/*
 			if ($this->user->hasPermission('access', 'design/menu')) {
 				$design[] = array(

@@ -95,8 +95,6 @@
       <?php } ?>
     </div>
     <div class="header_right_side">
-        <p><?php echo $address; ?></p>
-        <a class="telephone" href="tel:<?php echo $telephone; ?>"><img src="catalog/view/theme/villacrimea/image/tel.png" alt=""><?php echo $telephone; ?></a>
-        <a class="callback casual_button" href="#" >Заказать обратный звонок</a>
+      <?php echo $contact_header; ?>
     </div>
   </header>    

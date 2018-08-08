@@ -1,35 +1,45 @@
     <footer>
         <div class="footer_left_side">
+            
+            <?php if($categories){ ?>
             <ul class="menu">
-                <li><a href="#">О нас</a></li>
-                <li><a href="#">Услуги</a></li>
-                <li><a href="#">Кейсы</a></li>
-                <li><a href="#">Блог</a></li>
-                <li><a href="#">Контакты</a></li>
+            <?php foreach ($categories as $category) { ?>
+              <?php if ($category['children']) { ?>
+              <li class="dropdown"><a href="<?php echo $category['href']; ?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo $category['name']; ?></a>
+                <div class="dropdown-menu">
+                  <div class="dropdown-inner">
+                    <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
+                    <ul class="list-unstyled">
+                      <?php foreach ($children as $child) { ?>
+                      <li><a href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></li>
+                      <?php } ?>
+                    </ul>
+                    <?php } ?>
+                  </div>
+                  <a href="<?php echo $category['href']; ?>" class="see-all"><?php echo $text_all; ?> <?php echo $category['name']; ?></a> </div>
+              </li>
+              <?php } else { ?>
+              <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
+              <?php } ?>
+            <?php } ?>
             </ul>
+            <?php } ?>
+            
+            <?php if($footer_categories){ ?>
             <ul class="categories">
-                <li><a href="#">Квартиры</a></li>
-                <li><a href="#">Новостройки</a></li>
-                <li><a href="#">Дома</a></li>
-                <li><a href="#">Участки</a></li>
-                <li><a href="#">Гостиницы</a></li>
-                <li><a href="#">Коммерческая недвижимость</a></li>
-                <li><a href="#">Гаражи</a></li>
+                <?php foreach($footer_categories as $category){ ?>
+                    <li><a href="<?php echo $category['href'] ?>"><?php echo $category['name'] ?></a></li>
+                <?php } ?>
             </ul>
+            <?php } ?>
+            
         </div>
-        <p>2018 Villa-crimea Все права защищены</p>
+        
         <div class="footer_right_side">
-            <a class="telephone" href="tel:89788881618">8 (978) 888-16-18</a>
-            <a class="mailto" href="mailto:villa-crimea@mail.ru">villa-crimea@mail.ru</a>
-            <ul class="socials">
-                <li><a href="#"><img src="catalog/view/theme/villacrimea/image/soc-vk.png" alt=""></a></li>
-                <li><a href="#"><img src="catalog/view/theme/villacrimea/image/soc-facebook.png" alt=""></a></li>
-                <li><a href="#"><img src="catalog/view/theme/villacrimea/image/soc-insta.png" alt=""></a></li>
-                <li><a href="#"><img src="catalog/view/theme/villacrimea/image/soc-youtube.png" alt=""></a></li>
-                <li><a href="#"><img src="catalog/view/theme/villacrimea/image/soc-ok.png" alt=""></a></li>
-            </ul>
+           <?php echo $contact_footer; ?>
         </div>
-        <p class="m2">Сделано в <a href="#"><img src="catalog/view/theme/villacrimea/image/m2.png" alt=""></a></p>
+        
+        <?php echo $powered; ?>
     </footer>
 </body>
 </html>

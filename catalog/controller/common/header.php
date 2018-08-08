@@ -89,6 +89,7 @@ class ControllerCommonHeader extends Controller {
 		$data['telephone'] = $this->config->get('config_telephone');
 		$data['address'] = nl2br($this->config->get('config_address'));
 		$data['short_descr'] = html_entity_decode(nl2br($this->config->get('config_short_descr')), ENT_QUOTES, 'UTF-8');
+		$data['contact_header'] = html_entity_decode(nl2br($this->config->get('config_contact_header')), ENT_QUOTES, 'UTF-8');
 		
 		$this->load->model('account/download');
 		
