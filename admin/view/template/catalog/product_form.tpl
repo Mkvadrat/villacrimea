@@ -160,6 +160,37 @@
                 </div>
               </div>
               <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-valute">Валюта</label>
+                <div class="col-sm-10">
+                  <select name="currency" id="input-valute" class="form-control">
+                    <?php foreach ($currencies as $_currency): ?>
+                        <?php if ($_currency['currency_id']==$currency): ?>
+                              <option value="<?php echo $_currency['currency_id'] ?>" selected><?php echo $_currency['title'] ?></option>
+                        <?php else: ?>
+                              <option value="<?php echo $_currency['currency_id'] ?>"><?php echo $_currency['title'] ?></option>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-agent">Выбрать агента</label>
+                <div class="col-sm-10">
+                  <select name="agent" id="input-agent" <?php if ($user_group_id !=1 && !empty($agent)) echo 'disabled="disabled"' ?> class="form-control">
+                      <?php foreach ($agents as $agentInfo) { ?>
+                      <?php if ($agentInfo['user_id'] == $agent) { ?>
+                        <option value="<?php echo $agentInfo['user_id'] ; ?>" selected="selected"><?php echo $agentInfo['firstname']; ?></option>
+                      <?php } else { ?>
+                        <option value="<?php echo $agentInfo['user_id'] ; ?>"><?php echo $agentInfo['firstname']; ?></option>
+                      <?php } ?>
+                      <?php } ?>
+                  </select>
+                  <?php if ($user_group_id !=1 && !empty($agent)): ?>
+                  <input name="agent" type="hidden" value="<?php echo $agent ; ?>" />
+                  <?php endif; ?>
+                </div>
+              </div>
+              <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-tax-class"><?php echo $entry_tax_class; ?></label>
                 <div class="col-sm-10">
                   <select name="tax_class_id" id="input-tax-class" class="form-control">

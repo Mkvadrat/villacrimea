@@ -720,6 +720,10 @@ class ControllerCatalogProduct extends Controller {
 		$data['tab_reward'] = $this->language->get('tab_reward');
 		$data['tab_design'] = $this->language->get('tab_design');
 		$data['tab_openbay'] = $this->language->get('tab_openbay');
+		
+		$this->load->model('user/user');
+		
+        $data['agents'] = $this->model_user_user->getAgents();
 
 		if (isset($this->error['warning'])) {
 			$data['error_warning'] = $this->error['warning'];
@@ -919,6 +923,18 @@ class ControllerCatalogProduct extends Controller {
 		} else {
 			$data['hide_mpn'] = false;
 		}
+		
+		if (isset($this->request->post['agent'])) {
+            $data['agent'] = $this->request->post['agent'];
+        } elseif (!empty($product_info)) {
+            $data['agent'] = $product_info['agent'];
+        } else {
+            $data['agent'] = $this->user->getId();
+        }
+
+        $user = $this->model_user_user->getUser($this->user->getId());
+		
+        $data['user_group_id'] = $user['user_group_id'];
 
 		$this->load->model('setting/store');
 
@@ -955,6 +971,26 @@ class ControllerCatalogProduct extends Controller {
 		} else {
 			$data['price'] = '';
 		}
+		
+		$this->load->model('localisation/currency');
+
+        if (isset($this->request->post['currency'])) {
+            $data['currency'] = $this->request->post['currency'];
+        } elseif (!empty($product_info)) {
+            $data['currency'] = $product_info['currency_id'];
+        } else {
+            $data['currency'] = '';
+
+            $currency_code = $this->config->get('config_currency');
+            if (!empty($currency_code)) {
+                $currency = $this->model_localisation_currency->getCurrencyByCode($currency_code);
+                if ($currency) {
+                    $data['currency'] = $currency['currency_id'];
+                }
+            }
+        }
+
+        $data['currencies'] = $this->model_localisation_currency->getCurrencies();
 
 		$this->load->model('catalog/recurring');
 

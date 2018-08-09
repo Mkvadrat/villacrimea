@@ -1,3 +1,56 @@
+    <div id="call_me_back" style="display: none;">
+        <button data-fancybox-close="" class="fancybox-close-small" title="Close"><span>X</span></button>
+        <div class="call_me_back_inner">
+            <p class="title">Форма обратной связи</p>
+            <form action="">
+                <input type="text" id="name" placeholder="Имя*">
+                <input type="text" id="phone" placeholder="Телефон*">
+                <input type="text" id="email" placeholder="E-mail">
+                <div class="textarea">
+                    <textarea id="message" onkeyup="textAreaAdjust(this);" placeholder="Вопрос"></textarea>
+                    <script>
+                        function textAreaAdjust(o) {
+                            o.style.height = "1px";
+                            o.style.height = (5+o.scrollHeight)+"px";
+                        }
+                    </script>
+                </div>
+                <input type="checkbox" name="" id="conf_politics">
+                <label for="conf_politics">
+                        я согласен(согласна)<br>
+                        с <a href="#">политикой конфиденциальности</a>
+                </label>
+                <button type="submit" onclick="sendForm();" class="casual_button">Отправить</button>
+            </form>
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+    function sendForm(){
+        $.ajax({
+            url: 'index.php?route=common/footer/sendForm',
+            type: 'post',
+            data: {  
+                'name' : $('#name').val(),
+                'tel' : $('#phone').val(),
+                'email' : $('#email').val(),
+                'message' : $('#message').val(),
+            },
+            dataType: 'json',
+            success: function(data) {
+                swal({
+                    title: data.message,
+                    text: "",
+                    timer: 1000,
+                    showConfirmButton: false
+                });
+    
+                $.fancybox.close();
+            }
+        });
+    }
+    </script>
+    
     <footer>
         <div class="footer_left_side">
             

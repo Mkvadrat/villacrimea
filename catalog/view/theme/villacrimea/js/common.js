@@ -36,6 +36,25 @@ $(document).ready(function () {
         truncate : "word",
         watch: "word",
     });
+    $("#menu").mmenu();
+    $('.callback').fancybox({
+        modal : true,
+    });
+    $('#conf_politics').on('click', function() {
+        if($(this).is(':checked')) {
+            $(this).siblings('button').addClass('checked_button');
+        } else {
+            $(this).siblings('button').removeClass('checked_button');
+        }
+    });
+    $('.realtor_item .realtor').hover(function() {
+        $(this).mouseover(function() {
+            $(this).parents('.realtor_item').css('border', '2px solid #c09d74');
+        });
+        $(this).mouseleave(function() {
+            $(this).parents('.realtor_item').css('border', '1px solid #dbdbdb');
+        });
+    });
     
 	// Highlight any found errors
 	$('.text-danger').each(function() {

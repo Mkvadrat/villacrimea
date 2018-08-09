@@ -26,17 +26,24 @@
 <meta property="og:image" content="<?php echo $logo; ?>" />
 <?php } ?>
 <meta property="og:site_name" content="<?php echo $name; ?>" />
-<script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+<script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+<link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+<script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="catalog/view/theme/villacrimea/js/jquery.fancybox.min.js"></script>
 <script src="catalog/view/theme/villacrimea/js/owl.carousel.min.js"></script>
 <script src="catalog/view/theme/villacrimea/js/jquery.dotdotdot.js"></script>
 <script src="catalog/view/theme/villacrimea/js/jquery.mmenu.all.js"></script>
+<script src="catalog/view/theme/villacrimea/js/sweetalert.min.js"></script>
 
+<link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/stylesheet.css">
 <link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/nomalize.css">
 <link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/jquery.mmenu.all.css">
+<link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/sweetalert.css">
 <link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/owl.carousel.min.css">
 <link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/owl.theme.default.min.css">
-<link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/stylesheet.css">
+<link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/jquery.fancybox.min.css">
+
     
 <?php foreach ($styles as $style) { ?>
 <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
