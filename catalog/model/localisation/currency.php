@@ -5,6 +5,12 @@ class ModelLocalisationCurrency extends Model {
 
 		return $query->row;
 	}
+	
+	public function getCurrencyByCurrency_id($currency_id) {
+		$query = $this->db->query("SELECT DISTINCT * FROM " . DB_PREFIX . "currency WHERE currency_id = '" . (int)$currency_id . "'");
+
+		return $query->row;
+	}
 
 	public function getCurrencies() {
 		$currency_data = $this->cache->get('currency');
@@ -33,4 +39,26 @@ class ModelLocalisationCurrency extends Model {
 
 		return $currency_data;
 	}
+	
+	public function getCurrency($currency_id) {
+		$currency_data = array();
+		
+        $query = $this->db->query("SELECT DISTINCT * FROM " . DB_PREFIX . "currency WHERE currency_id = '" . (int)$currency_id . "'");
+		
+		foreach ($query->rows as $result) {
+			$currency_data[] = array(
+				'currency_id'   => $result['currency_id'],
+				'title'         => $result['title'],
+				'code'          => $result['code'],
+				'symbol_left'   => $result['symbol_left'],
+				'symbol_right'  => $result['symbol_right'],
+				'decimal_place' => $result['decimal_place'],
+				'value'         => $result['value'],
+				'status'        => $result['status'],
+				'date_modified' => $result['date_modified']
+			);
+		}
+		
+		return $currency_data;
+    }
 }

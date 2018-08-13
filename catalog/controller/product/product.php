@@ -279,6 +279,7 @@ class ControllerProductProduct extends Controller {
 			$data['model'] = $product_info['model'];
 			$data['reward'] = $product_info['reward'];
 			$data['points'] = $product_info['points'];
+			$data['sticker'] = $this->getStickers($product_info['product_id']);
 			$data['description'] = html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8');
 
 			if ($product_info['quantity'] <= 0) {
@@ -447,6 +448,8 @@ class ControllerProductProduct extends Controller {
 				} else {
 					$rating = false;
 				}
+				
+				$stickers = $this->getStickers($result['product_id']);
 
 				$data['products'][] = array(
 					'product_id'  => $result['product_id'],
@@ -456,6 +459,7 @@ class ControllerProductProduct extends Controller {
 					'price'       => $price,
 					'special'     => $special,
 					'tax'         => $tax,
+					'sticker'     => $stickers,
 					'minimum'     => $result['minimum'] > 0 ? $result['minimum'] : 1,
 					'rating'      => $rating,
 					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'])
@@ -645,6 +649,25 @@ class ControllerProductProduct extends Controller {
 
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
+	}
+	
+	private function getStickers($product_id) {
+	
+		$stickers = $this->model_catalog_product->getProductStickerbyProductId($product_id) ;	
+		
+		if (!$stickers) {
+			return;
+		}
+		
+		foreach ($stickers as $sticker) {
+			$stick[] = array(
+				'position' => $sticker['position'],
+				'image'    => HTTP_SERVER . 'image/' . $sticker['image']
+			);		
+		}
+		
+		return $stick;
+	
 	}
 
 	public function getRecurringDescription() {

@@ -255,7 +255,7 @@ class ControllerCommonFooter extends Controller {
 			$mail->setSender(html_entity_decode($this->request->post['name'], ENT_QUOTES, 'UTF-8'));
 			$mail->setSubject(html_entity_decode(sprintf($this->language->get($site_url), $this->request->post['name']), ENT_QUOTES, 'UTF-8'));
 			
-			$mail->setHtml('Имя: ' . $name . '<br>' . 'Телефон: ' . $tel . '<br>' . 'Email: ' . $email . '<br>' . 'Сообщение: ' . $message);
+			$mail->setHtml(html_entity_decode(sprintf('Имя: ' . $name . '<br>' . 'Телефон: ' . $tel . '<br>' . 'Email: ' . $email . '<br>' . 'Сообщение: ' . $message), ENT_QUOTES, 'UTF-8'));
 			$send = $mail->send();
 						
 			if ($mail){

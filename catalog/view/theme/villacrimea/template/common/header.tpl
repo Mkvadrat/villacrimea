@@ -105,3 +105,4 @@
       <?php echo $contact_header; ?>
     </div>
   </header>    
+  <section>

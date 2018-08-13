@@ -102,6 +102,30 @@
               </div>
             </div>
             <div class="tab-pane" id="tab-data">
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-sticker"><?php echo $entry_sticker; ?></label>
+                <div class="col-sm-10">
+                 <?php for ($i = 0; $i <= 3; $i++) { ?>
+                 <div class="sticker_block">
+                 <div class="corner_name">	   
+                 <?php echo ${'text_corner' . $i}; ?> <span class="square  <?php echo 'corner_' . $i; ?>"></span>
+                 </div>
+                 <div class="sticker-select">
+                 <select name="product_stickers[<?php echo $i; ?>]" id="input-stickers" class="form-control">
+                    <option value="0" selected="selected"><?php echo $text_none; ?></option>
+                    <?php foreach ($stickers as $sticker) { ?>
+                    <?php if (!empty($product_stickers[$i]) && $product_stickers[$i] == $sticker['sticker_id']) { ?>
+                    <option value="<?php echo $sticker['sticker_id']; ?>" selected="selected"><?php echo $sticker['name']; ?></option>
+                    <?php } else { ?>
+                    <option value="<?php echo $sticker['sticker_id']; ?>"><?php echo $sticker['name']; ?></option>
+                    <?php } ?>
+                    <?php } ?>
+                  </select>
+                </div>
+                </div>
+                <?php } ?>
+                </div>
+              </div>
               <div class="form-group required">
                 <label class="col-sm-2 control-label" for="input-model"><?php echo $entry_model; ?></label>
                 <div class="col-sm-10">
@@ -110,6 +134,20 @@
                   <div class="text-danger"><?php echo $error_model; ?></div>
                   <?php } ?>
                 </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-uniq-options">Использовать уникальные опции</label>
+                <div class="col-sm-10">
+                  <select name="uniq_options" id="input-uniq-options" class="form-control">
+                    <?php foreach($uniq_options_status as $value => $name){ ?>
+                    <?php if($uniq_options == $value){ ?>
+                      <option value="<?php echo $value; ?>" selected="selected"><?php echo $name; ?></option>
+                    <?php }else{ ?>
+                      <option value="<?php echo $value; ?>"><?php echo $name; ?></option>
+                    <?php } ?>
+                    <?php } ?>
+                  </select>
+							</div>
               </div>
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
@@ -165,9 +203,9 @@
                   <select name="currency" id="input-valute" class="form-control">
                     <?php foreach ($currencies as $_currency): ?>
                         <?php if ($_currency['currency_id']==$currency): ?>
-                              <option value="<?php echo $_currency['currency_id'] ?>" selected><?php echo $_currency['title'] ?></option>
+                          <option value="<?php echo $_currency['currency_id'] ?>" selected><?php echo $_currency['title'] ?></option>
                         <?php else: ?>
-                              <option value="<?php echo $_currency['currency_id'] ?>"><?php echo $_currency['title'] ?></option>
+                          <option value="<?php echo $_currency['currency_id'] ?>"><?php echo $_currency['title'] ?></option>
                         <?php endif; ?>
                     <?php endforeach; ?>
                   </select>
@@ -884,7 +922,6 @@
                       <td class="text-left"><?php echo $entry_image; ?></td>
                     </tr>
                   </thead>
-
                   <tbody>
                     <tr>
                       <td class="text-left"><a href="" id="thumb-image" data-toggle="image" class="img-thumbnail"><img src="<?php echo $thumb; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a><input type="hidden" name="image" value="<?php echo $image; ?>" id="input-image" /></td>

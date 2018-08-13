@@ -336,6 +336,26 @@ class ControllerDesignBanner extends Controller {
 		}
 
 		$data['token'] = $this->session->data['token'];
+		
+		$this->load->model('localisation/currency');
+
+        if (isset($this->request->post['currency'])) {
+            $data['currency'] = $this->request->post['currency'];
+        } elseif (!empty($banner_info)) {
+            $data['currency'] = $banner_info['currency_id'];
+        } else {
+            $data['currency'] = '';
+
+            $currency_code = $this->config->get('config_currency');
+            if (!empty($currency_code)) {
+                $currency = $this->model_localisation_currency->getCurrencyByCode($currency_code);
+                if ($currency) {
+                    $data['currency'] = $currency['currency_id'];
+                }
+            }
+        }
+
+        $data['currencies'] = $this->model_localisation_currency->getCurrencies();
 
 		if (isset($this->request->post['name'])) {
 			$data['name'] = $this->request->post['name'];
@@ -384,6 +404,8 @@ class ControllerDesignBanner extends Controller {
 					'link'       => $banner_image['link'],
 					'image'      => $image,
 					'thumb'      => $this->model_tool_image->resize($thumb, 100, 100),
+					'price' 	 => $banner_image['price'],
+					'currency_id'=> $banner_image['currency_id'],
 					'sort_order' => $banner_image['sort_order']
 				);
 			}
@@ -403,14 +425,14 @@ class ControllerDesignBanner extends Controller {
 			$this->error['warning'] = $this->language->get('error_permission');
 		}
 
-		if ((utf8_strlen($this->request->post['name']) < 3) || (utf8_strlen($this->request->post['name']) > 64)) {
+		if ((utf8_strlen($this->request->post['name']) < 3) || (utf8_strlen($this->request->post['name']) > 400)) {
 			$this->error['name'] = $this->language->get('error_name');
 		}
 
 		if (isset($this->request->post['banner_image'])) {
 			foreach ($this->request->post['banner_image'] as $language_id => $value) {
 				foreach ($value as $banner_image_id => $banner_image) {
-					if ((utf8_strlen($banner_image['title']) < 2) || (utf8_strlen($banner_image['title']) > 64)) {
+					if ((utf8_strlen($banner_image['title']) < 2) || (utf8_strlen($banner_image['title']) > 400)) {
 						$this->error['banner_image'][$language_id][$banner_image_id] = $this->language->get('error_title');
 					}
 				}

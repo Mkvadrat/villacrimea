@@ -1,5 +1,14 @@
 <?php
+// *	@copyright	OPENCART.PRO 2011 - 2017.
+// *	@forum	http://forum.opencart.pro
+// *	@source		See SOURCE.txt for source and other copyright.
+// *	@license	GNU General Public License version 3; see LICENSE.txt
+
+require(DIR_SYSTEM . 'library/cbr/vendor/autoload.php');
+use CBR\CurrencyDaily;
+
 class ModelLocalisationCurrency extends Model {
+
 	public function addCurrency($data) {
 		$this->db->query("INSERT INTO " . DB_PREFIX . "currency SET title = '" . $this->db->escape($data['title']) . "', code = '" . $this->db->escape($data['code']) . "', symbol_left = '" . $this->db->escape($data['symbol_left']) . "', symbol_right = '" . $this->db->escape($data['symbol_right']) . "', decimal_place = '" . $this->db->escape($data['decimal_place']) . "', value = '" . $this->db->escape($data['value']) . "', status = '" . (int)$data['status'] . "', date_modified = NOW()");
 
@@ -105,7 +114,7 @@ class ModelLocalisationCurrency extends Model {
 		}
 	}
 
-	public function refresh($force = false) {
+	/*public function refresh($force = false) {
 		$data = array();
 
 		if ($force) {
@@ -144,6 +153,62 @@ class ModelLocalisationCurrency extends Model {
 		$this->db->query("UPDATE " . DB_PREFIX . "currency SET value = '1.00000', date_modified = '" .  $this->db->escape(date('Y-m-d H:i:s')) . "' WHERE code = '" . $this->db->escape($this->config->get('config_currency')) . "'");
 
 		$this->cache->delete('currency');
+	}*/
+	
+	public function refresh($force = false) {
+			$array_data = array();
+			
+			if ($force) {
+				$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "currency WHERE code != '" . $this->db->escape($this->config->get('config_currency')) . "'");
+			} else {
+				$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "currency WHERE code != '" . $this->db->escape($this->config->get('config_currency')) . "' AND date_modified < '" .  $this->db->escape(date('Y-m-d H:i:s', strtotime('-1 day'))) . "'");
+			}
+			
+			$handler = new CurrencyDaily();
+	
+			$get_valute = $handler
+			->request() 
+			->getResult();
+									
+			$current_code = $this->config->get('config_currency') == 'RUB' ? 'RUB' : $this->config->get('config_currency');
+			
+			foreach($get_valute as $valute){
+				$array_data[] = array(
+					'code' => $valute['CharCode'],
+					'value'=> $valute['Value']
+				);
+			}
+			
+			foreach ($query->rows as $result) {
+				foreach($array_data as $data){
+					if($result['code'] == $data['code']){						
+						if ((float)$data['value']) {
+							$this->db->query("UPDATE " . DB_PREFIX . "currency SET value = '" . (float)$data['value'] . "', date_modified = NOW() WHERE code = '" . $this->db->escape($result['code']) . "'");
+						}
+					}
+					
+					if($data['code'] == $current_code && $result['code'] == 'RUB'){
+						$value = 1 * (float)$data['value'];
+						
+						if((float)$value){
+							$this->db->query("UPDATE " . DB_PREFIX . "currency SET value = '" . (float)$value . "', date_modified = NOW() WHERE code = 'RUB'");
+						}
+					}elseif($result['code'] == 'USD'){
+						$value = 1 / (float)$data['value'];
+						
+						if((float)$value){
+							$this->db->query("UPDATE " . DB_PREFIX . "currency SET value = '" . (float)$value . "', date_modified = NOW() WHERE code = 'USD'");
+						}
+					}
+					
+				}	
+			}
+
+
+				
+			$this->db->query("UPDATE " . DB_PREFIX . "currency SET value = '1.00000', date_modified = NOW() WHERE code = '" . $this->db->escape($this->config->get('config_currency')) . "'");
+			
+			$this->cache->delete('currency');
 	}
 
 	public function getTotalCurrencies() {

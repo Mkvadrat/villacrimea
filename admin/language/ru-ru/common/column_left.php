@@ -12,7 +12,7 @@ $_['text_country']          				= 'Страны';
 $_['text_coupon']          					= 'Купоны';
 $_['text_custommenu']                       = 'Меню в шапке сайта';
 $_['text_custommenu_footer']                = 'Меню в подвале сайта';
-
+$_['text_sticker']                          = 'Стикеры';
 $_['text_currency']          				= 'Валюты';
 $_['text_customer']          				= 'Покупатели';
 $_['text_customer_group']          			= 'Группы покупателей';

@@ -25,6 +25,14 @@ $_['column_quantity']          	= 'Количество';
 $_['column_status']          	= 'Статус';
 $_['column_action']          	= 'Действие';
 
+//Stickers
+$_['text_corner0']           = 'Первый стикер';
+$_['text_corner1']           = 'Второй стикер';
+$_['text_corner2']           = 'Третий стикер';
+$_['text_corner3']           = 'Четвертый стикер';
+$_['entry_sticker']          = 'Промо Стикеры';
+$_['text_benefits']          = 'Преимущества';
+
 // Entry
 $_['entry_main_category']       = 'Главная категория:';
 $_['entry_name']          		= 'Наименование:';

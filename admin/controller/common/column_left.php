@@ -233,6 +233,14 @@ class ControllerCommonColumnLeft extends Controller {
 					'children' => array()		
 				);	
 			}
+			
+			if ($this->user->hasPermission('access', 'design/sticker')) {
+				$design[] = array(
+					'name'	   => $this->language->get('text_sticker'),
+					'href'     => $this->url->link('design/sticker', 'token=' . $this->session->data['token'], true),
+					'children' => array()		
+				);	
+			}
 			/*
 			if ($this->user->hasPermission('access', 'design/menu')) {
 				$design[] = array(

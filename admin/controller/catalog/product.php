@@ -621,6 +621,10 @@ class ControllerCatalogProduct extends Controller {
 		$data['text_amount'] = $this->language->get('text_amount');
 		$data['text_select_all'] = $this->language->get('text_select_all');
 		$data['text_unselect_all'] = $this->language->get('text_unselect_all');
+		$data['text_corner0'] = $this->language->get('text_corner0');
+		$data['text_corner1'] = $this->language->get('text_corner1');
+		$data['text_corner2'] = $this->language->get('text_corner2');
+		$data['text_corner3'] = $this->language->get('text_corner3');
 
 		$data['entry_name'] = $this->language->get('entry_name');
 		$data['entry_description'] = $this->language->get('entry_description');
@@ -677,6 +681,7 @@ class ControllerCatalogProduct extends Controller {
 		$data['entry_reward'] = $this->language->get('entry_reward');
 		$data['entry_layout'] = $this->language->get('entry_layout');
 		$data['entry_recurring'] = $this->language->get('entry_recurring');
+		$data['entry_sticker'] = $this->language->get('entry_sticker');
 		$data['entry_main_category'] = $this->language->get('entry_main_category');
 
 		$data['help_keyword'] = $this->language->get('help_keyword');
@@ -821,6 +826,16 @@ class ControllerCatalogProduct extends Controller {
 		$data['languages'] = $this->model_localisation_language->getLanguages();
 
 		$data['lang'] = $this->language->get('lang');
+		
+		$data['uniq_options_status'] = array('0' => $this->language->get('text_disabled'), '1' => $this->language->get('text_enabled'));
+		
+		if (isset($this->request->post['uniq_options'])) {
+			$data['uniq_options'] = $this->request->post['uniq_options'];
+		} elseif (!empty($product_info)) {
+			$data['uniq_options'] = $product_info['uniq_options'];
+		} else {
+			$data['uniq_options'] = '';
+		}
 
 		if (isset($this->request->post['product_description'])) {
 			$data['product_description'] = $this->request->post['product_description'];
@@ -991,6 +1006,9 @@ class ControllerCatalogProduct extends Controller {
         }
 
         $data['currencies'] = $this->model_localisation_currency->getCurrencies();
+		
+		//stickers
+
 
 		$this->load->model('catalog/recurring');
 
@@ -1134,7 +1152,7 @@ class ControllerCatalogProduct extends Controller {
 
 		$this->load->model('catalog/manufacturer');
 
-    $data['manufacturers'] = $this->model_catalog_manufacturer->getManufacturers();
+		$data['manufacturers'] = $this->model_catalog_manufacturer->getManufacturers();
 
 		if (isset($this->request->post['manufacturer_id'])) {
 			$data['manufacturer_id'] = $this->request->post['manufacturer_id'];
@@ -1449,10 +1467,22 @@ class ControllerCatalogProduct extends Controller {
 		} else {
 			$data['product_layout'] = array();
 		}
-
+		
 		$this->load->model('design/layout');
 
 		$data['layouts'] = $this->model_design_layout->getLayouts();
+		
+		$this->load->model('design/sticker');
+		
+		if (isset($this->request->post['product_stickers'])) {
+			$data['product_stickers'] = $this->request->post['product_stickers'];
+		} elseif (isset($this->request->get['product_id'])) {
+			$data['product_stickers'] = $this->model_design_sticker->getProductSticker($this->request->get['product_id']);
+		} else {
+			$data['product_stickers'] = array();
+		}
+	
+		$data['stickers'] = $this->model_design_sticker->getStickersProduct();
 
 		$data['header'] = $this->load->controller('common/header');
 		$data['column_left'] = $this->load->controller('common/column_left');

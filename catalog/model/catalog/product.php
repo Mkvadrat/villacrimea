@@ -12,6 +12,8 @@ class ModelCatalogProduct extends Model {
 				'product_id'       => $query->row['product_id'],
 				'name'             => $query->row['name'],
 				'description'      => $query->row['description'],
+				'uniq_options'     => $query->row['uniq_options'],
+				'currency_id'      => $query->row['currency_id'],
 				'meta_title'       => $query->row['meta_title'],
 				'meta_h1'          => $query->row['meta_h1'],
 				'meta_description' => $query->row['meta_description'],
@@ -205,6 +207,25 @@ class ModelCatalogProduct extends Model {
 		}
 
 		return $product_data;
+	}
+	
+	public function getProductSticker($product_id) {
+		$product_sticker_data = array();
+
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_to_sticker WHERE product_id = '" . (int)$product_id . "'");
+
+		foreach ($query->rows as $result) {
+			$product_sticker_data[] = $result['sticker_id'];
+		}
+
+		return $product_sticker_data;
+	}	
+
+	public function getProductStickerbyProductId($product_id) {
+
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_to_sticker p2s LEFT JOIN " . DB_PREFIX . "sticker ps ON (p2s.sticker_id = ps.sticker_id) WHERE product_id = '" . (int)$product_id . "'");
+
+		return $query->rows;
 	}
 
 	public function getProductSpecials($data = array()) {

@@ -293,3 +293,591 @@
 2018-08-09 17:05:30 - PHP Notice:  Undefined variable: message in D:\OpenServer\domains\villacrimea.loc\catalog\controller\common\footer.php on line 257
 2018-08-09 17:08:13 - PHP Notice:  Undefined variable: email in D:\OpenServer\domains\villacrimea.loc\catalog\controller\common\footer.php on line 257
 2018-08-09 17:08:13 - PHP Notice:  Undefined variable: message in D:\OpenServer\domains\villacrimea.loc\catalog\controller\common\footer.php on line 257
+2018-08-10 10:47:59 - PHP Notice:  Undefined index: price in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 82
+2018-08-10 10:48:21 - PHP Notice:  Undefined index: price in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 83
+2018-08-10 10:48:29 - PHP Notice:  Undefined index: price in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 83
+2018-08-10 10:49:12 - PHP Notice:  Undefined index: price in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 83
+2018-08-10 10:49:26 - PHP Notice:  Undefined index: price in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 83
+2018-08-10 11:11:08 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 14
+2018-08-10 11:11:08 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 15
+2018-08-10 11:11:08 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 15
+2018-08-10 11:12:42 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:12:42 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 19
+2018-08-10 11:13:31 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:13:51 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:45 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:45 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:45 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:45 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:45 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:45 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:45 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:45 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:45 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:45 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:46 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:46 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:46 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:46 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:46 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:46 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:46 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:46 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:46 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:46 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:46 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:46 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:46 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:46 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:46 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:46 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:46 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:46 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:46 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:14:46 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 20
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 11:34:55 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 11:35:23 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:35:23 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:11 - PHP Warning:  Illegal string offset 'code' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 18
+2018-08-10 11:42:45 - PHP Notice:  Undefined variable: rub in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 34
+2018-08-10 11:42:45 - PHP Notice:  Undefined variable: rub in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 34
+2018-08-10 11:42:45 - PHP Notice:  Undefined variable: rub in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 34
+2018-08-10 11:57:24 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 345
+2018-08-10 11:57:37 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 345
+2018-08-10 11:58:37 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 345
+2018-08-10 11:59:41 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 345
+2018-08-10 12:00:03 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 345
+2018-08-10 12:00:06 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:00:06 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:00:06 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:00:06 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\villacrimea.loc\admin\controller\startup\error.php:34) in D:\OpenServer\domains\villacrimea.loc\system\library\response.php on line 12
+2018-08-10 12:00:09 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 345
+2018-08-10 12:01:16 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 345
+2018-08-10 12:01:18 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:01:18 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:01:18 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:01:18 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\villacrimea.loc\admin\controller\startup\error.php:34) in D:\OpenServer\domains\villacrimea.loc\system\library\response.php on line 12
+2018-08-10 12:01:50 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:01:50 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:01:50 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:01:50 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\villacrimea.loc\admin\controller\startup\error.php:34) in D:\OpenServer\domains\villacrimea.loc\system\library\response.php on line 12
+2018-08-10 12:01:51 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 345
+2018-08-10 12:01:52 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:01:52 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:01:52 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:01:52 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:01:52 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:01:52 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:01:52 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:01:52 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:01:52 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:01:54 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:01:54 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:01:54 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:01:54 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\villacrimea.loc\admin\controller\startup\error.php:34) in D:\OpenServer\domains\villacrimea.loc\system\library\response.php on line 12
+2018-08-10 12:03:34 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:03:34 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:03:34 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:03:34 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\villacrimea.loc\admin\controller\startup\error.php:34) in D:\OpenServer\domains\villacrimea.loc\system\library\response.php on line 12
+2018-08-10 12:03:42 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 345
+2018-08-10 12:03:42 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:03:42 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:03:42 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:03:42 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:03:42 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:03:42 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:03:42 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:03:42 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:03:42 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:04:02 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 345
+2018-08-10 12:04:02 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:04:02 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:04:02 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:04:02 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:04:02 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:04:02 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:04:02 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:04:02 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:04:02 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:04:27 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 345
+2018-08-10 12:04:27 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:04:27 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:04:27 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:04:27 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:04:27 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:04:27 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:04:27 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:04:27 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:04:27 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:04:40 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 345
+2018-08-10 12:04:40 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:04:40 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:04:40 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:04:40 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:04:40 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:04:40 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:04:40 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:04:40 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:04:40 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:06:42 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 345
+2018-08-10 12:06:42 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:06:42 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:06:42 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:06:42 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:06:42 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:06:42 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:06:42 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:06:42 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:06:42 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:06:45 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:06:45 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:06:45 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:06:45 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\villacrimea.loc\admin\controller\startup\error.php:34) in D:\OpenServer\domains\villacrimea.loc\system\library\response.php on line 12
+2018-08-10 12:08:31 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:08:31 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:08:31 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:08:31 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\villacrimea.loc\admin\controller\startup\error.php:34) in D:\OpenServer\domains\villacrimea.loc\system\library\response.php on line 12
+2018-08-10 12:08:33 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 345
+2018-08-10 12:08:33 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:08:33 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:08:33 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:08:33 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:08:33 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:08:33 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:08:33 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:08:33 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:08:33 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:09:45 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 345
+2018-08-10 12:11:31 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 345
+2018-08-10 12:11:31 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 408
+2018-08-10 12:11:31 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 408
+2018-08-10 12:11:31 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 408
+2018-08-10 12:11:43 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 345
+2018-08-10 12:11:53 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 345
+2018-08-10 12:11:59 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:11:59 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:11:59 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:11:59 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\villacrimea.loc\admin\controller\startup\error.php:34) in D:\OpenServer\domains\villacrimea.loc\system\library\response.php on line 12
+2018-08-10 12:12:02 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 345
+2018-08-10 12:12:26 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 345
+2018-08-10 12:12:27 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 345
+2018-08-10 12:12:27 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 345
+2018-08-10 12:12:41 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 345
+2018-08-10 12:13:57 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 345
+2018-08-10 12:14:21 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:14:21 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:14:21 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:14:21 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:14:21 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:14:21 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:14:21 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:14:21 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:14:21 - PHP Notice:  Undefined variable: currency in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:14:27 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 345
+2018-08-10 12:15:26 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 345
+2018-08-10 12:16:56 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 345
+2018-08-10 12:16:56 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 363
+2018-08-10 12:16:56 - PHP Notice:  Undefined index: status in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\banner.php on line 371
+2018-08-10 12:19:25 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:19:25 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:19:25 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:19:25 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\villacrimea.loc\admin\controller\startup\error.php:34) in D:\OpenServer\domains\villacrimea.loc\system\library\response.php on line 12
+2018-08-10 12:21:22 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:21:22 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:21:22 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:21:22 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\villacrimea.loc\admin\controller\startup\error.php:34) in D:\OpenServer\domains\villacrimea.loc\system\library\response.php on line 12
+2018-08-10 12:21:53 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:21:53 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:21:53 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:21:53 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\villacrimea.loc\admin\controller\startup\error.php:34) in D:\OpenServer\domains\villacrimea.loc\system\library\response.php on line 12
+2018-08-10 12:22:13 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:22:13 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:22:13 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:22:13 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\villacrimea.loc\admin\controller\startup\error.php:34) in D:\OpenServer\domains\villacrimea.loc\system\library\response.php on line 12
+2018-08-10 12:22:25 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:22:25 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:22:25 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:22:25 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\villacrimea.loc\admin\controller\startup\error.php:34) in D:\OpenServer\domains\villacrimea.loc\system\library\response.php on line 12
+2018-08-10 12:22:56 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:22:56 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:22:56 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:22:56 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\villacrimea.loc\admin\controller\startup\error.php:34) in D:\OpenServer\domains\villacrimea.loc\system\library\response.php on line 12
+2018-08-10 12:23:33 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 28
+2018-08-10 12:23:33 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 28
+2018-08-10 12:23:33 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 28
+2018-08-10 12:23:33 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php:20) in D:\OpenServer\domains\villacrimea.loc\system\library\response.php on line 12
+2018-08-10 12:27:09 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 28
+2018-08-10 12:27:09 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 28
+2018-08-10 12:27:09 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 28
+2018-08-10 12:27:09 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php:20) in D:\OpenServer\domains\villacrimea.loc\system\library\response.php on line 12
+2018-08-10 12:30:21 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 28
+2018-08-10 12:30:21 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 28
+2018-08-10 12:30:21 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 28
+2018-08-10 12:30:21 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php:20) in D:\OpenServer\domains\villacrimea.loc\system\library\response.php on line 12
+2018-08-10 12:30:30 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:30:30 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:30:30 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 27
+2018-08-10 12:30:30 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\villacrimea.loc\admin\controller\startup\error.php:34) in D:\OpenServer\domains\villacrimea.loc\system\library\response.php on line 12
+2018-08-10 12:30:39 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 28
+2018-08-10 12:30:39 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 28
+2018-08-10 12:30:39 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php on line 28
+2018-08-10 12:30:39 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php:20) in D:\OpenServer\domains\villacrimea.loc\system\library\response.php on line 12
+2018-08-10 12:31:17 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\villacrimea.loc\admin\model\design\banner.php:20) in D:\OpenServer\domains\villacrimea.loc\system\library\response.php on line 12
+2018-08-10 12:36:15 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:36:15 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:36:15 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:36:15 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:36:15 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:36:15 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:36:15 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:36:15 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:36:15 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 87
+2018-08-10 12:37:13 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 85
+2018-08-10 12:37:13 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 88
+2018-08-10 12:37:13 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 88
+2018-08-10 12:37:13 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 88
+2018-08-10 12:37:13 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 85
+2018-08-10 12:37:13 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 88
+2018-08-10 12:37:13 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 88
+2018-08-10 12:37:13 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 88
+2018-08-10 12:37:13 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 85
+2018-08-10 12:37:13 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 88
+2018-08-10 12:37:13 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 88
+2018-08-10 12:37:13 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 88
+2018-08-10 12:38:30 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 88
+2018-08-10 12:38:30 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 88
+2018-08-10 12:38:30 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 88
+2018-08-10 12:38:30 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 88
+2018-08-10 12:38:30 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 88
+2018-08-10 12:38:30 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 88
+2018-08-10 12:38:30 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 88
+2018-08-10 12:38:30 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 88
+2018-08-10 12:38:30 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\banner_form.tpl on line 88
+2018-08-10 13:00:02 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 6
+2018-08-10 13:00:02 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 6
+2018-08-10 13:00:02 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 6
+2018-08-10 13:00:51 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:00:51 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:00:51 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:01:59 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 13:01:59 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 13:01:59 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 13:01:59 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 13:01:59 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 13:01:59 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 13:01:59 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 13:01:59 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 13:01:59 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 13:01:59 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:01:59 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:01:59 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:02:09 - PHP Notice:  Undefined variable: banner_currencys in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 15
+2018-08-10 13:02:09 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 13:02:09 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 13:02:09 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 13:02:09 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:02:09 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:02:09 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:02:47 - PHP Notice:  Undefined variable: banner_currencys in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 15
+2018-08-10 13:02:47 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 13:02:47 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 13:02:47 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 13:02:47 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 30
+2018-08-10 13:02:47 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 13:02:47 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 13:02:47 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 13:02:47 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 13:02:47 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 13:02:47 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 13:02:47 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:02:47 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:02:47 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:03:53 - PHP Notice:  Undefined variable: banner_currencys in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\banner.php on line 15
+2018-08-10 13:03:53 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 25
+2018-08-10 13:03:53 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 26
+2018-08-10 13:03:53 - PHP Notice:  Undefined index:  in D:\OpenServer\domains\villacrimea.loc\system\library\cart\currency.php on line 27
+2018-08-10 13:03:53 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:03:53 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:03:53 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:04:12 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:04:12 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:04:12 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:04:27 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:04:27 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:04:27 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:20:28 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:20:28 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:20:28 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:20:39 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:20:39 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:20:39 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:22:46 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:22:46 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:22:46 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:23:05 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:23:05 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:23:05 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:23:17 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:23:17 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 13:23:17 - PHP Notice:  Undefined index: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\banner.tpl on line 10
+2018-08-10 15:39:19 - PHP Notice:  Undefined variable: entry_title in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 47
+2018-08-10 15:39:19 - PHP Notice:  Undefined variable: entry_title in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 49
+2018-08-10 15:39:19 - PHP Notice:  Undefined variable: entry_description in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 53
+2018-08-10 15:39:19 - PHP Notice:  Undefined variable: entry_description in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 55
+2018-08-10 15:39:19 - PHP Notice:  Undefined variable: lang in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 55
+2018-08-10 15:39:45 - PHP Notice:  Undefined variable: entry_title in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 47
+2018-08-10 15:39:45 - PHP Notice:  Undefined variable: entry_title in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 49
+2018-08-10 15:39:45 - PHP Notice:  Undefined variable: entry_description in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 53
+2018-08-10 15:39:45 - PHP Notice:  Undefined variable: entry_description in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 55
+2018-08-10 15:39:45 - PHP Notice:  Undefined variable: lang in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 55
+2018-08-10 15:39:45 - PHP Notice:  Undefined variable: ckeditor in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 119
+2018-08-10 15:40:12 - PHP Notice:  Undefined variable: entry_description in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 46
+2018-08-10 15:40:12 - PHP Notice:  Undefined variable: entry_description in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 48
+2018-08-10 15:40:12 - PHP Notice:  Undefined variable: lang in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 48
+2018-08-10 15:40:12 - PHP Notice:  Undefined variable: ckeditor in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 112
+2018-08-10 15:40:58 - PHP Notice:  Undefined variable: lang in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 48
+2018-08-10 15:40:58 - PHP Notice:  Undefined variable: ckeditor in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 112
+2018-08-10 15:41:22 - PHP Notice:  Undefined variable: lang in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 50
+2018-08-10 15:41:22 - PHP Notice:  Undefined variable: ckeditor in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 114
+2018-08-10 15:43:13 - PHP Notice:  Undefined variable: lang in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 49
+2018-08-10 15:43:13 - PHP Notice:  Undefined variable: ckeditor in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 113
+2018-08-10 15:43:55 - PHP Notice:  Undefined variable: lang in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 49
+2018-08-10 15:43:55 - PHP Notice:  Undefined variable: ckeditor in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 113
+2018-08-10 15:44:00 - PHP Notice:  Undefined variable: lang in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 49
+2018-08-10 15:44:00 - PHP Notice:  Undefined variable: ckeditor in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 113
+2018-08-10 15:44:01 - PHP Notice:  Undefined variable: lang in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 49
+2018-08-10 15:44:01 - PHP Notice:  Undefined variable: ckeditor in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 113
+2018-08-10 15:44:08 - PHP Notice:  Undefined variable: lang in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 49
+2018-08-10 15:44:08 - PHP Notice:  Undefined variable: ckeditor in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 113
+2018-08-10 15:44:24 - PHP Notice:  Undefined variable: lang in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 49
+2018-08-10 15:44:24 - PHP Notice:  Undefined variable: ckeditor in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 113
+2018-08-10 15:44:32 - PHP Notice:  Undefined variable: lang in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 49
+2018-08-10 15:44:32 - PHP Notice:  Undefined variable: ckeditor in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 113
+2018-08-10 15:45:06 - PHP Notice:  Undefined variable: lang in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 49
+2018-08-10 15:45:06 - PHP Notice:  Undefined variable: ckeditor in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 113
+2018-08-10 15:46:05 - PHP Notice:  Undefined variable: lang in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 49
+2018-08-10 15:46:05 - PHP Notice:  Undefined variable: ckeditor in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 113
+2018-08-13 10:18:58 - PHP Notice:  Undefined variable: name in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\sticker_form.tpl on line 31
+2018-08-13 10:19:27 - PHP Notice:  Undefined variable: name in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\sticker_form.tpl on line 31
+2018-08-13 10:19:46 - PHP Notice:  Undefined variable: name in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\sticker_form.tpl on line 31
+2018-08-13 10:19:55 - PHP Notice:  Undefined index: title in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\sticker.php on line 430
+2018-08-13 10:19:55 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\sticker.php on line 394
+2018-08-13 10:19:55 - PHP Notice:  Undefined variable: name in D:\OpenServer\domains\villacrimea.loc\admin\view\template\design\sticker_form.tpl on line 31
+2018-08-13 10:20:10 - PHP Notice:  Undefined index: title in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\sticker.php on line 430
+2018-08-13 10:20:10 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\sticker.php on line 394
+2018-08-13 10:20:21 - PHP Notice:  Undefined index: title in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\sticker.php on line 430
+2018-08-13 10:20:21 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\sticker.php on line 394
+2018-08-13 10:23:32 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\sticker.php on line 345
+2018-08-13 10:23:32 - PHP Notice:  Undefined variable: banner_image in D:\OpenServer\domains\villacrimea.loc\admin\model\design\sticker.php on line 88
+2018-08-13 10:23:32 - PHP Notice:  Undefined variable: banner_image in D:\OpenServer\domains\villacrimea.loc\admin\model\design\sticker.php on line 89
+2018-08-13 10:23:32 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\sticker.php on line 394
+2018-08-13 10:24:26 - PHP Notice:  Undefined variable: banner_image in D:\OpenServer\domains\villacrimea.loc\admin\model\design\sticker.php on line 88
+2018-08-13 10:24:26 - PHP Notice:  Undefined variable: banner_image in D:\OpenServer\domains\villacrimea.loc\admin\model\design\sticker.php on line 89
+2018-08-13 10:24:26 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\sticker.php on line 374
+2018-08-13 10:25:13 - PHP Notice:  Undefined variable: banner_image in D:\OpenServer\domains\villacrimea.loc\admin\model\design\sticker.php on line 88
+2018-08-13 10:25:13 - PHP Notice:  Undefined variable: banner_image in D:\OpenServer\domains\villacrimea.loc\admin\model\design\sticker.php on line 89
+2018-08-13 10:25:13 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\sticker.php on line 374
+2018-08-13 10:25:50 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\admin\controller\design\sticker.php on line 374
+2018-08-13 11:43:17 - PHP Notice:  Undefined variable: text_corner0 in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\product_form.tpl on line 111
+2018-08-13 11:43:18 - PHP Notice:  Undefined variable: text_corner1 in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\product_form.tpl on line 111
+2018-08-13 11:43:18 - PHP Notice:  Undefined variable: text_corner2 in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\product_form.tpl on line 111
+2018-08-13 11:43:18 - PHP Notice:  Undefined variable: text_corner3 in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\product_form.tpl on line 111
+2018-08-13 12:14:33 - PHP Notice:  Undefined variable: result in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\featured_html.php on line 63
+2018-08-13 12:16:04 - PHP Notice:  Error: Could not load template D:/OpenServer/domains/villacrimea.loc/catalog/view/theme/default/template/product/stickers.tpl! in D:\OpenServer\domains\villacrimea.loc\system\library\template\php.php on line 23
+2018-08-13 12:17:23 - PHP Notice:  Undefined variable: lang in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 49
+2018-08-13 12:17:23 - PHP Notice:  Undefined variable: ckeditor in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 113
+2018-08-13 12:20:13 - PHP Warning:  Invalid argument supplied for foreach() in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\featured_html.tpl on line 10
+2018-08-13 12:20:13 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\featured_html.tpl on line 11
+2018-08-13 12:20:56 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\featured_html.tpl on line 13
+2018-08-13 12:21:40 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\featured_html.tpl on line 14
+2018-08-13 14:53:10 - PHP Notice:  Undefined variable: result in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\featured_html.php on line 77
+2018-08-13 14:53:10 - PHP Notice:  Undefined variable: result in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\featured_html.php on line 78
+2018-08-13 14:53:11 - PHP Notice:  Undefined variable: result in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\featured_html.php on line 77
+2018-08-13 14:53:11 - PHP Notice:  Undefined variable: result in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\featured_html.php on line 78
+2018-08-13 15:37:23 - PHP Notice:  Undefined variable: result in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\featured_html.php on line 79
+2018-08-13 15:37:40 - PHP Notice:  Undefined index: uniq_options in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\featured_html.php on line 79
+2018-08-13 15:37:40 - PHP Notice:  Undefined index: uniq_options in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\featured_html.php on line 79
+2018-08-13 15:38:24 - PHP Notice:  Undefined index: uniq_options in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\featured_html.php on line 79
+2018-08-13 15:38:24 - PHP Notice:  Undefined index: uniq_options in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\featured_html.php on line 79
+2018-08-13 15:40:11 - PHP Notice:  Undefined index: uniq_options in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\featured_html.tpl on line 20
+2018-08-13 15:40:11 - PHP Notice:  Undefined index: uniq_options in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\featured_html.tpl on line 20
+2018-08-13 16:11:22 - PHP Notice:  Undefined variable: i in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\featured_html.tpl on line 22
+2018-08-13 16:11:22 - PHP Notice:  Undefined variable: i in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\featured_html.tpl on line 22
+2018-08-13 16:11:22 - PHP Notice:  Undefined variable: i in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\featured_html.tpl on line 24
+2018-08-13 16:11:47 - PHP Notice:  Undefined variable: i in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\featured_html.tpl on line 22
+2018-08-13 16:11:47 - PHP Notice:  Undefined variable: i in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\featured_html.tpl on line 22
+2018-08-13 16:11:47 - PHP Notice:  Undefined variable: i in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\featured_html.tpl on line 24
+2018-08-13 16:51:43 - PHP Notice:  Undefined variable: result in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\featured_html.php on line 57
+2018-08-13 16:52:13 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\featured_html.php on line 57
+2018-08-13 17:25:00 - PHP Notice:  Undefined variable: thumb in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\presentation.tpl on line 64
+2018-08-13 17:25:00 - PHP Notice:  Undefined variable: placeholder in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\presentation.tpl on line 64
+2018-08-13 17:25:00 - PHP Notice:  Undefined variable: image in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\presentation.tpl on line 64
+2018-08-13 17:27:15 - PHP Notice:  Undefined variable: thumb in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\presentation.tpl on line 65
+2018-08-13 17:27:15 - PHP Notice:  Undefined variable: placeholder in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\presentation.tpl on line 65
+2018-08-13 17:27:15 - PHP Notice:  Undefined variable: image in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\presentation.tpl on line 65
+2018-08-13 17:27:30 - PHP Notice:  Undefined variable: thumb in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\presentation.tpl on line 65
+2018-08-13 17:27:30 - PHP Notice:  Undefined variable: placeholder in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\presentation.tpl on line 65
+2018-08-13 17:27:30 - PHP Notice:  Undefined variable: image in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\presentation.tpl on line 65
+2018-08-13 17:27:41 - PHP Notice:  Undefined variable: thumb in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\presentation.tpl on line 65
+2018-08-13 17:27:41 - PHP Notice:  Undefined variable: placeholder in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\presentation.tpl on line 65
+2018-08-13 17:27:41 - PHP Notice:  Undefined variable: image in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\presentation.tpl on line 65
+2018-08-13 17:27:43 - PHP Notice:  Undefined variable: thumb in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\presentation.tpl on line 65
+2018-08-13 17:27:43 - PHP Notice:  Undefined variable: placeholder in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\presentation.tpl on line 65
+2018-08-13 17:27:43 - PHP Notice:  Undefined variable: image in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\presentation.tpl on line 65
+2018-08-13 17:30:27 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\module\presentation.php on line 125
+2018-08-13 17:30:27 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\module\presentation.php on line 130
+2018-08-13 17:30:37 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\module\presentation.php on line 125
+2018-08-13 17:30:37 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\module\presentation.php on line 130
+2018-08-13 17:30:58 - PHP Notice:  Undefined variable: lang in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 49
+2018-08-13 17:30:58 - PHP Notice:  Undefined variable: ckeditor in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\featured_html.tpl on line 113
+2018-08-13 17:31:04 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\module\presentation.php on line 125
+2018-08-13 17:31:04 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\module\presentation.php on line 130
+2018-08-13 17:31:05 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\module\presentation.php on line 125
+2018-08-13 17:31:05 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\module\presentation.php on line 130
+2018-08-13 17:31:19 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\module\presentation.php on line 125
+2018-08-13 17:31:19 - PHP Notice:  Undefined variable: thumb in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\presentation.tpl on line 65
+2018-08-13 17:31:19 - PHP Notice:  Undefined variable: placeholder in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\presentation.tpl on line 65
+2018-08-13 17:31:27 - PHP Notice:  Undefined variable: thumb in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\presentation.tpl on line 65
+2018-08-13 17:31:27 - PHP Notice:  Undefined variable: placeholder in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\presentation.tpl on line 65
+2018-08-13 17:32:03 - PHP Notice:  Undefined variable: thumb in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\presentation.tpl on line 65
+2018-08-13 17:32:03 - PHP Notice:  Undefined variable: placeholder in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\presentation.tpl on line 65
+2018-08-13 17:32:47 - PHP Notice:  Undefined variable: thumb in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\presentation.tpl on line 65
+2018-08-13 17:32:47 - PHP Notice:  Undefined variable: placeholder in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\presentation.tpl on line 65
+2018-08-13 17:33:05 - PHP Notice:  Undefined variable: placeholder in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\presentation.tpl on line 65
