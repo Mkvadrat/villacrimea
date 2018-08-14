@@ -636,7 +636,9 @@ class ControllerSettingSetting extends Controller {
 		$this->load->model('catalog/download');
 		
 		$results = $this->model_catalog_download->getDownloads();
-
+		
+		$data['downloads'] = array();
+		
 		foreach ($results as $result) {
 			$data['downloads'][] = array(
 				'download_id' => $result['download_id'],

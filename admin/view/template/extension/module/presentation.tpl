@@ -62,9 +62,51 @@
           <div class="form-group">
             <label class="col-sm-2 control-label" for="thumb-image">Изображение</label>
             <div class="col-sm-10">
-              <a href="" id="thumb-image" data-toggle="image" class="img-thumbnail"><img src="<?php echo $image; ?>" alt="" title=""  /></a><input type="hidden" name="image" value="<?php echo $image; ?>" id="input-image" />
+              <a href="" id="thumb-image" data-toggle="image" class="img-thumbnail"><img src="<?php echo $thumb; ?>" alt="" title=""  /></a><input type="hidden" name="image" value="<?php echo $image; ?>" id="input-image" />
             </div>
-          </div> 
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-process-status">Главная презентация</label>
+            <div class="col-sm-10">
+              <div class="well well-sm" style="height: 150px; overflow: auto;">
+                <?php foreach ($downloads as $download) { ?>
+                <div class="checkbox">
+                  <label>
+                    <?php if (in_array($download['download_id'], $main_download_presentation)) { ?>
+                    <input type="checkbox" name="main_download_presentation[]" value="<?php echo $download['download_id']; ?>" checked="checked" />
+                    <?php echo $download['name']; ?>
+                    <?php } else { ?>
+                    <input type="checkbox" name="main_download_presentation[]" value="<?php echo $download['download_id']; ?>" />
+                    <?php echo $download['name']; ?>
+                    <?php } ?>
+                  </label>
+                </div>
+                <?php } ?>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-process-status">Вторичные презентации</label>
+            <div class="col-sm-10">
+              <div class="well well-sm" style="height: 150px; overflow: auto;">
+                <?php foreach ($downloads as $download) { ?>
+                <div class="checkbox">
+                  <label>
+                    <?php if (in_array($download['download_id'], $second_download_presentation)) { ?>
+                    <input type="checkbox" name="second_download_presentation[]" value="<?php echo $download['download_id']; ?>" checked="checked" />
+                    <?php echo $download['name']; ?>
+                    <?php } else { ?>
+                    <input type="checkbox" name="second_download_presentation[]" value="<?php echo $download['download_id']; ?>" />
+                    <?php echo $download['name']; ?>
+                    <?php } ?>
+                  </label>
+                </div>
+                <?php } ?>
+              </div>
+            </div>
+          </div>
+          
           <div class="form-group">
             <label class="col-sm-2 control-label" for="input-status"><?php echo $entry_status; ?></label>
             <div class="col-sm-10">

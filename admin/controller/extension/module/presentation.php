@@ -130,9 +130,40 @@ class ControllerExtensionModulePresentation extends Controller {
 		}
 		
 		if ($module_info['image']) {
-			$data['image'] = $this->model_tool_image->resize($module_info['image'], 100, 100);
+			$data['thumb'] = $this->model_tool_image->resize($module_info['image'], 100, 100);
 		} else {
-			$data['image'] = $this->model_tool_image->resize('placeholder.png', 100, 100);
+			$data['thumb'] = $this->model_tool_image->resize('placeholder.png', 100, 100);
+		}
+		
+		$this->load->model('catalog/download');
+		
+		$results = $this->model_catalog_download->getDownloads();
+		
+		$data['downloads'] = array();
+		
+		foreach ($results as $result) {
+			$data['downloads'][] = array(
+				'download_id' => $result['download_id'],
+				'name'        => $result['name'],
+				'date_added'  => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
+				'edit'        => $this->url->link('catalog/download/edit', 'token=' . $this->session->data['token'] . '&download_id=' . $result['download_id'], true)
+			);
+		}
+				
+		if (isset($this->request->post['main_download_presentation'])) {
+			$data['main_download_presentation'] = $this->request->post['main_download_presentation'];
+		} elseif (!empty($module_info['main_download_presentation'])) {
+			$data['main_download_presentation'] = $module_info['main_download_presentation'];
+		} else {
+			$data['main_download_presentation'] = array();
+		}
+		
+		if (isset($this->request->post['second_download_presentation'])) {
+			$data['second_download_presentation'] = $this->request->post['second_download_presentation'];
+		} elseif (!empty($module_info['second_download_presentation'])) {
+			$data['second_download_presentation'] = $module_info['second_download_presentation'];
+		} else {
+			$data['second_download_presentation'] = array();
 		}
 		
 		if (isset($this->request->post['status'])) {

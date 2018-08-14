@@ -241,9 +241,6 @@
                     </div>
                     <?php } ?>
                   </div>
-                  <?php if ($error_processing_status) { ?>
-                  <div class="text-danger"><?php echo $error_processing_status; ?></div>
-                  <?php } ?>
                 </div>
               </div>
               <?php if ($locations) { ?>
