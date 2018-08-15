@@ -1,9 +1,14 @@
 <?php
-class ControllerExtensionModuleFeaturedHtml extends Controller {
+// *	@copyright	OPENCART.PRO 2011 - 2017.
+// *	@forum	http://forum.opencart.pro
+// *	@source		See SOURCE.txt for source and other copyright.
+// *	@license	GNU General Public License version 3; see LICENSE.txt
+
+class ControllerExtensionModuleBlogFeatured extends Controller {
 	private $error = array();
 
 	public function index() {
-		$this->load->language('extension/module/featured_html');
+		$this->load->language('extension/module/blog_featured');
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
@@ -11,7 +16,7 @@ class ControllerExtensionModuleFeaturedHtml extends Controller {
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
 			if (!isset($this->request->get['module_id'])) {
-				$this->model_extension_module->addModule('featured_html', $this->request->post);
+				$this->model_extension_module->addModule('blog_featured', $this->request->post);
 			} else {
 				$this->model_extension_module->editModule($this->request->get['module_id'], $this->request->post);
 			}
@@ -19,10 +24,6 @@ class ControllerExtensionModuleFeaturedHtml extends Controller {
 			$this->session->data['success'] = $this->language->get('text_success');
 
 			$this->response->redirect($this->url->link('extension/extension', 'token=' . $this->session->data['token'] . '&type=module', true));
-		}
-		
-		if (isset($this->request->get['module_id']) && ($this->request->server['REQUEST_METHOD'] != 'POST')) {
-			$module_info = $this->model_extension_module->getModule($this->request->get['module_id']);
 		}
 
 		$data['heading_title'] = $this->language->get('heading_title');
@@ -32,43 +33,19 @@ class ControllerExtensionModuleFeaturedHtml extends Controller {
 		$data['text_disabled'] = $this->language->get('text_disabled');
 
 		$data['entry_name'] = $this->language->get('entry_name');
-		$data['entry_product'] = $this->language->get('entry_product');
+		$data['entry_article'] = $this->language->get('entry_article');
 		$data['entry_limit'] = $this->language->get('entry_limit');
 		$data['entry_width'] = $this->language->get('entry_width');
 		$data['entry_height'] = $this->language->get('entry_height');
 		$data['entry_status'] = $this->language->get('entry_status');
 		$data['entry_description'] = $this->language->get('entry_description');
+		$data['entry_title'] = $this->language->get('entry_title');
 
-		$data['help_product'] = $this->language->get('help_product');
+		$data['help_article'] = $this->language->get('help_article');
 
 		$data['button_save'] = $this->language->get('button_save');
 		$data['button_cancel'] = $this->language->get('button_cancel');
 		
-		//CKEditor
-		if ($this->config->get('config_editor_default')) {
-			$this->document->addScript('view/javascript/ckeditor/ckeditor.js');
-			$this->document->addScript('view/javascript/ckeditor/ckeditor_init.js');
-		} else {
-			$this->document->addScript('view/javascript/summernote/summernote.js');
-			$this->document->addScript('view/javascript/summernote/lang/summernote-' . $this->language->get('lang') . '.js');
-			$this->document->addScript('view/javascript/summernote/opencart.js');
-			$this->document->addStyle('view/javascript/summernote/summernote.css');
-		}
-		
-		if (isset($this->request->post['module_description'])) {
-			$data['module_description'] = $this->request->post['module_description'];
-		} elseif (!empty($module_info)) {
-			$data['module_description'] = $module_info['module_description'];
-		} else {
-			$data['module_description'] = array();
-		}
-
-		$this->load->model('localisation/language');
-
-		$data['languages'] = $this->model_localisation_language->getLanguages();
-		
-		$data['ckeditor'] = $this->config->get('config_editor_default');
-
 		if (isset($this->error['warning'])) {
 			$data['error_warning'] = $this->error['warning'];
 		} else {
@@ -108,19 +85,19 @@ class ControllerExtensionModuleFeaturedHtml extends Controller {
 		if (!isset($this->request->get['module_id'])) {
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('heading_title'),
-				'href' => $this->url->link('extension/module/featured_html', 'token=' . $this->session->data['token'], true)
+				'href' => $this->url->link('extension/module/blog_featured', 'token=' . $this->session->data['token'], true)
 			);
 		} else {
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('heading_title'),
-				'href' => $this->url->link('extension/module/featured_html', 'token=' . $this->session->data['token'] . '&module_id=' . $this->request->get['module_id'], true)
+				'href' => $this->url->link('extension/module/blog_featured', 'token=' . $this->session->data['token'] . '&module_id=' . $this->request->get['module_id'], true)
 			);
 		}
 
 		if (!isset($this->request->get['module_id'])) {
-			$data['action'] = $this->url->link('extension/module/featured_html', 'token=' . $this->session->data['token'], true);
+			$data['action'] = $this->url->link('extension/module/blog_featured', 'token=' . $this->session->data['token'], true);
 		} else {
-			$data['action'] = $this->url->link('extension/module/featured_html', 'token=' . $this->session->data['token'] . '&module_id=' . $this->request->get['module_id'], true);
+			$data['action'] = $this->url->link('extension/module/blog_featured', 'token=' . $this->session->data['token'] . '&module_id=' . $this->request->get['module_id'], true);
 		}
 
 		$data['cancel'] = $this->url->link('extension/extension', 'token=' . $this->session->data['token'] . '&type=module', true);
@@ -139,25 +116,50 @@ class ControllerExtensionModuleFeaturedHtml extends Controller {
 			$data['name'] = '';
 		}
 
-		$this->load->model('catalog/product');
+		$this->load->model('blog/article');
 
-		$data['products'] = array();
+		$data['articles'] = array();
 
-		if (!empty($this->request->post['product'])) {
-			$products = $this->request->post['product'];
-		} elseif (!empty($module_info['product'])) {
-			$products = $module_info['product'];
+		if (isset($this->request->post['article'])) {
+			$articles = $this->request->post['article'];
+		} elseif (!empty($module_info)) {
+			$articles = $module_info['article'];
 		} else {
-			$products = array();
+			$articles = array();
+		}
+		
+		//CKEditor
+		if ($this->config->get('config_editor_default')) {
+			$this->document->addScript('view/javascript/ckeditor/ckeditor.js');
+			$this->document->addScript('view/javascript/ckeditor/ckeditor_init.js');
+		} else {
+			$this->document->addScript('view/javascript/summernote/summernote.js');
+			$this->document->addScript('view/javascript/summernote/lang/summernote-' . $this->language->get('lang') . '.js');
+			$this->document->addScript('view/javascript/summernote/opencart.js');
+			$this->document->addStyle('view/javascript/summernote/summernote.css');
+		}
+		
+		if (isset($this->request->post['module_description'])) {
+			$data['module_description'] = $this->request->post['module_description'];
+		} elseif (!empty($module_info)) {
+			$data['module_description'] = $module_info['module_description'];
+		} else {
+			$data['module_description'] = array();
 		}
 
-		foreach ($products as $product_id) {
-			$product_info = $this->model_catalog_product->getProduct($product_id);
+		$this->load->model('localisation/language');
 
-			if ($product_info) {
-				$data['products'][] = array(
-					'product_id' => $product_info['product_id'],
-					'name'       => $product_info['name']
+		$data['languages'] = $this->model_localisation_language->getLanguages();
+		
+		$data['ckeditor'] = $this->config->get('config_editor_default');
+
+		foreach ($articles as $article_id) {
+			$article_info = $this->model_blog_article->getArticle($article_id);
+
+			if ($article_info) {
+				$data['articles'][] = array(
+					'article_id' => $article_info['article_id'],
+					'name'       => $article_info['name']
 				);
 			}
 		}
@@ -198,11 +200,11 @@ class ControllerExtensionModuleFeaturedHtml extends Controller {
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['footer'] = $this->load->controller('common/footer');
 
-		$this->response->setOutput($this->load->view('extension/module/featured_html', $data));
+		$this->response->setOutput($this->load->view('extension/module/blog_featured.tpl', $data));
 	}
 
 	protected function validate() {
-		if (!$this->user->hasPermission('modify', 'extension/module/featured_html')) {
+		if (!$this->user->hasPermission('modify', 'extension/module/blog_featured')) {
 			$this->error['warning'] = $this->language->get('error_permission');
 		}
 

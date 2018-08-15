@@ -105,3 +105,7 @@ $_['text_complete_status']                  = 'Выполненных заказ
 $_['text_processing_status']                = 'Заказов в обработке';
 $_['text_other_status']          	        = 'Другие статусы';
 $_['text_octeam_toolset']              		= 'OC Team';
+$_['text_blog']                 	        = 'Блог';
+$_['text_blog_article']                     = 'Кейсы';
+$_['text_blog_category']                    = 'Категории Кейсов';
+$_['text_blog_setting']                     = 'Настройки кейсов';

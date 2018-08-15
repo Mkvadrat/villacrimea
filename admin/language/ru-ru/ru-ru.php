@@ -96,6 +96,7 @@ $_['button_link']          			= 'Ссылка';
 $_['button_currency']          		= 'Обновить курсы валют';
 $_['button_apply']                  = 'Применить';
 $_['button_category_add']           = 'Добавить категорию';
+$_['button_shop']                   = 'Посмотреть';
 
 // Tab
 $_['tab_address']                   = 'Адрес';

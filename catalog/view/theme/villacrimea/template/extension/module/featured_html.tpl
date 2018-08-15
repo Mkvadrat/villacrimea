@@ -17,6 +17,7 @@
              
             <a class="name" href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
         
+            <?php if($product['filter_options']){ ?>
             <div class="tags">
                 <?php $i == 0; ?>
                 <?php foreach($product['filter_options'] as $option){ ?>
@@ -25,6 +26,7 @@
                     <?php if($i == 3 ){break;} ?>
                 <?php } ?>
             </div>
+            <?php } ?>
             
             <?php if ($product['price'] || $product['rub']) { ?>
             <?php if (!$product['special']) { ?>
