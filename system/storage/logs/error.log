@@ -2461,3 +2461,11 @@
 2018-08-15 15:10:36 - PHP Notice:  Undefined index: short_description in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\blog_featured.php on line 72
 2018-08-15 15:10:36 - PHP Notice:  Undefined index: short_description in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\blog_featured.php on line 72
 2018-08-15 15:10:36 - PHP Notice:  Undefined index: short_description in D:\OpenServer\domains\villacrimea.loc\catalog\controller\extension\module\blog_featured.php on line 72
+2018-08-15 17:22:24 - PHP Notice:  Undefined index: viewed in D:\OpenServer\domains\villacrimea.loc\admin\controller\catalog\news.php on line 228
+2018-08-15 17:22:24 - PHP Notice:  Undefined index: viewed in D:\OpenServer\domains\villacrimea.loc\admin\controller\catalog\news.php on line 228
+2018-08-15 17:22:35 - PHP Notice:  Undefined index: viewed in D:\OpenServer\domains\villacrimea.loc\admin\controller\catalog\news.php on line 228
+2018-08-15 17:22:35 - PHP Notice:  Undefined index: viewed in D:\OpenServer\domains\villacrimea.loc\admin\controller\catalog\news.php on line 228
+2018-08-15 17:23:00 - PHP Notice:  Undefined index: viewed in D:\OpenServer\domains\villacrimea.loc\admin\controller\catalog\news.php on line 228
+2018-08-15 17:25:49 - PHP Notice:  Undefined index: viewed in D:\OpenServer\domains\villacrimea.loc\catalog\controller\information\news.php on line 128
+2018-08-15 17:37:05 - PHP Notice:  Undefined index: viewed in D:\OpenServer\domains\villacrimea.loc\catalog\controller\information\news.php on line 301
+2018-08-15 17:37:06 - PHP Notice:  Undefined index: viewed in D:\OpenServer\domains\villacrimea.loc\catalog\controller\information\news.php on line 301

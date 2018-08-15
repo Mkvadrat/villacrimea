@@ -107,5 +107,6 @@ $_['text_other_status']          	        = 'Другие статусы';
 $_['text_octeam_toolset']              		= 'OC Team';
 $_['text_blog']                 	        = 'Блог';
 $_['text_blog_article']                     = 'Кейсы';
-$_['text_blog_category']                    = 'Категории Кейсов';
+$_['text_blog_category']                    = 'Категории кейсов';
 $_['text_blog_setting']                     = 'Настройки кейсов';
+$_['text_news']                             = 'Блог';

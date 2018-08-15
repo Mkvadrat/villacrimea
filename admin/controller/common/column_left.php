@@ -41,41 +41,6 @@ class ControllerCommonColumnLeft extends Controller {
 				'children' => array()
 			);
 			
-			// Catalog
-			$catalog = array();
-			
-			if ($this->user->hasPermission('access', 'catalog/category')) {
-				$catalog[] = array(
-					'name'	   => $this->language->get('text_category'),
-					'href'     => $this->url->link('catalog/category', 'token=' . $this->session->data['token'], true),
-					'children' => array()		
-				);
-			}
-			
-			if ($this->user->hasPermission('access', 'catalog/product')) {
-				$catalog[] = array(
-					'name'	   => $this->language->get('text_product'),
-					'href'     => $this->url->link('catalog/product', 'token=' . $this->session->data['token'], true),
-					'children' => array()		
-				);
-			}
-			
-			if ($this->user->hasPermission('access', 'catalog/recurring')) {
-				$catalog[] = array(
-					'name'	   => $this->language->get('text_recurring'),
-					'href'     => $this->url->link('catalog/recurring', 'token=' . $this->session->data['token'], true),
-					'children' => array()		
-				);
-			}
-			
-			if ($this->user->hasPermission('access', 'catalog/filter')) {
-				$catalog[] = array(
-					'name'	   => $this->language->get('text_filter'),
-					'href'     => $this->url->link('catalog/filter', 'token=' . $this->session->data['token'], true),
-					'children' => array()		
-				);
-			}
-			
 			// BLOG
 			$blog = array();
 
@@ -111,6 +76,41 @@ class ControllerCommonColumnLeft extends Controller {
 					'href'     => '',
 					'children' => $blog
 				);		
+			}
+			
+			// Catalog
+			$catalog = array();
+			
+			if ($this->user->hasPermission('access', 'catalog/category')) {
+				$catalog[] = array(
+					'name'	   => $this->language->get('text_category'),
+					'href'     => $this->url->link('catalog/category', 'token=' . $this->session->data['token'], true),
+					'children' => array()		
+				);
+			}
+			
+			if ($this->user->hasPermission('access', 'catalog/product')) {
+				$catalog[] = array(
+					'name'	   => $this->language->get('text_product'),
+					'href'     => $this->url->link('catalog/product', 'token=' . $this->session->data['token'], true),
+					'children' => array()		
+				);
+			}
+			
+			if ($this->user->hasPermission('access', 'catalog/recurring')) {
+				$catalog[] = array(
+					'name'	   => $this->language->get('text_recurring'),
+					'href'     => $this->url->link('catalog/recurring', 'token=' . $this->session->data['token'], true),
+					'children' => array()		
+				);
+			}
+			
+			if ($this->user->hasPermission('access', 'catalog/filter')) {
+				$catalog[] = array(
+					'name'	   => $this->language->get('text_filter'),
+					'href'     => $this->url->link('catalog/filter', 'token=' . $this->session->data['token'], true),
+					'children' => array()		
+				);
 			}
 			
 			// Attributes
@@ -176,6 +176,14 @@ class ControllerCommonColumnLeft extends Controller {
 				$catalog[] = array(
 					'name'	   => $this->language->get('text_information'),
 					'href'     => $this->url->link('catalog/information', 'token=' . $this->session->data['token'], true),
+					'children' => array()		
+				);					
+			}
+			
+			if ($this->user->hasPermission('access', 'catalog/news')) {		
+				$catalog[] = array(
+					'name'	   => $this->language->get('text_news'),
+					'href'     => $this->url->link('catalog/news', 'token=' . $this->session->data['token'], true),
 					'children' => array()		
 				);					
 			}
