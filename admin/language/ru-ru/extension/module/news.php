@@ -18,6 +18,8 @@ $_['entry_height']      = 'Высота';
 $_['entry_show_title']  = 'Показать заголовок';
 $_['entry_show_icon']   = 'Показать иконку';
 $_['entry_status']      = 'Статус';
+$_['entry_title']       = 'Заголовок';
+$_['entry_description'] = 'Описание';
 
 // Error
 $_['error_permission'] = 'У Вас нет прав для управления этим модулем!';

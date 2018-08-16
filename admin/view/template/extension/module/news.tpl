@@ -19,6 +19,7 @@
       <button type="button" class="close" data-dismiss="alert">&times;</button>
     </div>
     <?php } ?>
+
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title"><i class="fa fa-pencil"></i> <?php echo $text_edit; ?></h3>
@@ -31,6 +32,31 @@
               <input type="text" name="name" value="<?php echo $name; ?>" placeholder="<?php echo $entry_name; ?>" id="input-name" class="form-control" />
               <?php if ($error_name) { ?>
               <div class="text-danger"><?php echo $error_name; ?></div>
+              <?php } ?>
+            </div>
+          </div>
+          <div class="tab-pane">
+            <ul class="nav nav-tabs" id="language">
+              <?php foreach ($languages as $language) { ?>
+              <li><a href="#language<?php echo $language['language_id']; ?>" data-toggle="tab"><img src="language/<?php echo $language['code']; ?>/<?php echo $language['code']; ?>.png" title="<?php echo $language['name']; ?>" /> <?php echo $language['name']; ?></a></li>
+              <?php } ?>
+            </ul>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-title<?php echo $language['language_id']; ?>"><?php echo $entry_title; ?></label>
+              <div class="col-sm-10">
+                <input type="text" name="module_description[<?php echo $language['language_id']; ?>][title]" placeholder="<?php echo $entry_title; ?>" id="input-heading<?php echo $language['language_id']; ?>" value="<?php echo isset($module_description[$language['language_id']]['title']) ? $module_description[$language['language_id']]['title'] : ''; ?>" class="form-control" />
+              </div>
+            </div>
+            <div class="tab-content">
+              <?php foreach ($languages as $language) { ?>
+              <div class="tab-pane" id="language<?php echo $language['language_id']; ?>">
+                <div class="form-group">
+                  <label class="col-sm-2 control-label" for="input-description<?php echo $language['language_id']; ?>"><?php echo $entry_description; ?></label>
+                  <div class="col-sm-10">
+                    <textarea name="module_description[<?php echo $language['language_id']; ?>][description]" placeholder="<?php echo $entry_description; ?>" id="input-description<?php echo $language['language_id']; ?>" data-lang="<?php echo $lang; ?>" class="form-control summernote"><?php echo isset($module_description[$language['language_id']]['description']) ? $module_description[$language['language_id']]['description'] : ''; ?></textarea>
+                  </div>
+                </div>
+              </div>
               <?php } ?>
             </div>
           </div>
@@ -111,4 +137,15 @@
     </div>
   </div>
 </div>
+
+  <script type="text/javascript"><!--
+<?php foreach ($languages as $language) { ?>
+<?php if ($ckeditor) { ?>
+ckeditorInit('input-description<?php echo $language['language_id']; ?>', getURLVar('token'));
+<?php } ?>
+<?php } ?>
+//--></script>
+  <script type="text/javascript"><!--
+$('#language a:first').tab('show');
+//--></script>
 <?php echo $footer; ?>

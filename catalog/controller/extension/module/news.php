@@ -29,12 +29,17 @@ class ControllerExtensionModuleNews extends Controller {
 			
 		$data['button_list'] = $this->language->get('button_list');
 	
-		$data['news_list'] = $this->url->link('information/news/list');
+		$data['news_list'] = $this->url->link('information/news');
 		
 		$data['news'] = array();
 
 		$data['show_title'] = $setting['show_title'];
+		
 		$data['show_icon']  = $setting['show_icon'];
+		
+		$data['heading_title'] = html_entity_decode($setting['module_description'][$this->config->get('config_language_id')]['title'], ENT_QUOTES, 'UTF-8');
+		
+		$data['html'] = html_entity_decode($setting['module_description'][$this->config->get('config_language_id')]['description'], ENT_QUOTES, 'UTF-8');
 
 		$results = $this->model_catalog_news->getNewsShorts($setting['limit']);
 		

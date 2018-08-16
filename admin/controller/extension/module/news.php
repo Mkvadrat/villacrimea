@@ -40,6 +40,8 @@ class ControllerExtensionModuleNews extends Controller {
 		$data['entry_width'] = $this->language->get('entry_width');
 		$data['entry_height'] = $this->language->get('entry_height');
 		$data['entry_status'] = $this->language->get('entry_status');
+		$data['entry_description'] = $this->language->get('entry_description');
+		$data['entry_title'] = $this->language->get('entry_title');
 
 		$data['help_product'] = $this->language->get('help_product');
 
@@ -117,6 +119,31 @@ class ControllerExtensionModuleNews extends Controller {
 		} else {
 			$data['name'] = '';
 		}
+		
+		//CKEditor
+		if ($this->config->get('config_editor_default')) {
+			$this->document->addScript('view/javascript/ckeditor/ckeditor.js');
+			$this->document->addScript('view/javascript/ckeditor/ckeditor_init.js');
+		} else {
+			$this->document->addScript('view/javascript/summernote/summernote.js');
+			$this->document->addScript('view/javascript/summernote/lang/summernote-' . $this->language->get('lang') . '.js');
+			$this->document->addScript('view/javascript/summernote/opencart.js');
+			$this->document->addStyle('view/javascript/summernote/summernote.css');
+		}
+		
+		if (isset($this->request->post['module_description'])) {
+			$data['module_description'] = $this->request->post['module_description'];
+		} elseif (!empty($module_info)) {
+			$data['module_description'] = $module_info['module_description'];
+		} else {
+			$data['module_description'] = array();
+		}
+
+		$this->load->model('localisation/language');
+
+		$data['languages'] = $this->model_localisation_language->getLanguages();
+		
+		$data['ckeditor'] = $this->config->get('config_editor_default');
 
 		if (isset($this->request->post['desc_limit'])) {
 			$data['desc_limit'] = $this->request->post['desc_limit'];

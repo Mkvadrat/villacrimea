@@ -1,35 +1,20 @@
 <div class="blog">
-	<p class="title">Блог</p>
-	<p>Следите за новостями и интересными статьями в нашем чудесном разделе. А так же<br>Акции и уникальные предложения</p>
+	<p class="title"><?php echo $heading_title; ?></p>
+	
+	<?php echo $html; ?>
+	
 	<div class="blogs">
+		<?php foreach ($news as $news_item) { ?>
 		<div class="blogs_item">
-			<a href="#" class="img" style="background-image: url(./image/3.jpg)"></a>
+			<a href="<?php echo $news_item['href']; ?>" class="img" style="background-image: url('<?php echo $news_item['thumb']; ?>')"></a>
 			<div>
-				<a href="#" class="name">Лучшее агентство в Крыму это конечно же Вилла-Крым</a>
-				<p>Самый большой и видовой участок в поселке, выполнен ландшафтный... дизайн...высажены... плодовые деревья и пальмы.</p>
+				<a href="<?php echo $news_item['href']; ?>" class="name"><?php echo $news_item['title']; ?></a>
+				
+				<?php echo $news_item['description']; ?>				
 			</div>
 		</div>
-		<div class="blogs_item">
-			<a href="#" class="img" style="background-image: url(./image/4.jpg)"></a>
-			<div>
-				<a href="#" class="name">Лучшее агентство в Крыму это конечно же Вилла-Крым Лучшее агентство в Крыму это конечно же Вилла-Крым</a>
-				<p>Самый большой и видовой участок в поселке, выполнен ландшафтный... дизайн...высажены... плодовые деревья и пальмы. Самый большой и видовой участок в поселке, выполнен ландшафтный... дизайн...высажены... плодовые деревья и пальмы.</p>
-			</div>
-		</div>
-		<div class="blogs_item">
-			<a href="#" class="img" style="background-image: url(./image/3.jpg)"></a>
-			<div>
-				<a href="#" class="name">Лучшее агентство в Крыму это конечно же Вилла-Крым</a>
-				<p>Самый большой и видовой участок в поселке, выполнен ландшафтный... дизайн...высажены... плодовые деревья и пальмы.</p>
-			</div>
-		</div>
-		<div class="blogs_item">
-			<a href="#" class="img" style="background-image: url(./image/4.jpg)"></a>
-			<div>
-				<a href="#" class="name">Лучшее агентство в Крыму это конечно же Вилла-Крым Лучшее агентство в Крыму это конечно же Вилла-Крым</a>
-				<p>Самый большой и видовой участок в поселке, выполнен ландшафтный... дизайн...высажены... плодовые деревья и пальмы. Самый большой и видовой участок в поселке, выполнен ландшафтный... дизайн...высажены... плодовые деревья и пальмы.</p>
-			</div>
-		</div>
+		<?php } ?>
 	</div>
-	<a href="#" class="more_blogs">Перейти в раздел блог</a>
+	
+	<a href="<?php echo $news_list; ?>" class="more_blogs">Перейти в раздел блог</a>
 </div>
