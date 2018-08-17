@@ -228,8 +228,10 @@ class ControllerExtensionModuleOCFilter extends Controller {
 		
 		$currencys = $this->model_catalog_ocfilter->getCurrency();
 		
-		$data['curent_currencys'] = $this->config->get('config_currency');
+		//$data['curent_currencys'] = $this->config->get('config_currency');
 		
+		$data['curent_currencys'] = $this->cache->get('valute');
+				
 		$data['currencys'] = array();
 		
 		foreach($currencys as $currency){
@@ -276,7 +278,7 @@ class ControllerExtensionModuleOCFilter extends Controller {
 		}
 
     $this->document->addStyle('catalog/view/javascript/ocfilter/nouislider.min.css');
-    $this->document->addStyle('catalog/view/theme/villacrimea/stylesheet/ocfilter/ocfilter.css');
+    $this->document->addStyle('catalog/view/theme/default/stylesheet/ocfilter/ocfilter.css');
 
     $this->document->addScript('catalog/view/javascript/ocfilter/nouislider.min.js');
     $this->document->addScript('catalog/view/javascript/ocfilter/ocfilter.js');

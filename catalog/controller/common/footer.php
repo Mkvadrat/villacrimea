@@ -50,6 +50,7 @@ class ControllerCommonFooter extends Controller {
 		
 		// Menu
 		$this->load->model('design/custommenu_footer');
+		
 		$this->load->model('catalog/category');
 
 		$this->load->model('catalog/product');

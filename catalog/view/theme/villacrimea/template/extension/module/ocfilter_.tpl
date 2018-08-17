@@ -32,10 +32,10 @@
       <?php } ?>
 
       <?php if ($show_price) { # Price filtering ?>
-      <div data-toggle="popover-price">
+      <div class="list-group-item ocfilter-option" data-toggle="popover-price">
         <div class="option-name">
 					<?php echo $text_price; ?><!--&nbsp;<?php echo $symbol_left; ?>-->
-          <span id="price-from"><?php echo $min_price_get; ?></span>&nbsp;-&nbsp;<span id="price-to"><?php echo $max_price_get; ?></span><?php //echo $symbol_right; ?>
+          <span id="price-from"><?php echo $min_price_get; ?></span>&nbsp;-&nbsp;<span id="price-to"><?php echo $max_price_get; ?></span><?php echo $symbol_right; ?>
 				</div>
 
         <div class="option-values">
@@ -51,7 +51,7 @@
               ></div>
 							<br>
 							<?php if($currencys){ ?>
-							<select class=" currencys" id="currencys" name="currencys">	
+							<select class="form-control currencys" id="currencys" name="currencys">	
 								<?php foreach($currencys as $currency){ ?>
 									<?php if($curent_currencys == $currency['code']){ ?>
 										<option value="<?php echo $currency['code']; ?>" selected="selected"><?php echo $currency['title']; ?></option>
@@ -94,7 +94,7 @@
       <?php } ?>
 			<?php } ?>
 
-				<div id="option-<?php echo $option['option_id']; ?>">
+				<div class="list-group-item ocfilter-option" id="option-<?php echo $option['option_id']; ?>">
 	        <div class="option-name">
 	          <?php echo $option['name']; ?>
 
@@ -128,7 +128,7 @@
 
 						<?php if ($option['type'] == 'select') { # Select type start ?>
 
-						<select class=" ocf-target<?php echo ($option['selected'] ? ' selected' : ''); ?>">
+						<select class="form-control ocf-target<?php echo ($option['selected'] ? ' selected' : ''); ?>">
 							<?php foreach ($option['values'] as $value) { ?>
 	            <?php if ($value['selected']) { ?>
 	            <option value="<?php echo $value['href']; ?>" id="v-<?php echo $value['id']; ?>" selected="selected"><?php echo $value['name']; ?></option>
