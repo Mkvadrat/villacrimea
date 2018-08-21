@@ -36,6 +36,7 @@
 <script src="catalog/view/theme/villacrimea/js/jquery.mmenu.all.js"></script>
 <script src="catalog/view/theme/villacrimea/js/sweetalert.min.js"></script>
 <script src="https://cdn.rawgit.com/leafo/sticky-kit/v1.1.2/jquery.sticky-kit.min.js"></script>
+<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 
 <link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/stylesheet.css">
 <link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/nomalize.css">

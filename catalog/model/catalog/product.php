@@ -12,6 +12,8 @@ class ModelCatalogProduct extends Model {
 				'product_id'       => $query->row['product_id'],
 				'name'             => $query->row['name'],
 				'description'      => $query->row['description'],
+				'heading_description' => $query->row['heading_description'],
+				'features' => $query->row['features'],
 				'uniq_options'     => $query->row['uniq_options'],
 				'currency_id'      => $query->row['currency_id'],
 				'meta_title'       => $query->row['meta_title'],
@@ -558,4 +560,23 @@ class ModelCatalogProduct extends Model {
 			return 0;
 		}
 	}
+	
+	public function getMapsProducts(){
+        $data = array();
+        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product AS p 
+                                    JOIN " . DB_PREFIX . "product_description AS pd 
+                                    ON (p.product_id = pd.product_id)
+                                    AND p.status = 1 ORDER BY p.date_modified ASC");
+        
+        foreach($query->rows as $result) {
+            $data[] = array(
+                'product_id'       => $result['product_id'],
+				'name'             => $result['name'],
+				'location'         => $result['location'],
+				'image'            => $result['image']
+            );
+        }
+
+        return $data;
+    }
 }

@@ -9,7 +9,8 @@ class ControllerProductProduct extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/home')
+			'href' => $this->url->link('common/home'),
+			'separator' => $this->language->get('text_separator')
 		);
 
 		$this->load->model('catalog/category');
@@ -33,7 +34,8 @@ class ControllerProductProduct extends Controller {
 				if ($category_info) {
 					$data['breadcrumbs'][] = array(
 						'text' => $category_info['name'],
-						'href' => $this->url->link('product/category', 'path=' . $path)
+						'href' => $this->url->link('product/category', 'path=' . $path),
+						'separator' => $this->language->get('text_separator')
 					);
 				}
 			}
@@ -62,7 +64,8 @@ class ControllerProductProduct extends Controller {
 
 				$data['breadcrumbs'][] = array(
 					'text' => $category_info['name'],
-					'href' => $this->url->link('product/category', 'path=' . $this->request->get['path'] . $url)
+					'href' => $this->url->link('product/category', 'path=' . $this->request->get['path'] . $url),
+					'separator' => $this->language->get('text_separator')
 				);
 			}
 		}
@@ -72,7 +75,8 @@ class ControllerProductProduct extends Controller {
 		if (isset($this->request->get['manufacturer_id'])) {
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('text_brand'),
-				'href' => $this->url->link('product/manufacturer')
+				'href' => $this->url->link('product/manufacturer'),
+				'separator' => $this->language->get('text_separator')
 			);
 
 			$url = '';
@@ -98,7 +102,8 @@ class ControllerProductProduct extends Controller {
 			if ($manufacturer_info) {
 				$data['breadcrumbs'][] = array(
 					'text' => $manufacturer_info['name'],
-					'href' => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $this->request->get['manufacturer_id'] . $url)
+					'href' => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $this->request->get['manufacturer_id'] . $url),
+					'separator' => $this->language->get('text_separator')
 				);
 			}
 		}
@@ -144,7 +149,8 @@ class ControllerProductProduct extends Controller {
 
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('text_search'),
-				'href' => $this->url->link('product/search', $url)
+				'href' => $this->url->link('product/search', $url),
+				'separator' => $this->language->get('text_separator')
 			);
 		}
 
@@ -211,7 +217,8 @@ class ControllerProductProduct extends Controller {
 
 			$data['breadcrumbs'][] = array(
 				'text' => $product_info['name'],
-				'href' => $this->url->link('product/product', $url . '&product_id=' . $this->request->get['product_id'])
+				'href' => $this->url->link('product/product', $url . '&product_id=' . $this->request->get['product_id']),
+				'separator' => $this->language->get('text_separator')
 			);
 
 			if ($product_info['meta_title']) {
@@ -268,6 +275,8 @@ class ControllerProductProduct extends Controller {
 			$data['button_continue'] = $this->language->get('button_continue');
 
 			$this->load->model('catalog/review');
+			
+			$this->load->model('catalog/ocfilter');
 
 			$data['tab_description'] = $this->language->get('tab_description');
 			$data['tab_attribute'] = $this->language->get('tab_attribute');
@@ -279,8 +288,14 @@ class ControllerProductProduct extends Controller {
 			$data['model'] = $product_info['model'];
 			$data['reward'] = $product_info['reward'];
 			$data['points'] = $product_info['points'];
-			$data['sticker'] = $this->getStickers($product_info['product_id']);
+			$data['stickers'] = $this->getStickers($product_info['product_id']);
 			$data['description'] = html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8');
+			$data['features'] = html_entity_decode($product_info['features'], ENT_QUOTES, 'UTF-8');
+			$data['heading_description'] = html_entity_decode($product_info['heading_description'], ENT_QUOTES, 'UTF-8');
+			$data['product_options'] = $this->model_catalog_product->getProductOptions((int)$this->request->get['product_id']);
+			$data['options'] = $this->model_catalog_product->getProductOptions($product_info['product_id']);
+			$data['filter_options'] = $this->model_catalog_ocfilter->getValueOptionsByProduct($product_info['product_id']);
+			$data['uniq_options'] = $product_info['uniq_options'] = 1 ? $product_info['uniq_options'] : 0;
 
 			if ($product_info['quantity'] <= 0) {
 				$data['stock'] = $product_info['stock_status'];
@@ -289,7 +304,7 @@ class ControllerProductProduct extends Controller {
 			} else {
 				$data['stock'] = $this->language->get('text_instock');
 			}
-
+			
 			$this->load->model('tool/image');
 
 			if ($product_info['image']) {
@@ -316,10 +331,24 @@ class ControllerProductProduct extends Controller {
 				);
 			}
 
-			if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
-				$data['price'] = $this->currency->format($this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
-			} else {
-				$data['price'] = false;
+			$this->load->model('localisation/currency');
+	
+			$currencys = $this->model_localisation_currency->getCurrency($product_info['currency_id']);
+	
+			foreach($currencys as $currency){
+				if ($product_info['currency_id'] != 5) {
+					$price_rub = $this->currency->convert($product_info['price'], $currency['code'], 'RUB');
+					$data['rub'] = $this->currency->format($this->tax->calculate($price_rub, $product_info['tax_class_id'], $this->config->get('config_tax')), 'RUB', 1, $format= true);
+				} else {
+					$data['rub'] = $this->currency->format($this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax')), 'RUB', 1, $format= true);
+				}
+	
+			   if ($product_info['currency_id'] != 2) {
+					$price_dollar = $this->currency->convert($product_info['price'], $currency['code'], 'USD');
+					$data['price'] = $this->currency->format($this->tax->calculate($price_dollar, $product_info['tax_class_id'], $this->config->get('config_tax')), 'USD', 1, $format= true);
+				} else {
+					$data['price'] = $this->currency->format($this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax')), 'USD', 1, $format= true);
+				}
 			}
 
 			if ((float)$product_info['special']) {
@@ -345,7 +374,7 @@ class ControllerProductProduct extends Controller {
 				);
 			}
 
-			$data['options'] = array();
+			/*$data['options'] = array();
 
 			foreach ($this->model_catalog_product->getProductOptions($this->request->get['product_id']) as $option) {
 				$product_option_value_data = array();
@@ -378,7 +407,7 @@ class ControllerProductProduct extends Controller {
 					'value'                => $option['value'],
 					'required'             => $option['required']
 				);
-			}
+			}*/
 
 			if ($product_info['minimum']) {
 				$data['minimum'] = $product_info['minimum'];
@@ -482,6 +511,41 @@ class ControllerProductProduct extends Controller {
 			$data['recurrings'] = $this->model_catalog_product->getProfiles($this->request->get['product_id']);
 
 			$this->model_catalog_product->updateViewed($this->request->get['product_id']);
+			
+			//Maps
+			$data['maps'] = array();
+			
+			$results = $this->model_catalog_product->getMapsProducts();
+			
+			foreach($results as $result){
+				
+				if(!empty($result['location'])){
+					$lat_lng = $result['location'];
+				}else{
+					$lat_lng = '44.616687, 33.525432';
+				}
+				
+				if ($result['image'] && file_exists(DIR_IMAGE . $result['image'])){
+					list($width_orig, $height_orig) = getimagesize(DIR_IMAGE . $result['image']);
+					
+					if ($width_orig>900) {
+						$height_orig = $height_orig * 900 / $width_orig;
+						$width_orig = 900;
+					}
+					
+					$image = $this->model_tool_image->resize($result['image'], $width_orig, $height_orig);
+				}else{
+					$image = $this->model_tool_image->resize('placeholder.png', $this->config->get($this->config->get('config_theme') . '_image_thumb_width'), $this->config->get($this->config->get('config_theme') . '_image_thumb_height'));
+				}
+				
+				$data['maps'][] = array(
+					'product_id'  => $result['product_id'],
+					'image'       => $image,
+					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id']),
+					'name'        => utf8_substr(strip_tags(html_entity_decode($result['name'], ENT_QUOTES, 'UTF-8')), 0, 60),
+					'lat_lng'     =>  $lat_lng
+                );
+			}
 
 			$data['column_left'] = $this->load->controller('common/column_left');
 			$data['column_right'] = $this->load->controller('common/column_right');
@@ -544,7 +608,8 @@ class ControllerProductProduct extends Controller {
 
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('text_error'),
-				'href' => $this->url->link('product/product', $url . '&product_id=' . $product_id)
+				'href' => $this->url->link('product/product', $url . '&product_id=' . $product_id),
+				'separator' => $this->language->get('text_separator')
 			);
 
 			$this->document->setTitle($this->language->get('text_error'));
