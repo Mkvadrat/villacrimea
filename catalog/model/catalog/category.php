@@ -66,4 +66,10 @@ class ModelCatalogCategory extends Model {
 
 		return $query->row['total'];
 	}
+	
+	public function getCase($category_id){
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "category WHERE category_id = '". (int) $category_id . "'");
+		
+		return $query->row['case_id'];
+	}
 }

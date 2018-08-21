@@ -32,13 +32,14 @@ class ControllerExtensionModuleMainFilter extends Controller {
 			$filter_categories = $this->model_catalog_category->getCategories(0);
 	
 			foreach ($filter_categories as $category) {
-				// Level 1
-				$data['filter_categories'][] = array(
-					'name'     => $category['name'],
-					'column'   => $category['column'] ? $category['column'] : 1,
-					'href'     => $category['category_id']
-				);
-
+				if ($category['top']) {
+					// Level 1
+					$data['filter_categories'][] = array(
+						'name'     => $category['name'],
+						'column'   => $category['column'] ? $category['column'] : 1,
+						'href'     => $category['category_id']
+					);
+				}
 			}
 			
 			$this->load->model('catalog/ocfilter');

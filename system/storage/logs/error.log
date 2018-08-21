@@ -2803,3 +2803,608 @@
 2018-08-17 17:32:17 - PHP Notice:  Undefined variable: action in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\main_filter.tpl on line 12
 2018-08-17 17:32:23 - PHP Notice:  Undefined variable: action in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\main_filter.tpl on line 12
 2018-08-17 17:32:49 - PHP Notice:  Undefined variable: action in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\main_filter.tpl on line 12
+2018-08-17 17:33:50 - PHP Notice:  Undefined variable: action in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\main_filter.tpl on line 12
+2018-08-17 17:34:03 - PHP Notice:  Undefined variable: action in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\main_filter.tpl on line 12
+2018-08-20 9:35:52 - PHP Notice:  Undefined variable: action in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\main_filter.tpl on line 12
+2018-08-20 9:36:17 - PHP Notice:  Undefined variable: action in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\main_filter.tpl on line 12
+2018-08-20 9:38:46 - PHP Notice:  Undefined variable: action in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\main_filter.tpl on line 12
+2018-08-20 9:53:01 - PHP Notice:  Undefined variable: ocfilter_stock_status_type in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\ocfilter.tpl on line 205
+2018-08-20 9:53:01 - PHP Notice:  Undefined variable: ocfilter_stock_status_type in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\ocfilter.tpl on line 205
+2018-08-20 9:53:01 - PHP Notice:  Undefined variable: ocfilter_stock_status_type in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\ocfilter.tpl on line 205
+2018-08-20 12:16:21 - PHP Notice:  Undefined variable: action in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\main_filter.tpl on line 12
+2018-08-20 14:44:54 - PHP Notice:  Undefined variable: cat_image in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 183
+2018-08-20 14:44:54 - PHP Notice:  Undefined variable: cat_image in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 183
+2018-08-20 14:44:54 - PHP Notice:  Undefined variable: cat_image in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 183
+2018-08-20 14:44:54 - PHP Notice:  Undefined variable: cat_image in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 183
+2018-08-20 14:44:54 - PHP Notice:  Undefined variable: cat_image in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 183
+2018-08-20 15:11:53 - PHP Notice:  Undefined index: filter_name in D:\OpenServer\domains\villacrimea.loc\admin\controller\catalog\category.php on line 458
+2018-08-20 15:19:52 - PHP Warning:  Illegal string offset 'case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 126
+2018-08-20 15:19:52 - PHP Warning:  Illegal string offset 'case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 129
+2018-08-20 15:19:52 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 129
+2018-08-20 15:19:52 - PHP Warning:  Illegal string offset 'case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 126
+2018-08-20 15:19:52 - PHP Warning:  Illegal string offset 'case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 129
+2018-08-20 15:19:52 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 129
+2018-08-20 15:20:24 - PHP Warning:  Illegal string offset 'case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 126
+2018-08-20 15:20:24 - PHP Warning:  Illegal string offset 'case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 129
+2018-08-20 15:20:24 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 129
+2018-08-20 15:20:24 - PHP Warning:  Illegal string offset 'case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 126
+2018-08-20 15:20:24 - PHP Warning:  Illegal string offset 'case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 129
+2018-08-20 15:20:24 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 129
+2018-08-20 15:21:23 - PHP Warning:  Illegal string offset 'case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 126
+2018-08-20 15:21:23 - PHP Warning:  Illegal string offset 'case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 129
+2018-08-20 15:21:23 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 129
+2018-08-20 15:21:23 - PHP Warning:  Illegal string offset 'case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 126
+2018-08-20 15:21:23 - PHP Warning:  Illegal string offset 'case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 129
+2018-08-20 15:21:23 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 129
+2018-08-20 15:48:18 - PHP Notice:  Undefined variable: action in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\main_filter.tpl on line 12
+2018-08-20 15:49:18 - PHP Notice:  Undefined variable: action in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\main_filter.tpl on line 12
+2018-08-20 15:50:19 - PHP Notice:  Undefined variable: action in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\main_filter.tpl on line 12
+2018-08-20 16:01:04 - PHP Warning:  Illegal string offset 'value' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 61
+2018-08-20 16:01:04 - PHP Warning:  Illegal string offset 'value' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 61
+2018-08-20 16:01:04 - PHP Warning:  Illegal string offset 'value' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 61
+2018-08-20 16:01:13 - PHP Warning:  Illegal string offset 'value' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 61
+2018-08-20 16:01:13 - PHP Warning:  Illegal string offset 'value' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 61
+2018-08-20 16:01:13 - PHP Warning:  Illegal string offset 'value' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 61
+2018-08-20 16:01:28 - PHP Warning:  Illegal string offset 'value' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 61
+2018-08-20 16:01:28 - PHP Notice:  Undefined offset: 1 in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 62
+2018-08-20 16:01:28 - PHP Warning:  Illegal string offset 'value' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 61
+2018-08-20 16:01:28 - PHP Notice:  Undefined offset: 1 in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 62
+2018-08-20 16:01:28 - PHP Warning:  Illegal string offset 'value' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 61
+2018-08-20 16:01:28 - PHP Notice:  Undefined offset: 1 in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 62
+2018-08-20 16:01:36 - PHP Warning:  Illegal string offset 'value' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 61
+2018-08-20 16:01:36 - PHP Warning:  Illegal string offset 'value' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 61
+2018-08-20 16:01:36 - PHP Warning:  Illegal string offset 'value' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 61
+2018-08-20 16:01:40 - PHP Warning:  Illegal string offset 'value' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 61
+2018-08-20 16:01:40 - PHP Warning:  Illegal string offset 'value' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 61
+2018-08-20 16:01:40 - PHP Warning:  Illegal string offset 'value' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 61
+2018-08-20 16:02:21 - PHP Warning:  Illegal string offset 'value' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 61
+2018-08-20 16:02:21 - PHP Warning:  Illegal string offset 'value' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 61
+2018-08-20 16:02:21 - PHP Warning:  Illegal string offset 'value' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 61
+2018-08-20 16:02:31 - PHP Warning:  Illegal string offset 'value' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 61
+2018-08-20 16:02:31 - PHP Warning:  Illegal string offset 'value' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 61
+2018-08-20 16:02:31 - PHP Warning:  Illegal string offset 'value' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 61
+2018-08-20 16:09:01 - PHP Notice:  Undefined offset: 1 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 338
+2018-08-20 16:09:01 - PHP Notice:  Undefined offset: 1 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 340
+2018-08-20 16:40:35 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 250
+2018-08-20 16:40:35 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 250
+2018-08-20 16:42:06 - PHP Notice:  Undefined variable: action in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\main_filter.tpl on line 12
+2018-08-20 16:42:23 - PHP Notice:  Undefined variable: action in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\main_filter.tpl on line 12
+2018-08-20 16:53:51 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-20 16:53:51 - PHP Notice:  Undefined variable: price in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 272
+2018-08-20 16:53:51 - PHP Notice:  Undefined variable: rub in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 273
+2018-08-20 16:53:51 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-20 16:53:51 - PHP Notice:  Undefined variable: price in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 272
+2018-08-20 16:53:51 - PHP Notice:  Undefined variable: rub in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 273
+2018-08-20 17:03:56 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 276
+2018-08-20 17:10:55 - PHP Notice:  Undefined variable: i in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 83
+2018-08-20 17:10:55 - PHP Notice:  Undefined variable: i in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 86
+2018-08-20 17:15:58 - PHP Notice:  Undefined variable: action in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\main_filter.tpl on line 12
+2018-08-20 17:16:10 - PHP Notice:  Undefined variable: action in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\main_filter.tpl on line 12
+2018-08-20 17:17:46 - PHP Notice:  Undefined variable: action in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\main_filter.tpl on line 12
+2018-08-20 17:54:57 - PHP Notice:  Undefined index: case_id in D:\OpenServer\domains\villacrimea.loc\admin\controller\catalog\category.php on line 473
+2018-08-20 18:00:53 - PHP Warning:  Illegal string offset 'category_case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-20 18:00:53 - PHP Warning:  Illegal string offset 'category_case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 144
+2018-08-20 18:00:53 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 144
+2018-08-20 18:00:53 - PHP Warning:  Illegal string offset 'category_case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-20 18:00:53 - PHP Warning:  Illegal string offset 'category_case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 142
+2018-08-20 18:00:53 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 142
+2018-08-21 10:47:43 - PHP Warning:  Illegal string offset 'category_case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:47:43 - PHP Warning:  Illegal string offset 'category_case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 144
+2018-08-21 10:47:43 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 144
+2018-08-21 10:47:43 - PHP Warning:  Illegal string offset 'category_case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:47:43 - PHP Warning:  Illegal string offset 'category_case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 142
+2018-08-21 10:47:43 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 142
+2018-08-21 10:49:17 - PHP Notice:  Undefined index: case_id in D:\OpenServer\domains\villacrimea.loc\admin\controller\catalog\category.php on line 485
+2018-08-21 10:49:17 - PHP Notice:  Undefined index: case_id in D:\OpenServer\domains\villacrimea.loc\admin\controller\catalog\category.php on line 485
+2018-08-21 10:49:17 - PHP Notice:  Undefined index: case_id in D:\OpenServer\domains\villacrimea.loc\admin\controller\catalog\category.php on line 485
+2018-08-21 10:49:17 - PHP Notice:  Undefined index: case_id in D:\OpenServer\domains\villacrimea.loc\admin\controller\catalog\category.php on line 485
+2018-08-21 10:49:17 - PHP Warning:  Illegal string offset 'category_case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:49:17 - PHP Notice:  Undefined variable: current_case in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:49:17 - PHP Warning:  Illegal string offset 'case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 144
+2018-08-21 10:49:17 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 144
+2018-08-21 10:49:17 - PHP Warning:  Illegal string offset 'category_case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:49:17 - PHP Notice:  Undefined variable: current_case in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:49:17 - PHP Warning:  Illegal string offset 'case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 144
+2018-08-21 10:49:17 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 144
+2018-08-21 10:49:36 - PHP Notice:  Undefined index: case_id in D:\OpenServer\domains\villacrimea.loc\admin\controller\catalog\category.php on line 485
+2018-08-21 10:49:36 - PHP Notice:  Undefined index: case_id in D:\OpenServer\domains\villacrimea.loc\admin\controller\catalog\category.php on line 485
+2018-08-21 10:49:36 - PHP Notice:  Undefined index: case_id in D:\OpenServer\domains\villacrimea.loc\admin\controller\catalog\category.php on line 485
+2018-08-21 10:49:36 - PHP Notice:  Undefined index: case_id in D:\OpenServer\domains\villacrimea.loc\admin\controller\catalog\category.php on line 485
+2018-08-21 10:49:36 - PHP Warning:  Illegal string offset 'category_case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:49:36 - PHP Notice:  Undefined variable: current_case in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:49:36 - PHP Warning:  Illegal string offset 'case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 144
+2018-08-21 10:49:36 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 144
+2018-08-21 10:49:36 - PHP Warning:  Illegal string offset 'category_case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:49:36 - PHP Notice:  Undefined variable: current_case in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:49:36 - PHP Warning:  Illegal string offset 'case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 144
+2018-08-21 10:49:36 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 144
+2018-08-21 10:50:01 - PHP Warning:  Illegal string offset 'category_case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:50:01 - PHP Notice:  Undefined variable: current_case in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:50:01 - PHP Warning:  Illegal string offset 'case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 144
+2018-08-21 10:50:01 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 144
+2018-08-21 10:50:01 - PHP Warning:  Illegal string offset 'category_case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:50:01 - PHP Notice:  Undefined variable: current_case in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:50:01 - PHP Warning:  Illegal string offset 'case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 144
+2018-08-21 10:50:01 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 144
+2018-08-21 10:50:23 - PHP Warning:  Illegal string offset 'category_case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:50:23 - PHP Warning:  Illegal string offset 'case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 142
+2018-08-21 10:50:23 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 142
+2018-08-21 10:50:23 - PHP Warning:  Illegal string offset 'category_case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:50:23 - PHP Warning:  Illegal string offset 'case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 142
+2018-08-21 10:50:23 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 142
+2018-08-21 10:50:43 - PHP Warning:  Illegal string offset 'category_case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:50:43 - PHP Warning:  Illegal string offset 'case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 142
+2018-08-21 10:50:43 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 142
+2018-08-21 10:50:43 - PHP Warning:  Illegal string offset 'category_case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:50:43 - PHP Warning:  Illegal string offset 'case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 142
+2018-08-21 10:50:43 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 142
+2018-08-21 10:51:29 - PHP Warning:  Illegal string offset 'category_case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:51:29 - PHP Warning:  Illegal string offset 'case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 142
+2018-08-21 10:51:29 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 142
+2018-08-21 10:51:29 - PHP Warning:  Illegal string offset 'category_case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:51:29 - PHP Warning:  Illegal string offset 'case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 142
+2018-08-21 10:51:29 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 142
+2018-08-21 10:52:33 - PHP Warning:  Illegal string offset 'category_case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 142
+2018-08-21 10:52:33 - PHP Warning:  Illegal string offset 'case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 143
+2018-08-21 10:52:33 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 143
+2018-08-21 10:52:33 - PHP Warning:  Illegal string offset 'category_case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 142
+2018-08-21 10:52:33 - PHP Warning:  Illegal string offset 'case_id' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 143
+2018-08-21 10:52:33 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 143
+2018-08-21 10:53:07 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 142
+2018-08-21 10:53:07 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 142
+2018-08-21 10:53:07 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 142
+2018-08-21 10:53:07 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 142
+2018-08-21 10:53:53 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:53:53 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:53:53 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:53:53 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:53:59 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:53:59 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:53:59 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:53:59 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:54:34 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:54:34 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:54:34 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:54:34 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:54:40 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:54:40 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:54:40 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:54:40 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:54:45 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:54:45 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:54:45 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:54:45 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:55:22 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:55:22 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:55:22 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:55:22 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:55:25 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:55:25 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:55:25 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:55:25 - PHP Notice:  Undefined index: category_case_id in D:\OpenServer\domains\villacrimea.loc\admin\view\template\catalog\category_form.tpl on line 141
+2018-08-21 10:56:45 - PHP Notice:  Undefined variable: action in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\main_filter.tpl on line 12
+2018-08-21 10:59:53 - PHP Notice:  Undefined variable: action in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\main_filter.tpl on line 12
+2018-08-21 11:07:12 - PHP Notice:  Undefined variable: action in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\main_filter.tpl on line 12
+2018-08-21 11:37:33 - PHP Notice:  Undefined variable: lang in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\blog_featured.tpl on line 55
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:38:53 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:38:53 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:38:53 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:38:53 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:38:53 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:38:53 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:38:53 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:38:53 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:38:53 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:38:53 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:38:53 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:38:53 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:38:53 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:38:53 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:38:53 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:38:53 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:38:53 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:38:53 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:38:53 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:38:53 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:38:53 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:38:53 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:38:53 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:38:53 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:38:53 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:39:28 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:39:28 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:39:28 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:39:28 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:39:28 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:39:28 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:39:28 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:39:28 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:39:28 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:39:28 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:39:28 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:39:28 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:39:28 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:39:28 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:39:28 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:39:28 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:39:28 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:39:28 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:39:28 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:39:28 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:39:28 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:39:28 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:39:28 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:39:28 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 227
+2018-08-21 11:39:28 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 231
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:07 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:07 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:07 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:07 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:07 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:07 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:07 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:07 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:07 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:07 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:07 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:07 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:07 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:07 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:07 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:07 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:07 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:07 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:07 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:07 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:07 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:07 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:07 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:07 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:07 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:21 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:21 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:21 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:21 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:21 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:21 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:21 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:21 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:21 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:21 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:21 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:21 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:21 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:21 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:21 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:21 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:21 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:21 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:21 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:21 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:21 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:21 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:21 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:21 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:21 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:50 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:50 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:50 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:50 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:50 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:50 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:50 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:50 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:50 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:50 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:50 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:50 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:50 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:50 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:50 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:50 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:50 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:50 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:50 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:50 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:50 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:50 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:50 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 221
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 222
+2018-08-21 11:40:50 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:40:50 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:06 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:41:06 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:41:06 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:06 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:41:06 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:06 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:41:06 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:41:06 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:06 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:41:06 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:06 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:41:06 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:06 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:41:06 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:06 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:41:06 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:06 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:41:06 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:41:06 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:06 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:41:06 - PHP Notice:  Uninitialized string offset: 0 in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:41:06 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:06 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:41:06 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:06 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:41:06 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:06 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:41:06 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:06 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:41:06 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:06 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:41:06 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:06 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:41:06 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:06 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 228
+2018-08-21 11:41:06 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:18 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:18 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:18 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:18 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:18 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:18 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:18 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:18 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:18 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:18 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:18 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:18 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:18 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:18 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:18 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:18 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:52 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:52 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:52 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:52 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:52 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:52 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:52 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:52 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:52 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:52 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:52 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:52 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:52 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:52 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:52 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:41:52 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:42:00 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 232
+2018-08-21 11:43:36 - PHP Notice:  Undefined index: name in D:\OpenServer\domains\villacrimea.loc\catalog\controller\product\category.php on line 233
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 152
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'description' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 153
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'href' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 154
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'image_agent' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 157
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'category_name' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 158
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 161
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'short_description' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 162
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 152
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'description' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 153
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'href' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 154
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'image_agent' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 157
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'category_name' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 158
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 161
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'short_description' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 162
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 152
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'description' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 153
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'href' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 154
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'image_agent' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 157
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'category_name' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 158
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 161
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'short_description' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 162
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 152
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'description' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 153
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'href' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 154
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'image_agent' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 157
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'category_name' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 158
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 161
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'short_description' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 162
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 152
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'description' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 153
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'href' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 154
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'image_agent' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 157
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'category_name' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 158
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 161
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'short_description' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 162
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 152
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'description' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 153
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'href' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 154
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'image_agent' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 157
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'category_name' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 158
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 161
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'short_description' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 162
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'name' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 152
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'description' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 153
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'href' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 154
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'image_agent' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 157
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'category_name' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 158
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'image' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 161
+2018-08-21 11:51:07 - PHP Warning:  Illegal string offset 'short_description' in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 162
+2018-08-21 12:07:11 - PHP Notice:  Undefined variable: action in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\main_filter.tpl on line 12

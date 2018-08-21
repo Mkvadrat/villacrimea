@@ -1,3 +1,11 @@
+<?php if($categories){ ?>
+<ul class="categories">
+    <?php foreach($categories as $category){ ?>
+        <li><a href="<?php echo $category['href'] ?>"><?php echo $category['name'] ?></a></li>
+    <?php } ?>
+</ul>
+<?php } ?>
+
 <?php if ($options || $show_price) { ?>
 <div class="visible-xs" id="ocfilter-mobile">
   <nav class="navbar navbar-default">
