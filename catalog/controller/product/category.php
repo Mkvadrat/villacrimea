@@ -218,8 +218,6 @@ class ControllerProductCategory extends Controller {
 			
 			$data['cases'] = array();
 			
-			
-			//var_dump($article_info);
 			if ($article_info['image']) {
 				$image = $this->model_tool_image->resize($article_info['image'], 387, 239);
 			} else {
@@ -289,7 +287,7 @@ class ControllerProductCategory extends Controller {
 				}
 
 				if ((float)$result['special']) {
-					$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+					$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')), 'USD', $format= true);
 				} else {
 					$special = false;
 				}
@@ -548,6 +546,5 @@ class ControllerProductCategory extends Controller {
 		}
 		
 		return $stick;
-	
 	}
 }

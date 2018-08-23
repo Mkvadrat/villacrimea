@@ -3,7 +3,7 @@
         <button data-fancybox-close="" class="fancybox-close-small" title="Close"><span>X</span></button>
         <div class="call_me_back_inner">
             <p class="title">Форма обратной связи</p>
-            <form action="">
+            <div>
                 <input type="text" id="name" placeholder="Имя*">
                 <input type="text" id="phone" placeholder="Телефон*">
                 <input type="text" id="email" placeholder="E-mail">
@@ -22,7 +22,7 @@
                         с <a href="#">политикой конфиденциальности</a>
                 </label>
                 <button type="submit" onclick="sendForm();" class="casual_button">Отправить</button>
-            </form>
+            </div>
         </div>
     </div>
     

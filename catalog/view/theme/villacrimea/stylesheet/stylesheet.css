@@ -1123,6 +1123,14 @@ section .about .text .title {
     overflow: visible;
 }
 
+#callback_agent {
+    max-width: 400px;
+    padding: 30px;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    overflow: visible;
+}
+
 .call_me_back_inner {
     text-align: center;
 }
@@ -4259,4 +4267,8 @@ footer .m2 img {
     width: 40px;
     position: relative;
     padding-left: 5px;
+}
+
+#print1, #print2, #print3, #print4, #print5, #print6, #print7, #print8, #print9, #print10{
+    margin-bottom: 20px;
 }

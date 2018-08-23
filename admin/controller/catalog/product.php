@@ -1101,6 +1101,33 @@ class ControllerCatalogProduct extends Controller {
 		} else {
 			$data['weight'] = '';
 		}
+		
+		//case		
+		$this->load->model('blog/article');
+		
+		$filter_data = array(
+			'sort'        => 'name',
+			'order'       => 'ASC',
+		);
+
+		$case_data = $this->model_blog_article->getArticles($filter_data);
+
+		foreach($case_data as $case){
+			$data['case'][] = array(
+				'name' => $case['name'],
+				'case_id' => $case['article_id']
+			);
+		}
+		
+		$data['current_case'] = $product_info['case_id'];
+		
+		if (isset($this->request->post['case_id'])) {
+			$data['case_id'] = $this->request->post['case_id'];
+		} elseif (!empty($product_info)) {
+			$data['case_id'] = $product_info['case_id'];
+		} else {
+			$data['case_id'] = '';
+		}
 
 		$this->load->model('localisation/weight_class');
 

@@ -1,14 +1,24 @@
 <?php
 class ModelUserUser extends Model {
 	public function addUser($data) {
-		$this->db->query("INSERT INTO `" . DB_PREFIX . "user` SET username = '" . $this->db->escape($data['username']) . "', user_group_id = '" . (int)$data['user_group_id'] . "', salt = '" . $this->db->escape($salt = token(9)) . "', password = '" . $this->db->escape(sha1($salt . sha1($salt . sha1($data['password'])))) . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', email = '" . $this->db->escape($data['email']) . "', image = '" . $this->db->escape($data['image']) . "', status = '" . (int)$data['status'] . "', date_added = NOW()");
-	
+		$this->db->query("INSERT INTO `" . DB_PREFIX . "user` SET username = '" . $this->db->escape($data['username']) . "', user_group_id = '" . (int)$data['user_group_id'] . "', salt = '" . $this->db->escape($salt = token(9)) . "', `category_case_id` = '" . (int)$data['category_case_id'] . "', `category_id` = '" . (int)$data['product_category'] . "', password = '" . $this->db->escape(sha1($salt . sha1($salt . sha1($data['password'])))) . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', email = '" . $this->db->escape($data['email']) . "', phone = '" . $this->db->escape($data['phone']) . "', image = '" . $this->db->escape($data['image']) . "', status = '" . (int)$data['status'] . "', date_added = NOW()");
+		
+		foreach ($data['agent_description'] as $language_id => $value) {
+			$this->db->query("INSERT INTO `" . DB_PREFIX . "user_description` SET user_id = '" . (int)$user_id . "', language_id = '" . (int)$language_id . "', specialization = '" . $this->db->escape($value['specialization']) . "'");
+		}
+		
 		return $this->db->getLastId();
 	}
 
 	public function editUser($user_id, $data) {
-		$this->db->query("UPDATE `" . DB_PREFIX . "user` SET username = '" . $this->db->escape($data['username']) . "', user_group_id = '" . (int)$data['user_group_id'] . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', email = '" . $this->db->escape($data['email']) . "', image = '" . $this->db->escape($data['image']) . "', status = '" . (int)$data['status'] . "' WHERE user_id = '" . (int)$user_id . "'");
-
+		$this->db->query("UPDATE `" . DB_PREFIX . "user` SET username = '" . $this->db->escape($data['username']) . "', `category_case_id` = '" . (int)$data['category_case_id'] . "', `category_id` = '" . (int)$data['product_category'] . "', user_group_id = '" . (int)$data['user_group_id'] . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', email = '" . $this->db->escape($data['email']) . "', phone = '" . $this->db->escape($data['phone']) . "', image = '" . $this->db->escape($data['image']) . "', status = '" . (int)$data['status'] . "' WHERE user_id = '" . (int)$user_id . "'");
+		
+		$this->db->query("DELETE FROM " . DB_PREFIX . "user_description WHERE user_id = '" . (int)$user_id . "'");
+		
+		foreach ($data['agent_description'] as $language_id => $value) {
+			$this->db->query("INSERT INTO `" . DB_PREFIX . "user_description` SET user_id = '" . (int)$user_id . "', language_id = '" . (int)$language_id . "', specialization = '" . $this->db->escape($value['specialization']) . "'");
+		}
+		
 		if ($data['password']) {
 			$this->db->query("UPDATE `" . DB_PREFIX . "user` SET salt = '" . $this->db->escape($salt = token(9)) . "', password = '" . $this->db->escape(sha1($salt . sha1($salt . sha1($data['password'])))) . "' WHERE user_id = '" . (int)$user_id . "'");
 		}
@@ -24,6 +34,7 @@ class ModelUserUser extends Model {
 
 	public function deleteUser($user_id) {
 		$this->db->query("DELETE FROM `" . DB_PREFIX . "user` WHERE user_id = '" . (int)$user_id . "'");
+		$this->db->query("DELETE FROM `" . DB_PREFIX . "user_description` WHERE user_id = '" . (int)$user_id . "'");
 	}
 
 	public function getUser($user_id) {
@@ -132,5 +143,20 @@ class ModelUserUser extends Model {
 		$query = $this->db->query("SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "user` WHERE LCASE(email) = '" . $this->db->escape(utf8_strtolower($email)) . "'");
 
 		return $query->row['total'];
+	}
+	
+		
+	public function getAgentDescriptions($user_id) {
+		$product_description_data = array();
+
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "user_description WHERE user_id = '" . (int)$user_id . "'");
+
+		foreach ($query->rows as $result) {
+			$product_description_data[$result['language_id']] = array(
+				'specialization' => $result['specialization'],
+			);
+		}
+
+		return $product_description_data;
 	}
 }

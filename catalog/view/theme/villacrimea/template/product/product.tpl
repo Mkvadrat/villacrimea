@@ -20,15 +20,17 @@
           </ul>
           <hr>
       </div>
-      <div class="object_title">
+      
+      <div class="object_title ">
           <a class="backward back"><img src="catalog/view/theme/villacrimea/image/backward.png" alt="">К списку</a>
-          <p class="title"><?php echo $heading_title; ?></p>
+          <p class="title" id="print1"><?php echo $heading_title; ?></p>
           
-          <?php echo $heading_description; ?>
+          <span id="print6"><?php echo $heading_description; ?></span>
       </div>
+      
       <div class="actual_object">
           <div class="left_side">
-              <div class="object_photo">
+              <div class="object_photo" id="print7">
               <?php if ($thumb || $images) { ?>
                 <?php if ($thumb) { ?>
                 <a href="<?php echo $popup; ?>" data-fancybox="gallery" class="main_photo" style="background-image: url('<?php echo $popup; ?>');"></a>
@@ -41,7 +43,7 @@
               <?php } ?>
               </div>
               
-              <div class="object_description">
+              <div class="object_description" id="print8">
                   <p class="title">Описание:</p>
                   <?php echo $description; ?>
               </div>
@@ -123,8 +125,8 @@
           </div>
           <div class="right_side">
               <div class="save_object">
-                  <a href="#"><img src="./image/pdf1.png" alt="">Сохранить PDF</a>
-                  <a href="#"><img src="./image/print.png" alt="">Напечатать страницу</a>
+                  <a href="<?php echo $action_pdf; ?>"><img src="catalog/view/theme/villacrimea/image/pdf1.png" alt="">Сохранить PDF</a>
+                  <a id="print"><img src="catalog/view/theme/villacrimea/image/print.png" alt="">Напечатать страницу</a>
               </div>
               
               <div class="card_label">
@@ -134,10 +136,10 @@
                   <?php } ?>
                 <?php } ?>
                 
-                <span class="object_id">№ <?php echo $model; ?></span>
+                <span class="object_id" id="print9">№ <?php echo $model; ?></span>
               </div>
               
-              <div class="details">
+              <div class="details" id="print10">
                   <p class="title">Детали:</p>
                   <?php if ($price || $rub) { ?>
                   <?php if (!$special) { ?>
@@ -175,127 +177,158 @@
               <?php } ?>
               
               <div class="realtor">
-                  <div class="img" style="background-image: url('./image/elena.png')"></div>
-                  <p class="name">Коцеблюк Елена</p>
-                  <p class="job">Исполнительный директор</p>
-                  <a href="#" class="cases"><img src="./image/case.png" alt="">Посмотреть все кейсы агента</a>
-                  <a href="#" class="realtor_objects"><img src="./image/home1.png" alt="">Посмотреть все объекты агента</a>
-                  <p class="tel">Телефон: <a href="tel:+79788718100">+79788718100</a></p>
-                  <p class="tel">E-mail: <a href="mailto:villa-crimea@mail.ru">villa-crimea@mail.ru</a></p>
-                  <a href="#" class="casual_button">Написать сообщение</a>
+                  <div class="img" style="background-image: url('<?php echo $image_agent; ?>')"></div>
+              
+                  <p class="name" id="print2"><?php echo $agent_name; ?></p>
+                  
+                  <?php if($specialization){ ?>
+                  <p class="job" id="print3"><?php echo $specialization; ?></p>
+                  <?php } ?>
+                  
+                  <?php if($case_id) {?>
+                    <a href="<?php echo $view_all_cases; ?>" class="cases"><img src="catalog/view/theme/villacrimea/image/case.png" alt="">Посмотреть все кейсы агента</a>
+                  <?php } ?>
+                  
+                  <?php if($category_id_object) {?>
+                  <a href="<?php echo $view_all_object; ?>" class="realtor_objects"><img src="catalog/view/theme/villacrimea/image/home1.png" alt="">Посмотреть все объекты агента</a>
+                  <?php } ?>
+                  
+                  <?php if($phone){ ?>
+                  <p class="tel" id="print4">Телефон: <a href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a></p>
+                  <?php } ?>
+                  
+                  <p class="tel" id="print5">E-mail: <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></p>
+                  
+                  <a href="#callback_agent" class="casual_button callback">Написать сообщение</a>
+                  
+                  <div id="callback_agent" style="display: none;">
+                      <button data-fancybox-close="" class="fancybox-close-small" title="Close"><span>X</span></button>
+                      <div class="call_me_back_inner">
+                          <p class="title">Форма обратной связи</p>
+                          <div>
+                              <input type="text" id="name_agent" placeholder="Имя*">
+                              <input type="text" id="phone_agent" placeholder="Телефон*">
+                              <input type="text" id="email_agent" placeholder="E-mail">
+                              <input type="hidden" value="<?php echo $email; ?>" id="hidden_email">
+                              <div class="textarea">
+                                  <textarea id="message_agent" onkeyup="textAreaAdjust(this);" placeholder="Вопрос"></textarea>
+                                  <script>
+                                      function textAreaAdjust(o) {
+                                          o.style.height = "1px";
+                                          o.style.height = (5+o.scrollHeight)+"px";
+                                      }
+                                  </script>
+                              </div>
+                              <input type="checkbox" name="" id="conf_politics_one">
+                              <label for="conf_politics">
+                                      я согласен(согласна)<br>
+                                      с <a href="#">политикой конфиденциальности</a>
+                              </label>
+                              <button type="submit" onclick="sendFormAgent();" class="casual_button">Отправить</button>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <script type="text/javascript">
+                  function sendFormAgent(){
+                      $.ajax({
+                          url: 'index.php?route=product/product/sendFormAgent',
+                          type: 'post',
+                          data: {  
+                              'name' : $('#name_agent').val(),
+                              'tel' : $('#phone_agent').val(),
+                              'email' : $('#email_agent').val(),
+                              'email_agent' : $('#hidden_email').val(),
+                              'message' : $('#message_agent').val(),
+                          },
+                          dataType: 'json',
+                          success: function(data) {
+                              swal({
+                                  title: data.message,
+                                  text: "",
+                                  timer: 1000,
+                                  showConfirmButton: false
+                              });
+                  
+                              $.fancybox.close();
+                          }
+                      });
+                  }
+                  </script>
               </div>
           </div>
       </div>
+      
+      <?php if($products){ ?>
       <div class="same_objects">
           <p class="title">Похожие объекты:</p>
           <div class="owl-carousel same_obj_slider">
+            <?php foreach($products as $product){ ?>
               <div class="card">
-                  <a class="img" href="#" style="background-image: url(./image/1.jpg)"></a>
+                  <a class="img" href="<?php echo $product['href']; ?>" style="background-image: url('<?php echo $product['thumb']; ?>')"></a>
+                  
+                  <?php if($product['sticker']){ ?>
                   <div class="card_label">
-                      <span class="fast_label">срочный</span>
+                      <?php foreach ($product['sticker'] as $sticker) { ?>
+                          <span><img src="<?php echo $sticker['image']; ?>"></span>
+                      <?php } ?>
                   </div>
-                  <a class="name" href="#">Продажа виллы в закрытом коттеджном поселке</a>
+                   <?php } ?>
+                  
+                  <a class="name" href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
+                  
+                  <?php if($product['filter_options']){ ?>
                   <div class="tags">
-                      <span>Алушта / 3 комн. / 300 м. кв.</span>
+                      <?php $i == 0; ?>
+                      <?php foreach($product['filter_options'] as $option){ ?>
+                          <?php echo $option['name']; ?>: <span><?php echo $option['value'] . $option['postfix']; ?></span>
+                          <?php $i++; ?>
+                          <?php if($i == 3 ){break;} ?>
+                      <?php } ?>
                   </div>
-                  <p class="price_rub">183 094 106 руб.</p>
-                  <p class="price_usd">2 900 000 $</p>
-                  <span class="object_id">№ 514</span>
+                  <?php } ?>
+                  
+                  <?php if ($product['price'] || $product['rub']) { ?>
+                  <?php if (!$product['special']) { ?>
+                  <p class="price_rub"><?php echo $product['rub']; ?></p>
+                  <p class="price_usd"><?php echo $product['price']; ?></p>
+                  <?php } else { ?>
+                  <p class="price_rub"><?php echo $product['special']; ?></p>
+                  <p class="price_usd"><sup><strike><?php echo $product['price']; ?></strike></sup></p>
+                  <?php } ?>
+                  <?php } ?>
+                  
+                  <span class="object_id">№ <?php echo $product['model']; ?></span>
               </div>
-              <div class="card">
-                  <a class="img" href="#" style="background-image: url(./image/1.jpg)"></a>
-                  <div class="card_label">
-                      <span class="fast_label">срочный</span>
-                  </div>
-                  <a class="name" href="#">Продажа виллы в закрытом коттеджном поселке Продажа виллы в закрытом коттеджном поселке Продажа виллы в закрытом коттеджном поселке</a>
-                  <div class="tags">
-                      <span>Алушта / 3 комн. / 300 м. кв.</span>
-                  </div>
-                  <p class="price_rub">183 094 106 руб.</p>
-                  <p class="price_usd">2 900 000 $</p>
-                  <span class="object_id">№ 514</span>
-              </div>
-              <div class="card">
-                  <a class="img" href="#" style="background-image: url(./image/1.jpg)"></a>
-                  <div class="card_label">
-                      <span class="fast_label">срочный</span>
-                  </div>
-                  <a class="name" href="#">Продажа виллы в закрытом коттеджном поселке</a>
-                  <div class="tags">
-                      <span>Алушта / 3 комн. / 300 м. кв.</span>
-                  </div>
-                  <p class="price_rub">183 094 106 руб.</p>
-                  <p class="price_usd">2 900 000 $</p>
-                  <span class="object_id">№ 514</span>
-              </div>
-              <div class="card">
-                  <a class="img" href="#" style="background-image: url(./image/1.jpg)"></a>
-                  <div class="card_label">
-                      <span class="fast_label">срочный</span>
-                  </div>
-                  <a class="name" href="#">Продажа виллы в закрытом коттеджном поселке</a>
-                  <div class="tags">
-                      <span>Алушта / 3 комн. / 300 м. кв.</span>
-                  </div>
-                  <p class="price_rub">183 094 106 руб.</p>
-                  <p class="price_usd">2 900 000 $</p>
-                  <span class="object_id">№ 514</span>
-              </div>
-              <div class="card">
-                  <a class="img" href="#" style="background-image: url(./image/1.jpg)"></a>
-                  <div class="card_label">
-                      <span class="fast_label">срочный</span>
-                  </div>
-                  <a class="name" href="#">Продажа виллы в закрытом коттеджном поселке</a>
-                  <div class="tags">
-                      <span>Алушта / 3 комн. / 300 м. кв.</span>
-                  </div>
-                  <p class="price_rub">183 094 106 руб.</p>
-                  <p class="price_usd">2 900 000 $</p>
-                  <span class="object_id">№ 514</span>
-              </div>
-              <div class="card">
-                  <a class="img" href="#" style="background-image: url(./image/1.jpg)"></a>
-                  <div class="card_label">
-                      <span class="fast_label">срочный</span>
-                  </div>
-                  <a class="name" href="#">Продажа виллы в закрытом коттеджном поселке</a>
-                  <div class="tags">
-                      <span>Алушта / 3 комн. / 300 м. кв.</span>
-                  </div>
-                  <p class="price_rub">183 094 106 руб.</p>
-                  <p class="price_usd">2 900 000 $</p>
-                  <span class="object_id">№ 514</span>
-              </div>
+            <?php } ?>
           </div>
       </div>
+      <?php } ?>
+      
+      <?php if($articles){ ?>
       <div class="case_like_this">
           <p class="title">Кейс похожий на объект:</p>
-          <div>
-              <div class="case">
-                  <p class="title">Отличная сделка в Ялте за 22000000 р.</p>
-                  <p>Вилла полностью готова к комфортному проживанию! Расположение в живописном месте, с лучшими видовыми характеристиками: море, горы, скалы "Адалары" и потрясающий вид на Аю-Даг. Самый большой и видовой участок в поселке, выполнен ландшафтный дизайн, высажены плодовые деревья и пальмы. Вилла состоит из двух этажей: 1 этаж: кухня - гостиная с выходом на террасу, кабинет и 2 с/у, хозяйственная комната. Есть действующий камин 2 этаж: хозяйская спальня с шикарной ванной комнатой и гардеробом, детская и гостевая спальни со своими ванными комнатами и огромная видовая терраса с видом на море и Аю-Даг. Также есть отдельный уютный гостевой домик с кухней-гостиной, сауной и ванной комнатой. Гараж для машин. Все коммуникации, телевидение и интернет! Закрытая охраняемая территория! Торг!</p>
-                  <a href="#" class="casual_button">Подробнее об этом кейсе</a>
-              </div>
-              <div class="realtor">
-                  <div class="img" style="background-image: url('./image/elena.png')"></div>
-                  <p>Коцеблюк Елена</p>
-              </div>
-              <div class="description">
-                  <div class="img" style="background-image: url('./image/2.jpg')"></div>
-                  <p>Есть действующий камин 2 этаж: хозяйская спальня с шикарной ванной комнатой и гардеробом, детская и... гостевая спальни со своими ванными комнатами и огромная видовая терраса с видом на море и Аю-Даг.</p>
-              </div>
-          </div>
-          <a href="#" class="watch_cases">Смотреть все кейсы</a>
+           <?php foreach ($articles as $article) { ?>
+            <div>
+                <div class="case">
+                    <p class="title"><?php echo $article['name']; ?></p>
+                    <?php echo $article['description']; ?>
+                    <a href="<?php echo $article['href']; ?>" class="casual_button">Подробнее об этом кейсе</a>
+                </div>
+                <div class="realtor">
+                    <div class="img" style="background-image: url('<?php echo $article['image_agent']; ?>')"></div>
+                    <p><?php echo $article['agent']; ?></p>
+                </div>
+                <div class="description">
+                    <div class="img" style="background-image: url('<?php echo $article['thumb']; ?>')"></div>
+                    
+                    <?php echo $article['short_description']; ?>
+                </div>
+            </div>
+          <?php } ?>
+          <a href="<?php echo $view_all_featured_cases; ?>" class="watch_cases">Смотреть все кейсы</a>
       </div>
   </div>
+  <?php } ?>
   
-  <script type="text/javascript">
-jQuery(document).ready(function(){
-	jQuery('.back').click(function(){
-		parent.history.back();
-		return false;
-	});
-});
-</script>
 <?php echo $footer; ?>

@@ -464,6 +464,21 @@
                   <a onclick="$(this).parent().find(':checkbox').prop('checked', true);"><?php echo $text_select_all; ?></a> / <a onclick="$(this).parent().find(':checkbox').prop('checked', false);"><?php echo $text_unselect_all; ?></a></div>
               </div>
               <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-parent">Кейс похожий на объект</label>
+                <div class="col-sm-10">
+                  <select name="case_id" class="form-control">
+                    <option value="0" selected="selected"><?php echo $text_none; ?></option>
+                    <?php foreach ($case as $case) { ?>
+                    <?php if ($case['case_id'] == $current_case) { ?>
+                    <option value="<?php echo $case['case_id']; ?>" selected="selected"><?php echo $case['name']; ?></option>
+                    <?php } else { ?>
+                    <option value="<?php echo $case['case_id']; ?>"><?php echo $case['name']; ?></option>
+                    <?php } ?>
+                    <?php } ?>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-filter"><span data-toggle="tooltip" title="<?php echo $help_filter; ?>"><?php echo $entry_filter; ?></span></label>
                 <div class="col-sm-10">
                   <input type="text" name="filter" value="" placeholder="<?php echo $entry_filter; ?>" id="input-filter" class="form-control" />

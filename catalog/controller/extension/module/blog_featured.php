@@ -78,6 +78,8 @@ class ControllerExtensionModuleBlogFeatured extends Controller {
 				}
 			}
 		}
+		
+		$data['view_all_featured_cases'] =$this->url->link('blog/category', 'blog_category_id=3');
 
 		if ($data['articles']) {
 			return $this->load->view('extension/module/blog_featured', $data);

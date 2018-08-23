@@ -15,6 +15,8 @@ class ModelCatalogProduct extends Model {
 				'heading_description' => $query->row['heading_description'],
 				'features' => $query->row['features'],
 				'uniq_options'     => $query->row['uniq_options'],
+				'agent'            => $query->row['agent'],
+				'case_id'          => $query->row['case_id'],
 				'currency_id'      => $query->row['currency_id'],
 				'meta_title'       => $query->row['meta_title'],
 				'meta_h1'          => $query->row['meta_h1'],

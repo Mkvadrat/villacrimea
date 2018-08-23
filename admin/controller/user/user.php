@@ -357,9 +357,70 @@ class ControllerUserUser extends Controller {
 		}
 
 		$data['cancel'] = $this->url->link('user/user', 'token=' . $this->session->data['token'] . $url, true);
-
+		
 		if (isset($this->request->get['user_id']) && ($this->request->server['REQUEST_METHOD'] != 'POST')) {
 			$user_info = $this->model_user_user->getUser($this->request->get['user_id']);
+		}
+		
+		$this->load->model('localisation/language');
+
+		$data['languages'] = $this->model_localisation_language->getLanguages();
+		
+		if (isset($this->request->post['agent_description'])) {
+			$data['agent_description'] = $this->request->post['agent_description'];
+		} elseif (isset($this->request->get['user_id'])) {
+			$data['agent_description'] = $this->model_user_user->getAgentDescriptions($this->request->get['user_id']);
+		} else {
+			$data['agent_description'] = array();
+		}
+		
+		//case
+		$this->load->model('blog/category');
+		
+		$filter_data = array(
+			'sort'        => 'name',
+			'order'       => 'ASC',
+		);
+
+		$case_category_data = $this->model_blog_category->getCategories($filter_data);
+		
+		$data['case_category'] = array();
+		
+		foreach($case_category_data as $case){
+			$data['case_category'][] = array(
+				'name' => $case['name'],
+				'category_case_id' => $case['blog_category_id']
+			);
+		}
+		
+		$data['text_none'] = $this->language->get('text_none');
+		
+		$data['current_case_category'] = $user_info['category_case_id'];
+		
+		if (isset($this->request->post['category_case_id'])) {
+			$data['category_case_id'] = $this->request->post['category_case_id'];
+		} elseif (!empty($user_info)) {
+			$data['category_case_id'] = $user_info['category_case_id'];
+		} else {
+			$data['category_case_id'] = '';
+		}
+		
+		// Categories
+		$this->load->model('catalog/category');
+
+		$filter_data = array(
+			'sort'        => 'name',
+			'order'       => 'ASC'
+		);
+
+		$data['categories'] = $this->model_catalog_category->getCategories($filter_data);
+
+		if (isset($this->request->post['product_category'])) {
+			$data['product_category'] = $this->request->post['product_category'];
+		} elseif (!empty($user_info)) {
+			$data['product_category'] = $user_info['category_id'];
+		} else {
+			$data['product_category'] = '';
 		}
 
 		if (isset($this->request->post['username'])) {
@@ -416,6 +477,14 @@ class ControllerUserUser extends Controller {
 			$data['email'] = $user_info['email'];
 		} else {
 			$data['email'] = '';
+		}
+		
+		if (isset($this->request->post['phone'])) {
+			$data['phone'] = $this->request->post['phone'];
+		} elseif (!empty($user_info)) {
+			$data['phone'] = $user_info['phone'];
+		} else {
+			$data['phone'] = '';
 		}
 
 		if (isset($this->request->post['image'])) {
