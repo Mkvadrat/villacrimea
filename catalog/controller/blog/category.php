@@ -29,7 +29,6 @@ class ControllerBlogCategory extends Controller {
 
 		if (isset($this->request->get['page'])) {
 			$page = $this->request->get['page'];
-			$this->document->setRobots('noindex,follow');
 		} else {
 			$page = 1;
 		}
@@ -101,7 +100,65 @@ class ControllerBlogCategory extends Controller {
 		} else {
 			$blog_category_id = 0;
 		}
+		
+		$data['categories_agent'] = array();
+		
+		$this->load->model('catalog/category');
+		
+		$this->load->model('catalog/product');
+		
+		$category_agent = $this->model_catalog_category->getCategories(0);
 
+		foreach ($category_agent as $category) {
+									
+			if ($category['image']) {
+				$cat_image = $this->model_tool_image->resize($category['image'], $this->config->get($this->config->get('config_theme') . '_image_category_width'), $this->config->get($this->config->get('config_theme') . '_image_category_height'));
+			} else {
+				$cat_image = '';
+			}
+			
+			if ($category['specialization']) {
+				$specialization = $category['specialization'];
+			} else {
+				$specialization = '';
+			}
+			
+			if($category['category_case_id'] != 0){
+				$view_case = $this->url->link('blog/category', 'blog_category_id=' . $category['category_case_id']);
+			}else{
+				$view_case = '';
+			}
+
+			if($category['agent']) {
+				if($category['category_case_id'] != 0){
+					$category_case_id = $category['category_case_id'];
+				}
+				
+				$article_total = array(
+					'filter_category_id' => $category_case_id,
+					'filter_sub_category' => true				
+				);
+				
+				$data['categories_agent'][] = array(
+					'name' => $category['name'],
+					'count' => $this->model_blog_article->getCountArticles($category_case_id),
+					'image' => $cat_image,
+					'specialization' => $specialization,
+					'href' => $this->url->link('product/category', 'path=' . $category['category_id'] . $url),
+					'view_case' => $view_case
+				);
+			}
+		}
+		
+		$article_count = array(
+			'filter_category_id' => 3,
+			'filter_sub_category' => true				
+		);
+		
+		$data['view_all_case'] = $this->url->link('blog/category', 'blog_category_id=3');
+		
+		$data['count_case'] = '(' . $this->model_blog_article->getTotalArticles($article_count) . ')';
+		
 		$category_info = $this->model_blog_category->getCategory($blog_category_id);
 
 		if ($category_info) {
@@ -205,16 +262,29 @@ class ControllerBlogCategory extends Controller {
 				} else {
 					$image = $this->model_tool_image->resize('placeholder.png', $this->config->get('configblog_image_article_width'), $this->config->get('configblog_image_article_height'));
 				}
-
-				$data['articles'][] = array(
-					'article_id'  => $result['article_id'],
-					'thumb'       => $image,
-					'name'        => $result['name'],
-					'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get('configblog_article_description_length')) . '..',
-					'date_added'  => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
-					'viewed'      => $result['viewed'],
-					'href'        => $this->url->link('blog/article', 'blog_category_id=' . $this->request->get['blog_category_id'] . '&article_id=' . $result['article_id'] . $url)
-				);
+				
+				$category_case_info = $this->model_blog_category->getCategoryByArticleId($result['article_id']);
+				
+				foreach($category_case_info as $article_category){
+					if ($article_category['image']) {
+						$image_agent = $this->model_tool_image->resize($article_category['image'], 225, 225);
+					} else {
+						$image_agent = $this->model_tool_image->resize('placeholder.png', 225, 225);
+					}
+	
+					$data['articles'][] = array(
+						'article_id'  => $result['article_id'],
+						'thumb'       => $image,
+						'name'        => $result['name'],
+						'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get('configblog_article_description_length')) . '..',
+						'short_description' => utf8_substr(strip_tags(html_entity_decode($result['short_description'], ENT_QUOTES, 'UTF-8')), 0, 200 . '..'),
+						'date_added'  => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
+						'viewed'      => $result['viewed'],
+						'href'        => $this->url->link('blog/article', 'blog_category_id=' . $this->request->get['blog_category_id'] . '&article_id=' . $result['article_id'] . $url),
+						'category_name' => $article_category['name'],
+						'image_agent' => $image_agent
+					);
+				}
 			}
 
 			$url = '';

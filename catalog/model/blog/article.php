@@ -440,5 +440,11 @@ class ModelBlogArticle extends Model {
 		
 		return $query->rows;
 	}
+	
+	public function getCountArticles($category_case_id){
+		$query = $this->db->query("SELECT COUNT(*) FROM (SELECT article_id FROM  oc_article_to_blog_category AS atbc JOIN oc_category AS c ON (c.category_case_id = atbc.blog_category_id) AND c.category_case_id = '" . (int)$category_case_id . "') AS T");
+		
+		return $query->row['COUNT(*)'];
+	}
 }
 ?>

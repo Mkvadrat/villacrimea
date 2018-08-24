@@ -4744,3 +4744,193 @@
 2018-08-23 15:26:35 - PHP Notice:  Undefined variable: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\pdf.tpl on line 6
 2018-08-23 15:28:04 - PHP Notice:  Undefined variable: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\pdf.tpl on line 4
 2018-08-23 15:28:04 - PHP Notice:  Undefined variable: href in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\pdf.tpl on line 6
+2018-08-24 9:01:05 - PHP Notice:  Undefined variable: action in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\main_filter.tpl on line 12
+2018-08-24 10:50:16 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 11
+2018-08-24 10:50:16 - PHP Notice:  Undefined index: specialization in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 13
+2018-08-24 10:50:16 - PHP Notice:  Undefined index: count in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 10:50:16 - PHP Notice:  Undefined index: view_case in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 18
+2018-08-24 10:50:16 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 11
+2018-08-24 10:50:16 - PHP Notice:  Undefined index: specialization in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 13
+2018-08-24 10:50:16 - PHP Notice:  Undefined index: count in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 10:50:16 - PHP Notice:  Undefined index: view_case in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 18
+2018-08-24 10:51:19 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 11
+2018-08-24 10:51:19 - PHP Notice:  Undefined index: specialization in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 13
+2018-08-24 10:51:19 - PHP Notice:  Undefined index: count in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 10:51:19 - PHP Notice:  Undefined index: view_case in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 18
+2018-08-24 10:51:19 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 11
+2018-08-24 10:51:19 - PHP Notice:  Undefined index: specialization in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 13
+2018-08-24 10:51:19 - PHP Notice:  Undefined index: count in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 10:51:19 - PHP Notice:  Undefined index: view_case in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 18
+2018-08-24 10:52:45 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 11
+2018-08-24 10:52:45 - PHP Notice:  Undefined index: specialization in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 13
+2018-08-24 10:52:45 - PHP Notice:  Undefined index: count in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 10:52:45 - PHP Notice:  Undefined index: view_case in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 18
+2018-08-24 10:52:45 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 11
+2018-08-24 10:52:45 - PHP Notice:  Undefined index: specialization in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 13
+2018-08-24 10:52:45 - PHP Notice:  Undefined index: count in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 10:52:45 - PHP Notice:  Undefined index: view_case in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 18
+2018-08-24 10:54:11 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 11
+2018-08-24 10:54:11 - PHP Notice:  Undefined index: specialization in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 13
+2018-08-24 10:54:11 - PHP Notice:  Undefined index: count in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 10:54:11 - PHP Notice:  Undefined index: view_case in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 18
+2018-08-24 10:54:11 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 11
+2018-08-24 10:54:11 - PHP Notice:  Undefined index: specialization in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 13
+2018-08-24 10:54:11 - PHP Notice:  Undefined index: count in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 10:54:11 - PHP Notice:  Undefined index: view_case in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 18
+2018-08-24 10:54:44 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 11
+2018-08-24 10:54:44 - PHP Notice:  Undefined index: specialization in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 13
+2018-08-24 10:54:44 - PHP Notice:  Undefined index: count in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 10:54:44 - PHP Notice:  Undefined index: view_case in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 18
+2018-08-24 10:54:44 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 11
+2018-08-24 10:54:44 - PHP Notice:  Undefined index: specialization in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 13
+2018-08-24 10:54:44 - PHP Notice:  Undefined index: count in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 10:54:44 - PHP Notice:  Undefined index: view_case in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 18
+2018-08-24 10:55:20 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 11
+2018-08-24 10:55:20 - PHP Notice:  Undefined index: specialization in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 13
+2018-08-24 10:55:20 - PHP Notice:  Undefined index: count in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 10:55:20 - PHP Notice:  Undefined index: view_case in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 18
+2018-08-24 10:55:20 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 11
+2018-08-24 10:55:20 - PHP Notice:  Undefined index: specialization in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 13
+2018-08-24 10:55:20 - PHP Notice:  Undefined index: count in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 10:55:20 - PHP Notice:  Undefined index: view_case in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 18
+2018-08-24 10:56:19 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 11
+2018-08-24 10:56:19 - PHP Notice:  Undefined index: specialization in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 13
+2018-08-24 10:56:19 - PHP Notice:  Undefined index: count in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 10:56:19 - PHP Notice:  Undefined index: view_case in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 18
+2018-08-24 10:56:19 - PHP Notice:  Undefined index: image in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 11
+2018-08-24 10:56:19 - PHP Notice:  Undefined index: specialization in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 13
+2018-08-24 10:56:19 - PHP Notice:  Undefined index: count in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 10:56:19 - PHP Notice:  Undefined index: view_case in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 18
+2018-08-24 11:05:51 - PHP Notice:  Undefined variable: action in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\main_filter.tpl on line 12
+2018-08-24 11:11:00 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:11:00 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:11:00 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:11:00 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:11:00 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:13:41 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:13:41 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:13:41 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:13:41 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:13:41 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:14:14 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:14:14 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:14:14 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:14:14 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:14:14 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:14:14 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:14:26 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:14:26 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:14:26 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:14:26 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:14:26 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:14:26 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:15:02 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:15:02 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:15:02 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:15:02 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:15:02 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:15:02 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:26:10 - PHP Notice:  Undefined variable: action in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\main_filter.tpl on line 12
+2018-08-24 11:26:19 - PHP Notice:  Undefined variable: action in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\main_filter.tpl on line 12
+2018-08-24 11:27:10 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:27:10 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:27:10 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:27:10 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:27:10 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:27:10 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:27:10 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:27:23 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:27:23 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:27:23 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:27:23 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:27:23 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:27:23 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:27:23 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:28:25 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:28:25 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:28:25 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:28:25 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:28:25 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:28:25 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:28:25 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:28:49 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:28:49 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:28:49 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:28:49 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:28:49 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:28:49 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:28:49 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:32:02 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:32:02 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:32:02 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:32:02 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:32:02 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:32:02 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:32:02 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 120
+2018-08-24 11:37:27 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 122
+2018-08-24 11:37:27 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 122
+2018-08-24 11:37:27 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 122
+2018-08-24 11:37:27 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 122
+2018-08-24 11:37:27 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 122
+2018-08-24 11:37:27 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 122
+2018-08-24 11:37:27 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 122
+2018-08-24 11:38:27 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:38:27 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:38:27 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:38:27 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:38:27 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:39:01 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:39:01 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:39:01 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:39:01 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:39:01 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:41:20 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:41:20 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:41:20 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:41:20 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:41:20 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:41:36 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:41:36 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:41:36 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:41:36 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:41:36 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:41:45 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:41:45 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:41:45 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:41:45 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:41:45 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 11:42:58 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 123
+2018-08-24 11:42:58 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 123
+2018-08-24 11:42:58 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 123
+2018-08-24 11:42:58 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 123
+2018-08-24 11:42:58 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 123
+2018-08-24 11:42:58 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 123
+2018-08-24 11:42:58 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 123
+2018-08-24 11:43:46 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 123
+2018-08-24 11:43:46 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 123
+2018-08-24 11:43:46 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 123
+2018-08-24 11:43:46 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 123
+2018-08-24 11:43:46 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 123
+2018-08-24 11:43:46 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 123
+2018-08-24 11:43:46 - PHP Notice:  Undefined variable: category_case_id in D:\OpenServer\domains\villacrimea.loc\catalog\controller\blog\category.php on line 123
+2018-08-24 11:55:51 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 11:55:51 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 11:55:51 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 11:55:51 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 11:55:51 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 11:56:04 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 11:56:04 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 11:56:04 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 11:56:04 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 11:56:04 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 11:56:25 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 11:56:25 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 11:56:25 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 11:56:25 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 11:56:25 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 15
+2018-08-24 12:06:04 - PHP Warning:  http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given in D:\OpenServer\domains\villacrimea.loc\catalog\model\blog\article.php on line 339
+2018-08-24 12:18:51 - PHP Notice:  Undefined variable: case in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 32
+2018-08-24 12:18:51 - PHP Notice:  Undefined variable: case in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 32
+2018-08-24 12:18:51 - PHP Notice:  Undefined variable: case in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 32
+2018-08-24 12:18:51 - PHP Notice:  Undefined variable: case in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 32
+2018-08-24 12:18:51 - PHP Notice:  Undefined variable: case in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\blog\category.tpl on line 32
