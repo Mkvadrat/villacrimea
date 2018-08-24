@@ -178,6 +178,8 @@ class ControllerBlogArticle extends Controller {
 			
 			$data['gstatus'] = (int)$article_info['gstatus'];
 			$data['description'] = html_entity_decode($article_info['description'], ENT_QUOTES, 'UTF-8');
+			$data['detail'] = html_entity_decode($article_info['detail'], ENT_QUOTES, 'UTF-8');
+			$data['sub_name'] = $article_info['sub_name'];
 			
 			$prevs = $this->model_blog_article->getPreviusArticles($this->request->get['article_id']);
 			
@@ -201,6 +203,91 @@ class ControllerBlogArticle extends Controller {
 			
 			$this->load->model('tool/image');
 			
+			$this->load->model('user/user');
+			
+			$agent_id = $this->model_user_user->getAgentByProduct($article_info['product_case_id']);
+			
+			$agent_information = $this->model_user_user->getUser($agent_id);
+									
+			$data['agent_name'] = $agent_information['lastname'] . ' ' . $agent_information['firstname'];
+			
+			$data['specialization'] = $agent_information['specialization'];
+			
+			if ($agent_information['image']) {
+				$data['image_agent'] = $this->model_tool_image->resize($agent_information['image'], 226, 226);
+			} else {
+				$data['image_agent'] = $this->model_tool_image->resize('placeholder.png', 226, 226);
+			}
+			
+			$data['phone'] = $agent_information['phone'];
+			
+			$data['email'] = $agent_information['email'];
+			
+			$data['case_id'] = $agent_information['category_case_id'];
+			
+			$data['view_all_cases'] = $this->url->link('blog/category', '&blog_category_id=' . $agent_information['category_case_id']);
+			
+			$data['category_id_object'] = $agent_information['category_id'];
+			
+			$data['view_all_object'] = $this->url->link('product/category', 'path=' . $agent_information['category_id']);
+			
+			$this->load->model('tool/image');
+			
+			$this->load->model('catalog/product');
+			
+			$this->load->model('catalog/ocfilter');
+			
+			$product_case = $this->model_catalog_product->getProduct($article_info['product_case_id']);
+
+			if ($product_case) {
+				$data['i'] = '';
+				$data['product_name'] = $product_case['name'];
+				$data['product_model'] = $product_case['model'];
+				$data['product_stickers'] = $this->getStickers($product_case['product_id']);
+				$data['product_description'] = html_entity_decode($product_case['description'], ENT_QUOTES, 'UTF-8');
+				$data['product_heading_description'] = html_entity_decode($product_case['heading_description'], ENT_QUOTES, 'UTF-8');
+				$data['product_options'] = $this->model_catalog_product->getProductOptions($article_info['product_case_id']);
+				$data['options'] = $this->model_catalog_product->getProductOptions($article_info['product_case_id']);
+				$data['filter_options'] = $this->model_catalog_ocfilter->getValueOptionsByProduct($article_info['product_case_id']);
+				$data['uniq_options'] = $product_case['uniq_options'] = 1 ? $product_case['uniq_options'] : 0;
+				
+				if ($product_case['image']) {
+					$data['product_image'] = $this->model_tool_image->resize($product_case['image'], 387, 239);
+				} else {
+					$data['product_image'] = $this->model_tool_image->resize('placeholder.png', 387, 239);
+				}
+				
+				$data['product_href'] = $this->url->link('product/product', 'product_id=' . $article_info['product_case_id']);
+				
+				$this->load->model('localisation/currency');
+		
+				$currencys = $this->model_localisation_currency->getCurrency($product_case['currency_id']);
+		
+				foreach($currencys as $currency){
+					if ($product_case['currency_id'] != 5) {
+						$price_rub = $this->currency->convert($product_case['price'], $currency['code'], 'RUB');
+						$data['rub'] = $this->currency->format($this->tax->calculate($price_rub, $product_case['tax_class_id'], $this->config->get('config_tax')), 'RUB', 1, $format= true);
+					} else {
+						$data['rub'] = $this->currency->format($this->tax->calculate($product_case['price'], $product_case['tax_class_id'], $this->config->get('config_tax')), 'RUB', 1, $format= true);
+					}
+		
+				   if ($product_case['currency_id'] != 2) {
+						$price_dollar = $this->currency->convert($product_case['price'], $currency['code'], 'USD');
+						$data['price'] = $this->currency->format($this->tax->calculate($price_dollar, $product_case['tax_class_id'], $this->config->get('config_tax')), 'USD', 1, $format= true);
+					} else {
+						$data['price'] = $this->currency->format($this->tax->calculate($product_case['price'], $product_case['tax_class_id'], $this->config->get('config_tax')), 'USD', 1, $format= true);
+					}
+				}
+				
+				if ((float)$product_case['special']) {
+					$data['special'] = $this->currency->format($this->tax->calculate($product_case['special'], $product_case['tax_class_id'], $this->config->get('config_tax')), 'USD', $format= true);
+				} else {
+					$data['special'] = false;
+				}
+				
+				
+			}
+			
 			$results = $this->model_blog_article->getArticleRelated($this->request->get['article_id']);
 			
 			foreach ($results as $result) {
@@ -223,6 +310,7 @@ class ControllerBlogArticle extends Controller {
 			}
 
 			$this->load->model('tool/image');
+			
 			$data['products'] = array();
 			
 			$results = $this->model_blog_article->getArticleRelatedProduct($this->request->get['article_id']);
@@ -421,24 +509,20 @@ class ControllerBlogArticle extends Controller {
 	
 	private function getStickers($product_id) {
 	
- 	$stickers = $this->model_catalog_product->getProductStickerbyProductId($product_id) ;	
-
+		$stickers = $this->model_catalog_product->getProductStickerbyProductId($product_id) ;	
 		
 		if (!$stickers) {
 			return;
 		}
 		
-		$data['stickers'] = array();
-		
 		foreach ($stickers as $sticker) {
-			$data['stickers'][] = array(
+			$stick[] = array(
 				'position' => $sticker['position'],
 				'image'    => HTTP_SERVER . 'image/' . $sticker['image']
 			);		
 		}
-				
-		return $this->load->view('product/stickers', $data);
-	
+		
+		return $stick;
 	}
 	
 }

@@ -107,4 +107,10 @@ class ModelUserUser extends Model {
 
 		return $query->row['total'];
 	}
+	
+	public function getAgentByProduct($product_id){
+		$query = $this->db->query("SELECT agent FROM `" . DB_PREFIX . "product` WHERE `product_id` = '" . $product_id . "'");
+		
+		return $query->row['agent'];
+	}
 }

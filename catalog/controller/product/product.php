@@ -779,7 +779,6 @@ class ControllerProductProduct extends Controller {
 		}
 		
 		return $stick;
-	
 	}
 
 	public function getRecurringDescription() {

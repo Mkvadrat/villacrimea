@@ -392,7 +392,7 @@ class ControllerCatalogProduct extends Controller {
 
 		foreach ($results as $result) {
 
-      $category =  $this->model_catalog_product->getProductCategories($result['product_id']);
+			$category =  $this->model_catalog_product->getProductCategories($result['product_id']);
 
 			if (is_file(DIR_IMAGE . $result['image'])) {
 				$image = $this->model_tool_image->resize($result['image'], 40, 40);
