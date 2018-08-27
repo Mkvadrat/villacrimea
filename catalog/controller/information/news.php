@@ -296,6 +296,7 @@ class ControllerInformationNews extends Controller {
 				'canonical');
 
 			$data['description'] = html_entity_decode($news_info['description']);
+			$data['sub_title'] = html_entity_decode($news_info['sub_title']);
 
 			$data['viewed'] = sprintf($this->language->get('text_viewed'), $news_info['viewed']);
 			$data['posted'] = date($this->language->get('date_format_short'), strtotime($news_info['date_added']));

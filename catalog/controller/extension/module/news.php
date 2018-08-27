@@ -49,7 +49,7 @@ class ControllerExtensionModuleNews extends Controller {
 			if ($result['image']) {
  				$image = $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height']);
  			} else {
- 				$image = false;
+ 				$image = $this->model_tool_image->resize('placeholder.png', $setting['width'], $setting['height']);
  			}
 			
 			$data['news'][] = array(
