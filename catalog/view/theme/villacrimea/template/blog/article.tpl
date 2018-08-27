@@ -131,114 +131,78 @@
 				</div>
 			</div>
 		</div>
+		
+		<?php if($articles){ ?>
 		<div class="cases">
 			<p class="title">Похожие кейсы:</p>
 			<div class="slider">
 				<div class="owl-carousel cases_carousel">
+					<?php foreach($articles as $article) {?>
 					<div>
 						<div class="case">
-							<p class="title">Отличная сделка в Ялте за 22000000 р.</p>
-							<p>Вилла полностью готова к комфортному проживанию! Расположение в живописном месте, с лучшими видовыми характеристиками: море, горы, скалы "Адалары" и потрясающий вид на Аю-Даг. Самый большой и видовой участок в поселке, выполнен ландшафтный дизайн, высажены плодовые деревья и пальмы. Вилла состоит из двух этажей: 1 этаж: кухня - гостиная с выходом на террасу, кабинет и 2 с/у, хозяйственная комната. Есть действующий камин 2 этаж: хозяйская спальня с шикарной ванной комнатой и гардеробом, детская и гостевая спальни со своими ванными комнатами и огромная видовая терраса с видом на море и Аю-Даг. Также есть отдельный уютный гостевой домик с кухней-гостиной, сауной и ванной комнатой. Гараж для машин. Все коммуникации, телевидение и интернет! Закрытая охраняемая территория! Торг!</p>
-							<a href="#" class="casual_button">Подробнее об этом кейсе</a>
+							<p class="title"><?php echo $article['name']; ?></p>
+							<?php echo $article['description'] ?>
+							<a href="<?php echo $article['href'] ?>" class="casual_button">Подробнее об этом кейсе</a>
 						</div>
 						<div class="realtor">
-								<div class="img" style="background-image: url('./image/elena.png')"></div>
-							<p>Коцеблюк Елена</p>
+								<div class="img" style="background-image: url('<?php echo $article['image_agent'] ?>')"></div>
+							<p><?php echo $article['agent'] ?></p>
 						</div>
 						<div class="description">
-							<div class="img" style="background-image: url('./image/2.jpg')"></div>
-							<p>Есть действующий камин 2 этаж: хозяйская спальня с шикарной ванной комнатой и гардеробом, детская и... гостевая спальни со своими ванными комнатами и огромная видовая терраса с видом на море и Аю-Даг.</p>
+							<div class="img" style="background-image: url('<?php echo $article['thumb'] ?>')"></div>
+							<?php echo $article['short_description'] ?>
 						</div>
 					</div>
-					<div>
-						<div class="case">
-							<p class="title">Отличная сделка в Ялте за 22000000 р.</p>
-							<p>Вилла полностью готова к комфортному проживанию! Расположение в живописном месте, с лучшими видовыми характеристиками: море, горы, скалы "Адалары" и потрясающий вид на Аю-Даг. Самый большой и видовой участок в поселке, выполнен ландшафтный дизайн, высажены плодовые деревья и пальмы. Вилла состоит из двух этажей: 1 этаж: кухня - гостиная с выходом на террасу, кабинет и 2 с/у, хозяйственная комната. Есть действующий камин 2 этаж: хозяйская спальня с шикарной ванной комнатой и гардеробом, детская и гостевая спальни со своими ванными комнатами и огромная видовая терраса с видом на море и Аю-Даг. Также есть отдельный уютный гостевой домик с кухней-гостиной, сауной и ванной комнатой. Гараж для машин. Все коммуникации, телевидение и интернет! Закрытая охраняемая территория! Торг!</p>
-							<a href="#" class="casual_button">Подробнее об этом кейсе</a>
-						</div>
-						<div class="realtor">
-								<div class="img" style="background-image: url('./image/elena.png')"></div>
-							<p>Коцеблюк Елена</p>
-						</div>
-						<div class="description">
-							<div class="img" style="background-image: url('./image/2.jpg')"></div>
-							<p>Есть действующий камин 2 этаж: хозяйская спальня с шикарной ванной комнатой и гардеробом, детская и... гостевая спальни со своими ванными комнатами и огромная видовая терраса с видом на море и Аю-Даг.</p>
-						</div>
-					</div>
-					<div>
-						<div class="case">
-							<p class="title">Отличная сделка в Ялте за 22000000 р.</p>
-							<p>Вилла полностью готова к комфортному проживанию! Расположение в живописном месте, с лучшими видовыми характеристиками: море, горы, скалы "Адалары" и потрясающий вид на Аю-Даг. Самый большой и видовой участок в поселке, выполнен ландшафтный дизайн, высажены плодовые деревья и пальмы. Вилла состоит из двух этажей: 1 этаж: кухня - гостиная с выходом на террасу, кабинет и 2 с/у, хозяйственная комната. Есть действующий камин 2 этаж: хозяйская спальня с шикарной ванной комнатой и гардеробом, детская и гостевая спальни со своими ванными комнатами и огромная видовая терраса с видом на море и Аю-Даг. Также есть отдельный уютный гостевой домик с кухней-гостиной, сауной и ванной комнатой. Гараж для машин. Все коммуникации, телевидение и интернет! Закрытая охраняемая территория! Торг!</p>
-							<a href="#" class="casual_button">Подробнее об этом кейсе</a>
-						</div>
-						<div class="realtor">
-								<div class="img" style="background-image: url('./image/elena.png')"></div>
-							<p>Коцеблюк Елена</p>
-						</div>
-						<div class="description">
-							<div class="img" style="background-image: url('./image/2.jpg')"></div>
-							<p>Есть действующий камин 2 этаж: хозяйская спальня с шикарной ванной комнатой и гардеробом, детская и... гостевая спальни со своими ванными комнатами и огромная видовая терраса с видом на море и Аю-Даг.</p>
-						</div>
-					</div>
+					<?php } ?>
 				</div>
 			</div>
 		</div>
+		<?php } ?>
+		
+		<?php if($products){ ?>
 		<div class="same_objects">
 			<p class="title">Похожие объекты:</p>
 			<div class="owl-carousel same_obj_slider">
+				<?php foreach ($products as $product) { ?>
 				<div class="card">
-					<a class="img" href="#" style="background-image: url(./image/1.jpg)"></a>
+					<a class="img" href="<?php echo $product['href']; ?>" style="background-image: url('<?php echo $product['thumb']; ?>')"></a>
+					
+					<?php if($product['sticker']){ ?>
 					<div class="card_label">
-						<span class="fast_label">срочный</span>
+						<?php foreach ($product['sticker'] as $sticker) { ?>
+							<span><img src="<?php echo $sticker['image']; ?>"></span>
+						<?php } ?>
 					</div>
-					<a class="name" href="#">Продажа виллы в закрытом коттеджном поселке Продажа виллы в закрытом коттеджном поселкеs</a>
+					<?php } ?>
+					
+					<a class="name" href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
+					
+					<?php if($product['filter_options']){ ?>
 					<div class="tags">
-						<span>Алушта / 3 комн. / 300 м. кв.</span>
+						<?php $i == 0; ?>
+						<?php foreach($product['filter_options'] as $option){ ?>
+							<?php echo $option['name']; ?>: <span><?php echo $option['value'] . $option['postfix']; ?></span>
+							<?php $i++; ?>
+							<?php if($i == 3 ){break;} ?>
+						<?php } ?>
 					</div>
-					<p class="price_rub">183 094 106 руб.</p>
-					<p class="price_usd">2 900 000 $</p>
-					<span class="object_id">№ 514</span>
+					<?php } ?>
+					
+					<?php if ($product['price'] || $product['rub']) { ?>
+					<?php if (!$product['special']) { ?>
+					<p class="price_rub"><?php echo $product['rub']; ?></p>
+					<p class="price_usd"><?php echo $product['price']; ?></p>
+					<?php } else { ?>
+					<p class="price_rub"><?php echo $product['special']; ?></p>
+					<p class="price_usd"><sup><strike><?php echo $product['price']; ?></strike></sup></p>
+					<?php } ?>
+					<?php } ?>
+					
+					<span class="object_id">№ <?php echo $product['model']; ?></span>
 				</div>
-				<div class="card">
-					<a class="img" href="#" style="background-image: url(./image/1.jpg)"></a>
-					<div class="card_label">
-						<span class="fast_label">срочный</span>
-					</div>
-					<a class="name" href="#">Продажа виллы в закрытом коттеджном поселке</a>
-					<div class="tags">
-						<span>Алушта / 3 комн. / 300 м. кв.</span>
-					</div>
-					<p class="price_rub">183 094 106 руб.</p>
-					<p class="price_usd">2 900 000 $</p>
-					<span class="object_id">№ 514</span>
-				</div>
-				<div class="card">
-					<a class="img" href="#" style="background-image: url(./image/1.jpg)"></a>
-					<div class="card_label">
-						<span class="fast_label">срочный</span>
-					</div>
-					<a class="name" href="#">Продажа виллы в закрытом коттеджном поселке</a>
-					<div class="tags">
-						<span>Алушта / 3 комн. / 300 м. кв.</span>
-					</div>
-					<p class="price_rub">183 094 106 руб.</p>
-					<p class="price_usd">2 900 000 $</p>
-					<span class="object_id">№ 514</span>
-				</div>
-				<div class="card">
-					<a class="img" href="#" style="background-image: url(./image/1.jpg)"></a>
-					<div class="card_label">
-						<span class="fast_label">срочный</span>
-					</div>
-					<a class="name" href="#">Продажа виллы в закрытом коттеджном поселке</a>
-					<div class="tags">
-						<span>Алушта / 3 комн. / 300 м. кв.</span>
-					</div>
-					<p class="price_rub">183 094 106 руб.</p>
-					<p class="price_usd">2 900 000 $</p>
-					<span class="object_id">№ 514</span>
-				</div>
+				<?php } ?>
 			</div>
 		</div>
+		<?php } ?>
 	</div>
 <?php echo $footer; ?>

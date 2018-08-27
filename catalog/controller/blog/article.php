@@ -296,6 +296,14 @@ class ControllerBlogArticle extends Controller {
 				} else {
 					$image = false;
 				}
+				
+				$agent_info = $this->model_blog_category->getCategory($result['article_id']);
+				
+				if (!empty($agent_info['image'])) {
+					$image_agent = $this->model_tool_image->resize($agent_info['image'], 226, 226);
+				} else {
+					$image_agent = $this->model_tool_image->resize('placeholder.png', 226, 226);
+				}
 							
 				$data['articles'][] = array(
 					'article_id' => $result['article_id'],
@@ -305,7 +313,9 @@ class ControllerBlogArticle extends Controller {
 					'short_description' => utf8_substr(strip_tags(html_entity_decode($article_info['short_description'], ENT_QUOTES, 'UTF-8')), 0, 100 . '..'),
 					'date_added'  => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
 					'viewed'      => $result['viewed'],
-					'href'    	 => $this->url->link('blog/article', 'article_id=' . $result['article_id']),
+					'href'    	  => $this->url->link('blog/article', 'article_id=' . $result['article_id']),
+					'agent'       => isset($agent_info['name']) ? $agent_info['name'] : '',
+					'image_agent' => $image_agent
 				);
 			}
 
@@ -321,14 +331,29 @@ class ControllerBlogArticle extends Controller {
 				} else {
 					$image = false;
 				}
-				if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
-					$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
-				} else {
-					$price = false;
+				
+				$this->load->model('localisation/currency');
+
+				$currencys = $this->model_localisation_currency->getCurrency($result['currency_id']);
+
+				foreach($currencys as $currency){
+					if ($result['currency_id'] != 5) {
+						$price_rub = $this->currency->convert($result['price'], $currency['code'], 'RUB');
+						$rub = $this->currency->format($this->tax->calculate($price_rub, $result['tax_class_id'], $this->config->get('config_tax')), 'RUB', 1, $format= true);
+					} else {
+						$rub = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')), 'RUB', 1, $format= true);
+					}
+
+				   if ($result['currency_id'] != 2) {
+						$price_dollar = $this->currency->convert($result['price'], $currency['code'], 'USD');
+						$price = $this->currency->format($this->tax->calculate($price_dollar, $result['tax_class_id'], $this->config->get('config_tax')), 'USD', 1, $format= true);
+					} else {
+						$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')), 'USD', 1, $format= true);
+					}
 				}
 
 				if ((float)$result['special']) {
-					$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+					$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')), 'USD', $format= true);
 				} else {
 					$special = false;
 				}
@@ -346,14 +371,19 @@ class ControllerBlogArticle extends Controller {
 				$data['products'][] = array(
 					'product_id' => $result['product_id'],
 					'thumb'   	 => $image,
+					'model'		 => $result['model'],
 					'name'    	 => $result['name'],
 					'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get('configblog_article_description_length')) . '..',
-					'price'   	 => $price,
+					'price'       => $price,
+					'rub'		  => $rub,
 					'special' 	 => $special,
 					'tax'        => $tax,
 					'sticker'     => $stickers,
 					'minimum'     => $result['minimum'] > 0 ? $result['minimum'] : 1,
 					'href'    	 => $this->url->link('product/product', 'product_id=' . $result['product_id']),
+					'options'     => $this->model_catalog_product->getProductOptions($result['product_id']),//options
+					'filter_options' => $this->model_catalog_ocfilter->getValueOptionsByProduct($result['product_id']),//options
+					'uniq_options' => $result['uniq_options'] = 1 ? $result['uniq_options'] : 0,
 				);
 			}	
 			

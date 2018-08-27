@@ -110,3 +110,4 @@ $_['text_blog_article']                     = 'Кейсы';
 $_['text_blog_category']                    = 'Категории кейсов';
 $_['text_blog_setting']                     = 'Настройки кейсов';
 $_['text_news']                             = 'Блог';
+$_['text_settings_news']                    = 'Настройки блога';

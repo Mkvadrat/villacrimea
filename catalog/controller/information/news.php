@@ -119,15 +119,14 @@ class ControllerInformationNews extends Controller {
 				if($result['image']){
 					$image = $this->model_tool_image->resize($result['image'], $news_setting['news_thumb_width'], $news_setting['news_thumb_height']);
 				}else{
-					$image = false;
+					$image = $this->model_tool_image->resize('placeholder.png', $news_setting['news_thumb_width'], $news_setting['news_thumb_height']);
 				}
 
 				$data['news_list'][] = array(
 					'title' => $result['title'],
 					'thumb' => $image,
 					'viewed' => sprintf($this->language->get('text_viewed'), $result['viewed']),
-					'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES,
-						'UTF-8')), 0, $news_setting['description_limit']),
+					'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $news_setting['description_limit']),
 					'href' => $this->url->link('information/news/info', 'news_id=' . $result['news_id']),
 					'posted' => date($this->language->get('date_format_short'), strtotime($result['date_added']))
 				);

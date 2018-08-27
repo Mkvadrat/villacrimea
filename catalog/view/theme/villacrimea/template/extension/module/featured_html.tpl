@@ -2,6 +2,8 @@
     <div class="agent">
       <?php echo $html; ?>
     </div>
+    
+    <?php if($products){ ?>
     <div class="cards">
         <?php foreach ($products as $product) { ?>
         <div class="card">
@@ -42,4 +44,5 @@
         </div>
         <?php } ?>
     </div>
+    <?php } ?>
 </div>
