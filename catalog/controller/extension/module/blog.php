@@ -14,12 +14,6 @@ class ControllerExtensionModuleBlog extends Controller {
 		}else{
       		$data['heading_title'] = '';
 		}
-
-		if($setting['show_icon']){
-      		$data['show_icon'] = true;
-		}else{
-      		$data['show_icon'] = false;
-		}
 	
 		$this->load->model('catalog/news');
 	
@@ -34,7 +28,6 @@ class ControllerExtensionModuleBlog extends Controller {
 		$data['news'] = array();
 
 		$data['show_title'] = $setting['show_title'];
-		$data['show_icon']  = $setting['show_icon'];
 
 		$results = $this->model_catalog_news->getNewsShorts($setting['limit']);
 		

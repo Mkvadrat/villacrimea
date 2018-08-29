@@ -160,15 +160,7 @@ class ControllerExtensionModuleBlog extends Controller {
 		} else {
 			$data['show_title'] = '';
 		}
-
-		if (isset($this->request->post['show_icon'])) {
-			$data['show_icon'] = $this->request->post['show_icon'];
-		} elseif (!empty($module_info)) {
-			$data['show_icon'] = $module_info['show_icon'];
-		} else {
-			$data['show_icon'] = '';
-		}
-
+		
 		if (isset($this->request->post['status'])) {
 			$data['status'] = $this->request->post['status'];
 		} elseif (!empty($module_info)) {

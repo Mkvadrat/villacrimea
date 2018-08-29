@@ -15,7 +15,7 @@ $_['entry_desc_limit']  = 'Ограничение длинны описания'
 $_['entry_thumb']       = 'Размер изображений';
 $_['entry_width']       = 'Ширина';
 $_['entry_height']      = 'Высота';
-$_['entry_show_title']  = 'Показать заголовок';
+$_['entry_show_title']  = 'Заголовок';
 $_['entry_show_icon']   = 'Показать иконку';
 $_['entry_status']      = 'Статус';
 

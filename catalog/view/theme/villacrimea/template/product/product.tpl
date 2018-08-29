@@ -228,33 +228,6 @@
                           </div>
                       </div>
                   </div>
-                  
-                  <script type="text/javascript">
-                  function sendFormAgent(){
-                      $.ajax({
-                          url: 'index.php?route=product/product/sendFormAgent',
-                          type: 'post',
-                          data: {  
-                              'name' : $('#name_agent').val(),
-                              'tel' : $('#phone_agent').val(),
-                              'email' : $('#email_agent').val(),
-                              'email_agent' : $('#hidden_email').val(),
-                              'message' : $('#message_agent').val(),
-                          },
-                          dataType: 'json',
-                          success: function(data) {
-                              swal({
-                                  title: data.message,
-                                  text: "",
-                                  timer: 1000,
-                                  showConfirmButton: false
-                              });
-                  
-                              $.fancybox.close();
-                          }
-                      });
-                  }
-                  </script>
               </div>
           </div>
       </div>

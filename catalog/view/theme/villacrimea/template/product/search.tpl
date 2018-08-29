@@ -87,7 +87,9 @@
           <?php } ?>
           </select>
           
-          <span class="<?php echo $arrow; ?>">i</span>
+          <?php if($arrow){?>
+            <span class="<?php echo $arrow; ?>">i</span>
+          <?php } ?>
         </div>
         
         <div class="tabs_catalog">

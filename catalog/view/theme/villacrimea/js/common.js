@@ -159,6 +159,13 @@ $(document).ready(function () {
             $(this).siblings('button').removeClass('checked_button');
         }
     });
+    $('#conf_politics_three').on('click', function () {
+        if ($(this).is(':checked')) {
+            $(this).siblings('button').addClass('checked_button');
+        } else {
+            $(this).siblings('button').removeClass('checked_button');
+        }
+    });
     $('#conf_politics_cont').on('click', function () {
         if ($(this).is(':checked')) {
             $(this).siblings('button').addClass('checked_button');
@@ -263,3 +270,104 @@ $(document).ready(function () {
         });
     });
 });
+
+//Main page forms
+function sendForm(){
+    $.ajax({
+        url: 'index.php?route=common/footer/sendForm',
+        type: 'post',
+        data: {  
+            'name' : $('#name').val(),
+            'tel' : $('#phone').val(),
+            'email' : $('#email').val(),
+            'message' : $('#message').val(),
+        },
+        dataType: 'json',
+        success: function(data) {
+            swal({
+                title: data.message,
+                text: "",
+                timer: 1000,
+                showConfirmButton: false
+            });
+
+            $.fancybox.close();
+        }
+    });
+}
+
+//Заказать подбор
+function orderSelection(){
+    $.ajax({
+        url: 'index.php?route=common/footer/sendForm',
+        type: 'post',
+        data: {  
+            'name' : $('#name_for_order').val(),
+            'tel' : $('#phone_for_order').val(),
+            'email' : $('#email_for_order').val(),
+            'message' : $('#message_for_order').val(),
+        },
+        dataType: 'json',
+        success: function(data) {
+            swal({
+                title: data.message,
+                text: "",
+                timer: 1000,
+                showConfirmButton: false
+            });
+
+            $.fancybox.close();
+        }
+    });
+}
+
+//Product and cases page forms
+function sendFormAgent(){
+    $.ajax({
+        url: 'index.php?route=product/product/sendFormAgent',
+        type: 'post',
+        data: {  
+            'name' : $('#name_agent').val(),
+            'tel' : $('#phone_agent').val(),
+            'email' : $('#email_agent').val(),
+            'email_agent' : $('#hidden_email').val(),
+            'message' : $('#message_agent').val(),
+        },
+        dataType: 'json',
+        success: function(data) {
+            swal({
+                title: data.message,
+                text: "",
+                timer: 1000,
+                showConfirmButton: false
+            });
+
+            $.fancybox.close();
+        }
+    });
+}
+
+//Contacts page forms
+function sendContactsForm(){
+    $.ajax({
+        url: 'index.php?route=information/contact/sendContactsForm',
+        type: 'post',
+        data: {  
+            'name' : $('#name').val(),
+            'tel' : $('#phone').val(),
+            'email' : $('#email').val(),
+            'message' : $('#message').val(),
+        },
+        dataType: 'json',
+        success: function(data) {
+            swal({
+                title: data.message,
+                text: "",
+                timer: 1000,
+                showConfirmButton: false
+            });
+
+            $.fancybox.close();
+        }
+    });
+}

@@ -49,6 +49,12 @@
                       <?php } ?>
                     </div>
                   </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-title<?php echo $language['language_id']; ?>">Подзаголовок</label>
+                    <div class="col-sm-10">
+                      <input type="text" name="information_description[<?php echo $language['language_id']; ?>][sub_title]" value="<?php echo isset($information_description[$language['language_id']]) ? $information_description[$language['language_id']]['sub_title'] : ''; ?>" placeholder="Подзаголовок" id="input-title<?php echo $language['language_id']; ?>" class="form-control" />
+                    </div>
+                  </div>
                   <div class="form-group required">
                     <label class="col-sm-2 control-label" for="input-description<?php echo $language['language_id']; ?>"><?php echo $entry_description; ?></label>
                     <div class="col-sm-10">
@@ -131,20 +137,6 @@
                   <?php if ($error_keyword) { ?>
                   <div class="text-danger"><?php echo $error_keyword; ?></div>
                   <?php } ?>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-sm-2 control-label" for="input-bottom"><span data-toggle="tooltip" title="<?php echo $help_bottom; ?>"><?php echo $entry_bottom; ?></span></label>
-                <div class="col-sm-10">
-                  <div class="checkbox">
-                    <label>
-                      <?php if ($bottom) { ?>
-                      <input type="checkbox" name="bottom" value="1" checked="checked" id="input-bottom" />
-                      <?php } else { ?>
-                      <input type="checkbox" name="bottom" value="1" id="input-bottom" />
-                      <?php } ?>
-                      &nbsp; </label>
-                  </div>
                 </div>
               </div>
               <div class="form-group">

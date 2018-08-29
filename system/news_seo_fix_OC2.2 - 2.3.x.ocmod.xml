@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+    <name>Opencart News Seo Url fix OC 2.3</name>
+    <code>news_seo_fix</code>
+    <version>1.1.0</version>
+    <author>alexwaha</author>
+    <link>https://oc-help.com</link>
+  <file path="catalog/controller/startup/seo_pro.php">
+    <operation>
+      <search><![CDATA[$this->request->get['route'] = 'information/information';]]></search>
+      <add position="after"><![CDATA[     } elseif (isset($this->request->get['news_id'])) {
+        $this->request->get['route'] = 'information/news/info';]]></add>
+    </operation>
+    <operation>
+      <search><![CDATA[case 'information_id':]]></search>
+      <add position="after"><![CDATA[case 'news_id':]]></add>
+    </operation>
+  </file>
+  <file path="catalog/controller/startup/seo_url.php">
+    <operation>
+      <search><![CDATA[$url = explode('=', $query->row['query']);]]></search>
+      <add position="after"><![CDATA[         if ($url[0] == 'news_id') {
+            $this->request->get['news_id'] = $url[1];
+          }]]></add>
+    </operation>
+    <operation>
+      <search><![CDATA[$url[0] != 'information_id' &&]]></search>
+      <add position="replace"><![CDATA[$url[0] != 'information_id' && $url[0] != 'news_id' &&]]></add>
+    </operation>
+    <operation>
+      <search><![CDATA[} elseif (isset($this->request->get['information_id'])) {]]></search>
+      <add position="replace"><![CDATA[
+        } elseif (isset($this->request->get['news_id'])) {
+          $this->request->get['route'] = 'information/news/info';
+        } elseif (isset($this->request->get['information_id'])) {
+        ]]></add>
+    </operation>
+    <operation>
+      <search><![CDATA[($data['route'] == 'information/information' && $key == 'information_id')]]></search>
+      <add position="replace"><![CDATA[($data['route'] == 'information/information' && $key == 'information_id') || ($data['route'] == 'information/news/info' && $key == 'news_id')]]></add>
+    </operation>
+  </file>
+</modification>

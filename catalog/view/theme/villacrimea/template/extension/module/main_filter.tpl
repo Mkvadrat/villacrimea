@@ -10,7 +10,6 @@
 
 <div class="choise">
     <div>
-        
         <?php if($filter_categories){ ?>
         <select name="filter_categories" id="type">
             <?php foreach($filter_categories as $category){ ?>
@@ -45,7 +44,7 @@
             <option value="USD">USD</option>
         </select>
         
-        <button type="submit" onclick="SendForm(); return true;">Показать</button>
+        <button type="submit" onclick="setFilter(); return true;">Показать</button>
     </div>
 </div>
 
@@ -102,7 +101,7 @@ $(document).ready(function() {
     });
 });
 
-function SendForm(){
+function setFilter(){
     var data = {
 		'filter_categories' : $('#type').val(),
         'regions' : $('#region').val(),

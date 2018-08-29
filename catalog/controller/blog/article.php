@@ -436,45 +436,8 @@ class ControllerBlogArticle extends Controller {
 			
 			$this->response->setOutput($this->load->view('blog/article', $data));
 		} else {
-			$url = '';
+			$this->document->setTitle($this->language->get('error_page'));
 			
-			if (isset($this->request->get['blog_category_id'])) {
-				$url .= '&blog_category_id=' . $this->request->get['blog_category_id'];
-			}		
-
-			if (isset($this->request->get['filter_name'])) {
-				$url .= '&filter_name=' . $this->request->get['filter_name'];
-			}	
-					
-			if (isset($this->request->get['filter_tag'])) {
-				$url .= '&filter_tag=' . $this->request->get['filter_tag'];
-			}
-							
-			if (isset($this->request->get['filter_description'])) {
-				$url .= '&filter_description=' . $this->request->get['filter_description'];
-			}
-					
-			if (isset($this->request->get['filter_news_id'])) {
-				$url .= '&filter_news_id=' . $this->request->get['filter_news_id'];
-			}
-								
-				$data['breadcrumbs'][] = array(
-				'text' => $this->language->get('text_error'),
-				'href' => $this->url->link('product/product', $url . '&product_id=' . $article_id)
-			);
-
-			$this->document->setTitle($this->language->get('text_error'));
-
-			$data['heading_title'] = $this->language->get('text_error');
-
-			$data['text_error'] = $this->language->get('text_error');
-
-			$data['button_continue'] = $this->language->get('button_continue');
-
-			$data['continue'] = $this->url->link('common/home');
-
-			$this->response->addHeader($this->request->server['SERVER_PROTOCOL'] . ' 404 Not Found');
-
 			$data['column_left'] = $this->load->controller('common/column_left');
 			$data['column_right'] = $this->load->controller('common/column_right');
 			$data['content_top'] = $this->load->controller('common/content_top');
@@ -482,7 +445,7 @@ class ControllerBlogArticle extends Controller {
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
 
-			$this->response->setOutput($this->load->view('error/not_found', $data));
+			$this->response->setOutput($this->load->view('blog/error_article', $data));
     	}
   	}
 	

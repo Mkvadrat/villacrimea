@@ -71,31 +71,6 @@
                   </label>
                   <button type="submit" onclick="sendContactsForm();" class="casual_button">Отправить</button>
               </div>
-              <script type="text/javascript">
-              function sendContactsForm(){
-                  $.ajax({
-                      url: 'index.php?route=information/contact/sendContactsForm',
-                      type: 'post',
-                      data: {  
-                          'name' : $('#name').val(),
-                          'tel' : $('#phone').val(),
-                          'email' : $('#email').val(),
-                          'message' : $('#message').val(),
-                      },
-                      dataType: 'json',
-                      success: function(data) {
-                          swal({
-                              title: data.message,
-                              text: "",
-                              timer: 1000,
-                              showConfirmButton: false
-                          });
-              
-                          $.fancybox.close();
-                      }
-                  });
-              }
-              </script>
             </div>
         </div>
         

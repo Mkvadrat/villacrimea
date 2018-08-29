@@ -67,29 +67,7 @@
           <div class="form-group">
             <label class="col-sm-2 control-label" for="input-show-title"><?php echo $entry_show_title; ?></label>
             <div class="col-sm-10">
-              <select name="show_title" id="input-show-icon" class="form-control">
-                <?php if ($show_title) { ?>
-                <option value="1" selected="selected"><?php echo $text_yes; ?></option>
-                <option value="0"><?php echo $text_no; ?></option>
-                <?php } else { ?>
-                <option value="1"><?php echo $text_yes; ?></option>
-                <option value="0" selected="selected"><?php echo $text_no; ?></option>
-                <?php } ?>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="input-show-icon"><?php echo $entry_show_icon; ?></label>
-            <div class="col-sm-10">
-              <select name="show_icon" id="input-show-icon" class="form-control">
-                <?php if ($show_icon) { ?>
-                <option value="1" selected="selected"><?php echo $text_yes; ?></option>
-                <option value="0"><?php echo $text_no; ?></option>
-                <?php } else { ?>
-                <option value="1"><?php echo $text_yes; ?></option>
-                <option value="0" selected="selected"><?php echo $text_no; ?></option>
-                <?php } ?>
-              </select>
+              <input type="text" name="show_title" value="<?php echo $show_title; ?>" placeholder="<?php echo $entry_show_title; ?>" id="input-show-title" class="form-control" />
             </div>
           </div>
           <div class="form-group">

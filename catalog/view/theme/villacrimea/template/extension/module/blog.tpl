@@ -1,5 +1,12 @@
 <div class="right_side">
-	<p class="title">Читайте так же:</p>
+	<div class="agent">
+		<div class="img" style="background-image: url('catalog/view/theme/villacrimea/image/elena.png');"></div>
+		<p class="name">Коцеблюк Елена</p>
+		<p>Наш эксперт сделает подбор для Вас в кратчайшие сроки.</p>
+		<a class="casual_button callback" href="#order_selection">Заказать подбор</a>
+	</div>
+	
+	<p class="title"><?php echo $show_title; ?></p>
 	
 	<ul>
 		<?php foreach ($news as $news_item) { ?>

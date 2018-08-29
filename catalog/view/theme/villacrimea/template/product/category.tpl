@@ -132,7 +132,7 @@
               <div class="img" style="background-image: url('catalog/view/theme/villacrimea/image/elena.png');"></div>
               <p class="name">Коцеблюк Елена</p>
               <p>Наш эксперт сделает подбор для Вас в кратчайшие сроки.</p>
-              <a class="casual_button" href="#">Заказать подбор</a>
+              <a class="casual_button callback" href="#order_selection">Заказать подбор</a>
           </div>
           <div class="text">
               <p class="title"><?php echo $heading_title; ?></p>

@@ -26,35 +26,35 @@
         </div>
     </div>
     
-    <script type="text/javascript">
-    function sendForm(){
-        $.ajax({
-            url: 'index.php?route=common/footer/sendForm',
-            type: 'post',
-            data: {  
-                'name' : $('#name').val(),
-                'tel' : $('#phone').val(),
-                'email' : $('#email').val(),
-                'message' : $('#message').val(),
-            },
-            dataType: 'json',
-            success: function(data) {
-                swal({
-                    title: data.message,
-                    text: "",
-                    timer: 1000,
-                    showConfirmButton: false
-                });
-    
-                $.fancybox.close();
-            }
-        });
-    }
-    </script>
+    <div id="order_selection" style="display: none;">
+        <button data-fancybox-close="" class="fancybox-close-small" title="Close"><span>X</span></button>
+        <div class="call_me_back_inner">
+            <p class="title">Форма обратной связи</p>
+            <div>
+                <input type="text" id="name_for_order" placeholder="Имя*">
+                <input type="text" id="phone_for_order" placeholder="Телефон*">
+                <input type="text" id="email_for_order" placeholder="E-mail">
+                <div class="textarea">
+                    <textarea id="message_for_order" onkeyup="textAreaAdjust(this);" placeholder="Вопрос"></textarea>
+                    <script>
+                        function textAreaAdjust(o) {
+                            o.style.height = "1px";
+                            o.style.height = (5+o.scrollHeight)+"px";
+                        }
+                    </script>
+                </div>
+                <input type="checkbox" id="conf_politics_three">
+                <label for="conf_politics">
+                        я согласен(согласна)<br>
+                        с <a href="#">политикой конфиденциальности</a>
+                </label>
+                <button type="submit" onclick="orderSelection();" class="casual_button">Отправить</button>
+            </div>
+        </div>
+    </div>
     
     <footer>
         <div class="footer_left_side">
-            
             <?php if($categories){ ?>
             <ul class="menu">
             <?php foreach ($categories as $category) { ?>
@@ -86,7 +86,6 @@
                 <?php } ?>
             </ul>
             <?php } ?>
-            
         </div>
         
         <div class="footer_right_side">
