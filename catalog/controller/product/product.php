@@ -436,7 +436,7 @@ class ControllerProductProduct extends Controller {
 
 			$data['products'] = array();
 			
-			$data['action_pdf'] = $this->url->link('product/product/pdf', 'product_id=' . (int)$this->request->get['product_id'], $this->generate_value(7), true);
+			$data['action_pdf'] = $this->url->link('product/product/pdf', 'product_id=' . (int)$this->request->get['product_id'] . '-' . $this->generate_value(7), true);
 
 			$results = $this->model_catalog_product->getProductRelated($this->request->get['product_id']);
 
@@ -938,6 +938,7 @@ class ControllerProductProduct extends Controller {
 			$data['options'] = $this->model_catalog_product->getProductOptions($product_info['product_id']);
 			$data['filter_options'] = $this->model_catalog_ocfilter->getValueOptionsByProduct($product_info['product_id']);
 			$data['uniq_options'] = $product_info['uniq_options'] = 1 ? $product_info['uniq_options'] : 0;
+			$data['href'] = $this->url->link('product/product', 'product_id=' . $product_info['product_id']);
 			
 			if ($product_info['image']) {
 				$data['thumb'] = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_thumb_width'), $this->config->get($this->config->get('config_theme') . '_image_thumb_height'));

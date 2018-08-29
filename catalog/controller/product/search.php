@@ -284,6 +284,20 @@ class ControllerProductSearch extends Controller {
 					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url)
 				);
 			}
+			
+			$arrow = $this->request->server['REQUEST_URI'];
+			
+			$parts = explode('order=', $arrow);
+			
+			$arrow_data = isset($parts[1]) ? $parts[1] : null;
+			
+			if($arrow_data == 'ASC'){
+				$data['arrow'] = 'active-asc';
+			}elseif($arrow_data == 'DESC'){
+				$data['arrow'] = 'active-desc';
+			}else{
+				$data['arrow'] = '';
+			}
 
 			$url = '';
 
