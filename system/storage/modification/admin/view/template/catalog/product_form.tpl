@@ -200,6 +200,73 @@
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
                 <div class="col-sm-10">
+                  <script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
+									<script type="text/javascript">
+										var myMap, myPlacemark, coords;
+										ymaps.ready(init);
+										function init () {
+											//Определяем начальные параметры карты
+											myMap = new ymaps.Map('YMapsID', {
+												center: [<?php if(!empty($location)){ ?><?php echo $location; ?><?php }else{ echo '45.3892,33.9938'; } ?>], 
+												zoom: 15
+											});	
+											
+											//Определяем элемент управления поиск по карте	
+											var SearchControl = new ymaps.control.SearchControl({noPlacemark:true});	
+											
+											//Добавляем элементы управления на карту
+											myMap.controls
+											.add(SearchControl)                
+											.add('zoomControl')                
+											.add('typeSelector')                 
+											.add('mapTools');
+											
+											coords = [<?php if(!empty($location)){ ?><?php echo $location; ?><?php }else{ echo '45.3892,33.9938'; } ?>];
+											
+											//Определяем метку и добавляем ее на карту				
+											myPlacemark = new ymaps.Placemark([<?php if(!empty($location)){ ?><?php echo $location; ?><?php }else{ echo '45.3892,33.9938'; } ?>],{}, {preset: "twirl#redIcon", draggable: true});	
+											
+											myMap.geoObjects.add(myPlacemark);			
+											
+											//Отслеживаем событие перемещения метки
+											myPlacemark.events.add("dragend", function (e) {			
+												coords = this.geometry.getCoordinates();
+												savecoordinats();
+											}, myPlacemark);
+											
+											//Отслеживаем событие щелчка по карте
+											myMap.events.add('click', function (e) {        
+												coords = e.get('coordPosition');
+												savecoordinats();
+											});	
+											
+											//Отслеживаем событие выбора результата поиска
+											SearchControl.events.add("resultselect", function (e) {
+												coords = SearchControl.getResultsArray()[0].geometry.getCoordinates();
+												savecoordinats();
+											});
+											
+											//Ослеживаем событие изменения области просмотра карты - масштаб и центр карты
+											myMap.events.add('boundschange', function (event) {
+												if (event.get('newZoom') != event.get('oldZoom')) {		
+													savecoordinats();
+												}
+												if (event.get('newCenter') != event.get('oldCenter')) {		
+													savecoordinats();
+												}
+											});
+										
+										}
+									
+										//Функция для передачи полученных значений в форму
+										function savecoordinats (){	
+											var new_coords = [coords[0].toFixed(4), coords[1].toFixed(4)];	
+											myPlacemark.getOverlay().getData().geometry.setCoordinates(new_coords);
+											document.getElementById("input-location").value = new_coords;
+										}
+									</script>
+									
+									<div id="YMapsID" style="width:1170px; height:400px"></div>
                   <input type="text" name="location" value="<?php echo $location; ?>" placeholder="<?php echo $entry_location; ?>" id="input-location" class="form-control" />
                 </div>
               </div>
@@ -946,6 +1013,9 @@
                 <table class="table table-striped table-bordered table-hover">
                   <thead>
                     <tr>
+
+			<td></td>
+			
                       <td class="text-left"><?php echo $entry_image; ?></td>
                     </tr>
                   </thead>
@@ -960,15 +1030,23 @@
                 <table id="images" class="table table-striped table-bordered table-hover">
                   <thead>
                     <tr>
+
+			<td></td>
+			
                       <td class="text-left"><?php echo $entry_additional_image; ?></td>
                       <td class="text-right"><?php echo $entry_sort_order; ?></td>
                       <td></td>
                     </tr>
                   </thead>
-                  <tbody>
+                  
+			<tbody id="imagemanager_id">
+			
                     <?php $image_row = 0; ?>
                     <?php foreach ($product_images as $product_image) { ?>
                     <tr id="image-row<?php echo $image_row; ?>">
+
+			<td class="text-center imagemanager"><i class="fa fa-bars"></i></td>
+			
                       <td class="text-left"><a href="" id="thumb-image<?php echo $image_row; ?>" data-toggle="image" class="img-thumbnail"><img src="<?php echo $product_image['thumb']; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a><input type="hidden" name="product_image[<?php echo $image_row; ?>][image]" value="<?php echo $product_image['image']; ?>" id="input-image<?php echo $image_row; ?>" /></td>
                       <td class="text-right"><input type="text" name="product_image[<?php echo $image_row; ?>][sort_order]" value="<?php echo $product_image['sort_order']; ?>" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>
                       <td class="text-left"><button type="button" onclick="$('#image-row<?php echo $image_row; ?>').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>
@@ -1515,8 +1593,25 @@ function addSpecial() {
   <script type="text/javascript"><!--
 var image_row = <?php echo $image_row; ?>;
 
+
+            function addImages(files, path, item) {
+				html  = '<tr class="separator" id="image-row' + image_row + '">';
+				html += '  <td class="text-center imagemanager"><i class="fa fa-bars"></i></td>';
+				html += '  <td class="text-left"><a href="" id="thumb-image' + image_row + '"data-toggle="image" class="img-thumbnail"><img src="' + files + '" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /><input type="hidden" name="product_image[' + image_row + '][image]" value="' + path + '" id="input-image' + image_row + '" /></td>';
+				html += '  <td class="text-right"><input type="text" name="product_image[' + image_row + '][sort_order]" value="' + item + '" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>';
+				html += '  <td class="text-left"><button type="button" onclick="$(\'#image-row' + image_row  + '\').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
+				html += '</tr>';
+
+				$('#images tbody').append(html);
+
+				image_row++;
+			}
+			
 function addImage() {
 	html  = '<tr id="image-row' + image_row + '">';
+
+			html += '  <td class="text-center imagemanager"><i class="fa fa-bars"></i></td>';
+			
 	html += '  <td class="text-left"><a href="" id="thumb-image' + image_row + '"data-toggle="image" class="img-thumbnail"><img src="<?php echo $placeholder; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a><input type="hidden" name="product_image[' + image_row + '][image]" value="" id="input-image' + image_row + '" /></td>';
 	html += '  <td class="text-right"><input type="text" name="product_image[' + image_row + '][sort_order]" value="" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>';
 	html += '  <td class="text-left"><button type="button" onclick="$(\'#image-row' + image_row  + '\').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
@@ -1574,4 +1669,29 @@ $('.datetime').datetimepicker({
 $('#language a:first').tab('show');
 $('#option a:first').tab('show');
 //--></script></div>
+
+			<script type="text/javascript"><!--
+				$(document).ready(function() {
+					$('#imagemanager_id').sortable({
+						axis: 'y',
+						forcePlaceholderSize: true,
+						placeholder: 'group_move_placeholder',
+						stop: function(event, ui)
+						{	
+							$('#imagemanager_id input[name$="[sort_order]"]').each(function(i) {
+								$(this).val(i);
+							});			
+						}
+					});	
+					
+					$("#imagemanager_id").mousedown(function() {
+						$(".imagemanager").addClass("grabbing");
+					});	
+					
+					$("#imagemanager_id").mouseup(function() {
+						$(".imagemanager").removeClass("grabbing");
+					});	
+				});	
+			//--></script>
+			
 <?php echo $footer; ?>

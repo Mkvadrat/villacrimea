@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>Imagemanager</name>
+    <code>imagemanager</code>
+    <version>1.0.5</version>
+    <author>q3dm0</author>
+	<link>http://www.opencart.com</link>
+	
+	<file path="admin/view/template/common/header.tpl">
+		<operation error="skip">
+			<search><![CDATA[view/javascript/bootstrap/js/bootstrap.min.js]]></search>
+			<add position="before"><![CDATA[
+            <!-- ADD TO HEADER STYLE -->
+			<!-- ADD JQUERY UI AND STYLES -->
+			<script type="text/javascript" src="view/javascript/imagemanager/jquery/jquery-ui.js"></script>
+			<link rel="stylesheet" type="text/css" media="screen" href="view/javascript/imagemanager/jquery/jquery-ui.css">
+
+			<!-- ADD ELFINDER SCRIPT AND STYLES -->
+			<script type="text/javascript" src="view/javascript/imagemanager/elFinder/js/elfinder.full.js"></script>
+			<link rel="stylesheet" type="text/css" media="screen" href="view/javascript/imagemanager/elFinder/css/elfinder.full.css">
+			<link rel="stylesheet" type="text/css" media="screen" href="view/javascript/imagemanager/elFinder/css/theme.css">
+
+			<!-- ADD STYLES SORTABLE MOD -->
+			<link rel="stylesheet" type="text/css" media="screen" href="view/javascript/imagemanager/sortablemod/imagemanager.css">
+			]]></add>	
+		</operation>
+		<operation error="skip">
+			<search><![CDATA[view/javascript/common.js]]></search>
+			<add position="replace"><![CDATA[view/javascript/imagemanager/imagemanager.js]]></add>	
+		</operation>
+	</file>
+	<file path="admin/view/template/catalog/product_form.tpl">
+		<operation error="skip">
+			<search><![CDATA[function addImage() {]]></search>
+			<add position="before"><![CDATA[
+            function addImages(files, path, item) {
+				html  = '<tr class="separator" id="image-row' + image_row + '">';
+				html += '  <td class="text-center imagemanager"><i class="fa fa-bars"></i></td>';
+				html += '  <td class="text-left"><a href="" id="thumb-image' + image_row + '"data-toggle="image" class="img-thumbnail"><img src="' + files + '" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /><input type="hidden" name="product_image[' + image_row + '][image]" value="' + path + '" id="input-image' + image_row + '" /></td>';
+				html += '  <td class="text-right"><input type="text" name="product_image[' + image_row + '][sort_order]" value="' + item + '" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>';
+				html += '  <td class="text-left"><button type="button" onclick="$(\'#image-row' + image_row  + '\').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
+				html += '</tr>';
+
+				$('#images tbody').append(html);
+
+				image_row++;
+			}
+			]]></add>	
+		</operation>
+		<operation error="skip">
+            <search><![CDATA[
+			<td class="text-left"><?php echo $entry_image; ?></td>
+            ]]></search>
+            <add position="before"><![CDATA[
+			<td></td>
+			]]></add>
+        </operation>
+		<operation error="skip">
+            <search><![CDATA[
+			<td class="text-left"><?php echo $entry_additional_image; ?></td>
+            ]]></search>
+            <add position="before"><![CDATA[
+			<td></td>
+			]]></add>
+        </operation>
+		<operation error="skip">
+            <search index="6" limit="1"><![CDATA[
+			<tbody>
+            ]]></search>
+            <add position="replace"><![CDATA[
+			<tbody id="imagemanager_id">
+			]]></add>
+        </operation>
+		<operation error="skip">
+            <search><![CDATA[
+            <tr id="image-row<?php echo $image_row; ?>">
+            ]]></search>
+            <add position="after"><![CDATA[
+			<td class="text-center imagemanager"><i class="fa fa-bars"></i></td>
+			]]></add>
+        </operation>
+		<operation error="skip">
+            <search><![CDATA[
+            html  = '<tr id="image-row' + image_row + '">';
+            ]]></search>
+            <add position="after"><![CDATA[
+			html += '  <td class="text-center imagemanager"><i class="fa fa-bars"></i></td>';
+			]]></add>
+        </operation>
+		<operation error="skip">
+            <search><![CDATA[
+			<?php echo $footer; ?>
+            ]]></search>
+            <add position="before"><![CDATA[
+			<script type="text/javascript"><!--
+				$(document).ready(function() {
+					$('#imagemanager_id').sortable({
+						axis: 'y',
+						forcePlaceholderSize: true,
+						placeholder: 'group_move_placeholder',
+						stop: function(event, ui)
+						{	
+							$('#imagemanager_id input[name$="[sort_order]"]').each(function(i) {
+								$(this).val(i);
+							});			
+						}
+					});	
+					
+					$("#imagemanager_id").mousedown(function() {
+						$(".imagemanager").addClass("grabbing");
+					});	
+					
+					$("#imagemanager_id").mouseup(function() {
+						$(".imagemanager").removeClass("grabbing");
+					});	
+				});	
+			//--></script>
+			]]></add>
+        </operation>
+	</file>
+	<file path="admin/view/template/design/banner_form.tpl">
+		<operation error="skip">
+            <search><![CDATA[
+			function addImage(language_id) {
+			]]></search>
+            <add position="before"><![CDATA[
+			function addImages(language_id, files, path, item) {
+				html  = '<tr id="image-row' + image_row + '">';
+				html += '  <td class="text-left"><input type="text" name="banner_image[' + language_id + '][' + image_row + '][title]" value="" placeholder="<?php echo $entry_title; ?>" class="form-control" /></td>';	
+				html += '  <td class="text-left" style="width: 30%;"><input type="text" name="banner_image[' + language_id + '][' + image_row + '][link]" value="" placeholder="<?php echo $entry_link; ?>" class="form-control" /></td>';	
+				html += '  <td class="text-center"><a href="" id="thumb-image' + image_row + '" data-toggle="image" class="img-thumbnail"><img src="' + files + '" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a><input type="hidden" name="banner_image[' + language_id + '][' + image_row + '][image]" value="' + path + '" id="input-image' + image_row + '" /></td>';
+				html += '  <td class="text-right" style="width: 10%;"><input type="text" name="banner_image[' + language_id + '][' + image_row + '][sort_order]" value="' + item + '" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>';
+				html += '  <td class="text-left"><button type="button" onclick="$(\'#image-row' + image_row  + ', .tooltip\').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
+				html += '</tr>';
+				
+				$('#images' + language_id + ' tbody').append(html);
+				
+				image_row++;
+			}
+			]]></add>
+        </operation>
+
+    </file>
+</modification>

@@ -1119,7 +1119,11 @@ class ControllerCatalogProduct extends Controller {
 			);
 		}
 		
-		$data['current_case'] = $product_info['case_id'];
+		if (!empty($product_info)) {
+			$data['current_case'] = $product_info['case_id'];
+		}else {
+			$data['current_case'] = '';
+		}
 		
 		if (isset($this->request->post['case_id'])) {
 			$data['case_id'] = $this->request->post['case_id'];
