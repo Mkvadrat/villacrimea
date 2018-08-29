@@ -9,7 +9,7 @@
 <?php } ?>
 
 <div class="choise">
-    <div action="<?php echo $action; ?>" method="post">
+    <div>
         
         <?php if($filter_categories){ ?>
         <select name="filter_categories" id="type">

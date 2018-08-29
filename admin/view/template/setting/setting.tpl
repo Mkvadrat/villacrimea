@@ -137,7 +137,7 @@
                   <div class="form-group">
                     <label class="col-sm-2 control-label" for="input-address<?php echo $language['language_id']; ?>"><?php echo $entry_address; ?></label>
                     <div class="col-sm-10">
-                      <textarea name="config_langdata[<?php echo $language['language_id']; ?>][address]" placeholder="<?php echo $entry_address; ?>" rows="5" id="input-address<?php echo $language['language_id']; ?>" class="form-control"><?php echo isset($config_langdata[$language['language_id']]) ? $config_langdata[$language['language_id']]['address'] : ''; ?></textarea>
+                      <textarea name="config_langdata[<?php echo $language['language_id']; ?>][address]" placeholder="<?php echo $entry_address; ?>" rows="5" id="input-address<?php echo $language['language_id']; ?>" class="form-control summernote"><?php echo isset($config_langdata[$language['language_id']]) ? $config_langdata[$language['language_id']]['address'] : ''; ?></textarea>
                       <?php if (isset($error_address[$language['language_id']])) { ?>
                       <div class="text-danger"><?php echo $error_address[$language['language_id']]; ?></div>
                       <?php } ?>
@@ -147,30 +147,26 @@
                     <label class="col-sm-2 control-label" for="input-description<?php echo $language['language_id']; ?>">Краткое описание сайта</label>
                     <div class="col-sm-10">
                       <textarea name="config_langdata[<?php echo $language['language_id']; ?>][short_descr_site]" placeholder="Краткое описание сайта" rows="5" id="input-address<?php echo $language['language_id']; ?>" class="form-control summernote"><?php echo isset($config_langdata[$language['language_id']]) ? $config_langdata[$language['language_id']]['short_descr_site'] : ''; ?></textarea>
-                  </div>
+                    </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-2 control-label" for="input-description<?php echo $language['language_id']; ?>">Контактная информация в шапке сайта</label>
                     <div class="col-sm-10">
                       <textarea name="config_langdata[<?php echo $language['language_id']; ?>][contact_header_inf]" placeholder="Контактная информация в шапке сайта" rows="5" id="input-address<?php echo $language['language_id']; ?>" class="form-control summernote"><?php echo isset($config_langdata[$language['language_id']]) ? $config_langdata[$language['language_id']]['contact_header_inf'] : ''; ?></textarea>
-                  </div>
+                    </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-2 control-label" for="input-description<?php echo $language['language_id']; ?>">Контактная информация в подвале сайта</label>
                     <div class="col-sm-10">
                       <textarea name="config_langdata[<?php echo $language['language_id']; ?>][contact_footer_inf]" placeholder="Контактная информация в подвале сайта" rows="5" id="input-address<?php echo $language['language_id']; ?>" class="form-control summernote"><?php echo isset($config_langdata[$language['language_id']]) ? $config_langdata[$language['language_id']]['contact_footer_inf'] : ''; ?></textarea>
-                  </div>
+                    </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-2 control-label" for="input-description<?php echo $language['language_id']; ?>">Powered</label>
                     <div class="col-sm-10">
                       <textarea name="config_langdata[<?php echo $language['language_id']; ?>][powered]" placeholder="Powered" rows="5" id="input-address<?php echo $language['language_id']; ?>" class="form-control summernote"><?php echo isset($config_langdata[$language['language_id']]) ? $config_langdata[$language['language_id']]['powered'] : ''; ?></textarea>
+                    </div>
                   </div>
-                  </div>
-                  
-                  
-                  
-                  
                   
                   <div class="form-group">
                     <label class="col-sm-2 control-label" for="input-open<?php echo $language['language_id']; ?>"><span data-toggle="tooltip" data-container="#tab-general" title="<?php echo $help_open; ?>"><?php echo $entry_open; ?></span></label>
@@ -181,7 +177,13 @@
                   <div class="form-group">
                     <label class="col-sm-2 control-label" for="input-comment<?php echo $language['language_id']; ?>"><span data-toggle="tooltip" data-container="#tab-general" title="<?php echo $help_comment; ?>"><?php echo $entry_comment; ?></span></label>
                     <div class="col-sm-10">
-                      <textarea name="config_langdata[<?php echo $language['language_id']; ?>][comment]" rows="5" placeholder="<?php echo $entry_comment; ?>" id="input-comment<?php echo $language['language_id']; ?>" class="form-control"><?php echo isset($config_langdata[$language['language_id']]) ? $config_langdata[$language['language_id']]['comment'] : ''; ?></textarea>
+                      <textarea name="config_langdata[<?php echo $language['language_id']; ?>][comment]" rows="5" placeholder="<?php echo $entry_comment; ?>" id="input-comment<?php echo $language['language_id']; ?>" class="form-control summernote"><?php echo isset($config_langdata[$language['language_id']]) ? $config_langdata[$language['language_id']]['comment'] : ''; ?></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-comment<?php echo $language['language_id']; ?>">Деректор</label>
+                    <div class="col-sm-10">
+                      <textarea name="config_langdata[<?php echo $language['language_id']; ?>][manager]" rows="5" placeholder="Деректор" id="input-comment<?php echo $language['language_id']; ?>" class="form-control summernote"><?php echo isset($config_langdata[$language['language_id']]) ? $config_langdata[$language['language_id']]['manager'] : ''; ?></textarea>
                     </div>
                   </div>
                 </div>

@@ -152,6 +152,13 @@ $(document).ready(function () {
             $(this).siblings('button').removeClass('checked_button');
         }
     });
+    $('#conf_politics_two').on('click', function () {
+        if ($(this).is(':checked')) {
+            $(this).siblings('button').addClass('checked_button');
+        } else {
+            $(this).siblings('button').removeClass('checked_button');
+        }
+    });
     $('#conf_politics_cont').on('click', function () {
         if ($(this).is(':checked')) {
             $(this).siblings('button').addClass('checked_button');

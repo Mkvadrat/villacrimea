@@ -1123,14 +1123,6 @@ section .about .text .title {
     overflow: visible;
 }
 
-#callback_agent {
-    max-width: 400px;
-    padding: 30px;
-    border: 1px solid #dbdbdb;
-    border-radius: 5px;
-    overflow: visible;
-}
-
 .call_me_back_inner {
     text-align: center;
 }
@@ -3727,7 +3719,6 @@ section .contacts_page .contacts_inner .realtors .sub-title {
     width: 100%;
 }
 section .contacts_page .contacts_inner .map {
-    padding-bottom: 60%;
     position: relative;
     border: 1px solid #dbdbdb;
     border-radius: 7px;
@@ -3859,7 +3850,7 @@ section .contacts_page .contacts_inner .realtors .realtor {
     width: 32%;
     margin: 0 2% 2% 0;
 }
-section .contacts_page .contacts_inner .realtors .realtor:nth-child(3n) {
+section .contacts_page .contacts_inner .realtors .realtor:nth-child(3n+1) {
     margin-right: 0;
 }
 section .contacts_page .contacts_inner .realtors .realtor .img {
@@ -4267,8 +4258,4 @@ footer .m2 img {
     width: 40px;
     position: relative;
     padding-left: 5px;
-}
-
-#print1, #print2, #print3, #print4, #print5, #print6, #print7, #print8, #print9, #print10{
-    margin-bottom: 20px;
 }

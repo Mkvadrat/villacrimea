@@ -7,27 +7,6 @@ class ControllerInformationContact extends Controller {
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
-		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
-			$mail = new Mail();
-			$mail->protocol = $this->config->get('config_mail_protocol');
-			$mail->parameter = $this->config->get('config_mail_parameter');
-			$mail->smtp_hostname = $this->config->get('config_mail_smtp_hostname');
-			$mail->smtp_username = $this->config->get('config_mail_smtp_username');
-			$mail->smtp_password = html_entity_decode($this->config->get('config_mail_smtp_password'), ENT_QUOTES, 'UTF-8');
-			$mail->smtp_port = $this->config->get('config_mail_smtp_port');
-			$mail->smtp_timeout = $this->config->get('config_mail_smtp_timeout');
-
-			$mail->setTo($this->config->get('config_email'));
-			$mail->setFrom($this->config->get('config_email'));
-            $mail->setReplyTo($this->request->post['email']);
-			$mail->setSender(html_entity_decode($this->request->post['name'], ENT_QUOTES, 'UTF-8'));
-			$mail->setSubject(html_entity_decode(sprintf($this->language->get('email_subject'), $this->request->post['name']), ENT_QUOTES, 'UTF-8'));
-			$mail->setText($this->request->post['enquiry']);
-			$mail->send();
-
-			$this->response->redirect($this->url->link('information/contact/success'));
-		}
-
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
@@ -88,13 +67,14 @@ class ControllerInformationContact extends Controller {
 		}
 
 		$data['store'] = $this->config->get('config_name');
-		$data['address'] = nl2br($this->config->get('config_address'));
+		$data['address'] = html_entity_decode($this->config->get('config_address'), ENT_QUOTES, 'UTF-8');
 		$data['geocode'] = $this->config->get('config_geocode');
 		$data['geocode_hl'] = $this->config->get('config_language');
 		$data['telephone'] = $this->config->get('config_telephone');
 		$data['fax'] = $this->config->get('config_fax');
 		$data['open'] = nl2br($this->config->get('config_open'));
-		$data['comment'] = $this->config->get('config_comment');
+		$data['comment'] = html_entity_decode($this->config->get('config_comment'), ENT_QUOTES, 'UTF-8');
+		$data['manager'] = html_entity_decode($this->config->get('config_manager'), ENT_QUOTES, 'UTF-8');
 
 		$data['locations'] = array();
 
@@ -122,6 +102,58 @@ class ControllerInformationContact extends Controller {
 					'comment'     => $location_info['comment']
 				);
 			}
+		}
+		
+		//USER
+		$this->load->model('user/user');
+		
+		$filter_data = array(
+			'sort'  => 'user_id',
+			'order' => 'ASC',
+		);
+		
+		$data['agent_results'] = array();
+		
+		$agent_results = $this->model_user_user->getUsers($filter_data);
+		
+		if($agent_results){
+			foreach($agent_results as $results){
+				if($results['user_group_id'] != 1){
+					$agent_name = $results['lastname'] . ' ' . $results['firstname'];
+					
+					$specialization = $results['specialization'];
+					
+					if ($results['image']) {
+						$image_agent = $this->model_tool_image->resize($results['image'], 226, 226);
+					} else {
+						$image_agent = $this->model_tool_image->resize('placeholder.png', 226, 226);
+					}
+					
+					$phone = $results['phone'];
+					
+					$email = $results['email'];
+					
+					$case_id = $results['category_case_id'];
+					
+					$view_all_cases = $this->url->link('blog/category', '&blog_category_id=' . $results['category_case_id']);
+					
+					$category_id_object = $results['category_id'];
+					
+					$view_all_object = $this->url->link('product/category', 'path=' . $results['category_id']);
+					
+					$data['agent_results'][] = array(
+						'agent_id' => $results['user_id'],
+						'name' => $agent_name,
+						'specialization' => $specialization,
+						'image'	=> $image_agent,
+						'phone'	=> $phone,
+						'email' => $email,
+						'all_cases' => $view_all_cases,
+						'all_object' => $view_all_object
+					);
+				}
+			}
+			
 		}
 
 		if (isset($this->request->post['name'])) {
@@ -217,5 +249,141 @@ class ControllerInformationContact extends Controller {
 		$data['header'] = $this->load->controller('common/header');
 
 		$this->response->setOutput($this->load->view('common/success', $data));
+	}
+	
+	public function sendContactsForm(){
+		$json = array();
+		
+		$json = array(
+			'status' => 0,
+			'message' => ''
+		);
+		
+		$site_url = $_SERVER['SERVER_NAME'];
+	
+		if (isset($this->request->post['name'])) {$name = $this->request->post['name']; if ($name == '') {unset($name);}}
+		if (isset($this->request->post['tel'])) {$tel = $this->request->post['tel']; if ($tel == '') {unset($tel);}}
+		if (isset($this->request->post['email'])) {$email = $this->request->post['email'];}
+		if (isset($this->request->post['message'])) {$message = $this->request->post['message'];}
+	
+		if (isset($name) && isset($tel)){
+			$mail = new Mail();
+			$mail->protocol = $this->config->get('config_mail_protocol');
+			$mail->parameter = $this->config->get('config_mail_parameter');
+			$mail->smtp_hostname = $this->config->get('config_mail_smtp_hostname');
+			$mail->smtp_username = $this->config->get('config_mail_smtp_username');
+			$mail->smtp_password = html_entity_decode($this->config->get('config_mail_smtp_password'), ENT_QUOTES, 'UTF-8');
+			$mail->smtp_port = $this->config->get('config_mail_smtp_port');
+			$mail->smtp_timeout = $this->config->get('config_mail_smtp_timeout');
+
+			$mail->setTo($this->config->get('config_email'));
+			$mail->setFrom($site_url);
+			$mail->setSender(html_entity_decode($this->request->post['name'], ENT_QUOTES, 'UTF-8'));
+			$mail->setSubject(html_entity_decode(sprintf($this->language->get($site_url), $this->request->post['name']), ENT_QUOTES, 'UTF-8'));
+			
+			$mail->setHtml(html_entity_decode(sprintf('Имя: ' . $name . '<br>' . 'Телефон: ' . $tel . '<br>' . 'Email: ' . $email . '<br>' . 'Сообщение: ' . $message), ENT_QUOTES, 'UTF-8'));
+			$send = $mail->send();
+						
+			if ($mail){
+				$json = array(
+					'status' => 1,
+					'message' => 'Ваше сообщение отправлено'
+				);
+			}else{
+				$json = array(
+					'status' => 1,
+					'message' => 'Ошибка, сообщение не отправлено!'
+				);
+			}
+		}
+	
+		if (isset($this->request->post['name']) && isset($this->request->post['tel'])){
+			$name = $this->request->post['name'];
+			$tel = $this->request->post['tel'];
+	
+			if ($name == '' || $tel == '') {
+				unset($name);
+				unset($tel);
+				
+				$json = array(
+					'status' => 1,
+					'message' => 'Ошибка, сообщение не отправлено! Заполните все поля!'
+				);
+			}
+		}
+
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+	}
+	
+	public function sendFormAgent(){
+		$json = array();
+		
+		$json = array(
+			'status' => 0,
+			'message' => ''
+		);
+		
+		$site_url = $_SERVER['SERVER_NAME'];
+	
+		if (isset($this->request->post['name'])) {$name = $this->request->post['name']; if ($name == '') {unset($name);}}
+		if (isset($this->request->post['tel'])) {$tel = $this->request->post['tel']; if ($tel == '') {unset($tel);}}
+		if (isset($this->request->post['email'])) {$email = $this->request->post['email'];}
+		if (isset($this->request->post['message'])) {$message = $this->request->post['message'];}
+		
+		if (isset($this->request->post['email_agent'])) {
+			$email_agent = $this->request->post['email_agent'];
+		}else{
+			$email_agent = $this->config->get('config_email');
+		}
+	
+		if (isset($name) && isset($tel)){
+			$mail = new Mail();
+			$mail->protocol = $this->config->get('config_mail_protocol');
+			$mail->parameter = $this->config->get('config_mail_parameter');
+			$mail->smtp_hostname = $this->config->get('config_mail_smtp_hostname');
+			$mail->smtp_username = $this->config->get('config_mail_smtp_username');
+			$mail->smtp_password = html_entity_decode($this->config->get('config_mail_smtp_password'), ENT_QUOTES, 'UTF-8');
+			$mail->smtp_port = $this->config->get('config_mail_smtp_port');
+			$mail->smtp_timeout = $this->config->get('config_mail_smtp_timeout');
+
+			$mail->setTo($email_agent);
+			$mail->setFrom($site_url);
+			$mail->setSender(html_entity_decode($this->request->post['name'], ENT_QUOTES, 'UTF-8'));
+			$mail->setSubject(html_entity_decode(sprintf($this->language->get($site_url), $this->request->post['name']), ENT_QUOTES, 'UTF-8'));
+			
+			$mail->setHtml(html_entity_decode(sprintf('Имя: ' . $name . '<br>' . 'Телефон: ' . $tel . '<br>' . 'Email: ' . $email . '<br>' . 'Сообщение: ' . $message), ENT_QUOTES, 'UTF-8'));
+			$send = $mail->send();
+						
+			if ($mail){
+				$json = array(
+					'status' => 1,
+					'message' => 'Ваше сообщение отправлено'
+				);
+			}else{
+				$json = array(
+					'status' => 1,
+					'message' => 'Ошибка, сообщение не отправлено!'
+				);
+			}
+		}
+	
+		if (isset($this->request->post['name']) && isset($this->request->post['tel'])){
+			$name = $this->request->post['name'];
+			$tel = $this->request->post['tel'];
+	
+			if ($name == '' || $tel == '') {
+				unset($name);
+				unset($tel);
+				
+				$json = array(
+					'status' => 1,
+					'message' => 'Ошибка, сообщение не отправлено! Заполните все поля!'
+				);
+			}
+		}
+
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
 	}
 }

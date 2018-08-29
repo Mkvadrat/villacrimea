@@ -25,7 +25,7 @@ class ModelUserUser extends Model {
 	}
 
 	public function getUsers($data = array()) {
-		$sql = "SELECT * FROM `" . DB_PREFIX . "user`";
+		$sql = "SELECT * FROM `" . DB_PREFIX . "user` AS u JOIN `" . DB_PREFIX . "user_description` AS ud ON (u.user_id = ud.user_id)";
 
 		$sort_data = array(
 			'username',
@@ -56,6 +56,7 @@ class ModelUserUser extends Model {
 
 			$sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
 		}
+		$sql .= " ";
 
 		$query = $this->db->query($sql);
 
