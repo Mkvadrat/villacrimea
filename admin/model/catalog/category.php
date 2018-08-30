@@ -26,12 +26,6 @@ class ModelCatalogCategory extends Model {
 
 		$this->db->query("INSERT INTO `" . DB_PREFIX . "category_path` SET `category_id` = '" . (int)$category_id . "', `path_id` = '" . (int)$category_id . "', `level` = '" . (int)$level . "'");
 
-		if (isset($data['category_filter'])) {
-			foreach ($data['category_filter'] as $filter_id) {
-				$this->db->query("INSERT INTO " . DB_PREFIX . "category_filter SET category_id = '" . (int)$category_id . "', filter_id = '" . (int)$filter_id . "'");
-			}
-		}
-
 		if (isset($data['category_store'])) {
 			foreach ($data['category_store'] as $store_id) {
 				$this->db->query("INSERT INTO " . DB_PREFIX . "category_to_store SET category_id = '" . (int)$category_id . "', store_id = '" . (int)$store_id . "'");
@@ -116,14 +110,6 @@ class ModelCatalogCategory extends Model {
 			}
 
 			$this->db->query("REPLACE INTO `" . DB_PREFIX . "category_path` SET category_id = '" . (int)$category_id . "', `path_id` = '" . (int)$category_id . "', level = '" . (int)$level . "'");
-		}
-
-		$this->db->query("DELETE FROM " . DB_PREFIX . "category_filter WHERE category_id = '" . (int)$category_id . "'");
-
-		if (isset($data['category_filter'])) {
-			foreach ($data['category_filter'] as $filter_id) {
-				$this->db->query("INSERT INTO " . DB_PREFIX . "category_filter SET category_id = '" . (int)$category_id . "', filter_id = '" . (int)$filter_id . "'");
-			}
 		}
 
 		$this->db->query("DELETE FROM " . DB_PREFIX . "category_to_store WHERE category_id = '" . (int)$category_id . "'");

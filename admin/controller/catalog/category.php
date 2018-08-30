@@ -470,7 +470,11 @@ class ControllerCatalogCategory extends Controller {
 			);
 		}
 		
-		$data['current_case_category'] = $category_info['category_case_id'];
+		if (!empty($category_info)) {
+			$data['current_case_category'] = $category_info['category_case_id'];
+		}else{
+			$data['current_case_category'] = '';
+		}
 		
 		$this->load->model('blog/article');
 		
@@ -483,23 +487,12 @@ class ControllerCatalogCategory extends Controller {
 			);
 		}
 		
-		$data['current_case'] = $category_info['case_id'];
-		
-		$filter_data = array();
-		
-		$data['category_filters'] = array();
-
-		foreach ($filters as $filter_id) {
-			$filter_info = $this->model_catalog_filter->getFilter($filter_id);
-
-			if ($filter_info) {
-				$data['category_filters'][] = array(
-					'filter_id' => $filter_info['filter_id'],
-					'name'      => $filter_info['group'] . ' &gt; ' . $filter_info['name']
-				);
-			}
+		if (!empty($category_info)) {
+			$data['current_case'] = $category_info['case_id'];
+		}else{
+			$data['current_case'] = '';
 		}
-
+		
 		$this->load->model('setting/store');
 
 		$data['stores'] = $this->model_setting_store->getStores();

@@ -154,19 +154,6 @@
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-sm-2 control-label" for="input-filter"><span data-toggle="tooltip" title="<?php echo $help_filter; ?>"><?php echo $entry_filter; ?></span></label>
-                <div class="col-sm-10">
-                  <input type="text" name="filter" value="" placeholder="<?php echo $entry_filter; ?>" id="input-filter" class="form-control" />
-                  <div id="category-filter" class="well well-sm" style="height: 150px; overflow: auto;">
-                    <?php foreach ($category_filters as $category_filter) { ?>
-                    <div id="category-filter<?php echo $category_filter['filter_id']; ?>"><i class="fa fa-minus-circle"></i> <?php echo $category_filter['name']; ?>
-                      <input type="hidden" name="category_filter[]" value="<?php echo $category_filter['filter_id']; ?>" />
-                    </div>
-                    <?php } ?>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
                 <label class="col-sm-2 control-label"><?php echo $entry_store; ?></label>
                 <div class="col-sm-10">
                   <div class="well well-sm" style="height: 150px; overflow: auto;">

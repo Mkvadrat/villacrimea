@@ -9,7 +9,7 @@ $_['text_edit']        	= 'Редактирование модуля';
 
 // Entry
 $_['entry_name']        = 'Название';
-$_['entry_product']     = 'Товары';
+$_['entry_product']     = 'Обьекты';
 $_['entry_limit']       = 'Лимит';
 $_['entry_width']       = 'Ширина';
 $_['entry_height']      = 'Высота';

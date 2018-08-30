@@ -167,7 +167,6 @@
                       <textarea name="config_langdata[<?php echo $language['language_id']; ?>][powered]" placeholder="Powered" rows="5" id="input-address<?php echo $language['language_id']; ?>" class="form-control summernote"><?php echo isset($config_langdata[$language['language_id']]) ? $config_langdata[$language['language_id']]['powered'] : ''; ?></textarea>
                     </div>
                   </div>
-                  
                   <div class="form-group">
                     <label class="col-sm-2 control-label" for="input-open<?php echo $language['language_id']; ?>"><span data-toggle="tooltip" data-container="#tab-general" title="<?php echo $help_open; ?>"><?php echo $entry_open; ?></span></label>
                     <div class="col-sm-10">
@@ -217,12 +216,6 @@
                 <label class="col-sm-2 control-label" for="input-fax"><?php echo $entry_fax; ?></label>
                 <div class="col-sm-10">
                   <input type="text" name="config_fax" value="<?php echo $config_fax; ?>" placeholder="<?php echo $entry_fax; ?>" id="input-fax" class="form-control" />
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-sm-2 control-label" for="input-image"><?php echo $entry_image; ?></label>
-                <div class="col-sm-10"><a href="" id="thumb-image" data-toggle="image" class="img-thumbnail"><img src="<?php echo $thumb; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a>
-                  <input type="hidden" name="config_image" value="<?php echo $config_image; ?>" id="input-image" />
                 </div>
               </div>
               <div class="form-group">
