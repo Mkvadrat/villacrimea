@@ -195,24 +195,6 @@
                       </select>
                     </div>
                   </div>
-
-                  <div class="collapse" id="stock-status-id">
-                    <div class="form-group">
-                      <label class="col-sm-3 control-label" for="input-stocks-tatus-type"><?php echo $entry_type; ?></label>
-                      <div class="col-sm-9">
-                        <select name="ocfilter_stock_status_type" id="input-stocks-tatus-type" class="form-control">
-                          <?php foreach ($types as $type) { ?>
-                          <?php if ($type == $ocfilter_stock_status_type) { ?>
-                          <option value="<?php echo $type; ?>" selected="selected"><?php echo ucfirst($type); ?></option>
-                          <?php } else { ?>
-                          <option value="<?php echo $type; ?>"><?php echo ucfirst($type); ?></option>
-                          <?php } ?>
-                          <?php } ?>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-
                   <div class="collapse" id="stock-status-quantity">
                     <div class="form-group">
                       <label class="col-sm-3 control-label" for="input-stock-out-value"><?php echo $entry_stock_out_value; ?></label>
