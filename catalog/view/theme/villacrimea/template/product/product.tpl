@@ -71,19 +71,19 @@
                         <?php foreach($maps as $product){ ?>
                         
                         myGeoObjects[<?php echo $i; ?>] = new ymaps.Placemark([<?php echo $product['lat_lng']; ?>], { // Создаем метку с такими координатами и суем в переменную
-                                balloonContent: '<div class="ballon"><img src="<?php echo $product['image']; ?>" class="ll"/><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?><br><span>Подробнее</span></a><img class="close-button" onclick="myMap.balloon.close()" src="catalog/view/theme/mexica/image/maps/close.png"/></div>' // сдесь содержимое балуна в формате html, все стили в css
+                                balloonContent: '<div class="ballon"><img src="<?php echo $product['image']; ?>" class="ll"/><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?><br><span>Подробнее</span></a><img class="close-button" onclick="myMap.balloon.close()" src="catalog/view/theme/villacrimea/image/maps/close.png"/></div>' // сдесь содержимое балуна в формате html, все стили в css
                               }, {
                                 iconLayout: 'default#image',
                                 <?php if($product_id == $product['product_id']){ ?>
-                                  iconImageHref: 'catalog/view/theme/mexica/image/maps/icon-main.png', // картинка иконки
+                                  iconImageHref: 'catalog/view/theme/villacrimea/image/maps/icon-main.png', // картинка иконки
                                 <?php }else{ ?>
-                                  iconImageHref: 'catalog/view/theme/mexica/image/maps/icon.png', // картинка иконки
+                                  iconImageHref: 'catalog/view/theme/villacrimea/image/maps/icon.png', // картинка иконки
                                 <?php } ?>
                                 iconImageSize: [64, 64], // размер иконки
                                 iconImageOffset: [-32, -64], // позиция иконки
                                 balloonContentSize: [270, 99], // размер нашего кастомного балуна в пикселях
                                 balloonLayout: "default#imageWithContent", // указываем что содержимое балуна кастомная херь
-                                balloonImageHref: 'catalog/view/theme/mexica/image/maps/baloon2.png', // Картинка заднего фона балуна
+                                balloonImageHref: 'catalog/view/theme/villacrimea/image/maps/baloon2.png', // Картинка заднего фона балуна
                                 balloonImageOffset: [-65, -89], // смещание балуна, надо подогнать под стрелочку
                                 balloonImageSize: [260, 89], // размер картинки-бэкграунда балуна
                                 balloonShadow: false,

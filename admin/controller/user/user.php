@@ -395,7 +395,17 @@ class ControllerUserUser extends Controller {
 		
 		$data['text_none'] = $this->language->get('text_none');
 		
-		$data['current_case_category'] = $user_info['category_case_id'];
+		if(!empty($user_info)) {
+			$data['current_case_category'] = $user_info['category_case_id'];
+		}else {
+			$data['current_case_category'] = '';
+		}
+		
+		if(!empty($user_info)) {
+			$data['current_category_id'] = $user_info['category_id'];
+		}else {
+			$data['current_category_id'] = '';
+		}
 		
 		if (isset($this->request->post['category_case_id'])) {
 			$data['category_case_id'] = $this->request->post['category_case_id'];
@@ -415,14 +425,14 @@ class ControllerUserUser extends Controller {
 
 		$data['categories'] = $this->model_catalog_category->getCategories($filter_data);
 
-		if (isset($this->request->post['product_category'])) {
-			$data['product_category'] = $this->request->post['product_category'];
+		if (isset($this->request->post['category_id'])) {
+			$data['category_id'] = $this->request->post['category_id'];
 		} elseif (!empty($user_info)) {
-			$data['product_category'] = $user_info['category_id'];
+			$data['category_id'] = $user_info['category_id'];
 		} else {
-			$data['product_category'] = '';
+			$data['category_id'] = '';
 		}
-
+		
 		if (isset($this->request->post['username'])) {
 			$data['username'] = $this->request->post['username'];
 		} elseif (!empty($user_info)) {

@@ -4299,4 +4299,48 @@ section .blog_in_page .blog_inner .right_side .agent a {
     padding: 14px 20px;
     border-radius: 7px;
 }
-/**/
+/*Дополнение к странице Блога 29.08.2018*/
+
+/*08.05.2018*/
+#map-products {
+    float: left;
+}
+.ballon {
+    padding: 5px;
+    width: 240px;
+    height: 79px;
+    float: left;
+    text-align: left;
+    color: #fff;
+    position: absolute;
+}
+.ballon img.ll {
+    float: left;
+    width: 60px;
+    height: 60px;
+    margin: 0 5px 5px 0;
+    border-radius: 60px;
+}
+.ballon a {
+    font-size: 10px;
+    font-weight: bold;
+    color: #FFF;
+    text-decoration: none;
+}
+.ballon span{
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFF;
+}
+.ballon .close-button {
+    position: absolute;
+    float: left;
+    font-size: 15px;
+    font-weight: bold;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+}
+.ballon .close-button:hover {
+    color: #ccc;
+}

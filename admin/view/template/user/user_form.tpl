@@ -76,9 +76,9 @@
                 <option value="0" selected="selected"><?php echo $text_none; ?></option>
                 <?php foreach ($case_category as $case_category) { ?>
                 <?php if ($case_category['category_case_id'] == $current_case_category) { ?>
-                <option value="<?php echo $case_category['category_case_id']; ?>" selected="selected"><?php echo $case_category['name']; ?></option>
+                  <option value="<?php echo $case_category['category_case_id']; ?>" selected="selected"><?php echo $case_category['name']; ?></option>
                 <?php } else { ?>
-                <option value="<?php echo $case_category['category_case_id']; ?>"><?php echo $case_category['name']; ?></option>
+                  <option value="<?php echo $case_category['category_case_id']; ?>"><?php echo $case_category['name']; ?></option>
                 <?php } ?>
                 <?php } ?>
               </select>
@@ -88,25 +88,16 @@
           <div class="form-group">
             <label class="col-sm-2 control-label" for="input-category">Категория объектов агента</label>
             <div class="col-sm-10">
-              <div class="well well-sm" style="min-height: 150px;max-height: 500px;overflow: auto;">
-                <table class="table table-striped">
-                <?php foreach ($categories as $category) { ?>
-                <tr>
-                  <td class="checkbox">
-                    <label>
-                      <?php if ($category['category_id'] == $product_category) { ?>
-                      <input type="checkbox" name="product_category" value="<?php echo $category['category_id']; ?>" checked="checked" />
-                      <?php echo $category['name']; ?>
-                      <?php } else { ?>
-                      <input type="checkbox" name="product_category" value="<?php echo $category['category_id']; ?>" />
-                      <?php echo $category['name']; ?>
-                      <?php } ?>
-                    </label>
-                  </td>
-                </tr>
-                <?php } ?>
-                </table>
-              </div>
+                  <select name="category_id" class="form-control">
+                  <option value="0" selected="selected"><?php echo $text_none; ?></option>
+                  <?php foreach ($categories as $category) { ?>
+                  <?php if ($category['category_id'] == $current_category_id) { ?>
+                    <option value="<?php echo $category['category_id']; ?>" selected="selected"><?php echo $category['name']; ?></option>
+                  <?php } else { ?>
+                    <option value="<?php echo $category['category_id']; ?>"><?php echo $category['name']; ?></option>
+                  <?php } ?>
+                  <?php } ?>
+                </select>
             </div>
           </div>
 
