@@ -40,7 +40,7 @@
 
 	<file path="admin/controller/common/column_left.php">
     <operation>
-      <search><![CDATA[if ($this->user->hasPermission('access', 'catalog/filter')) {]]></search>
+      <search><![CDATA[if ($this->user->hasPermission('access', 'catalog/download')) {]]></search>
       <add position="before"><![CDATA[
       // OCFilter start
 			if ($this->user->hasPermission('access', 'catalog/ocfilter')) {
