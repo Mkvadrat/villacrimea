@@ -68,6 +68,7 @@
 						</div>						
 					</div>
 					
+					<?php if($product_case){ ?>
 					<div class="card">
 						<a class="img" href="<?php echo $product_href; ?>" style="background-image: url('<?php echo $product_image; ?>')"></a>
 						<div class="card_label">
@@ -100,6 +101,7 @@
 						
 						<span class="object_id">№ <?php echo $product_model; ?></span>
 					</div>
+					<?php } ?>
 				</div>
 			</div>
 		</div>

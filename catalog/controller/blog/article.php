@@ -206,7 +206,7 @@ class ControllerBlogArticle extends Controller {
 			$this->load->model('user/user');
 			
 			$agent_id = $this->model_user_user->getAgentByProduct($article_info['product_case_id']);
-			
+
 			$agent_information = $this->model_user_user->getUser($agent_id);
 									
 			$data['agent_name'] = $agent_information['lastname'] . ' ' . $agent_information['firstname'];
@@ -238,8 +238,11 @@ class ControllerBlogArticle extends Controller {
 			$this->load->model('catalog/ocfilter');
 			
 			$product_case = $this->model_catalog_product->getProduct($article_info['product_case_id']);
+			
+			$data['product_case'] = false;
 
 			if ($product_case) {
+				$data['product_case'] = true;
 				$data['i'] = '';
 				$data['product_name'] = $product_case['name'];
 				$data['product_model'] = $product_case['model'];
@@ -284,8 +287,6 @@ class ControllerBlogArticle extends Controller {
 				} else {
 					$data['special'] = false;
 				}
-				
-				
 			}
 			
 			$results = $this->model_blog_article->getArticleRelated($this->request->get['article_id']);

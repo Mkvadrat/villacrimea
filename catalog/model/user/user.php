@@ -110,8 +110,12 @@ class ModelUserUser extends Model {
 	}
 	
 	public function getAgentByProduct($product_id){
-		$query = $this->db->query("SELECT agent FROM `" . DB_PREFIX . "product` WHERE `product_id` = '" . $product_id . "'");
+		$query = $this->db->query("SELECT agent FROM `" . DB_PREFIX . "product` AS p JOIN `" . DB_PREFIX . "user` AS u ON (p.agent = u.user_id) AND `product_id` = '" . $product_id . "'");
 		
-		return $query->row['agent'];
+		if(!empty($query->row['agent'])){
+			return $query->row['agent'];
+		}else{
+			return 1; //admin
+		}
 	}
 }
