@@ -4261,6 +4261,32 @@ footer .m2 img {
     padding-left: 5px;
 }
 
+section .page_404 .object_title {
+    padding: 20px 200px;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    margin: 0;
+}
+
+section .page_404 .object_title .backward {
+    left: -50px;
+}
+section .page_404 .img {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10% 0;
+}
+section .page_404 .img img {
+    margin: 0 auto;
+}
+section .page_404 .img p {
+    text-align: center;
+    color: #c09d74;
+    padding-top: 10px;
+}
+
 /*Дополнение к странице Блога 29.08.2018*/
 section .blog_in_page .blog_inner .right_side .agent {
     width: 100%;
