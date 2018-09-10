@@ -9,7 +9,7 @@
             
             <p class="sub-title">Мы на карте:</p>
             <div class="map">
-              <div id="map-contacts" style="width:100%; height:682px"></div>
+              <div id="map-contacts" style="width:100%; height:100%; position: absolute;"></div>
               <?php if($geocode){ ?>
                 <script type="text/javascript">
                   var myMap;

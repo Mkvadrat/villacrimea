@@ -156,7 +156,7 @@ class ModelLocalisationCurrency extends Model {
 	}*/
 	
 	public function refresh($force = false) {
-			$array_data = array();
+			/* $array_data = array();
 			
 			if ($force) {
 				$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "currency WHERE code != '" . $this->db->escape($this->config->get('config_currency')) . "'");
@@ -208,7 +208,7 @@ class ModelLocalisationCurrency extends Model {
 				
 			$this->db->query("UPDATE " . DB_PREFIX . "currency SET value = '1.00000', date_modified = NOW() WHERE code = '" . $this->db->escape($this->config->get('config_currency')) . "'");
 			
-			$this->cache->delete('currency');
+			$this->cache->delete('currency'); */
 	}
 
 	public function getTotalCurrencies() {

@@ -250,7 +250,7 @@ $(document).ready(function () {
 	});
     
     $('#print').on('click', function () {
-        $("#print1, #print2, #print3, #print4, #print5, #print6, #print7, #print8, #print9, #print10").printThis({
+        $("#print01, #print1, #print2, #print3, #print4, #print5, #print6, #print7, #print8, #print9, #print10").printThis({
             debug: false,               // show the iframe for debugging
             importCSS: true,            // import page CSS
             importStyle: true,         // import style tags
@@ -269,6 +269,7 @@ $(document).ready(function () {
             copyTagClasses: false       // copy classes from the html & body tag
         });
     });
+    $('section .object_title .backward').css('left', -($('body').outerWidth() - $('section .object_title').outerWidth())/2); // прижать кнопку "к списку"
 });
 
 //Main page forms

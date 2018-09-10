@@ -39,13 +39,14 @@
 <script src="https://cdn.rawgit.com/leafo/sticky-kit/v1.1.2/jquery.sticky-kit.min.js"></script>
 <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 
-<link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/stylesheet.css">
 <link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/nomalize.css">
 <link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/jquery.mmenu.all.css">
 <link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/sweetalert.css">
 <link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/owl.carousel.min.css">
 <link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/owl.theme.default.min.css">
 <link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/jquery.fancybox.min.css">
+<link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/stylesheet.css">
+<link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/media.css">
 
 <?php foreach ($styles as $style) { ?>
 <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
@@ -96,7 +97,7 @@
         <?php } ?>
         </ul>
     </div>
-    <div class="logo">
+    <div class="logo" id="print01">
       <?php if ($logo) { ?>
         <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a>
       <?php } else { ?>

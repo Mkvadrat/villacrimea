@@ -33,11 +33,18 @@
               <div class="object_photo" id="print7">
               <?php if ($thumb || $images) { ?>
                 <?php if ($thumb) { ?>
-                <a href="<?php echo $popup; ?>" data-fancybox="gallery" class="main_photo" style="background-image: url('<?php echo $popup; ?>');"></a>
+                <!-- <a href="<?php echo $popup; ?>" data-fancybox="gallery" class="main_photo" style="background-image: url('<?php echo $popup; ?>');"></a> -->
+                <a href="<?php echo $popup; ?>" data-fancybox="gallery" class="main_photo">
+                    <img src="<?php echo $popup; ?>">
+                </a>
                 <?php } ?>
                 <?php if ($images) { ?>
                 <?php foreach ($images as $image) { ?>
-                <a href="<?php echo $image['popup']; ?>" data-fancybox="gallery" style="background-image: url('<?php echo $image['thumb']; ?>');"></a>
+                <!-- <a href="<?php echo $image['popup']; ?>" data-fancybox="gallery" style="background-image: url('<?php echo $image['thumb']; ?>');"> -->
+                <a href="<?php echo $popup; ?>" data-fancybox="gallery">
+                    <img src="<?php echo $popup; ?>">
+                </a>
+                </a>
                 <?php } ?>
                 <?php } ?>
               <?php } ?>
@@ -143,7 +150,7 @@
                   <p class="title">Детали:</p>
                   <?php if ($price || $rub) { ?>
                   <?php if (!$special) { ?>
-                  <p>Цена: <span><?php echo $rub; ?> / <?php echo $price; ?></span></p>
+                  <p>Цена: <span><?php echo $rub; ?> / <span class="usdPrice"><?php echo $price; ?></span></span></p>
                   <?php } else { ?>
                   <p>Цена: <span><?php echo $special; ?></span><sup><strike><?php echo $price; ?></strike></sup></p>
                   <?php } ?>
