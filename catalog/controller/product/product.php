@@ -925,6 +925,7 @@ class ControllerProductProduct extends Controller {
             $product_id = 0;
         }
 		
+		
 		$product_info = $this->model_catalog_product->getProduct($product_id);
 		
 		if($product_info){
@@ -940,19 +941,46 @@ class ControllerProductProduct extends Controller {
 			$data['uniq_options'] = $product_info['uniq_options'] = 1 ? $product_info['uniq_options'] : 0;
 			$data['href'] = $this->url->link('product/product', 'product_id=' . $product_info['product_id']);
 			
-			if ($product_info['image']) {
-				$data['thumb'] = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_thumb_width'), $this->config->get($this->config->get('config_theme') . '_image_thumb_height'));
-				$this->document->setOgImage($data['thumb']);
-			} else {
-				$data['thumb'] = '';
-			}
-			
 			if ($product_info['meta_h1']) {
 				$data['heading_title'] = $product_info['meta_h1'];
 			} else {
 				$data['heading_title'] = $product_info['name'];
 			}
 			
+			if ($product_info['quantity'] <= 0) {
+				$data['stock'] = $product_info['stock_status'];
+			} elseif ($this->config->get('config_stock_display')) {
+				$data['stock'] = $product_info['quantity'];
+			} else {
+				$data['stock'] = $this->language->get('text_instock');
+			}
+			
+			$this->load->model('tool/image');
+
+			if ($product_info['image']) {
+				$data['popup'] = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_popup_width'), $this->config->get($this->config->get('config_theme') . '_image_popup_height'));
+			} else {
+				$data['popup'] = '';
+			}
+
+			if ($product_info['image']) {
+				$data['thumb'] = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_thumb_width'), $this->config->get($this->config->get('config_theme') . '_image_thumb_height'));
+				$this->document->setOgImage($data['thumb']);
+			} else {
+				$data['thumb'] = '';
+			}
+
+			$data['images'] = array();
+
+			$results = $this->model_catalog_product->getProductImages((int)$this->request->get['product_id']);
+
+			foreach ($results as $result) {
+				$data['images'][] = array(
+					'popup' => $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_popup_width'), $this->config->get($this->config->get('config_theme') . '_image_popup_height')),
+					'thumb' => $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_additional_width'), $this->config->get($this->config->get('config_theme') . '_image_additional_height'))
+				);
+			}
+
 			$this->load->model('localisation/currency');
 	
 			$currencys = $this->model_localisation_currency->getCurrency($product_info['currency_id']);
@@ -973,10 +1001,83 @@ class ControllerProductProduct extends Controller {
 				}
 			}
 			
+			$this->load->model('user/user');
+			
+			$agent_information = $this->model_user_user->getUser($product_info['agent']);
+						
+			$data['agent_name'] = $agent_information['lastname'] . ' ' . $agent_information['firstname'];
+			
+			$data['specialization'] = $agent_information['specialization'];
+			
+			if ($agent_information['image']) {
+				$data['image_agent'] = $this->model_tool_image->resize($agent_information['image'], 226, 226);
+			} else {
+				$data['image_agent'] = $this->model_tool_image->resize('placeholder.png', 226, 226);
+			}
+			
+			$data['phone'] = $agent_information['phone'];
+			
+			$data['email'] = $agent_information['email'];
+			
+			$data['case_id'] = $agent_information['category_case_id'];
+			
+			$data['view_all_cases'] = $this->url->link('blog/category', '&blog_category_id=' . $agent_information['category_case_id']);
+			
+			$data['category_id_object'] = $agent_information['category_id'];
+			
+			$data['view_all_object'] = $this->url->link('product/category', 'path=' . $agent_information['category_id']);
+			
 			if ((float)$product_info['special']) {
 				$data['special'] = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')), 'USD', $format= true);
 			} else {
 				$data['special'] = false;
+			}
+
+			if ($this->config->get('config_tax')) {
+				$data['tax'] = $this->currency->format((float)$product_info['special'] ? $product_info['special'] : $product_info['price'], $this->session->data['currency']);
+			} else {
+				$data['tax'] = false;
+			}
+
+			$discounts = $this->model_catalog_product->getProductDiscounts($this->request->get['product_id']);
+
+			$data['discounts'] = array();
+
+			foreach ($discounts as $discount) {
+				$data['discounts'][] = array(
+					'quantity' => $discount['quantity'],
+					'price'    => $this->currency->format($this->tax->calculate($discount['price'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency'])
+				);
+			}
+
+			if ($product_info['minimum']) {
+				$data['minimum'] = $product_info['minimum'];
+			} else {
+				$data['minimum'] = 1;
+			}
+
+			$data['review_status'] = $this->config->get('config_review_status');
+
+			if ($this->config->get('config_review_guest') || $this->customer->isLogged()) {
+				$data['review_guest'] = true;
+			} else {
+				$data['review_guest'] = false;
+			}
+
+			if ($this->customer->isLogged()) {
+				$data['customer_name'] = $this->customer->getFirstName() . '&nbsp;' . $this->customer->getLastName();
+			} else {
+				$data['customer_name'] = '';
+			}
+
+			$data['reviews'] = sprintf($this->language->get('text_reviews'), (int)$product_info['reviews']);
+			$data['rating'] = (int)$product_info['rating'];
+
+			// Captcha
+			if ($this->config->get($this->config->get('config_captcha') . '_status') && in_array('review', (array)$this->config->get('config_captcha_page'))) {
+				$data['captcha'] = $this->load->controller('extension/captcha/' . $this->config->get('config_captcha'));
+			} else {
+				$data['captcha'] = '';
 			}
 			
 			$html = $this->load->view('product/pdf', $data);

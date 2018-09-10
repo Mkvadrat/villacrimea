@@ -31,8 +31,8 @@
       <div class="actual_object">
           <div class="left_side">
               <div class="object_photo" id="print7">
-              <?php if ($thumb || $images) { ?>
-                <?php if ($thumb) { ?>
+              <?php if ($popup || $images) { ?>
+                <?php if ($popup) { ?>
                 <a href="<?php echo $popup; ?>" data-fancybox="gallery" class="main_photo" style="background-image: url('<?php echo $popup; ?>');"></a>
                 <?php } ?>
                 <?php if ($images) { ?>
