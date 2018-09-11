@@ -47,6 +47,7 @@ body {
     font-family: "GothamPro";
     font-size: 18px;
     color: #000;
+    overflow-x: hidden;
 }
 
 p {
@@ -113,8 +114,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 5px 50px;
-    max-width: 1366px;
-    margin: 0 auto;
+/*     max-width: 1366px;
+    margin: 0 auto;*/ 
 }
 
 header .header_left_side,
@@ -234,8 +235,8 @@ section {
     width: 100%;
     padding: 0 50px;
     box-sizing: border-box;
-    max-width: 1366px;
-    margin: 0 auto;
+    /* max-width: 1366px;
+    margin: 0 auto; */
 }
 
 section .slider {
@@ -564,7 +565,7 @@ section .agent_with_cards .cards {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: stretch;
     flex-wrap: wrap;
 }
 
@@ -577,9 +578,9 @@ section .agent_with_cards .card {
     position: relative;
 }
 
-section .agent_with_cards .card:last-of-type {
+/* section .agent_with_cards .card:last-of-type {
     margin-bottom: 45px;
-}
+} */
 
 section .agent_with_cards .card .img {
     display: block;
@@ -994,6 +995,7 @@ section .blog .blogs .blogs_item {
     height: 166px;
     margin-bottom: 2%;
     position: relative;
+    border: 1px solid #dbdbdb;
 }
 
 section .blog .blogs .blogs_item .img {
@@ -1030,8 +1032,6 @@ section .blog .blogs .blogs_item div {
     justify-content: center;
     height: 100%;
     padding: 0 10px 0 20px;
-    border: 1px solid #dbdbdb;
-    border-left: none;
     box-sizing: border-box;
 }
 

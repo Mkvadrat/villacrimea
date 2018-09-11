@@ -33,11 +33,12 @@
               <div class="object_photo" id="print7">
               <?php if ($popup || $images) { ?>
                 <?php if ($popup) { ?>
-                <a href="<?php echo $popup; ?>" data-fancybox="gallery" class="main_photo" style="background-image: url('<?php echo $popup; ?>');"></a>
+                <a href="<?php echo $popup; ?>" data-fancybox="gallery" class="main_photo">
+                    <img src='<?php echo $popup; ?>'>
+                </a>
                 <?php } ?>
                 <?php if ($images) { ?>
                 <?php foreach ($images as $image) { ?>
-                <!-- <a href="<?php echo $image['popup']; ?>" data-fancybox="gallery" style="background-image: url('<?php echo $image['thumb']; ?>');"> -->
                 <a href="<?php echo $popup; ?>" data-fancybox="gallery">
                     <img src="<?php echo $popup; ?>">
                 </a>

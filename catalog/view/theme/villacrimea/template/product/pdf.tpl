@@ -1,81 +1,37 @@
 <style>
-    @font-face {
-        font-family: "GothamPro";
-        src: url("/catalog/view/theme/villacrimea/stylesheet/fonts/GothaProReg.otf") format("opentype");
-    }
-    @font-face {
-        font-family: "GothamPro_Bol";
-        src: url("/catalog/view/theme/villacrimea/stylesheet/fonts/GothaProBol.otf") format("opentype");
-    }
-    @font-face {
-        font-family: "GothamPro_Med";
-        src: url("/catalog/view/theme/villacrimea/stylesheet/fonts/GothaProMed.otf") format("opentype");
-    }
-    @font-face {
-        font-family: "Ubuntu";
-        src: url("/catalog/view/theme/villacrimea/stylesheet/fonts/Ubuntu.ttf") format("opentype");
+    * {
+        all : initial;
     }
     body {
         margin: 2em;
         font-family: "GothamPro";
-        font-size: 18px;
+        font-size: 1em;
         color: #000;
-    }
-    .logo a,
-    .logo,
-    .object_photo {
-        width: 100%;
-        display: inline-block;
-        float: left;
-    }
-    .logo a {
-        border-bottom: 1mm solid #000;
-    }
-    img {
-        width: 17%;
-        float: left;
-        margin-left: 1.5%;
-        margin-right: 1.5%;
-        margin-bottom: 3%;
-        margin: 0 1.5% 1.5%;
-    }
-    .logo img {
-        width: 50mm
-    }
-    .main_photo img {
-        width: 70%;
-        display: block;
-        float: none;
-        margin: 0 auto;
-    }
-    .right_side {
-        width: 100%;
-        display: block;
-        float: none;
     }
     .details,
     .object_description {
         margin-bottom: 10mm;
     }
     .title {
-        font-size: 36px;
-        line-height: 36px;
-        font-weight: bolder;
+        font-size: 2em;
+        font-weight: bold;
     }
     .object_id {
+        font-weight: bold;
         font-family: "GothamPro_Bol";
-        text-shadow: 1px 0 0 #000;
+        text-shadow: 1mm 0 0 #000;
     }
     .details p {
-        font-size: 16px;
+        font-size: 1em;
     }
     .details p span {
         font-family: "GothamPro_Med";
     }
     .details .title {
         font-family: "Ubuntu";
-        font-size: 24px;
-        margin: 0;
+        font-size: 1.5em;
+        margin: 20px 0;
+        padding: 20px 0;
         font-weight: normal;
     }
 </style>
