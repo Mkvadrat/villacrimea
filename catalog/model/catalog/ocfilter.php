@@ -548,7 +548,7 @@ class ModelCatalogOCFilter extends Model {
 															JOIN " . DB_PREFIX . "ocfilter_option_to_store oots ON (oots.option_id = oo.option_id) AND (oots.store_id = '" . (int)$this->config->get('config_store_id') . "') AND (oo.status = '1')
 															JOIN " . DB_PREFIX . "ocfilter_option_value oov ON (oov.option_id = oo.option_id)
 															JOIN " . DB_PREFIX . "ocfilter_option_value_description oovd ON (oovd.value_id = oov.value_id) AND (oovd.option_id = oov.option_id) AND (oovd.language_id = '" . (int)$this->config->get('config_language_id') . "')
-															JOIN " . DB_PREFIX . "ocfilter_option_value_to_product oovtp ON (oovtp.option_id = oo.option_id) AND (oovd.value_id = oovtp.value_id) AND (oovtp.product_id = '" . (int)$product_id . "')");
+															JOIN " . DB_PREFIX . "ocfilter_option_value_to_product oovtp ON (oovtp.option_id = oo.option_id) AND (oovd.value_id = oovtp.value_id) AND (oovtp.product_id = '" . (int)$product_id . "') ORDER BY oo.sort_order");
 	
 		return $query->rows;
 	}
