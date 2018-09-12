@@ -4439,7 +4439,31 @@ section .blog_in_page .blog_inner .right_side .agent a {
         font-weight: normal;
     }
 }
-
+.panel>.list-group .list-group-item {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 0;
+}
 .panel>.list-group .list-group-item[id^='option'] {
-
+    display: inline-block;
+    width: 25%;
+    float: left;
+    box-sizing: border-box;
+    border: none;
+}
+.panel>.list-group {
+    display: inline-block;
+}
+.form-control#currencys {
+    margin-top: 20px;
+}
+.form-inline {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.form-inline .form-group {
+    padding: 0 5px 0;
+}
+.form-inline .form-control {
+    width: 100%;
 }
