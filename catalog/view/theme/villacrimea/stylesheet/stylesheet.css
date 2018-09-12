@@ -995,7 +995,6 @@ section .blog .blogs .blogs_item {
     height: 166px;
     margin-bottom: 2%;
     position: relative;
-    border: 1px solid #dbdbdb;
 }
 
 section .blog .blogs .blogs_item .img {
@@ -1033,6 +1032,8 @@ section .blog .blogs .blogs_item div {
     height: 100%;
     padding: 0 10px 0 20px;
     box-sizing: border-box;
+    border: 1px solid #dbdbdb;
+    border-left: none;
 }
 
 section .blog .blogs .blogs_item .name {
@@ -1404,7 +1405,7 @@ section .category_page .catalog .tabs_catalog {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: stretch;
     flex-wrap: wrap;
 }
 
