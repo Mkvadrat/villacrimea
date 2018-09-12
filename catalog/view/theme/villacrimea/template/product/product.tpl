@@ -39,8 +39,8 @@
                 <?php } ?>
                 <?php if ($images) { ?>
                 <?php foreach ($images as $image) { ?>
-                <a href="<?php echo $popup; ?>" data-fancybox="gallery">
-                    <img src="<?php echo $popup; ?>">
+                <a href="<?php echo $image['popup']; ?>" data-fancybox="gallery">
+                    <img src="<?php echo $image['thumb']; ?>">
                 </a>
                 </a>
                 <?php } ?>
