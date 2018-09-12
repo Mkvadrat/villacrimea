@@ -992,19 +992,21 @@ section .blog .blogs {
 
 section .blog .blogs .blogs_item {
     width: 49%;
-    height: 166px;
     margin-bottom: 2%;
     position: relative;
-    border: 1px solid #dbdbdb;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
 }
 
 section .blog .blogs .blogs_item .img {
     display: inline-block;
     width: 45%;
-    height: 100%;
+    padding-bottom: 28%;
     float: left;
     background-size: cover;
     background-position: center;
+    margin-bottom: -1px;
 }
 
 section .blog .blogs .blogs_item .name::before {
@@ -1030,9 +1032,11 @@ section .blog .blogs .blogs_item div {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100%;
+    width: 55%;
     padding: 0 10px 0 20px;
     box-sizing: border-box;
+    border: 1px solid #dbdbdb;
+    border-left: none;
 }
 
 section .blog .blogs .blogs_item .name {
@@ -1404,7 +1408,7 @@ section .category_page .catalog .tabs_catalog {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: stretch;
     flex-wrap: wrap;
 }
 
@@ -4434,4 +4438,8 @@ section .blog_in_page .blog_inner .right_side .agent a {
         margin: 0;
         font-weight: normal;
     }
+}
+
+.panel>.list-group .list-group-item[id^='option'] {
+
 }
