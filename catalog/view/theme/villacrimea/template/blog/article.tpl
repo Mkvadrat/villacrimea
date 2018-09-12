@@ -82,11 +82,11 @@
 						
 						<?php if($filter_options){ ?>
 						<div class="tags">
-							<?php $i == 0; ?>
+							<?php $i = 0; ?>
 							<?php foreach($filter_options as $option){ ?>
 								<span><?php echo $option['name']; ?>: <?php echo $option['value'] . $option['postfix']; ?></span>
 								<?php $i++; ?>
-								<?php if($i == 3 ){break;} ?>
+								<?php if($i > 2) break; ?>
 							<?php } ?>
 						</div>
 						<?php } ?>
