@@ -45,7 +45,7 @@
                     </script>
                 </div>
                 <input type="checkbox" id="conf_politics_three">
-                <label for="conf_politics">
+                <label for="conf_politics_three">
                         я согласен(согласна)<br>
                         с <a href="#">политикой конфиденциальности</a>
                 </label>

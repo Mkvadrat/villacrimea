@@ -89,3 +89,11 @@
 2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 44
 2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
 2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 44
+2018-09-14 12:37:25 - PHP Warning:  Cannot modify header information - headers already sent in W:\domains\villacrimea.loc\system\library\response.php on line 12
+2018-09-14 12:39:02 - PHP Warning:  Cannot modify header information - headers already sent in W:\domains\villacrimea.loc\system\library\response.php on line 12
+2018-09-14 12:39:39 - PHP Warning:  Cannot modify header information - headers already sent in W:\domains\villacrimea.loc\system\library\response.php on line 12
+2018-09-14 12:47:06 - PHP Notice:  Undefined variable: lang in W:\domains\villacrimea.loc\admin\view\template\extension\module\news.tpl on line 56
+2018-09-14 12:47:35 - PHP Notice:  Undefined variable: lang in W:\domains\villacrimea.loc\admin\view\template\extension\module\news.tpl on line 56
+2018-09-14 12:48:16 - PHP Notice:  Undefined variable: lang in W:\domains\villacrimea.loc\admin\view\template\extension\module\news.tpl on line 56
+2018-09-14 15:04:11 - PHP Warning:  Cannot modify header information - headers already sent in W:\domains\villacrimea.loc\system\library\response.php on line 12
+2018-09-14 15:20:11 - PHP Warning:  Cannot modify header information - headers already sent in W:\domains\villacrimea.loc\system\library\response.php on line 12

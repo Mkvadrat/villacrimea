@@ -124,6 +124,7 @@
                         });
                         
                         clusterer.add(myGeoObjects);
+                        myMap.behaviors.disable('scrollZoom');
                         myMap.geoObjects.add(clusterer);
                       }
                     </script>

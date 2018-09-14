@@ -202,6 +202,7 @@ header .logo {
     width: 190px;
     position: relative;
     bottom: 10px;
+    left: 20px;
 }
 
 header .header_right_side {
@@ -1140,7 +1141,7 @@ section .about .text .title {
     line-height: 36px;
     margin: 60px 0 30px;
 }
-
+#order_selection,
 div[id^='call_me_back_agent_'],
 #call_me_back {
     max-width: 400px;
@@ -1193,12 +1194,14 @@ div[id^='call_me_back_agent_'],
 }
 
 .call_me_back_inner #conf_politics_one,
+.call_me_back_inner #conf_politics_three,
 .call_me_back_inner input[id^='conf_politics_agent_'],
 .call_me_back_inner #conf_politics {
     visibility: hidden;
 }
 
 .call_me_back_inner #conf_politics_one+label,
+.call_me_back_inner #conf_politics_three+label,
 .call_me_back_inner input[id^='conf_politics_agent_']+label,
 .call_me_back_inner #conf_politics+label {
     font-family: "GothamPro_Ita";
@@ -1211,12 +1214,14 @@ div[id^='call_me_back_agent_'],
 }
 
 .call_me_back_inner #conf_politics_one+label::first-letter,
+.call_me_back_inner #conf_politics_three+label::first-letter,
 .call_me_back_inner input[id^='conf_politics_agent_']+label::first-letter,
 .call_me_back_inner #conf_politics+label::first-letter {
     padding-left: 12px;
 }
 
 .call_me_back_inner #conf_politics_one+label::before,
+.call_me_back_inner #conf_politics_three+label::before,
 .call_me_back_inner input[id^='conf_politics_agent_']+label::before,
 .call_me_back_inner #conf_politics+label::before {
     content: ' ';
@@ -1230,6 +1235,7 @@ div[id^='call_me_back_agent_'],
 }
 
 .call_me_back_inner #conf_politics_one+label::after,
+.call_me_back_inner #conf_politics_three+label::after,
 .call_me_back_inner input[id^='conf_politics_agent_']+label::after,
 .call_me_back_inner #conf_politics+label::after {
     content: ' ';
@@ -1244,6 +1250,7 @@ div[id^='call_me_back_agent_'],
 }
 
 .call_me_back_inner #conf_politics_one:checked+label::after,
+.call_me_back_inner #conf_politics_three:checked+label::after,
 .call_me_back_inner input[id^='conf_politics_agent_']:checked+label::after,
 .call_me_back_inner #conf_politics:checked+label::after {
     opacity: 1;
@@ -1705,7 +1712,12 @@ section .category_page .catalog .list_catalog .catalog_item .object_id {
 section .paggination {
     margin: 30px 0;
 }
-
+section .catalog .paggination {
+    margin: 30px 0 0;
+}
+section .catalog {
+    margin-bottom: 30px;
+}
 section .paggination ul {
     padding: 0;
     margin: 0;
@@ -1982,6 +1994,7 @@ section .object_page .actual_object {
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
+    margin-bottom: 30px;
 }
 
 section .object_page .actual_object .left_side {
@@ -2270,7 +2283,7 @@ section .object_page .same_objects .title {
     padding: 0 50px;
     font-family: "Ubuntu";
     font-size: 30px;
-    margin: 30px 0 25px;
+    margin: 0px 0 25px;
     text-align: left;
 }
 
@@ -2280,6 +2293,8 @@ section .object_page .same_objects .card {
     padding: 0 10px 10px;
     box-sizing: border-box;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 section .object_page .same_objects .card .img {
@@ -2325,14 +2340,16 @@ section .object_page .same_objects .card .tags {
     font-family: "Ubuntu";
     line-height: normal;
     padding-bottom: 10px;
-    border-bottom: 1px solid #dbdbdb;
+    /* border-bottom: 1px solid #dbdbdb; */
     color: #393939;
+    margin-bottom: auto;
 }
 
 section .object_page .same_objects .card .price_rub {
     font-family: "GothamPro_Med";
     font-size: 24px;
     padding-top: 10px;
+    border-top: 1px solid #dbdbdb;
 }
 
 section .object_page .same_objects .card .price_usd {
@@ -2446,7 +2463,12 @@ section .same_obj_slider {
     padding: 0 50px;
     overflow: hidden;
 }
-
+section .same_obj_slider .owl-stage,
+section .same_obj_slider .owl-stage .owl-item {
+    justify-content: stretch;
+    display: flex;
+    align-items: stretch;
+}
 section .case_like_this>.title {
     padding: 0;
     text-align: left;
@@ -2567,7 +2589,7 @@ section .cases_page .realtor_category .realtor_item {
     border-radius: 5px;
     box-sizing: border-box;
     transition: all 0.5s;
-    min-height: 366px;
+    /* min-height: 366px; */
 }
 
 section .cases_page .realtor_category .realtor_item a {
@@ -2629,7 +2651,9 @@ section .cases_page .watch_all_cases {
     color: #c09d74;
     text-align: center;
 }
-
+section .cases_page .agent_cases {
+    margin-bottom: 30px;
+}
 section .cases_page .agent_cases .title {
     border: none;
 }
@@ -2732,6 +2756,7 @@ section .case_in_page .case_inner {
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
+    margin-bottom: 30px;
 }
 
 section .case_in_page .case_inner .left_side {
@@ -2805,8 +2830,8 @@ section .case_in_page .case_inner .right_side {
     padding-left: 35px;
 }
 
-section .case_in_page .case_inner .right_side .details {
-    padding-bottom: 10px;
+section .case_in_page .case_inner .right_side .released_rel {
+    margin-top: 10px;
 }
 
 section .case_in_page .case_inner .right_side .details p {
@@ -2947,7 +2972,9 @@ section .card_label {
     justify-content: flex-start;
     flex-wrap: wrap;
 }
-
+section .card_label span {
+    margin: 0 2px 2px 0;
+}
 section .case_in_page .case_inner .right_side .card .name {
     font-family: "Ubuntu";
     font-weight: bold;
@@ -3007,6 +3034,7 @@ section .case_in_page .cases .title {
 
 section .case_in_page .cases .cases_carousel {
     margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 section .case_in_page .same_objects .title {
@@ -4541,6 +4569,7 @@ section .blog_in_page .blog_inner .right_side .agent a {
     width: 15%;
     margin-top: -8px;
 }
+.btn-default:active:focus,
 .scale .noUi-connect,
 .list-group-item ~ .btn-default {
     background: #c09d74;
@@ -4560,4 +4589,15 @@ section .blog_in_page .blog_inner .right_side .agent a {
 }
 .fancybox-content {
     overflow: visible;
+}
+
+.selected-options .ocfilter-option {
+    margin: 0 20px 10px 0;
+}
+.list-group-item.selected-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
