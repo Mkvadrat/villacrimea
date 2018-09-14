@@ -1,7 +1,7 @@
 <?php echo $header; ?>
   <div class="object_page">
       <div class="breadcrumbs">
-          <hr>
+          <!-- <hr> -->
           <ul>
               <?php			
                   $count = count($breadcrumbs);
@@ -18,7 +18,7 @@
                   } 
               ?>
           </ul>
-          <hr>
+          <!-- <hr> -->
       </div>
       
       <div class="object_title ">
@@ -55,7 +55,9 @@
               <div class="object_map">
                   <p class="title">Объекты рядом:</p>
                   <?php if($maps){ ?>
-                    <div id="map-products" style="width:100%; height:536px"></div>
+                    <div id="map-products-outer">
+                        <div id="map-products"></div>
+                    </div>
                     <script type="text/javascript">
                       ymaps.ready(init); // карта соберется после загрузки скрипта и элементов
                       var myMap; // заглобалим переменную карты чтобы можно было ею вертеть из любого места

@@ -1,4 +1,5 @@
     </section>
+    <div class="toTop" style="display: block;"></div>
     <div id="call_me_back" style="display: none;">
         <button data-fancybox-close="" class="fancybox-close-small" title="Close"><span>X</span></button>
         <div class="call_me_back_inner">

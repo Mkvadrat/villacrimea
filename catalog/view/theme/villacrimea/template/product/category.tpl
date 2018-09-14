@@ -20,9 +20,10 @@
                       <span><?php echo $category['count']; ?></span>
                   </p>
               </a>
-              <?php if ($category['view_case']) { ?>
-                <a href="<?php echo $category['view_case']; ?>" class="watch_cases">Посмотреть кейсы агента</a>
-              <?php } ?>
+              <?php //if ($category['view_case']) { ?>
+                <a href="<?php echo $category['href']; ?>" class="watch_cases">Посмотреть объекты агента</a>
+                <!-- <a href="<?php echo $category['view_case']; ?>" class="watch_cases">Посмотреть кейсы агента</a> -->
+              <?php //} ?>
           </div>
         <?php } ?>
       </div>
@@ -59,7 +60,7 @@
                 <?php } ?>
               </select>
               
-              <span class="<?php echo $arrow; ?>">i</span>
+              <!-- <span class="<?php echo $arrow; ?>">i</span> -->
           </div>
           
           <div class="tabs_catalog">

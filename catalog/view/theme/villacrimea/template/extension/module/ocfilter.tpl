@@ -94,10 +94,10 @@
 
 			<?php if ($show_options_limit && $show_options_limit == $option['index'] - 1) { ?>
 			<?php if ($show_options) { ?>
-      <button type="button" class="btn btn-default btn-block" data-toggle="collapse" data-target="#ocfilter-hidden-options" aria-expanded="true" aria-controls="ocfilter-hidden-options"><i class="fa fa-angle-down"></i></button>
+      <button type="button" class="btn btn-default btn-block" data-toggle="collapse" data-target="#ocfilter-hidden-options" aria-expanded="true" aria-controls="ocfilter-hidden-options">Дополнительные опции фильтра</button>
       <div class="collapse in" id="ocfilter-hidden-options" aria-expanded="true">
 			<?php } else { ?>
-      <button type="button" class="btn btn-default btn-block" data-toggle="collapse" data-target="#ocfilter-hidden-options" aria-expanded="false" aria-controls="ocfilter-hidden-options"><i class="fa fa-angle-down"></i></button>
+      <button type="button" class="btn btn-default btn-block" data-toggle="collapse" data-target="#ocfilter-hidden-options" aria-expanded="false" aria-controls="ocfilter-hidden-options">Дополнительные опции фильтра</button>
       <div class="collapse" id="ocfilter-hidden-options" aria-expanded="false">
       <?php } ?>
 			<?php } ?>

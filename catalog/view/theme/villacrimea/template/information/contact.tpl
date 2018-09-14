@@ -64,8 +64,8 @@
                           }
                       </script>
                   </div>
-                  <input type="checkbox" name="" id="conf_politics">
-                  <label for="conf_politics">
+                  <input type="checkbox" name="" id="conf_politics_one">
+                  <label for="conf_politics_one">
                           я согласен(согласна)<br>
                           с <a href="#">политикой конфиденциальности</a>
                   </label>
@@ -86,7 +86,7 @@
                 <a href="<?php echo $agent['all_object']; ?>" class="realtor_objects"><img src="catalog/view/theme/villacrimea/image/home1.png" alt="">Посмотреть все объекты агента</a>
                 <p class="tel">Телефон: <a href="tel:<?php echo $agent['phone']; ?>"><?php echo $agent['phone']; ?></a></p>
                 <p class="tel">E-mail: <a href="mailto:<?php echo $agent['email']; ?>"><?php echo $agent['email']; ?></a></p>
-                <a href="#call_me_back_<?php echo $agent['agent_id']; ?>" class="casual_button callback">Написать сообщение</a>
+                <a href="#call_me_back_agent_<?php echo $agent['agent_id']; ?>" class="casual_button callback">Написать сообщение</a>
             </div>
             <?php } ?>
             <?php } ?>
@@ -98,7 +98,7 @@
   </div>
   <?php if($agent_results){ ?>
   <?php foreach($agent_results as $agent){ ?>
-  <div id="call_me_back_<?php echo $agent['agent_id']; ?>" style="display: none;">
+  <div id="call_me_back_agent_<?php echo $agent['agent_id']; ?>" style="display: none;">
       <button data-fancybox-close="" class="fancybox-close-small" title="Close"><span>X</span></button>
       <div class="call_me_back_inner">
           <p class="title">Форма обратной связи</p>
@@ -117,12 +117,12 @@
                   </script>
               </div>
               
-              <label for="conf_politics">
+              <input type="checkbox" id="conf_politics_agent_<?php echo $agent['agent_id']; ?>">
+              <label for="conf_politics_agent_<?php echo $agent['agent_id']; ?>">
                       я согласен(согласна)<br>
                       с <a href="#">политикой конфиденциальности</a>
               </label>
-              <input type="checkbox" id="conf_politics_two">
-              <button type="submit" onclick="sendFormAgent_<?php echo $agent['agent_id']; ?>();" class="casual_button checked_button">Отправить</button>
+              <button type="submit" onclick="sendFormAgent_<?php echo $agent['agent_id']; ?>();" class="casual_button">Отправить</button>
           </div>
       </div>
   </div>

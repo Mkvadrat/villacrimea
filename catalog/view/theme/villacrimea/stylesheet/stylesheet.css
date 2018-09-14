@@ -96,7 +96,7 @@ a.casual_button:hover {
     width: 45px;
     height: 45px;
     bottom: 45%;
-    left: 20px;
+    left: 0;
     cursor: pointer;
     display: none;
     z-index: 1000;
@@ -112,12 +112,14 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    padding: 5px 50px;
+    align-items: flex-start;
+    padding: 15px 50px 5px;
 /*     max-width: 1366px;
     margin: 0 auto;*/ 
 }
-
+header .header_right_side br {
+    display: none;
+}
 header .header_left_side,
 header .header_right_side {
     width: 40%;
@@ -128,7 +130,7 @@ header .header_right_side {
     justify-content: flex-start;
 }
 
-header .header_left_side div {
+header .header_left_side>div {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -198,6 +200,8 @@ header .header_left_side .menu li {
 
 header .logo {
     width: 190px;
+    position: relative;
+    bottom: 10px;
 }
 
 header .header_right_side {
@@ -508,6 +512,7 @@ section .agent_with_cards {
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
+    margin-bottom: 45px;
 }
 
 section .agent_with_cards .agent {
@@ -515,6 +520,7 @@ section .agent_with_cards .agent {
     border: 1px solid #dbdbdb;
     border-radius: 4px;
     flex-direction: column;
+    margin-bottom: 0.86%;
 }
 
 section .agent_with_cards .agent .is_agent {
@@ -576,6 +582,9 @@ section .agent_with_cards .card {
     padding: 0 10px 10px;
     box-sizing: border-box;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
 }
 
 /* section .agent_with_cards .card:last-of-type {
@@ -673,6 +682,7 @@ section .agent_with_cards .card .tags {
     padding-bottom: 10px;
     border-bottom: 1px solid #dbdbdb;
     color: #393939;
+    height: 100%;
 }
 
 section .agent_with_cards .card .price_rub {
@@ -769,6 +779,10 @@ section .services .services_items {
 section .services .services_items .item {
     width: 25%;
     margin: 1% 4% 1% 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 section .services .services_items .item img {
@@ -1083,18 +1097,19 @@ section .about::before {
     padding-bottom: 20%;
     max-height: 345px;
     background-image: url('../image/left-side.png');
-    background-position: right center;
+    background-position: -80px center;
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
-    left: -6%;
+    left: 0;
     top: -15%;
 }
 
 section .about::after {
     left: auto;
-    right: -6%;
+    right: 0;
     background-image: url('../image/right-side.png');
+    background-position: 80px center;
 }
 
 section .about .buy_sell a {
@@ -1126,6 +1141,7 @@ section .about .text .title {
     margin: 60px 0 30px;
 }
 
+div[id^='call_me_back_agent_'],
 #call_me_back {
     max-width: 400px;
     padding: 30px;
@@ -1176,10 +1192,14 @@ section .about .text .title {
     flex-direction: column-reverse;
 }
 
+.call_me_back_inner #conf_politics_one,
+.call_me_back_inner input[id^='conf_politics_agent_'],
 .call_me_back_inner #conf_politics {
     visibility: hidden;
 }
 
+.call_me_back_inner #conf_politics_one+label,
+.call_me_back_inner input[id^='conf_politics_agent_']+label,
 .call_me_back_inner #conf_politics+label {
     font-family: "GothamPro_Ita";
     font-size: 12px;
@@ -1190,10 +1210,14 @@ section .about .text .title {
     cursor: pointer;
 }
 
+.call_me_back_inner #conf_politics_one+label::first-letter,
+.call_me_back_inner input[id^='conf_politics_agent_']+label::first-letter,
 .call_me_back_inner #conf_politics+label::first-letter {
     padding-left: 12px;
 }
 
+.call_me_back_inner #conf_politics_one+label::before,
+.call_me_back_inner input[id^='conf_politics_agent_']+label::before,
 .call_me_back_inner #conf_politics+label::before {
     content: ' ';
     display: inline-block;
@@ -1205,6 +1229,8 @@ section .about .text .title {
     top: 9px;
 }
 
+.call_me_back_inner #conf_politics_one+label::after,
+.call_me_back_inner input[id^='conf_politics_agent_']+label::after,
 .call_me_back_inner #conf_politics+label::after {
     content: ' ';
     display: inline-block;
@@ -1217,6 +1243,8 @@ section .about .text .title {
     opacity: 0;
 }
 
+.call_me_back_inner #conf_politics_one:checked+label::after,
+.call_me_back_inner input[id^='conf_politics_agent_']:checked+label::after,
 .call_me_back_inner #conf_politics:checked+label::after {
     opacity: 1;
 }
@@ -1233,6 +1261,7 @@ section .about .text .title {
     padding: 14px 20px;
 }
 
+.call_me_back_inner input[id^='conf_politics_agent_']:checked ~ button,
 .call_me_back_inner button.checked_button {
     pointer-events: all;
     background: #c09d74;
@@ -1355,6 +1384,10 @@ section .category_page .catalog .sort_filter {
     display: flex;
     flex-direction: row;
     align-items: center;
+    font-family: "Ubuntu";
+    font-size: 14px;
+    line-height: 14px;
+    color: #666666;
 }
 
 section .category_page .catalog .sort_filter .change_view {
@@ -1382,7 +1415,11 @@ section .category_page .catalog .sort_filter .change_view button {
     margin: 0;
     margin-right: 20px;
 }
-
+section .category_page .catalog .sort_filter #input-sort,
+section .category_page .catalog .sort_filter #input-limit {
+    padding: 5px 0;
+    margin: 0 20px 0 5px;
+}
 section .category_page .catalog .sort_filter .change_view .tab_veiw {
     background-image: url('../image/veiw_tabs.png');
 }
@@ -1420,6 +1457,9 @@ section .category_page .catalog .tabs_catalog .catalog_item {
     padding: 0 10px 10px;
     box-sizing: border-box;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
 }
 
 section .category_page .catalog .tabs_catalog .catalog_item:nth-of-type(3n) {
@@ -1475,7 +1515,6 @@ section .category_page .catalog .tabs_catalog .catalog_item .tags {
     font-family: "Ubuntu";
     line-height: normal;
     padding-bottom: 10px;
-    border-bottom: 1px solid #dbdbdb;
     color: #393939;
 }
 
@@ -1565,7 +1604,11 @@ section .category_page .catalog .list_catalog .catalog_item .bormotology {
     justify-content: flex-start;
     align-items: flex-start;
 }
-
+section .bormotology {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
 section .category_page .catalog .list_catalog .catalog_item .name {
     font-family: "GothamPro";
     font-weight: bold;
@@ -1619,7 +1662,10 @@ section .category_page .catalog .list_catalog .catalog_item .list_button {
     order: 0;
     align-self: flex-start;
 }
-
+section .category_page .catalog .prices {
+    margin-top: auto;
+    border-top: 1px solid #dbdbdb;
+}
 section .category_page .catalog .list_catalog .catalog_item .prices {
     width: 100%;
     display: flex;
@@ -1928,7 +1974,9 @@ section .object_title .center {
     margin: 0 0 25px;
     font-family: "Ubuntu";
 }
-
+section .object_page {
+    padding: 0 0 30px;
+}
 section .object_page .actual_object {
     display: flex;
     flex-direction: row;
@@ -2096,6 +2144,7 @@ section .object_page .actual_object .right_side .card_label {
     padding: 8px 90px 8px 0;
     border-bottom: 1px solid #dbdbdb;
     align-items: center;
+    min-height: 45px;
 }
 
 section .object_page .actual_object .right_side .card_label .object_id {
@@ -2108,6 +2157,7 @@ section .object_page .actual_object .right_side .card_label .object_id {
 section .object_page .actual_object .right_side .details {
     padding-bottom: 25px;
     border-bottom: 1px solid #dbdbdb;
+    margin-bottom: 20px;
 }
 
 section .object_page .actual_object .right_side .specials p,
@@ -4337,8 +4387,18 @@ section .blog_in_page .blog_inner .right_side .agent a {
 /*Дополнение к странице Блога 29.08.2018*/
 
 /*08.05.2018*/
-#map-products {
+#map-products-outer {
+    display: inline-block;
+    width: 100%;
     float: left;
+    position: relative;
+    height: 1px;
+    padding-bottom: 56.25%;
+}
+#map-products {
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 .ballon {
     padding: 5px;
@@ -4445,16 +4505,15 @@ section .blog_in_page .blog_inner .right_side .agent a {
 }
 .panel>.list-group .list-group-item[id^='option'] {
     display: inline-block;
-    width: 25%;
+    width: 20%;
     float: left;
     box-sizing: border-box;
     border: none;
+    font-size: 16px;
 }
 .panel>.list-group {
     display: inline-block;
-}
-.form-control#currencys {
-    margin-top: 20px;
+    width: 100%;
 }
 .form-inline {
     display: flex;
@@ -4466,4 +4525,39 @@ section .blog_in_page .blog_inner .right_side .agent a {
 }
 .form-inline .form-control {
     width: 100%;
+}
+.list-group-item.ocfilter-option[data-original-title] .option-values {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.list-group-item.ocfilter-option[data-original-title] .option-values .scale {
+    width: 80%;
+}
+
+.list-group-item.ocfilter-option[data-original-title] .option-values .form-control {
+    width: 15%;
+    margin-top: -8px;
+}
+.scale .noUi-connect,
+.list-group-item ~ .btn-default {
+    background: #c09d74;
+    border: none;
+    color: #fff;
+    text-decoration: underline;
+    outline: none;
+}
+.list-group-item ~ .btn-default:hover {
+    text-decoration: none;
+}
+.popover .btn-primary:hover,
+.popover .btn-primary {
+    background: #c09d74;
+    border: none;
+    outline: none;
+}
+.fancybox-content {
+    overflow: visible;
 }

@@ -11,11 +11,12 @@
                   <div class="img" style="background-image: url('<?php echo $agent['image']; ?>')"></div>
                   <p class="name"><?php echo $agent['name']; ?></p>
                   <p class="job"><?php echo $agent['specialization']; ?></p>
-                  <p class="obj_count">Проданых объектов –
+                  <!-- <p class="obj_count">Проданых объектов –
                       <span><?php echo $agent['count']; ?></span>
-                  </p>
+                  </p> -->
               </a>
-              <a href="<?php echo $agent['href']; ?>" class="watch_cases">Посмотреть объекты в продаже</a>
+              <a href="<?php echo $agent['view_case']; ?>" class="watch_cases">Посмотреть кейсы</a>
+              <!-- <a href="<?php echo $agent['href']; ?>" class="watch_cases">Посмотреть объекты в продаже</a> -->
           </div>
         <?php } ?>
       </div>

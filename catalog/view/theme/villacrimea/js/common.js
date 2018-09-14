@@ -201,6 +201,7 @@ $(document).ready(function () {
     });
     $(".object_page .right_side .realtor").stick_in_parent();
     $(".released_rel").stick_in_parent();
+    $(".agent_with_cards .agent").stick_in_parent();
     $(".contacts_page .call_me_back_inner").stick_in_parent();
     $(".text_page .call_me_back_inner").stick_in_parent();
     $(function() {

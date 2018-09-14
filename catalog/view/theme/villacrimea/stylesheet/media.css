@@ -1,1 +1,22 @@
-@media screen and (min-width:1366px) {}
+@media screen and (min-width:1367px) {
+    section .about::after, section .about::before {
+        width: 16%;
+        top: -20%;
+    }
+    section .about .buy_sell,
+    section .about .text {
+        width: 70%;
+    }
+    section .contacts_page .contacts_inner .realtors .realtor .realtor_objects,
+    section .contacts_page .contacts_inner .realtors .realtor .cases {
+        padding: 14px 0px 14px 0px;
+        display: flex;
+        justify-content: center;
+    }
+}
+@media screen and (min-width:2160px) {
+    section .about::after, section .about::before {
+        width: 13%;
+        top: -45%;
+    }
+}
