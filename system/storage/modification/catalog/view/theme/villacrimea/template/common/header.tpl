@@ -69,50 +69,64 @@
 <?php echo $analytic; ?>
 <?php } ?>
 </head>
-  <header>
-    <div class="header_left_side">
-        <?php echo $short_descr; ?>
-        
-        <div>
-            <?php if($downloads) { ?>
-              <?php foreach($downloads as $download){ ?>
-                <a class="dwnld_presentation" href="<?php echo $download['href'] ?>"><img src="catalog/view/theme/villacrimea/image/pdf.png" alt=""><?php echo $download['name'] ?></a>
-              <?php } ?>
-            <?php } ?>
-            
-            <?php echo $search; ?>
-        </div>
-        <ul class="menu">
-        <?php foreach ($categories as $category) { ?>
-          <?php if ($category['children']) { ?>
-          <li class="dropdown"><a href="<?php echo $category['href']; ?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo $category['name']; ?></a>
-            <div class="dropdown-menu">
-              <div class="dropdown-inner">
-                <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
-                <ul class="list-unstyled">
-                  <?php foreach ($children as $child) { ?>
-                  <li><a href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></li>
-                  <?php } ?>
-                </ul>
+  <body>
+  <nav id="menu">
+    <ul>
+      <li><a href="#">О нас</a></li>
+      <li><a href="#">Услуги</a></li>
+      <li><a href="#">Кейсы</a></li>
+      <li><a href="#">Блог</a></li>
+      <li><a href="#">Контакты</a></li>
+      <li><a href="#">Отзывы на Яндексе</a></li>                    
+    </ul>
+  </nav>
+  <div class="page">
+    <header>
+      <div class="header_left_side">
+          <?php echo $short_descr; ?>
+          <a class="mobile telephone" href="tel:88006000019">8 (800) 600-00-19</a>
+          <div>
+              <?php if($downloads) { ?>
+                <?php foreach($downloads as $download){ ?>
+                  <a class="dwnld_presentation" href="<?php echo $download['href'] ?>"><img src="catalog/view/theme/villacrimea/image/pdf.png" alt=""><?php echo $download['name'] ?></a>
                 <?php } ?>
-              </div>
-              <a href="<?php echo $category['href']; ?>" class="see-all"><?php echo $text_all; ?> <?php echo $category['name']; ?></a> </div>
-          </li>
-          <?php } else { ?>
-          <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
+              <?php } ?>
+              
+              <?php echo $search; ?>
+          </div>
+          <ul class="menu">
+          <?php foreach ($categories as $category) { ?>
+            <?php if ($category['children']) { ?>
+            <li class="dropdown"><a href="<?php echo $category['href']; ?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo $category['name']; ?></a>
+              <div class="dropdown-menu">
+                <div class="dropdown-inner">
+                  <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
+                  <ul class="list-unstyled">
+                    <?php foreach ($children as $child) { ?>
+                    <li><a href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></li>
+                    <?php } ?>
+                  </ul>
+                  <?php } ?>
+                </div>
+                <a href="<?php echo $category['href']; ?>" class="see-all"><?php echo $text_all; ?> <?php echo $category['name']; ?></a> </div>
+            </li>
+            <?php } else { ?>
+            <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
+            <?php } ?>
           <?php } ?>
+          </ul>
+          <a class="mobile mob-menu" href="#menu"><img src="catalog/view/theme/villacrimea/image/menu.png"></a>
+      </div>
+      <div class="logo" id="print01">
+        <?php if ($logo) { ?>
+          <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a>
+        <?php } else { ?>
+          <h1><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
         <?php } ?>
-        </ul>
-    </div>
-    <div class="logo" id="print01">
-      <?php if ($logo) { ?>
-        <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a>
-      <?php } else { ?>
-        <h1><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
-      <?php } ?>
-    </div>
-    <div class="header_right_side">
-      <?php echo $contact_header; ?>
-    </div>
-  </header>    
-  <section>
+      </div>
+      <div class="header_right_side">
+        <?php echo $contact_header; ?>
+      </div>
+      <a class="mobile callback mob-callback" href="#call_me_back"><img src="catalog/view/theme/villacrimea/image/tel.png"></a>
+    </header>    
+    <section>

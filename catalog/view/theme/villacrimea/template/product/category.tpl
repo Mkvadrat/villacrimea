@@ -83,7 +83,7 @@
                       <div class="tags">
                           <?php $i = 0; ?>
                           <?php foreach($product['filter_options'] as $option){ ?>
-                              <span><?php echo $option['name']; ?>: <?php echo $option['value'] . $option['postfix']; ?></span>
+                              <span><?php echo $option['name']; ?>: <?php echo $option['value'] . $option['postfix']; ?> /</span>
                               <?php $i++; ?>
                               <?php if($i > 2) break; ?>
                           <?php } ?>
@@ -124,7 +124,7 @@
       <?php }else{ ?>
       <p><?php echo $text_empty; ?></p>
       <div class="buttons">
-        <div class="pull-right"><a href="<?php echo $continue; ?>" class="btn btn-primary"><?php echo $button_continue; ?></a></div>
+        <a href="<?php echo $continue; ?>" class="btn btn-primary" style="margin: 0 0 10px;"><?php echo $button_continue; ?></a>
       </div>
       <?php } ?>
       
