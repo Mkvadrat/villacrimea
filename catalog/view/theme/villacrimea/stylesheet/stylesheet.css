@@ -735,8 +735,8 @@ section .promo_block {
     padding: 60px 50px;
     box-sizing: border-box;
     position: relative;
-    overflow: hidden;
-}
+/*     overflow: hidden;
+ */}
 
 section .promo_block .text {
     width: 27%;
@@ -2068,10 +2068,16 @@ section .object_page .actual_object .left_side .object_photo a img {
 section .object_page .actual_object .left_side .object_description {
     border-bottom: 1px solid #dbdbdb;
 }
+section .object_page .actual_object .left_side .object_description>div {
+    padding-bottom: 30px;
+    font-family: "Ubuntu";
+    line-height: 24px;
+    font-size: 1em;
+}
 
 section .object_page .actual_object .left_side .object_description p {
     font-family: "Ubuntu";
-    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 section .object_page .actual_object .left_side .object_map .title,
@@ -4562,6 +4568,7 @@ section .blog_in_page .blog_inner .right_side .agent a {
 .panel>.list-group .list-group-item {
     border-bottom: 1px solid #ddd;
     margin-bottom: 0;
+    width: 100%;
 }
 .panel>.list-group .list-group-item[id^='option'] {
     display: inline-block;
@@ -4571,9 +4578,18 @@ section .blog_in_page .blog_inner .right_side .agent a {
     border: none;
     font-size: 16px;
 }
+#ocfilter-hidden-options.in {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
 .panel>.list-group {
-    display: inline-block;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
 }
 .form-inline {
     display: flex;

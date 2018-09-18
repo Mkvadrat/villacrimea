@@ -14,11 +14,13 @@
           <div class="realtor_item">
               <a href="<?php echo $category['href']; ?>" class="realtor">
                   <div class="img" style="background-image: url('<?php echo $category['image']; ?>')"></div>
-                  <p class="name"><?php echo $category['name']; ?></p>
-                  <p class="job"><?php echo $category['specialization']; ?></p>
-                  <p class="obj_count">Объектов в продаже –
-                      <span><?php echo $category['count']; ?></span>
-                  </p>
+                  <div>
+                    <p class="name"><?php echo $category['name']; ?></p>
+                    <p class="job"><?php echo $category['specialization']; ?></p>
+                    <p class="obj_count">Объектов в продаже –
+                        <span><?php echo $category['count']; ?></span>
+                    </p>
+                  </div>
               </a>
               <?php //if ($category['view_case']) { ?>
                 <a href="<?php echo $category['href']; ?>" class="watch_cases">Посмотреть объекты агента</a>
@@ -37,7 +39,7 @@
                   <button class="tab_veiw active"></button>
                   <button class="list_veiw"></button>
               </div>
-              
+              <div class="show-up-to">
               <?php echo $text_limit; ?>
               <select id="input-limit" onchange="location = this.value;">
                 <?php foreach ($limits as $limits) { ?>
@@ -48,7 +50,8 @@
                 <?php } ?>
                 <?php } ?>
               </select>
-
+              </div>
+              <div class="sort-up-to">
               <?php echo $text_sort; ?>
               <select id="input-sort" onchange="location = this.value;">
                 <?php foreach ($sorts as $sorts) { ?>
@@ -59,7 +62,7 @@
                 <?php } ?>
                 <?php } ?>
               </select>
-              
+              </div>
               <!-- <span class="<?php echo $arrow; ?>">i</span> -->
           </div>
           

@@ -41,9 +41,12 @@
     section .categories li:nth-child(n) {
         margin: 0 3% 2% 0;
     }
+    section .case_with>div .description,
     section .cases .owl-item>div .description {
         display: none;
     }
+    section .case_with>div .case,
+    section .case_with>div .realtor,
     section .cases .owl-item>div .case,
     section .cases .owl-item>div .realtor {
         border-right: 1px solid #dbdbdb;
@@ -73,6 +76,10 @@
     section .about::after, section .about::before {
         display: none;
     }
+    section .category_page .realtor_category .realtor_item a .img {
+        width: 160px;
+        padding-bottom: 160px;
+    }
 }
 @media screen and (max-width:1024px) {
     .header_left_side p,
@@ -85,6 +92,7 @@
     header .header_left_side div input {
         width: 180px;
     }
+    section .seotext .agent,
     header .header_right_side .telephone img,
     header .header_right_side .callback.casual_button,
     header .header_left_side .menu,
@@ -114,6 +122,7 @@
     }
     section .promo_block {
         padding-bottom: 30px;
+        overflow: hidden;
     }
     section .cases .slider {
         margin-right: -50px;
@@ -148,6 +157,7 @@
     section .about .buy_sell a {
         font-size: 18px;
     }
+    section .seotext .text,
     section .about .text {
         width: 100%;
     }
@@ -179,12 +189,65 @@
     section .choise #value {
         width: 7%;
     }
+    .panel>.list-group .list-group-item[id^='option'] {
+        width: 33%;
+    }
+    .panel>.list-group .list-group-item[id^='option'] {
+        width: 33%;
+    }
+    section .category_page .realtor_category {
+        flex-wrap: wrap;
+    }
+    section .category_page .realtor_category .realtor_item {
+        width: 49%;
+        min-height: auto;
+        margin-bottom: 2%;
+        padding: 0 10px;
+    }
+    section .category_page .realtor_category .realtor_item a .img {
+        width: 100px;
+        padding-bottom: 100px;
+        margin-right: 20px;
+    }
+    section .category_page .realtor_category .realtor_item a .job, section .category_page .realtor_category .realtor_item .watch_cases {
+        display: none;
+    }
+    section .category_page .realtor_category .realtor_item a {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    section .category_page .catalog .tabs_catalog .catalog_item:nth-child(n) {
+        width: 49.5%;
+        margin: 1% 1% 0 0;
+    }
+    section .category_page .catalog .tabs_catalog .catalog_item:nth-of-type(2n) {
+        margin-right: 0;
+    }
+    section .category_page .realtor_category .realtor_item a .img+div {
+        flex-direction: column;
+        justify-content: flex-start;
+        display: flex;
+        align-items: flex-start;
+    }
 }
 @media screen and (max-width:768px) {
+    .list-group-item.ocfilter-option[data-original-title] .option-values {
+        flex-wrap: wrap;
+    }
+    .list-group-item.ocfilter-option[data-original-title] .option-values .form-control {
+        width: 100%;
+        margin-top: 30px;
+    }
+    .list-group-item.ocfilter-option[data-original-title] .option-values .scale {
+        width: 100%;
+    }
+    section .case_with>div .realtor,
     section .cases .owl-item>div .realtor,
     header .header_right_side {
         display: none;
     }
+    section .case_with>div .case,
     section .cases .owl-item>div .case {
         width: 100%;
     }
@@ -252,8 +315,26 @@
     section .about .buy_sell a {
         padding: 10px 15px;
     }
+    section .category_page .catalog .sort_filter .change_view {
+        display: none;
+    }
+    .show-up-to, .sort-up-to {
+        width: 50%;
+        display: inline-block;
+        float: left;
+        margin: 0 0 2%;
+    }
 }
 @media screen and (max-width:650px) {
+    .panel>.list-group .list-group-item[id^='option'] {
+        width: 50%;
+    }
+    .show-up-to {
+        width: 35%;
+    }
+    .sort-up-to {
+        width: 65%;
+    }
     header {
         padding: 15px 10px 5px;
         align-items: center;
@@ -322,8 +403,37 @@
         order: 2;
         width: 100%;
     }
+    section .category_page .realtor_category .realtor_item {
+        width: 100%;
+    }
 }
 @media screen and (max-width:500px) {
+    section .category_page .title, section .seotext .text .title, section .seotext {
+        margin-left: -10px;
+        margin-right: -10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    header .header_left_side div input {
+        width: 260px;
+    }
+    .panel>.list-group .list-group-item[id^='option'] {
+        padding: 5px;
+    }
+    .list-group-item.ocfilter-option[data-original-title] .option-values {
+        margin-bottom: 0;
+    }
+    section .category_page .realtor_category .realtor_item a .img {
+        margin-right: 10px;
+    }
+    section .category_page .catalog .tabs_catalog .catalog_item:nth-child(n) {
+        width: 100%;
+        margin: 0 0 2%;
+    }
+    section .category_page .catalog .sort_filter {
+        flex-direction: column;
+    }
+    .show-up-to, .sort-up-to,
     section .agent_with_cards .card {
         width: 100%;
     }

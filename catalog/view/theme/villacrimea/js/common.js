@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    $("#menu").mmenu();
     $('.seling_carousel').owlCarousel({
         items: 1,
         pullDrag: true,
@@ -18,8 +17,8 @@ $(document).ready(function () {
     $('.same_obj_slider').owlCarousel({
         items: 3,
         margin: 20,
-        loop : true,
-        dots: false,
+/*         loop : true,
+ */        dots: false,
         pullDrag: true,
         nav: true,
         navText: ['<span></span>', '<span></span>']
