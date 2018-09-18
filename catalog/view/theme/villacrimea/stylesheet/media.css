@@ -249,6 +249,9 @@
     section .agent_with_cards .agent {
         display: none;
     }
+    section .about .buy_sell a {
+        padding: 10px 15px;
+    }
 }
 @media screen and (max-width:650px) {
     header {
@@ -283,6 +286,10 @@
     section .cases_carousel .owl-nav .owl-next span {
         right: 0;
     }
+    section .promo_block>img {
+        right: 50px;
+        width: 130%;
+    }
     footer .footer_left_side, footer .footer_right_side {
         width: 100%;
     }
@@ -314,5 +321,121 @@
     footer p {
         order: 2;
         width: 100%;
+    }
+}
+@media screen and (max-width:500px) {
+    section .agent_with_cards .card {
+        width: 100%;
+    }
+    section .promo_block>img {
+        right: 50px;
+        width: 150%;
+    }
+    section .services .services_items .item {
+        margin: 0 1% 30px;
+        width: 98%;
+    }
+    section .cases .owl-item>div .case a {
+        width: 110%;
+        text-align: center;
+        margin-left: -5%;
+        margin-top: 10px;
+    }
+    section .cases .owl-item>div {
+        padding: 0;
+    }
+    section .cases .owl-item>div .case {
+        padding: 40px 8% 15px;
+    }
+    section .cases_carousel .owl-nav span {
+        display: inline-block;
+        height: 100px;
+        width: 50px;
+        border-radius: 0 50px 50px 0;
+    }
+    section .cases_carousel .owl-nav span::after,
+    section .cases_carousel .owl-nav span::before {
+        width: 35px;
+        border-top: 4px solid #fff;
+    }
+    section .cases_carousel .owl-nav .owl-prev span::before {
+        top: 37px;
+        left: 3px;
+        transform: rotate(135deg);
+    }
+    section .cases_carousel .owl-nav .owl-prev span::after {
+        bottom: 37px;
+        left: 3px;
+        transform: rotate(45deg);
+    }
+    section .cases_carousel .owl-nav .owl-next span::after {
+        bottom: 37px;
+        right: 3px;
+        transform: rotate(135deg);
+        height: 0;
+    }
+    section .cases_carousel .owl-nav .owl-next span::before {
+        top: 37px;
+        right: 3px;
+        transform: rotate(45deg);
+        height: 0;
+    }
+    section .blog .blogs .blogs_item {
+        width: 100%;
+    }
+    section .about {
+        padding: 0;
+    }
+    section .about .text {
+        padding: 0 10px;
+    }
+    section .about .buy_sell {
+        flex-direction: column;
+    }
+    section .about .buy_sell a {
+        border-radius: 0;
+        text-align: center;
+        padding: 20px 0;
+    }
+    section .about .buy_sell a+a {
+        margin-top: 30px;
+    }
+    section .seling_carousel .seling_carousel_info {
+        padding: 30px 10px;
+        width: 95%;
+    }
+    section .categories li {
+        text-align: center;
+    }
+    section .title,
+    section .seling_carousel .seling_carousel_info p {
+        font-size: 24px;
+    }
+    section .categories a,
+    section .seling_carousel .seling_carousel_info div {
+        font-size: 16px;
+    }
+    section .promo_block {
+        padding: 30px 20px;
+    }
+    section .promo_block .text .title {
+        font-size: 30px;
+        margin: 0 0 15px;
+    }
+    section .promo_block .text p {
+        font-size: 14px;
+    }
+    section .promo_block .categories {
+        justify-content: flex-end;
+    }
+    section .promo_block>img {
+        right: auto;
+        left: -40%;
+    }
+    section .services .title {
+        text-align: center;
+    }
+    .header_left_side p, .header_right_side p {
+        font-size: 14px;
     }
 }
