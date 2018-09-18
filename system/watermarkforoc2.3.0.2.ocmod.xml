@@ -1,0 +1,327 @@
+<modification>
+  <name><![CDATA[<font color="#15C403"><b>Modulo Watermark fix for Mexica</font>]]></name>
+  <code>watermark</code>
+  <version>1.3</version>
+  <author><![CDATA[<font color="#E50223"><b>danuel</font>]]></author>
+  <link></link>
+  
+  <file path="catalog/controller/extension/module/banner.php">
+    <operation>
+      <search>
+        <![CDATA['image' => $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height'])]]>
+      </search>
+      <add position="replace">
+        <![CDATA['image' => $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height'], 'category_image')]]>
+      </add>
+    </operation>
+  </file>
+  
+  <file path="catalog/controller/extension/module/featured_html.php">
+    <operation>
+      <search>
+        <![CDATA[$image = $this->model_tool_image->resize($product_info['image'], $setting['width'], $setting['height']);]]>
+      </search>
+      <add position="replace">
+        <![CDATA[$image = $this->model_tool_image->resize($product_info['image'], $setting['width'], $setting['height'], 'product_related');]]>
+      </add>
+    </operation>
+  </file>
+  
+  <file path="catalog/controller/extension/module/blog_featured.php">
+    <operation>
+      <search>
+        <![CDATA[$image = $this->model_tool_image->resize($article_info['image'], $setting['width'], $setting['height']);]]>
+      </search>
+      <add position="replace">
+        <![CDATA[$image = $this->model_tool_image->resize($article_info['image'], $setting['width'], $setting['height'], 'product_related');]]>
+      </add>
+    </operation>
+  </file>
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <file path="catalog/controller/extension/module/featured.php">
+	  <operation>
+      <search>
+        <![CDATA[$image = $this->model_tool_image->resize($product_info['image'], $width_orig, $height_orig);]]>
+      </search>
+      <add position="replace">
+        <![CDATA[$image = $this->model_tool_image->resize($product_info['image'], $width_orig, $height_orig,'product_list');]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/extension/module/bestseller.php">
+    <operation>
+      <search>
+        <![CDATA[$image = $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height']);]]>
+      </search>
+      <add position="replace">
+        <![CDATA[$image = $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height'],'product_list');]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/extension/module/ebay_listing.php">
+    <operation>
+      <search>
+        <![CDATA[$image = $this->model_extension_openbay_ebay_product->resize($product['pictures'][0], $this->config->get('ebay_listing_width'), $this->config->get('ebay_listing_height'));]]>
+      </search>
+      <add position="replace">
+        <![CDATA[$image = $this->model_extension_openbay_ebay_product->resize($product['pictures'][0], $this->config->get('ebay_listing_width'), $this->config->get('ebay_listing_height'),'product_list');]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/extension/module/carousel.php">
+    <operation>
+      <search>
+        <![CDATA['image' => $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height'])]]>
+      </search>
+      <add position="replace">
+        <![CDATA['image' => $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height'], 'product_in_cart')]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/extension/module/latest.php">
+    <operation>
+      <search>
+        <![CDATA[$image = $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height']);]]>
+      </search>
+      <add position="replace">
+        <![CDATA[$image = $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height'],'product_list');]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/extension/module/special.php">
+    <operation>
+      <search>
+        <![CDATA[$image = $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height']);]]>
+      </search>
+      <add position="replace">
+        <![CDATA[$image = $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height'],'product_list');]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/extension/module/slideshow.php">
+    <operation>
+      <search>
+        <![CDATA['image' => $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height'])]]>
+      </search>
+      <add position="replace">
+        <![CDATA['image' => $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height'], 'category_image')]]>
+      </add>
+    </operation>
+  </file>
+
+
+
+  <file path="catalog/controller/extension/feed/google_sitemap.php">
+    <operation>
+      <search>
+        <![CDATA[$output .= '<image:loc>' . $this->model_tool_image->resize($product['image'], $this->config->get($this->config->get('config_theme') . '_image_popup_width'), $this->config->get($this->config->get('config_theme') . '_image_popup_height')) . '</image:loc>';]]>
+      </search>
+      <add position="replace">
+        <![CDATA[$output .= '<image:loc>' . $this->model_tool_image->resize($product['image'], $this->config->get($this->config->get('config_theme') . '_image_popup_width'), $this->config->get($this->config->get('config_theme') . '_image_popup_height'), 'product_popup') . '</image:loc>';]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/extension/feed/google_base.php">
+    <operation>
+      <search>
+        <![CDATA[$output .= '  <g:image_link>' . $this->model_tool_image->resize($product['image'], 500, 500) . '</g:image_link>';]]>
+      </search>
+      <add position="replace">
+        <![CDATA[$output .= '  <g:image_link>' . $this->model_tool_image->resize($product['image'], 500, 500, 'product_popup') . '</g:image_link>';]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/product/product.php">
+    <operation>
+      <search>
+        <![CDATA[$data['popup'] = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_popup_width'), $this->config->get($this->config->get('config_theme') . '_image_popup_height'));]]>
+      </search>
+      <add position="replace">
+        <![CDATA[$data['popup'] = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_popup_width'), $this->config->get($this->config->get('config_theme') . '_image_popup_height'), 'product_popup');]]>
+      </add>
+    </operation>
+    <operation>
+      <search>
+        <![CDATA[$data['mexica_thumb'] = $this->model_tool_image->resize($product_info['image'], $width_orig, $height_orig);]]>
+      </search>
+      <add position="replace">
+        <![CDATA[$data['mexica_thumb'] = $this->model_tool_image->resize($product_info['image'], $width_orig, $height_orig, 'product_thumb');]]>
+      </add>
+    </operation>
+    <operation>
+      <search regex="false">
+        <![CDATA['popup' => $this->model_tool_image->resize($result['image'], $width_orig, $height_orig),]]>
+      </search>
+      <add position="replace">
+        <![CDATA['popup' => $this->model_tool_image->resize($result['image'], $width_orig, $height_orig, 'product_popup'),]]>
+      </add>
+    </operation>
+    <operation>
+      <search>
+        <![CDATA['thumb' => $this->model_tool_image->resize($result['image'], $width_orig, $height_orig)]]>
+      </search>
+      <add position="replace">
+        <![CDATA['thumb' => $this->model_tool_image->resize($result['image'], $width_orig, $height_orig, 'product_popup')]]>
+      </add>
+    </operation>
+    <operation>
+      <search>
+        <![CDATA[$image = $this->model_tool_image->resize($result['image'], $width_orig, $height_orig);]]>
+      </search>
+      <add position="replace">
+        <![CDATA[$image = $this->model_tool_image->resize($result['image'], $width_orig, $height_orig, 'product_related');]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/product/special.php">
+    <operation>
+      <search>
+        <![CDATA[$image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));]]>
+      </search>
+      <add position="replace">
+        <![CDATA[$image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'), 'product_list');]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/product/manufacturer.php">
+    <operation>
+      <search>
+        <![CDATA[$image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));]]>
+      </search>
+      <add position="replace">
+        <![CDATA[$image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'), 'product_list');]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/product/search.php">
+    <operation>
+      <search>
+        <![CDATA[$image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));]]>
+      </search>
+      <add position="replace">
+        <![CDATA[$image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'), 'product_list');]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/product/compare.php">
+    <operation>
+      <search>
+        <![CDATA[$image = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_compare_width'), $this->config->get($this->config->get('config_theme') . '_image_compare_height'));]]>
+      </search>
+      <add position="replace">
+        <![CDATA[$image = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_compare_width'), $this->config->get($this->config->get('config_theme') . '_image_compare_height'), 'product_in_compare');]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/product/category.php">
+    <operation>
+      <search>
+        <![CDATA[$data['mexica_thumb'] = $this->model_tool_image->resize($category_info['image'], $this->config->get($this->config->get('config_theme') . '_image_category_width'), $this->config->get($this->config->get('config_theme') . '_image_category_height'));]]>
+      </search>
+      <add position="replace">
+        <![CDATA[$data['mexica_thumb'] = $this->model_tool_image->resize($category_info['image'], $this->config->get($this->config->get('config_theme') . '_image_category_width'), $this->config->get($this->config->get('config_theme') . '_image_category_height'), 'category_image');]]>
+      </add>
+    </operation>
+
+    <operation>
+      <search>
+        <![CDATA[$image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));]]>
+      </search>
+      <add position="replace">
+        <![CDATA[$image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'), 'product_list');]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/common/cart.php">
+    <operation>
+      <search>
+        <![CDATA[$image = $this->model_tool_image->resize($product['image'], $this->config->get($this->config->get('config_theme') . '_image_cart_width'), $this->config->get($this->config->get('config_theme') . '_image_cart_height'));]]>
+      </search>
+      <add position="replace">
+        <![CDATA[$image = $this->model_tool_image->resize($product['image'], $this->config->get($this->config->get('config_theme') . '_image_cart_width'), $this->config->get($this->config->get('config_theme') . '_image_cart_height'), 'product_in_cart');]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/account/wishlist.php">
+    <operation>
+      <search>
+        <![CDATA[$image = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_wishlist_width'), $this->config->get($this->config->get('config_theme') . '_image_wishlist_height'));]]>
+      </search>
+      <add position="replace">
+        <![CDATA[$image = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_wishlist_width'), $this->config->get($this->config->get('config_theme') . '_image_wishlist_height'), 'product_in_wish_list');]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/extension/payment/pp_express.php">
+    <operation>
+      <search>
+        <![CDATA[$image = $this->model_tool_image->resize($product['image'], $this->config->get($this->config->get('config_theme') . '_image_cart_width'), $this->config->get($this->config->get('config_theme') . '_image_cart_height'));]]>
+      </search>
+      <add position="replace">
+        <![CDATA[$image = $this->model_tool_image->resize($product['image'], $this->config->get($this->config->get('config_theme') . '_image_cart_width'), $this->config->get($this->config->get('config_theme') . '_image_cart_height'), 'product_in_cart');]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/checkout/cart.php">
+    <operation>
+      <search>
+        <![CDATA[$image = $this->model_tool_image->resize($product['image'], $this->config->get($this->config->get('config_theme') . '_image_cart_width'), $this->config->get($this->config->get('config_theme') . '_image_cart_height'));]]>
+      </search>
+      <add position="replace">
+        <![CDATA[$image = $this->model_tool_image->resize($product['image'], $this->config->get($this->config->get('config_theme') . '_image_cart_width'), $this->config->get($this->config->get('config_theme') . '_image_cart_height'), 'product_in_cart');]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/model/tool/image.php">
+    <operation>
+      <search>
+        <![CDATA[class ModelToolImage extends Model {]]>
+      </search>
+      <add position="before">
+        <![CDATA[
+		/*
+class ModelToolImage extends Model {
+        ]]>
+      </add>
+    </operation>
+    <operation>
+      <search index="10">
+        <![CDATA[}]]>
+      </search>
+      <add position="after">
+        <![CDATA[
+        */
+		require_once DIR_APPLICATION . 'model/extension/module/watermark/image.watermark.php';
+        ]]>
+      </add>
+    </operation>
+  </file>
+
+
+</modification>
