@@ -2,12 +2,14 @@ $(document).ready(function () {
     $('.seling_carousel').owlCarousel({
         items: 1,
         pullDrag: true,
+        loop : true,
         nav: true,
         navText: ['<span></span>', '<span></span>']
     });
     $('.cases_carousel').owlCarousel({
         items: 1,
         dots: false,
+        loop : true,
         pullDrag: true,
         nav: true,
         navText: ['<span></span>', '<span></span>']
@@ -15,7 +17,8 @@ $(document).ready(function () {
     $('.same_obj_slider').owlCarousel({
         items: 3,
         margin: 20,
-        dots: false,
+/*         loop : true,
+ */        dots: false,
         pullDrag: true,
         nav: true,
         navText: ['<span></span>', '<span></span>']
@@ -24,6 +27,7 @@ $(document).ready(function () {
         items: 1,
         dots: true,
         nav: false,
+        loop : true,
     });
 
     $('.cases_carousel .case p').dotdotdot({
@@ -134,7 +138,11 @@ $(document).ready(function () {
         truncate: "letter",
         watch: "letter",
     });
-    $("#menu").mmenu();
+    $("#menu").mmenu({
+        "extensions": [
+           "pagedim-black"
+        ]
+     });
     $('.callback').fancybox({
         modal: true,
     });

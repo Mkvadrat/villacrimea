@@ -1,4 +1,4 @@
-@media screen and (min-width:1367px) {
+@media screen and (min-width:1366px) {
     section .about::after, section .about::before {
         width: 16%;
         top: -20%;
@@ -7,16 +7,545 @@
     section .about .text {
         width: 70%;
     }
+    section .object_page .actual_object .right_side .realtor .realtor_objects,
+    section .object_page .actual_object .right_side .realtor .cases,
     section .contacts_page .contacts_inner .realtors .realtor .realtor_objects,
     section .contacts_page .contacts_inner .realtors .realtor .cases {
         padding: 14px 0px 14px 0px;
         display: flex;
         justify-content: center;
     }
+    section .categories {
+        justify-content: space-between;
+    }
+    section .categories li:nth-child(n) {
+        margin: 0;
+    }
 }
 @media screen and (min-width:2160px) {
     section .about::after, section .about::before {
         width: 13%;
         top: -45%;
+    }
+}
+@media screen and (max-width:1200px) {
+    header .header_right_side .telephone {
+        font-size: 24px;
+    }
+    section .seling_carousel .owl-item>div {
+        height: 40vmax;
+    }
+    section .seling_carousel .seling_carousel_info {
+        width: 60%;
+    }
+    section .categories li:nth-child(n) {
+        margin: 0 3% 2% 0;
+    }
+    section .case_with>div .description,
+    section .cases .owl-item>div .description {
+        display: none;
+    }
+    section .case_with>div .case,
+    section .case_with>div .realtor,
+    section .cases .owl-item>div .case,
+    section .cases .owl-item>div .realtor {
+        border-right: 1px solid #dbdbdb;
+        width: 50%;
+    }
+    section .blog .blogs {
+        align-items: stretch;
+    }
+    section .blog .blogs .blogs_item {
+        flex-direction: column;
+    } 
+    section .blog .blogs .blogs_item .img {
+        width: 100%;
+        padding-bottom: 62%;
+    }
+    section .blog .blogs .blogs_item div {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #dbdbdb;
+        border-top: none;
+        padding-bottom: 15px;
+        justify-content: flex-start;
+    }
+    section .blog .blogs .blogs_item .name {
+        margin-top: 15px;
+    }
+    section .about::after, section .about::before {
+        display: none;
+    }
+    section .category_page .realtor_category .realtor_item a .img {
+        width: 160px;
+        padding-bottom: 160px;
+    }
+}
+@media screen and (max-width:1024px) {
+    .header_left_side p,
+    .header_right_side p {
+        font-size: 16px;
+    }
+    header .header_left_side>div {
+        padding: 16px 0;
+    }
+    header .header_left_side div input {
+        width: 180px;
+    }
+    section .seotext .agent,
+    header .header_right_side .telephone img,
+    header .header_right_side .callback.casual_button,
+    header .header_left_side .menu,
+    header .header_left_side div a {
+        display: none;
+    }
+    header .header_right_side .telephone {
+        height: 60px;
+    }
+    header {
+        padding: 15px 60px 5px;
+        align-items: center;
+    }
+    header .logo {
+        width: 140px;
+    }
+    section .about,
+    section {
+        padding: 0 60px;
+    }
+    section .about,
+    section .cases,
+    section .promo_block,
+    section .slider {
+        margin-right: -60px;
+        margin-left: -60px;
+    }
+    section .promo_block {
+        padding-bottom: 30px;
+        overflow: hidden;
+    }
+    section .cases .slider {
+        margin-right: -50px;
+        margin-left: -50px;
+    }
+    footer {
+        padding: 40px 60px;
+    }
+    section .promo_block>img {
+        right: -20%;
+        max-height: 100%;
+        width: 700px;
+        top: 30px;
+    }
+    .mob-menu {
+        display: block;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 99;
+    }
+    .mob-callback {
+        display: block;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 99;
+    }
+    section .about .buy_sell {
+        max-width: 100%;
+    }
+    section .about .buy_sell a {
+        font-size: 18px;
+    }
+    section .seotext .text,
+    section .about .text {
+        width: 100%;
+    }
+    section .agent_with_cards .agent .is_agent .img {
+        width: 145px;
+        height: 145px;
+    }
+    section .agent_with_cards .agent .is_estate p,
+    section .agent_with_cards .agent .is_agent p {
+        font-size: 16px;
+    }
+    section .agent_with_cards .agent .is_estate,
+    section .agent_with_cards .agent .is_agent {
+        padding: 25px 20px;
+    }
+    section .agent_with_cards .agent .is_estate .title {
+        font-size: 24px;
+    }
+    section .promo_block .text {
+        width: 34%;
+    }
+    section .services .services_items .item {
+        width: 29%;
+        margin: 1% 2% 1% 2%;
+    }
+    section .choise #price_from, section .choise #price_to {
+        width: 10%;
+    }
+    section .choise #value {
+        width: 7%;
+    }
+    .panel>.list-group .list-group-item[id^='option'] {
+        width: 33%;
+    }
+    .panel>.list-group .list-group-item[id^='option'] {
+        width: 33%;
+    }
+    section .category_page .realtor_category {
+        flex-wrap: wrap;
+    }
+    section .category_page .realtor_category .realtor_item {
+        width: 49%;
+        min-height: auto;
+        margin-bottom: 2%;
+        padding: 0 10px;
+    }
+    section .category_page .realtor_category .realtor_item a .img {
+        width: 100px;
+        padding-bottom: 100px;
+        margin-right: 20px;
+    }
+    section .category_page .realtor_category .realtor_item a .job, section .category_page .realtor_category .realtor_item .watch_cases {
+        display: none;
+    }
+    section .category_page .realtor_category .realtor_item a {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    section .category_page .catalog .tabs_catalog .catalog_item:nth-child(n) {
+        width: 49.5%;
+        margin: 1% 1% 0 0;
+    }
+    section .category_page .catalog .tabs_catalog .catalog_item:nth-of-type(2n) {
+        margin-right: 0;
+    }
+    section .category_page .realtor_category .realtor_item a .img+div {
+        flex-direction: column;
+        justify-content: flex-start;
+        display: flex;
+        align-items: flex-start;
+    }
+}
+@media screen and (max-width:768px) {
+    .list-group-item.ocfilter-option[data-original-title] .option-values {
+        flex-wrap: wrap;
+    }
+    .list-group-item.ocfilter-option[data-original-title] .option-values .form-control {
+        width: 100%;
+        margin-top: 30px;
+    }
+    .list-group-item.ocfilter-option[data-original-title] .option-values .scale {
+        width: 100%;
+    }
+    section .case_with>div .realtor,
+    section .cases .owl-item>div .realtor,
+    header .header_right_side {
+        display: none;
+    }
+    section .case_with>div .case,
+    section .cases .owl-item>div .case {
+        width: 100%;
+    }
+    header {
+        flex-direction: column;
+    }
+    header .logo {
+        left: 0;
+        order: 0;
+    }
+    header .header_left_side {
+        order: 1;
+        width: 100%;
+        align-items: center;
+    }
+    header .header_left_side div input {
+        width: 300px;
+    }
+    .header_left_side .telephone {
+        display: inline-block;
+        font-size: 24px;
+        font-family: "GothamPro_Med";
+        text-decoration: none;
+        padding: 5px 0;
+    }
+    header .header_left_side>div {
+        padding-top: 0;
+    }
+    section .categories {
+        justify-content: center;
+    }
+    section .promo_block .categories {
+        justify-content: flex-start;
+    }
+    section .choise, section .choise>* {
+        flex-wrap: wrap;
+    }
+    section .choise select {
+        margin-bottom: 10px;
+    }
+    section .choise button[type='submit'],
+    section .agent_with_cards .cards,
+    section .choise #type, section .choise #region {
+        width: 100%;
+    }
+    section .choise #price_from, section .choise #price_to, section .choise #value {
+        width: 32%;
+    }
+    section .services .services_items .item {
+        width: 48%;
+        margin: 1%;
+    }
+    section .promo_block>img {
+        position: relative;
+        right: -50px;
+        top: 0;
+        width: 100%;
+    }
+    section .promo_block .text {
+        width: 100%;
+    }
+    section .agent_with_cards .agent {
+        display: none;
+    }
+    section .about .buy_sell a {
+        padding: 10px 15px;
+    }
+    section .category_page .catalog .sort_filter .change_view {
+        display: none;
+    }
+    .show-up-to, .sort-up-to {
+        width: 50%;
+        display: inline-block;
+        float: left;
+        margin: 0 0 2%;
+    }
+}
+@media screen and (max-width:650px) {
+    .panel>.list-group .list-group-item[id^='option'] {
+        width: 50%;
+    }
+    .show-up-to {
+        width: 35%;
+    }
+    .sort-up-to {
+        width: 65%;
+    }
+    header {
+        padding: 15px 10px 5px;
+        align-items: center;
+    }
+    section .about,
+    section .cases,
+    section {
+        padding: 0 10px;
+    }
+    section .about,
+    section .cases,
+    section .promo_block,
+    section .cases .slider,
+    section .slider {
+        margin-right: -10px;
+        margin-left: -10px;
+    }
+    footer {
+        padding: 40px 10px;
+    }
+    section .seling_carousel .owl-nav {
+        display: none;
+    }
+    section .seling_carousel .seling_carousel_info {
+        width: 90%;
+    }
+    section .cases_carousel .owl-nav .owl-prev span {
+        left: 0;
+    }
+    section .cases_carousel .owl-nav .owl-next span {
+        right: 0;
+    }
+    section .promo_block>img {
+        right: 50px;
+        width: 130%;
+    }
+    footer .footer_left_side, footer .footer_right_side {
+        width: 100%;
+    }
+    footer .footer_left_side .categories li {
+        width: 100%;
+    }
+    footer .footer_right_side .telephone {
+        font-size: 24px;
+        line-height: 24px;
+        padding: 0;
+    }
+    footer .footer_right_side .mailto {
+        font-size: 18px;
+    }
+    footer .footer_right_side {
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+    footer .footer_right_side .socials {
+        margin: 20px 0;
+    }
+    footer .footer_right_side .socials li:first-of-type a {
+        margin-left: 0;
+    }
+    footer .m2 {
+        order: 1;
+        margin: 0 0 15px;
+    }
+    footer p {
+        order: 2;
+        width: 100%;
+    }
+    section .category_page .realtor_category .realtor_item {
+        width: 100%;
+    }
+}
+@media screen and (max-width:500px) {
+    section .category_page .title, section .seotext .text .title, section .seotext {
+        margin-left: -10px;
+        margin-right: -10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    header .header_left_side div input {
+        width: 260px;
+    }
+    .panel>.list-group .list-group-item[id^='option'] {
+        padding: 5px;
+    }
+    .list-group-item.ocfilter-option[data-original-title] .option-values {
+        margin-bottom: 0;
+    }
+    section .category_page .realtor_category .realtor_item a .img {
+        margin-right: 10px;
+    }
+    section .category_page .catalog .tabs_catalog .catalog_item:nth-child(n) {
+        width: 100%;
+        margin: 0 0 2%;
+    }
+    section .category_page .catalog .sort_filter {
+        flex-direction: column;
+    }
+    .show-up-to, .sort-up-to,
+    section .agent_with_cards .card {
+        width: 100%;
+    }
+    section .promo_block>img {
+        right: 50px;
+        width: 150%;
+    }
+    section .services .services_items .item {
+        margin: 0 1% 30px;
+        width: 98%;
+    }
+    section .cases .owl-item>div .case a {
+        width: 110%;
+        text-align: center;
+        margin-left: -5%;
+        margin-top: 10px;
+    }
+    section .cases .owl-item>div {
+        padding: 0;
+    }
+    section .cases .owl-item>div .case {
+        padding: 40px 8% 15px;
+    }
+    section .cases_carousel .owl-nav span {
+        display: inline-block;
+        height: 100px;
+        width: 50px;
+        border-radius: 0 50px 50px 0;
+    }
+    section .cases_carousel .owl-nav span::after,
+    section .cases_carousel .owl-nav span::before {
+        width: 35px;
+        border-top: 4px solid #fff;
+    }
+    section .cases_carousel .owl-nav .owl-prev span::before {
+        top: 37px;
+        left: 3px;
+        transform: rotate(135deg);
+    }
+    section .cases_carousel .owl-nav .owl-prev span::after {
+        bottom: 37px;
+        left: 3px;
+        transform: rotate(45deg);
+    }
+    section .cases_carousel .owl-nav .owl-next span::after {
+        bottom: 37px;
+        right: 3px;
+        transform: rotate(135deg);
+        height: 0;
+    }
+    section .cases_carousel .owl-nav .owl-next span::before {
+        top: 37px;
+        right: 3px;
+        transform: rotate(45deg);
+        height: 0;
+    }
+    section .blog .blogs .blogs_item {
+        width: 100%;
+    }
+    section .about {
+        padding: 0;
+    }
+    section .about .text {
+        padding: 0 10px;
+    }
+    section .about .buy_sell {
+        flex-direction: column;
+    }
+    section .about .buy_sell a {
+        border-radius: 0;
+        text-align: center;
+        padding: 20px 0;
+    }
+    section .about .buy_sell a+a {
+        margin-top: 30px;
+    }
+    section .seling_carousel .seling_carousel_info {
+        padding: 30px 10px;
+        width: 95%;
+    }
+    section .categories li {
+        text-align: center;
+    }
+    section .title,
+    section .seling_carousel .seling_carousel_info p {
+        font-size: 24px;
+    }
+    section .categories a,
+    section .seling_carousel .seling_carousel_info div {
+        font-size: 16px;
+    }
+    section .promo_block {
+        padding: 30px 20px;
+    }
+    section .promo_block .text .title {
+        font-size: 30px;
+        margin: 0 0 15px;
+    }
+    section .promo_block .text p {
+        font-size: 14px;
+    }
+    section .promo_block .categories {
+        justify-content: flex-end;
+    }
+    section .promo_block>img {
+        right: auto;
+        left: -40%;
+    }
+    section .services .title {
+        text-align: center;
+    }
+    .header_left_side p, .header_right_side p {
+        font-size: 14px;
     }
 }

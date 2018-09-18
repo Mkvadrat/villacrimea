@@ -12018,7 +12018,11 @@ FILE: catalog/model/account/order.php
 CODE: $order_query->row['order_id'],
 LINE: 46
 ----------------------------------------------------------------
+<<<<<<< HEAD
 2018-09-17 16:16:40 - MOD: Modification Default
+=======
+2018-09-17 15:33:15 - MOD: Modification Default
+>>>>>>> ec6e43dadca047dd97c52f31c44e8a79721c2173
 
 FILE: system/engine/action.php
 REGEX: ~(require|include)(_once)?\(([^)]+)~
@@ -12080,6 +12084,7 @@ FILE: admin/view/template/design/banner_form.tpl
 CODE: function addImage(language_id) {
 LINE: 134
 ----------------------------------------------------------------
+<<<<<<< HEAD
 MOD: Opencart News Seo Url fix OC 2.3
 
 FILE: catalog/controller/startup/seo_pro.php
@@ -12275,6 +12280,9 @@ LINE: 1240
 FILE: admin/view/template/design/banner_form.tpl
 CODE: function addImage(language_id) {
 LINE: 134
+=======
+MOD: fondy_payment
+>>>>>>> ec6e43dadca047dd97c52f31c44e8a79721c2173
 ----------------------------------------------------------------
 MOD: Opencart News Seo Url fix OC 2.3
 
@@ -12366,6 +12374,7 @@ FILE: catalog/view/theme/villacrimea/template/common/header.tpl
 CODE: </title>
 LINE: 18
 ----------------------------------------------------------------
+<<<<<<< HEAD
 MOD: <font color="#15C403"><b>Modulo Watermark fix for Mexica</font>
 
 FILE: catalog/controller/extension/module/banner.php
@@ -12585,6 +12594,23 @@ CODE: }
 LINE: 62
 ----------------------------------------------------------------
 2018-09-17 16:30:01 - MOD: Modification Default
+=======
+MOD: OcStore 2.3.x track number
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+----------------------------------------------------------------
+2018-09-17 15:58:27 - MOD: Modification Default
+>>>>>>> ec6e43dadca047dd97c52f31c44e8a79721c2173
 
 FILE: system/engine/action.php
 REGEX: ~(require|include)(_once)?\(([^)]+)~
@@ -12646,6 +12672,11 @@ FILE: admin/view/template/design/banner_form.tpl
 CODE: function addImage(language_id) {
 LINE: 134
 ----------------------------------------------------------------
+<<<<<<< HEAD
+=======
+MOD: fondy_payment
+----------------------------------------------------------------
+>>>>>>> ec6e43dadca047dd97c52f31c44e8a79721c2173
 MOD: Opencart News Seo Url fix OC 2.3
 
 FILE: catalog/controller/startup/seo_pro.php
@@ -12736,6 +12767,7 @@ FILE: catalog/view/theme/villacrimea/template/common/header.tpl
 CODE: </title>
 LINE: 18
 ----------------------------------------------------------------
+<<<<<<< HEAD
 MOD: <font color="#15C403"><b>Modulo Watermark fix for Mexica</font>
 
 FILE: catalog/controller/extension/module/banner.php
@@ -12770,6 +12802,23 @@ CODE: }
 LINE: 62
 ----------------------------------------------------------------
 2018-09-17 16:30:02 - MOD: Modification Default
+=======
+MOD: OcStore 2.3.x track number
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+----------------------------------------------------------------
+2018-09-17 15:59:07 - MOD: Modification Default
+>>>>>>> ec6e43dadca047dd97c52f31c44e8a79721c2173
 
 FILE: system/engine/action.php
 REGEX: ~(require|include)(_once)?\(([^)]+)~
@@ -12831,6 +12880,11 @@ FILE: admin/view/template/design/banner_form.tpl
 CODE: function addImage(language_id) {
 LINE: 134
 ----------------------------------------------------------------
+<<<<<<< HEAD
+=======
+MOD: fondy_payment
+----------------------------------------------------------------
+>>>>>>> ec6e43dadca047dd97c52f31c44e8a79721c2173
 MOD: Opencart News Seo Url fix OC 2.3
 
 FILE: catalog/controller/startup/seo_pro.php
@@ -12921,6 +12975,7 @@ FILE: catalog/view/theme/villacrimea/template/common/header.tpl
 CODE: </title>
 LINE: 18
 ----------------------------------------------------------------
+<<<<<<< HEAD
 MOD: <font color="#15C403"><b>Modulo Watermark fix for Mexica</font>
 
 FILE: catalog/controller/extension/module/banner.php
@@ -12955,6 +13010,23 @@ CODE: }
 LINE: 62
 ----------------------------------------------------------------
 2018-09-18 11:18:07 - MOD: Modification Default
+=======
+MOD: OcStore 2.3.x track number
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+----------------------------------------------------------------
+2018-09-17 16:04:03 - MOD: Modification Default
+>>>>>>> ec6e43dadca047dd97c52f31c44e8a79721c2173
 
 FILE: system/engine/action.php
 REGEX: ~(require|include)(_once)?\(([^)]+)~
@@ -13016,6 +13088,11 @@ FILE: admin/view/template/design/banner_form.tpl
 CODE: function addImage(language_id) {
 LINE: 134
 ----------------------------------------------------------------
+<<<<<<< HEAD
+=======
+MOD: fondy_payment
+----------------------------------------------------------------
+>>>>>>> ec6e43dadca047dd97c52f31c44e8a79721c2173
 MOD: Opencart News Seo Url fix OC 2.3
 
 FILE: catalog/controller/startup/seo_pro.php
@@ -13106,6 +13183,7 @@ FILE: catalog/view/theme/villacrimea/template/common/header.tpl
 CODE: </title>
 LINE: 18
 ----------------------------------------------------------------
+<<<<<<< HEAD
 MOD: <font color="#15C403"><b>Modulo Watermark fix for Mexica</font>
 
 FILE: catalog/controller/extension/module/banner.php
@@ -13144,6 +13222,23 @@ CODE: }
 LINE: 62
 ----------------------------------------------------------------
 2018-09-18 11:20:34 - MOD: Modification Default
+=======
+MOD: OcStore 2.3.x track number
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+----------------------------------------------------------------
+2018-09-17 16:06:19 - MOD: Modification Default
+>>>>>>> ec6e43dadca047dd97c52f31c44e8a79721c2173
 
 FILE: system/engine/action.php
 REGEX: ~(require|include)(_once)?\(([^)]+)~
@@ -13205,6 +13300,11 @@ FILE: admin/view/template/design/banner_form.tpl
 CODE: function addImage(language_id) {
 LINE: 134
 ----------------------------------------------------------------
+<<<<<<< HEAD
+=======
+MOD: fondy_payment
+----------------------------------------------------------------
+>>>>>>> ec6e43dadca047dd97c52f31c44e8a79721c2173
 MOD: Opencart News Seo Url fix OC 2.3
 
 FILE: catalog/controller/startup/seo_pro.php
@@ -13295,6 +13395,7 @@ FILE: catalog/view/theme/villacrimea/template/common/header.tpl
 CODE: </title>
 LINE: 18
 ----------------------------------------------------------------
+<<<<<<< HEAD
 MOD: <font color="#15C403"><b>Modulo Watermark fix for Mexica</font>
 
 FILE: catalog/controller/extension/module/banner.php
@@ -13337,6 +13438,23 @@ CODE: }
 LINE: 62
 ----------------------------------------------------------------
 2018-09-18 11:21:09 - MOD: Modification Default
+=======
+MOD: OcStore 2.3.x track number
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+----------------------------------------------------------------
+2018-09-17 16:07:21 - MOD: Modification Default
+>>>>>>> ec6e43dadca047dd97c52f31c44e8a79721c2173
 
 FILE: system/engine/action.php
 REGEX: ~(require|include)(_once)?\(([^)]+)~
@@ -13398,6 +13516,11 @@ FILE: admin/view/template/design/banner_form.tpl
 CODE: function addImage(language_id) {
 LINE: 134
 ----------------------------------------------------------------
+<<<<<<< HEAD
+=======
+MOD: fondy_payment
+----------------------------------------------------------------
+>>>>>>> ec6e43dadca047dd97c52f31c44e8a79721c2173
 MOD: Opencart News Seo Url fix OC 2.3
 
 FILE: catalog/controller/startup/seo_pro.php
@@ -13488,6 +13611,7 @@ FILE: catalog/view/theme/villacrimea/template/common/header.tpl
 CODE: </title>
 LINE: 18
 ----------------------------------------------------------------
+<<<<<<< HEAD
 MOD: <font color="#15C403"><b>Modulo Watermark fix for Mexica</font>
 
 FILE: catalog/controller/extension/module/banner.php
@@ -13530,6 +13654,23 @@ CODE: }
 LINE: 62
 ----------------------------------------------------------------
 2018-09-18 12:07:55 - MOD: Modification Default
+=======
+MOD: OcStore 2.3.x track number
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+----------------------------------------------------------------
+2018-09-17 16:13:08 - MOD: Modification Default
+>>>>>>> ec6e43dadca047dd97c52f31c44e8a79721c2173
 
 FILE: system/engine/action.php
 REGEX: ~(require|include)(_once)?\(([^)]+)~
@@ -13591,6 +13732,11 @@ FILE: admin/view/template/design/banner_form.tpl
 CODE: function addImage(language_id) {
 LINE: 134
 ----------------------------------------------------------------
+<<<<<<< HEAD
+=======
+MOD: fondy_payment
+----------------------------------------------------------------
+>>>>>>> ec6e43dadca047dd97c52f31c44e8a79721c2173
 MOD: Opencart News Seo Url fix OC 2.3
 
 FILE: catalog/controller/startup/seo_pro.php
@@ -13681,6 +13827,7 @@ FILE: catalog/view/theme/villacrimea/template/common/header.tpl
 CODE: </title>
 LINE: 18
 ----------------------------------------------------------------
+<<<<<<< HEAD
 MOD: <font color="#15C403"><b>Modulo Watermark fix for Mexica</font>
 
 FILE: catalog/controller/extension/module/banner.php
@@ -13723,6 +13870,23 @@ CODE: }
 LINE: 62
 ----------------------------------------------------------------
 2018-09-18 12:36:57 - MOD: Modification Default
+=======
+MOD: OcStore 2.3.x track number
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+----------------------------------------------------------------
+2018-09-17 17:14:24 - MOD: Modification Default
+>>>>>>> ec6e43dadca047dd97c52f31c44e8a79721c2173
 
 FILE: system/engine/action.php
 REGEX: ~(require|include)(_once)?\(([^)]+)~
@@ -13784,6 +13948,11 @@ FILE: admin/view/template/design/banner_form.tpl
 CODE: function addImage(language_id) {
 LINE: 134
 ----------------------------------------------------------------
+<<<<<<< HEAD
+=======
+MOD: fondy_payment
+----------------------------------------------------------------
+>>>>>>> ec6e43dadca047dd97c52f31c44e8a79721c2173
 MOD: Opencart News Seo Url fix OC 2.3
 
 FILE: catalog/controller/startup/seo_pro.php
@@ -13874,6 +14043,7 @@ FILE: catalog/view/theme/villacrimea/template/common/header.tpl
 CODE: </title>
 LINE: 18
 ----------------------------------------------------------------
+<<<<<<< HEAD
 MOD: <font color="#15C403"><b>Modulo Watermark fix for Mexica</font>
 
 FILE: catalog/controller/extension/module/banner.php
@@ -13916,6 +14086,23 @@ CODE: }
 LINE: 62
 ----------------------------------------------------------------
 2018-09-18 12:36:58 - MOD: Modification Default
+=======
+MOD: OcStore 2.3.x track number
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+----------------------------------------------------------------
+2018-09-17 17:17:39 - MOD: Modification Default
+>>>>>>> ec6e43dadca047dd97c52f31c44e8a79721c2173
 
 FILE: system/engine/action.php
 REGEX: ~(require|include)(_once)?\(([^)]+)~
@@ -13977,6 +14164,11 @@ FILE: admin/view/template/design/banner_form.tpl
 CODE: function addImage(language_id) {
 LINE: 134
 ----------------------------------------------------------------
+<<<<<<< HEAD
+=======
+MOD: fondy_payment
+----------------------------------------------------------------
+>>>>>>> ec6e43dadca047dd97c52f31c44e8a79721c2173
 MOD: Opencart News Seo Url fix OC 2.3
 
 FILE: catalog/controller/startup/seo_pro.php
@@ -14067,6 +14259,7 @@ FILE: catalog/view/theme/villacrimea/template/common/header.tpl
 CODE: </title>
 LINE: 18
 ----------------------------------------------------------------
+<<<<<<< HEAD
 MOD: <font color="#15C403"><b>Modulo Watermark fix for Mexica</font>
 
 FILE: catalog/controller/extension/module/banner.php
@@ -14109,6 +14302,23 @@ CODE: }
 LINE: 62
 ----------------------------------------------------------------
 2018-09-18 12:48:31 - MOD: Modification Default
+=======
+MOD: OcStore 2.3.x track number
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+----------------------------------------------------------------
+2018-09-17 17:18:24 - MOD: Modification Default
+>>>>>>> ec6e43dadca047dd97c52f31c44e8a79721c2173
 
 FILE: system/engine/action.php
 REGEX: ~(require|include)(_once)?\(([^)]+)~
@@ -14170,6 +14380,11 @@ FILE: admin/view/template/design/banner_form.tpl
 CODE: function addImage(language_id) {
 LINE: 134
 ----------------------------------------------------------------
+<<<<<<< HEAD
+=======
+MOD: fondy_payment
+----------------------------------------------------------------
+>>>>>>> ec6e43dadca047dd97c52f31c44e8a79721c2173
 MOD: Opencart News Seo Url fix OC 2.3
 
 FILE: catalog/controller/startup/seo_pro.php
@@ -14260,6 +14475,7 @@ FILE: catalog/view/theme/villacrimea/template/common/header.tpl
 CODE: </title>
 LINE: 18
 ----------------------------------------------------------------
+<<<<<<< HEAD
 MOD: <font color="#15C403"><b>Modulo Watermark fix for Mexica</font>
 
 FILE: catalog/controller/extension/module/banner.php
@@ -14302,6 +14518,23 @@ CODE: }
 LINE: 62
 ----------------------------------------------------------------
 2018-09-18 12:49:00 - MOD: Modification Default
+=======
+MOD: OcStore 2.3.x track number
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+----------------------------------------------------------------
+2018-09-17 17:35:16 - MOD: Modification Default
+>>>>>>> ec6e43dadca047dd97c52f31c44e8a79721c2173
 
 FILE: system/engine/action.php
 REGEX: ~(require|include)(_once)?\(([^)]+)~
@@ -14363,6 +14596,11 @@ FILE: admin/view/template/design/banner_form.tpl
 CODE: function addImage(language_id) {
 LINE: 134
 ----------------------------------------------------------------
+<<<<<<< HEAD
+=======
+MOD: fondy_payment
+----------------------------------------------------------------
+>>>>>>> ec6e43dadca047dd97c52f31c44e8a79721c2173
 MOD: Opencart News Seo Url fix OC 2.3
 
 FILE: catalog/controller/startup/seo_pro.php
@@ -14453,6 +14691,7 @@ FILE: catalog/view/theme/villacrimea/template/common/header.tpl
 CODE: </title>
 LINE: 18
 ----------------------------------------------------------------
+<<<<<<< HEAD
 MOD: <font color="#15C403"><b>Modulo Watermark fix for Mexica</font>
 
 FILE: catalog/controller/extension/module/banner.php
@@ -14493,4 +14732,19 @@ CODE: class ModelToolImage extends Model {
 LINE: 10
 CODE: }
 LINE: 62
+=======
+MOD: OcStore 2.3.x track number
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+>>>>>>> ec6e43dadca047dd97c52f31c44e8a79721c2173
 ----------------------------------------------------------------

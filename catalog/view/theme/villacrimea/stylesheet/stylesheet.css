@@ -95,7 +95,7 @@ a.casual_button:hover {
     position: fixed;
     width: 45px;
     height: 45px;
-    bottom: 45%;
+    bottom: 20px;
     left: 0;
     cursor: pointer;
     display: none;
@@ -107,6 +107,9 @@ a.casual_button:hover {
 }
 .toTop:hover {
     opacity: 1;
+}
+.mobile {
+    display: none;
 }
 header {
     display: flex;
@@ -204,7 +207,10 @@ header .logo {
     bottom: 10px;
     left: 20px;
 }
-
+header .logo img,
+header .logo a {
+    width: 100%;
+}
 header .header_right_side {
     text-align: right;
     justify-content: flex-end;
@@ -290,6 +296,7 @@ section .seling_carousel button.owl-dot.active span::before {
 
 section .seling_carousel .owl-item>div {
     height: 31vmax;
+    min-height: 425px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -316,6 +323,7 @@ section .seling_carousel .seling_carousel_info {
 section .seling_carousel .seling_carousel_info p {
     font-family: "GothamPro_Bol";
     font-size: 30px;
+    line-height: 34px;
 }
 
 section .seling_carousel .seling_carousel_info div {
@@ -422,6 +430,9 @@ section .title {
     line-height: 36px;
     margin: 40px 0;
 }
+section h1.title {
+    font-weight: bold;
+}
 
 section .sub-title {
     font-size: 24px;
@@ -441,10 +452,19 @@ section .categories {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin-bottom: 15px;
 }
-
+section .categories li {
+    margin-left: 0;
+    margin-right: auto;
+}
+section .categories li:nth-child(n+7) {
+    margin-right: 0;
+}
+section .categories li:nth-child(n+8) {
+    margin-right: 3%;
+}
 section .categories a {
     text-transform: uppercase;
     font-weight: bold;
@@ -530,6 +550,9 @@ section .agent_with_cards .agent .is_agent {
     border-bottom: 1px solid #dbdbdb;
 }
 
+section .agent_with_cards .agent .is_agent .casual_button {
+    border-radius: 8px;
+}
 section .agent_with_cards .agent .is_agent .img {
     display: inline-block;
     width: 225px;
@@ -595,7 +618,7 @@ section .agent_with_cards .card {
 section .agent_with_cards .card .img {
     display: block;
     padding-bottom: 65%;
-    background-size: cover;
+    background-size: 100.5% auto;
     background-position: center;
     margin-left: -10px;
     margin-right: -10px;
@@ -695,6 +718,7 @@ section .agent_with_cards .card .price_rub {
 section .agent_with_cards .card .price_usd {
     font-family: "GothamPro_Med";
     font-size: 16px;
+    color: #c09d74;
 }
 
 section .agent_with_cards .card .object_id {
@@ -711,7 +735,8 @@ section .promo_block {
     padding: 60px 50px;
     box-sizing: border-box;
     position: relative;
-}
+/*     overflow: hidden;
+ */}
 
 section .promo_block .text {
     width: 27%;
@@ -851,6 +876,7 @@ section .cases .owl-item>div .case .title {
 
 section .cases .owl-item>div .case a {
     margin-top: auto;
+    border-radius: 8px;
 }
 
 section .cases .owl-item>div .realtor {
@@ -1071,7 +1097,7 @@ section .blog .blogs .blogs_item p {
 section .blog .more_blogs {
     display: block;
     width: 290px;
-    margin: 10px auto 30px;
+    margin: 10px auto 50px;
     font-size: 24px;
     color: #c09d74;
 }
@@ -1116,6 +1142,7 @@ section .about::after {
 section .about .buy_sell a {
     font-size: 24px;
     padding: 20px 40px;
+    border-radius: 8px;
 }
 
 section .about .text {
@@ -1482,7 +1509,7 @@ section .category_page .catalog .tabs_catalog .catalog_item:nth-child(3) {
 section .category_page .catalog .tabs_catalog .catalog_item .img {
     display: block;
     padding-bottom: 65%;
-    background-size: cover;
+    background-size: 100.5% auto;
     background-position: center;
     margin-left: -10px;
     margin-right: -10px;
@@ -1580,8 +1607,8 @@ section .category_page .catalog .list_catalog .catalog_item:last-of-type {
 }
 
 section .category_page .catalog .list_catalog .catalog_item .img {
-    width: 373px;
-    padding-bottom: 232px;
+    width: 34%;
+    padding-bottom: 21%;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -1610,6 +1637,7 @@ section .category_page .catalog .list_catalog .catalog_item .bormotology {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    align-self: center;
 }
 section .bormotology {
     display: flex;
@@ -2040,10 +2068,16 @@ section .object_page .actual_object .left_side .object_photo a img {
 section .object_page .actual_object .left_side .object_description {
     border-bottom: 1px solid #dbdbdb;
 }
+section .object_page .actual_object .left_side .object_description>div {
+    padding-bottom: 30px;
+    font-family: "Ubuntu";
+    line-height: 24px;
+    font-size: 1em;
+}
 
 section .object_page .actual_object .left_side .object_description p {
     font-family: "Ubuntu";
-    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 section .object_page .actual_object .left_side .object_map .title,
@@ -2295,6 +2329,7 @@ section .object_page .same_objects .card {
     position: relative;
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 section .object_page .same_objects .card .img {
@@ -2355,6 +2390,7 @@ section .object_page .same_objects .card .price_rub {
 section .object_page .same_objects .card .price_usd {
     font-family: "GothamPro_Med";
     font-size: 16px;
+    color: #c09d74;
 }
 
 section .object_page .same_objects .card .object_id {
@@ -4298,7 +4334,9 @@ footer .footer_right_side {
     justify-content: space-between;
     order: 1;
 }
-
+.footer_right_side br {
+    display: none;
+}
 footer .footer_right_side .telephone {
     font-size: 36px;
     text-decoration: none;
@@ -4494,7 +4532,7 @@ section .blog_in_page .blog_inner .right_side .agent a {
         width: 70%;
         display: block;
         float: none;
-        margin: 0 auto;
+        margin: 0 auto 10mm;
     }
     .right_side {
         width: 100%;
@@ -4530,6 +4568,7 @@ section .blog_in_page .blog_inner .right_side .agent a {
 .panel>.list-group .list-group-item {
     border-bottom: 1px solid #ddd;
     margin-bottom: 0;
+    width: 100%;
 }
 .panel>.list-group .list-group-item[id^='option'] {
     display: inline-block;
@@ -4539,9 +4578,18 @@ section .blog_in_page .blog_inner .right_side .agent a {
     border: none;
     font-size: 16px;
 }
+#ocfilter-hidden-options.in {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
 .panel>.list-group {
-    display: inline-block;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
 }
 .form-inline {
     display: flex;
@@ -4581,6 +4629,8 @@ section .blog_in_page .blog_inner .right_side .agent a {
 .list-group-item ~ .btn-default:hover {
     text-decoration: none;
 }
+.btn-primary:hover,
+.btn-primary,
 .popover .btn-primary:hover,
 .popover .btn-primary {
     background: #c09d74;
@@ -4600,4 +4650,8 @@ section .blog_in_page .blog_inner .right_side .agent a {
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
+}
+.search-select {
+    width: 100%;
+    height: 26px;
 }

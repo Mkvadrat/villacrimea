@@ -50,7 +50,7 @@
               
               <div class="object_description" id="print8">
                   <p class="title">Описание:</p>
-                  <?php echo $description; ?>
+                  <div><?php echo $description; ?></div>
               </div>
               <div class="object_map">
                   <p class="title">Объекты рядом:</p>
