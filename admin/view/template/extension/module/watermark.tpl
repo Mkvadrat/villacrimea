@@ -230,52 +230,6 @@
               </select>
             </div>
           </div>
-
-          <div class="form-group">
-            <label class="col-sm-6 control-label" for="product_in_compare"><?php echo $options_lang['product_in_compare']; ?></label>
-            <div class="col-sm-6">
-              <select name="product_in_compare" id="product_in_compare" class="form-control">
-                <?php if ($options['product_in_compare']) { ?>
-                <option value="1" selected="selected"><?php echo $text_yes; ?></option>
-                <option value="0"><?php echo $text_no; ?></option>
-                <?php } else { ?>
-                <option value="1"><?php echo $text_yes; ?></option>
-                <option value="0" selected="selected"><?php echo $text_no; ?></option>
-                <?php } ?>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="col-sm-6 control-label" for="product_in_wish_list"><?php echo $options_lang['product_in_wish_list']; ?></label>
-            <div class="col-sm-6">
-              <select name="product_in_wish_list" id="product_in_wish_list" class="form-control">
-                <?php if ($options['product_in_wish_list']) { ?>
-                <option value="1" selected="selected"><?php echo $text_yes; ?></option>
-                <option value="0"><?php echo $text_no; ?></option>
-                <?php } else { ?>
-                <option value="1"><?php echo $text_yes; ?></option>
-                <option value="0" selected="selected"><?php echo $text_no; ?></option>
-                <?php } ?>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="col-sm-6 control-label" for="product_in_cart"><?php echo $options_lang['product_in_cart']; ?></label>
-            <div class="col-sm-6">
-              <select name="product_in_cart" id="product_in_cart" class="form-control">
-                <?php if ($options['product_in_cart']) { ?>
-                <option value="1" selected="selected"><?php echo $text_yes; ?></option>
-                <option value="0"><?php echo $text_no; ?></option>
-                <?php } else { ?>
-                <option value="1"><?php echo $text_yes; ?></option>
-                <option value="0" selected="selected"><?php echo $text_no; ?></option>
-                <?php } ?>
-              </select>
-            </div>
-          </div>
-
         </form>
 
 

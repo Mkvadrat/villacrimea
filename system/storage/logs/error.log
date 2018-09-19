@@ -12,3 +12,9 @@
 2018-09-18 11:20:55 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\catalog\controller\extension\module\blog_featured.php on line 46
 2018-09-18 11:20:55 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\catalog\controller\extension\module\blog_featured.php on line 46
 2018-09-18 11:20:55 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\catalog\controller\extension\module\blog_featured.php on line 46
+2018-09-19 17:23:54 - PHP Notice:  Undefined index: product_in_compare in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\module\watermark.php on line 80
+2018-09-19 17:23:54 - PHP Notice:  Undefined index: product_in_wish_list in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\module\watermark.php on line 81
+2018-09-19 17:23:54 - PHP Notice:  Undefined index: product_in_cart in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\module\watermark.php on line 82
+2018-09-19 17:25:02 - PHP Notice:  Undefined index: product_in_compare in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\module\watermark.php on line 32
+2018-09-19 17:25:02 - PHP Notice:  Undefined index: product_in_wish_list in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\module\watermark.php on line 33
+2018-09-19 17:25:02 - PHP Notice:  Undefined index: product_in_cart in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\module\watermark.php on line 34
