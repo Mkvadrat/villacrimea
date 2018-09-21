@@ -567,6 +567,12 @@ class ControllerProductProduct extends Controller {
 			foreach($results as $result){
 				
 				if(!empty($result['location'])){
+					/*$ex = explode(',', $result['location']);
+					$ex2 = explode('.', $ex['1']);
+					$plus = (int)$ex2['1'] + (int)$this->generate_number(1);
+					$impl = $ex2[0] . '.' . $plus;
+					$lat_lng = $ex[0] . ',' . $impl;*/
+				
 					$lat_lng = $result['location'];
 				}else{
 					$lat_lng = '44.616687, 33.525432';
@@ -1130,6 +1136,23 @@ class ControllerProductProduct extends Controller {
 					 'M','N','O','P','R','S',
 					 'T','U','V','X','Y','Z',
 					 '1','2','3','4','5','6',
+					 '7','8','9','0'
+		);
+		
+		// Генерируем пароль
+		$pass = "";
+		
+		for($i = 0; $i < $number; $i++){
+		  // Вычисляем случайный индекс массива
+		  $index = rand(0, count($arr) - 1);
+		  $pass .= $arr[$index];
+		}
+		
+		return $pass;
+	}
+	
+	private function generate_number($number){
+		$arr = array('1','2','3','4','5','6',
 					 '7','8','9','0'
 		);
 		

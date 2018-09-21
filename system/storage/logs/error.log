@@ -1,99 +1,20 @@
-2018-09-10 11:55:15 - PHP Notice:  Undefined variable: heading_title in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\pdf.tpl on line 83
-2018-09-10 17:55:01 - PHP Notice:  Undefined variable: module_info in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\module\presentation.php on line 132
-2018-09-10 17:56:23 - PHP Notice:  Undefined variable: module_info in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\module\presentation.php on line 132
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 42
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 42
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 42
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 42
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 42
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 42
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 42
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 42
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 42
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 42
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 42
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 42
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 42
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 42
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 42
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 42
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 42
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 42
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 42
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 42
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 42
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 42
-2018-09-12 11:47:40 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 44
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 44
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 44
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 44
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 44
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 44
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 44
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 44
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 44
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 44
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 44
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 44
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 44
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 44
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 44
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 44
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 44
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 44
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 44
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 44
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 44
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 43
-2018-09-12 11:48:11 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 44
-2018-09-14 12:37:25 - PHP Warning:  Cannot modify header information - headers already sent in W:\domains\villacrimea.loc\system\library\response.php on line 12
-2018-09-14 12:39:02 - PHP Warning:  Cannot modify header information - headers already sent in W:\domains\villacrimea.loc\system\library\response.php on line 12
-2018-09-14 12:39:39 - PHP Warning:  Cannot modify header information - headers already sent in W:\domains\villacrimea.loc\system\library\response.php on line 12
-2018-09-14 12:47:06 - PHP Notice:  Undefined variable: lang in W:\domains\villacrimea.loc\admin\view\template\extension\module\news.tpl on line 56
-2018-09-14 12:47:35 - PHP Notice:  Undefined variable: lang in W:\domains\villacrimea.loc\admin\view\template\extension\module\news.tpl on line 56
-2018-09-14 12:48:16 - PHP Notice:  Undefined variable: lang in W:\domains\villacrimea.loc\admin\view\template\extension\module\news.tpl on line 56
-2018-09-14 15:04:11 - PHP Warning:  Cannot modify header information - headers already sent in W:\domains\villacrimea.loc\system\library\response.php on line 12
-2018-09-14 15:20:11 - PHP Warning:  Cannot modify header information - headers already sent in W:\domains\villacrimea.loc\system\library\response.php on line 12
+2018-09-17 16:19:49 - PHP Notice:  Undefined property: Loader::$config in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\catalog\model\tool\image.php on line 61
+2018-09-17 16:20:18 - PHP Notice:  Undefined property: Loader::$config in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\catalog\model\tool\image.php on line 61
+2018-09-17 16:29:47 - PHP Warning:  rmdir(D:/OpenServer/domains/villacrimea.loc/system/storage/modification/catalog/model/tool): Permission denied in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\modification.php on line 105
+2018-09-17 16:29:47 - PHP Warning:  rmdir(D:/OpenServer/domains/villacrimea.loc/system/storage/modification/catalog/model): Directory not empty in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\modification.php on line 105
+2018-09-17 16:29:47 - PHP Warning:  rmdir(D:/OpenServer/domains/villacrimea.loc/system/storage/modification/catalog): Directory not empty in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\modification.php on line 105
+2018-09-18 11:17:24 - PHP Notice:  Undefined variable: lang in D:\OpenServer\domains\villacrimea.loc\admin\view\template\extension\module\news.tpl on line 56
+2018-09-18 11:20:54 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\catalog\controller\extension\module\blog_featured.php on line 46
+2018-09-18 11:20:54 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\catalog\controller\extension\module\blog_featured.php on line 46
+2018-09-18 11:20:54 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\catalog\controller\extension\module\blog_featured.php on line 46
+2018-09-18 11:20:54 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\catalog\controller\extension\module\blog_featured.php on line 46
+2018-09-18 11:20:55 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\catalog\controller\extension\module\blog_featured.php on line 46
+2018-09-18 11:20:55 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\catalog\controller\extension\module\blog_featured.php on line 46
+2018-09-18 11:20:55 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\catalog\controller\extension\module\blog_featured.php on line 46
+2018-09-18 11:20:55 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\catalog\controller\extension\module\blog_featured.php on line 46
+2018-09-19 17:23:54 - PHP Notice:  Undefined index: product_in_compare in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\module\watermark.php on line 80
+2018-09-19 17:23:54 - PHP Notice:  Undefined index: product_in_wish_list in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\module\watermark.php on line 81
+2018-09-19 17:23:54 - PHP Notice:  Undefined index: product_in_cart in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\module\watermark.php on line 82
+2018-09-19 17:25:02 - PHP Notice:  Undefined index: product_in_compare in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\module\watermark.php on line 32
+2018-09-19 17:25:02 - PHP Notice:  Undefined index: product_in_wish_list in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\module\watermark.php on line 33
+2018-09-19 17:25:02 - PHP Notice:  Undefined index: product_in_cart in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\module\watermark.php on line 34
