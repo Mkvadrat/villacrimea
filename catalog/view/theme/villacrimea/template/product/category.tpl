@@ -116,7 +116,7 @@
                                 <?php } ?>
                               </div>
                       </div>
-                      <span class="object_id">№ <?php echo $product['model']; ?></span>
+                      <span class="object_id">Обьект № <?php echo $product['model']; ?></span>
                   </div>
               </div>
             <?php } ?>

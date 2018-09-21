@@ -108,17 +108,14 @@ a.casual_button:hover {
 .toTop:hover {
     opacity: 1;
 }
-.mobile {
-    display: none;
-}
 header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
     padding: 15px 50px 5px;
-/*     max-width: 1366px;
-    margin: 0 auto;*/ 
+    max-width: 1680px;
+    margin: 0 auto;
 }
 header .header_right_side br {
     display: none;
@@ -218,7 +215,7 @@ header .header_right_side {
 }
 
 header .header_right_side .telephone {
-    font-size: 36px;
+    font-size: 25px;
     font-family: "GothamPro_Med";
     text-decoration: none;
     display: flex;
@@ -228,13 +225,16 @@ header .header_right_side .telephone {
     float: right;
     margin-right: 0;
     margin-left: auto;
-    padding: 5px 0;
+    padding: 0;
 }
-
+header .header_right_side .telephone ~ .telephone {
+    margin-top: -10px;
+    padding-bottom: 5px;
+}
 header .header_right_side .telephone img {
-    width: 50px;
-    padding-right: 15px;
-    height: 50px;
+    width: 40px;
+    padding-right: 10px;
+    height: 40px;
     box-sizing: content-box;
 }
 
@@ -246,8 +246,8 @@ section {
     width: 100%;
     padding: 0 50px;
     box-sizing: border-box;
-    /* max-width: 1366px;
-    margin: 0 auto; */
+    max-width: 1680px;
+    margin: 0 auto;
 }
 
 section .slider {
@@ -1168,6 +1168,7 @@ section .about .text .title {
     line-height: 36px;
     margin: 60px 0 30px;
 }
+#callback_agent,
 #order_selection,
 div[id^='call_me_back_agent_'],
 #call_me_back {
@@ -1311,7 +1312,8 @@ div[id^='call_me_back_agent_'],
 }
 
 .fancybox-is-open .fancybox-bg {
-    opacity: 0.25;
+    opacity: 0.1;
+    /* opacity: 0.25; */
 }
 
 .fancybox-close-small {
@@ -1947,6 +1949,7 @@ section .breadcrumbs ul {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    flex-wrap: wrap;
     align-items: center;
 }
 
@@ -2186,44 +2189,46 @@ section .object_page .actual_object .right_side .save_object a+a {
     padding-left: 30px;
 }
 
-section .object_page .actual_object .right_side .card_label {
+section .object_page .actual_object .card_label {
     position: relative;
-    padding: 8px 90px 8px 0;
+    padding: 8px 150px 8px 0;
     border-bottom: 1px solid #dbdbdb;
     align-items: center;
     min-height: 45px;
 }
 
-section .object_page .actual_object .right_side .card_label .object_id {
+section .object_page .actual_object .card_label .object_id {
     font-family: "GothamPro_Bol";
     text-shadow: 1px 0 0 #000;
     right: 20px;
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-section .object_page .actual_object .right_side .details {
+section .object_page .actual_object .details {
     padding-bottom: 25px;
     border-bottom: 1px solid #dbdbdb;
     margin-bottom: 20px;
 }
 
-section .object_page .actual_object .right_side .specials p,
-section .object_page .actual_object .right_side .details p {
+section .object_page .actual_object .specials p,
+section .object_page .actual_object .details p {
     font-size: 16px;
     color: #666666;
     line-height: 30px;
 }
 
-section .object_page .actual_object .right_side .details p span {
+section .object_page .actual_object .details p span {
     color: #000;
     font-family: "GothamPro_Med";
 }
-section .object_page .actual_object .right_side .details p .usdPrice {
+section .object_page .actual_object .details p .usdPrice {
     color: #c09d74;
 }
 
-section .object_page .actual_object .right_side .specials .title,
-section .object_page .actual_object .right_side .details .title {
+section .object_page .actual_object .specials .title,
+section .object_page .actual_object .details .title {
     font-family: "Ubuntu";
     text-align: left;
     font-size: 24px;
@@ -2231,11 +2236,11 @@ section .object_page .actual_object .right_side .details .title {
     color: #000;
 }
 
-section .object_page .actual_object .right_side .specials {
+section .object_page .actual_object .specials {
     margin-bottom: 10px;
 }
 
-section .object_page .actual_object .right_side .realtor {
+section .object_page .actual_object .realtor {
     border: 1px solid #dbdbdb;
     border-radius: 4px;
     padding: 45px 35px;
@@ -2245,7 +2250,7 @@ section .object_page .actual_object .right_side .realtor {
     align-items: center;
 }
 
-section .object_page .actual_object .right_side .realtor .img {
+section .object_page .actual_object .realtor .img {
     display: inline-block;
     width: 225px;
     height: 225px;
@@ -2255,19 +2260,19 @@ section .object_page .actual_object .right_side .realtor .img {
     background-position: center;
 }
 
-section .object_page .actual_object .right_side .realtor .name {
+section .object_page .actual_object .realtor .name {
     font-family: "GothamPro_Bol";
 }
 
-section .object_page .actual_object .right_side .realtor .job {
+section .object_page .actual_object .realtor .job {
     font-family: "GothamPro_Ita";
     font-size: 14px;
     line-height: 24px;
     margin: 8px 0;
 }
 
-section .object_page .actual_object .right_side .realtor .realtor_objects,
-section .object_page .actual_object .right_side .realtor .cases {
+section .object_page .actual_object .realtor .realtor_objects,
+section .object_page .actual_object .realtor .cases {
     font-size: 14px;
     width: 100%;
     margin: 0;
@@ -2277,33 +2282,33 @@ section .object_page .actual_object .right_side .realtor .cases {
     align-items: center;
 }
 
-section .object_page .actual_object .right_side .realtor .realtor_objects img,
-section .object_page .actual_object .right_side .realtor .cases img {
+section .object_page .actual_object .realtor .realtor_objects img,
+section .object_page .actual_object .realtor .cases img {
     height: 22px;
     margin-right: 5px;
 }
 
-section .object_page .actual_object .right_side .realtor .realtor_objects {
+section .object_page .actual_object .realtor .realtor_objects {
     border-bottom: 1px solid #dbdbdb;
     margin-bottom: 20px;
 }
 
-section .object_page .actual_object .right_side .realtor .tel {
+section .object_page .actual_object .realtor .tel {
     color: #666666;
     font-size: 16px;
     margin-bottom: 10px;
 }
 
-section .object_page .actual_object .right_side .realtor .tel+.tel {
+section .object_page .actual_object .realtor .tel+.tel {
     margin-bottom: 20px;
 }
 
-section .object_page .actual_object .right_side .realtor .tel a {
+section .object_page .actual_object .realtor .tel a {
     font-family: "GothamPro_Med";
     color: #000;
 }
 
-section .object_page .actual_object .right_side .realtor .casual_button {
+section .object_page .actual_object .realtor .casual_button {
     padding: 14px 20px;
     border-radius: 7px;
 }
@@ -3006,10 +3011,16 @@ section .card_label {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    align-items: flex-start;
     flex-wrap: wrap;
 }
 section .card_label span {
     margin: 0 2px 2px 0;
+    width: auto;
+    display: flex;
+}
+section .card_label span img {
+    height: 100%;
 }
 section .case_in_page .case_inner .right_side .card .name {
     font-family: "Ubuntu";
@@ -4290,6 +4301,8 @@ footer {
     background: #f4eddf;
     font-family: "Ubuntu";
     flex-wrap: wrap;
+    max-width: 1680px;
+    margin: 0 auto;
 }
 
 footer .footer_left_side,
@@ -4566,6 +4579,7 @@ section .blog_in_page .blog_inner .right_side .agent a {
     }
 }
 .panel>.list-group .list-group-item {
+    border: none;
     border-bottom: 1px solid #ddd;
     margin-bottom: 0;
     width: 100%;
@@ -4575,7 +4589,6 @@ section .blog_in_page .blog_inner .right_side .agent a {
     width: 20%;
     float: left;
     box-sizing: border-box;
-    border: none;
     font-size: 16px;
 }
 #ocfilter-hidden-options.in {
@@ -4654,4 +4667,64 @@ section .blog_in_page .blog_inner .right_side .agent a {
 .search-select {
     width: 100%;
     height: 26px;
+}
+section .object_page .actual_object .mobile,
+.mobile {
+    display: none;
+}
+.categories li.dropdown::after {
+    content: '▼';
+    display: inline-block;
+    right: 0;
+    top: 0;
+    font-size: 12px;
+    line-height: 22px;
+    vertical-align: top;
+}
+.categories li.dropdown::before {
+    content: ' ';
+    display: inline-block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #f4eddf;
+    bottom: -25px;
+    left: 50%;
+    transform: rotate(45deg) translateX(-50%);
+    opacity: 0;
+    transition: .5s;
+}
+.categories .dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    background: #f4eddf;
+    left: 0;
+    top: 30px;
+    opacity: 0;
+    transition: .5s;
+}
+.categories .dropdown ul li {
+    width: 100%;
+    border-bottom: 1px solid #dcd1bc;
+}
+.categories .dropdown ul li:last-child {
+    border: none;
+}
+.categories li.dropdown:hover::before, .dropdown:hover ul {
+    opacity: 1;
+}
+.categories .dropdown ul li a {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 25px;
+    text-transform: none;
+    text-decoration: underline;
+}
+.categories .dropdown ul li a:hover {
+    background: #c09d74;
+    color: #fff;
 }

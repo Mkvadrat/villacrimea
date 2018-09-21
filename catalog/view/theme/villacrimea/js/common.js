@@ -15,7 +15,17 @@ $(document).ready(function () {
         navText: ['<span></span>', '<span></span>']
     });
     $('.same_obj_slider').owlCarousel({
-        items: 3,
+        responsive : {
+            0 : {
+                items: 1
+            },
+            501 : {
+                items: 2
+            },
+            1025 : {
+                items: 3
+            }
+        },
         margin: 20,
 /*         loop : true,
  */        dots: false,

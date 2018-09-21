@@ -22,7 +22,7 @@
       </div>
       
       <div class="object_title ">
-          <a class="backward back"><img src="catalog/view/theme/villacrimea/image/backward.png" alt="">К списку</a>
+          <a class="backward back"><img src="catalog/view/theme/villacrimea/image/backward.png" alt="">Назад</a>
           <p class="title" id="print1"><?php echo $heading_title; ?></p>
           
           <span id="print6"><?php echo $heading_description; ?></span>
@@ -48,10 +48,89 @@
               <?php } ?>
               </div>
               
+              <div class="card_label mobile">
+                <?php if($stickers){ ?>
+                  <?php foreach ($stickers as $sticker) { ?>
+                      <span><img src="<?php echo $sticker['image']; ?>"></span>
+                  <?php } ?>
+                <?php } ?>
+                
+                <span class="object_id">Обьект № <?php echo $model; ?></span>
+              </div>
+              <div class="details mobile">
+                  <p class="title">Детали:</p>
+                  <?php if ($price || $rub) { ?>
+                  <?php if (!$special) { ?>
+                  <p>Цена: <span><?php echo $rub; ?> / <span class="usdPrice"><?php echo $price; ?></span></span></p>
+                  <?php } else { ?>
+                  <p>Цена: <span><?php echo $special; ?></span><sup><strike><?php echo $price; ?></strike></sup></p>
+                  <?php } ?>
+                  <?php } ?>
+                  
+                  <?php if($uniq_options){ ?>
+                  <?php if($product_options){ ?>
+                    <?php foreach($product_options as $option){ ?>
+                    <?php if($option['product_option_value']){ ?>
+                      <?php foreach ($option['product_option_value'] as $option_value) { ?>
+                        <p><?php echo $option['name']; ?>: <span><?php echo $option_value['name']; ?></span></p>
+                      <?php } ?>
+                    <?php }else{ ?>
+                        <p><?php echo $option['name']; ?>: <span><?php echo $option['value']; ?></span></p>
+                    <?php } ?>
+                    <?php } ?>
+                  <?php } ?>	
+                <?php }else{ ?>
+                  <?php if($filter_options){ ?>
+                    <?php foreach($filter_options as $option){ ?>
+                      <p><?php echo $option['name']; ?>: <span><?php echo $option['value']; ?></span></p>
+                    <?php } ?>
+                  <?php } ?>
+                <?php } ?>
+              </div>
+              
+              <?php if ($features) { ?>
+              <div class="specials mobile">
+                  <?php echo $features; ?>
+              </div>
+              <?php } ?>
+
               <div class="object_description" id="print8">
                   <p class="title">Описание:</p>
                   <div><?php echo $description; ?></div>
               </div>
+
+              <div class="realtor mobile">
+                  <div class="img" style="background-image: url('<?php echo $image_agent; ?>')"></div>
+              
+                  <p class="name"><?php echo $agent_name; ?></p>
+                  
+                  <?php if($specialization){ ?>
+                  <p class="job"><?php echo $specialization; ?></p>
+                  <?php } ?>
+                  
+                  <?php if($case_id) {?>
+                    <a href="<?php echo $view_all_cases; ?>" class="cases"><img src="catalog/view/theme/villacrimea/image/case.png" alt="">Посмотреть все кейсы агента</a>
+                  <?php } ?>
+                  
+                  <?php if($category_id_object) {?>
+                  <a href="<?php echo $view_all_object; ?>" class="realtor_objects"><img src="catalog/view/theme/villacrimea/image/home1.png" alt="">Посмотреть все объекты агента</a>
+                  <?php } ?>
+                  
+                  <?php if($phone){ ?>
+                  <p class="tel">Телефон: <a href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a></p>
+                  <?php } ?>
+                  
+                  <p class="tel">E-mail: <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></p>
+                  
+                  <a href="#callback_agent" class="casual_button callback">Написать сообщение</a>
+                  
+                  <!-- modal was here -->
+              </div>
+
+
+
+
+
               <div class="object_map">
                   <p class="title">Объекты рядом:</p>
                   <?php if($maps){ ?>
@@ -144,7 +223,7 @@
                   <?php } ?>
                 <?php } ?>
                 
-                <span class="object_id" id="print9">№ <?php echo $model; ?></span>
+                <span class="object_id" id="print9">Обьект № <?php echo $model; ?></span>
               </div>
               
               <div class="details" id="print10">
@@ -228,7 +307,7 @@
                                   </script>
                               </div>
                               <input type="checkbox" name="" id="conf_politics_one">
-                              <label for="conf_politics">
+                              <label for="conf_politics_one">
                                       я согласен(согласна)<br>
                                       с <a href="#">политикой конфиденциальности</a>
                               </label>
@@ -279,7 +358,7 @@
                   <?php } ?>
                   <?php } ?>
                   
-                  <span class="object_id">№ <?php echo $product['model']; ?></span>
+                  <span class="object_id">Обьект № <?php echo $product['model']; ?></span>
               </div>
             <?php } ?>
           </div>

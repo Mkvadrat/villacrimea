@@ -22,6 +22,14 @@
         margin: 0;
     }
 }
+@media screen and (min-width: 1680px) {
+    section .about::after, section .about::before {
+        background-position: 0 center;
+    }
+    section .about .buy_sell, section .about .text {
+        width: 68%;
+    }
+}
 @media screen and (min-width:2160px) {
     section .about::after, section .about::before {
         width: 13%;
@@ -92,12 +100,39 @@
     header .header_left_side div input {
         width: 180px;
     }
+    section .object_page .actual_object .right_side,
     section .seotext .agent,
     header .header_right_side .telephone img,
     header .header_right_side .callback.casual_button,
     header .header_left_side .menu,
     header .header_left_side div a {
         display: none;
+    }
+    section .object_page .actual_object .left_side {
+        width: 100%;
+        padding: 0;
+    }
+    section .object_page .actual_object .left_side .mobile {
+        display: block;
+    }
+    section .object_page .actual_object .card_label.mobile,
+    section .object_page .actual_object .realtor.mobile {
+        display: flex;
+    }
+    section .object_page .actual_object .specials.mobile {
+        border-bottom: 1px solid #dbdbdb;
+        padding-bottom: 25px;
+    }
+    section .object_page .actual_object .left_side .object_description {
+        border: none;
+    }
+    section .object_page .actual_object .realtor .realtor_objects, section .object_page .actual_object .realtor .cases {
+        padding-left: 0;
+        justify-content: center;
+    }
+    section .object_page .same_objects {
+        margin-left: -60px;
+        margin-right: -60px;
     }
     header .header_right_side .telephone {
         height: 60px;
@@ -232,6 +267,12 @@
     }
 }
 @media screen and (max-width:768px) {
+    section .card_label span {
+        height: 20px;
+    }
+    footer .footer_right_side .telephone {
+        font-size: 32px;
+    }
     .list-group-item.ocfilter-option[data-original-title] .option-values {
         flex-wrap: wrap;
     }
