@@ -88,6 +88,10 @@
         width: 160px;
         padding-bottom: 160px;
     }
+    section .object_title {
+        padding: 0 100px;
+    }
+
 }
 @media screen and (max-width:1024px) {
     .panel>.list-group .list-group-item[data-toggle="popover-price"],
