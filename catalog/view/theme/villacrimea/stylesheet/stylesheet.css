@@ -4666,14 +4666,10 @@ section .blog_in_page .blog_inner .right_side .agent a {
     width: 100%;
     height: 26px;
 }
-<<<<<<< HEAD
-
-=======
 section .object_page .actual_object .mobile,
 .mobile {
     display: none;
 }
->>>>>>> 22334f0247504d94f7c77161f1dc74292c7efb09
 .categories li.dropdown::after {
     content: '▼';
     display: inline-block;
@@ -4696,11 +4692,7 @@ section .object_page .actual_object .mobile,
     opacity: 0;
     transition: .5s;
 }
-<<<<<<< HEAD
-.dropdown ul {
-=======
 .categories .dropdown ul {
->>>>>>> 22334f0247504d94f7c77161f1dc74292c7efb09
     list-style: none;
     margin: 0;
     padding: 0;
@@ -4713,40 +4705,47 @@ section .object_page .actual_object .mobile,
     opacity: 0;
     transition: .5s;
 }
-<<<<<<< HEAD
-.dropdown ul li {
-    width: 100%;
-    border-bottom: 1px solid #dcd1bc;
-}
-.dropdown ul li:last-child {
-=======
 .categories .dropdown ul li {
     width: 100%;
     border-bottom: 1px solid #dcd1bc;
 }
 .categories .dropdown ul li:last-child {
->>>>>>> 22334f0247504d94f7c77161f1dc74292c7efb09
     border: none;
 }
 .categories li.dropdown:hover::before, .dropdown:hover ul {
     opacity: 1;
 }
-<<<<<<< HEAD
-.dropdown ul li a {
-=======
 .categories .dropdown ul li a {
->>>>>>> 22334f0247504d94f7c77161f1dc74292c7efb09
     display: inline-block;
     width: 100%;
     padding: 10px 25px;
     text-transform: none;
     text-decoration: underline;
 }
-<<<<<<< HEAD
-.dropdown ul li a:hover {
-=======
 .categories .dropdown ul li a:hover {
->>>>>>> 22334f0247504d94f7c77161f1dc74292c7efb09
     background: #c09d74;
     color: #fff;
+}
+.panel>.list-group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+.panel>.list-group .list-group-item[data-toggle="popover-price"] + .list-group-item[id^='option'] {
+    font-size: 18px;
+    width: 40%;
+    border-bottom: 1px solid #ddd;
+}
+.panel>.list-group .list-group-item[data-toggle="popover-price"] + .list-group-item[id^='option'] .option-values {
+    /* display: flex; */
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.panel>.list-group .list-group-item[data-toggle="popover-price"] {
+    width: 60%;
 }
