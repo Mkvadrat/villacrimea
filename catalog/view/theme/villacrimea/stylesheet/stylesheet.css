@@ -4726,3 +4726,26 @@ section .object_page .actual_object .mobile,
     background: #c09d74;
     color: #fff;
 }
+.panel>.list-group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+.panel>.list-group .list-group-item[data-toggle="popover-price"] + .list-group-item[id^='option'] {
+    font-size: 18px;
+    width: 40%;
+    border-bottom: 1px solid #ddd;
+}
+.panel>.list-group .list-group-item[data-toggle="popover-price"] + .list-group-item[id^='option'] .option-values {
+    /* display: flex; */
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.panel>.list-group .list-group-item[data-toggle="popover-price"] {
+    width: 60%;
+}

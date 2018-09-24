@@ -90,6 +90,11 @@
     }
 }
 @media screen and (max-width:1024px) {
+    .panel>.list-group .list-group-item[data-toggle="popover-price"],
+    .panel>.list-group .list-group-item[data-toggle="popover-price"] + .list-group-item[id^='option'] {
+        width: 100%;
+        padding: 10px 15px;
+    }
     .header_left_side p,
     .header_right_side p {
         font-size: 16px;

@@ -288,7 +288,11 @@ $(document).ready(function () {
             copyTagClasses: false       // copy classes from the html & body tag
         });
     });
+
     $('section .object_title .backward').css('left', -($('body').outerWidth() - $('section .object_title').outerWidth())/2); // прижать кнопку "к списку"
+    $(window).on('resize', function() {
+        $('section .object_title .backward').css('left', -($('body').outerWidth() - $('section .object_title').outerWidth())/2); // прижать кнопку "к списку"
+    });    
 });
 
 //Main page forms
