@@ -54,36 +54,6 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="col-sm-2 control-label" for="input-region">Район</label>
-            <div class="col-sm-10">
-              <textarea name="region" placeholder="Регион" id="input-region" rows="10" class="form-control"><?php echo $region; ?></textarea>  
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="input-price-from-rub">Цена от (RUB)</label>
-            <div class="col-sm-10">
-              <textarea name="price_from_rub" placeholder="Цена от" id="input-price-from-rub" rows="10" class="form-control"><?php echo $price_from_rub; ?></textarea>  
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="input-price-to-rub">Цена до (RUB)</label>
-            <div class="col-sm-10">
-              <textarea name="price_to_rub" placeholder="Цена до" id="input-price-to-rub" rows="10" class="form-control"><?php echo $price_to_rub; ?></textarea>  
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="input-price-from-usd">Цена от (USD)</label>
-            <div class="col-sm-10">
-              <textarea name="price_from_usd" placeholder="Цена от" id="input-price-from-usd" rows="10" class="form-control"><?php echo $price_from_usd; ?></textarea>  
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="input-price-to-usd">Цена до (USD)</label>
-            <div class="col-sm-10">
-              <textarea name="price_to_usd" placeholder="Цена до" id="input-price-to-usd" rows="10" class="form-control"><?php echo $price_to_usd; ?></textarea>  
-            </div>
-          </div>
-          <div class="form-group">
             <label class="col-sm-2 control-label" for="input-status"><?php echo $entry_status; ?></label>
             <div class="col-sm-10">
               <select name="status" id="input-status" class="form-control">

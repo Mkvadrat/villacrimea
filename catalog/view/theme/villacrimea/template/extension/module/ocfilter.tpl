@@ -1,10 +1,10 @@
-<?php if($categories){ ?>
+<!--<?php /*if($categories){ ?>
 <ul class="categories">
     <?php foreach($categories as $category){ ?>
         <li><a href="<?php echo $category['href'] ?>"><?php echo $category['name'] ?></a></li>
     <?php } ?>
 </ul>
-<?php } ?>
+<?php } */?>-->
 
 <?php if ($options || $show_price) { ?>
 <div class="visible-xs" id="ocfilter-mobile">
@@ -149,7 +149,7 @@
 	          </select>
 
             <?php } elseif ($option['type'] == 'slide' || $option['type'] == 'slide_dual') { # Slide type start ?>
-						<div id="scale-<?php echo $option['option_id']; ?>" class="scale ocf-target"
+						<div id="scale-<?php echo $option['option_id']; ?>" class="scale ocf-target slide_area"
               data-option-id="<?php echo $option['option_id']; ?>"
               data-start-min="<?php echo $option['slide_value_min_get']; ?>"
               data-start-max="<?php echo $option['slide_value_max_get']; ?>"
