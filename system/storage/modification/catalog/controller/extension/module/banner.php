@@ -26,7 +26,11 @@ class ControllerExtensionModuleBanner extends Controller {
 				$data['banners'][] = array(
 					'title' => $result['title'],
 					'link'  => $result['link'],
+<<<<<<< HEAD
 					'image' => $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height'], 'product_banner'),
+=======
+					'image' => $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height'], 'category_image'),
+>>>>>>> b5a3ddf3cc4c731901584844bcab8990c32c2692
 					'price' => $price,
 					'format_price'	=> $format_price
 				);

@@ -38,7 +38,11 @@ $_['text_modification']          			= 'Менеджер дополнений';
 $_['text_manufacturer']          			= 'Производители';
 
 // OCFilter start
+<<<<<<< HEAD
 $_['text_ocfilter'] = 'Фильтр объектов OCFilter';
+=======
+$_['text_ocfilter'] = 'Фильтр товаров OCFilter';
+>>>>>>> b5a3ddf3cc4c731901584844bcab8990c32c2692
 // OCFilter end
       
 $_['text_option']          					= 'Опции';
@@ -110,7 +114,11 @@ $_['text_complete_status']                  = 'Выполненных заказ
 $_['text_processing_status']                = 'Заказов в обработке';
 $_['text_other_status']          	        = 'Другие статусы';
 $_['text_octeam_toolset']              		= 'OC Team';
+<<<<<<< HEAD
 $_['text_blog']                 	        = 'Кейсы';
+=======
+$_['text_blog']                 	        = 'Блог';
+>>>>>>> b5a3ddf3cc4c731901584844bcab8990c32c2692
 $_['text_blog_article']                     = 'Кейсы';
 $_['text_blog_category']                    = 'Категории кейсов';
 $_['text_blog_setting']                     = 'Настройки кейсов';

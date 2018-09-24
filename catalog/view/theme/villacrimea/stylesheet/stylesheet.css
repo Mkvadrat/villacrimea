@@ -1367,6 +1367,7 @@ section .category_page .realtor_category .realtor_item {
     box-sizing: border-box;
     transition: all 0.5s;
     min-height: 366px;
+    margin-bottom: 30px;
 }
 
 section .category_page .realtor_category .realtor_item a {
@@ -4349,11 +4350,13 @@ footer .footer_right_side {
     display: none;
 }
 footer .footer_right_side .telephone {
-    font-size: 36px;
+    font-size: 30px;
+    line-height: 30px;
     text-decoration: none;
+}
+footer .footer_right_side .telephone ~ .telephone {
     padding-bottom: 5px;
 }
-
 footer .footer_right_side .mailto {
     font-size: 24px;
     margin-top: 0;
@@ -4698,11 +4701,13 @@ section .object_page .actual_object .mobile,
     padding: 0;
     position: absolute;
     z-index: 9;
-    width: 100%;
+    min-width: 100%;
+    max-width: 300px;
     background: #f4eddf;
     left: 0;
     top: 30px;
     opacity: 0;
+    visibility: hidden;
     transition: .5s;
 }
 .categories .dropdown ul li {
@@ -4714,6 +4719,7 @@ section .object_page .actual_object .mobile,
 }
 .categories li.dropdown:hover::before, .dropdown:hover ul {
     opacity: 1;
+    visibility: visible;
 }
 .categories .dropdown ul li a {
     display: inline-block;
