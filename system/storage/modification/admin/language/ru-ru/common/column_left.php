@@ -36,6 +36,11 @@ $_['text_marketing']          				= 'Маркетинг';
 $_['text_menu']                             = 'Менеджер меню';
 $_['text_modification']          			= 'Менеджер дополнений';
 $_['text_manufacturer']          			= 'Производители';
+
+// OCFilter start
+$_['text_ocfilter'] = 'Фильтр объектов OCFilter';
+// OCFilter end
+      
 $_['text_option']          					= 'Опции';
 $_['text_order']          					= 'Заказы';
 $_['text_order_status']          			= 'Статусы заказов';
