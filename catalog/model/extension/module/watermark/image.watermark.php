@@ -396,6 +396,7 @@ class ModelToolImage extends Model {
             'product_in_compare' => 'product_in_compare',
             'product_in_wish_list' => 'product_in_wish_list',
             'product_in_cart' => 'product_in_cart',
+            'product_banner' => 'product_banner',
             );
 
         // Load options

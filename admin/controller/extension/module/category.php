@@ -1,9 +1,9 @@
 <?php
-class ControllerExtensionModuleMainFilter extends Controller {
+class ControllerExtensionModuleCategory extends Controller {
 	private $error = array();
 
 	public function index() {
-		$this->load->language('extension/module/main_filter');
+		$this->load->language('extension/module/category');
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
@@ -11,7 +11,7 @@ class ControllerExtensionModuleMainFilter extends Controller {
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
 			if (!isset($this->request->get['module_id'])) {
-				$this->model_extension_module->addModule('main_filter', $this->request->post);
+				$this->model_extension_module->addModule('category', $this->request->post);
 			} else {
 				$this->model_extension_module->editModule($this->request->get['module_id'], $this->request->post);
 			}
@@ -78,19 +78,19 @@ class ControllerExtensionModuleMainFilter extends Controller {
 		if (!isset($this->request->get['module_id'])) {
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('heading_title'),
-				'href' => $this->url->link('extension/module/main_filter', 'token=' . $this->session->data['token'], true)
+				'href' => $this->url->link('extension/module/category', 'token=' . $this->session->data['token'], true)
 			);
 		} else {
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('heading_title'),
-				'href' => $this->url->link('extension/module/main_filter', 'token=' . $this->session->data['token'] . '&module_id=' . $this->request->get['module_id'], true)
+				'href' => $this->url->link('extension/module/category', 'token=' . $this->session->data['token'] . '&module_id=' . $this->request->get['module_id'], true)
 			);
 		}
 
 		if (!isset($this->request->get['module_id'])) {
-			$data['action'] = $this->url->link('extension/module/main_filter', 'token=' . $this->session->data['token'], true);
+			$data['action'] = $this->url->link('extension/module/category', 'token=' . $this->session->data['token'], true);
 		} else {
-			$data['action'] = $this->url->link('extension/module/main_filter', 'token=' . $this->session->data['token'] . '&module_id=' . $this->request->get['module_id'], true);
+			$data['action'] = $this->url->link('extension/module/category', 'token=' . $this->session->data['token'] . '&module_id=' . $this->request->get['module_id'], true);
 		}
 
 		$data['cancel'] = $this->url->link('extension/extension', 'token=' . $this->session->data['token'] . '&type=module', true);
@@ -119,46 +119,6 @@ class ControllerExtensionModuleMainFilter extends Controller {
 
 		$data['languages'] = $this->model_localisation_language->getLanguages();
 				
-		if (isset($this->request->post['region'])) {
-			$data['region'] = $this->request->post['region'];
-		} elseif (!empty($module_info)) {
-			$data['region'] = $module_info['region'];
-		} else {
-			$data['region'] = '';
-		}
-		
-		if (isset($this->request->post['price_from_rub'])) {
-			$data['price_from_rub'] = $this->request->post['price_from_rub'];
-		} elseif (!empty($module_info)) {
-			$data['price_from_rub'] = $module_info['price_from_rub'];
-		} else {
-			$data['price_from_rub'] = '';
-		}
-		
-		if (isset($this->request->post['price_to_rub'])) {
-			$data['price_to_rub'] = $this->request->post['price_to_rub'];
-		} elseif (!empty($module_info)) {
-			$data['price_to_rub'] = $module_info['price_to_rub'];
-		} else {
-			$data['price_to_rub'] = '';
-		}
-		
-		if (isset($this->request->post['price_from_usd'])) {
-			$data['price_from_usd'] = $this->request->post['price_from_usd'];
-		} elseif (!empty($module_info)) {
-			$data['price_from_usd'] = $module_info['price_from_usd'];
-		} else {
-			$data['price_from_usd'] = '';
-		}
-		
-		if (isset($this->request->post['price_to_usd'])) {
-			$data['price_to_usd'] = $this->request->post['price_to_usd'];
-		} elseif (!empty($module_info)) {
-			$data['price_to_usd'] = $module_info['price_to_usd'];
-		} else {
-			$data['price_to_usd'] = '';
-		}
-				
 		if (isset($this->request->post['status'])) {
 			$data['status'] = $this->request->post['status'];
 		} elseif (!empty($module_info)) {
@@ -171,11 +131,11 @@ class ControllerExtensionModuleMainFilter extends Controller {
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['footer'] = $this->load->controller('common/footer');
 
-		$this->response->setOutput($this->load->view('extension/module/main_filter', $data));
+		$this->response->setOutput($this->load->view('extension/module/category', $data));
 	}
 
 	protected function validate() {
-		if (!$this->user->hasPermission('modify', 'extension/module/main_filter')) {
+		if (!$this->user->hasPermission('modify', 'extension/module/category')) {
 			$this->error['warning'] = $this->language->get('error_permission');
 		}
 

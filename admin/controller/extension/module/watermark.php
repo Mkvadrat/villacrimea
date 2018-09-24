@@ -29,6 +29,7 @@ class ControllerExtensionModuleWatermark extends Controller {
             $data['product_list'] = (int)$this->request->post['product_list'];
             $data['product_additional'] = (int)$this->request->post['product_additional'];
             $data['product_related'] = (int)$this->request->post['product_related'];
+            $data['product_banner'] = (int)$this->request->post['product_banner'];
 
             foreach ($data as $key => $value) {
                 $this->model_extension_module_watermark->change( $key, $value );

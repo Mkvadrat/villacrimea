@@ -11,7 +11,7 @@
         <![CDATA['image' => $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height'])]]>
       </search>
       <add position="replace">
-        <![CDATA['image' => $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height'], 'category_image')]]>
+        <![CDATA['image' => $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height'], 'product_banner')]]>
       </add>
     </operation>
   </file>

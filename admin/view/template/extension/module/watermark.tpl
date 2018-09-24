@@ -200,7 +200,22 @@
               </select>
             </div>
           </div>
-
+          
+          <div class="form-group">
+            <label class="col-sm-6 control-label" for="product_banner">Banner</label>
+            <div class="col-sm-6">
+              <select name="product_banner" id="product_banner" class="form-control">
+                <?php if ($options['product_banner']) { ?>
+                <option value="1" selected="selected"><?php echo $text_yes; ?></option>
+                <option value="0"><?php echo $text_no; ?></option>
+                <?php } else { ?>
+                <option value="1"><?php echo $text_yes; ?></option>
+                <option value="0" selected="selected"><?php echo $text_no; ?></option>
+                <?php } ?>
+              </select>
+            </div>
+          </div>
+          
           <div class="form-group">
             <label class="col-sm-6 control-label" for="product_additional"><?php echo $options_lang['product_additional']; ?></label>
             <div class="col-sm-6">

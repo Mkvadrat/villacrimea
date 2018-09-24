@@ -7,29 +7,6 @@
       <?php } ?>
     
       <?php echo $content_top; ?>
-
-      <?php if ($categories) { ?>
-      <div class="realtor_category">
-        <?php foreach ($categories as $category) { ?>
-          <div class="realtor_item">
-              <a href="<?php echo $category['href']; ?>" class="realtor">
-                  <div class="img" style="background-image: url('<?php echo $category['image']; ?>')"></div>
-                  <div>
-                    <p class="name"><?php echo $category['name']; ?></p>
-                    <p class="job"><?php echo $category['specialization']; ?></p>
-                    <p class="obj_count">Объектов в продаже –
-                        <span><?php echo $category['count']; ?></span>
-                    </p>
-                  </div>
-              </a>
-              <?php //if ($category['view_case']) { ?>
-                <a href="<?php echo $category['href']; ?>" class="watch_cases">Посмотреть объекты агента</a>
-                <!-- <a href="<?php echo $category['view_case']; ?>" class="watch_cases">Посмотреть кейсы агента</a> -->
-              <?php //} ?>
-          </div>
-        <?php } ?>
-      </div>
-      <?php } ?>
       
       <?php if($products) { ?>
       <div class="catalog">
@@ -128,6 +105,29 @@
       <p><?php echo $text_empty; ?></p>
       <div class="buttons">
         <a href="<?php echo $continue; ?>" class="btn btn-primary" style="margin: 0 0 10px;"><?php echo $button_continue; ?></a>
+      </div>
+      <?php } ?>
+      
+      <?php if ($categories) { ?>
+      <div class="realtor_category">
+        <?php foreach ($categories as $category) { ?>
+          <div class="realtor_item">
+              <a href="<?php echo $category['href']; ?>" class="realtor">
+                  <div class="img" style="background-image: url('<?php echo $category['image']; ?>')"></div>
+                  <div>
+                    <p class="name"><?php echo $category['name']; ?></p>
+                    <p class="job"><?php echo $category['specialization']; ?></p>
+                    <p class="obj_count">Объектов в продаже –
+                        <span><?php echo $category['count']; ?></span>
+                    </p>
+                  </div>
+              </a>
+              <?php //if ($category['view_case']) { ?>
+                <a href="<?php echo $category['href']; ?>" class="watch_cases">Посмотреть объекты агента</a>
+                <!-- <a href="<?php echo $category['view_case']; ?>" class="watch_cases">Посмотреть кейсы агента</a> -->
+              <?php //} ?>
+          </div>
+        <?php } ?>
       </div>
       <?php } ?>
       

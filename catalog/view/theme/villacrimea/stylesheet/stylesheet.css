@@ -4655,3 +4655,60 @@ section .blog_in_page .blog_inner .right_side .agent a {
     width: 100%;
     height: 26px;
 }
+
+.categories li.dropdown::after {
+    content: '▼';
+    display: inline-block;
+    right: 0;
+    top: 0;
+    font-size: 12px;
+    line-height: 22px;
+    vertical-align: top;
+}
+.categories li.dropdown::before {
+    content: ' ';
+    display: inline-block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #f4eddf;
+    bottom: -25px;
+    left: 50%;
+    transform: rotate(45deg) translateX(-50%);
+    opacity: 0;
+    transition: .5s;
+}
+.dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    background: #f4eddf;
+    left: 0;
+    top: 30px;
+    opacity: 0;
+    transition: .5s;
+}
+.dropdown ul li {
+    width: 100%;
+    border-bottom: 1px solid #dcd1bc;
+}
+.dropdown ul li:last-child {
+    border: none;
+}
+.categories li.dropdown:hover::before, .dropdown:hover ul {
+    opacity: 1;
+}
+.dropdown ul li a {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 25px;
+    text-transform: none;
+    text-decoration: underline;
+}
+.dropdown ul li a:hover {
+    background: #c09d74;
+    color: #fff;
+}
