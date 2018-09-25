@@ -361,7 +361,7 @@
                   <?php } ?>
                   <?php } ?>
                   
-                  <span class="object_id">Обьект № <?php echo $product['model']; ?></span>
+                  <span class="object_id"><span class="hidden-xs">Обьект</span> № <?php echo $product['model']; ?></span>
               </div>
             <?php } ?>
           </div>

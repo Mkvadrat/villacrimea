@@ -137,3 +137,5 @@
 2018-09-21 17:34:34 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 243
 2018-09-21 17:56:34 - PHP Notice:  Undefined variable: text_all in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\category.tpl on line 19
 >>>>>>> 68851f649b3a068947161648078536204d7413f3
+2018-09-25 14:52:48 - PHP Warning:  mysqli::query(): MySQL server has gone away in W:\domains\villacrimea.loc\system\library\db\mysqli.php on line 18
+2018-09-25 14:52:48 - PHP Warning:  mysqli::query(): Error reading result set's header in W:\domains\villacrimea.loc\system\library\db\mysqli.php on line 18
