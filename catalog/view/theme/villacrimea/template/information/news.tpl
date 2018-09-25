@@ -1,5 +1,8 @@
 <?php echo $header; ?>
 	<div class="blog_in_page">
+		
+		<?php echo $content_top; ?>
+		
 		<div class="object_title">
 			<a class="backward back"><img src="catalog/view/theme/villacrimea/image/backward.png" alt="">К списку</a>
 			<?php if($heading_title) {?>

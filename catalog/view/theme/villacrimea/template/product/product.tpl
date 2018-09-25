@@ -1,5 +1,8 @@
 <?php echo $header; ?>
   <div class="object_page">
+    
+      <?php echo $content_top; ?>
+      
       <div class="breadcrumbs">
           <!-- <hr> -->
           <ul>
@@ -108,14 +111,14 @@
                   <p class="job"><?php echo $specialization; ?></p>
                   <?php } ?>
                   
-                  <?php if($case_id) {?>
-                    <a href="<?php echo $view_all_cases; ?>" class="cases"><img src="catalog/view/theme/villacrimea/image/case.png" alt="">Посмотреть все кейсы агента</a>
-                  <?php } ?>
-                  
                   <?php if($category_id_object) {?>
                   <a href="<?php echo $view_all_object; ?>" class="realtor_objects"><img src="catalog/view/theme/villacrimea/image/home1.png" alt="">Посмотреть все объекты агента</a>
                   <?php } ?>
                   
+                  <?php if($case_id) {?>
+                    <a href="<?php echo $view_all_cases; ?>" class="cases"><img src="catalog/view/theme/villacrimea/image/case.png" alt="">Посмотреть все кейсы агента</a>
+                  <?php } ?>
+                
                   <?php if($phone){ ?>
                   <p class="tel">Телефон: <a href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a></p>
                   <?php } ?>
@@ -126,10 +129,6 @@
                   
                   <!-- modal was here -->
               </div>
-
-
-
-
 
               <div class="object_map">
                   <p class="title">Объекты рядом:</p>
@@ -272,12 +271,12 @@
                   <p class="job" id="print3"><?php echo $specialization; ?></p>
                   <?php } ?>
                   
-                  <?php if($case_id) {?>
-                    <a href="<?php echo $view_all_cases; ?>" class="cases"><img src="catalog/view/theme/villacrimea/image/case.png" alt="">Посмотреть все кейсы агента</a>
-                  <?php } ?>
-                  
                   <?php if($category_id_object) {?>
                   <a href="<?php echo $view_all_object; ?>" class="realtor_objects"><img src="catalog/view/theme/villacrimea/image/home1.png" alt="">Посмотреть все объекты агента</a>
+                  <?php } ?>
+                  
+                  <?php if($case_id) {?>
+                    <a href="<?php echo $view_all_cases; ?>" class="cases"><img src="catalog/view/theme/villacrimea/image/case.png" alt="">Посмотреть все кейсы агента</a>
                   <?php } ?>
                   
                   <?php if($phone){ ?>

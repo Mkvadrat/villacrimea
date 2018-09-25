@@ -1,5 +1,6 @@
 <?php echo $header; ?>
 	<div class="blog_page">
+		
 		<?php echo $content_top; ?>
 		
 		<?php if($news_list){ ?>

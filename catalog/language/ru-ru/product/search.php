@@ -8,7 +8,7 @@ $_['text_search']       = 'Объекты, соответствующие кри
 $_['text_keyword']      = 'Ключевые слова';
 $_['text_category']     = 'Все категории';
 $_['text_sub_category'] = 'Искать в подкатегориях';
-$_['text_empty']        = 'Нет объектов, соответствующих критериям поиска.';
+$_['text_empty']        = '<div class="search-not-found">ничего не найдено</div>';
 $_['text_quantity']     = 'Кол-во:';
 $_['text_manufacturer'] = 'Производитель:';
 $_['text_model']        = 'Код товара:';
