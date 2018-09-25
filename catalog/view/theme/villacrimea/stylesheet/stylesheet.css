@@ -1312,8 +1312,7 @@ div[id^='call_me_back_agent_'],
 }
 
 .fancybox-is-open .fancybox-bg {
-    opacity: 0.1;
-    /* opacity: 0.25; */
+    opacity: 0.9;
 }
 
 .fancybox-close-small {
@@ -2063,6 +2062,7 @@ section .object_page .actual_object .left_side .object_photo .main_photo {
     width: 100%;
     /* padding-bottom: 60%; */
     margin-left: 0;
+    display: inline-block;
 }
 
 section .object_page .actual_object .left_side .object_photo a img {
@@ -4754,4 +4754,66 @@ section .object_page .actual_object .mobile,
 }
 .panel>.list-group .list-group-item[data-toggle="popover-price"] {
     width: 60%;
+}
+.custom_product_photo_slider {
+    position: relative;
+    width: 100%;
+}
+.custom_product_photo_slider button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    height: 150px;
+    width: 75px;
+    border-radius: 0 75px 75px 0;
+    background: rgba(0, 0, 0, 0.2);
+    border: none;
+    outline: none;
+    transition: all .5s;
+    padding: 0;
+    z-index: 9;
+
+}
+.custom_product_photo_slider button.prev_slide {
+    left: 0;
+}
+.custom_product_photo_slider button.next_slide {
+    right: 0;
+}
+.custom_product_photo_slider button:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+.custom_product_photo_slider button::before {
+    content: ' ';
+    display: inline-block;
+    width: 45px;
+    border-top: 5px solid #fff;
+    position: absolute;
+    top: 58px;
+    left: 10px;
+    transform: rotate(135deg);
+}
+.custom_product_photo_slider button::after {
+    content: ' ';
+    display: inline-block;
+    width: 45px;
+    border-top: 5px solid #fff;
+    position: absolute;
+    bottom: 58px;
+    left: 10px;
+    transform: rotate(45deg);
+}
+.custom_product_photo_slider button.next_slide {
+    border-radius: 75px 0 0 75px;
+}
+.custom_product_photo_slider button.next_slide::before {
+    transform: rotate(45deg);
+    left: auto;
+    right: 10px;
+}
+.custom_product_photo_slider button.next_slide::after {
+    transform: rotate(135deg);
+    left: auto;
+    right: 10px;
 }
