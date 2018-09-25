@@ -36,9 +36,13 @@
               <div class="object_photo" id="print7">
               <?php if ($popup || $images) { ?>
                 <?php if ($popup) { ?>
-                <a href="<?php echo $popup; ?>" data-fancybox="gallery" class="main_photo">
-                    <img src='<?php echo $popup; ?>'>
-                </a>
+                <div class="custom_product_photo_slider">
+                    <button class="prev_slide"></button>
+                    <a href="<?php echo $popup; ?>" data-fancybox="gallery" class="main_photo">
+                        <img src='<?php echo $popup; ?>'>
+                    </a>
+                    <button class="next_slide"></button>
+                </div>
                 <?php } ?>
                 <?php if ($images) { ?>
                 <?php foreach ($images as $image) { ?>
@@ -357,7 +361,7 @@
                   <?php } ?>
                   <?php } ?>
                   
-                  <span class="object_id">Обьект № <?php echo $product['model']; ?></span>
+                  <span class="object_id"><span class="hidden-xs">Обьект</span> № <?php echo $product['model']; ?></span>
               </div>
             <?php } ?>
           </div>

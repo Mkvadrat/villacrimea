@@ -1,4 +1,6 @@
+<?php if(!empty($heading_title)) { ?>
 <h1 class="title"><?php echo $heading_title; ?></h1>
+<?php } ?>
 
 <?php if($categories){ ?>
 <ul class="categories">

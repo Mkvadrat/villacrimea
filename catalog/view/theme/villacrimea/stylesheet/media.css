@@ -374,8 +374,40 @@
         float: left;
         margin: 0 0 2%;
     }
+    section .object_title {
+        padding: 0 50px;
+    }
+    section .object_title .title {
+        font-size: 24px;
+    }
+    section .object_title .backward {
+        padding-left: 40px;
+        top: 40px;
+    }
+    section .object_title .backward::before {
+        width: 35px;
+        height: 75px;
+    }
+    section .object_title .backward img {
+        left: 3px;
+        width: 30px;
+    }
+    section .object_title {
+        padding: 50px 0 0;
+    }
 }
 @media screen and (max-width:650px) {
+    section .object_page .actual_object .left_side .object_photo a:nth-child(n) {
+        width: 22.7%;
+        margin-left: 3%;
+    }
+    section .object_page .actual_object .left_side .object_photo a:nth-child(4n+2) {
+        margin-left: 0;
+    }    
+    section .object_page .actual_object .left_side .object_photo a.main_photo {
+        width: 100%;
+        margin-left: 0;
+    }
     .panel>.list-group .list-group-item[id^='option'] {
         width: 50%;
     }
@@ -394,6 +426,7 @@
     section {
         padding: 0 10px;
     }
+    section .object_page .same_objects,
     section .about,
     section .cases,
     section .promo_block,
@@ -458,6 +491,49 @@
     }
 }
 @media screen and (max-width:500px) {
+    #map-products-outer {
+        padding-bottom: 100%;
+    }
+    section .category_page .catalog .sort_filter #input-sort, section .category_page .catalog .sort_filter #input-limit {
+        margin-right: 0;
+    }
+    .sort-up-to {
+        margin-bottom: 20px;
+    }
+    section .same_obj_slider .owl-nav .owl-prev span {
+        left: 0;
+    }
+    section .same_obj_slider .owl-nav .owl-next span {
+        right: 0;
+    }
+    section .object_page .actual_object .realtor.mobile {
+        margin-left: -10px;
+        margin-right: -10px;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .custom_product_photo_slider button {
+        height: 90px;
+        width: 45px;
+    }
+    .custom_product_photo_slider button::after,
+    .custom_product_photo_slider button::before {
+        width: 25px;
+        left: 5px;
+    }
+    .custom_product_photo_slider button::after {
+        bottom: 35px;
+    }
+    .custom_product_photo_slider button::before {
+        top: 35px;
+    }
+    .custom_product_photo_slider button.next_slide::after,
+    .custom_product_photo_slider button.next_slide::before {
+        right: 5px;
+    }
     section .category_page .title, section .seotext .text .title, section .seotext {
         margin-left: -10px;
         margin-right: -10px;

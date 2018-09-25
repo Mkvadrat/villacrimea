@@ -137,8 +137,13 @@
 2018-09-21 17:34:34 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 243
 2018-09-21 17:56:34 - PHP Notice:  Undefined variable: text_all in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\extension\module\category.tpl on line 19
 >>>>>>> 68851f649b3a068947161648078536204d7413f3
+<<<<<<< HEAD
 2018-09-25 16:26:07 - PHP Notice:  Undefined variable: search in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\common\search.tpl on line 2
 2018-09-25 16:57:56 - PHP Warning:  implode(): Invalid arguments passed in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\product.php on line 131
 2018-09-25 16:58:26 - PHP Warning:  implode(): Invalid arguments passed in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\product.php on line 133
 2018-09-25 17:23:23 - PHP Notice:  Undefined index: search in D:\OpenServer\domains\villacrimea.loc\catalog\controller\common\search.php on line 9
 2018-09-25 17:24:24 - PHP Notice:  Undefined index: search in D:\OpenServer\domains\villacrimea.loc\catalog\controller\common\search.php on line 9
+=======
+2018-09-25 14:52:48 - PHP Warning:  mysqli::query(): MySQL server has gone away in W:\domains\villacrimea.loc\system\library\db\mysqli.php on line 18
+2018-09-25 14:52:48 - PHP Warning:  mysqli::query(): Error reading result set's header in W:\domains\villacrimea.loc\system\library\db\mysqli.php on line 18
+>>>>>>> a8c0d664512f6f90c0c3b256b9d305c071c6cc46

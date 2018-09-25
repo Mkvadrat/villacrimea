@@ -453,7 +453,9 @@ section .categories {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    margin-bottom: 15px;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 15px 0;
 }
 section .categories li {
     margin-left: 0;
@@ -468,6 +470,9 @@ section .categories li:nth-child(n+8) {
 section .categories a {
     text-transform: uppercase;
     font-weight: bold;
+}
+section .categories>li>a {
+    line-height: 35px;
 }
 
 section .choise,
@@ -534,6 +539,7 @@ section .agent_with_cards {
     align-items: flex-start;
     flex-wrap: wrap;
     margin-bottom: 45px;
+    margin-top: 15px;
 }
 
 section .agent_with_cards .agent {
@@ -1312,8 +1318,7 @@ div[id^='call_me_back_agent_'],
 }
 
 .fancybox-is-open .fancybox-bg {
-    opacity: 0.1;
-    /* opacity: 0.25; */
+    opacity: 0.9;
 }
 
 .fancybox-close-small {
@@ -2063,6 +2068,7 @@ section .object_page .actual_object .left_side .object_photo .main_photo {
     width: 100%;
     /* padding-bottom: 60%; */
     margin-left: 0;
+    display: inline-block;
 }
 
 section .object_page .actual_object .left_side .object_photo a img {
@@ -2281,6 +2287,7 @@ section .object_page .actual_object .realtor .cases {
     display: flex;
     flex-direction: row;
     align-items: center;
+    border-top: 1px solid #dbdbdb;
 }
 
 section .object_page .actual_object .realtor .realtor_objects img,
@@ -2289,7 +2296,7 @@ section .object_page .actual_object .realtor .cases img {
     margin-right: 5px;
 }
 
-section .object_page .actual_object .realtor .realtor_objects {
+section .object_page .actual_object .realtor .cases {
     border-bottom: 1px solid #dbdbdb;
     margin-bottom: 20px;
 }
@@ -2610,7 +2617,6 @@ section .cases_page .title {
     margin: 0;
     padding-top: 30px;
     line-height: 36px;
-    border-top: 1px solid #dbdbdb;
     font-weight: bolder;
 }
 
@@ -2936,7 +2942,6 @@ section .case_in_page .case_inner .right_side .realtor .cases {
     flex-direction: row;
     align-items: center;
     border-top: 1px solid #dbdbdb;
-    border-bottom: 1px solid #dbdbdb;
 }
 
 section .case_in_page .case_inner .right_side .realtor .realtor_objects img,
@@ -2945,9 +2950,8 @@ section .case_in_page .case_inner .right_side .realtor .cases img {
     margin-right: 5px;
 }
 
-section .case_in_page .case_inner .right_side .realtor .realtor_objects {
+section .case_in_page .case_inner .right_side .realtor .cases {
     border-bottom: 1px solid #dbdbdb;
-    border-top: none;
     margin-bottom: 20px;
 }
 
@@ -3167,7 +3171,6 @@ section .blog_page .title {
     font-weight: bolder;
     margin: 0 0 30px;
     padding: 30px 0 0;
-    border-top: 1px solid #dbdbdb;
 }
 
 section .blog_page .center {
@@ -3457,7 +3460,6 @@ section .blog_in_page .blog_inner .right_side ul li a:hover {
 
 section .about_us_page .object_title {
     padding: 0px 200px;
-    border-top: 1px solid #dbdbdb;
     border-bottom: 1px solid #dbdbdb;
     margin: 0;
 }
@@ -3834,7 +3836,6 @@ section .services_page .services_inner .right_side ul li a:hover {
 
 section .contacts_page .object_title {
     padding: 0px 30px;
-    border-top: 1px solid #dbdbdb;
     border-bottom: 1px solid #dbdbdb;
     margin: 0;
 }
@@ -4020,8 +4021,8 @@ section .contacts_page .contacts_inner .realtors .realtor .cases {
     flex-direction: row;
     align-items: center;
     border-top: 1px solid #dbdbdb;
-    border-bottom: 1px solid #dbdbdb;
-    margin-bottom: 8px;
+    border-top: 1px solid #dbdbdb;
+    /* margin-bottom: 8px; */
 }
 
 section .contacts_page .contacts_inner .realtors .realtor .realtor_objects img,
@@ -4030,9 +4031,8 @@ section .contacts_page .contacts_inner .realtors .realtor .cases img {
     margin-right: 5px;
 }
 
-section .contacts_page .contacts_inner .realtors .realtor .realtor_objects {
+section .contacts_page .contacts_inner .realtors .realtor .cases {
     border-bottom: 1px solid #dbdbdb;
-    border-top: none;
     margin-bottom: 20px;
 }
 
@@ -4680,7 +4680,7 @@ section .object_page .actual_object .mobile,
     top: 0;
     font-size: 12px;
     line-height: 22px;
-    vertical-align: top;
+    vertical-align: baseline;
 }
 .categories li.dropdown::before {
     content: ' ';
@@ -4704,8 +4704,7 @@ section .object_page .actual_object .mobile,
     min-width: 100%;
     max-width: 300px;
     background: #f4eddf;
-    left: 0;
-    top: 30px;
+    top: 40px;
     opacity: 0;
     visibility: hidden;
     transition: .5s;
@@ -4727,6 +4726,7 @@ section .object_page .actual_object .mobile,
     padding: 10px 25px;
     text-transform: none;
     text-decoration: underline;
+    text-align: left;
 }
 .categories .dropdown ul li a:hover {
     background: #c09d74;
@@ -4754,4 +4754,66 @@ section .object_page .actual_object .mobile,
 }
 .panel>.list-group .list-group-item[data-toggle="popover-price"] {
     width: 60%;
+}
+.custom_product_photo_slider {
+    position: relative;
+    width: 100%;
+}
+.custom_product_photo_slider button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    height: 150px;
+    width: 75px;
+    border-radius: 0 75px 75px 0;
+    background: rgba(0, 0, 0, 0.2);
+    border: none;
+    outline: none;
+    transition: all .5s;
+    padding: 0;
+    z-index: 9;
+
+}
+.custom_product_photo_slider button.prev_slide {
+    left: 0;
+}
+.custom_product_photo_slider button.next_slide {
+    right: 0;
+}
+.custom_product_photo_slider button:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+.custom_product_photo_slider button::before {
+    content: ' ';
+    display: inline-block;
+    width: 45px;
+    border-top: 5px solid #fff;
+    position: absolute;
+    top: 58px;
+    left: 10px;
+    transform: rotate(135deg);
+}
+.custom_product_photo_slider button::after {
+    content: ' ';
+    display: inline-block;
+    width: 45px;
+    border-top: 5px solid #fff;
+    position: absolute;
+    bottom: 58px;
+    left: 10px;
+    transform: rotate(45deg);
+}
+.custom_product_photo_slider button.next_slide {
+    border-radius: 75px 0 0 75px;
+}
+.custom_product_photo_slider button.next_slide::before {
+    transform: rotate(45deg);
+    left: auto;
+    right: 10px;
+}
+.custom_product_photo_slider button.next_slide::after {
+    transform: rotate(135deg);
+    left: auto;
+    right: 10px;
 }

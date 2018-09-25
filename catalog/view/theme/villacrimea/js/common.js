@@ -292,15 +292,61 @@ $(document).ready(function () {
     $('section .object_title .backward').css('left', -($('body').outerWidth() - $('section .object_title').outerWidth())/2); // прижать кнопку "к списку"
     $(window).on('resize', function() {
         $('section .object_title .backward').css('left', -($('body').outerWidth() - $('section .object_title').outerWidth())/2); // прижать кнопку "к списку"
-    });
-    
-    function PhotoMas () {
+    });    
+
+    function CustomSlider() {
         var masser = [];
         $('section .object_page .object_photo a').each(function() {
-            masser.push($(this).attr('href'));
+            masser.push($(this));
         });
-        return console.log(masser);
+        var iterator = 1;
+        $('.custom_product_photo_slider .prev_slide').on('click', function() {
+            if(iterator-1 == 0) iterator = masser.length - 1; else iterator--;
+            var holder = masser[iterator].attr('href');
+            var masserStart = masser[0].attr('href');
+            masser[iterator].attr('href',masserStart).children('img').animate({
+                'opacity': '0.1',
+            }, 50, function () {
+                $(this).attr('src',masserStart).animate({
+                    'opacity': '1',
+                }, 50)
+            });
+            masser[0].attr('href',holder).children('img').animate({
+                'opacity': '0.1',
+            }, 50, function () {
+                $(this).attr('src',holder).animate({
+                    'opacity': '1',
+                }, 50)
+            });
+            console.log(iterator);
+        });
+        $('.custom_product_photo_slider .next_slide').on('click', function() {
+            console.log(iterator);
+            var holder = masser[iterator].attr('href');
+            var masserStart = masser[0].attr('href');
+            masser[iterator].attr('href',masserStart).children('img').animate({
+                'opacity': '0.1',
+            }, 50, function () {
+                $(this).attr('src',masserStart).animate({
+                    'opacity': '1',
+                }, 50)
+            });
+            masser[0].attr('href',holder).children('img').animate({
+                'opacity': '0.1',
+            }, 50, function () {
+                $(this).attr('src',holder).animate({
+                    'opacity': '1',
+                }, 50)
+            });
+            if(iterator+1 == masser.length) iterator=1; else iterator++;
+            console.log(iterator);
+        });
+        if(masser.length == 1) {
+            $('.custom_product_photo_slider button').remove();
+        }
+        console.log(masser.length);
     }
+    CustomSlider();
 });
 
 //Main page forms
