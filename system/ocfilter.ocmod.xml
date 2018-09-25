@@ -88,7 +88,7 @@ $_['text_ocfilter'] = 'Product Filter OCFilter';
 // OCFilter start
 $_['entry_values']          		= 'Добавьте значения для этой опции.';
 $_['tab_ocfilter']          		= 'Опции фильтра';
-$_['ocfilter_select_category'] 	= 'Для начала, выберите категории для этого товара.';
+$_['ocfilter_select_category'] 	= 'Для начала, выберите категории для этого объекта.';
 // OCFilter end
       ]]></add>
     </operation>
@@ -99,7 +99,7 @@ $_['ocfilter_select_category'] 	= 'Для начала, выберите кат�
       <search><![CDATA[$_['text_option']]]></search>
       <add position="before"><![CDATA[
 // OCFilter start
-$_['text_ocfilter'] = 'Фильтр товаров OCFilter';
+$_['text_ocfilter'] = 'Фильтр объектов OCFilter';
 // OCFilter end
       ]]></add>
     </operation>
@@ -162,60 +162,31 @@ $_['text_ocfilter'] = 'Фильтр товаров OCFilter';
     <operation>
       <search index="0"><![CDATA[<script type="text/javascript"><!--]]></search>
       <add position="before"><![CDATA[
-  <!-- OCFilter start -->
-  <script type="text/javascript"><!--
-  ocfilter.php = {
-  	text_select: '<?php echo $text_select; ?>',
-  	ocfilter_select_category: '<?php echo $ocfilter_select_category; ?>',
-  	entry_values: '<?php echo $entry_values; ?>',
-  	tab_ocfilter: '<?php echo $tab_ocfilter; ?>'
-  };
-
-  ocfilter.php.languages = [];
-
-  <?php foreach ($languages as $language) { ?>
-  ocfilter.php.languages.push({
-  	'language_id': <?php echo $language['language_id']; ?>,
-  	'name': '<?php echo $language['name']; ?>',
-    'image': '<?php echo $language['image']; ?>'
-  });
-  <?php } ?>
-
-  //--></script>
-  <!-- OCFilter end -->
+        <!-- OCFilter start -->
+        <script type="text/javascript"><!--
+        ocfilter.php = {
+          text_select: '<?php echo $text_select; ?>',
+          ocfilter_select_category: '<?php echo $ocfilter_select_category; ?>',
+          entry_values: '<?php echo $entry_values; ?>',
+          tab_ocfilter: '<?php echo $tab_ocfilter; ?>'
+        };
+      
+        ocfilter.php.languages = [];
+      
+        <?php foreach ($languages as $language) { ?>
+        ocfilter.php.languages.push({
+          'language_id': <?php echo $language['language_id']; ?>,
+          'name': '<?php echo $language['name']; ?>',
+          'image': '<?php echo $language['image']; ?>'
+        });
+        <?php } ?>
+      
+        //--></script>
+        <!-- OCFilter end -->
       ]]></add>
     </operation>
   </file><!-- /admin/view/template/catalog/product_form.tpl -->
-
-	<file path="admin/view/template/editors/product/product_form.tpl">
-    <operation>
-      <search index="0"><![CDATA[<script type="text/javascript"><!--]]></search>
-      <add position="before"><![CDATA[
-  <!-- OCFilter start -->
-  <script type="text/javascript"><!--
-  ocfilter.php = {
-  	text_select: '<?php echo $text_select; ?>',
-  	ocfilter_select_category: '<?php echo $ocfilter_select_category; ?>',
-  	entry_values: '<?php echo $entry_values; ?>',
-  	tab_ocfilter: '<?php echo $tab_ocfilter; ?>'
-  };
-
-  ocfilter.php.languages = [];
-
-  <?php foreach ($languages as $language) { ?>
-  ocfilter.php.languages.push({
-  	'language_id': <?php echo $language['language_id']; ?>,
-  	'name': '<?php echo $language['name']; ?>',
-    'image': '<?php echo $language['image']; ?>'
-  });
-  <?php } ?>
-
-  //--></script>
-  <!-- OCFilter end -->
-      ]]></add>
-    </operation>
-  </file><!-- /admin/view/template/editors/product/product_form.tpl -->
-
+  
   <!--
   **
   **

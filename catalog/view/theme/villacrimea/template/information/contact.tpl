@@ -1,5 +1,8 @@
 <?php echo $header; ?>
   <div class="contacts_page">
+    
+    <?php echo $content_top; ?>
+    
     <div class="object_title">
         <p class="title"><?php echo $heading_title; ?></p>
     </div>                
@@ -83,8 +86,8 @@
                 <div class="img" style="background-image: url('<?php echo $agent['image']; ?>')"></div>
                 <p class="name"><?php echo $agent['name']; ?></p>
                 <p class="job"><?php echo $agent['specialization']; ?></p>
-                <a href="<?php echo $agent['all_cases']; ?>" class="cases"><img src="catalog/view/theme/villacrimea/image/case.png" alt="">Посмотреть все кейсы агента</a>
                 <a href="<?php echo $agent['all_object']; ?>" class="realtor_objects"><img src="catalog/view/theme/villacrimea/image/home1.png" alt="">Посмотреть все объекты агента</a>
+                <a href="<?php echo $agent['all_cases']; ?>" class="cases"><img src="catalog/view/theme/villacrimea/image/case.png" alt="">Посмотреть все кейсы агента</a>
                 <p class="tel">Телефон: <a href="tel:<?php echo $agent['phone']; ?>"><?php echo $agent['phone']; ?></a></p>
                 <p class="tel">E-mail: <a href="mailto:<?php echo $agent['email']; ?>"><?php echo $agent['email']; ?></a></p>
                 <a href="#call_me_back_agent_<?php echo $agent['agent_id']; ?>" class="casual_button callback">Написать сообщение</a>

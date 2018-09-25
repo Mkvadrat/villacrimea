@@ -1,13 +1,13 @@
 <?php echo $header; ?>
   <div class="category_page"><?php echo $column_left; ?>
       
+       <?php echo $content_top; ?>
+      
       <?php if ($top_name || $description) { ?>
         <p class="title"><?php echo $top_name; ?></p>
         <?php echo $description; ?>
       <?php } ?>
-    
-      <?php echo $content_top; ?>
-      
+  
       <?php if($products) { ?>
       <div class="catalog">
           <div class="sort_filter">
@@ -124,7 +124,7 @@
               </a>
               <?php //if ($category['view_case']) { ?>
                 <a href="<?php echo $category['href']; ?>" class="watch_cases">Посмотреть объекты агента</a>
-                <!-- <a href="<?php echo $category['view_case']; ?>" class="watch_cases">Посмотреть кейсы агента</a> -->
+                <!-- <a href="<?php /*echo $category['view_case'];*/ ?>" class="watch_cases">Посмотреть кейсы агента</a> -->
               <?php //} ?>
           </div>
         <?php } ?>

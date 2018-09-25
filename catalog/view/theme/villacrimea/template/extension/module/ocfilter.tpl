@@ -39,7 +39,7 @@
       </div>
       <?php } ?>
 
-      <?php if ($show_price) { # Price filtering ?>
+      
       <div class="list-group-item ocfilter-option" data-toggle="popover-price">
         <div class="option-name">
 					<?php echo $text_price; ?><!--&nbsp;<?php echo $symbol_left; ?>-->
@@ -88,7 +88,7 @@
 					<?php } ?>
         </div>
       </div>
-      <?php } # Price filtering end ?>
+ 
 
       <?php foreach ($options as $option) { ?>
 

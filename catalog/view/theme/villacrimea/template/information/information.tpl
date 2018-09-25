@@ -1,5 +1,8 @@
 <?php echo $header; ?>
   <div class="about_us_page">
+      
+      <?php echo $content_top; ?>
+    
       <div class="object_title">
           <p class="title"><?php echo $heading_title; ?></p>
           

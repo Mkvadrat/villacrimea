@@ -1121,7 +1121,7 @@ class ControllerProductProduct extends Controller {
 	
 			$pdf->writeHTML($html, true, false, true, false, '');
 	
-			$pdf->Output('object-'.$this->generate_value(7).'.pdf', 'D');
+			$pdf->Output('object-' ./*$this->generate_value(7).*/ (int)$this->request->get['product_id'] . '.pdf', 'D');
 		
 		}
 	}

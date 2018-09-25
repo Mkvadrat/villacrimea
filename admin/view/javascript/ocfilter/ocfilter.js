@@ -1,3 +1,18 @@
+var xy = 0;
+
+$(document).ready(function() {
+	$("input[type='checkbox'][name='product_category[]']").on('change', function() {
+		if(this.checked) {
+			xy = $(this).val();
+			//console.log(xy);
+		}
+	});
+});
+
+function CallingChecker() {
+	return xy;
+}
+
 var ocfilter = {
 	/**
 	   	URL GET Variables
@@ -372,35 +387,36 @@ var ocfilter = {
 		product_id: null,
 		length: null,
 		init: function() {
-      $('a[href=\'#tab-links\']').parent('li').after('<li><a href="#tab-ocfilter" data-toggle="tab">' + ocfilter.php.tab_ocfilter + '</a></li>');
-			$('#tab-links').after('<div class="tab-pane" id="tab-ocfilter"><h2>' + ocfilter.php.ocfilter_select_category + '</h2></div>');
-
-      $('a[href=\'#tab-general\']').tab('show');
-
-			if (undefined !== ocfilter.url['product_id']) {
-				this.product_id = ocfilter.url['product_id'];
-			}
-
-      this.length = $('#product-category div, input[type=\'checkbox\'][name=\'product_category[]\']:checked').length;
-
-	  	setInterval(function() {
-				var length = $('#product-category div, input[type=\'checkbox\'][name=\'product_category[]\']:checked').length;
-
-				if (ocfilter.productForm.length != length) {
-					ocfilter.productForm.length = length;
-
-					ocfilter.productForm.update();
-				}
-			}, 500);
-
-      this.update();
+			$("a[href='#tab-links']").parent('li').after('<li><a href="#tab-ocfilter" data-toggle="tab">' + ocfilter.php.tab_ocfilter + '</a></li>');
+				  $('#tab-links').after('<div class="tab-pane" id="tab-ocfilter"><h2>' + ocfilter.php.ocfilter_select_category + '</h2></div>');
+	  
+			$('a[href=\'#tab-general\']').tab('show');
+	  
+				  if (undefined !== ocfilter.url['product_id']) {
+					  this.product_id = ocfilter.url['product_id'];
+				  }
+	  
+			this.length = $("#product-category div, input[type='checkbox'][name='product_category[]']:checked").length;
+	  
+			  setInterval(function() {
+					  var length = $("#product-category div, input[type='checkbox'][name='product_category[]']:checked").length;
+	  
+					  if (ocfilter.productForm.length != length) {
+						  ocfilter.productForm.length = length;
+	  
+						  ocfilter.productForm.update();
+					  }
+				  }, 500);
+	  
+			this.update();
 		},
 		update: function() {
-      if ($('input[type=\'checkbox\'][name=\'product_category[]\']:checked:last').length > 0) {
-			  this.category_id = $('input[name=\'product_category[]\']:checked:last').val();
-      } else if ($('input[type=\'hidden\'][name=\'product_category[]\']:last').length > 0) {
-			  this.category_id = $('input[name=\'product_category[]\']:last').val();
-      }
+
+			if ($("input[type='checkbox'][name='product_category[]']:checked:last").length > 0) {
+					this.category_id = CallingChecker();
+			} else {
+					this.category_id = 0;
+			}
 
 			var html = [], get = {
 				token: ocfilter.url['token'],
