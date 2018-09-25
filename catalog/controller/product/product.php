@@ -580,15 +580,10 @@ class ControllerProductProduct extends Controller {
 				
 				if ($result['image'] && file_exists(DIR_IMAGE . $result['image'])){
 					list($width_orig, $height_orig) = getimagesize(DIR_IMAGE . $result['image']);
-					
-					if ($width_orig>900) {
-						$height_orig = $height_orig * 900 / $width_orig;
-						$width_orig = 900;
-					}
-					
-					$image = $this->model_tool_image->resize($result['image'], $width_orig, $height_orig);
+								
+					$image = $this->model_tool_image->resize($result['image'], 100, 100);
 				}else{
-					$image = $this->model_tool_image->resize('placeholder.png', $this->config->get($this->config->get('config_theme') . '_image_thumb_width'), $this->config->get($this->config->get('config_theme') . '_image_thumb_height'));
+					$image = $this->model_tool_image->resize('placeholder.png', 100, 100);
 				}
 				
 				$data['maps'][] = array(

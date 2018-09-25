@@ -292,11 +292,8 @@ $(document).ready(function () {
     $('section .object_title .backward').css('left', -($('body').outerWidth() - $('section .object_title').outerWidth())/2); // прижать кнопку "к списку"
     $(window).on('resize', function() {
         $('section .object_title .backward').css('left', -($('body').outerWidth() - $('section .object_title').outerWidth())/2); // прижать кнопку "к списку"
-    });    
-
-
-
-
+    });
+    
     function PhotoMas () {
         var masser = [];
         $('section .object_page .object_photo a').each(function() {

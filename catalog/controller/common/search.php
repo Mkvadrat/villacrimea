@@ -5,7 +5,7 @@ class ControllerCommonSearch extends Controller {
 
 		$data['text_search'] = $this->language->get('text_search');
 
-		if (isset($this->request->get['search'])) {
+		if (isset($this->request->get['model'])) {
 			$data['search'] = $this->request->get['search'];
 		} else {
 			$data['search'] = '';
