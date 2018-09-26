@@ -237,6 +237,7 @@ class ControllerExtensionModuleOCFilter extends Controller {
 		foreach($currencys as $currency){
 			$data['currencys'][] = array(
 				'title' => $currency['title'],
+        'symbol_right' => $currency['symbol_right'],
 				'code'  => $currency['code']
 			);
 		}

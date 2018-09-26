@@ -4597,6 +4597,7 @@ section .blog_in_page .blog_inner .right_side .agent a {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-end;
+    width: 100%;
 }
 .panel>.list-group {
     width: 100%;

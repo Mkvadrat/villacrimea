@@ -39,11 +39,17 @@
       </div>
       <?php } ?>
 
-      
       <div class="list-group-item ocfilter-option" data-toggle="popover-price">
         <div class="option-name">
 					<?php echo $text_price; ?><!--&nbsp;<?php echo $symbol_left; ?>-->
-          <span id="price-from"><?php echo $min_price_get; ?></span>&nbsp;-&nbsp;<span id="price-to"><?php echo $max_price_get; ?></span><?php echo $symbol_right; ?>
+          <span id="price-from"><?php echo $min_price_get; ?></span>&nbsp;-&nbsp;<span id="price-to"><?php echo $max_price_get; ?></span>
+          <?php if($currencys){ ?>
+          <?php foreach($currencys as $currency){ ?>
+            <?php if($curent_currencys == $currency['code']){ ?>
+              <?php echo $currency['symbol_right']; ?>
+            <?php } ?>
+          <?php } ?>
+          <?php } ?>
 				</div>
 
         <div class="option-values">
@@ -55,41 +61,40 @@
               data-element-min="#price-from"
               data-element-max="#price-to"
               data-control-min="#min-price-value"
-              data-control-max="#max-price-value"
-              ></div>
-							<br>
-							<?php if($currencys){ ?>
-							<select class="form-control currencys" id="currencys" name="currencys">	
-								<?php foreach($currencys as $currency){ ?>
-									<?php if($curent_currencys == $currency['code']){ ?>
-										<option value="<?php echo $currency['code']; ?>" selected="selected"><?php echo $currency['title']; ?></option>
-									<?php }else{ ?>
-										<option value="<?php echo $currency['code']; ?>"><?php echo $currency['title']; ?></option>
-									<?php } ?>
-								<?php } ?>
-							</select>
-							<?php } ?>
-
-					<?php if ($diagram) { ?>
-          <div class="price-diagram">
-						<div class="diagram-field">
-							<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="40px">
-								<?php foreach ($diagram['circles'] as $circle) { ?>
-								<?php if ($circle['count']) { ?>
-								<circle cx="<?php echo $circle['x']; ?>" cy="<?php echo $circle['y']; ?>" r="1" fill="#037a9c" stroke="#037a9c" stroke-width="1" />
-								<?php } else { ?>
-								<circle cx="<?php echo $circle['x']; ?>" cy="<?php echo $circle['y']; ?>" r="1" fill="#BF0000" stroke="#BF0000" stroke-width="1" />
-								<?php } ?>
-								<?php } ?>
-								<path fill="#037a9c" stroke="#037a9c" d="<?php echo $diagram['path']; ?>" stroke-width="1" opacity="0.25" stroke-opacity="1" />
-							</svg>
-						</div>
+              data-control-max="#max-price-value">
           </div>
-					<?php } ?>
+          <br>
+          <?php if($currencys){ ?>
+          <select class="form-control currencys" id="currencys" name="currencys">	
+            <?php foreach($currencys as $currency){ ?>
+              <?php if($curent_currencys == $currency['code']){ ?>
+                <option value="<?php echo $currency['code']; ?>" selected="selected"><?php echo $currency['title']; ?></option>
+              <?php }else{ ?>
+                <option value="<?php echo $currency['code']; ?>"><?php echo $currency['title']; ?></option>
+              <?php } ?>
+            <?php } ?>
+          </select>
+          <?php } ?>
+
+          <?php if ($diagram) { ?>
+          <div class="price-diagram">
+            <div class="diagram-field">
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="40px">
+                <?php foreach ($diagram['circles'] as $circle) { ?>
+                <?php if ($circle['count']) { ?>
+                <circle cx="<?php echo $circle['x']; ?>" cy="<?php echo $circle['y']; ?>" r="1" fill="#037a9c" stroke="#037a9c" stroke-width="1" />
+                <?php } else { ?>
+                <circle cx="<?php echo $circle['x']; ?>" cy="<?php echo $circle['y']; ?>" r="1" fill="#BF0000" stroke="#BF0000" stroke-width="1" />
+                <?php } ?>
+                <?php } ?>
+                <path fill="#037a9c" stroke="#037a9c" d="<?php echo $diagram['path']; ?>" stroke-width="1" opacity="0.25" stroke-opacity="1" />
+              </svg>
+            </div>
+          </div>
+          <?php } ?>
         </div>
       </div>
  
-
       <?php foreach ($options as $option) { ?>
 
 			<?php if ($show_options_limit && $show_options_limit == $option['index'] - 1) { ?>
