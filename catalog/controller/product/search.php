@@ -30,6 +30,12 @@ class ControllerProductSearch extends Controller {
 		} else {
 			$description = '';
 		}
+		
+		if (isset($this->request->get['model'])) {
+			$model = $this->request->get['model'];
+		} else {
+			$model = '';
+		}
 
 		if (isset($this->request->get['category_id'])) {
 			$category_id = $this->request->get['category_id'];
@@ -94,6 +100,10 @@ class ControllerProductSearch extends Controller {
 
 		if (isset($this->request->get['description'])) {
 			$url .= '&description=' . $this->request->get['description'];
+		}
+		
+		if (isset($this->request->get['model'])) {
+			$url .= '&model=' . $this->request->get['model'];
 		}
 
 		if (isset($this->request->get['category_id'])) {
@@ -205,6 +215,7 @@ class ControllerProductSearch extends Controller {
 				'filter_name'         => $search,
 				'filter_tag'          => $tag,
 				'filter_description'  => $description,
+				'filter_model'        => $model,
 				'filter_category_id'  => $category_id,
 				'filter_sub_category' => $sub_category,
 				'sort'                => $sort,
@@ -312,6 +323,10 @@ class ControllerProductSearch extends Controller {
 			if (isset($this->request->get['description'])) {
 				$url .= '&description=' . $this->request->get['description'];
 			}
+			
+			if (isset($this->request->get['model'])) {
+				$url .= '&model=' . $this->request->get['model'];
+			}
 
 			if (isset($this->request->get['category_id'])) {
 				$url .= '&category_id=' . $this->request->get['category_id'];
@@ -382,6 +397,10 @@ class ControllerProductSearch extends Controller {
 			if (isset($this->request->get['description'])) {
 				$url .= '&description=' . $this->request->get['description'];
 			}
+			
+			if (isset($this->request->get['model'])) {
+				$url .= '&model=' . $this->request->get['model'];
+			}
 
 			if (isset($this->request->get['category_id'])) {
 				$url .= '&category_id=' . $this->request->get['category_id'];
@@ -426,6 +445,11 @@ class ControllerProductSearch extends Controller {
 			if (isset($this->request->get['description'])) {
 				$url .= '&description=' . $this->request->get['description'];
 			}
+			
+			if (isset($this->request->get['model'])) {
+				$url .= '&model=' . $this->request->get['model'];
+			}
+
 
 			if (isset($this->request->get['category_id'])) {
 				$url .= '&category_id=' . $this->request->get['category_id'];
@@ -490,6 +514,7 @@ class ControllerProductSearch extends Controller {
 					'category_id'   => $category_id,
 					'sub_category'  => $sub_category,
 					'description'   => $description,
+					'model'   		=> $model,
 					'products'      => $product_total,
 					'customer_id'   => $customer_id,
 					'ip'            => $ip
@@ -501,6 +526,7 @@ class ControllerProductSearch extends Controller {
 
 		$data['search'] = $search;
 		$data['description'] = $description;
+		$data['model'] = $model;
 		$data['category_id'] = $category_id;
 		$data['sub_category'] = $sub_category;
 

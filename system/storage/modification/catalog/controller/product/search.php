@@ -30,6 +30,15 @@ class ControllerProductSearch extends Controller {
 		} else {
 			$description = '';
 		}
+<<<<<<< HEAD
+=======
+		
+		if (isset($this->request->get['model'])) {
+			$model = $this->request->get['model'];
+		} else {
+			$model = '';
+		}
+>>>>>>> 3cfddb05727917068aaeaf96f19b82975034a815
 
 		if (isset($this->request->get['category_id'])) {
 			$category_id = $this->request->get['category_id'];
@@ -95,6 +104,13 @@ class ControllerProductSearch extends Controller {
 		if (isset($this->request->get['description'])) {
 			$url .= '&description=' . $this->request->get['description'];
 		}
+<<<<<<< HEAD
+=======
+		
+		if (isset($this->request->get['model'])) {
+			$url .= '&model=' . $this->request->get['model'];
+		}
+>>>>>>> 3cfddb05727917068aaeaf96f19b82975034a815
 
 		if (isset($this->request->get['category_id'])) {
 			$url .= '&category_id=' . $this->request->get['category_id'];
@@ -205,6 +221,10 @@ class ControllerProductSearch extends Controller {
 				'filter_name'         => $search,
 				'filter_tag'          => $tag,
 				'filter_description'  => $description,
+<<<<<<< HEAD
+=======
+				'filter_model'        => $model,
+>>>>>>> 3cfddb05727917068aaeaf96f19b82975034a815
 				'filter_category_id'  => $category_id,
 				'filter_sub_category' => $sub_category,
 				'sort'                => $sort,
@@ -312,6 +332,13 @@ class ControllerProductSearch extends Controller {
 			if (isset($this->request->get['description'])) {
 				$url .= '&description=' . $this->request->get['description'];
 			}
+<<<<<<< HEAD
+=======
+			
+			if (isset($this->request->get['model'])) {
+				$url .= '&model=' . $this->request->get['model'];
+			}
+>>>>>>> 3cfddb05727917068aaeaf96f19b82975034a815
 
 			if (isset($this->request->get['category_id'])) {
 				$url .= '&category_id=' . $this->request->get['category_id'];
@@ -382,6 +409,13 @@ class ControllerProductSearch extends Controller {
 			if (isset($this->request->get['description'])) {
 				$url .= '&description=' . $this->request->get['description'];
 			}
+<<<<<<< HEAD
+=======
+			
+			if (isset($this->request->get['model'])) {
+				$url .= '&model=' . $this->request->get['model'];
+			}
+>>>>>>> 3cfddb05727917068aaeaf96f19b82975034a815
 
 			if (isset($this->request->get['category_id'])) {
 				$url .= '&category_id=' . $this->request->get['category_id'];
@@ -426,6 +460,14 @@ class ControllerProductSearch extends Controller {
 			if (isset($this->request->get['description'])) {
 				$url .= '&description=' . $this->request->get['description'];
 			}
+<<<<<<< HEAD
+=======
+			
+			if (isset($this->request->get['model'])) {
+				$url .= '&model=' . $this->request->get['model'];
+			}
+
+>>>>>>> 3cfddb05727917068aaeaf96f19b82975034a815
 
 			if (isset($this->request->get['category_id'])) {
 				$url .= '&category_id=' . $this->request->get['category_id'];
@@ -490,6 +532,10 @@ class ControllerProductSearch extends Controller {
 					'category_id'   => $category_id,
 					'sub_category'  => $sub_category,
 					'description'   => $description,
+<<<<<<< HEAD
+=======
+					'model'   		=> $model,
+>>>>>>> 3cfddb05727917068aaeaf96f19b82975034a815
 					'products'      => $product_total,
 					'customer_id'   => $customer_id,
 					'ip'            => $ip
@@ -501,6 +547,10 @@ class ControllerProductSearch extends Controller {
 
 		$data['search'] = $search;
 		$data['description'] = $description;
+<<<<<<< HEAD
+=======
+		$data['model'] = $model;
+>>>>>>> 3cfddb05727917068aaeaf96f19b82975034a815
 		$data['category_id'] = $category_id;
 		$data['sub_category'] = $sub_category;
 

@@ -55,6 +55,16 @@
       <?php } ?>
       <?php echo $entry_description; ?></label>
       </p>
+      <p>
+      <label class="checkbox-inline">
+      <?php if ($model) { ?>
+      <input type="checkbox" name="model" value="1" id="model" checked="checked" />
+      <?php } else { ?>
+      <input type="checkbox" name="model" value="1" id="model" />
+      <?php } ?>
+      Искать по номеру объекта</label>
+      </p>
+      
       <input type="button" value="<?php echo $button_search; ?>" id="button-search" />
     
       <?php if($products) { ?>
@@ -184,6 +194,12 @@ $('#button-search').bind('click', function() {
 
 	if (filter_description) {
 		url += '&description=true';
+	}
+  
+  var filter_model = $('.catalog input[name=\'model\']:checked').prop('value');
+
+	if (filter_model) {
+		url += '&model=' + encodeURIComponent(search);
 	}
 
 	location = url;

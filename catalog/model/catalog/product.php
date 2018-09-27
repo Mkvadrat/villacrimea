@@ -107,9 +107,9 @@ class ModelCatalogProduct extends Model {
 		if (!empty($data['filter_name']) || !empty($data['filter_tag'])) {
 			$sql .= " AND (";
 
-			if (!empty($data['filter_name'])) {
+			if (!empty($data['filter_name']) && empty($data['filter_model'])) {
 				$implode = array();
-
+				
 				$words = explode(' ', trim(preg_replace('/\s+/', ' ', $data['filter_name'])));
 
 				foreach ($words as $word) {
@@ -123,7 +123,20 @@ class ModelCatalogProduct extends Model {
 				if (!empty($data['filter_description'])) {
 					$sql .= " OR pd.description LIKE '%" . $this->db->escape($data['filter_name']) . "%'";
 				}
+			}else{
+				$implode = array();
+				
+				$words = explode(' ', trim(preg_replace('/\s+/', ' ', $data['filter_model'])));
+
+				foreach ($words as $word) {
+					$implode[] = "p.model = '" . $this->db->escape($word) . "'";
+				}
+
+				if ($implode) {
+					$sql .= " " . implode(" AND ", $implode) . "";
+				}
 			}
+			
 
 			if (!empty($data['filter_name']) && !empty($data['filter_tag'])) {
 				$sql .= " OR ";
@@ -574,6 +587,7 @@ class ModelCatalogProduct extends Model {
             $data[] = array(
                 'product_id'       => $result['product_id'],
 				'name'             => $result['name'],
+				'model'            => $result['model'],
 				'location'         => $result['location'],
 				'image'            => $result['image']
             );

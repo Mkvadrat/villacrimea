@@ -4694,6 +4694,7 @@ section .blog_in_page .blog_inner .right_side .agent a {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-end;
+    width: 100%;
 }
 .panel>.list-group {
     width: 100%;
@@ -4925,8 +4926,6 @@ section .category_page .object_page .actual_object {
 section .category_page .actual_object .title {
     padding: 0;
 }
-
-
 section .category_page .actual_object .left_side .object_description.spec_object_description {
     display: flex;
     flex-direction: row;
@@ -4974,4 +4973,7 @@ section .category_page .actual_object .details .title span {
 section .category_page .actual_object .details:nth-of-type(4) {
     margin: 0;
     border: none;
+}
+.ballon .close-button{
+    display: none !important;
 }

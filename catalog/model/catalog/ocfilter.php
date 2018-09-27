@@ -530,7 +530,7 @@ class ModelCatalogOCFilter extends Model {
 	}
 	
 	public function getCurrency(){
-		$query = $this->db->query("SELECT DISTINCT c.title, c.code FROM " . DB_PREFIX . "currency as c JOIN " . DB_PREFIX . "product as p ON (c.currency_id = p.currency_id) AND c.status = '1'");
+		$query = $this->db->query("SELECT DISTINCT c.title, c.code, c.symbol_right FROM " . DB_PREFIX . "currency as c JOIN " . DB_PREFIX . "product as p ON (c.currency_id = p.currency_id) AND c.status = '1'");
 
 		return $query->rows;
 	}
