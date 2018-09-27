@@ -96,7 +96,7 @@
             <?php echo $powered; ?>
         </footer>
     </div>
-    <nav id="menu" style="display:none">
+    <nav id="menu">
     <ul>
       <?php foreach ($categories as $category) { ?>
         <?php if ($category['children']) { ?>

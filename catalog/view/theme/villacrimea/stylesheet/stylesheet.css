@@ -779,7 +779,11 @@ section .promo_block .text .categories a {
     font-size: 14px;
     font-weight: bolder;
 }
-
+section .promo_block .categories {
+    justify-content: flex-end;
+    border: none;
+    padding: 0;
+}
 section .promo_block>img {
     position: absolute;
     right: 0;
@@ -833,7 +837,9 @@ section .cases {
     border-top: 1px solid #dbdbdb;
     border-bottom: 1px solid #dbdbdb;
 }
-
+section .promo_block + .cases {
+    border-top: none;
+}
 section .cases .title {
     font-family: "GothamPro_Med";
     font-size: 30px;
@@ -1339,11 +1345,13 @@ div[id^='call_me_back_agent_'],
     font-family: "Ubuntu";
 }
 
+section .category_page .categories ~ .panel {
+    margin-top: 13px;
+}
 section .category_page .title {
     margin: 0;
     padding-top: 40px;
     line-height: 36px;
-    border-top: 1px solid #dbdbdb;
 }
 
 p.center {
@@ -1744,7 +1752,92 @@ section .category_page .catalog .list_catalog .catalog_item .object_id {
     right: 15px;
     text-shadow: 1px 0px 0px #000;
 }
-
+section .category_page .cards {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+section .category_page .cards .card {
+    width: 32.66%;
+    margin-right: 1%;
+    border: 1px solid #dbdbdb;
+    margin-bottom: 1%;
+    padding: 0 10px 10px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+section .category_page .cards .card:nth-of-type(3n) {
+    margin-right: 0;
+}
+section .category_page .cards .card .img {
+    display: block;
+    padding-bottom: 65%;
+    background-size: 100.5% auto;
+    background-position: center;
+    margin-left: -10px;
+    margin-right: -10px;
+    position: relative;
+}
+section .category_page .cards .card .img::before {
+    content: ' ';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: none;
+    transition: all 1s;
+}
+section .category_page .cards .card .img:hover::before {
+    background: rgba(192, 157, 116, .3);
+}
+section .category_page .cards .card .name {
+    font-family: "Ubuntu";
+    font-weight: bold;
+    line-height: normal;
+    padding: 10px 0;
+    display: inline-block;
+    text-decoration: none;
+}
+section .category_page .cards .card .name:hover {
+    text-decoration: underline;
+}
+section .category_page .cards .card .price_rub {
+    font-family: "GothamPro_Med";
+    font-size: 24px;
+    padding-top: 10px;
+}
+section .category_page .cards .card .price_usd {
+    font-family: "GothamPro_Med";
+    font-size: 16px;
+    color: #c09d74;
+}
+section .category_page .cards .card .tags {
+    line-height: normal;
+    padding-bottom: 10px;
+}
+section .category_page .cards .card .prices {
+    border-top: 1px solid #dbdbdb;
+    margin-top: auto;
+    padding-top: 10px;
+}
+section .category_page .cards .card .price_m,
+section .category_page .cards .card .tags p {
+    color: #666666;
+    font-size: 16px;
+}
+section .category_page .cards .card .price_m span,
+section .category_page .cards .card .tags span {
+    color: #000;
+    font-family: "GothamPro_Med";
+}
 section .paggination {
     margin: 30px 0;
 }
@@ -1944,7 +2037,6 @@ section .case_with .watch_cases {
 
 section .breadcrumbs {
     padding: 25px 0;
-    border-top: 1px solid #dbdbdb;
     border-bottom: 1px solid #dbdbdb;
 }
 
@@ -1975,6 +2067,7 @@ section .object_title {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    width: 100%;
 }
 
 section .object_title .backward {
@@ -2748,7 +2841,7 @@ section .cases_page .agent_cases .agent_item .case .title {
 }
 
 section .cases_page .agent_cases .agent_item .case a {
-    margin-top: auto;
+    margin-top: 20px;
     padding: 14px 20px;
     border-radius: 7px;
 }
@@ -2761,6 +2854,7 @@ section .cases_page .agent_cases .agent_item .realtor {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 15px 0;
 }
 
 section .cases_page .agent_cases .agent_item .realtor .img {
@@ -2790,7 +2884,6 @@ section .cases_page .agent_cases .agent_item .description .img {
 
 section .case_in_page .object_title {
     padding: 20px 200px;
-    border-top: 1px solid #dbdbdb;
     border-bottom: 1px solid #dbdbdb;
     margin: 0;
 }
@@ -3023,6 +3116,10 @@ section .card_label span {
     margin: 0 2px 2px 0;
     width: auto;
     display: flex;
+    z-index: 99;
+}
+section .actual_object .card_label span {
+    margin: 1px 2px 1px 0;
 }
 section .card_label span img {
     height: 100%;
@@ -4674,13 +4771,18 @@ section .object_page .actual_object .mobile,
     display: none;
 }
 .categories li.dropdown::after {
-    content: '▼';
+    content: ' ';
     display: inline-block;
     right: 0;
     top: 0;
     font-size: 12px;
     line-height: 22px;
     vertical-align: baseline;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #000;
 }
 .categories li.dropdown::before {
     content: ' ';
@@ -4701,7 +4803,7 @@ section .object_page .actual_object .mobile,
     padding: 0;
     position: absolute;
     z-index: 9;
-    min-width: 100%;
+    min-width: 150%;
     max-width: 300px;
     background: #f4eddf;
     top: 40px;
@@ -4816,4 +4918,60 @@ section .object_page .actual_object .mobile,
     transform: rotate(135deg);
     left: auto;
     right: 10px;
+}
+section .category_page .object_page .actual_object {
+    flex-wrap: wrap;
+}
+section .category_page .actual_object .title {
+    padding: 0;
+}
+
+
+section .category_page .actual_object .left_side .object_description.spec_object_description {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-bottom: 20px;
+}
+section .category_page .actual_object .left_side .object_description .info {
+    width: 32%;
+    margin-right: 2%;
+    font-size: 24px;
+}
+section .category_page .actual_object .left_side .object_description .info:last-child {
+    margin: 0;
+}
+section .category_page .actual_object .left_side .object_description .info span {
+    font-family: "GothamPro";
+    display: block;
+    font-size: 16px;
+    color: #666666;
+    padding: 5px 0 0;
+}
+section .category_page .actual_object .left_side .object_map {
+    display: flex;
+    flex-direction: column;
+}
+section .category_page .actual_object .card_label {
+    border-top: 1px solid #dbdbdb;
+    margin-bottom: 20px;
+}
+section .category_page .actual_object .details .price span {
+    font-size: 24px;
+    display: block;
+}
+section .category_page .actual_object .details .price {
+    margin-bottom: 20px;
+}
+section .category_page .actual_object .details .title span {
+    font-family: "Ubuntu";
+    display: block;
+    font-size: 18px;
+    line-height: 18px;
+}
+section .category_page .actual_object .details:nth-of-type(4) {
+    margin: 0;
+    border: none;
 }
