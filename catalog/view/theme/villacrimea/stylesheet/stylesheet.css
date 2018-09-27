@@ -4818,3 +4818,7 @@ section .object_page .actual_object .mobile,
     left: auto;
     right: 10px;
 }
+
+.ballon .close-button{
+    display: none !important;
+}

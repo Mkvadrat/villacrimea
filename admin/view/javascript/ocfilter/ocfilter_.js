@@ -1,17 +1,27 @@
 var xy = 0;
 
-$(document).ready(function() {
-	$("input[type='checkbox'][name='product_category[]']").on('change', function() {
-		if(this.checked) {
-			xy = $(this).val();
-			//console.log(xy);
-		}
-	});
+$(document).on('change', "input[type='checkbox'][name='product_category[]']", function() {
+	if(this.checked) {
+		xy = $(this).val();
+		//console.log(xy);
+	}
 });
 
 function CallingChecker() {
 	return xy;
 }
+
+/*$(window).load(function(event){
+    event.preventDefault();
+    var searchIDs = $("input[type='checkbox'][name='product_category[]']").map(function(){
+		if(this.checked) {
+		  return $(this).val();
+		}
+    }).get(); 
+    $(searchIDs).each(function(item, file) {
+	  console.log(file);
+	});
+});*/
 
 var ocfilter = {
 	/**
