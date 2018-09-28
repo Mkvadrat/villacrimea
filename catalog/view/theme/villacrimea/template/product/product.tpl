@@ -145,10 +145,10 @@
                         var myMap = new ymaps.Map('map-products', {
                             <?php foreach($maps as $product){ ?>
                             <?php if($product_id == $product['product_id']){ ?>
-                                center: [<?php echo $product['lat_lng']; ?>],
+                            center: [<?php echo $product['lat_lng']; ?>],
                             <?php } ?>
                             <?php } ?>
-                            zoom: 9,
+                            zoom: 17,
                             behaviors: ['default', 'scrollZoom']
                         }, {
                             searchControlProvider: 'yandex#search'
@@ -254,9 +254,9 @@
                         /**
                         * Спозиционируем карту так, чтобы на ней были видны все объекты.
                         */
-                        myMap.setBounds(clusterer.getBounds(), {
-                            checkZoomRange: true
-                        });
+                        /*myMap.setBounds(clusterer.getBounds(), {
+                            checkZoomRange: false
+                        });*/
                       });
                     </script>
                 <?php } ?>

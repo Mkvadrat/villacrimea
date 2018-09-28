@@ -8,26 +8,14 @@ $(window).load(function(){
 $(document).on('change', "input[type='checkbox'][name='product_category[]']", function() {
 	if(this.checked) {
 		checked_id = $(this).val();
+	}else{
+		checked_id = $("input[name=\'product_category[]\']:checked:last").val();
 	}
 });
 
 function getCheck(){
-	console.log(checked_id);
 	return checked_id;
-
 }
-
-/*$(window).load(function(event){
-    event.preventDefault();
-    var searchIDs = $("input[type='checkbox'][name='product_category[]']").map(function(){
-		if(this.checked) {
-		  return $(this).val();
-		}
-    }).get(); 
-    $(searchIDs).each(function(item, file) {
-	  console.log(file);
-	});
-});*/
 
 var ocfilter = {
 	/**

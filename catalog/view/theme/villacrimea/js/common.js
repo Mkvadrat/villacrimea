@@ -318,10 +318,10 @@ $(document).ready(function () {
                     'opacity': '1',
                 }, 50)
             });
-            console.log(iterator);
+            //console.log(iterator);
         });
         $('.custom_product_photo_slider .next_slide').on('click', function() {
-            console.log(iterator);
+            //console.log(iterator);
             var holder = masser[iterator].attr('href');
             var masserStart = masser[0].attr('href');
             masser[iterator].attr('href',masserStart).children('img').animate({
@@ -339,12 +339,12 @@ $(document).ready(function () {
                 }, 50)
             });
             if(iterator+1 == masser.length) iterator=1; else iterator++;
-            console.log(iterator);
+            //console.log(iterator);
         });
         if(masser.length == 1) {
             $('.custom_product_photo_slider button').remove();
         }
-        console.log(masser.length);
+        //console.log(masser.length);
     }
     CustomSlider();
 });
