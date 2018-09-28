@@ -2,33 +2,34 @@ $(document).ready(function () {
     $('.seling_carousel').owlCarousel({
         items: 1,
         pullDrag: true,
-        loop : true,
+        loop: true,
         nav: true,
         navText: ['<span></span>', '<span></span>']
     });
     $('.cases_carousel').owlCarousel({
         items: 1,
         dots: false,
-        loop : true,
+        loop: true,
         pullDrag: true,
         nav: true,
         navText: ['<span></span>', '<span></span>']
     });
     $('.same_obj_slider').owlCarousel({
-        responsive : {
-            0 : {
+        responsive: {
+            0: {
                 items: 1
             },
-            501 : {
+            501: {
                 items: 2
             },
-            1025 : {
+            1025: {
                 items: 3
             }
         },
         margin: 20,
-/*         loop : true,
- */        dots: false,
+        /*         loop : true,
+         */
+        dots: false,
         pullDrag: true,
         nav: true,
         navText: ['<span></span>', '<span></span>']
@@ -37,7 +38,7 @@ $(document).ready(function () {
         items: 1,
         dots: true,
         nav: false,
-        loop : true,
+        loop: true,
     });
 
     $('.cases_carousel .case p').dotdotdot({
@@ -150,9 +151,9 @@ $(document).ready(function () {
     });
     $("#menu").mmenu({
         "extensions": [
-           "pagedim-black"
+            "pagedim-black"
         ]
-     });
+    });
     $('.callback').fancybox({
         modal: true,
     });
@@ -220,128 +221,144 @@ $(document).ready(function () {
     $(".object_page .right_side .realtor").stick_in_parent();
     $(".released_rel").stick_in_parent();
     $(".agent_with_cards .agent").stick_in_parent();
-    $(".contacts_page .call_me_back_inner").stick_in_parent();
+    if ($(window).outerWidth() > 1023) {
+        $(".contacts_page .call_me_back_inner").stick_in_parent();
+    }
+    function NonOverflow () {
+        $('.dropdown ul').each(function () {
+            var otklon = $(this).offset().left + $(this).outerWidth();
+            if (otklon > $(window).outerWidth()) {
+                $(this).css('left', -(otklon - $(window).outerWidth()) - 30);
+            }
+        });
+    };
+    NonOverflow ();
     $(".text_page .call_me_back_inner").stick_in_parent();
-    $(function() {
-        $(window).scroll(function() {
-            if($(this).scrollTop() >= 250) {
+    $(function () {
+        $(window).scroll(function () {
+            if ($(this).scrollTop() >= 250) {
                 $('.toTop').fadeIn();
             } else {
                 $('.toTop').fadeOut();
             }
         });
-        $('.toTop').click(function() {
-            $('body,html').animate({scrollTop:0},800);
+        $('.toTop').click(function () {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
         });
     });
-    
+
     // Highlight any found errors
-	$('.text-danger').each(function() {
-		var element = $(this).parent().parent();
+    $('.text-danger').each(function () {
+        var element = $(this).parent().parent();
 
-		if (element.hasClass('form-group')) {
-			element.addClass('has-error');
-		}
-	});
+        if (element.hasClass('form-group')) {
+            element.addClass('has-error');
+        }
+    });
 
-	/* Search */
-	$('#search input[name=\'search\']').parent().find('button').on('click', function() {
-		var url = $('base').attr('href') + 'index.php?route=product/search';
+    /* Search */
+    $('#search input[name=\'search\']').parent().find('button').on('click', function () {
+        var url = $('base').attr('href') + 'index.php?route=product/search';
 
-		var value = $('header #search input[name=\'search\']').val();
+        var value = $('header #search input[name=\'search\']').val();
 
-		if (value) {
-			url += '&search=' + encodeURIComponent(value);
-		}
+        if (value) {
+            url += '&search=' + encodeURIComponent(value);
+        }
 
-		location = url;
-	});
+        location = url;
+    });
 
-	$('#search input[name=\'search\']').on('keydown', function(e) {
-		if (e.keyCode == 13) {
-			$('header #search input[name=\'search\']').parent().find('button').trigger('click');
-		}
-	});
-    
-    jQuery('.back').click(function(){
-		parent.history.back();
-		return false;
-	});
-    
+    $('#search input[name=\'search\']').on('keydown', function (e) {
+        if (e.keyCode == 13) {
+            $('header #search input[name=\'search\']').parent().find('button').trigger('click');
+        }
+    });
+
+    jQuery('.back').click(function () {
+        parent.history.back();
+        return false;
+    });
+
     $('#print').on('click', function () {
         $("#print01, #print1, #print2, #print3, #print4, #print5, #print6, #print7, #print8, #print9, #print10").printThis({
-            debug: false,               // show the iframe for debugging
-            importCSS: true,            // import page CSS
-            importStyle: true,         // import style tags
-            printContainer: true,       // grab outer container as well as the contents of the selector
-            loadCSS: "catalog/view/theme/villacrimea/stylesheet/stylesheet.css",  // path to additional css file - use an array [] for multiple
-            pageTitle: "",              // add title to print page
-            removeInline: true,        // remove all inline styles from print elements
-            printDelay: 333,            // variable print delay
-            header: null,               // prefix to html
-            footer: null,               // postfix to html
-            base: false ,               // preserve the BASE tag, or accept a string for the URL
-            formValues: true,           // preserve input/form values
-            canvas: true,              // copy canvas elements (experimental)
-            doctypeString: "...",       // enter a different doctype for older markup
-            removeScripts: false,       // remove script tags from print content
-            copyTagClasses: false       // copy classes from the html & body tag
+            debug: false, // show the iframe for debugging
+            importCSS: true, // import page CSS
+            importStyle: true, // import style tags
+            printContainer: true, // grab outer container as well as the contents of the selector
+            loadCSS: "catalog/view/theme/villacrimea/stylesheet/stylesheet.css", // path to additional css file - use an array [] for multiple
+            pageTitle: "", // add title to print page
+            removeInline: true, // remove all inline styles from print elements
+            printDelay: 333, // variable print delay
+            header: null, // prefix to html
+            footer: null, // postfix to html
+            base: false, // preserve the BASE tag, or accept a string for the URL
+            formValues: true, // preserve input/form values
+            canvas: true, // copy canvas elements (experimental)
+            doctypeString: "...", // enter a different doctype for older markup
+            removeScripts: false, // remove script tags from print content
+            copyTagClasses: false // copy classes from the html & body tag
         });
     });
 
-    $('section .object_title .backward').css('left', -($('body').outerWidth() - $('section .object_title').outerWidth())/2); // прижать кнопку "к списку"
-    $(window).on('resize', function() {
-        $('section .object_title .backward').css('left', -($('body').outerWidth() - $('section .object_title').outerWidth())/2); // прижать кнопку "к списку"
-    });    
+    $('section .object_title .backward').css('left', -($('body').outerWidth() - $('section .object_title').outerWidth()) / 2); // прижать кнопку "к списку"
+    $(window).on('resize', function () {
+        $('section .object_title .backward').css('left', -($('body').outerWidth() - $('section .object_title').outerWidth()) / 2); // прижать кнопку "к списку"
+        NonOverflow ();
+    });
 
     function CustomSlider() {
         var masser = [];
-        $('section .object_page .object_photo a').each(function() {
+        $('section .object_page .object_photo a').each(function () {
             masser.push($(this));
         });
         var iterator = 1;
-        $('.custom_product_photo_slider .prev_slide').on('click', function() {
-            if(iterator-1 == 0) iterator = masser.length - 1; else iterator--;
+        $('.custom_product_photo_slider .prev_slide').on('click', function () {
+            if (iterator - 1 == 0) iterator = masser.length - 1;
+            else iterator--;
             var holder = masser[iterator].attr('href');
             var masserStart = masser[0].attr('href');
-            masser[iterator].attr('href',masserStart).children('img').animate({
+            masser[iterator].attr('href', masserStart).children('img').animate({
                 'opacity': '0.1',
             }, 50, function () {
-                $(this).attr('src',masserStart).animate({
+                $(this).attr('src', masserStart).animate({
                     'opacity': '1',
                 }, 50)
             });
-            masser[0].attr('href',holder).children('img').animate({
+            masser[0].attr('href', holder).children('img').animate({
                 'opacity': '0.1',
             }, 50, function () {
-                $(this).attr('src',holder).animate({
+                $(this).attr('src', holder).animate({
                     'opacity': '1',
                 }, 50)
             });
             console.log(iterator);
         });
-        $('.custom_product_photo_slider .next_slide').on('click', function() {
+        $('.custom_product_photo_slider .next_slide').on('click', function () {
             console.log(iterator);
             var holder = masser[iterator].attr('href');
             var masserStart = masser[0].attr('href');
-            masser[iterator].attr('href',masserStart).children('img').animate({
+            masser[iterator].attr('href', masserStart).children('img').animate({
                 'opacity': '0.1',
             }, 50, function () {
-                $(this).attr('src',masserStart).animate({
+                $(this).attr('src', masserStart).animate({
                     'opacity': '1',
                 }, 50)
             });
-            masser[0].attr('href',holder).children('img').animate({
+            masser[0].attr('href', holder).children('img').animate({
                 'opacity': '0.1',
             }, 50, function () {
-                $(this).attr('src',holder).animate({
+                $(this).attr('src', holder).animate({
                     'opacity': '1',
                 }, 50)
             });
-            if(iterator+1 == masser.length) iterator=1; else iterator++;
+            if (iterator + 1 == masser.length) iterator = 1;
+            else iterator++;
             console.log(iterator);
         });
-        if(masser.length == 1) {
+        if (masser.length == 1) {
             $('.custom_product_photo_slider button').remove();
         }
         console.log(masser.length);
@@ -350,18 +367,18 @@ $(document).ready(function () {
 });
 
 //Main page forms
-function sendForm(){
+function sendForm() {
     $.ajax({
         url: 'index.php?route=common/footer/sendForm',
         type: 'post',
-        data: {  
-            'name' : $('#name').val(),
-            'tel' : $('#phone').val(),
-            'email' : $('#email').val(),
-            'message' : $('#message').val(),
+        data: {
+            'name': $('#name').val(),
+            'tel': $('#phone').val(),
+            'email': $('#email').val(),
+            'message': $('#message').val(),
         },
         dataType: 'json',
-        success: function(data) {
+        success: function (data) {
             swal({
                 title: data.message,
                 text: "",
@@ -375,18 +392,18 @@ function sendForm(){
 }
 
 //Заказать подбор
-function orderSelection(){
+function orderSelection() {
     $.ajax({
         url: 'index.php?route=common/footer/sendForm',
         type: 'post',
-        data: {  
-            'name' : $('#name_for_order').val(),
-            'tel' : $('#phone_for_order').val(),
-            'email' : $('#email_for_order').val(),
-            'message' : $('#message_for_order').val(),
+        data: {
+            'name': $('#name_for_order').val(),
+            'tel': $('#phone_for_order').val(),
+            'email': $('#email_for_order').val(),
+            'message': $('#message_for_order').val(),
         },
         dataType: 'json',
-        success: function(data) {
+        success: function (data) {
             swal({
                 title: data.message,
                 text: "",
@@ -400,19 +417,19 @@ function orderSelection(){
 }
 
 //Product and cases page forms
-function sendFormAgent(){
+function sendFormAgent() {
     $.ajax({
         url: 'index.php?route=product/product/sendFormAgent',
         type: 'post',
-        data: {  
-            'name' : $('#name_agent').val(),
-            'tel' : $('#phone_agent').val(),
-            'email' : $('#email_agent').val(),
-            'email_agent' : $('#hidden_email').val(),
-            'message' : $('#message_agent').val(),
+        data: {
+            'name': $('#name_agent').val(),
+            'tel': $('#phone_agent').val(),
+            'email': $('#email_agent').val(),
+            'email_agent': $('#hidden_email').val(),
+            'message': $('#message_agent').val(),
         },
         dataType: 'json',
-        success: function(data) {
+        success: function (data) {
             swal({
                 title: data.message,
                 text: "",
@@ -426,18 +443,18 @@ function sendFormAgent(){
 }
 
 //Contacts page forms
-function sendContactsForm(){
+function sendContactsForm() {
     $.ajax({
         url: 'index.php?route=information/contact/sendContactsForm',
         type: 'post',
-        data: {  
-            'name' : $('#name').val(),
-            'tel' : $('#phone').val(),
-            'email' : $('#email').val(),
-            'message' : $('#message').val(),
+        data: {
+            'name': $('#name').val(),
+            'tel': $('#phone').val(),
+            'email': $('#email').val(),
+            'message': $('#message').val(),
         },
         dataType: 'json',
-        success: function(data) {
+        success: function (data) {
             swal({
                 title: data.message,
                 text: "",

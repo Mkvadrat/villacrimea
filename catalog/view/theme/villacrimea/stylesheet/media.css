@@ -37,6 +37,9 @@
     }
 }
 @media screen and (max-width:1200px) {
+    section .contacts_page .contacts_inner .realtors .realtor .casual_button {
+        padding: 10px 10px;
+    }
     header .header_right_side .telephone {
         font-size: 24px;
     }
@@ -92,6 +95,7 @@
         width: 160px;
         padding-bottom: 160px;
     }
+    section .about_us_page .object_title,
     section .object_title {
         padding: 0 100px;
     }
@@ -121,9 +125,36 @@
     header .header_left_side div a {
         display: none;
     }
+    section .contacts_page .contacts_inner .right_side,
+    section .contacts_page .contacts_inner .left_side,
     section .object_page .actual_object .left_side {
         width: 100%;
         padding: 0;
+    }
+    section .contacts_page .contacts_inner .contact_details,
+    section .contacts_page .contacts_inner .call_me_back_inner {
+        width: 50%;
+    }
+    section .contacts_page .contacts_inner .contact_details {
+        padding-right: 20px;
+    }
+    section .contacts_page .contacts_inner .realtors .realtor {
+        width: 49%;
+        margin-right: 0;
+    }
+    section .contacts_page .contacts_inner .realtors .realtor:nth-child(2n) {
+        margin-right: 2%;
+    }
+    section .contacts_page .contacts_inner .realtors .img {
+        width: 100%;
+        padding-bottom: 69.2%;
+    }
+    section .contacts_page .contacts_inner .realtors .realtor .realtor_objects, 
+    section .contacts_page .contacts_inner .realtors .realtor .cases {
+        padding-left: 10px;
+    }
+    section .contacts_page .contacts_inner .right_side {
+        flex-direction: row;
     }
     section .object_page .actual_object .left_side .mobile {
         display: block;
@@ -205,9 +236,16 @@
     section .about .buy_sell a {
         font-size: 18px;
     }
+    section .about_us_page .about_inner .right_side,
+    section .about_us_page .about_inner .left_side,
     section .seotext .text,
     section .about .text {
         width: 100%;
+    }
+    section .about_us_page .about_inner .right_side,
+    section .about_us_page .about_inner .left_side {
+        padding-left: 0;
+        margin-bottom: 30px;
     }
     section .agent_with_cards .agent .is_agent .img {
         width: 145px;
@@ -243,6 +281,7 @@
     .panel>.list-group .list-group-item[id^='option'] {
         width: 33%;
     }
+    section .about_us_page .about_inner,
     section .cases_page .realtor_category,
     section .category_page .realtor_category {
         flex-wrap: wrap;
@@ -411,9 +450,11 @@
         float: left;
         margin: 0 0 2%;
     }
+    section .about_us_page .object_title,
     section .object_title {
         padding: 0 50px;
     }
+    section .about_us_page .object_title .title,
     section .object_title .title {
         font-size: 24px;
     }
@@ -448,6 +489,25 @@
     }
 }
 @media screen and (max-width:650px) {
+    section .contacts_page .contacts_inner .realtors .realtor:nth-child(n) {
+        width: 100%;
+        margin-right: 0;
+    }
+    section .contacts_page .contacts_inner .realtors .realtor .img {
+        padding: 0;
+    }
+    section .contacts_page .contacts_inner .realtors .realtor .realtor_objects, section .contacts_page .contacts_inner .realtors .realtor .cases {
+        justify-content: center;
+    }
+    section .contacts_page .contacts_inner .contact_details, section .contacts_page .contacts_inner .call_me_back_inner {
+        width: 100%;
+    }
+        section .contacts_page .contacts_inner .right_side {
+        flex-direction: column;
+    }
+    section .contacts_page .contacts_inner .realtors {
+        margin-top: 30px;
+    }
     section .object_page .actual_object .left_side .object_photo a:nth-child(n) {
         width: 22.7%;
         margin-left: 3%;
@@ -537,11 +597,27 @@
         order: 2;
         width: 100%;
     }
+    section .about_us_page .about_inner .left_side .two_rows_text div,
     section .category_page .realtor_category .realtor_item {
         width: 100%;
     }
+    section .about_us_page .about_inner .left_side .two_rows_text {
+        flex-wrap: wrap;
+    }
+
 }
 @media screen and (max-width:500px) {
+    section .contacts_page .contacts_inner .map {
+        padding-bottom: 80%;
+    }
+    section .about_us_page .about_inner .left_side ul li,
+    section .about_us_page .about_inner .left_side ol li {
+        padding-left: 30px;
+        margin-left: 10px;
+    }
+    section .about_us_page .about_inner .left_side .bordered {
+        padding: 20px 30px;
+    }
     #map-products-outer {
         padding-bottom: 100%;
     }

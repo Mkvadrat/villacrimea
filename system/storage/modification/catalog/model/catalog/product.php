@@ -107,15 +107,9 @@ class ModelCatalogProduct extends Model {
 		if (!empty($data['filter_name']) || !empty($data['filter_tag'])) {
 			$sql .= " AND (";
 
-<<<<<<< HEAD
-			if (!empty($data['filter_name'])) {
-				$implode = array();
-
-=======
 			if (!empty($data['filter_name']) && empty($data['filter_model'])) {
 				$implode = array();
 				
->>>>>>> 3cfddb05727917068aaeaf96f19b82975034a815
 				$words = explode(' ', trim(preg_replace('/\s+/', ' ', $data['filter_name'])));
 
 				foreach ($words as $word) {
@@ -129,9 +123,6 @@ class ModelCatalogProduct extends Model {
 				if (!empty($data['filter_description'])) {
 					$sql .= " OR pd.description LIKE '%" . $this->db->escape($data['filter_name']) . "%'";
 				}
-<<<<<<< HEAD
-			}
-=======
 			}else{
 				$implode = array();
 				
@@ -146,7 +137,6 @@ class ModelCatalogProduct extends Model {
 				}
 			}
 			
->>>>>>> 3cfddb05727917068aaeaf96f19b82975034a815
 
 			if (!empty($data['filter_name']) && !empty($data['filter_tag'])) {
 				$sql .= " OR ";
@@ -625,10 +615,7 @@ class ModelCatalogProduct extends Model {
             $data[] = array(
                 'product_id'       => $result['product_id'],
 				'name'             => $result['name'],
-<<<<<<< HEAD
-=======
 				'model'            => $result['model'],
->>>>>>> 3cfddb05727917068aaeaf96f19b82975034a815
 				'location'         => $result['location'],
 				'image'            => $result['image']
             );

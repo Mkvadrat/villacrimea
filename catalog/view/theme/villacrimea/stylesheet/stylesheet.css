@@ -710,7 +710,7 @@ section .agent_with_cards .card .tags {
     font-family: "Ubuntu";
     line-height: normal;
     padding-bottom: 10px;
-    border-bottom: 1px solid #dbdbdb;
+    /* border-bottom: 1px solid #dbdbdb; */
     color: #393939;
     height: 100%;
 }
@@ -719,6 +719,8 @@ section .agent_with_cards .card .price_rub {
     font-family: "GothamPro_Med";
     font-size: 24px;
     padding-top: 10px;
+    border-top: 1px solid #dbdbdb;
+    margin-top: auto;
 }
 
 section .agent_with_cards .card .price_usd {
@@ -4579,30 +4581,35 @@ section .blog_in_page .blog_inner .right_side .agent a {
 }
 .ballon {
     padding: 5px;
-    width: 240px;
-    height: 79px;
+    width: auto;
+    height: auto;
     float: left;
     text-align: left;
-    color: #fff;
+    color: #000;
     position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
 }
 .ballon img.ll {
     float: left;
     width: 60px;
     height: 60px;
-    margin: 0 5px 5px 0;
+    /* margin: 0 5px 5px 0; */
     border-radius: 60px;
 }
 .ballon a {
+    margin-left: 10px;
     font-size: 10px;
     font-weight: bold;
-    color: #FFF;
+    color: #000;
     text-decoration: none;
 }
 .ballon span{
     font-size: 14px;
     font-weight: bold;
-    color: #FFF;
+    color: #000;
 }
 .ballon .close-button {
     position: absolute;
@@ -4940,7 +4947,7 @@ section .category_page .actual_object .left_side .object_description .info {
     font-size: 24px;
 }
 section .category_page .actual_object .left_side .object_description .info:last-child {
-    margin: 0;
+    margin-right: 0;
 }
 section .category_page .actual_object .left_side .object_description .info span {
     font-family: "GothamPro";
