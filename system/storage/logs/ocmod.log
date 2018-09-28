@@ -21947,7 +21947,11 @@ LINE: 10
 CODE: }
 LINE: 62
 ----------------------------------------------------------------
+<<<<<<< HEAD
+2018-09-26 14:58:01 - MOD: Modification Default
+=======
 2018-09-26 11:06:55 - MOD: Modification Default
+>>>>>>> 3cfddb05727917068aaeaf96f19b82975034a815
 
 FILE: system/engine/action.php
 REGEX: ~(require|include)(_once)?\(([^)]+)~
@@ -22068,8 +22072,13 @@ LINE: 88
 
 FILE: catalog/model/catalog/product.php
 CODE: if (!empty($data['filter_manufacturer_id'])) {
+<<<<<<< HEAD
+LINE: 172
+LINE: 562
+=======
 LINE: 185
 LINE: 575
+>>>>>>> 3cfddb05727917068aaeaf96f19b82975034a815
 
 FILE: catalog/controller/product/category.php
 CODE: $data['breadcrumbs'] = array();
@@ -22120,6 +22129,18 @@ LINE: 230
 FILE: catalog/controller/product/product.php
 CODE: $data['popup'] = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_popup_width'), $this->config->get($this->config->get('config_theme') . '_image_popup_height'));
 LINE: 310
+<<<<<<< HEAD
+LINE: 966
+CODE: $data['thumb'] = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_thumb_width'), $this->config->get($this->config->get('config_theme') . '_image_thumb_height'));
+LINE: 316
+LINE: 972
+CODE: 'popup' => $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_popup_width'), $this->config->get($this->config->get('config_theme') . '_image_popup_height'))
+LINE: 328
+LINE: 984
+CODE: 'thumb' => $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_additional_width'), $this->config->get($this->config->get('config_theme') . '_image_additional_height'))
+LINE: 329
+LINE: 985
+=======
 LINE: 961
 CODE: $data['thumb'] = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_thumb_width'), $this->config->get($this->config->get('config_theme') . '_image_thumb_height'));
 LINE: 316
@@ -22130,6 +22151,7 @@ LINE: 979
 CODE: 'thumb' => $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_additional_width'), $this->config->get($this->config->get('config_theme') . '_image_additional_height'))
 LINE: 329
 LINE: 980
+>>>>>>> 3cfddb05727917068aaeaf96f19b82975034a815
 CODE: $image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_related_width'), $this->config->get($this->config->get('config_theme') . '_image_related_height'));
 LINE: 444
 CODE: $image = $this->model_tool_image->resize($article_info['image'], 387, 239);
@@ -22137,7 +22159,11 @@ LINE: 516
 
 FILE: catalog/controller/product/search.php
 CODE: $image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
+<<<<<<< HEAD
+LINE: 221
+=======
 LINE: 232
+>>>>>>> 3cfddb05727917068aaeaf96f19b82975034a815
 
 FILE: catalog/controller/blog/category.php
 CODE: $image = $this->model_tool_image->resize($result['image'], $this->config->get('configblog_image_article_width'), $this->config->get('configblog_image_article_height'));
@@ -22153,7 +22179,11 @@ LINE: 10
 CODE: }
 LINE: 62
 ----------------------------------------------------------------
+<<<<<<< HEAD
+2018-09-26 15:10:41 - MOD: Modification Default
+=======
 2018-09-26 11:07:01 - MOD: Modification Default
+>>>>>>> 3cfddb05727917068aaeaf96f19b82975034a815
 
 FILE: system/engine/action.php
 REGEX: ~(require|include)(_once)?\(([^)]+)~
@@ -22274,8 +22304,13 @@ LINE: 88
 
 FILE: catalog/model/catalog/product.php
 CODE: if (!empty($data['filter_manufacturer_id'])) {
+<<<<<<< HEAD
+LINE: 172
+LINE: 562
+=======
 LINE: 185
 LINE: 575
+>>>>>>> 3cfddb05727917068aaeaf96f19b82975034a815
 
 FILE: catalog/controller/product/category.php
 CODE: $data['breadcrumbs'] = array();
@@ -22326,6 +22361,18 @@ LINE: 230
 FILE: catalog/controller/product/product.php
 CODE: $data['popup'] = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_popup_width'), $this->config->get($this->config->get('config_theme') . '_image_popup_height'));
 LINE: 310
+<<<<<<< HEAD
+LINE: 966
+CODE: $data['thumb'] = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_thumb_width'), $this->config->get($this->config->get('config_theme') . '_image_thumb_height'));
+LINE: 316
+LINE: 972
+CODE: 'popup' => $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_popup_width'), $this->config->get($this->config->get('config_theme') . '_image_popup_height'))
+LINE: 328
+LINE: 984
+CODE: 'thumb' => $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_additional_width'), $this->config->get($this->config->get('config_theme') . '_image_additional_height'))
+LINE: 329
+LINE: 985
+=======
 LINE: 961
 CODE: $data['thumb'] = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_thumb_width'), $this->config->get($this->config->get('config_theme') . '_image_thumb_height'));
 LINE: 316
@@ -22336,6 +22383,7 @@ LINE: 979
 CODE: 'thumb' => $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_additional_width'), $this->config->get($this->config->get('config_theme') . '_image_additional_height'))
 LINE: 329
 LINE: 980
+>>>>>>> 3cfddb05727917068aaeaf96f19b82975034a815
 CODE: $image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_related_width'), $this->config->get($this->config->get('config_theme') . '_image_related_height'));
 LINE: 444
 CODE: $image = $this->model_tool_image->resize($article_info['image'], 387, 239);
@@ -22343,7 +22391,11 @@ LINE: 516
 
 FILE: catalog/controller/product/search.php
 CODE: $image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
+<<<<<<< HEAD
+LINE: 221
+=======
 LINE: 232
+>>>>>>> 3cfddb05727917068aaeaf96f19b82975034a815
 
 FILE: catalog/controller/blog/category.php
 CODE: $image = $this->model_tool_image->resize($result['image'], $this->config->get('configblog_image_article_width'), $this->config->get('configblog_image_article_height'));
@@ -22359,7 +22411,11 @@ LINE: 10
 CODE: }
 LINE: 62
 ----------------------------------------------------------------
+<<<<<<< HEAD
+2018-09-26 15:11:14 - MOD: Modification Default
+=======
 2018-09-26 12:15:36 - MOD: Modification Default
+>>>>>>> 3cfddb05727917068aaeaf96f19b82975034a815
 
 FILE: system/engine/action.php
 REGEX: ~(require|include)(_once)?\(([^)]+)~
@@ -22480,8 +22536,13 @@ LINE: 88
 
 FILE: catalog/model/catalog/product.php
 CODE: if (!empty($data['filter_manufacturer_id'])) {
+<<<<<<< HEAD
+LINE: 172
+LINE: 562
+=======
 LINE: 185
 LINE: 575
+>>>>>>> 3cfddb05727917068aaeaf96f19b82975034a815
 
 FILE: catalog/controller/product/category.php
 CODE: $data['breadcrumbs'] = array();
@@ -22532,6 +22593,18 @@ LINE: 230
 FILE: catalog/controller/product/product.php
 CODE: $data['popup'] = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_popup_width'), $this->config->get($this->config->get('config_theme') . '_image_popup_height'));
 LINE: 310
+<<<<<<< HEAD
+LINE: 966
+CODE: $data['thumb'] = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_thumb_width'), $this->config->get($this->config->get('config_theme') . '_image_thumb_height'));
+LINE: 316
+LINE: 972
+CODE: 'popup' => $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_popup_width'), $this->config->get($this->config->get('config_theme') . '_image_popup_height'))
+LINE: 328
+LINE: 984
+CODE: 'thumb' => $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_additional_width'), $this->config->get($this->config->get('config_theme') . '_image_additional_height'))
+LINE: 329
+LINE: 985
+=======
 LINE: 961
 CODE: $data['thumb'] = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_thumb_width'), $this->config->get($this->config->get('config_theme') . '_image_thumb_height'));
 LINE: 316
@@ -22542,6 +22615,7 @@ LINE: 979
 CODE: 'thumb' => $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_additional_width'), $this->config->get($this->config->get('config_theme') . '_image_additional_height'))
 LINE: 329
 LINE: 980
+>>>>>>> 3cfddb05727917068aaeaf96f19b82975034a815
 CODE: $image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_related_width'), $this->config->get($this->config->get('config_theme') . '_image_related_height'));
 LINE: 444
 CODE: $image = $this->model_tool_image->resize($article_info['image'], 387, 239);
@@ -22549,6 +22623,9 @@ LINE: 516
 
 FILE: catalog/controller/product/search.php
 CODE: $image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
+<<<<<<< HEAD
+LINE: 221
+=======
 LINE: 232
 
 FILE: catalog/controller/blog/category.php
@@ -23580,6 +23657,7 @@ LINE: 516
 FILE: catalog/controller/product/search.php
 CODE: $image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
 LINE: 232
+>>>>>>> 3cfddb05727917068aaeaf96f19b82975034a815
 
 FILE: catalog/controller/blog/category.php
 CODE: $image = $this->model_tool_image->resize($result['image'], $this->config->get('configblog_image_article_width'), $this->config->get('configblog_image_article_height'));
