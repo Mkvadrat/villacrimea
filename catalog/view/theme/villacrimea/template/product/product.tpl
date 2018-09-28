@@ -145,10 +145,10 @@
                         var myMap = new ymaps.Map('map-products', {
                             <?php foreach($maps as $product){ ?>
                             <?php if($product_id == $product['product_id']){ ?>
-                                center: [<?php echo $product['lat_lng']; ?>],
+                            center: [<?php echo $product['lat_lng']; ?>],
                             <?php } ?>
                             <?php } ?>
-                            zoom: 9,
+                            zoom: 17,
                             behaviors: ['default', 'scrollZoom']
                         }, {
                             searchControlProvider: 'yandex#search'
@@ -190,9 +190,7 @@
                         <?php foreach($maps as $product){ ?>
                         getPointData<?php echo $i; ?> = function () {
                            return {
-                            
                               balloonContent: '<div class="ballon"><img src="<?php echo $product['image']; ?>" class="ll"/><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?><br><span>Подробнее</span></a><img class="close-button" onclick="myMap.balloon.close()" src="catalog/view/theme/villacrimea/image/maps/close.png"/></div>',
-                              
                               clusterCaption: 'Объект № <strong><?php echo $product['model']; ?></strong>',
                            };
                         },
@@ -204,11 +202,22 @@
                          * Все опции, которые поддерживают геообъекты, можно посмотреть в документации.
                          * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/GeoObject.xml
                          */
-                            getPointOptions = function () {
+                        <?php $i = 0; ?>
+                        <?php foreach($maps as $product){ ?> 
+                        getPointOptions<?php echo $i; ?> = function () {
                             return {
+                                iconLayout : 'default#image',
+                                <?php if($product_id == $product['product_id']){ ?>
+                                  iconImageHref: 'catalog/view/theme/villacrimea/image/maps/icon-main.png', // картинка иконки
+                                <?php }else{ ?>
+                                  iconImageHref: 'catalog/view/theme/villacrimea/image/maps/icon.png', // картинка иконки
+                                <?php } ?>
+                                iconImageSize : [64, 64],
                                 preset: 'islands#violetIcon'
                             };
                         },
+                        <?php $i++; ?>
+                        <?php } ?>
                         points = [
                             <?php foreach($maps as $product){ ?>
                                 [<?php echo $product['lat_lng']; ?>], 
@@ -223,7 +232,7 @@
                       
                         <?php $i = 0; ?>
                         <?php foreach($maps as $product){ ?>
-                          geoObjects[<?php echo $i; ?>] = new ymaps.Placemark(points[<?php echo $i; ?>], getPointData<?php echo $i; ?>(), getPointOptions());
+                          geoObjects[<?php echo $i; ?>] = new ymaps.Placemark(points[<?php echo $i; ?>], getPointData<?php echo $i; ?>(), getPointOptions<?php echo $i; ?>());
                           <?php $i++; ?>
                         <?php } ?>
                       
@@ -245,9 +254,9 @@
                         /**
                         * Спозиционируем карту так, чтобы на ней были видны все объекты.
                         */
-                        myMap.setBounds(clusterer.getBounds(), {
-                            checkZoomRange: true
-                        });
+                        /*myMap.setBounds(clusterer.getBounds(), {
+                            checkZoomRange: false
+                        });*/
                       });
                     </script>
                 <?php } ?>
