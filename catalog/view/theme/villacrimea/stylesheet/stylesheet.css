@@ -4586,7 +4586,8 @@ section .blog_in_page .blog_inner .right_side .agent a {
     float: left;
     text-align: left;
     color: #000;
-    position: absolute;
+    /* position: absolute; */
+    min-width: 200px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -4596,8 +4597,8 @@ section .blog_in_page .blog_inner .right_side .agent a {
     float: left;
     width: 60px;
     height: 60px;
-    /* margin: 0 5px 5px 0; */
-    border-radius: 60px;
+    /* margin: 0 5px 5px 0;
+    border-radius: 60px; */
 }
 .ballon a {
     margin-left: 10px;
@@ -4810,8 +4811,8 @@ section .object_page .actual_object .mobile,
     margin: 0;
     padding: 0;
     position: absolute;
-    z-index: 9;
-    min-width: 150%;
+    z-index: 99;
+    min-width: 250px;
     max-width: 300px;
     background: #f4eddf;
     top: 40px;
@@ -4819,9 +4820,10 @@ section .object_page .actual_object .mobile,
     visibility: hidden;
     transition: .5s;
 }
-.categories .dropdown ul li {
+.categories .dropdown ul li:nth-child(n) {
     width: 100%;
     border-bottom: 1px solid #dcd1bc;
+    margin: 0;
 }
 .categories .dropdown ul li:last-child {
     border: none;
@@ -4983,4 +4985,8 @@ section .category_page .actual_object .details:nth-of-type(4) {
 }
 .ballon .close-button{
     display: none !important;
+}
+#map-products ymaps[id^='id_'] {
+    width: auto !important;
+    height: auto !important;
 }

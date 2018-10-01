@@ -175,7 +175,8 @@
                              */
                             clusterDisableClickZoom: true,
                             clusterHideIconOnBalloonOpen: false,
-                            geoObjectHideIconOnBalloonOpen: false
+                            geoObjectHideIconOnBalloonOpen: false,
+                            iconColor : '#f4eddf'
                         }),
                         /**
                          * Функция возвращает объект, содержащий данные метки.
@@ -213,6 +214,7 @@
                                   iconImageHref: 'catalog/view/theme/villacrimea/image/maps/icon.png', // картинка иконки
                                 <?php } ?>
                                 iconImageSize : [64, 64],
+                                iconColor : '#f4eddf',
                                 preset: 'islands#violetIcon'
                             };
                         },
