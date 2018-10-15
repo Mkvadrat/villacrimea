@@ -141,124 +141,127 @@
                         <div id="map-products"></div>
                     </div>
                     <script type="text/javascript">
-                      ymaps.ready(function () {
-                        var myMap = new ymaps.Map('map-products', {
-                            <?php foreach($maps as $product){ ?>
-                            <?php if($product_id == $product['product_id']){ ?>
-                            center: [<?php echo $product['lat_lng']; ?>],
-                            <?php } ?>
-                            <?php } ?>
-                            zoom: 17,
-                            behaviors: ['default', 'scrollZoom']
-                        }, {
-                            searchControlProvider: 'yandex#search'
-                        }),
-                        /**
-                         * Создадим кластеризатор, вызвав функцию-конструктор.
-                         * Список всех опций доступен в документации.
-                         * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Clusterer.xml#constructor-summary
-                         */
-                            clusterer = new ymaps.Clusterer({
-                            /**
-                             * Через кластеризатор можно указать только стили кластеров,
-                             * стили для меток нужно назначать каждой метке отдельно.
-                             * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/option.presetStorage.xml
-                             */
-                            preset: 'islands#invertedVioletClusterIcons',
-                            /**
-                             * Ставим true, если хотим кластеризовать только точки с одинаковыми координатами.
-                             */
-                            groupByCoordinates: false,
-                            /**
-                             * Опции кластеров указываем в кластеризаторе с префиксом "cluster".
-                             * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/ClusterPlacemark.xml
-                             */
-                            clusterDisableClickZoom: true,
-                            clusterHideIconOnBalloonOpen: false,
-                            geoObjectHideIconOnBalloonOpen: false
-                        }),
-                        /**
-                         * Функция возвращает объект, содержащий данные метки.
-                         * Поле данных clusterCaption будет отображено в списке геообъектов в балуне кластера.
-                         * Поле balloonContentBody - источник данных для контента балуна.
-                         * Оба поля поддерживают HTML-разметку.
-                         * Список полей данных, которые используют стандартные макеты содержимого иконки метки
-                         * и балуна геообъектов, можно посмотреть в документации.
-                         * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/GeoObject.xml
-                         */
-                        <?php $i = 0; ?>
-                        <?php foreach($maps as $product){ ?>
-                        getPointData<?php echo $i; ?> = function () {
-                           return {
-                              balloonContent: '<div class="ballon"><img src="<?php echo $product['image']; ?>" class="ll"/><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?><br><span>Подробнее</span></a><img class="close-button" onclick="myMap.balloon.close()" src="catalog/view/theme/villacrimea/image/maps/close.png"/></div>',
-                              clusterCaption: 'Объект № <strong><?php echo $product['model']; ?></strong>',
-                           };
-                        },
-                        <?php $i++; ?>
-                        <?php } ?>
-                        
-                        /**
-                         * Функция возвращает объект, содержащий опции метки.
-                         * Все опции, которые поддерживают геообъекты, можно посмотреть в документации.
-                         * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/GeoObject.xml
-                         */
-                        <?php $i = 0; ?>
-                        <?php foreach($maps as $product){ ?> 
-                        getPointOptions<?php echo $i; ?> = function () {
-                            return {
-                                iconLayout : 'default#image',
-                                <?php if($product_id == $product['product_id']){ ?>
-                                  iconImageHref: 'catalog/view/theme/villacrimea/image/maps/icon-main.png', // картинка иконки
-                                <?php }else{ ?>
-                                  iconImageHref: 'catalog/view/theme/villacrimea/image/maps/icon.png', // картинка иконки
-                                <?php } ?>
-                                iconImageSize : [64, 64],
-                                preset: 'islands#violetIcon'
-                            };
-                        },
-                        <?php $i++; ?>
-                        <?php } ?>
-                        points = [
-                            <?php foreach($maps as $product){ ?>
-                                [<?php echo $product['lat_lng']; ?>], 
-                            <?php } ?>
-                        ],
-                        geoObjects = [];
-                      
-                        /**
-                        * Данные передаются вторым параметром в конструктор метки, опции - третьим.
-                        * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Placemark.xml#constructor-summary
-                        */
-                      
-                        <?php $i = 0; ?>
-                        <?php foreach($maps as $product){ ?>
-                          geoObjects[<?php echo $i; ?>] = new ymaps.Placemark(points[<?php echo $i; ?>], getPointData<?php echo $i; ?>(), getPointOptions<?php echo $i; ?>());
-                          <?php $i++; ?>
-                        <?php } ?>
-                      
-                        /**
-                        * Можно менять опции кластеризатора после создания.
-                        */
-                        clusterer.options.set({
-                            gridSize: 80,
-                            clusterDisableClickZoom: true
-                        });
-                      
-                        /**
-                        * В кластеризатор можно добавить javascript-массив меток (не геоколлекцию) или одну метку.
-                        * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Clusterer.xml#add
-                        */
-                        clusterer.add(geoObjects);
-                        myMap.geoObjects.add(clusterer);
-                      
-                        /**
-                        * Спозиционируем карту так, чтобы на ней были видны все объекты.
-                        */
-                        /*myMap.setBounds(clusterer.getBounds(), {
-                            checkZoomRange: false
-                        });*/
-                      });
-                    </script>
+										ymaps.ready(function () {
+											var myMap = new ymaps.Map('map-products', {
+												<?php foreach($maps as $product){ ?>
+												<?php if($product_id == $product['product_id']){ ?>
+												center: [<?php echo $product['lat_lng']; ?>],
+												<?php } ?>
+												<?php } ?>
+												zoom: 17,
+												behaviors: ['default', 'scrollZoom']
+											}, {
+												searchControlProvider: 'yandex#search'
+											}),
+											/**
+											 * Создадим кластеризатор, вызвав функцию-конструктор.
+											 * Список всех опций доступен в документации.
+											 * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Clusterer.xml#constructor-summary
+											 */
+												clusterer = new ymaps.Clusterer({
+												/**
+												 * Через кластеризатор можно указать только стили кластеров,
+												 * стили для меток нужно назначать каждой метке отдельно.
+												 * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/option.presetStorage.xml
+												 */
+												preset: 'islands#invertedVioletClusterIcons',
+												/**
+												 * Ставим true, если хотим кластеризовать только точки с одинаковыми координатами.
+												 */
+												groupByCoordinates: false,
+												/**
+												 * Опции кластеров указываем в кластеризаторе с префиксом "cluster".
+												 * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/ClusterPlacemark.xml
+												 */
+												clusterDisableClickZoom: true,
+												clusterHideIconOnBalloonOpen: false,
+												geoObjectHideIconOnBalloonOpen: false
+											}),
+											/**
+											 * Функция возвращает объект, содержащий данные метки.
+											 * Поле данных clusterCaption будет отображено в списке геообъектов в балуне кластера.
+											 * Поле balloonContentBody - источник данных для контента балуна.
+											 * Оба поля поддерживают HTML-разметку.
+											 * Список полей данных, которые используют стандартные макеты содержимого иконки метки
+											 * и балуна геообъектов, можно посмотреть в документации.
+											 * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/GeoObject.xml
+											 */
+											<?php $i = 0; ?>
+											<?php foreach($maps as $product){ ?>
+											getPointData<?php echo $i; ?> = function () {
+												return {
+													balloonContentHeader: 'Объект №' + <?php echo $product['model']; ?>,
+													balloonContent: '<div class="ballon"><img src="<?php echo $product['image']; ?>" class="ll"/><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a><br/><a href="<?php echo $product['href']; ?>"><span>Подробнее</span></a></div>',
+													balloonContentFooter: '',
+												};
+											},
+											<?php $i++; ?>
+											<?php } ?>
+											
+											/**
+											 * Функция возвращает объект, содержащий опции метки.
+											 * Все опции, которые поддерживают геообъекты, можно посмотреть в документации.
+											 * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/GeoObject.xml
+											 */
+											<?php $i = 0; ?>
+											<?php foreach($maps as $product){ ?> 
+											getPointOptions<?php echo $i; ?> = function () {
+												return {
+													iconLayout : 'default#image',
+													<?php if($product_id == $product['product_id']){ ?>
+														iconImageHref: 'catalog/view/theme/villacrimea/image/maps/icon-main.png', // картинка иконки
+													<?php }else{ ?>
+														iconImageHref: 'catalog/view/theme/villacrimea/image/maps/icon.png', // картинка иконки
+													<?php } ?>
+													iconImageSize : [64, 64],
+													preset: 'islands#violetIcon'
+												};
+											},
+											<?php $i++; ?>
+											<?php } ?>
+											points = [
+												<?php foreach($maps as $product){ ?>
+													[<?php echo $product['lat_lng']; ?>], 
+												<?php } ?>
+											],
+											geoObjects = [];
+										  
+											/**
+											* Данные передаются вторым параметром в конструктор метки, опции - третьим.
+											* @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Placemark.xml#constructor-summary
+											*/
+											var placemarks = [];
+											<?php $i = 0; ?>
+											<?php foreach($maps as $product){ ?>
+												geoObjects[<?php echo $i; ?>] = new ymaps.Placemark(points[<?php echo $i; ?>], getPointData<?php echo $i; ?>(), getPointOptions<?php echo $i; ?>());
+												placemarks.push(geoObjects[<?php echo $i; ?>]);
+												<?php $i++; ?>
+											<?php } ?>
+										  
+											/**
+											* Можно менять опции кластеризатора после создания.
+											*/
+											clusterer.options.set({
+												gridSize: 80,
+												clusterDisableClickZoom: true,
+												
+											});
+										  
+											/**
+											* В кластеризатор можно добавить javascript-массив меток (не геоколлекцию) или одну метку.
+											* @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Clusterer.xml#add
+											*/
+											clusterer.add(placemarks);
+											myMap.geoObjects.add(clusterer);
+										  
+											/**
+											* Спозиционируем карту так, чтобы на ней были видны все объекты.
+											*/
+											/*myMap.setBounds(clusterer.getBounds(), {
+												checkZoomRange: false
+											});*/
+										});
+									</script>
                 <?php } ?>
               </div>
           </div>

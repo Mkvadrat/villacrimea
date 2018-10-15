@@ -4579,28 +4579,19 @@ section .blog_in_page .blog_inner .right_side .agent a {
     width: 100%;
     height: 100%;
 }
-.ballon {
-    padding: 5px;
-    width: auto;
-    height: auto;
-    float: left;
-    text-align: left;
-    color: #000;
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
+[class*="balloon__content"] {
+    min-width: 240px !important;
+    min-height: 79px !important;
 }
 .ballon img.ll {
     float: left;
     width: 60px;
     height: 60px;
-    /* margin: 0 5px 5px 0; */
-    border-radius: 60px;
+    #border-radius: 60px;
+    margin-right: 10px;
 }
 .ballon a {
-    margin-left: 10px;
+    
     font-size: 10px;
     font-weight: bold;
     color: #000;
@@ -4610,18 +4601,6 @@ section .blog_in_page .blog_inner .right_side .agent a {
     font-size: 14px;
     font-weight: bold;
     color: #000;
-}
-.ballon .close-button {
-    position: absolute;
-    float: left;
-    font-size: 15px;
-    font-weight: bold;
-    top: 0px;
-    right: 0px;
-    cursor: pointer;
-}
-.ballon .close-button:hover {
-    color: #ccc;
 }
 
 @media print {
@@ -4980,7 +4959,4 @@ section .category_page .actual_object .details .title span {
 section .category_page .actual_object .details:nth-of-type(4) {
     margin: 0;
     border: none;
-}
-.ballon .close-button{
-    display: none !important;
 }
