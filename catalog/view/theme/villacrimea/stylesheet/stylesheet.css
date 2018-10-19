@@ -330,6 +330,10 @@ section .seling_carousel .seling_carousel_info div {
     font-family: "GothamPro_Bol";
     font-size: 18px;
     padding: 20px 0;
+    color: #fff;
+}
+section .seling_carousel .seling_carousel_info div span {
+    color: #fff;
 }
 
 section .seling_carousel .owl-nav {

@@ -4,7 +4,7 @@
 		<?php echo $content_top; ?>
 		
 		<div class="object_title">
-			<a class="backward back"><img src="catalog/view/theme/villacrimea/image/backward.png" alt="">К списку</a>
+			<a class="backward back"><img src="catalog/view/theme/villacrimea/image/backward.png" alt="">Назад</a>
 			<?php if($heading_title) {?>
 			<p class="title"><?php echo $heading_title; ?></p>
 			<?php } ?>
