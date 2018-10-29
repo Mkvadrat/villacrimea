@@ -1,0 +1,7 @@
+{
+	"name": "infrajs/sequence",
+	"homepage":"https://github.com/infrajs/sequence",
+	"autoload": {
+		"psr-4": { "infrajs\\sequence\\": "/" }
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"name": "akiyatkin/fs",
+	"autoload": {
+		"psr-4": { "akiyatkin\\fs\\": "" }
+	},
+	"require":{
+		"infrajs/path":"~1"
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"conf":"akiyatkin\\error\\Error",
+	"test": true,
+	"debug": true,
+	"admin": false,
+	"show": false
+}

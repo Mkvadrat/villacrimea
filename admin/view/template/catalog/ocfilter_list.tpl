@@ -3,9 +3,8 @@
   <div class="page-header">
     <div class="container-fluid">
       <div class="pull-right">
-				<a href="<?php echo $insert; ?>" data-toggle="tooltip" title="Добавить опцию фильтра" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+				<a href="<?php echo $add; ?>" data-toggle="tooltip" title="Добавить опцию фильтра" class="btn btn-primary"><i class="fa fa-plus"></i></a>
         <button type="button" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger" onclick="confirm('<?php echo $text_confirm; ?>') ? $('#form-product').submit() : false;"><i class="fa fa-trash-o"></i></button>
-        <a href="<?php echo $ocfilter_page; ?>" data-toggle="tooltip" title="SEO страницы фильтра" class="btn btn-primary"><i class="fa fa-file"></i></a>
       </div>
       <h1><?php echo $heading_title; ?></h1>
       <ul class="breadcrumb">
@@ -129,9 +128,7 @@
 										<?php } ?>
 									</td>
 		              <td class="right">
-		                <?php foreach ($option['action'] as $action) { ?>
-		                [ <a href="<?php echo $action['href']; ?>"><?php echo $action['text']; ?></a> ]
-		                <?php } ?>
+                    <a href="<?php echo $option['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
 		              </td>
                 </tr>
                 <?php } ?>

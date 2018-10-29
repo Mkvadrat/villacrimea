@@ -1,0 +1,9 @@
+{
+	"name": "infrajs/each",
+	"homepage":"https://github.com/infrajs/each",
+	"autoload": {
+		"psr-4": { "infrajs\\each\\": "" }
+	},
+	"require":{
+	}
+}

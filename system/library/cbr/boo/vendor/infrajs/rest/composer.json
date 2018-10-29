@@ -1,0 +1,16 @@
+{
+	"name": "infrajs/rest",
+	"homepage":"https://github.com/infrajs/rest",
+	"autoload": {
+		"psr-4": { "infrajs\\rest\\": "/" }
+	},
+	"require":{
+		"infrajs/ans":"~1",
+		"infrajs/path":"~1",
+		"infrajs/once":"~1",
+		"infrajs/each":"~1",
+		"infrajs/sequence":"~1",
+		"infrajs/view":"~1",
+		"infrajs/template":"~1"
+	}
+}

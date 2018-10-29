@@ -1,0 +1,6 @@
+Rest = {
+	get: function () {
+		
+	}
+} 
+

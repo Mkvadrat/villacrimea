@@ -1,0 +1,18 @@
+{
+	"name": "infrajs/router",
+	"homepage":"https://github.com/infrajs/router",
+	"description":"Router for Infrajs",
+	"autoload": {
+		"psr-4": { "infrajs\\router\\": "" }
+	},
+	"require":{
+		"infrajs/config":"~1",
+		"infrajs/path":"~1",
+		"akiyatkin/error":"~1",
+		"infrajs/controller":"~1",
+		"infrajs/nostore":"~1",
+		"infrajs/access":"~1",
+		"infrajs/env":"~1",
+		"infrajs/update":"~1"
+	}
+}

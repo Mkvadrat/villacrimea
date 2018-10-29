@@ -1,0 +1,9 @@
+{
+	"conf":"akiyatkin\\boo\\Cache",
+	"cachedir":"!boo/",
+	"update":"update.php",
+	"start":0,
+	"starttime":0,
+	"require":"infra.php",
+	"tester":"tester.php"
+}
