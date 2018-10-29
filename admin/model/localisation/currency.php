@@ -5,7 +5,8 @@
 // *	@license	GNU General Public License version 3; see LICENSE.txt
 
 require(DIR_SYSTEM . 'library/cbr/vendor/autoload.php');
-use CBR\CurrencyDaily;
+//use CBR\CurrencyDaily;
+use akiyatkin\cbr\CBR;
 
 class ModelLocalisationCurrency extends Model {
 
@@ -156,59 +157,74 @@ class ModelLocalisationCurrency extends Model {
 	}*/
 	
 	public function refresh($force = false) {
-			/* $array_data = array();
-			
-			if ($force) {
-				$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "currency WHERE code != '" . $this->db->escape($this->config->get('config_currency')) . "'");
-			} else {
-				$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "currency WHERE code != '" . $this->db->escape($this->config->get('config_currency')) . "' AND date_modified < '" .  $this->db->escape(date('Y-m-d H:i:s', strtotime('-1 day'))) . "'");
-			}
-			
-			$handler = new CurrencyDaily();
-	
-			$get_valute = $handler
-			->request() 
-			->getResult();
-									
-			$current_code = $this->config->get('config_currency') == 'RUB' ? 'RUB' : $this->config->get('config_currency');
-			
-			foreach($get_valute as $valute){
-				$array_data[] = array(
-					'code' => $valute['CharCode'],
-					'value'=> $valute['Value']
-				);
-			}
-			
-			foreach ($query->rows as $result) {
-				foreach($array_data as $data){
-					if($result['code'] == $data['code']){						
-						if ((float)$data['value']) {
-							$this->db->query("UPDATE " . DB_PREFIX . "currency SET value = '" . (float)$data['value'] . "', date_modified = NOW() WHERE code = '" . $this->db->escape($result['code']) . "'");
-						}
-					}
-					
-					if($data['code'] == $current_code && $result['code'] == 'RUB'){
-						$value = 1 * (float)$data['value'];
-						
-						if((float)$value){
-							$this->db->query("UPDATE " . DB_PREFIX . "currency SET value = '" . (float)$value . "', date_modified = NOW() WHERE code = 'RUB'");
-						}
-					}elseif($result['code'] == 'USD'){
-						$value = 1 / (float)$data['value'];
-						
-						if((float)$value){
-							$this->db->query("UPDATE " . DB_PREFIX . "currency SET value = '" . (float)$value . "', date_modified = NOW() WHERE code = 'USD'");
-						}
-					}
-					
-				}	
-			}
+		$array_data = array();
+		
+		if ($force) {
+			$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "currency WHERE code != '" . $this->db->escape($this->config->get('config_currency')) . "'");
+		} else {
+			$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "currency WHERE code != '" . $this->db->escape($this->config->get('config_currency')) . "' AND date_modified < '" .  $this->db->escape(date('Y-m-d H:i:s', strtotime('-1 day'))) . "'");
+		}
+		
+		/*$handler = new CurrencyDaily();
 
-
+		$get_valute = $handler
+		->request() 
+		->getResult();*/
+		$get_valute = CBR::get();
+								
+		$current_code = $this->config->get('config_currency') == 'RUB' ? 'RUB' : $this->config->get('config_currency');
+		
+		foreach($get_valute['list'] as $valute){
+			$array_data[] = array(
+				'code' => $valute['char'],
+				'value'=> $valute['value']
+			);
+		}
+		
+		foreach ($query->rows as $result) {
+			foreach($array_data as $data){
+				if($result['code'] == $data['code']){
+					$str = str_replace(',','.',$data['value']);
+					if ((float)$str) {
+						$this->db->query("UPDATE " . DB_PREFIX . "currency SET value = '" . (float)$data['value'] . "', date_modified = NOW() WHERE code = '" . $this->db->escape($result['code']) . "'");
+					}
+				}
 				
-			$this->db->query("UPDATE " . DB_PREFIX . "currency SET value = '1.00000', date_modified = NOW() WHERE code = '" . $this->db->escape($this->config->get('config_currency')) . "'");
-			
-			$this->cache->delete('currency'); */
+				$this->getUpdateRub();
+				
+				if($data['code'] == $current_code && $result['code'] == 'RUB'){
+					$str = str_replace(',','.',$data['value']);
+					$value = 1 * (float)$str;
+					
+					if((float)$value){
+						$this->db->query("UPDATE " . DB_PREFIX . "currency SET value = '" . (float)$value . "', date_modified = NOW() WHERE code = 'RUB'");
+					}
+				}elseif($result['code'] == 'USD'){
+					$str = str_replace(',','.',$data['value']);
+					$value = 1 / (float)$str;
+					
+					if((float)$value){
+						$this->db->query("UPDATE " . DB_PREFIX . "currency SET value = '" . (float)$value . "', date_modified = NOW() WHERE code = 'USD'");
+					}
+				}
+			}	
+		}
+
+		$this->db->query("UPDATE " . DB_PREFIX . "currency SET value = '1.00000', date_modified = NOW() WHERE code = '" . $this->db->escape($this->config->get('config_currency')) . "'");
+		
+		$this->cache->delete('currency');
+	}
+	
+	public function getUpdateRub(){
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product");
+		
+		foreach ($query->rows as $result) {
+			if($result['currency_id'] == 2){
+				$this->db->query("UPDATE " . DB_PREFIX . "product SET price_rub = '" . $this->currency->convert((int)$result['price'], 'USD', 'RUB') . "' WHERE currency_id = '2' AND product_id = '" . $result['product_id'] . "'");
+			}elseif($result['currency_id'] == 1){
+				$this->db->query("UPDATE " . DB_PREFIX . "product SET price_rub = '" . (int)$result['price'] . "' WHERE currency_id = '1' AND product_id = '" . $result['product_id'] . "'");
+			}
+		}
 	}
 
 	public function getTotalCurrencies() {

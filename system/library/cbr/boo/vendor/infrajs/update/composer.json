@@ -1,0 +1,16 @@
+{
+	"name": "infrajs/update",
+	"homepage":"https://github.com/infrajs/update",
+	"description":"Auto install plugins. Update propertie in config",
+	"autoload": {
+		"psr-4": { "infrajs\\update\\": "" }
+	},
+	"require":{
+		"infrajs/config":"~1",
+		"infrajs/access":"~1",
+		"infrajs/path":"~1",
+		"infrajs/each":"~1",
+		"infrajs/ans":"~1",
+		"infrajs/once":"~1"
+	}
+}

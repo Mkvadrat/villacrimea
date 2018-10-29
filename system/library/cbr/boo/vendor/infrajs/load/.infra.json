@@ -1,0 +1,6 @@
+{
+	"require":"infra.php",
+	"js":"Load.js",
+	"dependencies":"path",
+	"tester":"tester.php"
+}

@@ -4,27 +4,65 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit011f1d2c05ab24e4c40584e35d911d00
+class ComposerStaticInit75e0c7531b64ee43046f673278d67789
 {
     public static $prefixLengthsPsr4 = array (
-        'C' => 
+        'i' => 
         array (
-            'CBR\\' => 4,
+            'infrajs\\path\\' => 13,
+            'infrajs\\once\\' => 13,
+            'infrajs\\nostore\\' => 16,
+            'infrajs\\mem\\' => 12,
+            'infrajs\\each\\' => 13,
+            'infrajs\\cache\\' => 14,
+            'infrajs\\ans\\' => 12,
+        ),
+        'a' => 
+        array (
+            'akiyatkin\\cbr\\' => 14,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'CBR\\' => 
+        'infrajs\\path\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src',
+            0 => __DIR__ . '/..' . '/infrajs/path',
+        ),
+        'infrajs\\once\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/infrajs/once',
+        ),
+        'infrajs\\nostore\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/infrajs/nostore',
+        ),
+        'infrajs\\mem\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/infrajs/mem',
+        ),
+        'infrajs\\each\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/infrajs/each',
+        ),
+        'infrajs\\cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/infrajs/cache',
+        ),
+        'infrajs\\ans\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/infrajs/ans',
+        ),
+        'akiyatkin\\cbr\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/',
         ),
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit011f1d2c05ab24e4c40584e35d911d00::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit011f1d2c05ab24e4c40584e35d911d00::$prefixDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit75e0c7531b64ee43046f673278d67789::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit75e0c7531b64ee43046f673278d67789::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }

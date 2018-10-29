@@ -1,0 +1,15 @@
+{
+	"name": "infrajs/mem",
+	"homepage":"https://github.com/infrajs/mem",
+	"description": "Simple API for work with filecache or memcache",
+	"autoload": {
+		"psr-4": { "infrajs\\mem\\": "/" }
+	},
+	"require":{
+		"infrajs/ans":"~1",
+		"infrajs/path":"~1"
+	},
+	"require-dev":{
+		"infrajs/rest":"~1"
+	}
+}

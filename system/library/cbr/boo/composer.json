@@ -1,0 +1,19 @@
+{
+	"name": "akiyatkin/boo",
+	"homepage":"https://github.com/akiyatkin/boo",
+	"description":"Серверное кэширование с ручным избирательным обновлением",
+	"autoload": {
+		"psr-4": { "akiyatkin\\boo\\": "src/" }
+	},
+	"require":{
+		"infrajs/path":"~1",
+		"infrajs/router":"~1",
+		"infrajs/rest":"~1",
+		"akiyatkin/fs":"~1",
+		"infrajs/load":"~1",
+		"infrajs/once":"~1",
+		"infrajs/access":"~1",
+		"infrajs/sequence":"~1",
+		"infrajs/ans":"~1"
+	}
+}

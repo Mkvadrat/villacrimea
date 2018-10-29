@@ -1,0 +1,11 @@
+{
+	"conf":"infrajs\\mem\\Mem",
+	"update":"update.php",
+	"dependencies":"path",
+	"tester":"tests/",
+	"type":"fs",
+	"memcache":{
+		"host":"127.0.0.1",
+		"port":"11211"
+	}
+}

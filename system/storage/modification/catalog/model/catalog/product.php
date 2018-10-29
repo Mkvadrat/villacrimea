@@ -82,6 +82,21 @@ class ModelCatalogProduct extends Model {
 			$sql .= " FROM " . DB_PREFIX . "product p";
 		}
 
+
+		// OCFilter start
+		if (!empty($data['filter_ocfilter'])) {
+    	$this->load->model('catalog/ocfilter');
+
+      $ocfilter_product_sql = $this->model_catalog_ocfilter->getSearchSQL($data['filter_ocfilter']);
+		} else {
+      $ocfilter_product_sql = false;
+    }
+
+    if ($ocfilter_product_sql && $ocfilter_product_sql->join) {
+    	$sql .= $ocfilter_product_sql->join;
+    }
+    // OCFilter end
+      
 		$sql .= " LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) LEFT JOIN " . DB_PREFIX . "product_to_store p2s ON (p.product_id = p2s.product_id) WHERE pd.language_id = '" . (int)$this->config->get('config_language_id') . "' AND p.status = '1' AND p.date_available <= NOW() AND p2s.store_id = '" . (int)$this->config->get('config_store_id') . "'";
 
 		if (!empty($data['filter_category_id'])) {
@@ -170,18 +185,11 @@ class ModelCatalogProduct extends Model {
 		}
 
 
-		// OCFilter start
-		if (!empty($data['filter_ocfilter'])) {
-      $this->load->config('ocfilter');
-      $this->load->model('catalog/ocfilter');
-
-      $ocfilter_product_sql = $this->model_catalog_ocfilter->getProductSQL($data['filter_ocfilter']);
-
-			if ($ocfilter_product_sql) {
-			  $sql .= $ocfilter_product_sql;
-			}
-		}
-		// OCFilter end
+    // OCFilter start
+    if (!empty($ocfilter_product_sql) && $ocfilter_product_sql->where) {
+    	$sql .= $ocfilter_product_sql->where;
+    }
+    // OCFilter end
       
 		if (!empty($data['filter_manufacturer_id'])) {
 			$sql .= " AND p.manufacturer_id = '" . (int)$data['filter_manufacturer_id'] . "'";
@@ -485,6 +493,21 @@ class ModelCatalogProduct extends Model {
 			$sql .= " FROM " . DB_PREFIX . "product p";
 		}
 
+
+		// OCFilter start
+		if (!empty($data['filter_ocfilter'])) {
+    	$this->load->model('catalog/ocfilter');
+
+      $ocfilter_product_sql = $this->model_catalog_ocfilter->getSearchSQL($data['filter_ocfilter']);
+		} else {
+      $ocfilter_product_sql = false;
+    }
+
+    if ($ocfilter_product_sql && $ocfilter_product_sql->join) {
+    	$sql .= $ocfilter_product_sql->join;
+    }
+    // OCFilter end
+      
 		$sql .= " LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) LEFT JOIN " . DB_PREFIX . "product_to_store p2s ON (p.product_id = p2s.product_id) WHERE pd.language_id = '" . (int)$this->config->get('config_language_id') . "' AND p.status = '1' AND p.date_available <= NOW() AND p2s.store_id = '" . (int)$this->config->get('config_store_id') . "'";
 
 		if (!empty($data['filter_category_id'])) {
@@ -560,18 +583,11 @@ class ModelCatalogProduct extends Model {
 		}
 
 
-		// OCFilter start
-		if (!empty($data['filter_ocfilter'])) {
-      $this->load->config('ocfilter');
-      $this->load->model('catalog/ocfilter');
-
-      $ocfilter_product_sql = $this->model_catalog_ocfilter->getProductSQL($data['filter_ocfilter']);
-
-			if ($ocfilter_product_sql) {
-			  $sql .= $ocfilter_product_sql;
-			}
-		}
-		// OCFilter end
+    // OCFilter start
+    if (!empty($ocfilter_product_sql) && $ocfilter_product_sql->where) {
+    	$sql .= $ocfilter_product_sql->where;
+    }
+    // OCFilter end
       
 		if (!empty($data['filter_manufacturer_id'])) {
 			$sql .= " AND p.manufacturer_id = '" . (int)$data['filter_manufacturer_id'] . "'";
