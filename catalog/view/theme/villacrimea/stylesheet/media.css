@@ -50,7 +50,7 @@
         width: 60%;
     }
     section .categories li:nth-child(n) {
-        margin: 0 3% 2% 0;
+        margin: 1% 3% 1% 0;
     }
     section .cases_page .agent_cases .agent_item .description,
     section .case_with>div .description,
@@ -95,7 +95,9 @@
         width: 160px;
         padding-bottom: 160px;
     }
+    section .blog_in_page .object_title,
     section .about_us_page .object_title,
+    section .case_in_page .object_title,
     section .object_title {
         padding: 0 100px;
     }
@@ -125,6 +127,16 @@
     header .header_left_side div a {
         display: none;
     }
+    section .case_in_page .case_inner .right_side .realtor .realtor_objects,
+    section .case_in_page .case_inner .right_side .realtor .cases {
+        text-align: center;
+        justify-content: center;
+        padding-left: 0;
+    }
+    section .blog_in_page .blog_inner .left_side,
+    section .blog_in_page .blog_inner .right_side,
+    section .case_in_page .case_inner .left_side,
+    section .case_in_page .case_inner .right_side,
     section .contacts_page .contacts_inner .right_side,
     section .contacts_page .contacts_inner .left_side,
     section .object_page .actual_object .left_side {
@@ -450,27 +462,39 @@
         float: left;
         margin: 0 0 2%;
     }
-    section .about_us_page .object_title,
+    section .blog_in_page .object_title,
+    section .case_in_page .object_title,
     section .object_title {
         padding: 0 50px;
     }
+    section .blog_in_page .object_title .title,
     section .about_us_page .object_title .title,
+    section .case_in_page .object_title .title,
     section .object_title .title {
         font-size: 24px;
     }
+    section .blog_in_page .object_title .backward,
+    section .case_in_page .object_title .backward,
     section .object_title .backward {
         padding-left: 40px;
         top: 40px;
     }
+    section .blog_in_page .object_title .backward::before,
+    section .case_in_page .object_title .backward::before,
     section .object_title .backward::before {
         width: 35px;
         height: 75px;
     }
+    section .blog_in_page .object_title .backward img,
+    section .case_in_page .object_title .backward img,
     section .object_title .backward img {
         left: 3px;
         width: 30px;
     }
-    section .object_title {
+    section .blog_in_page .object_title,
+    section .about_us_page .object_title,
+    section .case_in_page .object_title,
+    section .object_title { 
         padding: 50px 0 0;
     }
     section .category_page .actual_object .left_side .object_description .info {
@@ -487,6 +511,22 @@
     section .category_page .actual_object .card_label.mobile {
         margin-top: 20px;
     }
+    section .blog_page .blog_item {
+        flex-direction: column;
+        padding: 20px 20px 35px;
+    }
+    section .blog_page .blog_item .text {
+        width: 100%;
+        padding: 0;
+    }
+    section .blog_page .blog_item .text .bottomed {
+        margin-top: 15px;
+    }
+    section .blog_page .blog_item .img {
+        width: 70%;
+        padding-bottom: 44%;
+    }
+
 }
 @media screen and (max-width:650px) {
     section .contacts_page .contacts_inner .realtors .realtor:nth-child(n) {
@@ -597,10 +637,12 @@
         order: 2;
         width: 100%;
     }
+    section .blog_in_page .blog_inner .left_side .two_rows_text div,
     section .about_us_page .about_inner .left_side .two_rows_text div,
     section .category_page .realtor_category .realtor_item {
         width: 100%;
     }
+    section .blog_in_page .blog_inner .left_side .two_rows_text,
     section .about_us_page .about_inner .left_side .two_rows_text {
         flex-wrap: wrap;
     }
@@ -609,6 +651,10 @@
 @media screen and (max-width:500px) {
     section .contacts_page .contacts_inner .map {
         padding-bottom: 80%;
+    }
+    section .blog_page .blog_item .img {
+        width: 100%;
+        padding-bottom: 62%;
     }
     section .about_us_page .about_inner .left_side ul li,
     section .about_us_page .about_inner .left_side ol li {

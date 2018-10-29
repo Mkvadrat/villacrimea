@@ -126,7 +126,7 @@ $(document).ready(function () {
         watch: "word",
     });
     $('section .blog_page .blog_item .text .title').dotdotdot({
-        height: 40,
+        height: ($(window).outerWidth() > 768) ? 40 : 80,
         ellipsis: "\u2026",
         truncate: "word",
         watch: "word",

@@ -330,6 +330,10 @@ section .seling_carousel .seling_carousel_info div {
     font-family: "GothamPro_Bol";
     font-size: 18px;
     padding: 20px 0;
+    color: #fff;
+}
+section .seling_carousel .seling_carousel_info div span {
+    color: #fff;
 }
 
 section .seling_carousel .owl-nav {
@@ -2897,6 +2901,7 @@ section .case_in_page .object_title .backward {
 section .case_in_page .case_inner {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: stretch;
     margin-bottom: 30px;
@@ -3286,9 +3291,9 @@ section .blog_page .blog_item {
     margin-bottom: 10px;
 }
 
-section .blog_page .blog_item:last-of-type {
+/* section .blog_page .blog_item:last-of-type {
     margin-bottom: 0;
-}
+} */
 
 section .blog_page .blog_item .img {
     width: 34%;
@@ -3359,7 +3364,7 @@ section .blog_page .blog_item .text .bottomed span {
 
 section .blog_in_page .object_title {
     padding: 20px 200px;
-    border-top: 1px solid #dbdbdb;
+    /* border-top: 1px solid #dbdbdb; */
     border-bottom: 1px solid #dbdbdb;
     margin: 0;
 }
@@ -3371,6 +3376,7 @@ section .blog_in_page .object_title .backward {
 section .blog_in_page .blog_inner {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: stretch;
     margin-top: 20px;
@@ -3520,6 +3526,7 @@ section .blog_in_page .blog_inner .left_side .sertificates img {
 section .blog_in_page .blog_inner .right_side {
     width: 35%;
     padding-left: 35px;
+    margin-bottom: 60px;
 }
 
 section .blog_in_page .blog_inner .right_side .title {
@@ -4586,21 +4593,27 @@ section .blog_in_page .blog_inner .right_side .agent a {
     float: left;
     text-align: left;
     color: #000;
-    position: absolute;
+    /* position: absolute; */
+    min-width: 240px;
+    min-height: 79px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
 }
+[class*="balloon__content"] {
+    min-width: 240px !important;
+    min-height: 79px !important;
+}
 .ballon img.ll {
     float: left;
     width: 60px;
     height: 60px;
-    /* margin: 0 5px 5px 0; */
-    border-radius: 60px;
+    /* border-radius: 60px; */
+    margin-right: 10px;
 }
 .ballon a {
-    margin-left: 10px;
+    
     font-size: 10px;
     font-weight: bold;
     color: #000;
@@ -4610,18 +4623,6 @@ section .blog_in_page .blog_inner .right_side .agent a {
     font-size: 14px;
     font-weight: bold;
     color: #000;
-}
-.ballon .close-button {
-    position: absolute;
-    float: left;
-    font-size: 15px;
-    font-weight: bold;
-    top: 0px;
-    right: 0px;
-    cursor: pointer;
-}
-.ballon .close-button:hover {
-    color: #ccc;
 }
 
 @media print {
@@ -4810,8 +4811,8 @@ section .object_page .actual_object .mobile,
     margin: 0;
     padding: 0;
     position: absolute;
-    z-index: 9;
-    min-width: 150%;
+    z-index: 99;
+    min-width: 250px;
     max-width: 300px;
     background: #f4eddf;
     top: 40px;
@@ -4819,9 +4820,10 @@ section .object_page .actual_object .mobile,
     visibility: hidden;
     transition: .5s;
 }
-.categories .dropdown ul li {
+.categories .dropdown ul li:nth-child(n) {
     width: 100%;
     border-bottom: 1px solid #dcd1bc;
+    margin: 0;
 }
 .categories .dropdown ul li:last-child {
     border: none;
@@ -4983,4 +4985,8 @@ section .category_page .actual_object .details:nth-of-type(4) {
 }
 .ballon .close-button{
     display: none !important;
+}
+#map-products ymaps[id^='id_'] {
+    width: auto !important;
+    height: auto !important;
 }
