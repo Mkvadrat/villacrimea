@@ -253,7 +253,7 @@
 											*/
 											clusterer.add(placemarks);
 											myMap.geoObjects.add(clusterer);
-										  
+                                            myMap.behaviors.disable('scrollZoom');
 											/**
 											* Спозиционируем карту так, чтобы на ней были видны все объекты.
 											*/

@@ -704,6 +704,7 @@ section .agent_with_cards .card .name {
     padding: 10px 0;
     display: inline-block;
     text-decoration: none;
+    color: #c09d74;
 }
 
 section .agent_with_cards .card .name:hover {
@@ -1561,6 +1562,7 @@ section .category_page .catalog .tabs_catalog .catalog_item .name {
     padding: 10px 0;
     display: inline-block;
     text-decoration: none;
+    color: #c09d74;
 }
 
 section .category_page .catalog .tabs_catalog .catalog_item .name:hover {
@@ -1675,6 +1677,7 @@ section .category_page .catalog .list_catalog .catalog_item .name {
     display: inline-block;
     text-decoration: none;
     margin-bottom: 15px;
+    color: #c09d74;
 }
 
 section .category_page .catalog .list_catalog .catalog_item .name:hover {
@@ -1811,6 +1814,7 @@ section .category_page .cards .card .name {
     padding: 10px 0;
     display: inline-block;
     text-decoration: none;
+    color: #c09d74;
 }
 section .category_page .cards .card .name:hover {
     text-decoration: underline;
@@ -2477,6 +2481,7 @@ section .object_page .same_objects .card .name {
     padding: 10px 0;
     display: inline-block;
     text-decoration: none;
+    color: #c09d74;
 }
 
 section .object_page .same_objects .card .name:hover {
@@ -3123,7 +3128,7 @@ section .card_label span {
     margin: 0 2px 2px 0;
     width: auto;
     display: flex;
-    z-index: 99;
+    z-index: 9;
 }
 section .actual_object .card_label span {
     margin: 1px 2px 1px 0;
@@ -3138,6 +3143,7 @@ section .case_in_page .case_inner .right_side .card .name {
     padding: 10px 0;
     display: inline-block;
     text-decoration: none;
+    color: #c09d74;
 }
 
 section .case_in_page .case_inner .right_side .card .name:hover {
@@ -3239,6 +3245,7 @@ section .case_in_page .same_objects .card .name {
     padding: 10px 0;
     display: inline-block;
     text-decoration: none;
+    color: #c09d74;
 }
 
 section .case_in_page .same_objects .card .name:hover {
@@ -4735,7 +4742,10 @@ section .blog_in_page .blog_inner .right_side .agent a {
 
 .list-group-item.ocfilter-option[data-original-title] .option-values .form-control {
     width: 15%;
-    margin-top: -8px;
+    margin-top: -1px;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 12px;
 }
 .btn-default:active:focus,
 .scale .noUi-connect,
@@ -4750,8 +4760,12 @@ section .blog_in_page .blog_inner .right_side .agent a {
     text-decoration: none;
 }
 .btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
 .btn-primary,
 .popover .btn-primary:hover,
+.popover .btn-primary:focus,
+.popover .btn-primary:active,
 .popover .btn-primary {
     background: #c09d74;
     border: none;
@@ -4989,4 +5003,22 @@ section .category_page .actual_object .details:nth-of-type(4) {
 #map-products ymaps[id^='id_'] {
     width: auto !important;
     height: auto !important;
+}
+.have-no-items {
+    text-align: center;
+    padding: 70px 0;
+}
+.have-no-items p{
+    margin: 0 0 20px;
+}
+.have-no-items
+.scale.noUi-horizontal {
+    height: 8px;
+    margin: 10px 0 0;
+}
+.scale.noUi-horizontal .noUi-handle {
+    top: -12px;
+}
+section .category_page .categories ~ .panel {
+    margin-bottom: 0;
 }

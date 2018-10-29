@@ -4,7 +4,10 @@ $(document).ready(function () {
         pullDrag: true,
         loop: true,
         nav: true,
-        navText: ['<span></span>', '<span></span>']
+        navText: ['<span></span>', '<span></span>'],
+        autoplay: true,
+        autoplayTimeout: 6000,
+        autoplayHoverPause: true
     });
     $('.cases_carousel').owlCarousel({
         items: 1,

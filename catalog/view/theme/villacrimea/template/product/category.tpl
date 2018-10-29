@@ -102,9 +102,11 @@
           <?php echo $pagination; ?>
       </div>
       <?php }else{ ?>
-      <p><?php echo $text_empty; ?></p>
-      <div class="buttons">
-        <a href="<?php echo $continue; ?>" class="btn btn-primary" style="margin: 0 0 10px;"><?php echo $button_continue; ?></a>
+      <div class="have-no-items">
+        <p><?php echo $text_empty; ?></p>
+        <div class="buttons">
+            <a href="<?php echo $continue; ?>" class="btn btn-primary" style="margin: 0 0 10px;"><?php echo $button_continue; ?></a>
+        </div>
       </div>
       <?php } ?>
       

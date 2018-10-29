@@ -22,7 +22,7 @@
       </div>
       <?php } ?>
 
-      <a href="<?php echo $view_all_case; ?>" class="watch_all_cases">Смотреть все кейсы <?php echo $count_case; ?></a>
+      <a href="<?php echo $view_all_case; ?>" class="watch_all_cases">Смотреть кейсы всех агентов <?php echo $count_case; ?></a>
       
       <?php if($articles){ ?>
       <div class="agent_cases">
