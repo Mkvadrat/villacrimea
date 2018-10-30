@@ -2702,3 +2702,6 @@
 2018-10-29 14:35:39 - PHP Notice:  Undefined index: postfix in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 66
 2018-10-29 14:35:39 - PHP Notice:  Undefined index: postfix in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 74
 2018-10-29 14:35:39 - PHP Notice:  Undefined index: postfix in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 74
+2018-10-30 10:08:49 - PHP Notice:  Undefined variable: lang in W:\domains\villacrimea.loc\admin\view\template\extension\module\news.tpl on line 56
+2018-10-30 10:34:03 - PHP Notice:  Undefined variable: lang in W:\domains\villacrimea.loc\admin\view\template\extension\module\news.tpl on line 56
+2018-10-30 10:42:27 - PHP Notice:  getimagesize(): Read error! in W:\domains\villacrimea.loc\admin\model\tool\image.php on line 20

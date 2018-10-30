@@ -704,7 +704,6 @@ section .agent_with_cards .card .name {
     padding: 10px 0;
     display: inline-block;
     text-decoration: none;
-    color: #c09d74;
 }
 
 section .agent_with_cards .card .name:hover {
@@ -1354,6 +1353,7 @@ div[id^='call_me_back_agent_'],
 
 section .category_page .categories ~ .panel {
     margin-top: 13px;
+    margin-bottom: 0;
 }
 section .category_page .title {
     margin: 0;
@@ -1562,7 +1562,6 @@ section .category_page .catalog .tabs_catalog .catalog_item .name {
     padding: 10px 0;
     display: inline-block;
     text-decoration: none;
-    color: #c09d74;
 }
 
 section .category_page .catalog .tabs_catalog .catalog_item .name:hover {
@@ -1677,7 +1676,6 @@ section .category_page .catalog .list_catalog .catalog_item .name {
     display: inline-block;
     text-decoration: none;
     margin-bottom: 15px;
-    color: #c09d74;
 }
 
 section .category_page .catalog .list_catalog .catalog_item .name:hover {
@@ -1814,7 +1812,6 @@ section .category_page .cards .card .name {
     padding: 10px 0;
     display: inline-block;
     text-decoration: none;
-    color: #c09d74;
 }
 section .category_page .cards .card .name:hover {
     text-decoration: underline;
@@ -2121,7 +2118,9 @@ section .object_title .title {
     margin: 25px 0 20px;
     font-weight: bolder;
 }
-
+section .object_page .object_title .title {
+    color: #c09d74;
+}
 section .object_title .center {
     margin: 0 0 25px;
     font-family: "Ubuntu";
@@ -2481,7 +2480,6 @@ section .object_page .same_objects .card .name {
     padding: 10px 0;
     display: inline-block;
     text-decoration: none;
-    color: #c09d74;
 }
 
 section .object_page .same_objects .card .name:hover {
@@ -3143,7 +3141,6 @@ section .case_in_page .case_inner .right_side .card .name {
     padding: 10px 0;
     display: inline-block;
     text-decoration: none;
-    color: #c09d74;
 }
 
 section .case_in_page .case_inner .right_side .card .name:hover {
@@ -3245,7 +3242,6 @@ section .case_in_page .same_objects .card .name {
     padding: 10px 0;
     display: inline-block;
     text-decoration: none;
-    color: #c09d74;
 }
 
 section .case_in_page .same_objects .card .name:hover {
@@ -4693,16 +4689,17 @@ section .blog_in_page .blog_inner .right_side .agent a {
 }
 .panel>.list-group .list-group-item {
     border: none;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 0;
+/*     border-bottom: 1px solid #ddd;
+ */    margin-bottom: 0;
     width: 100%;
 }
 .panel>.list-group .list-group-item[id^='option'] {
     display: inline-block;
-    width: 20%;
+    width: 16.66%;
     float: left;
     box-sizing: border-box;
     font-size: 16px;
+    padding: 5px;
 }
 #ocfilter-hidden-options.in {
     display: flex;
@@ -4866,11 +4863,14 @@ section .object_page .actual_object .mobile,
     align-items: stretch;
     justify-content: flex-start;
 }
+.panel>.list-group .list-group-item[data-toggle="popover-price"] + .currency-wraper + .list-group-item[id^='option'],
 .panel>.list-group .list-group-item[data-toggle="popover-price"] + .list-group-item[id^='option'] {
     font-size: 18px;
     width: 40%;
+    padding: 0px 15px 20px;
     border-bottom: 1px solid #ddd;
 }
+.panel>.list-group .list-group-item[data-toggle="popover-price"] + .currency-wraper + .list-group-item[id^='option'] .option-values,
 .panel>.list-group .list-group-item[data-toggle="popover-price"] + .list-group-item[id^='option'] .option-values {
     /* display: flex; */
     flex-direction: row;
@@ -4879,7 +4879,13 @@ section .object_page .actual_object .mobile,
     width: 100%;
 }
 .panel>.list-group .list-group-item[data-toggle="popover-price"] {
-    width: 60%;
+    width: 45%;
+    padding: 0px 15px 20px;
+    border-bottom: 1px solid #ddd;
+}
+.list-group-item.ocfilter-option.currency-wraper {
+    width: 15%;
+    border-bottom: 1px solid #ddd;
 }
 .custom_product_photo_slider {
     position: relative;
@@ -5016,9 +5022,98 @@ section .category_page .actual_object .details:nth-of-type(4) {
     height: 8px;
     margin: 10px 0 0;
 }
-.scale.noUi-horizontal .noUi-handle {
+/* .scale.noUi-horizontal .noUi-handle {
     top: -12px;
-}
-section .category_page .categories ~ .panel {
+} */
+/* section .category_page .categories ~ .panel {
     margin-bottom: 0;
+} */
+.noUi-marker-horizontal.noUi-marker-large {
+    height: 10px;
+}
+.noUi-pips {
+    font-size: 10px;
+    height: 20px;
+    padding: 0px;
+}
+.noUi-marker-horizontal.noUi-marker-large {
+    height: 10px;
+}
+.noUi-target.scale {
+    height: 6px;
+}
+.scale.noUi-horizontal .noUi-handle {
+    height: 20px;
+    top: -9px;
+}
+.scale .noUi-handle:after, .scale .noUi-handle:before {
+    height: 7px;
+}
+.align-justify {
+    text-align: justify;
+}
+section .agent_with_cards .card .tags span::after {
+    content: ' /';
+    font-size: 15px;
+    color: #5b5b5b;
+}
+section .agent_with_cards .card .tags span:last-of-type::after {
+    display: none;
+}
+.currency-wraper .btn.currencys {
+    border-color: #ccc;
+}
+.currency-wraper .btn.currencys:hover {
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+.panel-default>.panel-heading {
+    display: none;
+}
+.ocf-option-name {
+    font-size: 14px;
+    line-height: 18px;
+}
+.scalable .ocf-option-name {
+    padding: 0 0 5px;
+}
+.ocf-option-values .dropdown-menu label {
+    width: 100%;
+    padding: 0 5px;
+}
+.ocf-option-values .dropdown-menu label:last-of-type {
+    margin: 0;
+}
+.ocf-option-values .dropdown-menu label input[type=checkbox] {
+    background-color: transparent;
+    width: 7px;
+    height: 7px;
+    border: 1px solid #dbdbdb;
+    border-radius: 0;
+    margin: 0 0 1px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative;
+}
+.ocf-option-values .dropdown-menu label input[type=checkbox]::after {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    background: #000;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    opacity: 0;
+    transition: .2s;
+}
+.ocf-option-values .dropdown-menu .ocf-selected input[type=checkbox]::after {
+    opacity: 1;
+}
+.ocf-option-values .dropdown-menu .disabled {
+    opacity: .5;
+}
+.scale .noUi-value {
+    z-index: 9;
 }

@@ -52,8 +52,6 @@
 <link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/owl.carousel.min.css">
 <link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/owl.theme.default.min.css">
 <link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/jquery.fancybox.min.css">
-<link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/stylesheet.css">
-<link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/media.css">
 
 <?php foreach ($styles as $style) { ?>
 <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
@@ -68,6 +66,10 @@
 <?php foreach ($analytics as $analytic) { ?>
 <?php echo $analytic; ?>
 <?php } ?>
+
+<link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/stylesheet.css">
+<link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/media.css">
+
 </head>
   <body>
   

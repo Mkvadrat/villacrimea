@@ -104,10 +104,15 @@
 
 }
 @media screen and (max-width:1024px) {
-    .panel>.list-group .list-group-item[data-toggle="popover-price"],
-    .panel>.list-group .list-group-item[data-toggle="popover-price"] + .list-group-item[id^='option'] {
+    .panel>.list-group .list-group-item[data-toggle="popover-price"] {
+        width: 80%;
+    }
+    .list-group-item.ocfilter-option.currency-wraper {
+        width: 20%;
+    }
+    .panel>.list-group .list-group-item[data-toggle="popover-price"] + .currency-wraper + .list-group-item[id^='option'] {
         width: 100%;
-        padding: 10px 15px;
+        padding: 0px 15px 20px;
     }
     .header_left_side p,
     .header_right_side p {
@@ -288,10 +293,8 @@
         width: 7%;
     }
     .panel>.list-group .list-group-item[id^='option'] {
-        width: 33%;
-    }
-    .panel>.list-group .list-group-item[id^='option'] {
-        width: 33%;
+        width: 25%;
+        padding-top: 0px;
     }
     section .about_us_page .about_inner,
     section .cases_page .realtor_category,
@@ -851,4 +854,11 @@
     .header_left_side p, .header_right_side p {
         font-size: 14px;
     }
+    .list-group-item.ocfilter-option.currency-wraper {
+        padding: 10px 5px;
+    }
+    .currency-wraper .btn.currencys {
+        padding: 6px 7px;
+    }
+    
 }

@@ -23,7 +23,7 @@
             <div class="tags">
                 <?php $i = 0; ?>
                 <?php foreach($product['filter_options'] as $option){ ?>
-                    <?php echo $option['name']; ?>: <span><?php echo $option['value'] . $option['postfix']; ?> /</span>
+                    <?php echo $option['name']; ?>: <span><?php echo $option['value'] . $option['postfix']; ?></span>
                     <?php $i++; ?>
                     <?php if($i > 2) break; ?>
                 <?php } ?>

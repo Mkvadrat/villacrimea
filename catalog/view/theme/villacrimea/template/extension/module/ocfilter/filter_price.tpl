@@ -18,9 +18,11 @@
       data-control-min="#min-price-value"
       data-control-max="#max-price-value"
     ></div>
-    <br>
-    <?php if($currencys){ ?>
-    <select class="currencys" id="currencys" name="currencys">	
+  </div>
+</div>
+<?php if($currencys){ ?>
+  <div class="list-group-item ocfilter-option currency-wraper">
+    <select class="currencys btn btn-block" id="currencys" name="currencys">	
       <?php foreach($currencys as $currency){ ?>
         <?php if($curent_currencys == $currency['code']){ ?>
           <option value="<?php echo $currency['code']; ?>" selected="selected"><?php echo $currency['title']; ?></option>
@@ -29,7 +31,6 @@
         <?php } ?>
       <?php } ?>
     </select>
-    <?php } ?>
   </div>
-</div>
+<?php } ?>
 <?php } ?>

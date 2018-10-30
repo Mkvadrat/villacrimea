@@ -568,7 +568,7 @@ Math.easeIn = function (val, min, max, strength) {
 
       if (!target.attr('aria-describedby')) {
         var options = {
-          placement: that.options.mobile ? 'bottom' : 'right',
+          placement: that.options.mobile ? 'bottom' : 'bottom',
           selector: that.options.mobile ? '> input' : false,
           delay: { 'show': 400, 'hide': 600 },
           content: function() {

@@ -366,6 +366,13 @@ $(document).ready(function () {
         //console.log(masser.length);
     }
     CustomSlider();
+
+    //добавляю класс родителю слайдера цены
+    if ($('.scale').is('.scale')) {
+        $('.scale').each(function() {
+            $(this).parents('.list-group-item').addClass('scalable');
+        });
+    }
 });
 
 //Main page forms
