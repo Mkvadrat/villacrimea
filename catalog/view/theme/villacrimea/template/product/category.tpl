@@ -99,7 +99,7 @@
             <?php } ?>
           </div>
           
-          <?php echo $pagination; ?>
+          <?php echo $pagination; ?> <?php echo $results; ?>
       </div>
       <?php }else{ ?>
       <div class="have-no-items">
