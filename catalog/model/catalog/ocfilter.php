@@ -291,9 +291,9 @@ class ModelCatalogOCFilter extends Model {
     	$sql .= " LEFT JOIN " . DB_PREFIX . "category_path cp ON (p2c.category_id = cp.category_id)";
     }
 
-    if ($product_sql && $product_sql->join) {
+    /*if ($product_sql && $product_sql->join) {
     	$sql .= $product_sql->join;
-    }
+    }*/
     
     if($data['valute'] == "RUB"){
       $this->cache->delete($cache_key);
@@ -309,9 +309,9 @@ class ModelCatalogOCFilter extends Model {
     	$sql .= " AND p2c.category_id = '" . (int)$data['filter_category_id'] . "'";
     }
 
-    if ($product_sql && $product_sql->where) {
+    /*if ($product_sql && $product_sql->where) {
     	$sql .= $product_sql->where;
-    }
+    }*/
 
     $query = $this->db->query($sql);
 

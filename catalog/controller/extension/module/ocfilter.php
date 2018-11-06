@@ -1088,6 +1088,7 @@ class ControllerExtensionModuleOCFilter extends Controller {
         'min' => $this->currency->format($product_prices_min, $this->session->data['currency'], '', false),
         'max' => $this->currency->format(ceil($product_prices['max']), $this->session->data['currency'], '', false),
       );
+      
     }
 
     $json['currencys'] = $symbol_right['symbol_right'];
