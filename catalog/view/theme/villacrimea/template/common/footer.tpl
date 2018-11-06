@@ -119,16 +119,12 @@
             <?php } ?>
         <?php } ?>
         <?php if($footer_categories){ ?>
-            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Недвижимость</a>
-                <div class="dropdown-menu">
-                    <div class="dropdown-inner">
-                        <ul class="list-unstyled">
-                          <?php foreach($footer_categories as $category){ ?>
-                          <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
-                          <?php } ?>
-                        </ul>
-                    </div>
-                </div>
+            <li><span>Недвижимость</span>
+                <ul>
+                    <?php foreach($footer_categories as $category){ ?>
+                    <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
+                    <?php } ?>
+                </ul>
             </li>
         <?php } ?>
     </ul>
