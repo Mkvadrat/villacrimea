@@ -125,7 +125,7 @@ $_['text_ocfilter_setting']            = 'Настройки';
   <!-- MODEL -->
 	<file path="admin/model/catalog/product.php">
     <operation error="skip">
-      <search index="0"><![CDATA[if (isset($data['product_recurring'])) {]]></search>
+      <search index="0"><![CDATA[if (isset($data['product_image'])) {]]></search>
       <add position="before"><![CDATA[
     // OCFilter start
 		if (isset($data['ocfilter_product_option'])) {
@@ -141,7 +141,7 @@ $_['text_ocfilter_setting']            = 'Настройки';
       ]]></add>
     </operation>
     <operation error="skip">
-      <search index="1"><![CDATA[if (isset($data['product_recurring'])) {]]></search>
+      <search index="1"><![CDATA[if (isset($data['product_store'])) {]]></search>
       <add position="before"><![CDATA[
     // OCFilter start
     $this->db->query("DELETE FROM " . DB_PREFIX . "ocfilter_option_value_to_product WHERE product_id = '" . (int)$product_id . "'");

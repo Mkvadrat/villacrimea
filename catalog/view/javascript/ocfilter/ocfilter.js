@@ -413,7 +413,8 @@ Math.easeIn = function (val, min, max, strength) {
         if (!$.isPlainObject(json.sliders) || $.isEmptyObject(json.sliders)) {
           return;
         }
-
+				
+				if($('.scale[data-option-id]').length > 1)
         for (var option_id in json.sliders) {
           var
             $element = $('.scale[data-option-id="' + option_id + '"]').removeAttr('disabled'),
