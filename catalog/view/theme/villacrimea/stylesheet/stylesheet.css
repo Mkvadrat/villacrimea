@@ -3750,10 +3750,12 @@ section .about_us_page .about_inner .left_side .sertificates {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 40px;
+    flex-wrap: wrap;
 }
 
 section .about_us_page .about_inner .left_side .sertificates a {
     width: 49%;
+    margin: 0 0 1%;
 }
 
 section .about_us_page .about_inner .left_side .sertificates img {
