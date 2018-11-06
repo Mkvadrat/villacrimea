@@ -15,7 +15,7 @@
         display: flex;
         justify-content: center;
     }
-    section .categories {
+    section .categories, section .promo_block .categories {
         justify-content: space-between;
     }
     section .categories li:nth-child(n) {
