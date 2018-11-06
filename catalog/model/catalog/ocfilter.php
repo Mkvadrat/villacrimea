@@ -300,7 +300,7 @@ class ModelCatalogOCFilter extends Model {
       $sql .= " WHERE p.status = '1' AND p.price_rub > '0' AND p2s.store_id = '" . (int)$this->config->get('config_store_id') . "' AND p.date_available <= '" . $this->db->escape(date('Y-m-d')) . "'";
     }else{
       $this->cache->delete($cache_key);
-      $sql .= " WHERE p.status = '1' AND p.price > '0' AND p2s.store_id = '" . (int)$this->config->get('config_store_id') . "' AND p.date_available <= '" . $this->db->escape(date('Y-m-d')) . "'";
+      $sql .= " WHERE p.status = '1' AND p.price > '0' AND p.currency_id = '2' AND p2s.store_id = '" . (int)$this->config->get('config_store_id') . "' AND p.date_available <= '" . $this->db->escape(date('Y-m-d')) . "'";
     }
     
     if ($this->config->get('ocfilter_sub_category')) {
@@ -481,7 +481,7 @@ class ModelCatalogOCFilter extends Model {
 						$price_sql = array();
 						foreach ($currencies as $currency) {
 								if ($code == 'RUB') {
-										$price_sql[] = "(p.price >=" . (int)($this->currency->convert((int)$price_from, 'RUB', $currency['code'])) . " AND currency_id = '".((int)$currency['currency_id'])."')";
+										$price_sql[] = "(p.price_rub >=" . (int)$price_from . " AND currency_id = '".((int)$currency['currency_id'])."')";
 								} else {
 										$price_sql[] = "(p.price >=" . (int)($this->currency->convert((int)$price_from, 'USD', $currency['code'])) . " AND currency_id = '".((int)$currency['currency_id'])."')";
 								}
@@ -493,7 +493,7 @@ class ModelCatalogOCFilter extends Model {
 						$price_sql = array();
 						foreach ($currencies as $currency) {
 								if ($code == 'RUB') {
-										$price_sql[] = "(p.price <=" . (int)($this->currency->convert((int)$price_to, 'RUB', $currency['code'])) . " AND currency_id = '".((int)$currency['currency_id'])."')";
+										$price_sql[] = "(p.price_rub <=" . (int)$price_to . " AND currency_id = '".((int)$currency['currency_id'])."')";
 								} else {
 										$price_sql[] = "(p.price <=" . (int)($this->currency->convert((int)$price_to, 'USD', $currency['code'])) . " AND currency_id = '".((int)$currency['currency_id'])."')";
 								}

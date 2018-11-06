@@ -63,12 +63,18 @@ class ControllerExtensionModuleOCFilter extends Controller {
 		}
 		
 		$this->cache->set('valute', $currencys_filter);
+    
+    if(!empty($this->cache->get('valute'))){
+      $curent_currencys = $this->cache->get('valute');
+    }else{
+			$curent_currencys = $this->config->get('config_currency');
+    }
 
     // Get values counter
     $filter_data = array(
 			'filter_category_id' => $this->category_id,
       'filter_ocfilter' => $this->params,
-      'valute' => $this->cache->get('valute')
+      'valute' => $curent_currencys
 		);
 
 		$this->counters = $this->model_catalog_ocfilter->getCounters($filter_data);
@@ -178,6 +184,7 @@ class ControllerExtensionModuleOCFilter extends Controller {
     }else{
 			$data['curent_currencys'] = $this->config->get('config_currency');
     }
+    
 		$data['currencys'] = array();
 		
 		foreach($currencys as $currency){
@@ -944,12 +951,18 @@ class ControllerExtensionModuleOCFilter extends Controller {
     } else {
     	$option_id = 0;
     }
+    
+    if(!empty($this->cache->get('valute'))){
+      $curent_currencys = $this->cache->get('valute');
+    }else{
+			$curent_currencys = $this->config->get('config_currency');
+    }
 
     $filter_data = array(
 			'filter_category_id' => $this->category_id,
       'filter_ocfilter' => $this->params,
       'limit' => 1,
-      'valute' => $this->cache->get('valute')
+      'valute' => $curent_currencys
 		);
 
     if ($this->config->get('ocfilter_sub_category')) {
@@ -1069,13 +1082,13 @@ class ControllerExtensionModuleOCFilter extends Controller {
     $symbol_right = $this->model_localisation_currency->getCurrencyByCode($url);
   
     if ($product_prices) {
-        $product_prices_min = 0;
-	
-        $json['sliders'] = array(
-          'min' => $this->currency->format($product_prices_min, $this->session->data['currency'], '', false),
-          'max' => $this->currency->format(ceil($product_prices['max']), $this->session->data['currency'], '', false),
-        );
-      }
+      $product_prices_min = 0;
+
+      $json['sliders'] = array(
+        'min' => $this->currency->format($product_prices_min, $this->session->data['currency'], '', false),
+        'max' => $this->currency->format(ceil($product_prices['max']), $this->session->data['currency'], '', false),
+      );
+    }
 
     $json['currencys'] = $symbol_right['symbol_right'];
 

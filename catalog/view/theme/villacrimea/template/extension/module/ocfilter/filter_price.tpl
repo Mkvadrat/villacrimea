@@ -1,6 +1,6 @@
 <?php if ($show_price) { ?>
 <div class="list-group-item ocfilter-option" data-toggle="popover-price">
-  <div id="sdsad" class="ocf-option-name">
+  <div class="ocf-option-name">
 		<?php echo $text_price; ?>
     <span id="price-from"><?php echo $min_price_get; ?></span>&nbsp;-&nbsp;<span id="price-to"><?php echo $max_price_get; ?></span>
     <span class="symbol_right"><?php echo $symbol_right; ?></span>
