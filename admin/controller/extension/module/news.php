@@ -143,6 +143,8 @@ class ControllerExtensionModuleNews extends Controller {
 
 		$data['languages'] = $this->model_localisation_language->getLanguages();
 		
+		$data['lang'] = $this->language->get('lang');
+		
 		$data['ckeditor'] = $this->config->get('config_editor_default');
 
 		if (isset($this->request->post['desc_limit'])) {

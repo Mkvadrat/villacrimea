@@ -7,7 +7,7 @@ $_['heading_title']          	= 'Обьекты';
 // OCFilter start
 $_['entry_values']          		= 'Добавьте значения для этой опции.';
 $_['tab_ocfilter']          		= 'Опции фильтра';
-$_['ocfilter_select_category'] 	= 'Для начала, выберите категории для этого товара.';
+$_['ocfilter_select_category'] 	= 'Для начала, выберите категории для этого объекта.';
 // OCFilter end
       
 $_['text_success']          	= 'Список обьектов обновлен!';
