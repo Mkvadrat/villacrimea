@@ -98,6 +98,15 @@
     </div>
     <nav id="menu">
     <ul>
+        <?php if($footer_categories){ ?>
+            <li><span>Объекты в продаже</span>
+                <ul>
+                    <?php foreach($footer_categories as $category){ ?>
+                    <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
+                    <?php } ?>
+                </ul>
+            </li>
+        <?php } ?>
         <?php foreach ($categories as $category) { ?>
             <?php if ($category['children']) { ?>
             <li class="dropdown"><a href="<?php echo $category['href']; ?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo $category['name']; ?></a>
@@ -117,15 +126,6 @@
             <?php } else { ?>
             <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
             <?php } ?>
-        <?php } ?>
-        <?php if($footer_categories){ ?>
-            <li><span>Недвижимость</span>
-                <ul>
-                    <?php foreach($footer_categories as $category){ ?>
-                    <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
-                    <?php } ?>
-                </ul>
-            </li>
         <?php } ?>
     </ul>
     </nav>
