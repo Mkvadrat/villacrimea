@@ -77,7 +77,7 @@
     <header>
       <div class="header_left_side">
           <?php echo $short_descr; ?>
-          <a class="mobile telephone" href="tel:88006000019">8 (800) 600-00-19</a>
+          <a class="mobile telephone" href="tel:89788881618">8 (978) 888-16-18</a>
           <div>
               <?php if($downloads) { ?>
                 <?php foreach($downloads as $download){ ?>

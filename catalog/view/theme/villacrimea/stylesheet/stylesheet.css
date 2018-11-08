@@ -334,6 +334,9 @@ section .seling_carousel .seling_carousel_info div {
 }
 section .seling_carousel .seling_carousel_info div span {
     color: #fff;
+    -webkit-text-fill-color: #fff;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 section .seling_carousel .owl-nav {
