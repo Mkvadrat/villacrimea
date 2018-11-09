@@ -210,7 +210,7 @@ class ControllerExtensionModuleOCFilter extends Controller {
 		}
 
     $this->document->addStyle('catalog/view/javascript/ocfilter/nouislider.min.css');
-    $this->document->addStyle('catalog/view/theme/mexica/stylesheet/ocfilter/ocfilter.css');
+    //$this->document->addStyle('catalog/view/theme/villacrimea/stylesheet/ocfilter/ocfilter.css');
 
     $this->document->addScript('catalog/view/javascript/ocfilter/nouislider.min.js');
     $this->document->addScript('catalog/view/javascript/ocfilter/ocfilter.js');

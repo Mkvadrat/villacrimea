@@ -334,6 +334,9 @@ section .seling_carousel .seling_carousel_info div {
 }
 section .seling_carousel .seling_carousel_info div span {
     color: #fff;
+    -webkit-text-fill-color: #fff;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 section .seling_carousel .owl-nav {
@@ -723,6 +726,7 @@ section .agent_with_cards .card .price_rub {
     font-family: "GothamPro_Med";
     font-size: 24px;
     padding-top: 10px;
+    border: none;
     border-top: 1px solid #dbdbdb;
     margin-top: auto;
 }
@@ -3750,10 +3754,12 @@ section .about_us_page .about_inner .left_side .sertificates {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 40px;
+    flex-wrap: wrap;
 }
 
 section .about_us_page .about_inner .left_side .sertificates a {
     width: 49%;
+    margin: 0 0 1%;
 }
 
 section .about_us_page .about_inner .left_side .sertificates img {
@@ -4107,6 +4113,7 @@ section .contacts_page .contacts_inner .realtors .realtor {
     align-items: center;
     width: 32%;
     margin: 0 2% 2% 0;
+    text-align: center;
 }
 section .contacts_page .contacts_inner .realtors .realtor:nth-child(3n+1) {
     margin-right: 0;
@@ -5089,6 +5096,9 @@ section .agent_with_cards .card .tags span:last-of-type::after {
 .scalable .ocf-option-name {
     padding: 0 0 5px;
 }
+.ocf-option-values .dropdown-menu {
+    width: 100%;
+}
 .ocf-option-values .dropdown-menu label {
     width: 100%;
     padding: 0 5px;
@@ -5141,3 +5151,45 @@ section .agent_with_cards .card .tags span:last-of-type::after {
     width: 100%;
     height: 100%;
 }
+.scale.noUi-horizontal .noUi-origin+.noUi-origin .noUi-handle {
+    right: -2px;
+}
+.scale.noUi-horizontal .noUi-origin .noUi-handle {
+    right: -32px;
+}
+section .category_page .catalog .prices *,
+section .category_page .catalog .prices *>*,
+section .object_page .actual_object .details p span,
+section .object_page .actual_object .details p span:link,
+section .object_page .actual_object .details p span:hover,
+section .object_page .actual_object .details p span:active,
+section .object_page .actual_object .details p span:visited,
+section .object_page .actual_object .details p span:focus,
+section .category_page .catalog .tabs_catalog .catalog_item .price_rub,
+section .agent_with_cards .card .price_rub,
+section .agent_with_cards .card .price_rub *,
+section .agent_with_cards .card .price_rub:link,
+section .agent_with_cards .card .price_rub:hover,
+section .agent_with_cards .card .price_rub:active,
+section .agent_with_cards .card .price_rub:visited,
+section .agent_with_cards .card .price_rub:focus,
+section .object_page .actual_object .specials p *,
+section .object_page .actual_object .details p *,
+section .object_page .actual_object .specials p *>*,
+section .object_page .actual_object .details p *>*,
+section .category_page .catalog .tabs_catalog .catalog_item .price_rub *,
+section .category_page .catalog .tabs_catalog .catalog_item .price_rub:link,
+section .category_page .catalog .tabs_catalog .catalog_item .price_rub:hover,
+section .category_page .catalog .tabs_catalog .catalog_item .price_rub:active,
+section .category_page .catalog .tabs_catalog .catalog_item .price_rub:visited,
+section .category_page .catalog .tabs_catalog .catalog_item .price_rub:focus,
+.seling_carousel_info *:link,
+.seling_carousel_info *:hover,
+.seling_carousel_info *:active,
+.seling_carousel_info *:visited,
+.seling_carousel_info *:focus,
+.seling_carousel_info *:not(.casual_button) {
+    text-decoration: none !important; 
+    text-decoration-line: none !important;
+    border-bottom: none;
+} 

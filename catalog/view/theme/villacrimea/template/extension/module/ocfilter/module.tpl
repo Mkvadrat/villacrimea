@@ -1,10 +1,10 @@
 <?php if ($options || $show_price) { ?>
-<div class="ocf-offcanvas ocfilter-mobile hidden-sm hidden-md hidden-lg">
+<!--<div class="ocf-offcanvas ocfilter-mobile hidden-sm hidden-md hidden-lg">
   <div class="ocfilter-mobile-handle">
     <button type="button" class="btn btn-primary" data-toggle="offcanvas"><i class="fa fa-filter"></i></button>
   </div>
   <div class="ocf-offcanvas-body"></div>
-</div>
+</div>-->
 
 <div class="panel ocfilter panel-default" id="ocfilter">
   <div class="panel-heading"><?php echo $heading_title; ?></div>
@@ -21,7 +21,7 @@
 </div>
 <script type="text/javascript"><!--
 $(function() {
-  $('body').append($('.ocfilter-mobile').remove().get(0).outerHTML);
+  //$('body').append($('.ocfilter-mobile').remove().get(0).outerHTML);
 
 	var options = {
     mobile: $('.ocfilter-mobile').is(':visible'),

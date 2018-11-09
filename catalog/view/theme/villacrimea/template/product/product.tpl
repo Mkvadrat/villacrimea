@@ -251,9 +251,9 @@
 											* В кластеризатор можно добавить javascript-массив меток (не геоколлекцию) или одну метку.
 											* @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Clusterer.xml#add
 											*/
+                      myMap.behaviors.disable('scrollZoom');
 											clusterer.add(placemarks);
-											myMap.geoObjects.add(clusterer);
-                                            myMap.behaviors.disable('scrollZoom');
+											myMap.geoObjects.add(clusterer);             
 											/**
 											* Спозиционируем карту так, чтобы на ней были видны все объекты.
 											*/

@@ -137,7 +137,8 @@
           <div class="agent">
               <div class="img" style="background-image: url('/image/catalog/persons/elenacopy.png');"></div>
               <p class="name">Коцеблюк Елена</p>
-              <p>Наш эксперт сделает подбор для Вас в кратчайшие сроки.</p>
+              <p>Решили купить недвижимость в Крыму?<br>
+Сделайте заявку на подбор недвижимости в Крыму прямо сейчас и получите сопровождение сделки в подарок.</p>
               <a class="casual_button callback" href="#order_selection">Заказать подбор</a>
           </div>
           <div class="text">

@@ -652,6 +652,9 @@
 
 }
 @media screen and (max-width:500px) {
+    section .category_page .categories ~ .panel {
+        margin-bottom: 13px;
+    }
     section .contacts_page .contacts_inner .map {
         padding-bottom: 80%;
     }
@@ -860,5 +863,4 @@
     .currency-wraper .btn.currencys {
         padding: 6px 7px;
     }
-    
 }

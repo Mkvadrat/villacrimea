@@ -99,7 +99,7 @@
     <nav id="menu">
     <ul>
         <?php if($footer_categories){ ?>
-            <li><span>Объекты в продаже</span>
+            <li><span style="text-transform:uppercase;">Объекты в продаже</span>
                 <ul>
                     <?php foreach($footer_categories as $category){ ?>
                     <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>

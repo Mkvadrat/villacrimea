@@ -73,6 +73,7 @@ class ModelExtensionModuleWatermark extends Model {
             'product_list'          => 0,
             'product_additional'    => 0,
             'product_related'       => 0,
+            'product_banner'        => 0,
             );
 
         foreach ($settings as $key => $value) {
