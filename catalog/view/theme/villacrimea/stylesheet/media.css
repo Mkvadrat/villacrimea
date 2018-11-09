@@ -1,7 +1,7 @@
 @media screen and (min-width:1366px) {
     section .about::after, section .about::before {
         width: 16%;
-        top: -20%;
+        top: -70px;
     }
     section .about .buy_sell,
     section .about .text {
@@ -33,7 +33,7 @@
 @media screen and (min-width:2160px) {
     section .about::after, section .about::before {
         width: 13%;
-        top: -45%;
+        top: -100px;
     }
 }
 @media screen and (max-width:1200px) {

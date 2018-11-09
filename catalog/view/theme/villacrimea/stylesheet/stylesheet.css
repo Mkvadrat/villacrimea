@@ -1151,7 +1151,7 @@ section .about::before {
     background-repeat: no-repeat;
     position: absolute;
     left: 0;
-    top: -15%;
+    top: /* -15% */ -50px;
 }
 
 section .about::after {
