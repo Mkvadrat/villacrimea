@@ -1067,9 +1067,9 @@ section .blog .blogs .blogs_item .img {
     width: 45%;
     padding-bottom: 28%;
     float: left;
-    background-size: cover;
+    background-size: /* cover */ 110%;
     background-position: center;
-    margin-bottom: -1px;
+    /* margin-bottom: -1px; */
 }
 
 section .blog .blogs .blogs_item .name::before {
@@ -1083,12 +1083,11 @@ section .blog .blogs .blogs_item .name::before {
     background: none;
     transition: all 0.3s;
     box-sizing: border-box;
-    border: 1px solid #c09d74;
-    opacity: 0;
+    border: 1px solid #dbdbdb;
 }
 
 section .blog .blogs .blogs_item .name:hover::before {
-    opacity: 1;
+    border: 1px solid #c09d74;
 }
 
 section .blog .blogs .blogs_item div {
@@ -1098,7 +1097,7 @@ section .blog .blogs .blogs_item div {
     width: 55%;
     padding: 0 10px 0 20px;
     box-sizing: border-box;
-    border: 1px solid #dbdbdb;
+    /* border: 1px solid #dbdbdb; */
     border-left: none;
 }
 
@@ -3318,7 +3317,7 @@ section .blog_page .blog_item .img {
     width: 34%;
     padding-bottom: 21%;
     align-self: center;
-    background-size: cover;
+    background-size: 110%;
     background-position: center;
     position: relative;
 }
@@ -4151,6 +4150,7 @@ section .contacts_page .contacts_inner .realtors .realtor .cases {
     border-top: 1px solid #dbdbdb;
     border-top: 1px solid #dbdbdb;
     /* margin-bottom: 8px; */
+    text-align: left;
 }
 
 section .contacts_page .contacts_inner .realtors .realtor .realtor_objects img,
