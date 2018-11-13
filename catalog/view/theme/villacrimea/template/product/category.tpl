@@ -142,7 +142,7 @@
               <a class="casual_button callback" href="#order_selection">Заказать подбор</a>
           </div>
           <div class="text">
-              <p class="title"><?php echo $heading_title; ?></p>
+              <h1 class="title"><?php echo $heading_title; ?></h1>
               
               <?php if ($bottom_description) { ?>
                 <?php echo $bottom_description; ?>

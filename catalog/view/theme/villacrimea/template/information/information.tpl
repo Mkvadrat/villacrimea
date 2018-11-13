@@ -4,7 +4,7 @@
       <?php echo $content_top; ?>
     
       <div class="object_title">
-          <p class="title"><?php echo $heading_title; ?></p>
+          <h1 class="title"><?php echo $heading_title; ?></h1>
           
           <?php if($sub_title){ ?>
           <p class="center"><?php echo $sub_title; ?></p>
