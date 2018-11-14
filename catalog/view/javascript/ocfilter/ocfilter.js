@@ -21,80 +21,11 @@ Math.easeIn = function (val, min, max, strength) {
         }
     }
 	};
-	
-	var path = getUrlParameter('path');
-	
+		
 	var filter_ocfilter = getUrlParameter('filter_ocfilter');
 	
 	$(document).on('change', "select[name='currencys']", function() {
-		var data = {
-			'change_currencys' : $("select[name='currencys']").val(),
-			'path' : path,
-			'filter_ocfilter' : filter_ocfilter
-		};
-		$.ajax({
-			url: 'index.php?route=extension/module/ocfilter/checkSymbol',
-			data: data, 
-			success: function(json) {
-				$('#price-from').replaceWith('<span id="price-from">'+json.sliders.min+'</span>');
-				$('#price-to').replaceWith('<span id="price-to">'+json.sliders.max+'</span>');
-				$('.symbol_right').replaceWith('<span class="symbol_right">'+json.currencys+'</span>');
-				
-				//var updateSlider = document.getElementById('scale-price');
-				function updateSliderRange(min, max) {
-						var
-							$element = document.getElementById('scale-price'),
-							min = parseFloat(min),
-							max = parseFloat(max),
-							decimals = 0,
-							_options = {
-								behaviour: 'drag-tap',
-								connect: true,
-								range: {
-									'min': min,
-									'max': max
-								}
-							};
-				
-						// Logarithmic scale
-						if ((max - min) > 100) {
-							_options['pips'] = {
-								mode: 'range',
-								density: 4
-							};
-				
-							var _i = 25, _strength = 3.5;
-				
-							if ((max - min) < 100) {
-								_strength = 2;
-							}
-				
-							for (; _i < 100; _i += 25) {
-								_options['range'][_i + '%'] = Math.ceil(Math.easeIn(((max - min) / 100 * _i), min, max, _strength));
-							}
-						} else {
-							_options['pips'] = {
-								mode: 'count',
-								values: 3,
-								density: 4
-							};
-						}
-						
-						_options['format'] = {
-							to: function (value) {
-								return parseFloat(value).toFixed(decimals);
-							},
-							from: function (value) {
-								return parseFloat(value).toFixed(decimals);
-							}
-						};
-
-						$element.noUiSlider.updateOptions(_options);
-				}
-				
-				updateSliderRange(json.sliders.min, json.sliders.max);
-			}
-		});
+		ocfilter.currencys_update();
 	});
 	
 	
@@ -337,6 +268,78 @@ Math.easeIn = function (val, min, max, strength) {
       // Set sliders
       $('#ocfilter .scale').each($.proxy(setSlider, this));
     },
+		
+		currencys_update: function(){
+			var data = {
+				'change_currencys' : $("select[name='currencys']").val(),
+				'path' : $("input[name='path']").val(),
+				'filter_ocfilter' : filter_ocfilter
+			};
+				
+			$.ajax({
+				url: 'index.php?route=extension/module/ocfilter/setCurrencys',
+				data: data, 
+				success: function(json) {
+					$('#price-from').replaceWith('<span id="price-from">'+json.sliders.min+'</span>');
+					$('#price-to').replaceWith('<span id="price-to">'+json.sliders.max+'</span>');
+					$('.symbol_right').replaceWith('<span class="symbol_right">'+json.currencys+'</span>');
+					
+					//var updateSlider = document.getElementById('scale-price');
+					function updateSliderRange(min, max) {
+							var
+								$element = document.getElementById('scale-price'),
+								min = parseFloat(min),
+								max = parseFloat(max),
+								decimals = 0,
+								_options = {
+									behaviour: 'drag-tap',
+									connect: true,
+									range: {
+										'min': min,
+										'max': max
+									}
+								};
+					
+							// Logarithmic scale
+							if ((max - min) > 100) {
+								_options['pips'] = {
+									mode: 'range',
+									density: 4
+								};
+					
+								var _i = 25, _strength = 3.5;
+					
+								if ((max - min) < 100) {
+									_strength = 2;
+								}
+					
+								for (; _i < 100; _i += 25) {
+									_options['range'][_i + '%'] = Math.ceil(Math.easeIn(((max - min) / 100 * _i), min, max, _strength));
+								}
+							} else {
+								_options['pips'] = {
+									mode: 'count',
+									values: 3,
+									density: 4
+								};
+							}
+							
+							_options['format'] = {
+								to: function (value) {
+									return parseFloat(value).toFixed(decimals);
+								},
+								from: function (value) {
+									return parseFloat(value).toFixed(decimals);
+								}
+							};
+	
+							$element.noUiSlider.updateOptions(_options);
+					}
+					
+					updateSliderRange(json.sliders.min, json.sliders.max);
+				}
+			});
+		},
 
     update: function(scrollTarget) {
       var
@@ -535,11 +538,7 @@ Math.easeIn = function (val, min, max, strength) {
       if ($('.ocfilter-option-popover').length) {
         $('.ocfilter-option-popover button').button('loading');
       }
-			
-			if(!$('#currencys').hasClass('currencys')){
-				this.options.element.fields.attr('disabled', true);
-			}
-			
+						
       this.$element.find('.scale').attr('disabled', 'disabled');
       setTimeout(function(that) {
         that.$values.addClass('disabled').find('small').text('0');

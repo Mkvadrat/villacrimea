@@ -31,6 +31,7 @@
         <?php } ?>
       <?php } ?>
     </select>
+    <input type="hidden" name="path" value="<?php echo $path; ?>">
   </div>
 <?php } ?>
 <?php } ?>
