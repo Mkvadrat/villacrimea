@@ -5,7 +5,7 @@
 		 
 		<div class="object_title">
 			<a class="backward back"><img src="catalog/view/theme/villacrimea/image/backward.png" alt="">Назад</a>
-			<p class="title"><?php echo $heading_title; ?></p>
+			<h1 class="title"><?php echo $heading_title; ?></h1>
 			<p class="center"></p>
 		</div>                
 		<div class="case_inner">

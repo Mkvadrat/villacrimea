@@ -26,7 +26,7 @@
       
       <div class="object_title ">
           <a class="backward back"><img src="catalog/view/theme/villacrimea/image/backward.png" alt="">Назад</a>
-          <p class="title" id="print1"><?php echo $heading_title; ?></p>
+          <h1 class="title" id="print1"><?php echo $heading_title; ?></h1>
           
           <span id="print6"><?php echo $heading_description; ?></span>
       </div>
