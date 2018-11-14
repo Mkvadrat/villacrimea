@@ -178,7 +178,6 @@ class ControllerExtensionModuleOCFilter extends Controller {
     
     $currencys = $this->model_catalog_ocfilter->getCurrency();
 		
-		//$data['curent_currencys'] = $this->config->get('config_currency');
 		if(!empty($this->cache->get('valute'))){
       $data['curent_currencys'] = $this->cache->get('valute');
     }else{
@@ -1034,7 +1033,7 @@ class ControllerExtensionModuleOCFilter extends Controller {
 		$this->response->setOutput(json_encode($json));
   }
    
-  public function checkSymbol() {
+  public function setCurrencys() {
     $this->load->model('localisation/currency');
     $this->load->model('catalog/ocfilter');
     
@@ -1043,9 +1042,9 @@ class ControllerExtensionModuleOCFilter extends Controller {
     if (isset($this->request->get['change_currencys'])) {
       $url = (string)$this->request->get['change_currencys'];
     }
-    
+
     if (isset($this->request->get['path'])) {
-			$path = '';
+      $path = '';
 
 			$parts = explode('_', (string)$this->request->get['path']);
 
@@ -1058,10 +1057,10 @@ class ControllerExtensionModuleOCFilter extends Controller {
 					$path .= '_' . (int)$path_id;
 				}
 			}
-		}else{
+    }else{
       $category_id = 0;
     }
-    
+        
     if (isset($this->request->get['filter_ocfilter'])) {
       $this->params = cleanParamsString($this->request->get['filter_ocfilter'], $this->config);
 
@@ -1071,6 +1070,7 @@ class ControllerExtensionModuleOCFilter extends Controller {
     }else{
       $params = '';
     }
+  
     $filter_data = array(
 			'filter_category_id' => $category_id,
       'filter_ocfilter' => $params,

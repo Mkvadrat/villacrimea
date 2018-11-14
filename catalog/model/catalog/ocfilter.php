@@ -296,10 +296,8 @@ class ModelCatalogOCFilter extends Model {
     }*/
     
     if($data['valute'] == "RUB"){
-      $this->cache->delete($cache_key);
       $sql .= " WHERE p.status = '1' AND p.price_rub > '0' AND p2s.store_id = '" . (int)$this->config->get('config_store_id') . "' AND p.date_available <= '" . $this->db->escape(date('Y-m-d')) . "'";
     }else{
-      $this->cache->delete($cache_key);
       $sql .= " WHERE p.status = '1' AND p.price > '0' AND p.currency_id = '2' AND p2s.store_id = '" . (int)$this->config->get('config_store_id') . "' AND p.date_available <= '" . $this->db->escape(date('Y-m-d')) . "'";
     }
     
@@ -314,7 +312,7 @@ class ModelCatalogOCFilter extends Model {
     }*/
 
     $query = $this->db->query($sql);
-
+        
     if ($query->num_rows && $query->row['min'] > 0) {
     	$price_from[] = $query->row['min'];
 
