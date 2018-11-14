@@ -8,7 +8,7 @@
 		<div class="blog_item">
 			<a href="<?php echo $news['href']; ?>" class="img" style="background-image: url('<?php echo $news['thumb']; ?>')"></a>
 			<div class="text">
-				<a href="<?php echo $news['href']; ?>" class="title"><?php echo $news['title']; ?></a>
+				<a href="<?php echo $news['href']; ?>" class="title"><h2><?php echo $news['title']; ?></h2></a>
 				<p><?php echo $news['description']; ?></p>
 				<div class="bottomed">
 					<a href="<?php echo $news['href']; ?>" class="casual_button">Подробнее</a>
