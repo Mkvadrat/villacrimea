@@ -323,7 +323,6 @@ class ModelCatalogOCFilter extends Model {
       $price_to[] = $query->row['max'];
     }
 
-
     if ($price_from) {
 			$product_price_data = array(
 				'min' => min($price_from),

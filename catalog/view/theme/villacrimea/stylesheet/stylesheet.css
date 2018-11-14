@@ -3357,7 +3357,9 @@ section .blog_page .blog_item .text .title {
     font-weight: normal;
     font-size: 30px;
 }
-
+section .blog_page .blog_item .text .title h2 {
+    margin: 0;
+}
 section .blog_page .blog_item .text .title:hover {
     text-decoration: underline;
 }
