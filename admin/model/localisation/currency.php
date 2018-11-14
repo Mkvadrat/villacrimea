@@ -192,6 +192,8 @@ class ModelLocalisationCurrency extends Model {
 				
 				$this->getUpdateRub();
 				
+				$this->getUpdateUsd();
+								
 				if($data['code'] == $current_code && $result['code'] == 'RUB'){
 					$str = str_replace(',','.',$data['value']);
 					$value = 1 * (float)$str;
@@ -223,6 +225,18 @@ class ModelLocalisationCurrency extends Model {
 				$this->db->query("UPDATE " . DB_PREFIX . "product SET price_rub = '" . $this->currency->convert((int)$result['price'], 'USD', 'RUB') . "' WHERE currency_id = '2' AND product_id = '" . $result['product_id'] . "'");
 			}elseif($result['currency_id'] == 1){
 				$this->db->query("UPDATE " . DB_PREFIX . "product SET price_rub = '" . (int)$result['price'] . "' WHERE currency_id = '1' AND product_id = '" . $result['product_id'] . "'");
+			}
+		}
+	}
+	
+	public function getUpdateUsd(){
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product");
+		
+		foreach ($query->rows as $result) {
+			if($result['currency_id'] == 2){
+				$this->db->query("UPDATE " . DB_PREFIX . "product SET price_usd = '" . $this->currency->convert((int)$result['price'], 'USD', 'USD') . "' WHERE currency_id = '2' AND product_id = '" . $result['product_id'] . "'");
+			}elseif($result['currency_id'] == 1){
+				$this->db->query("UPDATE " . DB_PREFIX . "product SET price_usd = '" . $this->currency->convert((int)$result['price_rub'], 'RUB', 'USD') . "' WHERE currency_id = '1' AND product_id = '" . $result['product_id'] . "'");
 			}
 		}
 	}

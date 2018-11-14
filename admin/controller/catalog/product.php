@@ -74,11 +74,15 @@ class ControllerCatalogProduct extends Controller {
 		$this->document->setTitle($this->language->get('heading_title'));
 
 		$this->load->model('catalog/product');
-
+		
+		$this->load->model('localisation/currency');
+		
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
 			$this->model_catalog_product->editProduct($this->request->get['product_id'], $this->request->post);
-
+			
 			$this->session->data['success'] = $this->language->get('text_success');
+			
+			$this->model_localisation_currency->refresh(true);
 
 			$url = '';
 
@@ -98,9 +102,9 @@ class ControllerCatalogProduct extends Controller {
 				$url .= '&filter_quantity=' . $this->request->get['filter_quantity'];
 			}
 
-      if (isset($this->request->get['filter_category'])) {
-        $url .= '&filter_category=' . $this->request->get['filter_category'];
-      }
+			if (isset($this->request->get['filter_category'])) {
+			  $url .= '&filter_category=' . $this->request->get['filter_category'];
+			}
 
 			if (isset($this->request->get['filter_status'])) {
 				$url .= '&filter_status=' . $this->request->get['filter_status'];
@@ -156,9 +160,9 @@ class ControllerCatalogProduct extends Controller {
 				$url .= '&filter_quantity=' . $this->request->get['filter_quantity'];
 			}
 
-      if (isset($this->request->get['filter_category'])) {
-        $url .= '&filter_category=' . $this->request->get['filter_category'];
-      }
+			if (isset($this->request->get['filter_category'])) {
+			  $url .= '&filter_category=' . $this->request->get['filter_category'];
+			}
 
 			if (isset($this->request->get['filter_status'])) {
 				$url .= '&filter_status=' . $this->request->get['filter_status'];
