@@ -37,6 +37,8 @@ class ModelCatalogProduct extends Model {
 				'manufacturer_id'  => $query->row['manufacturer_id'],
 				'manufacturer'     => $query->row['manufacturer'],
 				'price'            => ($query->row['discount'] ? $query->row['discount'] : $query->row['price']),
+				'price_rub'        => $query->row['price_rub'],
+				'price_usd'        => $query->row['price_usd'],
 				'special'          => $query->row['special'],
 				'reward'           => $query->row['reward'],
 				'points'           => $query->row['points'],
@@ -201,7 +203,7 @@ class ModelCatalogProduct extends Model {
 			'pd.name',
 			'p.model',
 			'p.quantity',
-			'p.price',
+			'p.price_usd',
 			'rating',
 			'p.sort_order',
 			'p.date_added'
@@ -212,8 +214,8 @@ class ModelCatalogProduct extends Model {
 				$sql .= " ORDER BY LCASE(" . $data['sort'] . ")";
 			} elseif ($data['sort'] == 'p.model') {
 				$sql .= " ORDER BY p.model";
-			} elseif ($data['sort'] == 'p.price') {
-				$sql .= " ORDER BY (CASE WHEN special IS NOT NULL THEN special WHEN discount IS NOT NULL THEN discount ELSE p.price END)";
+			} elseif ($data['sort'] == 'p.price_usd') {
+				$sql .= " ORDER BY (CASE WHEN special IS NOT NULL THEN special WHEN discount IS NOT NULL THEN discount ELSE p.price_usd END)";
 			} else {
 				$sql .= " ORDER BY " . $data['sort'];
 			}

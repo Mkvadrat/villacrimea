@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+2018-11-14 17:13:17 - MOD: Modification Default
+=======
 2018-08-09 10:57:13 - MOD: Modification Default
 
 FILE: system/engine/action.php
@@ -30516,6 +30519,7 @@ LINE: 62
 ----------------------------------------------------------------
 >>>>>>> aafb497de5555195ba4d676ad82029d5982797c5
 2018-11-09 10:18:01 - MOD: Modification Default
+>>>>>>> 6d12518acc75c5ee6c00f0b5ba20811f3e993cf6
 
 FILE: system/engine/action.php
 REGEX: ~(require|include)(_once)?\(([^)]+)~
@@ -30581,9 +30585,15 @@ MOD: OCFilter Modification
 
 FILE: admin/controller/catalog/product.php
 CODE: function getForm() {
+<<<<<<< HEAD
+LINE: 601
+CODE: $this->language->get('tab_general');
+LINE: 730
+=======
 LINE: 599
 CODE: $this->language->get('tab_general');
 LINE: 728
+>>>>>>> 6d12518acc75c5ee6c00f0b5ba20811f3e993cf6
 
 FILE: admin/controller/common/column_left.php
 CODE: if ($this->user->hasPermission('access', 'catalog/download')) {
@@ -30729,7 +30739,11 @@ LINE: 10
 CODE: }
 LINE: 62
 ----------------------------------------------------------------
+<<<<<<< HEAD
+2018-11-14 17:13:57 - MOD: Modification Default
+=======
 2018-11-09 16:25:26 - MOD: Modification Default
+>>>>>>> 6d12518acc75c5ee6c00f0b5ba20811f3e993cf6
 
 FILE: system/engine/action.php
 REGEX: ~(require|include)(_once)?\(([^)]+)~
@@ -30795,9 +30809,15 @@ MOD: OCFilter Modification
 
 FILE: admin/controller/catalog/product.php
 CODE: function getForm() {
+<<<<<<< HEAD
+LINE: 601
+CODE: $this->language->get('tab_general');
+LINE: 730
+=======
 LINE: 599
 CODE: $this->language->get('tab_general');
 LINE: 728
+>>>>>>> 6d12518acc75c5ee6c00f0b5ba20811f3e993cf6
 
 FILE: admin/controller/common/column_left.php
 CODE: if ($this->user->hasPermission('access', 'catalog/download')) {
@@ -30943,7 +30963,11 @@ LINE: 10
 CODE: }
 LINE: 62
 ----------------------------------------------------------------
+<<<<<<< HEAD
+2018-11-14 17:16:18 - MOD: Modification Default
+=======
 2018-11-13 12:21:02 - MOD: Modification Default
+>>>>>>> 6d12518acc75c5ee6c00f0b5ba20811f3e993cf6
 
 FILE: system/engine/action.php
 REGEX: ~(require|include)(_once)?\(([^)]+)~
@@ -31009,9 +31033,15 @@ MOD: OCFilter Modification
 
 FILE: admin/controller/catalog/product.php
 CODE: function getForm() {
+<<<<<<< HEAD
+LINE: 601
+CODE: $this->language->get('tab_general');
+LINE: 730
+=======
 LINE: 599
 CODE: $this->language->get('tab_general');
 LINE: 728
+>>>>>>> 6d12518acc75c5ee6c00f0b5ba20811f3e993cf6
 
 FILE: admin/controller/common/column_left.php
 CODE: if ($this->user->hasPermission('access', 'catalog/download')) {
@@ -31157,7 +31187,11 @@ LINE: 10
 CODE: }
 LINE: 62
 ----------------------------------------------------------------
+<<<<<<< HEAD
+2018-11-14 17:17:14 - MOD: Modification Default
+=======
 2018-11-13 17:53:11 - MOD: Modification Default
+>>>>>>> 6d12518acc75c5ee6c00f0b5ba20811f3e993cf6
 
 FILE: system/engine/action.php
 REGEX: ~(require|include)(_once)?\(([^)]+)~
@@ -31223,9 +31257,15 @@ MOD: OCFilter Modification
 
 FILE: admin/controller/catalog/product.php
 CODE: function getForm() {
+<<<<<<< HEAD
+LINE: 603
+CODE: $this->language->get('tab_general');
+LINE: 732
+=======
 LINE: 599
 CODE: $this->language->get('tab_general');
 LINE: 728
+>>>>>>> 6d12518acc75c5ee6c00f0b5ba20811f3e993cf6
 
 FILE: admin/controller/common/column_left.php
 CODE: if ($this->user->hasPermission('access', 'catalog/download')) {
@@ -31371,7 +31411,11 @@ LINE: 10
 CODE: }
 LINE: 62
 ----------------------------------------------------------------
+<<<<<<< HEAD
+2018-11-14 17:21:17 - MOD: Modification Default
+=======
 2018-11-13 17:53:19 - MOD: Modification Default
+>>>>>>> 6d12518acc75c5ee6c00f0b5ba20811f3e993cf6
 
 FILE: system/engine/action.php
 REGEX: ~(require|include)(_once)?\(([^)]+)~
@@ -31437,9 +31481,15 @@ MOD: OCFilter Modification
 
 FILE: admin/controller/catalog/product.php
 CODE: function getForm() {
+<<<<<<< HEAD
+LINE: 603
+CODE: $this->language->get('tab_general');
+LINE: 732
+=======
 LINE: 599
 CODE: $this->language->get('tab_general');
 LINE: 728
+>>>>>>> 6d12518acc75c5ee6c00f0b5ba20811f3e993cf6
 
 FILE: admin/controller/common/column_left.php
 CODE: if ($this->user->hasPermission('access', 'catalog/download')) {
@@ -31585,7 +31635,11 @@ LINE: 10
 CODE: }
 LINE: 62
 ----------------------------------------------------------------
+<<<<<<< HEAD
+2018-11-14 17:45:07 - MOD: Modification Default
+=======
 2018-11-13 17:55:10 - MOD: Modification Default
+>>>>>>> 6d12518acc75c5ee6c00f0b5ba20811f3e993cf6
 
 FILE: system/engine/action.php
 REGEX: ~(require|include)(_once)?\(([^)]+)~
@@ -31651,9 +31705,15 @@ MOD: OCFilter Modification
 
 FILE: admin/controller/catalog/product.php
 CODE: function getForm() {
+<<<<<<< HEAD
+LINE: 603
+CODE: $this->language->get('tab_general');
+LINE: 732
+=======
 LINE: 599
 CODE: $this->language->get('tab_general');
 LINE: 728
+>>>>>>> 6d12518acc75c5ee6c00f0b5ba20811f3e993cf6
 
 FILE: admin/controller/common/column_left.php
 CODE: if ($this->user->hasPermission('access', 'catalog/download')) {
@@ -31695,11 +31755,19 @@ NOT FOUND - OPERATION SKIPPED!
 
 FILE: catalog/model/catalog/product.php
 CODE: $sql .= " LEFT JOIN " . DB_PREFIX . "product_description
+<<<<<<< HEAD
+LINE: 101
+LINE: 507
+CODE: if (!empty($data['filter_manufacturer_id
+LINE: 195
+LINE: 595
+=======
 LINE: 99
 LINE: 505
 CODE: if (!empty($data['filter_manufacturer_id
 LINE: 193
 LINE: 593
+>>>>>>> 6d12518acc75c5ee6c00f0b5ba20811f3e993cf6
 
 FILE: catalog/controller/product/category.php
 CODE: $data['breadcrumbs'] = array();

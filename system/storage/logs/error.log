@@ -1,0 +1,39 @@
+2018-11-14 12:04:52 - PHP Warning:  Invalid argument supplied for foreach() in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 315
+2018-11-14 12:09:50 - PHP Warning:  Invalid argument supplied for foreach() in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 323
+2018-11-14 12:12:53 - PHP Notice:  Undefined index: product_id in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 324
+2018-11-14 12:13:13 - PHP Notice:  Undefined index: product_id in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 324
+2018-11-14 12:14:57 - PHP Notice:  Undefined index: product_id in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 323
+2018-11-14 12:14:57 - PHP Warning:  Invalid argument supplied for foreach() in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 323
+2018-11-14 12:17:20 - PHP Notice:  Undefined index: product_id in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 322
+2018-11-14 12:18:37 - PHP Notice:  Undefined variable: query_ids in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 323
+2018-11-14 12:18:37 - PHP Notice:  Trying to get property of non-object in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 323
+2018-11-14 14:24:08 - PHP Warning:  array_merge(): Argument #1 is not an array in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 326
+2018-11-14 14:51:44 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 328
+2018-11-14 14:51:44 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 328
+2018-11-14 14:51:44 - PHP Notice:  Undefined index: code in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 328
+2018-11-14 16:04:25 - PHP Notice:  Undefined index: curys in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 349
+2018-11-14 16:05:16 - PHP Warning:  Invalid argument supplied for foreach() in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 350
+2018-11-14 16:11:32 - PHP Warning:  Invalid argument supplied for foreach() in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 350
+2018-11-14 16:12:51 - PHP Notice:  Trying to get property of non-object in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 351
+2018-11-14 16:12:51 - PHP Notice:  Trying to get property of non-object in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 351
+2018-11-14 16:12:51 - PHP Notice:  Trying to get property of non-object in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 351
+2018-11-14 16:13:06 - PHP Notice:  Trying to get property of non-object in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 351
+2018-11-14 16:13:06 - PHP Notice:  Trying to get property of non-object in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 351
+2018-11-14 16:13:06 - PHP Notice:  Trying to get property of non-object in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 351
+2018-11-14 16:13:27 - PHP Notice:  Undefined variable: curys in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 350
+2018-11-14 16:13:27 - PHP Notice:  Trying to get property of non-object in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 350
+2018-11-14 16:13:27 - PHP Warning:  Invalid argument supplied for foreach() in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 350
+2018-11-14 16:21:07 - PHP Notice:  Undefined index: curys in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 351
+2018-11-14 16:21:35 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 351
+2018-11-14 16:21:35 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 351
+2018-11-14 16:23:02 - PHP Warning:  Invalid argument supplied for foreach() in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 351
+2018-11-14 17:21:20 - PHP Notice:  Undefined variable: ocfilter_select_category in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\admin\view\template\catalog\product_form.tpl on line 1246
+2018-11-14 17:21:20 - PHP Notice:  Undefined variable: entry_values in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\admin\view\template\catalog\product_form.tpl on line 1247
+2018-11-14 17:21:20 - PHP Notice:  Undefined variable: tab_ocfilter in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\admin\view\template\catalog\product_form.tpl on line 1248
+2018-11-14 17:30:01 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\villacrimea.loc\admin\model\localisation\currency.php:197) in D:\OpenServer\domains\villacrimea.loc\system\library\response.php on line 12
+2018-11-15 11:41:09 - PHP Warning:  Invalid argument supplied for foreach() in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 289
+2018-11-15 11:45:25 - PHP Warning:  array_sum() expects parameter 1 to be array, string given in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 290
+2018-11-15 11:45:25 - PHP Warning:  array_sum() expects parameter 1 to be array, string given in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 290
+2018-11-15 11:51:27 - PHP Warning:  array_merge(): Argument #1 is not an array in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 291
+2018-11-15 11:51:27 - PHP Warning:  array_merge(): Argument #1 is not an array in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 291
+2018-11-15 11:53:52 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 290

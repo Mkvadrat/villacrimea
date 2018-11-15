@@ -279,12 +279,13 @@ class ModelCatalogOCFilter extends Model {
     $price_to = array();
 
     // Get default price range
+    
     if($data['valute'] == "RUB"){
       $this->cache->delete($cache_key);
       $sql = "SELECT MIN(p.price_rub) AS `min`, MAX(p.price_rub) AS `max` FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_to_category p2c ON (p.product_id = p2c.product_id) LEFT JOIN " . DB_PREFIX . "product_to_store p2s ON (p.product_id = p2s.product_id)";
     }else{
       $this->cache->delete($cache_key);
-      $sql = "SELECT MIN(p.price) AS `min`, MAX(p.price) AS `max` FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_to_category p2c ON (p.product_id = p2c.product_id) LEFT JOIN " . DB_PREFIX . "product_to_store p2s ON (p.product_id = p2s.product_id)";
+      $sql = "SELECT MIN(p.price_usd) AS `min`, MAX(p.price_usd) AS `max` FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_to_category p2c ON (p.product_id = p2c.product_id) LEFT JOIN " . DB_PREFIX . "product_to_store p2s ON (p.product_id = p2s.product_id)";
     }
     
     if ($this->config->get('ocfilter_sub_category')) {
@@ -294,17 +295,21 @@ class ModelCatalogOCFilter extends Model {
     /*if ($product_sql && $product_sql->join) {
     	$sql .= $product_sql->join;
     }*/
-    
+
     if($data['valute'] == "RUB"){
       $sql .= " WHERE p.status = '1' AND p.price_rub > '0' AND p2s.store_id = '" . (int)$this->config->get('config_store_id') . "' AND p.date_available <= '" . $this->db->escape(date('Y-m-d')) . "'";
     }else{
-      $sql .= " WHERE p.status = '1' AND p.price > '0' AND p.currency_id = '2' AND p2s.store_id = '" . (int)$this->config->get('config_store_id') . "' AND p.date_available <= '" . $this->db->escape(date('Y-m-d')) . "'";
+      $sql .= " WHERE p.status = '1' AND p.price_usd > '0' AND p2s.store_id = '" . (int)$this->config->get('config_store_id') . "' AND p.date_available <= '" . $this->db->escape(date('Y-m-d')) . "'";
     }
     
     if ($this->config->get('ocfilter_sub_category')) {
     	$sql .= " AND cp.path_id = '" . (int)$data['filter_category_id'] . "'";
     } else {
     	$sql .= " AND p2c.category_id = '" . (int)$data['filter_category_id'] . "'";
+    }
+       
+    if ($this->config->get('ocfilter_sub_category')) {
+    	$sql .= " LEFT JOIN " . DB_PREFIX . "category_path cp ON (p2c.category_id = cp.category_id)";
     }
 
     /*if ($product_sql && $product_sql->where) {
@@ -317,123 +322,6 @@ class ModelCatalogOCFilter extends Model {
     	$price_from[] = $query->row['min'];
 
       $price_to[] = $query->row['max'];
-    }
-
-    // Get special price range
-    if ($this->config->get('ocfilter_consider_special')) {
-      $sql = "SELECT MIN(ps.price) AS `min`, MAX(ps.price) AS `max` FROM " . DB_PREFIX . "product_special ps LEFT JOIN " . DB_PREFIX . "product p ON (ps.product_id = p.product_id) LEFT JOIN " . DB_PREFIX . "product_to_category p2c ON (p.product_id = p2c.product_id) LEFT JOIN " . DB_PREFIX . "product_to_store p2s ON (p.product_id = p2s.product_id)";
-
-      if ($this->config->get('ocfilter_sub_category')) {
-      	$sql .= " LEFT JOIN " . DB_PREFIX . "category_path cp ON (p2c.category_id = cp.category_id)";
-      }
-
-      if ($product_sql && $product_sql->join) {
-      	$sql .= $product_sql->join;
-      }
-
-      $sql .= " WHERE p.status = '1' AND p.price > '0' AND ps.price > '0' AND p.date_available <= '" . $this->db->escape(date('Y-m-d')) . "' AND p2s.store_id = '" . (int)$this->config->get('config_store_id') . "' AND ps.customer_group_id = '" . (int)$this->config->get('config_customer_group_id') . "' AND ((ps.date_start = '0000-00-00' OR ps.date_start < '" . $this->db->escape(date('Y-m-d')) . "') AND (ps.date_end = '0000-00-00' OR ps.date_end > '" . $this->db->escape(date('Y-m-d')) . "'))";
-
-      if ($this->config->get('ocfilter_sub_category')) {
-      	$sql .= " AND cp.path_id = '" . (int)$data['filter_category_id'] . "'";
-      } else {
-      	$sql .= " AND p2c.category_id = '" . (int)$data['filter_category_id'] . "'";
-      }
-
-      if ($product_sql && $product_sql->where) {
-      	$sql .= $product_sql->where;
-      }
-
-      $query = $this->db->query($sql);
-
-      if ($query->num_rows && $query->row['min'] > 0) {
-      	$price_from[] = $query->row['min'];
-
-        $price_to[] = $query->row['max'];
-      }
-    }
-
-    // Get discount price range
-    if ($this->config->get('ocfilter_consider_discount')) {
-      $sql = "SELECT MIN(pd.price) AS `min`, MAX(pd.price) AS `max` FROM " . DB_PREFIX . "product_discount pd LEFT JOIN " . DB_PREFIX . "product p ON (pd.product_id = p.product_id) LEFT JOIN " . DB_PREFIX . "product_to_category p2c ON (p.product_id = p2c.product_id) LEFT JOIN " . DB_PREFIX . "product_to_store p2s ON (p.product_id = p2s.product_id)";
-
-      if ($this->config->get('ocfilter_sub_category')) {
-      	$sql .= " LEFT JOIN " . DB_PREFIX . "category_path cp ON (p2c.category_id = cp.category_id)";
-      }
-
-      if ($product_sql && $product_sql->join) {
-      	$sql .= $product_sql->join;
-      }
-
-      $sql .= " WHERE p.status = '1' AND p.price > '0' AND p.date_available <= '" . $this->db->escape(date('Y-m-d')) . "' AND pd.price > '0' AND pd.quantity > '0' AND p2s.store_id = '" . (int)$this->config->get('config_store_id') . "' AND pd.customer_group_id = '" . (int)$this->config->get('config_customer_group_id') . "' AND ((pd.date_start = '0000-00-00' OR pd.date_start < '" . $this->db->escape(date('Y-m-d')) . "') AND (pd.date_end = '0000-00-00' OR pd.date_end > '" . $this->db->escape(date('Y-m-d')) . "'))";
-
-      if ($this->config->get('ocfilter_sub_category')) {
-      	$sql .= " AND cp.path_id = '" . (int)$data['filter_category_id'] . "'";
-      } else {
-      	$sql .= " AND p2c.category_id = '" . (int)$data['filter_category_id'] . "'";
-      }
-
-      if ($product_sql && $product_sql->where) {
-      	$sql .= $product_sql->where;
-      }
-
-      $query = $this->db->query($sql);
-
-      if ($query->num_rows && $query->row['min'] > 0) {
-      	$price_from[] = $query->row['min'];
-
-        $price_to[] = $query->row['max'];
-      }
-    }
-
-    // Get options price range
-    if ($this->config->get('ocfilter_consider_option')) {
-      $sql = "SELECT
-                MIN(option_price) AS `min`,
-                MAX(option_price) AS `max`
-              FROM (
-                SELECT
-                  COALESCE(
-                    IF(pov.price_prefix = '-', p.price - pov.price, NULL),
-                    IF(pov.price_prefix = '+', p.price + pov.price, NULL),
-                    IF(pov.price_prefix = '*', p.price + p.price * pov.price, NULL),
-                    IF(pov.price_prefix = '%', p.price + p.price * (pov.price / 100), NULL),
-                    IF(pov.price_prefix = '=', pov.price, NULL),
-                    p.price + pov.price,
-                    p.price) AS option_price
-                FROM " . DB_PREFIX . "product_option_value pov
-                LEFT JOIN " . DB_PREFIX . "product p ON (pov.product_id = p.product_id)
-                LEFT JOIN " . DB_PREFIX . "product_to_category p2c ON (p.product_id = p2c.product_id)
-                LEFT JOIN " . DB_PREFIX . "product_to_store p2s ON (p.product_id = p2s.product_id)";
-
-      if ($this->config->get('ocfilter_sub_category')) {
-      	$sql .= " LEFT JOIN " . DB_PREFIX . "category_path cp ON (p2c.category_id = cp.category_id)";
-      }
-
-      if ($product_sql && $product_sql->join) {
-      	$sql .= $product_sql->join;
-      }
-
-      $sql .= " WHERE p.status = '1' AND p.date_available <= '" . $this->db->escape(date('Y-m-d')) . "' AND pov.price > '0' AND pov.quantity > '0' AND p2s.store_id = '" . (int)$this->config->get('config_store_id') . "'";
-
-      if ($this->config->get('ocfilter_sub_category')) {
-      	$sql .= " AND cp.path_id = '" . (int)$data['filter_category_id'] . "'";
-      } else {
-      	$sql .= " AND p2c.category_id = '" . (int)$data['filter_category_id'] . "'";
-      }
-
-      if ($product_sql && $product_sql->where) {
-      	$sql .= $product_sql->where;
-      }
-
-      $sql .= ") results WHERE option_price > '0'";
-
-      $query = $this->db->query($sql);
-
-      if ($query->num_rows && $query->row['min'] > 0) {
-      	$price_from[] = $query->row['min'];
-
-        $price_to[] = $query->row['max'];
-      }
     }
 
     if ($price_from) {
@@ -465,8 +353,8 @@ class ModelCatalogOCFilter extends Model {
           //$price_from = floor((float)$range['from'] / $this->currency->getValue($this->session->data['currency']));
           //$price_to = ceil((float)$range['to'] / $this->currency->getValue($this->session->data['currency']));
 					
-					$price_from = (int)$range['from'];
-					$price_to = (int)$range['to'];
+					$price_from = (float)$range['from'];
+					$price_to = (float)$range['to'];
 					
 					if($price_from >= 0 || $price_to > 0) {
 							$this->load->model('localisation/currency');
@@ -479,9 +367,9 @@ class ModelCatalogOCFilter extends Model {
 						$price_sql = array();
 						foreach ($currencies as $currency) {
 								if ($code == 'RUB') {
-										$price_sql[] = "(p.price_rub >=" . (int)$price_from . " AND currency_id = '".((int)$currency['currency_id'])."')";
+										$price_sql[] = "(p.price_rub >=" . (float)$price_from . " AND currency_id = '".((int)$currency['currency_id'])."')";
 								} else {
-										$price_sql[] = "(p.price >=" . (int)($this->currency->convert((int)$price_from, 'USD', $currency['code'])) . " AND currency_id = '".((int)$currency['currency_id'])."')";
+										$price_sql[] = "(p.price_usd >=" . (float)$price_from . " AND currency_id = '".((int)$currency['currency_id'])."')";
 								}
 						}
 						$where .= " AND ((".implode(" OR ", $price_sql).")";
@@ -491,9 +379,9 @@ class ModelCatalogOCFilter extends Model {
 						$price_sql = array();
 						foreach ($currencies as $currency) {
 								if ($code == 'RUB') {
-										$price_sql[] = "(p.price_rub <=" . (int)$price_to . " AND currency_id = '".((int)$currency['currency_id'])."')";
+										$price_sql[] = "(p.price_rub <=" . (float)$price_to . " AND currency_id = '".((int)$currency['currency_id'])."')";
 								} else {
-										$price_sql[] = "(p.price <=" . (int)($this->currency->convert((int)$price_to, 'USD', $currency['code'])) . " AND currency_id = '".((int)$currency['currency_id'])."')";
+										$price_sql[] = "(p.price_usd <=" . (float)$price_to . " AND currency_id = '".((int)$currency['currency_id'])."')";
 								}
 						}
 						$where .= " AND (".implode(" OR ", $price_sql).")";
