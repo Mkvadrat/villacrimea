@@ -1,5 +1,5 @@
 <?php if(!empty($heading_title)) { ?>
-<h1 class="title"><?php echo $heading_title; ?></h1>
+<p class="title"><?php echo $heading_title; ?></p>
 <?php } ?>
 
 <?php if($categories){ ?>
