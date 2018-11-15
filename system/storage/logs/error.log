@@ -31,3 +31,9 @@
 2018-11-14 17:21:20 - PHP Notice:  Undefined variable: entry_values in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\admin\view\template\catalog\product_form.tpl on line 1247
 2018-11-14 17:21:20 - PHP Notice:  Undefined variable: tab_ocfilter in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\admin\view\template\catalog\product_form.tpl on line 1248
 2018-11-14 17:30:01 - PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\villacrimea.loc\admin\model\localisation\currency.php:197) in D:\OpenServer\domains\villacrimea.loc\system\library\response.php on line 12
+2018-11-15 11:41:09 - PHP Warning:  Invalid argument supplied for foreach() in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 289
+2018-11-15 11:45:25 - PHP Warning:  array_sum() expects parameter 1 to be array, string given in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 290
+2018-11-15 11:45:25 - PHP Warning:  array_sum() expects parameter 1 to be array, string given in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 290
+2018-11-15 11:51:27 - PHP Warning:  array_merge(): Argument #1 is not an array in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 291
+2018-11-15 11:51:27 - PHP Warning:  array_merge(): Argument #1 is not an array in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 291
+2018-11-15 11:53:52 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 290

@@ -279,12 +279,13 @@ class ModelCatalogOCFilter extends Model {
     $price_to = array();
 
     // Get default price range
+    
     if($data['valute'] == "RUB"){
       $this->cache->delete($cache_key);
       $sql = "SELECT MIN(p.price_rub) AS `min`, MAX(p.price_rub) AS `max` FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_to_category p2c ON (p.product_id = p2c.product_id) LEFT JOIN " . DB_PREFIX . "product_to_store p2s ON (p.product_id = p2s.product_id)";
     }else{
       $this->cache->delete($cache_key);
-      $sql = "SELECT MIN(p.price) AS `min`, MAX(p.price) AS `max` FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_to_category p2c ON (p.product_id = p2c.product_id) LEFT JOIN " . DB_PREFIX . "product_to_store p2s ON (p.product_id = p2s.product_id)";
+      $sql = "SELECT MIN(p.price_usd) AS `min`, MAX(p.price_usd) AS `max` FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_to_category p2c ON (p.product_id = p2c.product_id) LEFT JOIN " . DB_PREFIX . "product_to_store p2s ON (p.product_id = p2s.product_id)";
     }
     
     if ($this->config->get('ocfilter_sub_category')) {
@@ -298,7 +299,7 @@ class ModelCatalogOCFilter extends Model {
     if($data['valute'] == "RUB"){
       $sql .= " WHERE p.status = '1' AND p.price_rub > '0' AND p2s.store_id = '" . (int)$this->config->get('config_store_id') . "' AND p.date_available <= '" . $this->db->escape(date('Y-m-d')) . "'";
     }else{
-      $sql .= " WHERE p.status = '1' AND p.price > '0' AND currency_id = 2 AND p2s.store_id = '" . (int)$this->config->get('config_store_id') . "' AND p.date_available <= '" . $this->db->escape(date('Y-m-d')) . "'";
+      $sql .= " WHERE p.status = '1' AND p.price_usd > '0' AND p2s.store_id = '" . (int)$this->config->get('config_store_id') . "' AND p.date_available <= '" . $this->db->escape(date('Y-m-d')) . "'";
     }
     
     if ($this->config->get('ocfilter_sub_category')) {
@@ -368,7 +369,7 @@ class ModelCatalogOCFilter extends Model {
 								if ($code == 'RUB') {
 										$price_sql[] = "(p.price_rub >=" . (float)$price_from . " AND currency_id = '".((int)$currency['currency_id'])."')";
 								} else {
-										$price_sql[] = "(p.price >=" . (float)($this->currency->convert((float)$price_from, 'USD', $currency['code'])) . " AND currency_id = '".((int)$currency['currency_id'])."')";
+										$price_sql[] = "(p.price_usd >=" . (float)$price_from . " AND currency_id = '".((int)$currency['currency_id'])."')";
 								}
 						}
 						$where .= " AND ((".implode(" OR ", $price_sql).")";
@@ -380,7 +381,7 @@ class ModelCatalogOCFilter extends Model {
 								if ($code == 'RUB') {
 										$price_sql[] = "(p.price_rub <=" . (float)$price_to . " AND currency_id = '".((int)$currency['currency_id'])."')";
 								} else {
-										$price_sql[] = "(p.price <=" . (float)($this->currency->convert((float)$price_to, 'USD', $currency['code'])) . " AND currency_id = '".((int)$currency['currency_id'])."')";
+										$price_sql[] = "(p.price_usd <=" . (float)$price_to . " AND currency_id = '".((int)$currency['currency_id'])."')";
 								}
 						}
 						$where .= " AND (".implode(" OR ", $price_sql).")";
