@@ -37,3 +37,21 @@
 2018-11-15 11:51:27 - PHP Warning:  array_merge(): Argument #1 is not an array in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 291
 2018-11-15 11:51:27 - PHP Warning:  array_merge(): Argument #1 is not an array in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 291
 2018-11-15 11:53:52 - PHP Notice:  Undefined index: currency_id in D:\OpenServer\domains\villacrimea.loc\catalog\model\catalog\ocfilter.php on line 290
+2018-11-16 10:09:06 - PHP Notice:  Undefined index: price_usd in W:\domains\villacrimea.loc\system\storage\modification\catalog\model\catalog\product.php on line 41
+2018-11-16 10:09:07 - PHP Notice:  Undefined index: price_usd in W:\domains\villacrimea.loc\system\storage\modification\catalog\model\catalog\product.php on line 41
+2018-11-16 10:09:07 - PHP Notice:  Undefined index: price_usd in W:\domains\villacrimea.loc\system\storage\modification\catalog\model\catalog\product.php on line 41
+2018-11-16 10:09:07 - PHP Notice:  Undefined index: price_usd in W:\domains\villacrimea.loc\system\storage\modification\catalog\model\catalog\product.php on line 41
+2018-11-16 10:09:07 - PHP Notice:  Undefined index: price_usd in W:\domains\villacrimea.loc\system\storage\modification\catalog\model\catalog\product.php on line 41
+2018-11-16 10:09:07 - PHP Notice:  Undefined index: price_usd in W:\domains\villacrimea.loc\system\storage\modification\catalog\model\catalog\product.php on line 41
+2018-11-16 10:12:42 - PHP Notice:  Undefined index: price_usd in W:\domains\villacrimea.loc\system\storage\modification\catalog\model\catalog\product.php on line 41
+2018-11-16 10:12:42 - PHP Notice:  Undefined index: price_usd in W:\domains\villacrimea.loc\system\storage\modification\catalog\model\catalog\product.php on line 41
+2018-11-16 10:12:42 - PHP Notice:  Undefined index: price_usd in W:\domains\villacrimea.loc\system\storage\modification\catalog\model\catalog\product.php on line 41
+2018-11-16 10:12:42 - PHP Notice:  Undefined index: price_usd in W:\domains\villacrimea.loc\system\storage\modification\catalog\model\catalog\product.php on line 41
+2018-11-16 10:12:42 - PHP Notice:  Undefined index: price_usd in W:\domains\villacrimea.loc\system\storage\modification\catalog\model\catalog\product.php on line 41
+2018-11-16 10:12:42 - PHP Notice:  Undefined index: price_usd in W:\domains\villacrimea.loc\system\storage\modification\catalog\model\catalog\product.php on line 41
+2018-11-16 10:12:49 - PHP Notice:  Undefined index: price_usd in W:\domains\villacrimea.loc\system\storage\modification\catalog\model\catalog\product.php on line 41
+2018-11-16 10:12:49 - PHP Notice:  Undefined index: price_usd in W:\domains\villacrimea.loc\system\storage\modification\catalog\model\catalog\product.php on line 41
+2018-11-16 10:12:49 - PHP Notice:  Undefined index: price_usd in W:\domains\villacrimea.loc\system\storage\modification\catalog\model\catalog\product.php on line 41
+2018-11-16 10:12:49 - PHP Notice:  Undefined index: price_usd in W:\domains\villacrimea.loc\system\storage\modification\catalog\model\catalog\product.php on line 41
+2018-11-16 10:12:49 - PHP Notice:  Undefined index: price_usd in W:\domains\villacrimea.loc\system\storage\modification\catalog\model\catalog\product.php on line 41
+2018-11-16 10:12:49 - PHP Notice:  Undefined index: price_usd in W:\domains\villacrimea.loc\system\storage\modification\catalog\model\catalog\product.php on line 41

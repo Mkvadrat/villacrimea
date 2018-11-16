@@ -4,7 +4,7 @@
        <?php echo $content_top; ?>
       
       <?php if ($top_name || $description) { ?>
-        <p class="title"><?php echo $top_name; ?></p>
+        <!-- <p class="title"><?php echo $top_name; ?></p> -->
         <?php echo $description; ?>
       <?php } ?>
   
