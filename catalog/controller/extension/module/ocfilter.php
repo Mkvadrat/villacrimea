@@ -67,7 +67,7 @@ class ControllerExtensionModuleOCFilter extends Controller {
     if(!empty($this->cache->get('valute'))){
       $curent_currencys = $this->cache->get('valute');
     }else{
-			$curent_currencys = $this->config->get('config_currency');
+			$curent_currencys = 'RUB';
     }
 
     // Get values counter
@@ -173,7 +173,7 @@ class ControllerExtensionModuleOCFilter extends Controller {
       $data['symbol_right']      		= $this->currency->getSymbolRight($this->cache->get('valute'));
     }else{
       $data['symbol_left']      		= $this->currency->getSymbolLeft($this->session->data['currency']);
-      $data['symbol_right']      		= $this->currency->getSymbolRight($this->session->data['currency']);
+      $data['symbol_right']      		= $this->currency->getSymbolRight('RUB');
     }
     
     $currencys = $this->model_catalog_ocfilter->getCurrency();
@@ -181,7 +181,7 @@ class ControllerExtensionModuleOCFilter extends Controller {
 		if(!empty($this->cache->get('valute'))){
       $data['curent_currencys'] = $this->cache->get('valute');
     }else{
-			$data['curent_currencys'] = $this->config->get('config_currency');;
+			$data['curent_currencys'] = 'RUB';
     }
     
 		$data['currencys'] = array();
@@ -954,7 +954,7 @@ class ControllerExtensionModuleOCFilter extends Controller {
     if(!empty($this->cache->get('valute'))){
       $curent_currencys = $this->cache->get('valute');
     }else{
-			$curent_currencys = $this->config->get('config_currency');
+			$curent_currencys = 'RUB';
     }
 
     $filter_data = array(

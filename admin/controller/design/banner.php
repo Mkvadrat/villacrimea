@@ -337,26 +337,6 @@ class ControllerDesignBanner extends Controller {
 
 		$data['token'] = $this->session->data['token'];
 		
-		$this->load->model('localisation/currency');
-
-        if (isset($this->request->post['currency'])) {
-            $data['currency'] = $this->request->post['currency'];
-        } elseif (!empty($banner_info)) {
-            $data['currency'] = $banner_info['currency_id'];
-        } else {
-            $data['currency'] = '';
-
-            $currency_code = $this->config->get('config_currency');
-            if (!empty($currency_code)) {
-                $currency = $this->model_localisation_currency->getCurrencyByCode($currency_code);
-                if ($currency) {
-                    $data['currency'] = $currency['currency_id'];
-                }
-            }
-        }
-
-        $data['currencies'] = $this->model_localisation_currency->getCurrencies();
-
 		if (isset($this->request->post['name'])) {
 			$data['name'] = $this->request->post['name'];
 		} elseif (!empty($banner_info)) {
@@ -405,7 +385,6 @@ class ControllerDesignBanner extends Controller {
 					'image'      => $image,
 					'thumb'      => $this->model_tool_image->resize($thumb, 100, 100),
 					'price' 	 => $banner_image['price'],
-					'currency_id'=> $banner_image['currency_id'],
 					'sort_order' => $banner_image['sort_order']
 				);
 			}
