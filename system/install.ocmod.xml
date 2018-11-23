@@ -211,19 +211,6 @@ $_['text_ocfilter_setting']            = 'Настройки';
   <!-- /VIEW -->
 
   <!-- CATALOG -->
-
-  <!-- >= 2.2 -->
-	<file path="catalog/controller/startup/maintenance.php">
-    <operation error="skip">
-      <search><![CDATA[index() {]]></search>
-      <add position="after"><![CDATA[
-    // OCFilter start
-    $this->load->controller('extension/module/ocfilter/initialise');
-    // OCFilter end
-      ]]></add>
-    </operation>
-  </file>
-
 	<file path="catalog/controller/startup/seo_url.php">
     <operation error="skip">
       <search><![CDATA[$this->url->addRewrite($this);]]></search>
@@ -240,19 +227,6 @@ $_['text_ocfilter_setting']            = 'Настройки';
 	<file path="catalog/controller/{common,startup}/seo_pro.php">
     <operation error="skip">
       <search><![CDATA[$this->url->addRewrite($this);]]></search>
-      <add position="after"><![CDATA[
-      // OCFilter start
-      if (!is_null($this->registry->get('ocfilter'))) {
-  			$this->url->addRewrite($this->registry->get('ocfilter'));
-  		}
-      // OCFilter end
-      ]]></add>
-    </operation>
-  </file>
-
-	<file path="catalog/controller/{common,startup}/seo_pro.php">
-    <operation error="skip">
-      <search><![CDATA[$this->url->addRewrite($this, $lang_data);]]></search>
       <add position="after"><![CDATA[
       // OCFilter start
       if (!is_null($this->registry->get('ocfilter'))) {

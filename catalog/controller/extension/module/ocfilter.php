@@ -181,7 +181,7 @@ class ControllerExtensionModuleOCFilter extends Controller {
 		if(!empty($this->cache->get('valute'))){
       $data['curent_currencys'] = $this->cache->get('valute');
     }else{
-			$data['curent_currencys'] = $this->config->get('config_currency');
+			$data['curent_currencys'] = $this->config->get('config_currency');;
     }
     
 		$data['currencys'] = array();

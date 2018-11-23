@@ -1067,7 +1067,7 @@ section .blog .blogs .blogs_item .img {
     width: 45%;
     padding-bottom: 28%;
     float: left;
-    background-size: /* cover */ 110%;
+    background-size: /* cover */ 115%;
     background-position: center;
     /* margin-bottom: -1px; */
 }
