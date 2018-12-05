@@ -47,11 +47,20 @@ body {
     font-family: "GothamPro";
     font-size: 18px;
     color: #000;
+    overflow-x: hidden;
 }
 
 p {
     margin: 0;
-    line-height: normal;
+    line-height: 24px;
+}
+
+i {
+    font-family: "GothamPro_Ita";
+}
+
+strong {
+    font-family: "GothamPro_Bol";
 }
 
 a {
@@ -59,7 +68,8 @@ a {
     text-decoration: underline;
 }
 
-a:focus, a:hover {
+a:focus,
+a:hover {
     text-decoration: none;
     color: #000;
     outline: none;
@@ -80,16 +90,38 @@ a.casual_button:hover {
     background: #d8b48a;
     color: #fff;
 }
-
+.toTop {
+    background: url('../image/backtotop.png') no-repeat;
+    position: fixed;
+    width: 45px;
+    height: 45px;
+    bottom: 20px;
+    left: 0;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+    background-size: cover;
+    background-position: center;
+    opacity: .3;
+    transition: all .3s;
+}
+.toTop:hover {
+    opacity: 1;
+}
 header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    padding: 5px 50px;
+    align-items: flex-start;
+    padding: 15px 50px 5px;
+    max-width: 1680px;
+    margin: 0 auto;
 }
-
-header .header_left_side, header .header_right_side {
+header .header_right_side br {
+    display: none;
+}
+header .header_left_side,
+header .header_right_side {
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -98,7 +130,7 @@ header .header_left_side, header .header_right_side {
     justify-content: flex-start;
 }
 
-header .header_left_side div {
+header .header_left_side>div {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -168,8 +200,14 @@ header .header_left_side .menu li {
 
 header .logo {
     width: 190px;
+    position: relative;
+    bottom: 10px;
+    left: 20px;
 }
-
+header .logo img,
+header .logo a {
+    width: 100%;
+}
 header .header_right_side {
     text-align: right;
     justify-content: flex-end;
@@ -177,7 +215,7 @@ header .header_right_side {
 }
 
 header .header_right_side .telephone {
-    font-size: 36px;
+    font-size: 25px;
     font-family: "GothamPro_Med";
     text-decoration: none;
     display: flex;
@@ -187,13 +225,16 @@ header .header_right_side .telephone {
     float: right;
     margin-right: 0;
     margin-left: auto;
-    padding: 5px 0;
+    padding: 0;
 }
-
+header .header_right_side .telephone ~ .telephone {
+    margin-top: -10px;
+    padding-bottom: 5px;
+}
 header .header_right_side .telephone img {
-    width: 50px;
-    padding-right: 15px;
-    height: 50px;
+    width: 40px;
+    padding-right: 10px;
+    height: 40px;
     box-sizing: content-box;
 }
 
@@ -205,6 +246,8 @@ section {
     width: 100%;
     padding: 0 50px;
     box-sizing: border-box;
+    max-width: 1680px;
+    margin: 0 auto;
 }
 
 section .slider {
@@ -253,6 +296,7 @@ section .seling_carousel button.owl-dot.active span::before {
 
 section .seling_carousel .owl-item>div {
     height: 31vmax;
+    min-height: 425px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -279,12 +323,20 @@ section .seling_carousel .seling_carousel_info {
 section .seling_carousel .seling_carousel_info p {
     font-family: "GothamPro_Bol";
     font-size: 30px;
+    line-height: 34px;
 }
 
 section .seling_carousel .seling_carousel_info div {
     font-family: "GothamPro_Bol";
     font-size: 18px;
     padding: 20px 0;
+    color: #fff;
+}
+section .seling_carousel .seling_carousel_info div span {
+    color: #fff;
+    -webkit-text-fill-color: #fff;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 section .seling_carousel .owl-nav {
@@ -303,6 +355,7 @@ section .seling_carousel .owl-nav button.owl-next {
     width: 75px;
     top: 50%;
     transform: translateY(-50%);
+    outline: none;
 }
 
 section .seling_carousel .owl-nav button.owl-next {
@@ -319,6 +372,10 @@ section .seling_carousel .owl-nav span {
     position: absolute;
     top: 0;
     transition: all .5s;
+}
+
+section .seling_carousel .owl-nav span:hover {
+    background: rgba(0, 0, 0, 0.3);
 }
 
 section .seling_carousel .owl-nav span::before {
@@ -352,11 +409,13 @@ section .seling_carousel .owl-nav .owl-next span {
     border-radius: 75px 0 0 75px;
 }
 
-section .seling_carousel .owl-nav .owl-prev span:hover, section .seling_carousel:hover .owl-nav .owl-prev span {
+section .seling_carousel .owl-nav .owl-prev span:hover,
+section .seling_carousel:hover .owl-nav .owl-prev span {
     left: 0;
 }
 
-section .seling_carousel .owl-nav .owl-next span:hover, section .seling_carousel:hover .owl-nav .owl-next span {
+section .seling_carousel .owl-nav .owl-next span:hover,
+section .seling_carousel:hover .owl-nav .owl-next span {
     right: 0;
 }
 
@@ -375,7 +434,21 @@ section .seling_carousel .owl-nav .owl-next span::after {
 section .title {
     text-align: center;
     font-size: 36px;
+    line-height: 36px;
     margin: 40px 0;
+}
+section h1.title {
+    font-weight: bold;
+}
+
+section .sub-title {
+    font-size: 24px;
+    line-height: normal;
+    margin: 25px 0 20px;
+}
+
+section p>img {
+    width: 100%;
 }
 
 section .categories {
@@ -386,15 +459,31 @@ section .categories {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 15px;
+    justify-content: flex-start;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 15px 0;
 }
-
+section .categories li {
+    margin-left: 0;
+    margin-right: auto;
+}
+section .categories li:nth-child(n+7) {
+    margin-right: 0;
+}
+section .categories li:nth-child(n+8) {
+    margin-right: 3%;
+}
 section .categories a {
     text-transform: uppercase;
+    font-weight: bold;
+}
+section .categories>li>a {
+    line-height: 35px;
 }
 
-section .choise, section .choise>* {
+section .choise,
+section .choise>* {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -421,11 +510,13 @@ section .choise select {
     border: 1px solid #dbdbdb;
 }
 
-section .choise #type, section .choise #region {
+section .choise #type,
+section .choise #region {
     width: 23%;
 }
 
-section .choise #price_from, section .choise #price_to {
+section .choise #price_from,
+section .choise #price_to {
     width: 15%;
 }
 
@@ -454,6 +545,8 @@ section .agent_with_cards {
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
+    margin-bottom: 45px;
+    margin-top: 15px;
 }
 
 section .agent_with_cards .agent {
@@ -461,6 +554,7 @@ section .agent_with_cards .agent {
     border: 1px solid #dbdbdb;
     border-radius: 4px;
     flex-direction: column;
+    margin-bottom: 0.86%;
 }
 
 section .agent_with_cards .agent .is_agent {
@@ -469,6 +563,9 @@ section .agent_with_cards .agent .is_agent {
     border-bottom: 1px solid #dbdbdb;
 }
 
+section .agent_with_cards .agent .is_agent .casual_button {
+    border-radius: 8px;
+}
 section .agent_with_cards .agent .is_agent .img {
     display: inline-block;
     width: 225px;
@@ -503,6 +600,7 @@ section .agent_with_cards .agent .is_estate .title {
     font-size: 30px;
     margin: 0 0 20px;
     text-align: left;
+    line-height: 36px;
 }
 
 section .agent_with_cards .cards {
@@ -510,7 +608,7 @@ section .agent_with_cards .cards {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: stretch;
     flex-wrap: wrap;
 }
 
@@ -521,16 +619,19 @@ section .agent_with_cards .card {
     padding: 0 10px 10px;
     box-sizing: border-box;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
 }
 
-section .agent_with_cards .card:last-of-type {
+/* section .agent_with_cards .card:last-of-type {
     margin-bottom: 45px;
-}
+} */
 
 section .agent_with_cards .card .img {
     display: block;
     padding-bottom: 65%;
-    background-size: cover;
+    background-size: 100.5% auto;
     background-position: center;
     margin-left: -10px;
     margin-right: -10px;
@@ -553,7 +654,7 @@ section .agent_with_cards .card .img:hover::before {
     background: rgba(192, 157, 116, .3);
 }
 
-section .agent_with_cards .card .card_label {
+section .card_label {
     position: absolute;
     top: 0;
     left: 0;
@@ -563,7 +664,11 @@ section .agent_with_cards .card .card_label {
     flex-wrap: wrap;
 }
 
-section .agent_with_cards .card .new_label, section .agent_with_cards .card .ipo_label, section .agent_with_cards .card .sold_label, section .agent_with_cards .card .exlusive_label, section .agent_with_cards .card .fast_label {
+section .new_label,
+section .ipo_label,
+section .sold_label,
+section .exlusive_label,
+section .fast_label {
     padding: 7px 10px;
     color: #fff;
     font-size: 14px;
@@ -575,23 +680,23 @@ section .agent_with_cards .card .new_label, section .agent_with_cards .card .ipo
     margin: 0 2px 2px 0;
 }
 
-section .agent_with_cards .card .new_label {
+section .new_label {
     background: #25b025;
 }
 
-section .agent_with_cards .card .fast_label {
+section .fast_label {
     background: #1170ff;
 }
 
-section .agent_with_cards .card .ipo_label {
+section .ipo_label {
     background: blueviolet;
 }
 
-section .agent_with_cards .card .sold_label {
+section .sold_label {
     background: red;
 }
 
-section .agent_with_cards .card .exlusive_label {
+section .exlusive_label {
     background: orange;
 }
 
@@ -612,19 +717,24 @@ section .agent_with_cards .card .tags {
     font-family: "Ubuntu";
     line-height: normal;
     padding-bottom: 10px;
-    border-bottom: 1px solid #dbdbdb;
+    /* border-bottom: 1px solid #dbdbdb; */
     color: #393939;
+    height: 100%;
 }
 
 section .agent_with_cards .card .price_rub {
     font-family: "GothamPro_Med";
     font-size: 24px;
     padding-top: 10px;
+    border: none;
+    border-top: 1px solid #dbdbdb;
+    margin-top: auto;
 }
 
 section .agent_with_cards .card .price_usd {
     font-family: "GothamPro_Med";
     font-size: 16px;
+    color: #c09d74;
 }
 
 section .agent_with_cards .card .object_id {
@@ -641,7 +751,8 @@ section .promo_block {
     padding: 60px 50px;
     box-sizing: border-box;
     position: relative;
-}
+/*     overflow: hidden;
+ */}
 
 section .promo_block .text {
     width: 27%;
@@ -651,6 +762,7 @@ section .promo_block .text .title {
     text-align: left;
     font-weight: bolder;
     margin-top: 0;
+    line-height: 36px;
 }
 
 section .promo_block .text .dwnld_presentation {
@@ -677,7 +789,11 @@ section .promo_block .text .categories a {
     font-size: 14px;
     font-weight: bolder;
 }
-
+section .promo_block .categories {
+    justify-content: flex-end;
+    border: none;
+    padding: 0;
+}
 section .promo_block>img {
     position: absolute;
     right: 0;
@@ -694,18 +810,25 @@ section .services .title {
     text-align: left;
     font-family: "GothamPro_Med";
     font-size: 30px;
+    line-height: 36px;
 }
 
 section .services .services_items {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: baseline;
+    flex-wrap: wrap;
     text-align: center;
 }
 
 section .services .services_items .item {
-    width: 23%;
+    width: 25%;
+    margin: 1% 4% 1% 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 section .services .services_items .item img {
@@ -724,12 +847,15 @@ section .cases {
     border-top: 1px solid #dbdbdb;
     border-bottom: 1px solid #dbdbdb;
 }
-
+section .promo_block + .cases {
+    border-top: none;
+}
 section .cases .title {
     font-family: "GothamPro_Med";
     font-size: 30px;
     text-align: left;
     margin-bottom: 20px;
+    line-height: 36px;
 }
 
 section .cases .cases_carousel {
@@ -747,7 +873,8 @@ section .cases .owl-item>div {
     align-items: stretch;
 }
 
-section .cases .owl-item>div .case, section .cases .owl-item>div .description {
+section .cases .owl-item>div .case,
+section .cases .owl-item>div .description {
     width: 35%;
     border: 1px solid #dbdbdb;
 }
@@ -766,10 +893,12 @@ section .cases .owl-item>div .case p {
 
 section .cases .owl-item>div .case .title {
     margin-bottom: 15px;
+    line-height: 36px;
 }
 
 section .cases .owl-item>div .case a {
     margin-top: auto;
+    border-radius: 8px;
 }
 
 section .cases .owl-item>div .realtor {
@@ -827,6 +956,10 @@ section .cases_carousel .owl-nav span {
     transition: all 0.5s;
 }
 
+section .cases_carousel .owl-nav span:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
 section .cases_carousel .owl-nav span::before {
     content: ' ';
     display: inline-block;
@@ -857,6 +990,7 @@ section .cases_carousel .owl-nav button.owl-next {
     width: 75px;
     top: 50%;
     transform: translateY(-50%);
+    outline: none;
 }
 
 section .cases_carousel .owl-nav button.owl-next {
@@ -873,11 +1007,13 @@ section .cases_carousel .owl-nav .owl-next span {
     border-radius: 75px 0 0 75px;
 }
 
-section .cases_carousel .owl-nav .owl-prev span:hover, section .cases_carousel:hover .owl-nav .owl-prev span {
+section .cases_carousel .owl-nav .owl-prev span:hover,
+section .cases_carousel:hover .owl-nav .owl-prev span {
     left: 0;
 }
 
-section .cases_carousel .owl-nav .owl-next span:hover, section .cases_carousel:hover .owl-nav .owl-next span {
+section .cases_carousel .owl-nav .owl-next span:hover,
+section .cases_carousel:hover .owl-nav .owl-next span {
     right: 0;
 }
 
@@ -905,6 +1041,7 @@ section .blog .title {
     font-size: 30px;
     text-align: left;
     margin-bottom: 20px;
+    line-height: 36px;
 }
 
 section .blog .blogs {
@@ -918,18 +1055,21 @@ section .blog .blogs {
 
 section .blog .blogs .blogs_item {
     width: 49%;
-    height: 166px;
     margin-bottom: 2%;
     position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
 }
 
 section .blog .blogs .blogs_item .img {
     display: inline-block;
     width: 45%;
-    height: 100%;
+    padding-bottom: 28%;
     float: left;
-    background-size: cover;
+    background-size: /* cover */ 115%;
     background-position: center;
+    /* margin-bottom: -1px; */
 }
 
 section .blog .blogs .blogs_item .name::before {
@@ -943,23 +1083,22 @@ section .blog .blogs .blogs_item .name::before {
     background: none;
     transition: all 0.3s;
     box-sizing: border-box;
-    border: 3px solid #c09d74;
-    opacity: 0;
+    border: 1px solid #dbdbdb;
 }
 
 section .blog .blogs .blogs_item .name:hover::before {
-    opacity: 1;
+    border: 1px solid #c09d74;
 }
 
 section .blog .blogs .blogs_item div {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100%;
+    width: 55%;
     padding: 0 10px 0 20px;
-    border: 1px solid #dbdbdb;
-    border-left: none;
     box-sizing: border-box;
+    /* border: 1px solid #dbdbdb; */
+    border-left: none;
 }
 
 section .blog .blogs .blogs_item .name {
@@ -979,7 +1118,7 @@ section .blog .blogs .blogs_item p {
 section .blog .more_blogs {
     display: block;
     width: 290px;
-    margin: 10px auto 30px;
+    margin: 10px auto 50px;
     font-size: 24px;
     color: #c09d74;
 }
@@ -998,30 +1137,33 @@ section .about .buy_sell {
     justify-content: space-between;
 }
 
-section .about::after, section .about::before {
+section .about::after,
+section .about::before {
     content: ' ';
     display: inline-block;
-    width: 14%;
+    width: 20%;
     padding-bottom: 20%;
     max-height: 345px;
     background-image: url('../image/left-side.png');
-    background-position: 0 center;
+    background-position: -80px center;
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
     left: 0;
-    top: -15%;
+    top: /* -15% */ -50px;
 }
 
 section .about::after {
     left: auto;
     right: 0;
     background-image: url('../image/right-side.png');
+    background-position: 80px center;
 }
 
 section .about .buy_sell a {
     font-size: 24px;
     padding: 20px 40px;
+    border-radius: 8px;
 }
 
 section .about .text {
@@ -1044,9 +1186,12 @@ section .about .text p:last-of-type {
 section .about .text .title {
     font-family: "Ubuntu";
     font-size: 30px;
+    line-height: 36px;
     margin: 60px 0 30px;
 }
-
+#callback_agent,
+#order_selection,
+div[id^='call_me_back_agent_'],
 #call_me_back {
     max-width: 400px;
     padding: 30px;
@@ -1055,11 +1200,11 @@ section .about .text .title {
     overflow: visible;
 }
 
-#call_me_back .call_me_back_inner {
+.call_me_back_inner {
     text-align: center;
 }
 
-#call_me_back .call_me_back_inner .title {
+.call_me_back_inner .title {
     font-family: "GothamPro_Bol";
     font-size: 18px;
     line-height: 24px;
@@ -1067,7 +1212,8 @@ section .about .text .title {
     margin-bottom: 20px;
 }
 
-#call_me_back .call_me_back_inner input[type='text'], #call_me_back .call_me_back_inner textarea {
+.call_me_back_inner input[type='text'],
+.call_me_back_inner textarea {
     width: 100%;
     background: none;
     outline: none;
@@ -1078,29 +1224,35 @@ section .about .text .title {
     border-bottom: 1px solid #dbdbdb;
 }
 
-#call_me_back .call_me_back_inner input[type='text'] {
+.call_me_back_inner input[type='text'] {
     line-height: 24px;
     margin-bottom: 10px;
 }
 
-#call_me_back .call_me_back_inner textarea {
+.call_me_back_inner textarea {
     line-height: normal;
     resize: none;
     height: 24px;
 }
 
-#call_me_back .call_me_back_inner .textarea {
+.call_me_back_inner .textarea {
     margin-bottom: 30px;
     height: 100px;
     display: flex;
     flex-direction: column-reverse;
 }
 
-#call_me_back .call_me_back_inner #conf_politics {
+.call_me_back_inner #conf_politics_one,
+.call_me_back_inner #conf_politics_three,
+.call_me_back_inner input[id^='conf_politics_agent_'],
+.call_me_back_inner #conf_politics {
     visibility: hidden;
 }
 
-#call_me_back .call_me_back_inner #conf_politics+label {
+.call_me_back_inner #conf_politics_one+label,
+.call_me_back_inner #conf_politics_three+label,
+.call_me_back_inner input[id^='conf_politics_agent_']+label,
+.call_me_back_inner #conf_politics+label {
     font-family: "GothamPro_Ita";
     font-size: 12px;
     line-height: 24px;
@@ -1110,38 +1262,50 @@ section .about .text .title {
     cursor: pointer;
 }
 
-#call_me_back .call_me_back_inner #conf_politics+label::first-letter {
+.call_me_back_inner #conf_politics_one+label::first-letter,
+.call_me_back_inner #conf_politics_three+label::first-letter,
+.call_me_back_inner input[id^='conf_politics_agent_']+label::first-letter,
+.call_me_back_inner #conf_politics+label::first-letter {
     padding-left: 12px;
 }
 
-#call_me_back .call_me_back_inner #conf_politics+label::before {
+.call_me_back_inner #conf_politics_one+label::before,
+.call_me_back_inner #conf_politics_three+label::before,
+.call_me_back_inner input[id^='conf_politics_agent_']+label::before,
+.call_me_back_inner #conf_politics+label::before {
     content: ' ';
     display: inline-block;
     width: 7px;
     height: 7px;
     border: 1px solid #dbdbdb;
     position: absolute;
-    left: 35px;
-    top: 8px;
+    left: 32px;
+    top: 9px;
 }
 
-#call_me_back .call_me_back_inner #conf_politics+label::after {
+.call_me_back_inner #conf_politics_one+label::after,
+.call_me_back_inner #conf_politics_three+label::after,
+.call_me_back_inner input[id^='conf_politics_agent_']+label::after,
+.call_me_back_inner #conf_politics+label::after {
     content: ' ';
     display: inline-block;
     width: 3px;
     height: 3px;
     background: #000;
     position: absolute;
-    left: 38px;
+    left: 34px;
     top: 11px;
     opacity: 0;
 }
 
-#call_me_back .call_me_back_inner #conf_politics:checked+label::after {
+.call_me_back_inner #conf_politics_one:checked+label::after,
+.call_me_back_inner #conf_politics_three:checked+label::after,
+.call_me_back_inner input[id^='conf_politics_agent_']:checked+label::after,
+.call_me_back_inner #conf_politics:checked+label::after {
     opacity: 1;
 }
 
-#call_me_back .call_me_back_inner button.casual_button {
+.call_me_back_inner button.casual_button {
     border: none;
     text-decoration: underline;
     font-family: "GothamPro";
@@ -1149,14 +1313,17 @@ section .about .text .title {
     outline: none;
     pointer-events: none;
     background: #dbdbdb;
+    color: #fff;
+    padding: 14px 20px;
 }
 
-#call_me_back .call_me_back_inner button.checked_button {
+.call_me_back_inner input[id^='conf_politics_agent_']:checked ~ button,
+.call_me_back_inner button.checked_button {
     pointer-events: all;
     background: #c09d74;
 }
 
-#call_me_back .call_me_back_inner button.casual_button:hover {
+.call_me_back_inner button.casual_button:hover {
     text-decoration: none;
     background: #d8b48a;
 }
@@ -1166,7 +1333,7 @@ section .about .text .title {
 }
 
 .fancybox-is-open .fancybox-bg {
-    opacity: 0.25;
+    opacity: 0.9;
 }
 
 .fancybox-close-small {
@@ -1187,42 +1354,46 @@ section .about .text .title {
     font-family: "Ubuntu";
 }
 
-section.category_page .title {
+section .category_page .categories ~ .panel {
+    margin-top: 13px;
+    margin-bottom: 0;
+}
+section .category_page .title {
     margin: 0;
     padding-top: 40px;
-    border-top: 1px solid #dbdbdb;
+    line-height: 36px;
 }
 
-p.center {
+.center {
     text-align: center;
 }
 
-section.category_page .title+.center {
+section .category_page .title+.center {
     margin: 20px 0
 }
 
-section.category_page .choise {
+section .category_page .choise {
     margin-bottom: 20px;
 }
 
-section.category_page .realtor_category {
+section .category_page .realtor_category {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 20px;
 }
 
-section.category_page .realtor_category .realtor_item {
+section .category_page .realtor_category .realtor_item {
     width: 19%;
     border: 1px solid #dbdbdb;
     border-radius: 5px;
     box-sizing: border-box;
     transition: all 0.5s;
     min-height: 366px;
+    margin-bottom: 30px;
 }
 
-section.category_page .realtor_category .realtor_item a {
+section .category_page .realtor_category .realtor_item a {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -1231,7 +1402,7 @@ section.category_page .realtor_category .realtor_item a {
     text-align: center;
 }
 
-section.category_page .realtor_category .realtor_item a .img {
+section .category_page .realtor_category .realtor_item a .img {
     width: 180px;
     padding-bottom: 180px;
     background-size: cover;
@@ -1240,27 +1411,28 @@ section.category_page .realtor_category .realtor_item a .img {
     margin: 20px 0;
 }
 
-section.category_page .realtor_category .realtor_item a p {
+section .category_page .realtor_category .realtor_item a p {
     margin-bottom: 10px;
 }
 
-section.category_page .realtor_category .realtor_item a .name {
+section .category_page .realtor_category .realtor_item a .name {
     font-size: 16px;
     font-style: italic;
 }
 
-section.category_page .realtor_category .realtor_item a .job {
+section .category_page .realtor_category .realtor_item a .job {
     font-size: 12px;
     font-weight: bold;
+    line-height: normal;
 }
 
-section.category_page .realtor_category .realtor_item a .obj_count {
+section .category_page .realtor_category .realtor_item a .obj_count {
     font-size: 12px;
     font-style: italic;
     color: #c09d74;
 }
 
-section.category_page .realtor_category .realtor_item .watch_cases {
+section .category_page .realtor_category .realtor_item .watch_cases {
     padding: 15px 0;
     border-top: 1px solid #dbdbdb;
     font-size: 12px;
@@ -1268,8 +1440,2989 @@ section.category_page .realtor_category .realtor_item .watch_cases {
     text-decoration: underline;
 }
 
-section.category_page .realtor_category .realtor_item .watch_cases:hover {
+section .category_page .catalog .sort_filter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: "Ubuntu";
+    font-size: 14px;
+    line-height: 14px;
+    color: #666666;
+}
+
+section .category_page .catalog .sort_filter .change_view {
+    margin: 25px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+section .category_page .catalog .sort_filter .change_view span {
+    margin-right: 20px;
+    font-family: "Ubuntu";
+    font-size: 14px;
+    line-height: 14px;
+    color: #666666;
+}
+
+section .category_page .catalog .sort_filter .change_view button {
+    width: 49px;
+    height: 31px;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    margin-right: 20px;
+}
+section .category_page .catalog .sort_filter #input-sort,
+section .category_page .catalog .sort_filter #input-limit {
+    padding: 5px 0;
+    margin: 0 20px 0 5px;
+}
+section .category_page .catalog .sort_filter .change_view .tab_veiw {
+    background-image: url('../image/veiw_tabs.png');
+}
+
+section .category_page .catalog .sort_filter .change_view .tab_veiw.active {
+    background-image: url('../image/veiw_tabs_active.png');
+}
+
+section .category_page .catalog .sort_filter .change_view .list_veiw {
+    background-image: url('../image/view_list.png');
+}
+
+section .category_page .catalog .sort_filter .change_view .list_veiw.active {
+    background-image: url('../image/view_list_active.png');
+}
+
+section .category_page .realtor_category .realtor_item .watch_cases:hover {
     text-decoration: none;
+}
+
+section .category_page .catalog .tabs_catalog {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+section .category_page .catalog .tabs_catalog .catalog_item {
+    width: 32.66%;
+    margin-right: 1%;
+    border: 1px solid #dbdbdb;
+    margin-top: 1%;
+    padding: 0 10px 10px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+section .category_page .catalog .tabs_catalog .catalog_item:nth-of-type(3n) {
+    margin-right: 0;
+}
+
+section .category_page .catalog .tabs_catalog .catalog_item:nth-child(1),
+section .category_page .catalog .tabs_catalog .catalog_item:nth-child(2),
+section .category_page .catalog .tabs_catalog .catalog_item:nth-child(3) {
+    margin-top: 0;
+}
+
+section .category_page .catalog .tabs_catalog .catalog_item .img {
+    display: block;
+    padding-bottom: 65%;
+    background-size: 100.5% auto;
+    background-position: center;
+    margin-left: -10px;
+    margin-right: -10px;
+    position: relative;
+}
+
+section .category_page .catalog .tabs_catalog .catalog_item .img::before {
+    content: ' ';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: none;
+    transition: all 1s;
+}
+
+section .category_page .catalog .tabs_catalog .catalog_item .img:hover::before {
+    background: rgba(192, 157, 116, .3);
+}
+
+section .category_page .catalog .tabs_catalog .catalog_item .name {
+    font-family: "Ubuntu";
+    font-weight: bold;
+    line-height: normal;
+    padding: 10px 0;
+    display: inline-block;
+    text-decoration: none;
+}
+
+section .category_page .catalog .tabs_catalog .catalog_item .name:hover {
+    text-decoration: underline;
+}
+
+section .category_page .catalog .tabs_catalog .catalog_item .tags {
+    font-family: "Ubuntu";
+    line-height: normal;
+    padding-bottom: 10px;
+    color: #393939;
+}
+
+section .category_page .catalog .tabs_catalog .catalog_item .list_button,
+section .category_page .catalog .tabs_catalog .catalog_item .tags>div {
+    display: none;
+}
+
+section .category_page .catalog .tabs_catalog .catalog_item .price_rub {
+    font-family: "GothamPro_Med";
+    font-size: 24px;
+    padding-top: 10px;
+}
+
+section .category_page .catalog .tabs_catalog .catalog_item .price_usd {
+    font-family: "GothamPro_Med";
+    font-size: 16px;
+    color: #c09d74;
+}
+
+section .category_page .catalog .tabs_catalog .catalog_item .object_id {
+    font-family: "GothamPro_Bol";
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+section .category_page .catalog .list_catalog {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+section .category_page .catalog .list_catalog .catalog_item {
+    width: 100%;
+    border: 1px solid #dbdbdb;
+    border-bottom: none;
+    padding: 35px 20px 35px 35px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+section .category_page .catalog .list_catalog .catalog_item:last-of-type {
+    border: 1px solid #dbdbdb;
+}
+
+section .category_page .catalog .list_catalog .catalog_item:last-of-type {
+    margin-bottom: 0;
+}
+
+section .category_page .catalog .list_catalog .catalog_item .img {
+    width: 34%;
+    padding-bottom: 21%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    align-self: center;
+}
+
+section .category_page .catalog .list_catalog .catalog_item .img::before {
+    content: ' ';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: none;
+    transition: all 1s;
+}
+
+section .category_page .catalog .list_catalog .catalog_item .img:hover::before {
+    background: rgba(192, 157, 116, .3);
+}
+
+section .category_page .catalog .list_catalog .catalog_item .bormotology {
+    width: 63%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-self: center;
+}
+section .bormotology {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+section .category_page .catalog .list_catalog .catalog_item .name {
+    font-family: "GothamPro";
+    font-weight: bold;
+    line-height: normal;
+    font-size: 24px;
+    padding: 0;
+    display: inline-block;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+section .category_page .catalog .list_catalog .catalog_item .name:hover {
+    text-decoration: underline;
+}
+
+section .category_page .catalog .list_catalog .catalog_item .tags {
+    font-family: "Ubuntu";
+    line-height: normal;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+section .category_page .catalog .list_catalog .catalog_item .tags>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+
+section .category_page .catalog .list_catalog .catalog_item .tags>div p {
+    width: 33%;
+    font-size: 16px;
+    color: #666666;
+    line-height: 24px;
+}
+
+section .category_page .catalog .list_catalog .catalog_item .tags>div p span {
+    font-family: "GothamPro_Med";
+    color: #000;
+    padding-left: 10px;
+}
+
+section .category_page .catalog .list_catalog .catalog_item .tags>span {
+    display: none;
+}
+
+section .category_page .catalog .list_catalog .catalog_item .list_button {
+    padding: 10px 20px;
+    border-radius: 7px;
+    order: 0;
+    align-self: flex-start;
+}
+section .category_page .catalog .prices {
+    margin-top: auto;
+    border-top: 1px solid #dbdbdb;
+}
+section .category_page .catalog .list_catalog .catalog_item .prices {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #dbdbdb;
+    padding-top: 20px;
+}
+
+section .category_page .catalog .list_catalog .catalog_item .price_rub {
+    font-family: "GothamPro_Med";
+    font-size: 24px;
+    padding-top: 0;
+}
+
+section .category_page .catalog .list_catalog .catalog_item .price_usd {
+    font-family: "GothamPro_Med";
+    font-size: 16px;
+    color: #c09d74;
+}
+
+section .category_page .catalog .list_catalog .catalog_item .price_rub,
+section .category_page .catalog .list_catalog .catalog_item .price_usd {
+    order: 1;
+    align-self: flex-end;
+}
+
+section .category_page .catalog .list_catalog .catalog_item .object_id {
+    font-family: "GothamPro_Bol";
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    text-shadow: 1px 0px 0px #000;
+}
+section .category_page .cards {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+section .category_page .cards .card {
+    width: 32.66%;
+    margin-right: 1%;
+    border: 1px solid #dbdbdb;
+    margin-bottom: 1%;
+    padding: 0 10px 10px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+section .category_page .cards .card:nth-of-type(3n) {
+    margin-right: 0;
+}
+section .category_page .cards .card .img {
+    display: block;
+    padding-bottom: 65%;
+    background-size: 100.5% auto;
+    background-position: center;
+    margin-left: -10px;
+    margin-right: -10px;
+    position: relative;
+}
+section .category_page .cards .card .img::before {
+    content: ' ';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: none;
+    transition: all 1s;
+}
+section .category_page .cards .card .img:hover::before {
+    background: rgba(192, 157, 116, .3);
+}
+section .category_page .cards .card .name {
+    font-family: "Ubuntu";
+    font-weight: bold;
+    line-height: normal;
+    padding: 10px 0;
+    display: inline-block;
+    text-decoration: none;
+}
+section .category_page .cards .card .name:hover {
+    text-decoration: underline;
+}
+section .category_page .cards .card .price_rub {
+    font-family: "GothamPro_Med";
+    font-size: 24px;
+    padding-top: 10px;
+}
+section .category_page .cards .card .price_usd {
+    font-family: "GothamPro_Med";
+    font-size: 16px;
+    color: #c09d74;
+}
+section .category_page .cards .card .tags {
+    line-height: normal;
+    padding-bottom: 10px;
+}
+section .category_page .cards .card .prices {
+    border-top: 1px solid #dbdbdb;
+    margin-top: auto;
+    padding-top: 10px;
+}
+section .category_page .cards .card .price_m,
+section .category_page .cards .card .tags p {
+    color: #666666;
+    font-size: 16px;
+}
+section .category_page .cards .card .price_m span,
+section .category_page .cards .card .tags span {
+    color: #000;
+    font-family: "GothamPro_Med";
+}
+
+section .catalog {
+    margin-bottom: 30px;
+}
+section .pagination {
+    padding: 0;
+    margin: 30px 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* section .catalog .pagination {
+    margin: 30px 0 0;
+} */
+section .pagination li a {
+    font-family: "GothamPro_Med";
+    margin: 0 5px;
+    padding: 0;
+    background: none;
+    border: none;
+    text-decoration: underline;
+    color: #000;
+}
+section .pagination li a:focus,
+section .pagination li a:active,
+section .pagination li a:hover {
+    background: none;
+    color: #000;
+    text-decoration: none;
+}
+
+section .pagination li .dotes {
+    text-decoration: none;
+    pointer-events: none;
+}
+
+section .pagination li.active span {
+    margin: 0 10px;
+    padding: 0;
+    font-family: "GothamPro_Bol";
+    color: #c09d74;
+    text-decoration: none;
+    pointer-events: none;
+    text-shadow: 1px 0px #c09d74;
+    background: none;
+    border: none;
+}
+
+section .seotext {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px 0;
+    border-top: 1px solid #dbdbdb;
+}
+
+section .seotext .agent {
+    width: 32.66%;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 30px;
+}
+
+section .seotext .agent .img {
+    display: inline-block;
+    width: 225px;
+    height: 225px;
+    border-radius: 113px;
+    background-size: cover;
+    background-position: center;
+}
+
+section .seotext .agent p {
+    text-align: left;
+    font-size: 18px;
+    line-height: 24px;
+    padding-bottom: 25px;
+}
+
+section .seotext .agent .name {
+    text-align: center;
+    font-family: "GothamPro_Ita";
+    padding: 15px 0 20px;
+}
+
+section .seotext .agent a {
+    padding: 14px 20px;
+    border-radius: 7px;
+}
+
+section .seotext .text {
+    width: 65%;
+}
+
+section .seotext .text p {
+    font-family: "Ubuntu";
+    margin-bottom: 25px;
+    line-height: 24px;
+}
+
+section .seotext .text .title {
+    border: none;
+    text-align: left;
+    padding: 0;
+    font-size: 30px;
+    line-height: 32px;
+}
+
+section .case_with>.title {
+    padding: 0;
+    border: none;
+    text-align: left;
+    font-family: "Ubuntu";
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 20px;
+}
+
+section .case_with>div {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+section .case_with>div .case,
+section .case_with>div .description {
+    width: 35%;
+    border: 1px solid #dbdbdb;
+}
+
+section .case_with>div .case {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 20px 35px 40px;
+}
+
+section .case_with>div .case p {
+    margin: 0 0 20px;
+    text-align: left;
+}
+
+section .case_with>div .case .title {
+    margin-bottom: 15px;
+    padding: 0;
+    border: none;
+    font-family: "GothamPro_Med";
+    font-size: 30px;
+    line-height: 36px;
+}
+
+section .case_with>div .case a {
+    margin-top: auto;
+    padding: 14px 20px;
+    border-radius: 7px;
+}
+
+section .case_with>div .realtor {
+    width: 30%;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section .case_with>div .realtor .img {
+    display: inline-block;
+    width: 225px;
+    height: 225px;
+    border-radius: 113px;
+    margin-bottom: 15px;
+    background-size: cover;
+    background-position: center;
+}
+
+section .case_with>div .realtor p {
+    font-style: italic;
+}
+
+section .case_with>div .description {
+    padding: 20px 25px;
+}
+
+section .case_with>div .description .img {
+    padding-bottom: 60%;
+    margin-bottom: 20px;
+    background-size: cover;
+    background-position: center;
+}
+
+section .case_with .watch_cases {
+    display: block;
+    width: 250px;
+    margin: 30px auto;
+    font-size: 24px;
+    color: #c09d74;
+}
+
+section .breadcrumbs {
+    padding: 25px 0;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+section .breadcrumbs ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+section .breadcrumbs ul li a {
+    font-size: 14px;
+}
+
+section .breadcrumbs ul li .actual {
+    text-decoration: none;
+    pointer-events: none;
+}
+
+section .object_title {
+    padding: 0 200px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+section .object_title .backward {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 85px;
+    color: #666666;
+    cursor: pointer;
+}
+
+section .object_title .backward:hover::before {
+    background: rgba(0, 0, 0, .3);
+}
+
+section .object_title .backward::before {
+    content: ' ';
+    display: inline-block;
+    width: 75px;
+    height: 150px;
+    border-radius: 0 75px 75px 0;
+    background: rgba(0, 0, 0, .2);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background .3s;
+}
+
+section .object_title .backward img {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 65px;
+    height: auto;
+}
+
+section .object_title .title {
+    margin: 25px 0 20px;
+    font-weight: bolder;
+}
+section .object_page .object_title .title {
+    color: #c09d74;
+}
+section .object_title .center {
+    margin: 0 0 25px;
+    font-family: "Ubuntu";
+}
+section .object_page {
+    padding: 0 0 30px;
+}
+section .object_page .actual_object {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-bottom: 30px;
+}
+
+section .object_page .actual_object .left_side {
+    width: 68%;
+    padding-right: 35px;
+}
+
+section .object_page .actual_object .left_side .object_photo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 4.7% 4.7% 1.7%;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+}
+
+section .object_page .actual_object .left_side .object_photo a {
+    width: 17.6%;
+    margin-left: 3%;
+    margin-bottom: 3%;
+    /* padding-bottom: 12%; */
+    background-size: cover;
+    background-position: center;
+}
+
+section .object_page .actual_object .left_side .object_photo a:nth-child(2),
+section .object_page .actual_object .left_side .object_photo a:nth-child(5n-3) {
+    margin-left: 0;
+}
+
+section .object_page .actual_object .left_side .object_photo .main_photo {
+    width: 100%;
+    /* padding-bottom: 60%; */
+    margin-left: 0;
+    display: inline-block;
+}
+
+section .object_page .actual_object .left_side .object_photo a img {
+    width: 100%;
+}
+
+section .object_page .actual_object .left_side .object_description {
+    border-bottom: 1px solid #dbdbdb;
+}
+section .object_page .actual_object .left_side .object_description>div {
+    padding-bottom: 30px;
+    font-family: "Ubuntu";
+    line-height: 24px;
+    font-size: 1em;
+}
+
+section .object_page .actual_object .left_side .object_description p {
+    font-family: "Ubuntu";
+    margin-top: 30px;
+}
+
+section .object_page .actual_object .left_side .object_map .title,
+section .object_page .actual_object .left_side .object_description .title {
+    font-family: "Ubuntu";
+    text-align: left;
+    font-size: 30px;
+    margin-bottom: 35px;
+}
+section .object_page .actual_object .left_side .object_description ol {
+    margin: 0 0 40px;
+    padding: 0;
+    list-style-type: none;
+}
+
+section .object_page .actual_object .left_side .object_description ol li {
+    counter-increment: step-counter;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 40px;
+    margin-left: 40px;
+}
+
+section .object_page .actual_object .left_side .object_description ol li::before {
+    content: counter(step-counter) '.';
+    font-family: "GothamPro_Med";
+    font-size: 24px;
+    line-height: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+section .object_page .actual_object .left_side .object_description ul {
+    margin: 0 0 40px;
+    padding: 0;
+    list-style-type: none;
+}
+
+section .object_page .actual_object .left_side .object_description ul li {
+    counter-increment: step-counter;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 40px;
+    margin-left: 40px;
+}
+
+section .object_page .actual_object .left_side .object_description ul li::before {
+    content: " ";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background: #c09d74;
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+section .object_page .actual_object .left_side .object_map .title {
+    margin: 25px 0 30px;
+}
+
+section .object_page .actual_object .left_side .object_map {
+    padding-bottom: 40px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+section .object_page .actual_object .left_side .object_map .map {
+    padding-bottom: 45%;
+    position: relative;
+}
+
+section .object_page .actual_object .left_side .object_map .map>ymaps {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+section .object_page .actual_object .right_side {
+    width: 32%;
+}
+
+section .object_page .actual_object .right_side .save_object {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px 0;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+section .object_page .actual_object .right_side .save_object a {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+section .object_page .actual_object .right_side .save_object a img {
+    padding-right: 5px;
+    height: 24px;
+}
+
+section .object_page .actual_object .right_side .save_object a+a {
+    padding-left: 30px;
+}
+
+section .object_page .actual_object .card_label {
+    position: relative;
+    padding: 8px 150px 8px 0;
+    border-bottom: 1px solid #dbdbdb;
+    align-items: center;
+    min-height: 45px;
+}
+
+section .object_page .actual_object .card_label .object_id {
+    font-family: "GothamPro_Bol";
+    text-shadow: 1px 0 0 #000;
+    right: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+section .object_page .actual_object .details {
+    padding-bottom: 25px;
+    border-bottom: 1px solid #dbdbdb;
+    margin-bottom: 20px;
+}
+
+section .object_page .actual_object .specials p,
+section .object_page .actual_object .details p {
+    font-size: 16px;
+    color: #666666;
+    line-height: 30px;
+}
+
+section .object_page .actual_object .details p span {
+    color: #000;
+    font-family: "GothamPro_Med";
+}
+section .object_page .actual_object .details p .usdPrice {
+    color: #c09d74;
+}
+
+section .object_page .actual_object .specials .title,
+section .object_page .actual_object .details .title {
+    font-family: "Ubuntu";
+    text-align: left;
+    font-size: 24px;
+    margin: 20px 0 10px 0;
+    color: #000;
+}
+
+section .object_page .actual_object .specials {
+    margin-bottom: 10px;
+}
+
+section .object_page .actual_object .realtor {
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    padding: 45px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+section .object_page .actual_object .realtor .img {
+    display: inline-block;
+    width: 225px;
+    height: 225px;
+    border-radius: 113px;
+    margin-bottom: 15px;
+    background-size: cover;
+    background-position: center;
+}
+
+section .object_page .actual_object .realtor .name {
+    font-family: "GothamPro_Bol";
+}
+
+section .object_page .actual_object .realtor .job {
+    font-family: "GothamPro_Ita";
+    font-size: 14px;
+    line-height: 24px;
+    margin: 8px 0;
+}
+
+section .object_page .actual_object .realtor .realtor_objects,
+section .object_page .actual_object .realtor .cases {
+    font-size: 14px;
+    width: 100%;
+    margin: 0;
+    padding: 15px 0px 15px 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-top: 1px solid #dbdbdb;
+}
+
+section .object_page .actual_object .realtor .realtor_objects img,
+section .object_page .actual_object .realtor .cases img {
+    height: 22px;
+    margin-right: 5px;
+}
+
+section .object_page .actual_object .realtor .cases {
+    border-bottom: 1px solid #dbdbdb;
+    margin-bottom: 20px;
+}
+
+section .object_page .actual_object .realtor .tel {
+    color: #666666;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+section .object_page .actual_object .realtor .tel+.tel {
+    margin-bottom: 20px;
+}
+
+section .object_page .actual_object .realtor .tel a {
+    font-family: "GothamPro_Med";
+    color: #000;
+}
+
+section .object_page .actual_object .realtor .casual_button {
+    padding: 14px 20px;
+    border-radius: 7px;
+}
+
+section .object_page .same_objects {
+    margin-left: -50px;
+    margin-right: -50px;
+}
+
+section .object_page .same_objects .title {
+    padding: 0 50px;
+    font-family: "Ubuntu";
+    font-size: 30px;
+    margin: 0px 0 25px;
+    text-align: left;
+}
+
+section .object_page .same_objects .card {
+    border: 1px solid #dbdbdb;
+    margin-bottom: 0;
+    padding: 0 10px 10px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+section .object_page .same_objects .card .img {
+    display: block;
+    padding-bottom: 65%;
+    background-size: cover;
+    background-position: center;
+    margin-left: -10px;
+    margin-right: -10px;
+    position: relative;
+}
+
+section .object_page .same_objects .card .img::before {
+    content: ' ';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: none;
+    transition: all 1s;
+}
+
+section .object_page .same_objects .card .img:hover::before {
+    background: rgba(192, 157, 116, .3);
+}
+
+section .object_page .same_objects .card .name {
+    font-family: "Ubuntu";
+    font-weight: bold;
+    line-height: normal;
+    padding: 10px 0;
+    display: inline-block;
+    text-decoration: none;
+}
+
+section .object_page .same_objects .card .name:hover {
+    text-decoration: underline;
+}
+
+section .object_page .same_objects .card .tags {
+    font-family: "Ubuntu";
+    line-height: normal;
+    padding-bottom: 10px;
+    /* border-bottom: 1px solid #dbdbdb; */
+    color: #393939;
+    margin-bottom: auto;
+}
+
+section .object_page .same_objects .card .price_rub {
+    font-family: "GothamPro_Med";
+    font-size: 24px;
+    padding-top: 10px;
+    border-top: 1px solid #dbdbdb;
+}
+
+section .object_page .same_objects .card .price_usd {
+    font-family: "GothamPro_Med";
+    font-size: 16px;
+    color: #c09d74;
+}
+
+section .object_page .same_objects .card .object_id {
+    font-family: "GothamPro_Bol";
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+section .same_obj_slider .owl-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 1px;
+    margin-left: -50px;
+    margin-right: -50px;
+}
+
+section .same_obj_slider .owl-nav span {
+    display: inline-block;
+    height: 150px;
+    width: 75px;
+    border-radius: 0 75px 75px 0;
+    background: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.5s;
+}
+
+section .same_obj_slider .owl-nav span:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+section .same_obj_slider .owl-nav span::before {
+    content: ' ';
+    display: inline-block;
+    width: 45px;
+    border-top: 5px solid #fff;
+    position: absolute;
+    top: 58px;
+    left: 10px;
+    transform: rotate(135deg);
+}
+
+section .same_obj_slider .owl-nav span::after {
+    content: ' ';
+    display: inline-block;
+    width: 45px;
+    border-top: 5px solid #fff;
+    position: absolute;
+    bottom: 58px;
+    left: 10px;
+    transform: rotate(45deg);
+}
+
+section .same_obj_slider .owl-nav button.owl-prev,
+section .same_obj_slider .owl-nav button.owl-next {
+    position: absolute;
+    left: 0;
+    height: 150px;
+    width: 75px;
+    top: 50%;
+    transform: translateY(-50%);
+    outline: none;
+}
+
+section .same_obj_slider .owl-nav button.owl-next {
+    left: auto;
+    right: 0;
+}
+
+section .same_obj_slider .owl-nav .owl-prev span {
+    left: -80px;
+}
+
+section .same_obj_slider .owl-nav .owl-next span {
+    right: -80px;
+    border-radius: 75px 0 0 75px;
+}
+
+section .same_obj_slider .owl-nav .owl-prev span:hover,
+section .same_obj_slider:hover .owl-nav .owl-prev span {
+    left: 0;
+}
+
+section .same_obj_slider .owl-nav .owl-next span:hover,
+section .same_obj_slider:hover .owl-nav .owl-next span {
+    right: 0;
+}
+
+section .same_obj_slider .owl-nav .owl-next span::before {
+    transform: rotate(45deg);
+    left: auto;
+    right: 10px;
+}
+
+section .same_obj_slider .owl-nav .owl-next span::after {
+    transform: rotate(135deg);
+    left: auto;
+    right: 10px;
+}
+
+section .same_obj_slider {
+    padding: 0 50px;
+    overflow: hidden;
+}
+section .same_obj_slider .owl-stage,
+section .same_obj_slider .owl-stage .owl-item {
+    justify-content: stretch;
+    display: flex;
+    align-items: stretch;
+}
+section .case_like_this>.title {
+    padding: 0;
+    text-align: left;
+    font-family: "Ubuntu";
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+section .case_like_this>div {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+section .case_like_this>div .case,
+section .case_like_this>div .description {
+    width: 35%;
+    border: 1px solid #dbdbdb;
+}
+
+section .case_like_this>div .case {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 20px 35px 40px;
+}
+
+section .case_like_this>div .case p {
+    margin: 0 0 20px;
+    text-align: left;
+}
+
+section .case_like_this>div .case .title {
+    margin-bottom: 15px;
+    padding: 0;
+    border: none;
+    font-family: "GothamPro_Med";
+    font-size: 30px;
+    line-height: 36px;
+}
+
+section .case_like_this>div .case a {
+    margin-top: auto;
+    padding: 14px 20px;
+    border-radius: 7px;
+}
+
+section .case_like_this>div .realtor {
+    width: 30%;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section .case_like_this>div .realtor .img {
+    display: inline-block;
+    width: 225px;
+    height: 225px;
+    border-radius: 113px;
+    margin-bottom: 15px;
+    background-size: cover;
+    background-position: center;
+}
+
+section .case_like_this>div .realtor p {
+    font-style: italic;
+}
+
+section .case_like_this>div .description {
+    padding: 20px 25px;
+}
+
+section .case_like_this>div .description .img {
+    padding-bottom: 60%;
+    margin-bottom: 20px;
+    background-size: cover;
+    background-position: center;
+}
+
+section .case_like_this .watch_cases {
+    display: block;
+    width: 250px;
+    margin: 30px auto;
+    font-size: 24px;
+    color: #c09d74;
+}
+
+section .cases_page .title {
+    margin: 0;
+    padding-top: 30px;
+    line-height: 36px;
+    font-weight: bolder;
+}
+
+section .cases_page .title+.center {
+    margin: 20px 0;
+}
+
+section .cases_page .realtor_category {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+section .cases_page .realtor_category .realtor_item {
+    width: 19%;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: all 0.5s;
+    /* min-height: 366px; */
+}
+
+section .cases_page .realtor_category .realtor_item a {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+    text-align: center;
+}
+
+section .cases_page .realtor_category .realtor_item a .img {
+    width: 180px;
+    padding-bottom: 180px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 90px;
+    margin: 20px 0;
+}
+
+section .cases_page .realtor_category .realtor_item a p {
+    margin-bottom: 10px;
+}
+
+section .cases_page .realtor_category .realtor_item a .name {
+    font-size: 16px;
+    font-style: italic;
+}
+
+section .cases_page .realtor_category .realtor_item a .job {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: normal;
+}
+
+section .cases_page .realtor_category .realtor_item a .obj_count {
+    font-size: 12px;
+    font-style: italic;
+    color: #c09d74;
+}
+
+section .cases_page .realtor_category .realtor_item .watch_cases {
+    padding: 15px 0;
+    border-top: 1px solid #dbdbdb;
+    font-size: 12px;
+    line-height: 24px;
+    text-decoration: underline;
+}
+
+section .cases_page .realtor_category .realtor_item .watch_cases:hover {
+    text-decoration: none;
+}
+
+section .cases_page .watch_all_cases {
+    display: block;
+    width: auto;
+    margin: 30px auto;
+    font-size: 24px;
+    color: #c09d74;
+    text-align: center;
+}
+section .cases_page .agent_cases {
+    margin-bottom: 30px;
+}
+section .cases_page .agent_cases .title {
+    border: none;
+}
+
+section .cases_page .agent_cases .agent_item {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin-bottom: 20px;
+}
+
+section .cases_page .agent_cases .agent_item:last-of-type {
+    margin-bottom: 0;
+}
+
+section .cases_page .agent_cases .agent_item .case,
+section .cases_page .agent_cases .agent_item .description {
+    width: 35%;
+    border: 1px solid #dbdbdb;
+}
+
+section .cases_page .agent_cases .agent_item .case {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 20px 35px 40px;
+}
+
+section .cases_page .agent_cases .agent_item .case p {
+    margin: 0 0 20px;
+    text-align: left;
+}
+
+section .cases_page .agent_cases .agent_item .case .title {
+    margin-bottom: 15px;
+    padding: 0;
+    border: none;
+    font-family: "GothamPro_Med";
+    font-size: 30px;
+    line-height: 36px;
+}
+
+section .cases_page .agent_cases .agent_item .case a {
+    margin-top: 20px;
+    padding: 14px 20px;
+    border-radius: 7px;
+}
+
+section .cases_page .agent_cases .agent_item .realtor {
+    width: 30%;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+}
+
+section .cases_page .agent_cases .agent_item .realtor .img {
+    display: inline-block;
+    width: 225px;
+    height: 225px;
+    border-radius: 113px;
+    margin-bottom: 15px;
+    background-size: cover;
+    background-position: center;
+}
+
+section .cases_page .agent_cases .agent_item .realtor p {
+    font-style: italic;
+}
+
+section .cases_page .agent_cases .agent_item .description {
+    padding: 20px 25px;
+}
+
+section .cases_page .agent_cases .agent_item .description .img {
+    padding-bottom: 60%;
+    margin-bottom: 20px;
+    background-size: cover;
+    background-position: center;
+}
+
+section .case_in_page .object_title {
+    padding: 20px 200px;
+    border-bottom: 1px solid #dbdbdb;
+    margin: 0;
+}
+
+section .case_in_page .object_title .backward {
+    left: -50px;
+}
+
+section .case_in_page .case_inner {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-bottom: 30px;
+}
+
+section .case_in_page .case_inner .left_side {
+    width: 65%;
+    padding-left: 35px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+section .case_in_page .case_inner .left_side p {
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 15px;
+}
+
+section .case_in_page .case_inner .left_side .sub-title {
+    font-family: "GothamPro_Med";
+    font-size: 24px;
+    line-height: normal;
+}
+section .case_in_page .case_inner .left_side ol {
+    margin: 0 0 40px;
+    padding: 0;
+    list-style-type: none;
+}
+
+section .case_in_page .case_inner .left_side ol li {
+    counter-increment: step-counter;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 40px;
+    margin-left: 40px;
+}
+
+section .case_in_page .case_inner .left_side ol li::before {
+    content: counter(step-counter) '.';
+    font-family: "GothamPro_Med";
+    font-size: 24px;
+    line-height: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+section .case_in_page .case_inner .left_side ul {
+    margin: 0 0 40px;
+    padding: 0;
+    list-style-type: none;
+}
+
+section .case_in_page .case_inner .left_side ul li {
+    counter-increment: step-counter;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 40px;
+    margin-left: 40px;
+}
+
+section .case_in_page .case_inner .left_side ul li::before {
+    content: " ";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background: #c09d74;
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+section .case_in_page .case_inner .right_side {
+    width: 35%;
+    padding-left: 35px;
+}
+
+section .case_in_page .case_inner .right_side .released_rel {
+    margin-top: 10px;
+}
+
+section .case_in_page .case_inner .right_side .details p {
+    font-size: 16px;
+    color: #666666;
+    line-height: 30px;
+}
+
+section .case_in_page .case_inner .right_side .details p span {
+    color: #000;
+    font-family: "GothamPro_Med";
+}
+
+section .case_in_page .case_inner .right_side .details .title {
+    font-family: "Ubuntu";
+    text-align: left;
+    font-size: 24px;
+    margin: 20px 0 10px 0;
+    color: #000;
+}
+
+section .case_in_page .case_inner .right_side .realtor {
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    padding: 45px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+section .case_in_page .case_inner .right_side .realtor .img {
+    display: inline-block;
+    width: 225px;
+    height: 225px;
+    border-radius: 113px;
+    margin-bottom: 15px;
+    background-size: cover;
+    background-position: center;
+}
+
+section .case_in_page .case_inner .right_side .realtor .name {
+    font-family: "GothamPro_Bol";
+}
+
+section .case_in_page .case_inner .right_side .realtor .job {
+    font-family: "GothamPro_Ita";
+    font-size: 14px;
+    line-height: 24px;
+    margin: 8px 0;
+}
+
+section .case_in_page .case_inner .right_side .realtor .realtor_objects,
+section .case_in_page .case_inner .right_side .realtor .cases {
+    font-size: 14px;
+    width: 100%;
+    margin: 0;
+    padding: 15px 0px 15px 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-top: 1px solid #dbdbdb;
+}
+
+section .case_in_page .case_inner .right_side .realtor .realtor_objects img,
+section .case_in_page .case_inner .right_side .realtor .cases img {
+    height: 22px;
+    margin-right: 5px;
+}
+
+section .case_in_page .case_inner .right_side .realtor .cases {
+    border-bottom: 1px solid #dbdbdb;
+    margin-bottom: 20px;
+}
+
+section .case_in_page .case_inner .right_side .realtor .tel {
+    color: #666666;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+section .case_in_page .case_inner .right_side .realtor .tel+.tel {
+    margin-bottom: 20px;
+}
+
+section .case_in_page .case_inner .right_side .realtor .tel a {
+    font-family: "GothamPro_Med";
+    color: #000;
+}
+
+section .case_in_page .case_inner .right_side .realtor .casual_button {
+    padding: 14px 20px;
+    border-radius: 7px;
+}
+
+section .case_in_page .case_inner .right_side .card {
+    border: 1px solid #dbdbdb;
+    padding: 0 10px 10px;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 15px;
+}
+
+section .case_in_page .case_inner .right_side .card .img {
+    display: block;
+    padding-bottom: 65%;
+    background-size: cover;
+    background-position: center;
+    margin-left: -10px;
+    margin-right: -10px;
+    position: relative;
+}
+
+section .case_in_page .case_inner .right_side .card .img::before {
+    content: ' ';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: none;
+    transition: all 1s;
+}
+
+section .case_in_page .case_inner .right_side .card .img:hover::before {
+    background: rgba(192, 157, 116, .3);
+}
+
+section .card_label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+section .card_label span {
+    margin: 0 2px 2px 0;
+    width: auto;
+    display: flex;
+    z-index: 9;
+}
+section .actual_object .card_label span {
+    margin: 1px 2px 1px 0;
+}
+section .card_label span img {
+    height: 100%;
+}
+section .case_in_page .case_inner .right_side .card .name {
+    font-family: "Ubuntu";
+    font-weight: bold;
+    line-height: normal;
+    padding: 10px 0;
+    display: inline-block;
+    text-decoration: none;
+}
+
+section .case_in_page .case_inner .right_side .card .name:hover {
+    text-decoration: underline;
+}
+
+section .case_in_page .case_inner .right_side .card .tags {
+    font-family: "Ubuntu";
+    line-height: normal;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dbdbdb;
+    color: #393939;
+}
+
+section .case_in_page .case_inner .right_side .card .price_rub {
+    font-family: "GothamPro_Med";
+    font-size: 24px;
+    padding-top: 10px;
+}
+
+section .case_in_page .case_inner .right_side .card .price_usd {
+    font-family: "GothamPro_Med";
+    font-size: 16px;
+}
+
+section .case_in_page .case_inner .right_side .card .object_id {
+    font-family: "GothamPro_Bol";
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+section .case_in_page .cases {
+    border: none;
+}
+
+section .case_in_page .same_objects {
+    margin-left: -50px;
+    margin-right: -50px;
+    margin-bottom: 35px;
+}
+
+section .case_in_page .same_objects .title,
+section .case_in_page .cases .title {
+    margin: 25px 0 0;
+    font-family: "Ubuntu";
+    font-size: 30px;
+    text-align: left;
+}
+
+section .case_in_page .cases .cases_carousel {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+section .case_in_page .same_objects .title {
+    margin-bottom: 20px;
+    padding: 0 50px;
+}
+
+section .case_in_page .same_objects .card {
+    border: 1px solid #dbdbdb;
+    margin-bottom: 0;
+    padding: 0 10px 10px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+section .case_in_page .same_objects .card .img {
+    display: block;
+    padding-bottom: 65%;
+    background-size: cover;
+    background-position: center;
+    margin-left: -10px;
+    margin-right: -10px;
+    position: relative;
+}
+
+section .case_in_page .same_objects .card .img::before {
+    content: ' ';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: none;
+    transition: all 1s;
+}
+
+section .case_in_page .same_objects .card .img:hover::before {
+    background: rgba(192, 157, 116, .3);
+}
+
+section .case_in_page .same_objects .card .name {
+    font-family: "Ubuntu";
+    font-weight: bold;
+    line-height: normal;
+    padding: 10px 0;
+    display: inline-block;
+    text-decoration: none;
+}
+
+section .case_in_page .same_objects .card .name:hover {
+    text-decoration: underline;
+}
+
+section .case_in_page .same_objects .card .tags {
+    font-family: "Ubuntu";
+    line-height: normal;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dbdbdb;
+    color: #393939;
+}
+
+section .case_in_page .same_objects .card .price_rub {
+    font-family: "GothamPro_Med";
+    font-size: 24px;
+    padding-top: 10px;
+}
+
+section .case_in_page .same_objects .card .price_usd {
+    font-family: "GothamPro_Med";
+    font-size: 16px;
+}
+
+section .case_in_page .same_objects .card .object_id {
+    font-family: "GothamPro_Bol";
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+section .blog_page .title {
+    font-weight: bolder;
+    margin: 0 0 30px;
+    padding: 30px 0 0;
+}
+
+section .blog_page .center {
+    margin: 0 0 35px;
+}
+
+section .blog_page .blog_item {
+    padding: 20px 40px 35px 20px;
+    border: 1px solid #dbdbdb;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin-bottom: 10px;
+}
+
+/* section .blog_page .blog_item:last-of-type {
+    margin-bottom: 0;
+} */
+
+section .blog_page .blog_item .img {
+    width: 34%;
+    padding-bottom: 21%;
+    align-self: center;
+    background-size: 110%;
+    background-position: center;
+    position: relative;
+}
+
+section .blog_page .blog_item .img::before {
+    content: ' ';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: none;
+    transition: all 1s;
+}
+
+section .blog_page .blog_item .img:hover::before {
+    background: rgba(192, 157, 116, .3);
+}
+
+section .blog_page .blog_item .text {
+    width: 66%;
+    padding-left: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+section .blog_page .blog_item .text .title {
+    border: none;
+    margin: 0 0 10px;
+    padding: 0;
+    text-align: left;
+    text-decoration: none;
+    font-family: "GothamPro_Med";
+    font-weight: normal;
+    font-size: 30px;
+}
+section .blog_page .blog_item .text .title h2 {
+    margin: 0;
+}
+section .blog_page .blog_item .text .title:hover {
+    text-decoration: underline;
+}
+
+section .blog_page .blog_item .text .bottomed {
+    margin-bottom: 0;
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section .blog_page .blog_item .text .bottomed a {
+    padding: 14px 20px;
+    border-radius: 7px;
+}
+
+section .blog_page .blog_item .text .bottomed span {
+    font-family: "GothamPro_Ita";
+}
+
+section .blog_in_page .object_title {
+    padding: 20px 200px;
+    /* border-top: 1px solid #dbdbdb; */
+    border-bottom: 1px solid #dbdbdb;
+    margin: 0;
+}
+
+section .blog_in_page .object_title .backward {
+    left: -50px;
+}
+
+section .blog_in_page .blog_inner {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-top: 20px;
+}
+
+section .blog_in_page .blog_inner .left_side {
+    width: 65%;
+    padding-left: 35px;
+}
+
+section .blog_in_page .blog_inner .left_side p {
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 15px;
+}
+
+section .blog_in_page .blog_inner .left_side .sub-title {
+    font-family: "GothamPro_Med";
+    font-size: 24px;
+    line-height: normal;
+}
+
+section .blog_in_page .blog_inner .left_side .blog_date {
+    font-family: "GothamPro_Ita";
+    padding-top: 15px;
+    border-top: 1px solid #dbdbdb;
+}
+
+section .blog_in_page .blog_inner .left_side ol {
+    margin: 0 0 40px;
+    padding: 0;
+    list-style-type: none;
+}
+
+section .blog_in_page .blog_inner .left_side ol li {
+    counter-increment: step-counter;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 40px;
+    margin-left: 40px;
+}
+
+section .blog_in_page .blog_inner .left_side ol li::before {
+    content: counter(step-counter) '.';
+    font-family: "GothamPro_Med";
+    font-size: 24px;
+    line-height: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+section .blog_in_page .blog_inner .left_side ul {
+    margin: 0 0 40px;
+    padding: 0;
+    list-style-type: none;
+}
+
+section .blog_in_page .blog_inner .left_side ul li {
+    counter-increment: step-counter;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 40px;
+    margin-left: 40px;
+}
+
+section .blog_in_page .blog_inner .left_side ul li::before {
+    content: " ";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background: #c09d74;
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+
+section .blog_in_page .blog_inner .left_side .sub-title .cursv {
+    font-family: "GothamPro_Ita";
+    font-weight: normal;
+}
+
+section .blog_in_page .blog_inner .left_side .two_rows_text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+section .blog_in_page .blog_inner .left_side .two_rows_text div {
+    width: 49%;
+}
+
+section .blog_in_page .blog_inner .left_side .two_rows_text ul li {
+    margin: 0;
+    padding: 0;
+}
+
+section .blog_in_page .blog_inner .left_side .two_rows_text ul li p {
+    margin: 0;
+    line-height: normal;
+}
+
+section .blog_in_page .blog_inner .left_side .two_rows_text ul li p::first-letter {
+    padding: 0 0 0 10px;
+}
+
+section .blog_in_page .blog_inner .left_side .two_rows_text ul li::before {
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background: #000;
+    top: 7px;
+}
+
+section .blog_in_page .blog_inner .left_side .bordered {
+    border: 1px solid #dbdbdb;
+    padding: 50px 80px;
+    margin-bottom: 20px;
+}
+
+section .blog_in_page .blog_inner .left_side .bordered p:last-child {
+    margin-bottom: 0;
+}
+
+section .blog_in_page .blog_inner .left_side .med_ita {
+    font-family: "GothamPro_Med_Ita";
+}
+
+section .blog_in_page .blog_inner .left_side .sertificates {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+section .blog_in_page .blog_inner .left_side .sertificates a {
+    width: 49%;
+}
+
+section .blog_in_page .blog_inner .left_side .sertificates img {
+    width: 100%;
+}
+ 
+section .blog_in_page .blog_inner .right_side {
+    width: 35%;
+    padding-left: 35px;
+    margin-bottom: 60px;
+}
+
+section .blog_in_page .blog_inner .right_side .title {
+    font-family: "Ubuntu";
+    font-size: 24px;
+    line-height: normal;
+    text-align: left;
+    padding: 0;
+    margin: 25px 0 15px;
+}
+
+section .blog_in_page .blog_inner .right_side ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+section .blog_in_page .blog_inner .right_side ul li a {
+    font-size: 16px;
+    color: #666666;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    text-decoration: none;
+    padding: 25px 0;
+    display: inline-block;
+    width: 100%;
+}
+
+section .blog_in_page .blog_inner .right_side ul li+li a {
+    border-top: none;
+}
+
+section .blog_in_page .blog_inner .right_side ul li a:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
+section .about_us_page .object_title {
+    padding: 0px 200px;
+    border-bottom: 1px solid #dbdbdb;
+    margin: 0;
+}
+
+section .about_us_page .about_inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-top: 20px;
+}
+
+section .about_us_page .about_inner .left_side {
+    width: 65%;
+    padding-left: 35px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+section .about_us_page .about_inner .right_side {
+    width: 35%;
+    padding-left: 35px;
+}
+
+section .about_us_page .about_inner .left_side .owl-dots {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+section .about_us_page .about_inner .left_side .owl-dots .owl-dot {
+    display: flex;
+    width: 13px;
+    height: 13px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #c09d74;
+    border-radius: 7px;
+    outline: none;
+    margin: 0 3.5px;
+}
+
+section .about_us_page .about_inner .left_side .owl-dots .owl-dot.active span {
+    width: 7px;
+    height: 7px;
+    border-radius: 4px;
+    background: #c09d74;
+}
+
+section .about_us_page .about_inner .left_side p {
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+
+section .about_us_page .about_inner .left_side .sub-title {
+    font-family: "GothamPro_Med";
+    font-size: 24px;
+    line-height: normal;
+}
+
+section .about_us_page .about_inner .left_side ol {
+    margin: 0 0 40px;
+    padding: 0;
+    list-style-type: none;
+}
+
+section .about_us_page .about_inner .left_side ol li {
+    counter-increment: step-counter;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 40px;
+    margin-left: 40px;
+}
+
+section .about_us_page .about_inner .left_side ol li::before {
+    content: counter(step-counter) '.';
+    font-family: "GothamPro_Med";
+    font-size: 24px;
+    line-height: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+section .about_us_page .about_inner .left_side ul {
+    margin: 0 0 40px;
+    padding: 0;
+    list-style-type: none;
+}
+
+section .about_us_page .about_inner .left_side ul li {
+    counter-increment: step-counter;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 40px;
+    margin-left: 40px;
+}
+
+section .about_us_page .about_inner .left_side ul li::before {
+    content: " ";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background: #c09d74;
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+
+section .about_us_page .about_inner .left_side .sub-title .cursv {
+    font-family: "GothamPro_Ita";
+    font-weight: normal;
+}
+
+section .about_us_page .about_inner .left_side .two_rows_text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+section .about_us_page .about_inner .left_side .two_rows_text div {
+    width: 49%;
+}
+
+section .about_us_page .about_inner .left_side .two_rows_text ul li {
+    margin: 0;
+    padding: 0;
+}
+
+section .about_us_page .about_inner .left_side .two_rows_text ul li p {
+    line-height: normal;
+}
+
+section .about_us_page .about_inner .left_side .two_rows_text ul li p::first-letter {
+    padding: 0 0 0 10px;
+}
+
+section .about_us_page .about_inner .left_side .two_rows_text ul li::before {
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background: #000;
+    top: 7px;
+}
+
+section .about_us_page .about_inner .left_side .bordered {
+    border: 1px solid #dbdbdb;
+    padding: 50px 80px;
+    margin-bottom: 20px;
+}
+
+section .about_us_page .about_inner .left_side .bordered p:last-child {
+    margin-bottom: 0;
+}
+
+section .about_us_page .about_inner .left_side .med_ita {
+    font-family: "GothamPro_Med_Ita";
+}
+
+section .about_us_page .about_inner .left_side .sertificates {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+section .about_us_page .about_inner .left_side .sertificates a {
+    width: 49%;
+    margin: 0 0 1%;
+}
+
+section .about_us_page .about_inner .left_side .sertificates img {
+    width: 100%;
+}
+
+section .about_us_page .about_inner .right_side .agent {
+    width: 100%;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 30px;
+}
+
+section .about_us_page .about_inner .right_side .agent .img {
+    display: inline-block;
+    width: 225px;
+    height: 225px;
+    border-radius: 113px;
+    background-size: cover;
+    background-position: center;
+}
+
+section .about_us_page .about_inner .right_side .agent p {
+    text-align: left;
+    font-size: 18px;
+    line-height: 24px;
+    padding-bottom: 25px;
+}
+
+section .about_us_page .about_inner .right_side .agent .name {
+    text-align: center;
+    font-family: "GothamPro_Ita";
+    padding: 15px 0 20px;
+}
+
+section .about_us_page .about_inner .right_side .agent a {
+    padding: 14px 20px;
+    border-radius: 7px;
+}
+
+section .about_us_page .about_inner .right_side .title {
+    font-family: "Ubuntu";
+    font-size: 24px;
+    line-height: normal;
+    text-align: left;
+    padding: 0;
+    margin: 25px 0 15px;
+}
+
+section .about_us_page .about_inner .right_side ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+section .about_us_page .about_inner .right_side ul li a {
+    font-size: 16px;
+    color: #666666;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    text-decoration: none;
+    padding: 25px 0;
+    display: inline-block;
+    width: 100%;
+}
+
+section .about_us_page .about_inner .right_side ul li+li a {
+    border-top: none;
+}
+
+section .about_us_page .about_inner .right_side ul li a:hover {
+    text-decoration: underline;
+    color: #000;
+}
+section .services_page .object_title {
+    padding: 0px 200px;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    margin: 0;
+}
+section .services_page .services_inner {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+section .services_page .services {
+    padding: 40px 0;
+    border-bottom: 1px solid #dbdbdb;
+    margin-bottom: 10px;
+}
+
+section .services_page .services .services_items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    text-align: center;
+}
+
+section .services_page .services .services_items .item {
+    width: 23%;
+}
+
+section .services_page .services .services_items .item img {
+    margin-bottom: 15px;
+}
+
+section .services_page .services .services_items .item a {
+    color: #5b5b5b;
+    display: inline-block;
+}
+section .services_page .services_inner .left_side {
+    width: 65%;
+    padding-left: 35px;
+}
+section .services_page .services_inner .right_side {
+    width: 35%;
+    padding-left: 35px;
+}
+section .services_page .services_inner .left_side .sub-title {
+    font-family: "GothamPro_Med";
+    font-size: 24px;
+    line-height: normal;
+}
+
+section .services_page .services_inner .left_side p {
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+section .services_page .services_inner .left_side ol {
+    margin: 0 0 60px;
+    padding: 0;
+    list-style-type: none;
+}
+
+section .services_page .services_inner .left_side ol li {
+    counter-increment: step-counter;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 40px;
+    margin-left: 40px;
+}
+
+section .services_page .services_inner .left_side ol li::before {
+    content: counter(step-counter) '.';
+    font-family: "GothamPro_Med";
+    font-size: 24px;
+    line-height: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+section .services_page .services_inner .right_side .title {
+    font-family: "Ubuntu";
+    font-size: 24px;
+    line-height: normal;
+    text-align: left;
+    padding: 0;
+    margin: 25px 0 15px;
+}
+section .services_page .services_inner .right_side ul {
+    list-style: none;
+    margin: 0 0 60px;
+    padding: 0;
+}
+
+section .services_page .services_inner .right_side ul li a {
+    font-size: 16px;
+    color: #666666;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    text-decoration: none;
+    padding: 25px 0;
+    display: inline-block;
+    width: 100%;
+}
+
+section .services_page .services_inner .right_side ul li+li a {
+    border-top: none;
+}
+
+section .services_page .services_inner .right_side ul li a:hover {
+    text-decoration: underline;
+    color: #000;
+} 
+
+
+
+
+
+
+
+
+
+section .contacts_page .object_title {
+    padding: 0px 30px;
+    border-bottom: 1px solid #dbdbdb;
+    margin: 0;
+}
+section .contacts_page .contacts_inner {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+section .contacts_page .contacts_inner .left_side p {
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+section .contacts_page .contacts_inner .sub-title,
+section .contacts_page .contacts_inner .left_side .sub-title {
+    font-family: "GothamPro_Med";
+    font-size: 24px;
+    line-height: normal;
+}
+section .contacts_page .contacts_inner .realtors .sub-title {
+    margin-top: 0;
+    padding-left: 35px;
+    width: 100%;
+}
+section .contacts_page .contacts_inner .map {
+    position: relative;
+    border: 1px solid #dbdbdb;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    padding-bottom: 52.25%;
+}
+section .contacts_page .contacts_inner .left_side {
+    width: 65%;
+    padding-left: 35px;
+}
+section .contacts_page .contacts_inner .right_side {
+    width: 35%;
+    padding-left: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+section .contacts_page .contacts_inner .contact_details {
+    padding-bottom: 10px;
+}
+
+section .contacts_page .contacts_inner .contact_details p {
+    font-size: 16px;
+    color: #666666;
+    line-height: 30px;
+}
+
+section .contacts_page .contacts_inner .contact_details a,
+section .contacts_page .contacts_inner .contact_details p span {
+    color: #000;
+    font-family: "GothamPro_Med";
+    text-decoration: none;
+}
+section .contacts_page .contacts_inner .contact_details a:hover {
+    text-decoration: underline;
+}
+
+section .contacts_page .contacts_inner .contact_details .title {
+    font-family: "Ubuntu";
+    text-align: left;
+    font-size: 24px;
+    margin: 20px 0 10px 0;
+    color: #000;
+}
+section .contacts_page .contacts_inner .call_me_back_inner {
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    padding: 0 35px 30px;
+}
+section .contacts_page .contacts_inner .call_me_back_inner #conf_politics_cont {
+    visibility: hidden;
+}
+
+section .contacts_page .contacts_inner .call_me_back_inner #conf_politics_cont+label {
+    font-family: "GothamPro_Ita";
+    font-size: 12px;
+    line-height: 24px;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+section .contacts_page .contacts_inner .call_me_back_inner #conf_politics_cont+label::first-letter {
+    padding-left: 12px;
+}
+
+section .contacts_page .contacts_inner .call_me_back_inner #conf_politics_cont+label::before {
+    content: ' ';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border: 1px solid #dbdbdb;
+    position: absolute;
+    left: 32px;
+    top: 9px;
+}
+
+section .contacts_page .contacts_inner .call_me_back_inner #conf_politics_cont+label::after {
+    content: ' ';
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    background: #000;
+    position: absolute;
+    left: 34px;
+    top: 11px;
+    opacity: 0;
+}
+
+section .contacts_page .contacts_inner .call_me_back_inner #conf_politics_cont:checked+label::after {
+    opacity: 1;
+}
+section .contacts_page .contacts_inner .call_me_back_inner button {
+    display: block;
+    margin: 0 auto;
+}
+section .contacts_page .contacts_inner .realtors {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin-bottom: 2%;
+}
+section .contacts_page .contacts_inner .realtors .img {
+    width: 66%;
+    margin-bottom: 2%;
+    border-radius: 7px;
+    background-size: cover;
+    background-position: center;
+}
+section .contacts_page .contacts_inner .realtors .realtor {
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    padding: 45px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 32%;
+    margin: 0 2% 2% 0;
+    text-align: center;
+}
+section .contacts_page .contacts_inner .realtors .realtor:nth-child(3n+1) {
+    margin-right: 0;
+}
+section .contacts_page .contacts_inner .realtors .realtor .img {
+    display: inline-block;
+    width: 225px;
+    height: 225px;
+    border-radius: 113px;
+    margin-bottom: 15px;
+    background-size: cover;
+    background-position: center;
+}
+
+section .contacts_page .contacts_inner .realtors .realtor .name {
+    font-family: "GothamPro_Bol";
+}
+
+section .contacts_page .contacts_inner .realtors .realtor .job {
+    font-family: "GothamPro_Ita";
+    font-size: 14px;
+    line-height: 24px;
+    margin: 8px 0;
+}
+
+section .contacts_page .contacts_inner .realtors .realtor .realtor_objects,
+section .contacts_page .contacts_inner .realtors .realtor .cases {
+    font-size: 14px;
+    width: 100%;
+    margin: 0;
+    padding: 14px 0px 14px 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-top: 1px solid #dbdbdb;
+    border-top: 1px solid #dbdbdb;
+    /* margin-bottom: 8px; */
+    text-align: left;
+}
+
+section .contacts_page .contacts_inner .realtors .realtor .realtor_objects img,
+section .contacts_page .contacts_inner .realtors .realtor .cases img {
+    height: 22px;
+    margin-right: 5px;
+}
+
+section .contacts_page .contacts_inner .realtors .realtor .cases {
+    border-bottom: 1px solid #dbdbdb;
+    margin-bottom: 20px;
+}
+
+section .contacts_page .contacts_inner .realtors .realtor .tel {
+    color: #666666;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+section .contacts_page .contacts_inner .realtors .realtor .tel+.tel {
+    margin-bottom: 20px;
+}
+
+section .contacts_page .contacts_inner .realtors .realtor .tel a {
+    font-family: "GothamPro_Med";
+    color: #000;
+}
+
+section .contacts_page .contacts_inner .realtors .realtor .casual_button {
+    padding: 14px 20px;
+    border-radius: 7px;
+    line-height: 18px;
+    margin-top: auto;
+}
+
+section .text_page .object_title {
+    padding: 0px 200px;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    margin: 0;
+}
+
+section .text_page .text_inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-top: 20px;
+}
+
+section .text_page .text_inner .left_side {
+    width: 65%;
+    padding-left: 35px;
+}
+
+section .text_page .text_inner .right_side {
+    width: 35%;
+    padding-left: 35px;
+}
+
+section .text_page .text_inner .left_side p {
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+
+section .text_page .text_inner .left_side .sub-title {
+    font-family: "GothamPro_Med";
+    font-size: 24px;
+    line-height: normal;
+}
+
+section .text_page .text_inner .left_side ol {
+    margin: 0 0 40px;
+    padding: 0;
+    list-style-type: none;
+}
+
+section .text_page .text_inner .left_side ol li {
+    counter-increment: step-counter;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 40px;
+    margin-left: 40px;
+}
+
+section .text_page .text_inner .left_side ol li::before {
+    content: counter(step-counter) '.';
+    font-family: "GothamPro_Med";
+    font-size: 24px;
+    line-height: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+section .text_page .text_inner .left_side ul {
+    margin: 0 0 40px;
+    padding: 0;
+    list-style-type: none;
+}
+
+section .text_page .text_inner .left_side ul li {
+    counter-increment: step-counter;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 40px;
+    margin-left: 40px;
+}
+
+section .text_page .text_inner .left_side ul li::before {
+    content: " ";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background: #c09d74;
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+
+section .text_page .text_inner .left_side .sub-title .cursv {
+    font-family: "GothamPro_Ita";
+    font-weight: normal;
+}
+
+section .text_page .text_inner .left_side .two_rows_text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+section .text_page .text_inner .left_side .two_rows_text div {
+    width: 49%;
+}
+
+section .text_page .text_inner .left_side .two_rows_text ul li {
+    margin: 0;
+    padding: 0;
+}
+
+section .text_page .text_inner .left_side .two_rows_text ul li p {
+    margin: 0;
+    line-height: normal;
+}
+
+section .text_page .text_inner .left_side .two_rows_text ul li p::first-letter {
+    padding: 0 0 0 10px;
+}
+
+section .text_page .text_inner .left_side .two_rows_text ul li::before {
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background: #000;
+    top: 7px;
+}
+
+section .text_page .text_inner .left_side .bordered {
+    border: 1px solid #dbdbdb;
+    padding: 50px 80px;
+    margin-bottom: 20px;
+}
+
+section .text_page .text_inner .left_side .bordered p:last-child {
+    margin-bottom: 0;
+}
+
+section .text_page .text_inner .left_side .med_ita {
+    font-family: "GothamPro_Med_Ita";
+}
+
+section .text_page .text_inner .left_side .sertificates {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+section .text_page .text_inner .left_side .sertificates a {
+    width: 49%;
+}
+
+section .text_page .text_inner .left_side .sertificates img {
+    width: 100%;
+}
+
+section .text_page .text_inner .contact_details {
+    padding-bottom: 10px;
+}
+
+section .text_page .text_inner .contact_details p {
+    font-size: 16px;
+    color: #666666;
+    line-height: 30px;
+}
+
+section .text_page .text_inner .contact_details a,
+section .text_page .text_inner .contact_details p span {
+    color: #000;
+    font-family: "GothamPro_Med";
+    text-decoration: none;
+}
+section .text_page .text_inner .contact_details a:hover {
+    text-decoration: underline;
+}
+
+section .text_page .text_inner .contact_details .title {
+    font-family: "Ubuntu";
+    text-align: left;
+    font-size: 24px;
+    margin: 20px 0 10px 0;
+    color: #000;
+}
+section .text_page .text_inner .call_me_back_inner {
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    padding: 0 35px 30px;
+    margin-bottom: 20px;
+}
+section .text_page .text_inner .call_me_back_inner #conf_politics_cont {
+    visibility: hidden;
+}
+
+section .text_page .text_inner .call_me_back_inner #conf_politics_cont+label {
+    font-family: "GothamPro_Ita";
+    font-size: 12px;
+    line-height: 24px;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+section .text_page .text_inner .call_me_back_inner #conf_politics_cont+label::first-letter {
+    padding-left: 12px;
+}
+
+section .text_page .text_inner .call_me_back_inner #conf_politics_cont+label::before {
+    content: ' ';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border: 1px solid #dbdbdb;
+    position: absolute;
+    left: 32px;
+    top: 9px;
+}
+
+section .text_page .text_inner .call_me_back_inner #conf_politics_cont+label::after {
+    content: ' ';
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    background: #000;
+    position: absolute;
+    left: 34px;
+    top: 11px;
+    opacity: 0;
+}
+
+section .text_page .text_inner .call_me_back_inner #conf_politics_cont:checked+label::after {
+    opacity: 1;
+}
+section .text_page .text_inner .call_me_back_inner button {
+    display: block;
+    margin: 0 auto;
 }
 
 footer {
@@ -1281,14 +4434,16 @@ footer {
     flex-wrap: wrap;
 }
 
-footer .footer_left_side, footer .footer_right_side {
+footer .footer_left_side,
+footer .footer_right_side {
     width: 50%;
     display: flex;
     flex-direction: column;
     order: 0;
 }
 
-footer .footer_left_side .categories, footer .footer_left_side .menu {
+footer .footer_left_side .categories,
+footer .footer_left_side .menu {
     width: 100%;
     list-style: none;
     margin: 0;
@@ -1305,7 +4460,8 @@ footer .footer_left_side .menu {
     padding-bottom: 40px;
 }
 
-footer .footer_left_side .categories li, footer .footer_left_side .menu li {
+footer .footer_left_side .categories li,
+footer .footer_left_side .menu li {
     margin-right: 20px;
     margin-bottom: 5px;
 }
@@ -1320,13 +4476,17 @@ footer .footer_right_side {
     justify-content: space-between;
     order: 1;
 }
-
+.footer_right_side br {
+    display: none;
+}
 footer .footer_right_side .telephone {
-    font-size: 36px;
+    font-size: 30px;
+    line-height: 30px;
     text-decoration: none;
+}
+footer .footer_right_side .telephone ~ .telephone {
     padding-bottom: 5px;
 }
-
 footer .footer_right_side .mailto {
     font-size: 24px;
     margin-top: 0;
@@ -1368,4 +4528,701 @@ footer .m2 img {
     width: 40px;
     position: relative;
     padding-left: 5px;
+}
+
+section .page_404 .object_title {
+    padding: 20px 200px;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    margin: 0;
+}
+
+section .page_404 .object_title .backward {
+    left: -50px;
+}
+section .page_404 .img {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10% 0;
+}
+section .page_404 .img img {
+    margin: 0 auto;
+}
+section .page_404 .img p {
+    text-align: center;
+    color: #c09d74;
+    padding-top: 10px;
+}
+
+/*Дополнение к странице Блога 29.08.2018*/
+section .blog_in_page .blog_inner .right_side .agent {
+    width: 100%;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 30px;
+}
+
+section .blog_in_page .blog_inner .right_side .agent .img {
+    display: inline-block;
+    width: 225px;
+    height: 225px;
+    border-radius: 113px;
+    background-size: cover;
+    background-position: center;
+}
+
+section .blog_in_page .blog_inner .right_side .agent p {
+    text-align: left;
+    font-size: 18px;
+    line-height: 24px;
+    padding-bottom: 25px;
+}
+
+section .blog_in_page .blog_inner .right_side .agent .name {
+    text-align: center;
+    font-family: "GothamPro_Ita";
+    padding: 15px 0 20px;
+}
+
+section .blog_in_page .blog_inner .right_side .agent a {
+    padding: 14px 20px;
+    border-radius: 7px;
+}
+/*Дополнение к странице Блога 29.08.2018*/
+
+/*08.05.2018*/
+#map-products-outer {
+    display: inline-block;
+    width: 100%;
+    float: left;
+    position: relative;
+    height: 1px;
+    padding-bottom: 56.25%;
+}
+#map-products {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.ballon {
+    padding: 5px;
+    width: auto;
+    height: auto;
+    float: left;
+    text-align: left;
+    color: #000;
+    /* position: absolute; */
+    min-width: 240px;
+    min-height: 79px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+[class*="balloon__content"] {
+    min-width: 240px !important;
+    min-height: 79px !important;
+}
+.ballon img.ll {
+    float: left;
+    width: 60px;
+    height: 60px;
+    /* border-radius: 60px; */
+    margin-right: 10px;
+}
+.ballon a {
+    
+    font-size: 10px;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+.ballon span{
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+}
+
+@media print {
+    .logo a,
+    .logo,
+    .object_photo {
+        width: 100%;
+        display: inline-block;
+        float: left;
+    }
+    .logo a {
+        border-bottom: 1mm solid #000;
+    }
+    img {
+        width: 17%;
+        float: left;
+        margin-left: 1.5%;
+        margin-right: 1.5%;
+        margin-bottom: 3%;
+        margin: 0 1.5% 1.5%;
+    }
+    .logo img {
+        width: 50mm
+    }
+    .main_photo img {
+        width: 70%;
+        display: block;
+        float: none;
+        margin: 0 auto 10mm;
+    }
+    .right_side {
+        width: 100%;
+        display: block;
+        float: none;
+    }
+    .details,
+    .object_description {
+        margin-bottom: 10mm;
+    }
+    .title {
+        font-size: 36px;
+        line-height: 36px;
+        font-weight: bolder;
+    }
+    .object_id {
+        font-family: "GothamPro_Bol";
+        text-shadow: 1px 0 0 #000;
+    }
+    .details p {
+        font-size: 16px;
+    }
+    .details p span {
+        font-family: "GothamPro_Med";
+    }
+    .details .title {
+        font-family: "Ubuntu";
+        font-size: 24px;
+        margin: 0;
+        font-weight: normal;
+    }
+}
+.panel>.list-group .list-group-item {
+    border: none;
+/*     border-bottom: 1px solid #ddd;
+ */    margin-bottom: 0;
+    width: 100%;
+}
+.panel>.list-group .list-group-item[id^='option'] {
+    display: inline-block;
+    width: 16.66%;
+    float: left;
+    box-sizing: border-box;
+    font-size: 16px;
+    padding: 5px;
+}
+#ocfilter-hidden-options.in {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    width: 100%;
+}
+.panel>.list-group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+.form-inline {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.form-inline .form-group {
+    padding: 0 5px 0;
+}
+.form-inline .form-control {
+    width: 100%;
+}
+.list-group-item.ocfilter-option[data-original-title] .option-values {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.list-group-item.ocfilter-option[data-original-title] .option-values .scale {
+    width: 80%;
+}
+
+.list-group-item.ocfilter-option[data-original-title] .option-values .form-control {
+    width: 15%;
+    margin-top: -1px;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 12px;
+}
+.btn-default:active:focus,
+.scale .noUi-connect,
+.list-group-item ~ .btn-default {
+    background: #c09d74;
+    border: none;
+    color: #fff;
+    text-decoration: underline;
+    outline: none;
+}
+.list-group-item ~ .btn-default:hover {
+    text-decoration: none;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary,
+.popover .btn-primary:hover,
+.popover .btn-primary:focus,
+.popover .btn-primary:active,
+.popover .btn-primary {
+    background: #c09d74;
+    border: none;
+    outline: none;
+}
+.fancybox-content {
+    overflow: visible;
+}
+
+.selected-options .ocfilter-option {
+    margin: 0 20px 10px 0;
+}
+.list-group-item.selected-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.search-select {
+    width: 100%;
+    height: 26px;
+}
+section .object_page .actual_object .mobile,
+.mobile {
+    display: none;
+}
+.categories li.dropdown::after {
+    content: ' ';
+    display: inline-block;
+    right: 0;
+    top: 0;
+    font-size: 12px;
+    line-height: 22px;
+    vertical-align: baseline;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #000;
+}
+.categories li.dropdown::before {
+    content: ' ';
+    display: inline-block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #f4eddf;
+    bottom: -25px;
+    left: 50%;
+    transform: rotate(45deg) translateX(-50%);
+    opacity: 0;
+    transition: .5s;
+}
+.categories .dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 99;
+    min-width: 250px;
+    max-width: 300px;
+    background: #f4eddf;
+    top: 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+}
+.categories .dropdown ul li:nth-child(n) {
+    width: 100%;
+    border-bottom: 1px solid #dcd1bc;
+    margin: 0;
+}
+.categories .dropdown ul li:last-child {
+    border: none;
+}
+.categories li.dropdown:hover::before, .dropdown:hover ul {
+    opacity: 1;
+    visibility: visible;
+}
+.categories .dropdown ul li a {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 25px;
+    text-transform: none;
+    text-decoration: underline;
+    text-align: left;
+}
+.categories .dropdown ul li a:hover {
+    background: #c09d74;
+    color: #fff;
+}
+.panel>.list-group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+.panel>.list-group .list-group-item[data-toggle="popover-price"] + .currency-wraper + .list-group-item[id^='option'],
+.panel>.list-group .list-group-item[data-toggle="popover-price"] + .list-group-item[id^='option'] {
+    font-size: 18px;
+    width: 40%;
+    padding: 0px 15px 20px;
+    border-bottom: 1px solid #ddd;
+}
+.panel>.list-group .list-group-item[data-toggle="popover-price"] + .currency-wraper + .list-group-item[id^='option'] .option-values,
+.panel>.list-group .list-group-item[data-toggle="popover-price"] + .list-group-item[id^='option'] .option-values {
+    /* display: flex; */
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.panel>.list-group .list-group-item[data-toggle="popover-price"] {
+    width: 45%;
+    padding: 0px 15px 20px;
+    border-bottom: 1px solid #ddd;
+}
+.list-group-item.ocfilter-option.currency-wraper {
+    width: 15%;
+    border-bottom: 1px solid #ddd;
+}
+.custom_product_photo_slider {
+    position: relative;
+    width: 100%;
+}
+.custom_product_photo_slider button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    height: 150px;
+    width: 75px;
+    border-radius: 0 75px 75px 0;
+    background: rgba(0, 0, 0, 0.2);
+    border: none;
+    outline: none;
+    transition: all .5s;
+    padding: 0;
+    z-index: 9;
+
+}
+.custom_product_photo_slider button.prev_slide {
+    left: 0;
+}
+.custom_product_photo_slider button.next_slide {
+    right: 0;
+}
+.custom_product_photo_slider button:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+.custom_product_photo_slider button::before {
+    content: ' ';
+    display: inline-block;
+    width: 45px;
+    border-top: 5px solid #fff;
+    position: absolute;
+    top: 58px;
+    left: 10px;
+    transform: rotate(135deg);
+}
+.custom_product_photo_slider button::after {
+    content: ' ';
+    display: inline-block;
+    width: 45px;
+    border-top: 5px solid #fff;
+    position: absolute;
+    bottom: 58px;
+    left: 10px;
+    transform: rotate(45deg);
+}
+.custom_product_photo_slider button.next_slide {
+    border-radius: 75px 0 0 75px;
+}
+.custom_product_photo_slider button.next_slide::before {
+    transform: rotate(45deg);
+    left: auto;
+    right: 10px;
+}
+.custom_product_photo_slider button.next_slide::after {
+    transform: rotate(135deg);
+    left: auto;
+    right: 10px;
+}
+section .category_page .object_page .actual_object {
+    flex-wrap: wrap;
+}
+section .category_page .actual_object .title {
+    padding: 0;
+}
+section .category_page .actual_object .left_side .object_description.spec_object_description {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-bottom: 20px;
+}
+section .category_page .actual_object .left_side .object_description .info {
+    width: 32%;
+    margin-right: 2%;
+    font-size: 24px;
+}
+section .category_page .actual_object .left_side .object_description .info:last-child {
+    margin-right: 0;
+}
+section .category_page .actual_object .left_side .object_description .info span {
+    font-family: "GothamPro";
+    display: block;
+    font-size: 16px;
+    color: #666666;
+    padding: 5px 0 0;
+}
+section .category_page .actual_object .left_side .object_map {
+    display: flex;
+    flex-direction: column;
+}
+section .category_page .actual_object .card_label {
+    border-top: 1px solid #dbdbdb;
+    margin-bottom: 20px;
+}
+section .category_page .actual_object .details .price span {
+    font-size: 24px;
+    display: block;
+}
+section .category_page .actual_object .details .price {
+    margin-bottom: 20px;
+}
+section .category_page .actual_object .details .title span {
+    font-family: "Ubuntu";
+    display: block;
+    font-size: 18px;
+    line-height: 18px;
+}
+section .category_page .actual_object .details:nth-of-type(4) {
+    margin: 0;
+    border: none;
+}
+.ballon .close-button{
+    display: none !important;
+}
+#map-products ymaps[id^='id_'] {
+    width: auto !important;
+    height: auto !important;
+}
+.have-no-items {
+    text-align: center;
+    padding: 70px 0;
+}
+.have-no-items p{
+    margin: 0 0 20px;
+}
+.have-no-items
+.scale.noUi-horizontal {
+    height: 8px;
+    margin: 10px 0 0;
+}
+/* .scale.noUi-horizontal .noUi-handle {
+    top: -12px;
+} */
+/* section .category_page .categories ~ .panel {
+    margin-bottom: 0;
+} */
+.noUi-marker-horizontal.noUi-marker-large {
+    height: 10px;
+}
+.noUi-pips {
+    font-size: 10px;
+    height: 20px;
+    padding: 0px;
+}
+.noUi-marker-horizontal.noUi-marker-large {
+    height: 10px;
+}
+.noUi-target.scale {
+    height: 6px;
+}
+.scale.noUi-horizontal .noUi-handle {
+    height: 20px;
+    top: -9px;
+}
+.scale .noUi-handle:after, .scale .noUi-handle:before {
+    height: 7px;
+}
+.align-justify {
+    text-align: justify;
+}
+section .agent_with_cards .card .tags span::after {
+    content: ' /';
+    font-size: 15px;
+    color: #5b5b5b;
+}
+section .agent_with_cards .card .tags span:last-of-type::after {
+    display: none;
+}
+.currency-wraper .btn.currencys {
+    border-color: #ccc;
+}
+.currency-wraper .btn.currencys:hover {
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+.panel-default>.panel-heading {
+    display: none;
+}
+.ocf-option-name {
+    font-size: 14px;
+    line-height: 18px;
+}
+.scalable .ocf-option-name {
+    padding: 0 0 5px;
+}
+.ocf-option-values .dropdown-menu {
+    width: 100%;
+}
+.ocf-option-values .dropdown-menu label {
+    width: 100%;
+    padding: 0 5px;
+}
+.ocf-option-values .dropdown-menu label:last-of-type {
+    margin: 0;
+}
+.ocf-option-values .dropdown-menu label input[type=checkbox] {
+    background-color: transparent;
+    width: 7px;
+    height: 7px;
+    border: 1px solid #dbdbdb;
+    border-radius: 0;
+    margin: 0 0 1px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative;
+}
+.ocf-option-values .dropdown-menu label input[type=checkbox]::after {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    background: #000;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    opacity: 0;
+    transition: .2s;
+}
+.ocf-option-values .dropdown-menu .ocf-selected input[type=checkbox]::after {
+    opacity: 1;
+}
+.ocf-option-values .dropdown-menu .disabled {
+    opacity: .5;
+}
+.scale .noUi-value {
+    z-index: 9;
+}
+.video {
+    width: 100%;
+    position: relative;
+    padding-bottom: 56.25%;
+}
+.video>div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.scale.noUi-horizontal .noUi-origin+.noUi-origin .noUi-handle {
+    right: -2px;
+}
+.scale.noUi-horizontal .noUi-origin .noUi-handle {
+    right: -32px;
+}
+section .category_page .catalog .prices *,
+section .category_page .catalog .prices *>*,
+section .object_page .actual_object .details p span,
+section .object_page .actual_object .details p span:link,
+section .object_page .actual_object .details p span:hover,
+section .object_page .actual_object .details p span:active,
+section .object_page .actual_object .details p span:visited,
+section .object_page .actual_object .details p span:focus,
+section .category_page .catalog .tabs_catalog .catalog_item .price_rub,
+section .agent_with_cards .card .price_rub,
+section .agent_with_cards .card .price_rub *,
+section .agent_with_cards .card .price_rub:link,
+section .agent_with_cards .card .price_rub:hover,
+section .agent_with_cards .card .price_rub:active,
+section .agent_with_cards .card .price_rub:visited,
+section .agent_with_cards .card .price_rub:focus,
+section .object_page .actual_object .specials p *,
+section .object_page .actual_object .details p *,
+section .object_page .actual_object .specials p *>*,
+section .object_page .actual_object .details p *>*,
+section .category_page .catalog .tabs_catalog .catalog_item .price_rub *,
+section .category_page .catalog .tabs_catalog .catalog_item .price_rub:link,
+section .category_page .catalog .tabs_catalog .catalog_item .price_rub:hover,
+section .category_page .catalog .tabs_catalog .catalog_item .price_rub:active,
+section .category_page .catalog .tabs_catalog .catalog_item .price_rub:visited,
+section .category_page .catalog .tabs_catalog .catalog_item .price_rub:focus,
+.seling_carousel_info *:link,
+.seling_carousel_info *:hover,
+.seling_carousel_info *:active,
+.seling_carousel_info *:visited,
+.seling_carousel_info *:focus,
+.seling_carousel_info *:not(.casual_button) {
+    text-decoration: none !important; 
+    text-decoration-line: none !important;
+    border-bottom: none;
+} 
+section .left-img,
+section .right-img {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+section .left-img img {
+    width: 43%;
+    margin-right: 2%;
+}
+section .right-img img {
+    width: 43%;
+    margin-left: 2%;
+}
+section .left-img p:last-of-type {
+    margin-bottom: 0;
+}
+.have_no_items p {
+    margin-bottom: 20px;
+}
+.scalable ~ button.btn.btn-default.btn-block.more-options {
+    color: #333;
+    background-color: #fff;
+    border-top: 1px solid#ccc;
+}
+.panel>.list-group .list-group-item[id^='option'].scalable + .scalable {
+    padding-left: 15px;
+    padding-top: 5px;
 }

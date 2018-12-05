@@ -129,7 +129,7 @@ class ControllerExtensionModulePresentation extends Controller {
 			$data['image'] = '';
 		}
 		
-		if ($module_info['image']) {
+		if (!empty($module_info['image'])) {
 			$data['thumb'] = $this->model_tool_image->resize($module_info['image'], 100, 100);
 		} else {
 			$data['thumb'] = $this->model_tool_image->resize('placeholder.png', 100, 100);

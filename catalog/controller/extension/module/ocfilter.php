@@ -1,14 +1,14 @@
 <?php
 
 class ControllerExtensionModuleOCFilter extends Controller {
-  public $registry;
-  private $data = array();
+  protected $registry;
+  protected $data = array();
 
   public function __construct($registry) {
-    $this->registry = $registry;
+    parent::__construct($registry);
 
-    if (false !== $this->ocfilter) {
-      $this->data = $this->ocfilter->data;
+    if ($this->registry->has('ocfilter')) {
+      $this->data = $this->registry->get('ocfilter')->data;
 
       return;
     }
@@ -35,7 +35,7 @@ class ControllerExtensionModuleOCFilter extends Controller {
 
     if (isset($this->request->get['filter_ocfilter'])) {
       $this->params = cleanParamsString($this->request->get['filter_ocfilter'], $this->config);
-			
+
       if ($this->params) {
         $options_get = decodeParamsFromString($this->params, $this->config);
 
@@ -50,41 +50,40 @@ class ControllerExtensionModuleOCFilter extends Controller {
           }
         }
 
-        if (!$this->page_info && $this->config->get('ocfilter_noindex_limit') > 0) {
-          $values_count = 0;
-
-          foreach ($this->options_get as $option_id => $values) {
-            $values_count += count($values);
-          }
-
-          if ($values_count >= $this->config->get('ocfilter_noindex_limit')) {
-          	$this->document->setNoindex(true);
-          }
+        if (!$this->page_info) {
+         	$this->document->setNoindex(true);
         }
       }
     }
-		
-		if (isset($this->request->get['currencys'])) {
+    
+    if (isset($this->request->get['currencys'])) {
       $currencys_filter = (string)$this->request->get['currencys'];
     }else{
 			$currencys_filter = '';
 		}
 		
 		$this->cache->set('valute', $currencys_filter);
+    
+    if(!empty($this->cache->get('valute'))){
+      $curent_currencys = $this->cache->get('valute');
+    }else{
+			$curent_currencys = 'RUB';
+    }
 
     // Get values counter
     $filter_data = array(
 			'filter_category_id' => $this->category_id,
-      'filter_ocfilter' => $this->params
+      'filter_ocfilter' => $this->params,
+      'valute' => $curent_currencys
 		);
-		
+
 		$this->counters = $this->model_catalog_ocfilter->getCounters($filter_data);
 
     if ($this->config->get('ocfilter_show_price')) {
       $filter_data['filter_ocfilter'] = $this->cancelOptionParams('p');
 
       $this->product_prices = $this->model_catalog_ocfilter->getProductPrices($filter_data);
-						
+
       if ($this->product_prices) {
 				/*if($this->max_price_get){
 					$product_prices_min = $this->product_prices['min'];
@@ -97,74 +96,18 @@ class ControllerExtensionModuleOCFilter extends Controller {
       }
     }
 
-    // Cached options keywords
-    $option_keywords = array();
-    $value_keywords = array();
-
-    $option_keywords['p'] = 'price';
-    $option_keywords['s'] = 'sklad';
-    $option_keywords['m'] = 'proizvoditel';
-
-    $results = $this->model_catalog_ocfilter->getManufacturersByCategoryId($this->category_id);
-
-    foreach ($results as $value) {
-      if ($value['keyword']) {
-      	$value_keywords['m-' . $value['value_id']] = $value['keyword'];
-      } else {
-      	$value_keywords['m-' . $value['value_id']] = $value['value_id'];
-      }
-    }
-
-	  $results = $this->model_catalog_ocfilter->getOCFilterOptionsByCategoryId($this->category_id);
-
-    foreach ($results as $option) {
-      if ($option['keyword']) {
-      	$option_keywords[$option['option_id']] = $option['keyword'];
-      } else {
-      	$option_keywords[$option['option_id']] = $option['option_id'];
-      }
-
-			foreach ($option['values'] as $value) {
-        if ($value['keyword']) {
-        	$value_keywords[$option['option_id'] . '-' . $value['value_id']] = $value['keyword'];
-        } else {
-        	$value_keywords[$option['option_id'] . '-' . $value['value_id']] = $value['value_id'];
-        }
-      }
-    }
-
-    $this->option_keywords = $option_keywords;
-    $this->value_keywords = $value_keywords;
-
-    // Cached existing seo pages
-    $pages = array();
-
-    $results = $this->model_catalog_ocfilter->getPages();
-
-    foreach ($results as $result) {
-    	$pages[md5($result['category_id'] . $result['ocfilter_params'])] = $result['ocfilter_page_id'];
-    }
-
-    $this->pages = $pages;
-
     $this->registry->set('ocfilter', $this);
   }
 
   // Array access
   public function __get($key) {
     if (isset($this->data[$key])) {
-      if (!is_array($this->data[$key])) {
-        $property = $this->data[$key];
-      } else {
-        $property = &$this->data[$key];
-      }
+      return $this->data[$key];
     } else if ($this->registry->has($key)) {
-      $property = $this->registry->get($key);
+      return $this->registry->get($key);
     } else {
-      $property = false;
+      return null;
     }
-
-    return $property;
   }
 
   public function __set($key, $value) {
@@ -202,6 +145,7 @@ class ControllerExtensionModuleOCFilter extends Controller {
     $data['options']              = $this->getOCFilterOptions();
     $data['min_price']            = $this->min_price;
 		$data['max_price']            = $this->max_price;
+        
     $data['min_price_get']        = $this->min_price_get ? $this->min_price_get : $this->min_price;
     $data['max_price_get']        = $this->max_price_get ? $this->max_price_get : $this->max_price;
     $data['path']                 = $this->path;
@@ -212,6 +156,7 @@ class ControllerExtensionModuleOCFilter extends Controller {
 
     $data['index']   							= $this->config->get('ocfilter_url_index');
     $data['show_counter']         = $this->config->get('ocfilter_show_counter');
+    $data['search_button']        = $this->config->get('ocfilter_search_button');
     $data['show_values_limit']   	= $this->config->get('ocfilter_show_values_limit');
     $data['manual_price']         = $this->config->get('ocfilter_manual_price');
 
@@ -223,52 +168,38 @@ class ControllerExtensionModuleOCFilter extends Controller {
     $data['text_any']           	= $this->language->get('text_any');
     $data['text_cancel_all']      = $this->language->get('text_cancel_all');
 
-    $data['symbol_left']      		= $this->currency->getSymbolLeft($this->session->data['currency']);
-    $data['symbol_right']      		= $this->currency->getSymbolRight($this->session->data['currency']);
+    if (isset($this->request->get['currencys'])) {
+      $data['symbol_left']      		= $this->currency->getSymbolLeft($this->cache->get('valute'));
+      $data['symbol_right']      		= $this->currency->getSymbolRight($this->cache->get('valute'));
+    }else{
+      $data['symbol_left']      		= $this->currency->getSymbolLeft($this->session->data['currency']);
+      $data['symbol_right']      		= $this->currency->getSymbolRight('RUB');
+    }
+    
+    $currencys = $this->model_catalog_ocfilter->getCurrency();
 		
-		$currencys = $this->model_catalog_ocfilter->getCurrency();
-		
-		//$data['curent_currencys'] = $this->config->get('config_currency');
-		
-		$data['curent_currencys'] = $this->cache->get('valute');
-				
+		if(!empty($this->cache->get('valute'))){
+      $data['curent_currencys'] = $this->cache->get('valute');
+    }else{
+			$data['curent_currencys'] = 'RUB';
+    }
+    
 		$data['currencys'] = array();
 		
 		foreach($currencys as $currency){
 			$data['currencys'][] = array(
 				'title' => $currency['title'],
+        'symbol_right' => $currency['symbol_right'],
 				'code'  => $currency['code']
 			);
 		}
 
-    if ($this->min_price_get && $this->max_price_get) {
-      $data['price'] = 'p' . $this->config->get('ocfilter_sep_opt') . $this->min_price_get . '-' . $this->max_price_get;
-    } else {
-      $data['price'] = '';
-    }
-
-    if (isset($this->session->data['ocfilter_show_options'])) {
-      $data['show_options'] = $this->session->data['ocfilter_show_options'];
-    } else {
-      $data['show_options'] = 0;
-    }
-
-    if ($this->config->get('ocfilter_show_diagram') && $this->config->get('ocfilter_show_price')) {
-      $data['diagram'] = $this->getDiagram();
-    } else {
-      $data['diagram'] = array();
-    }
+    $data['show_options'] = !empty($this->params);
 
     if ($this->config->get('ocfilter_show_selected') && $this->options_get) {
       $data['selecteds'] = $this->getSelectedOptions();
     } else {
       $data['selecteds'] = array();
-    }
-
-    if ($this->config->get('ocfilter_show_price') && $this->min_price_get && $this->max_price_get) {
-      $data['show_price_selected'] = 1;
-    } else {
-      $data['show_price_selected'] = 0;
     }
 
 		if ($this->config->get('ocfilter_show_options_limit') && $this->config->get('ocfilter_show_options_limit') < count($data['options'])) {
@@ -278,22 +209,22 @@ class ControllerExtensionModuleOCFilter extends Controller {
 		}
 
     $this->document->addStyle('catalog/view/javascript/ocfilter/nouislider.min.css');
-    $this->document->addStyle('catalog/view/theme/default/stylesheet/ocfilter/ocfilter.css');
+    //$this->document->addStyle('catalog/view/theme/villacrimea/stylesheet/ocfilter/ocfilter.css');
 
     $this->document->addScript('catalog/view/javascript/ocfilter/nouislider.min.js');
     $this->document->addScript('catalog/view/javascript/ocfilter/ocfilter.js');
 
-		return $this->load->view('extension/module/ocfilter', $data);
+		return $this->load->view('extension/module/ocfilter/module', $data);
 	}
 
-	private function getOCFilterOptions() {
-    if (false !== $this->options) {
+	protected function getOCFilterOptions() {
+    if (!is_null($this->options)) {
     	return $this->options;
     }
 
     $options = array();
 
-    # Manufacturers filtering
+    // Manufacturers filtering
     if ($this->config->get('ocfilter_manufacturer')) {
   		$results = $this->model_catalog_ocfilter->getManufacturersByCategoryId($this->category_id);
 
@@ -308,7 +239,7 @@ class ControllerExtensionModuleOCFilter extends Controller {
       }
     }
 
-    # Stock status filtering
+    // Stock status filtering
     if ($this->config->get('ocfilter_stock_status')) {
 			if ($this->config->get('ocfilter_stock_status_method') == 'stock_status_id') {
 				$results = $this->model_catalog_ocfilter->getStockStatuses();
@@ -320,7 +251,7 @@ class ControllerExtensionModuleOCFilter extends Controller {
 	        'type'        => $this->config->get('ocfilter_stock_status_type'),
 	        'values'      => $results
 	      );
-			} elseif ($this->config->get('ocfilter_stock_status_method') == 'quantity') {
+			} else if ($this->config->get('ocfilter_stock_status_method') == 'quantity') {
 	      $options['stock'] = array(
 	        'option_id'   => 's',
 	        'name'        => $this->language->get('text_stock'),
@@ -343,7 +274,7 @@ class ControllerExtensionModuleOCFilter extends Controller {
 			}
     }
 
-    # Get category options
+    // Get category options
 	  $results = $this->model_catalog_ocfilter->getOCFilterOptionsByCategoryId($this->category_id);
 
     if ($results) {
@@ -352,178 +283,134 @@ class ControllerExtensionModuleOCFilter extends Controller {
 
     $options_data = array();
 
-		if ($options) {
-		  foreach ($options as $key => $option) { # Start options each
-        $this_option = isset($this->options_get[$option['option_id']]);
+    $index = 0;
 
-				$values = array();
+	  foreach ($options as $key => $option) {
+      if ($option['type'] == 'select') {
+        $option['type'] = 'radio';
+        $option['selectbox'] = true;
+      }
 
-        if ($option['type'] != 'slide' && $option['type'] != 'slide_dual') {
-        	if (isset($option['grouping']) && (int)$option['grouping']) {
-  					if ((int)$option['grouping'] < 2) {
-              $option['grouping'] = 2;
-  					}
+      $this_option = isset($this->options_get[$option['option_id']]);
 
-  	        for ($i = 0; $i < count($option['values']); $i = $i + $option['grouping']) {
-  	          $groups = array();
-  	          $selected = false;
-  						$count = 0;
+			$values = array();
 
-  						if ($option['type'] == 'select' || $option['type'] == 'radio') {
-                $this->params = $this->cancelOptionParams($option['option_id']);
-  						}
+      if ($option['type'] != 'slide' && $option['type'] != 'slide_dual') {
+				foreach ($option['values'] as $value) {
+					$this_value = isset($this->options_get[$option['option_id']]) && in_array($value['value_id'], $this->options_get[$option['option_id']]);
 
-  	          for ($j = $i; $j < ($i + $option['grouping']); $j++) {
-  	            if (isset($option['values'][$j])) {
-  								if (isset($this->counters[$option['option_id'] . $option['values'][$j]['value_id']])) {
-  									$count += $this->counters[$option['option_id'] . $option['values'][$j]['value_id']];
-  								}
+          $count = 0;
 
-  	              $params = $this->getValueParams($option['option_id'], $option['values'][$j]['value_id'], 'checkbox');
+					if (isset($this->counters[$option['option_id'] . $value['value_id']])) {
+						if ($this_option && $option['type'] == 'checkbox') {
+							$count = '+' . $this->counters[$option['option_id'] . $value['value_id']];
+						} else {
+							$count = $this->counters[$option['option_id'] . $value['value_id']];
+						}
+					}
 
-  	              $groups[] = $option['values'][$j];
+          if ($count || !$this->config->get('ocfilter_hide_empty_values')) {
+						if (isset($option['image']) && $option['image'] && isset($value['image']) && $value['image'] && file_exists(DIR_IMAGE . $value['image'])) {
+              $image = $this->model_tool_image->resize($value['image'], 19, 19);
+						} else {
+							$image = false;
+						}
 
-  	              if (isset($this->options_get[$option['option_id']]) && in_array($option['values'][$j]['value_id'], $this->options_get[$option['option_id']])) {
-  	                $selected = true;
-  	              }
+            $params = $this->getValueParams($option['option_id'], $value['value_id'], $option['type']);
 
-  	              $this->params = $params;
-  	            }
-  	          }
-
-  	          if ($groups && (!$this->config->get('ocfilter_hide_empty_values') || ($this->config->get('ocfilter_hide_empty_values') && $count))) {
-  							$first = array_shift($groups);
-                $last = array_pop($groups);
-
-  							if ($count && $this_option && $option['type'] == 'checkbox') {
-  								$count = '+' . $count;
-  							}
-
-  	            $values[] = array(
-  	              'value_id' => $first['value_id'],
-  	              'id'       => $option['option_id'] . $first['value_id'],
-  	              'name'     => html_entity_decode($first['name'] . ($last ? ' - ' . $last['name'] : '') . $option['postfix'], ENT_QUOTES, 'UTF-8'),
-  	              'params'   => $params,
-                  'href'     => $this->link($params),
-  								'count' 	 => $count,
-  	              'selected' => $selected
-  	            );
-  	          }
-
-  						# Reset params from request
-  	          if (isset($this->request->get['filter_ocfilter'])) {
-  	            $this->params = cleanParamsString($this->request->get['filter_ocfilter'], $this->config);
-  	          } else {
-  	            $this->params = '';
-  	          }
-  	        }
-  				} else {
-  					foreach ($option['values'] as $value) {
-  						$this_value = isset($this->options_get[$option['option_id']]) && in_array($value['value_id'], $this->options_get[$option['option_id']]);
-
-              $count = 0;
-
-  						if (isset($this->counters[$option['option_id'] . $value['value_id']])) {
-  							if ($this_option && $option['type'] == 'checkbox') {
-									$count = '+' . $this->counters[$option['option_id'] . $value['value_id']];
-  							} else {
-									$count = $this->counters[$option['option_id'] . $value['value_id']];
-  							}
-  						}
-
-              if ($count || !$this->config->get('ocfilter_hide_empty_values')) {
-  							if (isset($option['image']) && $option['image'] && isset($value['image']) && $value['image'] && file_exists(DIR_IMAGE . $value['image'])) {
-                  $image = $this->model_tool_image->resize($value['image'], 19, 19);
-  							} else {
-  								$image = false;
-  							}
-
-                $params = $this->getValueParams($option['option_id'], $value['value_id'], $option['type']);
-
-  		          $values[] = array(
-  		            'value_id' => $value['value_id'],
-  								'id'       => $option['option_id'] . $value['value_id'],
-  		            'name'     => html_entity_decode($value['name'] . (isset($option['postfix']) ? $option['postfix'] : ''), ENT_QUOTES, 'UTF-8'),
-                  'keyword'  => html_entity_decode((isset($value['keyword']) ? $value['keyword'] : $value['value_id']), ENT_QUOTES, 'UTF-8'),
-  								'color'    => ((isset($value['color']) && $value['color']) ? $value['color'] : '#FFFFFF'),
-                  'image'    => $image,
-  		            'params'   => $params,
-                  'href'     => $this->link($params),
-  								'count'    => $count,
-  		            'selected' => $this_value
-  		          );
-  						}
-  	        }
-  				}
+	          $values[] = array(
+	            'value_id' => $value['value_id'],
+							'id'       => $option['option_id'] . $value['value_id'],
+	            'name'     => html_entity_decode($value['name'] . (isset($option['postfix']) ? $option['postfix'] : ''), ENT_QUOTES, 'UTF-8'),
+              'keyword'  => html_entity_decode((isset($value['keyword']) ? $value['keyword'] : $value['value_id']), ENT_QUOTES, 'UTF-8'),
+							'color'    => ((isset($value['color']) && $value['color']) ? $value['color'] : '#FFFFFF'),
+              'image'    => $image,
+	            'params'   => $params,
+							'count'    => $count,
+	            'selected' => $this_value
+	          );
+					}
         }
 
-        if ($option['type'] != 'slide' && $option['type'] != 'slide_dual' && !$values) {
+        if (!$values) {
+        	continue;
+        }
+      } else {
+        $range = $this->model_catalog_ocfilter->getSliderRange($option['option_id'], array(
+    			'filter_category_id' => $this->category_id,
+          'filter_ocfilter' => $this->cancelOptionParams($option['option_id']),
+        ));
+
+        if ($range['min'] == $range['max']) {
         	continue;
         }
 
+        $option['slide_value_min'] = $range['min'];
+        $option['slide_value_max'] = $range['max'];
+      }
 
-        if ($values && $option['type'] == 'select' || $option['type'] == 'radio') {
-          $params = $this->cancelOptionParams($option['option_id']);
+      if ($option['type'] == 'radio') {
+        $params = $this->cancelOptionParams($option['option_id']);
 
-					if (isset($this->counters[$option['option_id'] . 'all'])) {
-						$count = $this->counters[$option['option_id'] . 'all'];
-					} else {
-						$count = 1;
-					}
-
-          array_unshift($values, array(
-            'value_id' => $option['option_id'],
-						'id'       => 'cancel-' . $option['option_id'],
-            'name'     => $this->language->get('text_any'),
-            'params'   => $params,
-            'href'     => $this->link($params),
-						'count'    => $count,
-            'selected' => !$this_option
-          ));
+				if (isset($this->counters[$option['option_id'] . 'all'])) {
+					$count = $this->counters[$option['option_id'] . 'all'];
+				} else {
+					$count = 1;
 				}
 
-        $options_data[$option['option_id']] = array(
-          'option_id'           => $option['option_id'],
-          'index'               => count($options_data) + 1,
-         	'name'                => html_entity_decode($option['name'], ENT_QUOTES, 'UTF-8'),
-          'selectbox'           => (isset($option['selectbox']) ? $option['selectbox'] : false),
-          'color'			          => (isset($option['color']) ? $option['color'] : false),
-          'image'		            => (isset($option['image']) ? $option['image'] : false),
-          'keyword'		          => (isset($option['keyword']) ? $option['keyword'] : $option['option_id']),
-					'postfix' 		        => (isset($option['postfix']) ? html_entity_decode($option['postfix'], ENT_QUOTES, 'UTF-8') : ''),
-          'description'         => (isset($option['description']) ? $option['description'] : ''),
-          'slide_value_min'     => (isset($option['slide_value_min']) ? $option['slide_value_min'] : 0),
-          'slide_value_max'     => (isset($option['slide_value_max']) ? $option['slide_value_max'] : 0),
-          'slide_value_min_get' => (isset($option['slide_value_min']) ? $option['slide_value_min'] : 0),
-          'slide_value_max_get' => (isset($option['slide_value_max']) ? $option['slide_value_max'] : 0),
-          'type'                => $option['type'],
-          'selected'            => $this_option,
-          'values'              => $values
-        );
+        array_unshift($values, array(
+          'value_id' => $option['option_id'],
+					'id'       => 'cancel-' . $option['option_id'],
+          'name'     => $this->language->get('text_any'),
+          'params'   => $params,
+					'count'    => $count,
+          'selected' => !$this_option
+        ));
+			}
 
-        if (($option['type'] == 'slide' || $option['type'] == 'slide_dual') && isset($this->options_get[$option['option_id']][0])) {
-          $range = getRangeParts($this->options_get[$option['option_id']][0]);
+      $option_data = array(
+        'option_id'           => $option['option_id'],
+        'index'               => ++$index,
+       	'name'                => html_entity_decode($option['name'], ENT_QUOTES, 'UTF-8'),
+        'selectbox'           => (isset($option['selectbox']) ? $option['selectbox'] : false),
+        'color'			          => (isset($option['color']) ? $option['color'] : false),
+        'image'		            => (isset($option['image']) ? $option['image'] : false),
+        'keyword'		          => (isset($option['keyword']) ? $option['keyword'] : $option['option_id']),
+				'postfix' 		        => (isset($option['postfix']) ? html_entity_decode($option['postfix'], ENT_QUOTES, 'UTF-8') : ''),
+        'description'         => (isset($option['description']) ? $option['description'] : ''),
+        'slide_value_min'     => (isset($option['slide_value_min']) ? $option['slide_value_min'] : 0),
+        'slide_value_max'     => (isset($option['slide_value_max']) ? $option['slide_value_max'] : 0),
+        'slide_value_min_get' => (isset($option['slide_value_min']) ? $option['slide_value_min'] : 0),
+        'slide_value_max_get' => (isset($option['slide_value_max']) ? $option['slide_value_max'] : 0),
+        'type'                => $option['type'],
+        'selected'            => $this_option,
+        'values'              => $values
+      );
 
-          if (isset($range['from']) && isset($range['to'])) {
-            $options_data[$option['option_id']]['slide_value_min_get'] = $range['from'];
-            $options_data[$option['option_id']]['slide_value_max_get'] = $range['to'];
+      if (($option['type'] == 'slide' || $option['type'] == 'slide_dual') && isset($this->options_get[$option['option_id']][0])) {
+        $range = getRangeParts($this->options_get[$option['option_id']][0]);
 
-            // For getSelectedOptions
-            array_unshift($options_data[$option['option_id']]['values'], array(
-              'value_id' => $range['from'] . '-' . $range['to'],
-              'name'     => 'от ' . $range['from'] . ' до ' . $range['to'] . $option['postfix']
-            ));
-          }
+        if (isset($range['from']) && isset($range['to'])) {
+          $option_data['slide_value_min_get'] = $range['from'];
+          $option_data['slide_value_max_get'] = $range['to'];
+
+          // For getSelectedOptions
+          array_unshift($option_data['values'], array(
+            'value_id' => $range['from'] . '-' . $range['to'],
+            'name'     => 'от ' . $range['from'] . ' до ' . $range['to'] . $option['postfix']
+          ));
         }
-      } # End options each
-    }
+      }
+
+      $options_data[] = $option_data;
+    } // End options each
 
     $this->options = $options_data;
 
     return $options_data;
   }
 
-	private function getValueParams($option_id, $value_id, $type = 'checkbox') {
+	protected function getValueParams($option_id, $value_id, $type = 'checkbox') {
 		$decoded_params = decodeParamsFromString($this->params, $this->config);
 
 		if ($type == 'checkbox') {
@@ -536,7 +423,7 @@ class ControllerExtensionModuleOCFilter extends Controller {
 			} else {
 				$decoded_params[$option_id] = array($value_id);
 			}
- 		} elseif ($type == 'select' || $type == 'radio') {
+ 		} else if ($type == 'select' || $type == 'radio') {
 			if (isset($decoded_params[$option_id])) {
 				unset($decoded_params[$option_id]);
 			}
@@ -547,7 +434,7 @@ class ControllerExtensionModuleOCFilter extends Controller {
 		return encodeParamsToString($decoded_params, $this->config);
 	}
 
-  private function cancelOptionParams($option_id) {
+  protected function cancelOptionParams($option_id) {
     if ($this->params) {
 			$params = decodeParamsFromString($this->params, $this->config);
 
@@ -559,29 +446,32 @@ class ControllerExtensionModuleOCFilter extends Controller {
     }
   }
 
-  private function getSelectedOptions() {
+  protected function getSelectedOptions() {
     $selected_options = array();
 
     $category_options = $this->getOCFilterOptions();
 
     //if ($this->min_price_get && $this->max_price_get) {
-		if ($this->min_price_get >= 0 && $this->max_price_get) {
-      $category_options['p'] = array(
+    if ($this->min_price_get >= 0 && $this->max_price_get) {
+      $category_options[] = array(
+        'option_id' => 'p',
         'name'      => $this->language->get('text_price'),
 				'type'      => 'select',
         'selected'  => isset($this->options_get['p']),
         'values'    => array(array(
 					'value_id' 	=> $this->min_price_get . '-' . $this->max_price_get,
-					'name' 			=> 'от ' . $this->min_price_get . ' до ' . $this->max_price_get
-          //'name' 			=> 'от ' . $this->currency->getSymbolLeft($this->session->data['currency']) . $this->min_price_get . ' до ' . $this->max_price_get . $this->currency->getSymbolRight($this->session->data['currency'])
+          //'name' 			=> 'от ' . $this->min_price_get . ' до ' . $this->max_price_get
+          'name' 			=> 'от ' . $this->currency->getSymbolLeft($this->cache->get('valute')) . $this->min_price_get . ' до ' . $this->max_price_get . $this->currency->getSymbolRight($this->cache->get('valute'))
 				))
       );
     }
 
-		foreach ($category_options as $option_id => $option) {
+		foreach ($category_options as $option) {
 			if (!$option['selected']) {
 				continue;
 			}
+
+      $option_id = $option['option_id'];
 
 			$values = array();
 
@@ -593,7 +483,7 @@ class ControllerExtensionModuleOCFilter extends Controller {
 			  $params = '';
 
         if (count($this->options_get) > 1 || count($this->options_get[$option_id]) > 1) {
-          if ($option['type'] == 'select' || $option['type'] == 'radio' || $option['type'] == 'slide' || $option['type'] == 'slide_dual') {
+          if ($option['type'] == 'radio' || $option['type'] == 'select' || $option['type'] == 'slide' || $option['type'] == 'slide_dual') {
             $params .= $this->cancelOptionParams($option_id);
           } else {
             $params .= $value['params'];
@@ -601,10 +491,6 @@ class ControllerExtensionModuleOCFilter extends Controller {
         }
 
         $name = html_entity_decode($value['name'], ENT_QUOTES, 'UTF-8');
-
-        if (false === strpos($value['value_id'], '-') && mb_strlen($name, 'UTF-8') > 20) {
-          $name = mb_substr($value['name'], 0, 20, 'UTF-8');
-        }
 
 			  $values[] = array(
           'name' => $name,
@@ -620,74 +506,6 @@ class ControllerExtensionModuleOCFilter extends Controller {
 		}
 
     return $selected_options;
-  }
-
-  private function getDiagram() {
-    # Generate product price diagram coords by SooR 18-02-2013 v.2.0
-
-		$diagram_data = array();
-
-    if ($this->product_prices && count($this->product_prices['products']) > 1) {
-			$height = 40;
-			$items = 6;
-			$width = 190;
-
-      $price_range = $this->max_price - $this->min_price;
-
-			if ($price_range < $items) {
-				return;
-			}
-
-	 		$price_interval = $price_range / $items;
-
-			$items_data = array();
-
-      $max_count = 0;
-
-			for ($i = 0; $i < $items; $i++) {
-        $from = $i * $price_interval + $this->min_price;
-        $to = ($i + 1) * $price_interval + $this->min_price;
-
-        $count = 0;
-
-        foreach ($this->product_prices['products'] as $price) {
-          if ($price >= $from && $price <= $to) {
-            $count++;
-          }
-        }
-
-				if ($count > $max_count) {
-					$max_count = $count;
-				}
-
-				$items_data[] = $count;
-      }
-
-			$items_interval = $width / ($items - 1);
-
-			$diagram_data['circles'] = array();
-
-			$diagram_data['path'] = 'M0,' . $height;
-
-			foreach ($items_data as $key => $count) {
-				$y = round($height / 100 * (100 - $count / $max_count * 100));
-				$y = ($y < $height / 2 ? $y + 5 : $y - 5);
-
-				$x = round($key * $items_interval, 1);
-
-				$diagram_data['circles'][] = array('y' => $y, 'x'	=> $x, 'count' => $count);
-
-				$diagram_data['path'] .= ' L' . $x . ',' . $y;
-
-				if ($key == count($items_data) - 1) {
-					$diagram_data['path'] .= ' L' . $x . ',' . $height;
-				}
-			}
-
-			$diagram_data['path'] .= ' L0,' . $height . 'Z';
-    }
-
-    return $diagram_data;
   }
 
   public function decode() {
@@ -708,34 +526,18 @@ class ControllerExtensionModuleOCFilter extends Controller {
 			array_pop($keywords);
 		}
 
+    $ignored = array();
+
+    $page_keywords = array();
+
     // Get category path
     if (!$this->path) {
-      $or = array();
+      $path_info = $this->model_catalog_ocfilter->decodeCategory($keywords);
 
-      foreach ($keywords as $keyword) {
-        $or[] = "keyword = '" . $this->db->escape($keyword) . "'";
-      }
+      if ($path_info && $path_info->path) {
+      	$this->path = $path_info->path;
 
-      $implode = array();
-
-      foreach ($keywords as $keyword) {
-        $implode[] = "'" . $this->db->escape($keyword) . "'";
-      }
-
-      if ($or) {
-        $path = $this->cache->get('category.ocfilter.path.' . md5(implode(".", $implode)));
-
-        if (false !== $path) {
-        	$this->path = $path;
-        } else {
-          $query = $this->db->query("SELECT GROUP_CONCAT(REPLACE(`query`, 'category_id=', '') ORDER BY FIELD(keyword, " . implode(", ", $implode) . ") SEPARATOR '_') AS path FROM " . DB_PREFIX . "url_alias WHERE `query` LIKE 'category_id=%' AND (" . implode(" OR ", $or) . ")");
-
-          if (!empty($query->row['path'])) {
-            $this->path = $query->row['path'];
-
-            $this->cache->set('category.ocfilter.path.' . md5(implode(".", $implode)), $this->path);
-          }
-        }
+        $ignored = $path_info->keywords;
       }
     }
 
@@ -747,24 +549,25 @@ class ControllerExtensionModuleOCFilter extends Controller {
 
     $category_id = (int)end($parts);
 
+    // Ignore language
+    $key = array_search($this->session->data['language'], $keywords);
+
+    if (false !== $key) {
+    	$ignored[] = $keywords[$key];
+    }
+
     // Get SEO Page
     foreach ($keywords as $key => $keyword) {
-      $page_info = $this->cache->get('ocfilter.page.keyword.' . md5($keyword));
-
-      if (false === $page_info) {
-        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "ocfilter_page WHERE status = '1' AND keyword = '" . $this->db->escape($keyword) . "' LIMIT 1");
-
-        if ($query->num_rows) {
-          $page_info = $query->row;
-
-          $this->cache->set('ocfilter.page.keyword.' . md5($keyword), $page_info);
-        }
+      if (in_array($keyword, $ignored)) {
+      	continue;
       }
+
+      $page_info = $this->model_catalog_ocfilter->decodePage($category_id, $keyword);
 
       if ($page_info) {
       	$this->page_info = $page_info;
 
-  			$keywords = explode('/', $page_info['ocfilter_params']);
+  			$keywords = explode('/', $this->page_info['params']);
 
   			// remove any empty arrays from trailing
   			if (utf8_strlen(end($keywords)) == 0) {
@@ -777,56 +580,62 @@ class ControllerExtensionModuleOCFilter extends Controller {
 
     $params = array();
 
+    // Special filters
+    foreach ($keywords as $key => $keyword) {
+      if (in_array($keyword, $ignored)) {
+      	continue;
+      }
+
+      if ($keyword == 'price') {
+        unset($keywords[$key++]);
+
+        $page_keywords[] = $keyword;
+
+        if (isset($keywords[$key]) && isRange($keywords[$key])) {
+      	  $params['p'] = array($keywords[$key]);
+
+          $page_keywords[] = $keywords[$key];
+
+          unset($keywords[$key]);
+        }
+      } else if ($keyword == 'sklad' && $this->config->get('ocfilter_stock_status_method') == 'quantity') {
+        unset($keywords[$key++]);
+
+        $page_keywords[] = $keyword;
+
+        if (isset($keywords[$key]) && ($keywords[$key] == 'in' || $keywords[$key] == 'out')) {
+          if (!isset($params['s'])) {
+            $params['s'] = array();
+          }
+
+          $params['s'][$keywords[$key]] = $keywords[$key];
+
+          $page_keywords[] = $keywords[$key];
+
+          unset($keywords[$key]);
+        }
+      }
+    }
+
     $current = '';
 
     foreach ($keywords as $key => $keyword) {
+      if (in_array($keyword, $ignored)) {
+      	continue;
+      }
+
       $founded = 0;
 
       // Values
-      if ($current == 'p') {
-        if (isRange($keyword)) {
-          $params['p'][] = $keyword;
-        }
+      if ($current == 's' && isID($keyword) && $this->config->get('ocfilter_stock_status_method') == 'stock_status_id') {
+        $params['s'][$keyword] = $keyword;
 
-        $founded = 2;
-      } else if ($current == 's') {
-        if ($this->config->get('ocfilter_stock_status_method') == 'quantity') {
-          $params['s'][] = $keyword;
-
-          $founded = 2;
-        } else if (isID($keyword)) {
-          $params['s'][$keyword] = $keyword;
-
-          $founded = 1;
-        } else {
-          $current = '';
-        }
+        $founded = 1;
       } else if ($current) {
-        $values_id = $this->cache->get('ocfilter.decode.' . $current . '.' . md5($keyword));
+        $value_id = $this->model_catalog_ocfilter->decodeValue($keyword, $current);
 
-        if (false === $values_id) {
-          $values_id = array();
-
-          $query = $this->db->query("SELECT value_id FROM " . DB_PREFIX . "ocfilter_option_value WHERE option_id = '" . (int)$current . "' AND `keyword` = '" . $this->db->escape($keyword) . "'");
-
-          // If keyword is ID
-          if (!$query->num_rows && isID($keyword)) {
-            $query = $this->db->query("SELECT value_id FROM " . DB_PREFIX . "ocfilter_option_value WHERE value_id = '" . (int)$keyword . "'");
-          }
-
-          if ($query->num_rows) {
-            foreach ($query->rows as $result) {
-          	  $values_id[] = $result['value_id'];
-            }
-
-            $this->cache->set('ocfilter.decode.' . $current . '.' . md5($keyword), $values_id);
-          }
-        }
-
-        if ($values_id) {
-          foreach ($values_id as $value_id) {
-            $params[$current][$value_id] = $value_id;
-          }
+        if ($value_id) {
+          $params[$current][$value_id] = $value_id;
 
           $founded = 1;
         } else if (isRange($keyword)) { // If Slider
@@ -837,6 +646,8 @@ class ControllerExtensionModuleOCFilter extends Controller {
       }
 
       if ($founded > 0) {
+        $page_keywords[] = $keyword;
+
         if ($founded > 1) {
         	$current = '';
         }
@@ -847,64 +658,32 @@ class ControllerExtensionModuleOCFilter extends Controller {
       }
 
       // Options
-      if ($keyword == 'price') {
-      	$params['p'] = array();
-
-        $current = 'p';
-
-        unset($keywords[$key]);
-      } else if ($keyword == 'sklad') {
+      if ($keyword == 'sklad' && $this->config->get('ocfilter_stock_status_method') == 'stock_status_id') {
       	$params['s'] = array();
 
         $current = 's';
 
+        $page_keywords[] = $keyword;
+
         unset($keywords[$key]);
       } else if (!isRange($keyword)) {
-        $option_id = $this->cache->get('ocfilter.decode.option.' . md5($keyword) . '.' . (int)$category_id);
-
-        if (false === $option_id) {
-          // Get Option by keyword
-          $query = $this->db->query("SELECT oo.option_id FROM " . DB_PREFIX . "ocfilter_option oo LEFT JOIN " . DB_PREFIX . "ocfilter_option_to_category oo2c ON(oo.option_id = oo2c.option_id) WHERE oo2c.category_id = '" . (int)$category_id . "' AND oo.`keyword` = '" . $this->db->escape($keyword) . "' LIMIT 1");
-
-          // Get Option by ID
-          if (!$query->num_rows && isID($keyword)) {
-          	$query = $this->db->query("SELECT option_id FROM " . DB_PREFIX . "ocfilter_option_to_category WHERE category_id = '" . (int)$category_id . "' AND option_id = '" . (int)$keyword . "'");
-          }
-
-          if ($query->num_rows) {
-            $option_id = $query->row['option_id'];
-          }
-
-          $this->cache->set('ocfilter.decode.option.' . md5($keyword) . '.' . (int)$category_id, (int)$option_id);
-        }
+        $option_id = $this->model_catalog_ocfilter->decodeOption($keyword, $category_id);
 
         if ($option_id) {
           $params[$option_id] = array();
 
           $current = $option_id;
 
+          $page_keywords[] = $keyword;
+
           unset($keywords[$key]);
         }
       }
     }
 
-    // Manufacturers
+    // Manufacturer
     foreach ($keywords as $key => $keyword) {
-      $manufacturer_id = $this->cache->get('ocfilter.decode.manufacturer.' . md5($keyword));
-
-      if (false === $manufacturer_id) {
-        $query = $this->db->query("SELECT REPLACE(`query`, 'manufacturer_id=', '') AS manufacturer_id FROM " . DB_PREFIX . "url_alias WHERE `query` LIKE 'manufacturer_id=%' AND LCASE(`keyword`) = '" . $this->db->escape(utf8_strtolower($keyword)) . "' LIMIT 1");
-
-        if (!$query->num_rows && isID($keyword)) {
-          $query = $this->db->query("SELECT manufacturer_id FROM " . DB_PREFIX . "manufacturer WHERE manufacturer_id = '" . (int)$keyword . "'");
-        }
-
-        if ($query->num_rows) {
-          $manufacturer_id = $query->row['manufacturer_id'];
-        }
-
-        $this->cache->set('ocfilter.decode.manufacturer.' . md5($keyword), (int)$manufacturer_id);
-      }
+      $manufacturer_id = $this->model_catalog_ocfilter->decodeManufacturer($keyword);
 
       if ($manufacturer_id) {
         if (!isset($params['m'])) {
@@ -912,6 +691,8 @@ class ControllerExtensionModuleOCFilter extends Controller {
         }
 
        	$params['m'][$manufacturer_id] = $manufacturer_id;
+
+        $page_keywords[] = $keyword;
 
         unset($keywords[$key]);
       }
@@ -928,6 +709,10 @@ class ControllerExtensionModuleOCFilter extends Controller {
           array_unshift($keywords, $part);
         }
       }
+    }
+
+    if (!$this->page_info && $page_keywords) {
+    	$this->page_info = $this->model_catalog_ocfilter->getPage($category_id, implode('/', $page_keywords));
     }
 
     if ($keywords) {
@@ -972,16 +757,26 @@ class ControllerExtensionModuleOCFilter extends Controller {
       } else if ($option_id == 's') {
       	$path .= '/sklad';
       } else if ($option_id != 'm') {
-        if (isset($this->option_keywords[$option_id])) {
-        	$path .= '/' . $this->option_keywords[$option_id];
+        $query = $this->db->query("SELECT keyword FROM " . DB_PREFIX . "ocfilter_option WHERE option_id = '" . (int)$option_id . "'");
+
+        if ($query->num_rows && $query->row['keyword']) {
+        	$path .= '/' . $query->row['keyword'];
         } else {
         	$path .= '/' . $option_id;
         }
       }
 
       foreach ($values as $value_id) {
-        if (isset($this->value_keywords[$option_id . '-' . $value_id])) {
-        	$path .= '/' . $this->value_keywords[$option_id . '-' . $value_id];
+        $query = false;
+
+        if ($option_id == 'm') {
+          $query = $this->db->query("SELECT keyword FROM " . DB_PREFIX . "url_alias WHERE `query` = 'manufacturer_id=" . (int)$value_id . "'");
+        } else if (isID($value_id)) {
+          $query = $this->db->query("SELECT keyword FROM " . DB_PREFIX . "ocfilter_option_value WHERE value_id = '" . $this->db->escape((string)$value_id) . "'");
+        }
+
+        if ($query && $query->num_rows && $query->row['keyword']) {
+        	$path .= '/' . $query->row['keyword'];
         } else {
         	$path .= '/' . $value_id;
         }
@@ -991,12 +786,10 @@ class ControllerExtensionModuleOCFilter extends Controller {
     if ($path) {
       $page_path = ltrim($path, '/');
 
-      if (isset($this->pages[md5($this->category_id . $page_path)])) {
-        $page_info = $this->model_catalog_ocfilter->getPage($this->category_id, $page_path);
+      $page_info = $this->model_catalog_ocfilter->getPage($this->category_id, $page_path);
 
-        if ($page_info && $page_info['keyword']) {
-        	$path = '/' . $page_info['keyword'];
-        }
+      if ($page_info && $page_info['keyword']) {
+      	$path = '/' . $page_info['keyword'];
       }
     }
 
@@ -1075,7 +868,7 @@ class ControllerExtensionModuleOCFilter extends Controller {
 
           if ($stock_status['name'] == 'in') {
             $filter_title .= 'в наличии';
-          } elseif ($stock_status['name'] == 'out') {
+          } else if ($stock_status['name'] == 'out') {
             $filter_title .= 'нет в наличии';
           }
         } else {
@@ -1135,11 +928,11 @@ class ControllerExtensionModuleOCFilter extends Controller {
     if (isset($this->request->get['limit'])) {
       $url .= '&limit=' . (int)$this->request->get['limit'];
     }
-		
-		if (isset($this->request->get['currencys'])) {
+    
+    if (isset($this->request->get['currencys'])) {
       $url .= '&currencys=' . (string)$this->request->get['currencys'];
     }
-				
+
     return $this->url->link('product/category', $url);
   }
 
@@ -1151,12 +944,30 @@ class ControllerExtensionModuleOCFilter extends Controller {
     $this->load->language('extension/module/ocfilter');
 
     $json = array();
-		
+
+    if (isset($this->request->get['option_id'])) {
+    	$option_id = $this->request->get['option_id'];
+    } else {
+    	$option_id = 0;
+    }
+    
+    if(!empty($this->cache->get('valute'))){
+      $curent_currencys = $this->cache->get('valute');
+    }else{
+			$curent_currencys = 'RUB';
+    }
+
     $filter_data = array(
 			'filter_category_id' => $this->category_id,
-      'filter_ocfilter' => $this->params
+      'filter_ocfilter' => $this->params,
+      'limit' => 1,
+      'valute' => $curent_currencys
 		);
-		
+
+    if ($this->config->get('ocfilter_sub_category')) {
+    	$filter_data['filter_sub_category'] = true;
+    }
+
 		$total_products = $this->model_catalog_product->getTotalProducts($filter_data);
 
     $json['total'] = $total_products;
@@ -1167,11 +978,33 @@ class ControllerExtensionModuleOCFilter extends Controller {
                                     ));
 
     $json['values'] = array();
+    $json['sliders'] = array();
+
+    if ($this->config->get('ocfilter_show_price') && $option_id != 'p') {
+      $_filter_data = $filter_data;
+
+      $_filter_data['filter_ocfilter'] = $this->cancelOptionParams('p');
+
+      $product_prices = $this->model_catalog_ocfilter->getProductPrices($_filter_data);
+
+      if ($product_prices) {
+        $product_prices_min = 0;
+        
+        $json['sliders']['p'] = array(
+          'min' => $this->currency->format($product_prices_min, $this->session->data['currency'], '', false),
+          'max' => $this->currency->format(ceil($product_prices['max']), $this->session->data['currency'], '', false),
+        );
+      }
+    }
 
     $options = $this->getOCFilterOptions();
 
     foreach ($options as $option) {
       if ($option['type'] == 'slide' || $option['type'] == 'slide_dual') {
+        if ($option['option_id'] != $option_id) {
+          $json['sliders'][$option['option_id']] = $this->model_catalog_ocfilter->getSliderRange($option['option_id'], $filter_data);
+        }
+
         continue;
       }
 
@@ -1180,7 +1013,7 @@ class ControllerExtensionModuleOCFilter extends Controller {
 
         $json['values']['cancel-' . $option['option_id']] = array(
           't' => 1,
-          'h' => $this->link($params),
+          'p' => $params,
 					's' => false
         );
 			}
@@ -1188,7 +1021,7 @@ class ControllerExtensionModuleOCFilter extends Controller {
       foreach ($option['values'] as $value) {
         $json['values'][$value['id']] = array(
           't' => $value['count'],
-          'h' => $value['href'],
+          'p' => $value['params'],
 					's' => isset($this->options_get[$option['option_id']][$value['value_id']])
         );
       }
@@ -1199,4 +1032,69 @@ class ControllerExtensionModuleOCFilter extends Controller {
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
   }
+   
+  public function setCurrencys() {
+    $this->load->model('localisation/currency');
+    $this->load->model('catalog/ocfilter');
+    
+    $json = array();
+    
+    if (isset($this->request->get['change_currencys'])) {
+      $url = (string)$this->request->get['change_currencys'];
+    }
+
+    if (isset($this->request->get['path'])) {
+      $path = '';
+
+			$parts = explode('_', (string)$this->request->get['path']);
+
+			$category_id = (int)array_pop($parts);
+
+			foreach ($parts as $path_id) {
+				if (!$path) {
+					$path = (int)$path_id;
+				} else {
+					$path .= '_' . (int)$path_id;
+				}
+			}
+    }else{
+      $category_id = 0;
+    }
+        
+    if (isset($this->request->get['filter_ocfilter'])) {
+      $this->params = cleanParamsString($this->request->get['filter_ocfilter'], $this->config);
+
+      if ($this->params) {
+        $params = $this->params;
+      }
+    }else{
+      $params = '';
+    }
+  
+    $filter_data = array(
+			'filter_category_id' => $category_id,
+      'filter_ocfilter' => $params,
+      'valute' => $url
+		);
+
+    $product_prices = $this->model_catalog_ocfilter->getProductPrices($filter_data);
+
+    $symbol_right = $this->model_localisation_currency->getCurrencyByCode($url);
+  
+    if ($product_prices) {
+      $product_prices_min = 0;
+
+      $json['sliders'] = array(
+        'min' => $this->currency->format($product_prices_min, $this->session->data['currency'], '', false),
+        'max' => $this->currency->format(ceil($product_prices['max']), $this->session->data['currency'], '', false),
+      );
+      
+    }
+
+    $json['currencys'] = $symbol_right['symbol_right'];
+
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+  }
 }
+?>

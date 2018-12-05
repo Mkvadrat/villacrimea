@@ -38,13 +38,16 @@ $_['text_modification']          			= 'Менеджер дополнений';
 $_['text_manufacturer']          			= 'Производители';
 
 // OCFilter start
-$_['text_ocfilter'] = 'Фильтр товаров OCFilter';
+$_['text_ocfilter']                    = 'OCFilter';
+$_['text_ocfilter_option']             = 'Фильтры';
+$_['text_ocfilter_page']               = 'Страницы';
+$_['text_ocfilter_setting']            = 'Настройки';
 // OCFilter end
       
 $_['text_option']          					= 'Опции';
 $_['text_order']          					= 'Заказы';
 $_['text_order_status']          			= 'Статусы заказов';
-$_['text_product']          				= 'Товары';
+$_['text_product']          				= 'Обьекты';
 $_['text_reports']          				= 'Отчеты';
 $_['text_report_sale']                      = 'Продажи';
 $_['text_report_sale_order']          		= 'Заказы';
@@ -52,7 +55,7 @@ $_['text_report_sale_tax']          		= 'Налоги';
 $_['text_report_sale_shipping']          	= 'Доставка';
 $_['text_report_sale_return']          		= 'Возвраты';
 $_['text_report_sale_coupon']          		= 'Купоны';
-$_['text_report_product']                   = 'Товары';
+$_['text_report_product']                   = 'Обьекты';
 $_['text_report_product_viewed']          	= 'Просмотренные';
 $_['text_report_product_purchased']         = 'Купленные';
 $_['text_report_customer']                  = 'Покупатели';
@@ -95,7 +98,7 @@ $_['text_order_recurring']          		= 'Периодические платеж
 $_['text_openbay_extension']          		= 'OpenBay Pro';
 $_['text_openbay_dashboard']          		= 'Панель управления';
 $_['text_openbay_orders']              		= 'Менеджер заказов';
-$_['text_openbay_items']               		= 'Менеджер товаров';
+$_['text_openbay_items']               		= 'Менеджер обьектов';
 $_['text_openbay_ebay']                		= 'eBay';
 $_['text_openbay_amazon']              		= 'Amazon (EU)';
 $_['text_openbay_amazonus']            		= 'Amazon (US)';
@@ -110,8 +113,9 @@ $_['text_complete_status']                  = 'Выполненных заказ
 $_['text_processing_status']                = 'Заказов в обработке';
 $_['text_other_status']          	        = 'Другие статусы';
 $_['text_octeam_toolset']              		= 'OC Team';
-$_['text_blog']                 	        = 'Блог';
+$_['text_blog']                 	        = 'Кейсы';
 $_['text_blog_article']                     = 'Кейсы';
 $_['text_blog_category']                    = 'Категории кейсов';
 $_['text_blog_setting']                     = 'Настройки кейсов';
 $_['text_news']                             = 'Блог';
+$_['text_settings_news']                    = 'Настройки блога';

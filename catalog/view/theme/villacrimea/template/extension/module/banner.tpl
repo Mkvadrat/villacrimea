@@ -5,7 +5,7 @@
             <div class="seling_carousel_info">
                 <p><?php echo $banner['title']; ?></p>
                 <div>
-                    <span><?php echo $banner['format_price']; ?></span> / <span><?php echo $banner['price']; ?></span>
+                    <span><?php echo $banner['price']; ?></span>
                 </div>
                 <a class="casual_button" href="<?php echo $banner['link']; ?>">Подробнее</a>
             </div>

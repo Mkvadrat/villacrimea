@@ -50,7 +50,7 @@ class ControllerExtensionModuleFeaturedHtml extends Controller {
 			$this->document->addScript('view/javascript/ckeditor/ckeditor_init.js');
 		} else {
 			$this->document->addScript('view/javascript/summernote/summernote.js');
-			$this->document->addScript('view/javascript/summernote/lang/summernote-' . $this->language->get('lang') . '.js');
+			$this->document->addScript('view/javascript/summernote/lang/summernote-' . $this->config->get('config_language') . '.js');
 			$this->document->addScript('view/javascript/summernote/opencart.js');
 			$this->document->addStyle('view/javascript/summernote/summernote.css');
 		}
@@ -62,10 +62,12 @@ class ControllerExtensionModuleFeaturedHtml extends Controller {
 		} else {
 			$data['module_description'] = array();
 		}
-
+		
 		$this->load->model('localisation/language');
-
+		
 		$data['languages'] = $this->model_localisation_language->getLanguages();
+
+		$data['lang'] = $this->config->get('config_language');
 		
 		$data['ckeditor'] = $this->config->get('config_editor_default');
 

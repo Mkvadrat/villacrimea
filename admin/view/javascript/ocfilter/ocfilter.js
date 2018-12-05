@@ -1,3 +1,22 @@
+var checked_id = 0;
+
+$(window).load(function(){
+	checked_id = $('input[name=\'product_category[]\']:checked:last').val();
+	ocfilter.productForm.update();
+});
+
+$(document).on('change', "input[type='checkbox'][name='product_category[]']", function() {
+	if(this.checked) {
+		checked_id = $(this).val();
+	}else{
+		checked_id = $("input[name=\'product_category[]\']:checked:last").val();
+	}
+});
+
+function getCheck(){
+	return checked_id;
+}
+
 var ocfilter = {
 	/**
 	   	URL GET Variables
@@ -114,7 +133,7 @@ var ocfilter = {
 
 				e.fadeTo(250, .3);
 
-				$.post('index.php?route=catalog/ocfilter/edit&token=' + ocfilter.url['token'], post, function(json){
+				$.post('index.php?route=catalog/ocfilter/editImmediately&token=' + ocfilter.url['token'], post, function(json){
 					if (json['status'] === true) {
 						e.fadeTo(250, 1).css('border', '1px solid #4BB349');
 
@@ -188,47 +207,61 @@ var ocfilter = {
 				return false;
 			});
 
-			$(document).on('click', 'a.image-handler', function(){
-				var $this = $(this), field = $this.parents('li').find('input[name*=\'[image]\']'), index = $this.parents('li').index();
+			$(document).on('click', 'a.image-handler', function(e) {
+        e.preventDefault();
 
-				if ($this.hasClass('inserted')) {
-          $('a.image-handler').removeClass('active');
+    		$('.popover').popover('hide', function() {
+    			$('.popover').remove();
+    		});
 
-					field.val('').removeAttr('id');
+    		var element = this;
 
-					$this.removeClass('inserted').html('<img src="view/image/banner.png" alt="" />');
-				} else {
-				  $('a.image-handler').not(this).removeClass('active');
+    		$(element).popover({
+    			html: true,
+    			placement: 'left',
+    			trigger: 'manual',
+    			content: function() {
+    				return '<button type="button" id="button-image" class="btn btn-primary"><i class="fa fa-pencil"></i></button> <button type="button" id="button-clear" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>';
+    			}
+    		});
 
-					$this.toggleClass('active');
+    		$(element).popover('show');
 
-					if ($this.hasClass('active')) {
-	          field.attr('id', 'image-' + index);
+    		$('#button-image').on('click', function() {
+    			$('#modal-image').remove();
 
-	     			ocfilter.form.imageUpload($this, 'image-' + index);
-			 		}
-				}
+    			$.ajax({
+    				url: 'index.php?route=common/filemanager&token=' + getURLVar('token') + '&target=' + $(element).closest('li').find('input[name$=\'[image]\']').attr('id') + '&thumb=' + $(element).attr('id'),
+    				dataType: 'html',
+    				beforeSend: function() {
+    					$('#button-image i').replaceWith('<i class="fa fa-circle-o-notch fa-spin"></i>');
+    					$('#button-image').prop('disabled', true);
+    				},
+    				complete: function() {
+    					$('#button-image i').replaceWith('<i class="fa fa-pencil"></i>');
+    					$('#button-image').prop('disabled', false);
+    				},
+    				success: function(html) {
+    					$('body').append('<div id="modal-image" class="modal">' + html + '</div>');
 
-				return false;
-			});
+    					$('#modal-image').modal('show');
+    				}
+    			});
 
-			/* Search category by SooR. UPD 12-07-2013 */
-			$.expr[':'].icontains = function(a, i, m) { return $(a).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0; };
+    			$(element).popover('hide', function() {
+    				$('.popover').remove();
+    			});
+    		});
 
-			var categories = $('#categories'), categoriesOffsetTop = categories.offset().top, categoriesHeight = categories.outerHeight();
+    		$('#button-clear').on('click', function() {
+          $(element).find('img').attr('src', '');
 
-			$('input[name=\'search\']').keyup(function(){
-			  categories.scrollTop(0).find('label').removeAttr('style');
+    			$(element).closest('li').find('input[name$=\'[image]\']').attr('value', '');
 
-			  if (this.value) {
-			    var find = categories.find('label:icontains(\'' + this.value + '\')');
-
-			    if (find.length) {
-			      find.css({'color': 'red', 'font-weight': 'bold'});
-
-			      categories.scrollTop(find.offset().top - categoriesOffsetTop - categoriesHeight / 2);
-			    }
-			  }
+    			$(element).popover('hide', function() {
+    				$('.popover').remove();
+    			});
+    		});
 			});
 
 			/* Numeric values clone for another name fields */
@@ -276,51 +309,24 @@ var ocfilter = {
 			html.push('	<a class="delete" onclick="ocfilter.form.deleteValue($(this));">Delete</a>');
 			html.push('	<div class="fields">');
 			html.push('		<input type="hidden" name="ocfilter_option_value[insert][' + this.valueRow + '][color]" value="" />');
-			html.push('		<input type="hidden" name="ocfilter_option_value[insert][' + this.valueRow + '][image]" value="" />');
-			html.push('		<input type="hidden" name="ocfilter_option_value[insert][' + this.valueRow + '][sort_order]" value="' + this.valueRow + '" />');
+			html.push('		<input type="hidden" name="ocfilter_option_value[insert][' + this.valueRow + '][image]" value="" id="value-image-' + this.valueRow + '" />');
+			html.push('		<input type="number" name="ocfilter_option_value[insert][' + this.valueRow + '][sort_order]" value="' + this.valueRow + '" />');
 
 			for (var i = 0; i < ocfilter.php.languages.length; i++) {
 				var language = ocfilter.php.languages[i];
 
-				html.push('	<label><input type="text" class="value-name" name="ocfilter_option_value[insert][' + this.valueRow + '][language][' + language.language_id + '][name]" value="" size="80" placeholder="Значение опции #' + this.valueRow + '" />&nbsp;<img src="view/image/flags/' + language.image + '" title="' + language.name + '" /></label>');
+				html.push('	<label><input type="text" class="value-name" name="ocfilter_option_value[insert][' + this.valueRow + '][language][' + language.language_id + '][name]" value="" size="80" placeholder="Значение опции #' + this.valueRow + '" />&nbsp;<img src="language/' + language.code + '/' + language.code + '.png" title="' + language.name + '" /></label>');
 			}
 
 			html.push('	</div>');
 			html.push('	<a href="#" class="color-handler' + (ocfilter.php.color ? ' visible' : '') + '" title="' + ocfilter.php.text_select_color + '"></a>');
-			html.push('	<a href="#" class="image-handler' + (ocfilter.php.image ? ' visible' : '') + '" title="' + ocfilter.php.text_browse_image + '"><img src="view/image/banner.png" alt="" /></a>');
+			html.push('	<a href="#" class="image-handler' + (ocfilter.php.image ? ' visible' : '') + '" title="' + ocfilter.php.text_browse_image + '" id="value-image-thumb-' + this.valueRow + '"><img src="" alt="" /><i class="fa fa-fw fa-picture-o"></i></a>');
 		  html.push('</li>');
 
       $('#sortable').append(html.join(''));
 
     	this.valueRow++;
-	  },
-		imageUpload: function(target, field) {
-			$('#dialog').remove();
-
-			$('#content').prepend('<div id="dialog" style="padding: 3px 0px 0px 0px;"><iframe src="index.php?route=common/filemanager&token=' + ocfilter.url['token'] + '&field=' + encodeURIComponent(field) + '" style="padding:0; margin: 0; display: block; width: 100%; height: 100%;" frameborder="no" scrolling="auto"></iframe></div>');
-
-			$('#dialog').dialog({
-				title: ocfilter.php.text_image_manager,
-				close: function (event, ui) {
-					if ($('#' + field).attr('value')) {
-						$.ajax({
-							url: 'index.php?route=common/filemanager/image&token=' + ocfilter.url['token'] + '&image=' + encodeURIComponent($('#' + field).val()),
-							dataType: 'text',
-							success: function(data) {
-								target.addClass('inserted').html('<img src="' + data + '" alt="" />');
-							}
-						});
-					}
-
-          $('a.image-handler').removeClass('active');
-				},
-				bgiframe: false,
-				width: 800,
-				height: 400,
-				resizable: false,
-				modal: false
-			});
-		}
+	  }
 	},
 	/**
 	   	OCFilter Setting Form
@@ -344,11 +350,11 @@ var ocfilter = {
 			});
 
 		  $('#copy-attributes').on('click', function() {
-		    var $this = $(this), post = $('#tab-copy input:checked, #tab-copy select');
+		    var $this = $(this), post = $('#tab-copy input:checked, #tab-copy input[type=\'text\'], #tab-copy select');
 
 		    $this.removeAttr('id').find('span').text(ocfilter.php.executed);
 
-		    $.post('index.php?route=module/ocfilter/copyAttributes&token=' + ocfilter.url['token'], post, function(json){
+		    $.post('index.php?route=extension/module/ocfilter/copyAttributes&token=' + ocfilter.url['token'], post, function(json){
 		      if (json['message']) {
 		        $('span', $this).text(json['message']);
 		      }
@@ -396,11 +402,11 @@ var ocfilter = {
       this.update();
 		},
 		update: function() {
-      if ($('input[type=\'checkbox\'][name=\'product_category[]\']:checked:last').length > 0) {
-			  this.category_id = $('input[name=\'product_category[]\']:checked:last').val();
-      } else if ($('input[type=\'hidden\'][name=\'product_category[]\']:last').length > 0) {
-			  this.category_id = $('input[name=\'product_category[]\']:last').val();
-      }
+			if ($("input[type='checkbox'][name='product_category[]']:checked:last").length > 0) {
+					this.category_id = getCheck();
+			} else {
+					this.category_id = 0;
+			}
 
 			var html = [], get = {
 				token: ocfilter.url['token'],
@@ -435,16 +441,6 @@ var ocfilter = {
           if (option.type == 'slide' || option.type == 'slide_dual') {
 						html.push('<input type="hidden" name="ocfilter_product_option[' + option.option_id + '][values][0][selected]" value="1" />');
 						html.push('<input type="text" name="ocfilter_product_option[' + option.option_id + '][values][0][slide_value_min]" value="' + option.slide_value_min + '" size="5" class="slide-value-min" />&nbsp;&mdash;&nbsp;<input type="text" name="ocfilter_product_option[' + option.option_id + '][values][0][slide_value_max]" value="' + option.slide_value_max + '" size="5" class="slide-value-max" />' + option.postfix + '');
-
-            for (var l = 0; l < ocfilter.php.languages.length; l++) {
-  						html.push('&nbsp;<input type="text" name="ocfilter_product_option[' + option.option_id + '][values][0][description][' + ocfilter.php.languages[l].language_id + '][description]" value="' + option.description[ocfilter.php.languages[l].language_id].description + '" size="30" class="description" style="background-image: url(\'view/image/flags/' + ocfilter.php.languages[l].image + '\');" />');
-  					}
-          } else if (option.type == 'text') {
-						html.push('<input type="hidden" name="ocfilter_product_option[' + option.option_id + '][values][0][selected]" value="1" />');
-
-						for (var l = 0; l < ocfilter.php.languages.length; l++) {
-							html.push('<textarea name="ocfilter_product_option[' + option.option_id + '][values][0][description][' + ocfilter.php.languages[l].language_id + '][description]" rows="2" cols="40">' + option.description[ocfilter.php.languages[l].language_id].description + '</textarea>&nbsp;<img src="view/image/flags/' + ocfilter.php.languages[l].image + '" alt="' + ocfilter.php.languages[l].name + '" title="' + ocfilter.php.languages[l].name + '" /><br />');
-						}
 					} else {
 						if (option.values) {
 							for (var j in option.values) {
@@ -457,10 +453,6 @@ var ocfilter = {
 	              values.push('<div>');
 
                 values.push(' <label><input type="checkbox" name="ocfilter_product_option[' + option.option_id + '][values][' + value.value_id + '][selected]" value="' + value.value_id + '"' + (value.selected ? ' checked="checked"' : '') + ' />' + value.name + option.postfix + '</label>');
-
-                for (var l = 0; l < ocfilter.php.languages.length; l++) {
-									values.push('&nbsp;<input type="text" name="ocfilter_product_option[' + option.option_id + '][values][' + value.value_id + '][description][' + ocfilter.php.languages[l].language_id + '][description]" value="' + value.description[ocfilter.php.languages[l].language_id].description + '" size="30" style="background-image: url(\'view/image/flags/' + ocfilter.php.languages[l].image + '\');" />');
-								}
 
                 values.push('</div>');
 							}
@@ -511,7 +503,7 @@ $(function(){
 	/**
 	   	OCFilter Form
 	**/
-	if (ocfilter.url['route'] == 'catalog/ocfilter/insert' || ocfilter.url['route'] == 'catalog/ocfilter/update') {
+	if (ocfilter.url['route'] == 'catalog/ocfilter/add' || ocfilter.url['route'] == 'catalog/ocfilter/edit') {
 		ocfilter.form.init();
 	}
 
@@ -525,7 +517,7 @@ $(function(){
 	/**
 			OCFilter Module Setting
 	**/
-  if (ocfilter.url['route'] == 'module/ocfilter') {
+  if (ocfilter.url['route'] == 'extension/module/ocfilter') {
 		ocfilter.setting.init();
 	}
 });

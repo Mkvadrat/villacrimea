@@ -38,7 +38,6 @@ class ControllerExtensionModuleMainFilter extends Controller {
 					'column'   => $category['column'] ? $category['column'] : 1,
 					'href'     => $category['category_id']
 				);
-
 			}
 			
 			$this->load->model('catalog/ocfilter');

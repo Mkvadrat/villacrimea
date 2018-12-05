@@ -50,9 +50,33 @@
                     </div>
                   </div>
                   <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-name<?php echo $language['language_id']; ?>">Верхнее название категории</label>
+                    <div class="col-sm-10">
+                      <input type="text" name="category_description[<?php echo $language['language_id']; ?>][top_name]" value="<?php echo isset($category_description[$language['language_id']]) ? $category_description[$language['language_id']]['top_name'] : ''; ?>" placeholder="Верхнее название категории" id="input-name<?php echo $language['language_id']; ?>" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-name<?php echo $language['language_id']; ?>">Специализация агента</label>
+                    <div class="col-sm-10">
+                      <input type="text" name="category_description[<?php echo $language['language_id']; ?>][specialization]" value="<?php echo isset($category_description[$language['language_id']]) ? $category_description[$language['language_id']]['specialization'] : ''; ?>" placeholder="Специализация агента" id="input-name<?php echo $language['language_id']; ?>" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-name<?php echo $language['language_id']; ?>">Название кейса</label>
+                    <div class="col-sm-10">
+                      <input type="text" name="category_description[<?php echo $language['language_id']; ?>][case_name]" value="<?php echo isset($category_description[$language['language_id']]) ? $category_description[$language['language_id']]['case_name'] : ''; ?>" placeholder="Название кейса" id="input-name<?php echo $language['language_id']; ?>" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="form-group">
                     <label class="col-sm-2 control-label" for="input-description<?php echo $language['language_id']; ?>"><?php echo $entry_description; ?></label>
                     <div class="col-sm-10">
                       <textarea name="category_description[<?php echo $language['language_id']; ?>][description]" placeholder="<?php echo $entry_description; ?>" id="input-description<?php echo $language['language_id']; ?>" data-lang="<?php echo $lang; ?>" class="form-control summernote"><?php echo isset($category_description[$language['language_id']]) ? $category_description[$language['language_id']]['description'] : ''; ?></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-description<?php echo $language['language_id']; ?>">Нижние описание категории</label>
+                    <div class="col-sm-10">
+                      <textarea name="category_description[<?php echo $language['language_id']; ?>][bottom_description]" placeholder="Нижние описание категории" id="input-description<?php echo $language['language_id']; ?>" data-lang="<?php echo $lang; ?>" class="form-control summernote"><?php echo isset($category_description[$language['language_id']]) ? $category_description[$language['language_id']]['bottom_description'] : ''; ?></textarea>
                     </div>
                   </div>
                   <div class="form-group">
@@ -100,16 +124,33 @@
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-sm-2 control-label" for="input-filter"><span data-toggle="tooltip" title="<?php echo $help_filter; ?>"><?php echo $entry_filter; ?></span></label>
+                <label class="col-sm-2 control-label" for="input-parent">Категория кейсов для агента</label>
                 <div class="col-sm-10">
-                  <input type="text" name="filter" value="" placeholder="<?php echo $entry_filter; ?>" id="input-filter" class="form-control" />
-                  <div id="category-filter" class="well well-sm" style="height: 150px; overflow: auto;">
-                    <?php foreach ($category_filters as $category_filter) { ?>
-                    <div id="category-filter<?php echo $category_filter['filter_id']; ?>"><i class="fa fa-minus-circle"></i> <?php echo $category_filter['name']; ?>
-                      <input type="hidden" name="category_filter[]" value="<?php echo $category_filter['filter_id']; ?>" />
-                    </div>
+                  <select name="category_case_id" class="form-control">
+                    <option value="0" selected="selected"><?php echo $text_none; ?></option>
+                    <?php foreach ($case_category as $case_category) { ?>
+                    <?php if ($case_category['category_case_id'] == $current_case_category) { ?>
+                    <option value="<?php echo $case_category['category_case_id']; ?>" selected="selected"><?php echo $case_category['name']; ?></option>
+                    <?php } else { ?>
+                    <option value="<?php echo $case_category['category_case_id']; ?>"><?php echo $case_category['name']; ?></option>
                     <?php } ?>
-                  </div>
+                    <?php } ?>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-parent">Кейс для категории обьектов</label>
+                <div class="col-sm-10">
+                  <select name="case_id" class="form-control">
+                    <option value="0" selected="selected"><?php echo $text_none; ?></option>
+                    <?php foreach ($case as $case) { ?>
+                    <?php if ($case['case_id'] == $current_case) { ?>
+                    <option value="<?php echo $case['case_id']; ?>" selected="selected"><?php echo $case['name']; ?></option>
+                    <?php } else { ?>
+                    <option value="<?php echo $case['case_id']; ?>"><?php echo $case['name']; ?></option>
+                    <?php } ?>
+                    <?php } ?>
+                  </select>
                 </div>
               </div>
               <div class="form-group">
@@ -167,6 +208,20 @@
                       <input type="checkbox" name="top" value="1" checked="checked" id="input-top" />
                       <?php } else { ?>
                       <input type="checkbox" name="top" value="1" id="input-top" />
+                      <?php } ?>
+                      &nbsp; </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-agent">Агент (Показывать в категории)</label>
+                <div class="col-sm-10">
+                  <div class="checkbox">
+                    <label>
+                      <?php if ($agent) { ?>
+                      <input type="checkbox" name="agent" value="1" checked="checked" id="input-agent" />
+                      <?php } else { ?>
+                      <input type="checkbox" name="agent" value="1" id="input-agent" />
                       <?php } ?>
                       &nbsp; </label>
                   </div>

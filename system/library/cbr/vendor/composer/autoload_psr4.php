@@ -6,5 +6,12 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'CBR\\' => array($baseDir . '/src'),
+    'infrajs\\path\\' => array($vendorDir . '/infrajs/path'),
+    'infrajs\\once\\' => array($vendorDir . '/infrajs/once'),
+    'infrajs\\nostore\\' => array($vendorDir . '/infrajs/nostore'),
+    'infrajs\\mem\\' => array($vendorDir . '/infrajs/mem'),
+    'infrajs\\each\\' => array($vendorDir . '/infrajs/each'),
+    'infrajs\\cache\\' => array($vendorDir . '/infrajs/cache'),
+    'infrajs\\ans\\' => array($vendorDir . '/infrajs/ans'),
+    'akiyatkin\\cbr\\' => array($baseDir . '/'),
 );

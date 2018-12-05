@@ -48,6 +48,59 @@
               </select>
             </div>
           </div>
+          
+
+          <ul class="nav nav-tabs" id="language">
+            <?php foreach ($languages as $language) { ?>
+            <li><a href="#language<?php echo $language['language_id']; ?>" data-toggle="tab"><img src="language/<?php echo $language['code']; ?>/<?php echo $language['code']; ?>.png" title="<?php echo $language['name']; ?>" /> <?php echo $language['name']; ?></a></li>
+            <?php } ?>
+          </ul>
+          <div class="tab-content">
+            <?php foreach ($languages as $language) { ?>
+            <div class="tab-pane" id="language<?php echo $language['language_id']; ?>">
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-name<?php echo $language['language_id']; ?>">Специализация</label>
+                <div class="col-sm-10">
+                  <input type="text" name="agent_description[<?php echo $language['language_id']; ?>][specialization]" value="<?php echo isset($agent_description[$language['language_id']]) ? $agent_description[$language['language_id']]['specialization'] : ''; ?>" placeholder="Специализация" id="input-name<?php echo $language['language_id']; ?>" class="form-control" />
+                </div>
+              </div>
+
+            </div>
+            <?php } ?>
+          </div>
+        
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-parent">Категория кейсов для агента</label>
+            <div class="col-sm-10">
+              <select name="category_case_id" class="form-control">
+                <option value="0" selected="selected"><?php echo $text_none; ?></option>
+                <?php foreach ($case_category as $case_category) { ?>
+                <?php if ($case_category['category_case_id'] == $current_case_category) { ?>
+                  <option value="<?php echo $case_category['category_case_id']; ?>" selected="selected"><?php echo $case_category['name']; ?></option>
+                <?php } else { ?>
+                  <option value="<?php echo $case_category['category_case_id']; ?>"><?php echo $case_category['name']; ?></option>
+                <?php } ?>
+                <?php } ?>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-category">Категория объектов агента</label>
+            <div class="col-sm-10">
+                  <select name="category_id" class="form-control">
+                  <option value="0" selected="selected"><?php echo $text_none; ?></option>
+                  <?php foreach ($categories as $category) { ?>
+                  <?php if ($category['category_id'] == $current_category_id) { ?>
+                    <option value="<?php echo $category['category_id']; ?>" selected="selected"><?php echo $category['name']; ?></option>
+                  <?php } else { ?>
+                    <option value="<?php echo $category['category_id']; ?>"><?php echo $category['name']; ?></option>
+                  <?php } ?>
+                  <?php } ?>
+                </select>
+            </div>
+          </div>
+
           <div class="form-group required">
             <label class="col-sm-2 control-label" for="input-firstname"><?php echo $entry_firstname; ?></label>
             <div class="col-sm-10">
@@ -73,6 +126,12 @@
               <?php if ($error_email) { ?>
               <div class="text-danger"><?php echo $error_email; ?></div>
               <?php } ?>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-phone">Телефон</label>
+            <div class="col-sm-10">
+              <input type="text" name="phone" value="<?php echo $phone; ?>" placeholder="Телефон" id="input-phone" class="form-control" />
             </div>
           </div>
           <div class="form-group">
@@ -118,4 +177,8 @@
     </div>
   </div>
 </div>
+<script type="text/javascript"><!--
+$('#language a:first').tab('show');
+$('#option a:first').tab('show');
+//--></script></div>
 <?php echo $footer; ?> 

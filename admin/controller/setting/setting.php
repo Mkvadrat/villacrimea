@@ -12,23 +12,24 @@ class ControllerSettingSetting extends Controller {
 		$this->load->model('setting/setting');
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
-      $language_info = $this->model_localisation_language->getLanguageByCode($this->request->post['config_language']);
-      $front_language_id = $language_info['language_id'];
-
-      $this->request->post['config_meta_title'] = $this->request->post['config_langdata'][$front_language_id]['meta_title'];
-      $this->request->post['config_meta_description'] = $this->request->post['config_langdata'][$front_language_id]['meta_description'];
-      $this->request->post['config_meta_keyword'] = $this->request->post['config_langdata'][$front_language_id]['meta_keyword'];
-      $this->request->post['config_name'] = $this->request->post['config_langdata'][$front_language_id]['name'];
-      $this->request->post['config_owner'] = $this->request->post['config_langdata'][$front_language_id]['owner'];
-      $this->request->post['config_address'] = $this->request->post['config_langdata'][$front_language_id]['address'];
-	  $this->request->post['config_short_descr'] = $this->request->post['config_langdata'][$front_language_id]['short_descr_site'];
-	  $this->request->post['config_contact_header'] = $this->request->post['config_langdata'][$front_language_id]['contact_header_inf'];
-	  $this->request->post['config_contact_footer'] = $this->request->post['config_langdata'][$front_language_id]['contact_footer_inf'];
-	  $this->request->post['config_powered'] = $this->request->post['config_langdata'][$front_language_id]['powered'];
-      $this->request->post['config_address'] = $this->request->post['config_langdata'][$front_language_id]['open'];
-      $this->request->post['config_address'] = $this->request->post['config_langdata'][$front_language_id]['comment'];
-	  $this->request->post['config_mail_regexp'] = trim($this->request->post['config_mail_regexp']);
-
+			$language_info = $this->model_localisation_language->getLanguageByCode($this->request->post['config_language']);
+			$front_language_id = $language_info['language_id'];
+	  
+			$this->request->post['config_meta_title'] = $this->request->post['config_langdata'][$front_language_id]['meta_title'];
+			$this->request->post['config_meta_description'] = $this->request->post['config_langdata'][$front_language_id]['meta_description'];
+			$this->request->post['config_meta_keyword'] = $this->request->post['config_langdata'][$front_language_id]['meta_keyword'];
+			$this->request->post['config_name'] = $this->request->post['config_langdata'][$front_language_id]['name'];
+			$this->request->post['config_owner'] = $this->request->post['config_langdata'][$front_language_id]['owner'];
+			$this->request->post['config_address'] = $this->request->post['config_langdata'][$front_language_id]['address'];
+			$this->request->post['config_short_descr'] = $this->request->post['config_langdata'][$front_language_id]['short_descr_site'];
+			$this->request->post['config_contact_header'] = $this->request->post['config_langdata'][$front_language_id]['contact_header_inf'];
+			$this->request->post['config_contact_footer'] = $this->request->post['config_langdata'][$front_language_id]['contact_footer_inf'];
+			$this->request->post['config_manager'] = $this->request->post['config_langdata'][$front_language_id]['manager'];
+			$this->request->post['config_powered'] = $this->request->post['config_langdata'][$front_language_id]['powered'];
+			$this->request->post['config_address'] = $this->request->post['config_langdata'][$front_language_id]['open'];
+			$this->request->post['config_comment'] = $this->request->post['config_langdata'][$front_language_id]['comment'];
+			$this->request->post['config_mail_regexp'] = trim($this->request->post['config_mail_regexp']);
+			
 			$this->model_setting_setting->editSetting('config', $this->request->post);
 
 			if ($this->config->get('config_currency_auto')) {

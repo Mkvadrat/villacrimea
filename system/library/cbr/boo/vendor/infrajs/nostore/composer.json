@@ -1,0 +1,11 @@
+{
+	"name":"infrajs/nostore",
+	"description": "Procces header Cache-Control no-store and no-cache",
+	"autoload": {
+		"psr-4": { "infrajs\\nostore\\": "" }
+	},
+	"require":{
+		"infrajs/each":"~1",
+		"infrajs/ans":"~1"
+	}
+}

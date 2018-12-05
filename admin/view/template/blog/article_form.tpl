@@ -50,6 +50,12 @@
                       <?php } ?>
                     </div>
                   </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-sub-name<?php echo $language['language_id']; ?>">Подзаголовок кейса</label>
+                    <div class="col-sm-10">
+                      <input type="text" name="article_description[<?php echo $language['language_id']; ?>][sub_name]" value="<?php echo isset($article_description[$language['language_id']]) ? $article_description[$language['language_id']]['sub_name'] : ''; ?>" placeholder="Подзаголовок кейса" id="input-sub-name<?php echo $language['language_id']; ?>" class="form-control" />
+                    </div>
+                  </div>
 				  <div class="form-group">
                     <label class="col-sm-2 control-label" for="input-meta-h1<?php echo $language['language_id']; ?>"><?php echo $entry_meta_h1; ?></label>
                     <div class="col-sm-10">
@@ -90,6 +96,12 @@
                     <label class="col-sm-2 control-label" for="input-description<?php echo $language['language_id']; ?>">Краткое описание объекта</label>
                     <div class="col-sm-10">
                       <textarea name="article_description[<?php echo $language['language_id']; ?>][short_description]" placeholder="Краткое описание объекта" id="input-description<?php echo $language['language_id']; ?>" class="form-control summernote"><?php echo isset($article_description[$language['language_id']]) ? $article_description[$language['language_id']]['short_description'] : ''; ?></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-detail<?php echo $language['language_id']; ?>">Детали</label>
+                    <div class="col-sm-10">
+                      <textarea name="article_description[<?php echo $language['language_id']; ?>][detail]" placeholder="Детали" id="input-detail<?php echo $language['language_id']; ?>" class="form-control summernote"><?php echo isset($article_description[$language['language_id']]) ? $article_description[$language['language_id']]['detail'] : ''; ?></textarea>
                     </div>
                   </div>
                   <div class="form-group">
@@ -181,6 +193,20 @@
                     </div>
                     <?php } ?>
                   </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-category">Объект для кейса</label>
+                <div class="col-sm-10">
+                <select class="form-control" name="product_case_id">
+                  <?php foreach ($requred_products as $product) { ?>
+                    <?php if ($product['product_case_id'] == $current_product) { ?>
+                      <option value="<?php echo $product['product_case_id']; ?>" selected="selected"><?php echo $product['name']; ?></option>
+                  <?php } else { ?>
+                      <option value="<?php echo $product['product_case_id']; ?>"><?php echo $product['name']; ?></option>
+                  <?php } ?>
+                  <?php } ?>
+                </select>
                 </div>
               </div>
               <div class="form-group">

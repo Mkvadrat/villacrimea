@@ -14,7 +14,7 @@ $_['text_custommenu_enable']    = 'Использовать в качестве 
 
 $_['text_new_custommenu_item']  = 'Новый пункт меню';
 $_['text_category']             = 'Категория';
-$_['text_product']              = 'Товар';
+$_['text_product']              = 'Обьект';
 $_['text_manufacturer']         = 'Производитель';
 $_['text_information']          = 'Статья';
 $_['text_custom']               = 'Произвольные ссылки';
@@ -33,7 +33,7 @@ $_['column_action']             = 'Действие';
 $_['column_custom_name']        = 'Название';
 $_['column_custom_link']        = 'Ссылка';
 $_['column_category_name']      = 'Название категории';
-$_['column_product_name']       = 'Название товара';
+$_['column_product_name']       = 'Название обьекта';
 $_['column_manufacturer_name']  = 'Название производителя';
 $_['column_information_name']   = 'Название статьи';
 
@@ -47,7 +47,7 @@ $_['entry_store']         		= 'Магазин';
 // Buttons
 $_['button_custom']             = 'Добавить произвольную ссылку в меню';
 $_['button_categories']         = 'Добавить категорию в меню';
-$_['button_products']           = 'Добавить товар в меню';
+$_['button_products']           = 'Добавить обьект в меню';
 $_['button_manufacturers']      = 'Добавить производителя в меню';
 $_['button_informations']       = 'Добавить статью в меню';
 

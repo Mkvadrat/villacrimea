@@ -1,97 +1,56 @@
 <?php echo $header; ?>
-<div class="container">
-  <ul class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-    <?php } ?>
-  </ul>
-  <div class="row"><?php echo $column_left; ?>
-    <?php if ($column_left && $column_right) { ?>
-    <?php $class = 'col-sm-6'; ?>
-    <?php } elseif ($column_left || $column_right) { ?>
-    <?php $class = 'col-sm-9'; ?>
-    <?php } else { ?>
-    <?php $class = 'col-sm-12'; ?>
-    <?php } ?>
-    <div id="content" class="<?php echo $class; ?> showcase-list"><?php echo $content_top; ?>
-      <h1><?php echo $heading_title; ?></h1>
-	   <?php if ($thumb || $description) { ?>
-      <div class="row">
-        <?php if ($thumb) { ?>
-        <div class="col-sm-3"><img src="<?php echo $thumb; ?>" alt="<?php echo $heading_title; ?>" title="<?php echo $heading_title; ?>" class="img-thumbnail" /></div>
-        <?php } ?>
-        <?php if ($description) { ?>
-        <div class="col-sm-9"><?php echo $description; ?></div>
-		<?php } ?>
-      </div>
-      <hr>
-	  <?php } ?>
-      <?php if ($articles) { ?>
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="btn-group">
-            <button type="button" id="list-view" class="btn btn-default" data-toggle="tooltip" title="<?php echo $button_list; ?>"><i class="fa fa-th-list"></i></button>
-            <button type="button" id="grid-view" class="btn btn-default" data-toggle="tooltip" title="<?php echo $button_grid; ?>"><i class="fa fa-th"></i></button>
+    <div class="cases_page">
+      
+      <?php echo $content_top; ?>
+      
+      <?php if($categories_agent){ ?>
+      <div class="realtor_category">
+        <?php foreach($categories_agent as $agent){ ?>
+          <div class="realtor_item">
+              <a href="<?php echo $agent['view_case']; ?>" class="realtor">
+                  <div class="img" style="background-image: url('<?php echo $agent['image']; ?>')"></div>
+                  <p class="name"><?php echo $agent['name']; ?></p>
+                  <p class="job"><?php echo $agent['specialization']; ?></p>
+                  <!-- <p class="obj_count">Проданых объектов –
+                      <span><?php echo $agent['count']; ?></span>
+                  </p> -->
+              </a>
+              <a href="<?php echo $agent['view_case']; ?>" class="watch_cases">Посмотреть кейсы</a>
+              <!-- <a href="<?php echo $agent['href']; ?>" class="watch_cases">Посмотреть объекты в продаже</a> -->
           </div>
-        </div>
-        <div class="col-sm-1 col-sm-offset-2 text-right">
-          <label class="control-label" for="input-sort"><?php echo $text_sort; ?></label>
-        </div>
-        <div class="col-sm-3 text-right">
-          <select id="input-sort" class="form-control col-sm-3" onchange="location = this.value;">
-            <?php foreach ($sorts as $sorts) { ?>
-            <?php if ($sorts['value'] == $sort . '-' . $order) { ?>
-            <option value="<?php echo $sorts['href']; ?>" selected="selected"><?php echo $sorts['text']; ?></option>
-            <?php } else { ?>
-            <option value="<?php echo $sorts['href']; ?>"><?php echo $sorts['text']; ?></option>
-            <?php } ?>
-            <?php } ?>
-          </select>
-        </div>
-        <div class="col-sm-1 text-right">
-          <label class="control-label" for="input-limit"><?php echo $text_limit; ?></label>
-        </div>
-        <div class="col-sm-2 text-right">
-          <select id="input-limit" class="form-control" onchange="location = this.value;">
-            <?php foreach ($limits as $limits) { ?>
-            <?php if ($limits['value'] == $limit) { ?>
-            <option value="<?php echo $limits['href']; ?>" selected="selected"><?php echo $limits['text']; ?></option>
-            <?php } else { ?>
-            <option value="<?php echo $limits['href']; ?>"><?php echo $limits['text']; ?></option>
-            <?php } ?>
-            <?php } ?>
-          </select>
-        </div>
-      </div>
-      <br />
-      <div class="row">  
-        <?php foreach ($articles as $article) { ?>     
-        <div class="product-layout product-list col-xs-12">
-          <div class="product-thumb">
-            <div class="image"><a href="<?php echo $article['href']; ?>"><img src="<?php echo $article['thumb']; ?>" alt="<?php echo $article['name']; ?>" title="<?php echo $article['name']; ?>" class="img-responsive" /></a></div>
-            <div class="caption">
-              <h4><a href="<?php echo $article['href']; ?>"><?php echo $article['name']; ?></a></h4>
-              <p class="description"><?php echo $article['description']; ?></p>
-            </div>
-            <div class="button-group">
-				<button type="button" onclick="location.href = ('<?php echo $article['href']; ?>');"><i class="fa fa-share"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $button_more; ?></span></button>
-				<button type="button" data-toggle="tooltip" title="<?php echo $article["date_added"];?>" "><i class="fa fa-clock-o"></i></button>
-			</div>
-          </div>
-        </div>
         <?php } ?>
-      </div>
-      <div class="row">
-        <div class="col-sm-6 text-left"><?php echo $pagination; ?></div>
-        <!-- <div class="col-sm-6 text-right"><?php //echo $results; ?></div> -->
-      </div>
-      <?php } else { ?>
-      <p><?php echo $text_empty; ?></p>
-      <div class="buttons">
-        <div class="pull-right"><a href="<?php echo $continue; ?>" class="btn btn-primary"><?php echo $button_continue; ?></a></div>
       </div>
       <?php } ?>
-      <?php echo $content_bottom; ?></div>
-    <?php echo $column_right; ?></div>
-</div>
+
+      <a href="<?php echo $view_all_case; ?>" class="watch_all_cases">Смотреть кейсы всех агентов <?php echo $count_case; ?></a>
+      
+      <?php if($articles){ ?>
+      <div class="agent_cases">
+        <?php foreach($articles as $article){ ?>
+          <div class="agent_item">
+              <div class="case">
+                  <p class="title"><?php echo $article['name']; ?></p>
+                  <?php echo $article['description']; ?>
+                  <a href="<?php echo $article['href']; ?>" class="casual_button">Подробнее об этом кейсе</a>
+              </div>
+              <div class="realtor">
+                  <div class="img" style="background-image: url('<?php echo $article['image_agent']; ?>')"></div>
+                  <p><?php echo $article['category_name']; ?></p>
+              </div>
+              <div class="description">
+                  <div class="img" style="background-image: url('<?php echo $article['thumb']; ?>')"></div>
+                  <?php echo $article['short_description']; ?>
+              </div>
+          </div>
+        <?php } ?>
+      </div>
+      <?php }else{ ?>
+      <div class="have_no_items">
+        <p class="center"><?php echo $text_empty; ?></p>
+        <p class="center"><a href="<?php echo $continue; ?>" class="casual_button"><?php echo $button_continue; ?></a></p>
+      </div>
+      <?php } ?>
+      
+     <?php echo $pagination; ?>
+  </div>
 <?php echo $footer; ?>

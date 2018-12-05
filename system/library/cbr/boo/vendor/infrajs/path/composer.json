@@ -1,0 +1,12 @@
+{
+	"name": "infrajs/path",
+	"homepage":"https://github.com/infrajs/path",
+	"description": "Resolve paths on the file system. Provide point of view on form of paths to files and folders..",
+	"autoload": {
+		"psr-4": { "infrajs\\path\\": "" }
+	},
+	"require":{
+		"infrajs/once":"~1",
+		"infrajs/nostore":"~1"
+	}
+}

@@ -69,7 +69,7 @@ class ControllerExtensionModuleBlogFeatured extends Controller {
 						'thumb'       => $image,
 						'name'        => $article_info['name'],
 						'description' => utf8_substr(strip_tags(html_entity_decode($article_info['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get('configblog_article_description_length')) . '..',
-						'short_description' => utf8_substr(strip_tags(html_entity_decode($article_info['short_description'], ENT_QUOTES, 'UTF-8')), 0, 100 . '..'),
+						'short_description' => html_entity_decode($article_info['short_description'], ENT_QUOTES, 'UTF-8'), 0, 100 . '..',
 						'date_added'  => date($this->language->get('date_format_short'), strtotime($article_info['date_added'])),
 						'href'        => $this->url->link('blog/article', 'article_id=' . $article_info['article_id']),
 						'agent'       => isset($agent_info['name']) ? $agent_info['name'] : '',
@@ -78,6 +78,8 @@ class ControllerExtensionModuleBlogFeatured extends Controller {
 				}
 			}
 		}
+		
+		$data['view_all_featured_cases'] =$this->url->link('blog/category', 'blog_category_id=3');
 
 		if ($data['articles']) {
 			return $this->load->view('extension/module/blog_featured', $data);

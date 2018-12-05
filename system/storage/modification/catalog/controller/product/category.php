@@ -146,9 +146,13 @@ class ControllerProductCategory extends Controller {
 			} else {
 				$data['thumb'] = '';
 			}
-
+			
+			$data['top_name'] = $category_info['top_name'];
+			$data['case_name'] = $category_info['case_name'];
 			$data['description'] = html_entity_decode($category_info['description'], ENT_QUOTES, 'UTF-8');
+			$data['bottom_description'] = html_entity_decode($category_info['bottom_description'], ENT_QUOTES, 'UTF-8');
 			$data['compare'] = $this->url->link('product/compare');
+			$data['view_all_cases'] = $this->url->link('blog/category', '&blog_category_id=3');
 
 			$url = '';
 
@@ -169,18 +173,81 @@ class ControllerProductCategory extends Controller {
 			}
 
 			$data['categories'] = array();
+			
+			$data['i'] = '';
 
-			$results = $this->model_catalog_category->getCategories($category_id);
+			$results = $this->model_catalog_category->getCategories(0);
 
 			foreach ($results as $result) {
 				$filter_data = array(
 					'filter_category_id'  => $result['category_id'],
 					'filter_sub_category' => true
 				);
-
-				$data['categories'][] = array(
-					'name' => $result['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
-					'href' => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '_' . $result['category_id'] . $url)
+				
+				if ($result['image']) {
+					$cat_image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_category_width'), $this->config->get($this->config->get('config_theme') . '_image_category_height'));
+				} else {
+					$cat_image = '';
+				}
+				
+				if ($result['specialization']) {
+					$specialization = $result['specialization'];
+				} else {
+					$specialization = '';
+				}
+				
+				if($result['category_case_id'] != 0){
+					$view_case = $this->url->link('blog/category', 'blog_category_id=' . $result['category_case_id']);
+				}else{
+					$view_case = '';
+				}
+				
+				if($result['agent']) {
+					$data['categories'][] = array(
+						'name' => $result['name'],
+						'count' => $this->model_catalog_product->getTotalProducts($filter_data),
+						'image' => $cat_image,
+						'specialization' => $specialization,
+						'href' => $this->url->link('product/category', 'path=' . $result['category_id'] . $url),
+						'view_case' => $view_case
+					);
+				}
+			}
+			
+			//case
+			$case_id = $this->model_catalog_category->getCase($category_id); 
+			
+			$this->load->model('blog/article');
+			
+			$this->load->model('blog/category');
+		
+			$article_info = $this->model_blog_article->getArticle($case_id);
+			
+			$category_case_info = $this->model_blog_category->getCategoryByArticleId($case_id);
+			
+			$data['cases'] = array();
+			
+			if ($article_info['image']) {
+				$image = $this->model_tool_image->resize($article_info['image'], 387, 239, 'product_related');
+			} else {
+				$image = $this->model_tool_image->resize('placeholder.png', 387, 239);
+			}
+			
+			foreach($category_case_info as $article_category){
+				if ($article_category['image']) {
+					$image_agent = $this->model_tool_image->resize($article_category['image'], 225, 225);
+				} else {
+					$image_agent = $this->model_tool_image->resize('placeholder.png', 225, 225);
+				}
+				
+				$data['cases'][] = array(
+					'name' => $article_info['name'],
+					'href' => $this->url->link('blog/article', 'article_id=' . $article_info['article_id']),
+					'description' => utf8_substr(strip_tags(html_entity_decode($article_info['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get('configblog_article_description_length')) . '..',
+					'short_description' => utf8_substr(strip_tags(html_entity_decode($article_info['short_description'], ENT_QUOTES, 'UTF-8')), 0, 100 . '..'),
+					'image' => $image,
+					'category_name' => $article_category['name'],
+					'image_agent' => $image_agent
 				);
 			}
 
@@ -206,19 +273,35 @@ class ControllerProductCategory extends Controller {
 
 			foreach ($results as $result) {
 				if ($result['image']) {
-					$image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
+					$image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'), 'category_image');
 				} else {
 					$image = $this->model_tool_image->resize('placeholder.png', $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
 				}
 
-				if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
-					$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
-				} else {
-					$price = false;
+				$this->load->model('localisation/currency');
+				
+				$this->load->model('catalog/ocfilter');
+
+				$currencys = $this->model_localisation_currency->getCurrency($result['currency_id']);
+
+				foreach($currencys as $currency){
+					if ($result['currency_id'] != 5) {
+						$price_rub = $this->currency->convert($result['price'], $currency['code'], 'RUB');
+						$rub = $this->currency->format($this->tax->calculate($price_rub, $result['tax_class_id'], $this->config->get('config_tax')), 'RUB', 1, $format= true);
+					} else {
+						$rub = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')), 'RUB', 1, $format= true);
+					}
+
+				   if ($result['currency_id'] != 2) {
+						$price_dollar = $this->currency->convert($result['price'], $currency['code'], 'USD');
+						$price = $this->currency->format($this->tax->calculate($price_dollar, $result['tax_class_id'], $this->config->get('config_tax')), 'USD', 1, $format= true);
+					} else {
+						$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')), 'USD', 1, $format= true);
+					}
 				}
 
 				if ((float)$result['special']) {
-					$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+					$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')), 'USD', $format= true);
 				} else {
 					$special = false;
 				}
@@ -234,17 +317,24 @@ class ControllerProductCategory extends Controller {
 				} else {
 					$rating = false;
 				}
+				
+				$stickers = $this->getStickers($result['product_id']);
 
 				$data['products'][] = array(
 					'product_id'  => $result['product_id'],
 					'thumb'       => $image,
+					'model'       => $result['model'],
 					'name'        => $result['name'],
 					'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get($this->config->get('config_theme') . '_product_description_length')) . '..',
 					'price'       => $price,
+					'rub'		  => $rub,
 					'special'     => $special,
 					'tax'         => $tax,
+					'options'     => $this->model_catalog_product->getProductOptions($result['product_id']),//options
+					'filter_options' => $this->model_catalog_ocfilter->getValueOptionsByProduct($result['product_id']),//options
 					'minimum'     => ($result['minimum'] > 0) ? $result['minimum'] : 1,
 					'rating'      => $rating,
+					'sticker'     => $stickers,
 					'href'        => $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url)
 				);
 			}
@@ -256,8 +346,7 @@ class ControllerProductCategory extends Controller {
 			if (isset($this->request->get['filter_ocfilter'])) {
 				$url .= '&filter_ocfilter=' . $this->request->get['filter_ocfilter'];
 			}
-			
-			if (isset($this->request->get['currencys'])) {
+      if (isset($this->request->get['currencys'])) {
 			  $url .= '&currencys=' . (string)$this->request->get['currencys'];
 			}
       // OCFilter end
@@ -293,28 +382,14 @@ class ControllerProductCategory extends Controller {
 			$data['sorts'][] = array(
 				'text'  => $this->language->get('text_price_asc'),
 				'value' => 'p.price-ASC',
-				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.price&order=ASC' . $url)
+				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.price_usd&order=ASC' . $url)
 			);
 
 			$data['sorts'][] = array(
 				'text'  => $this->language->get('text_price_desc'),
 				'value' => 'p.price-DESC',
-				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.price&order=DESC' . $url)
+				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.price_usd&order=DESC' . $url)
 			);
-
-			if ($this->config->get('config_review_status')) {
-				$data['sorts'][] = array(
-					'text'  => $this->language->get('text_rating_desc'),
-					'value' => 'rating-DESC',
-					'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=rating&order=DESC' . $url)
-				);
-
-				$data['sorts'][] = array(
-					'text'  => $this->language->get('text_rating_asc'),
-					'value' => 'rating-ASC',
-					'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=rating&order=ASC' . $url)
-				);
-			}
 
 			$data['sorts'][] = array(
 				'text'  => $this->language->get('text_model_asc'),
@@ -335,8 +410,7 @@ class ControllerProductCategory extends Controller {
 			if (isset($this->request->get['filter_ocfilter'])) {
 				$url .= '&filter_ocfilter=' . $this->request->get['filter_ocfilter'];
 			}
-			
-			if (isset($this->request->get['currencys'])) {
+      if (isset($this->request->get['currencys'])) {
 			  $url .= '&currencys=' . (string)$this->request->get['currencys'];
 			}
       // OCFilter end
@@ -352,10 +426,24 @@ class ControllerProductCategory extends Controller {
 			if (isset($this->request->get['order'])) {
 				$url .= '&order=' . $this->request->get['order'];
 			}
+			
+			$arrow = $this->request->server['REQUEST_URI'];
+			
+			$parts = explode('order=', $arrow);
+			
+			$arrow_data = isset($parts[1]) ? $parts[1] : null;
+			
+			if($arrow_data == 'ASC'){
+				$data['arrow'] = 'active-asc';
+			}elseif($arrow_data == 'DESC'){
+				$data['arrow'] = 'active-desc';
+			}else{
+				$data['arrow'] = '';
+			}
 
 			$data['limits'] = array();
 
-			$limits = array_unique(array($this->config->get($this->config->get('config_theme') . '_product_limit'), 25, 50, 75, 100));
+			$limits = array_unique(array($this->config->get($this->config->get('config_theme') . '_product_limit'), 21, 30, 51, 102));
 
 			sort($limits);
 
@@ -374,8 +462,7 @@ class ControllerProductCategory extends Controller {
 			if (isset($this->request->get['filter_ocfilter'])) {
 				$url .= '&filter_ocfilter=' . $this->request->get['filter_ocfilter'];
 			}
-			
-			if (isset($this->request->get['currencys'])) {
+      if (isset($this->request->get['currencys'])) {
 			  $url .= '&currencys=' . (string)$this->request->get['currencys'];
 			}
       // OCFilter end
@@ -424,6 +511,16 @@ class ControllerProductCategory extends Controller {
 			$data['limit'] = $limit;
 
       // OCFilter Start
+      if (isset($this->request->get['filter_ocfilter'])) {
+        if (!$product_total) {
+      	  $this->response->redirect($this->url->link('product/category', 'path=' . $this->request->get['path']));
+        }
+
+        $data['description'] = '';
+
+        $this->document->deleteLink('canonical');
+      }
+
       $ocfilter_page_info = $this->load->controller('extension/module/ocfilter/getPageInfo');
 
       if ($ocfilter_page_info) {
@@ -442,6 +539,11 @@ class ControllerProductCategory extends Controller {
         if ($ocfilter_page_info['description'] && !isset($this->request->get['page']) && !isset($this->request->get['sort']) && !isset($this->request->get['order']) && !isset($this->request->get['search']) && !isset($this->request->get['limit'])) {
         	$data['description'] = html_entity_decode($ocfilter_page_info['description'], ENT_QUOTES, 'UTF-8');
         }
+
+  			$data['breadcrumbs'][] = array(
+  				'text' => $ocfilter_page_info['title'],
+  				'href' => $this->url->link('product/category', 'path=' . $this->request->get['path'] . $url)
+  			);
       } else {
         $meta_title = $this->document->getTitle();
         $meta_description = $this->document->getDescription();
@@ -489,6 +591,11 @@ class ControllerProductCategory extends Controller {
           $data['heading_title'] = $heading_title;
 
           $data['description'] = '';
+
+    			$data['breadcrumbs'][] = array(
+    				'text' => (utf8_strlen($heading_title) > 30 ? utf8_substr($heading_title, 0, 30) . '..' : $heading_title),
+    				'href' => $this->url->link('product/category', 'path=' . $this->request->get['path'] . $url)
+    			);
         } else {
           $this->document->setTitle(trim(str_replace('{filter}', '', $meta_title)));
           $this->document->setDescription(trim(str_replace('{filter}', '', $meta_description)));
@@ -563,5 +670,22 @@ class ControllerProductCategory extends Controller {
 
 			$this->response->setOutput($this->load->view('error/not_found', $data));
 		}
+	}
+	
+	private function getStickers($product_id) {
+		$stickers = $this->model_catalog_product->getProductStickerbyProductId($product_id) ;	
+		
+		if (!$stickers) {
+			return;
+		}
+				
+		foreach ($stickers as $sticker) {
+			$stick[] = array(
+				'position' => $sticker['position'],
+				'image'    => HTTP_SERVER . 'image/' . $sticker['image']
+			);		
+		}
+		
+		return $stick;
 	}
 }

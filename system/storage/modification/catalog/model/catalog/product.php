@@ -12,7 +12,11 @@ class ModelCatalogProduct extends Model {
 				'product_id'       => $query->row['product_id'],
 				'name'             => $query->row['name'],
 				'description'      => $query->row['description'],
+				'heading_description' => $query->row['heading_description'],
+				'features' => $query->row['features'],
 				'uniq_options'     => $query->row['uniq_options'],
+				'agent'            => $query->row['agent'],
+				'case_id'          => $query->row['case_id'],
 				'currency_id'      => $query->row['currency_id'],
 				'meta_title'       => $query->row['meta_title'],
 				'meta_h1'          => $query->row['meta_h1'],
@@ -33,6 +37,8 @@ class ModelCatalogProduct extends Model {
 				'manufacturer_id'  => $query->row['manufacturer_id'],
 				'manufacturer'     => $query->row['manufacturer'],
 				'price'            => ($query->row['discount'] ? $query->row['discount'] : $query->row['price']),
+				'price_rub'        => $query->row['price_rub'],
+				'price_usd'        => $query->row['price_usd'],
 				'special'          => $query->row['special'],
 				'reward'           => $query->row['reward'],
 				'points'           => $query->row['points'],
@@ -78,6 +84,21 @@ class ModelCatalogProduct extends Model {
 			$sql .= " FROM " . DB_PREFIX . "product p";
 		}
 
+
+		// OCFilter start
+		if (!empty($data['filter_ocfilter'])) {
+    	$this->load->model('catalog/ocfilter');
+
+      $ocfilter_product_sql = $this->model_catalog_ocfilter->getSearchSQL($data['filter_ocfilter']);
+		} else {
+      $ocfilter_product_sql = false;
+    }
+
+    if ($ocfilter_product_sql && $ocfilter_product_sql->join) {
+    	$sql .= $ocfilter_product_sql->join;
+    }
+    // OCFilter end
+      
 		$sql .= " LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) LEFT JOIN " . DB_PREFIX . "product_to_store p2s ON (p.product_id = p2s.product_id) WHERE pd.language_id = '" . (int)$this->config->get('config_language_id') . "' AND p.status = '1' AND p.date_available <= NOW() AND p2s.store_id = '" . (int)$this->config->get('config_store_id') . "'";
 
 		if (!empty($data['filter_category_id'])) {
@@ -103,9 +124,9 @@ class ModelCatalogProduct extends Model {
 		if (!empty($data['filter_name']) || !empty($data['filter_tag'])) {
 			$sql .= " AND (";
 
-			if (!empty($data['filter_name'])) {
+			if (!empty($data['filter_name']) && empty($data['filter_model'])) {
 				$implode = array();
-
+				
 				$words = explode(' ', trim(preg_replace('/\s+/', ' ', $data['filter_name'])));
 
 				foreach ($words as $word) {
@@ -119,7 +140,20 @@ class ModelCatalogProduct extends Model {
 				if (!empty($data['filter_description'])) {
 					$sql .= " OR pd.description LIKE '%" . $this->db->escape($data['filter_name']) . "%'";
 				}
+			}else{
+				$implode = array();
+				
+				$words = explode(' ', trim(preg_replace('/\s+/', ' ', $data['filter_model'])));
+
+				foreach ($words as $word) {
+					$implode[] = "p.model = '" . $this->db->escape($word) . "'";
+				}
+
+				if ($implode) {
+					$sql .= " " . implode(" AND ", $implode) . "";
+				}
 			}
+			
 
 			if (!empty($data['filter_name']) && !empty($data['filter_tag'])) {
 				$sql .= " OR ";
@@ -153,18 +187,11 @@ class ModelCatalogProduct extends Model {
 		}
 
 
-		// OCFilter start
-		if (!empty($data['filter_ocfilter'])) {
-      $this->load->config('ocfilter');
-      $this->load->model('catalog/ocfilter');
-
-      $ocfilter_product_sql = $this->model_catalog_ocfilter->getProductSQL($data['filter_ocfilter']);
-
-			if ($ocfilter_product_sql) {
-			  $sql .= $ocfilter_product_sql;
-			}
-		}
-		// OCFilter end
+    // OCFilter start
+    if (!empty($ocfilter_product_sql) && $ocfilter_product_sql->where) {
+    	$sql .= $ocfilter_product_sql->where;
+    }
+    // OCFilter end
       
 		if (!empty($data['filter_manufacturer_id'])) {
 			$sql .= " AND p.manufacturer_id = '" . (int)$data['filter_manufacturer_id'] . "'";
@@ -176,17 +203,19 @@ class ModelCatalogProduct extends Model {
 			'pd.name',
 			'p.model',
 			'p.quantity',
-			'p.price',
+			'p.price_usd',
 			'rating',
 			'p.sort_order',
 			'p.date_added'
 		);
 
 		if (isset($data['sort']) && in_array($data['sort'], $sort_data)) {
-			if ($data['sort'] == 'pd.name' || $data['sort'] == 'p.model') {
+			if ($data['sort'] == 'pd.name') {
 				$sql .= " ORDER BY LCASE(" . $data['sort'] . ")";
-			} elseif ($data['sort'] == 'p.price') {
-				$sql .= " ORDER BY (CASE WHEN special IS NOT NULL THEN special WHEN discount IS NOT NULL THEN discount ELSE p.price END)";
+			} elseif ($data['sort'] == 'p.model') {
+				$sql .= " ORDER BY p.model";
+			} elseif ($data['sort'] == 'p.price_usd') {
+				$sql .= " ORDER BY (CASE WHEN special IS NOT NULL THEN special WHEN discount IS NOT NULL THEN discount ELSE p.price_usd END)";
 			} else {
 				$sql .= " ORDER BY " . $data['sort'];
 			}
@@ -468,6 +497,21 @@ class ModelCatalogProduct extends Model {
 			$sql .= " FROM " . DB_PREFIX . "product p";
 		}
 
+
+		// OCFilter start
+		if (!empty($data['filter_ocfilter'])) {
+    	$this->load->model('catalog/ocfilter');
+
+      $ocfilter_product_sql = $this->model_catalog_ocfilter->getSearchSQL($data['filter_ocfilter']);
+		} else {
+      $ocfilter_product_sql = false;
+    }
+
+    if ($ocfilter_product_sql && $ocfilter_product_sql->join) {
+    	$sql .= $ocfilter_product_sql->join;
+    }
+    // OCFilter end
+      
 		$sql .= " LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) LEFT JOIN " . DB_PREFIX . "product_to_store p2s ON (p.product_id = p2s.product_id) WHERE pd.language_id = '" . (int)$this->config->get('config_language_id') . "' AND p.status = '1' AND p.date_available <= NOW() AND p2s.store_id = '" . (int)$this->config->get('config_store_id') . "'";
 
 		if (!empty($data['filter_category_id'])) {
@@ -543,18 +587,11 @@ class ModelCatalogProduct extends Model {
 		}
 
 
-		// OCFilter start
-		if (!empty($data['filter_ocfilter'])) {
-      $this->load->config('ocfilter');
-      $this->load->model('catalog/ocfilter');
-
-      $ocfilter_product_sql = $this->model_catalog_ocfilter->getProductSQL($data['filter_ocfilter']);
-
-			if ($ocfilter_product_sql) {
-			  $sql .= $ocfilter_product_sql;
-			}
-		}
-		// OCFilter end
+    // OCFilter start
+    if (!empty($ocfilter_product_sql) && $ocfilter_product_sql->where) {
+    	$sql .= $ocfilter_product_sql->where;
+    }
+    // OCFilter end
       
 		if (!empty($data['filter_manufacturer_id'])) {
 			$sql .= " AND p.manufacturer_id = '" . (int)$data['filter_manufacturer_id'] . "'";
@@ -586,4 +623,24 @@ class ModelCatalogProduct extends Model {
 			return 0;
 		}
 	}
+	
+	public function getMapsProducts(){
+        $data = array();
+        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product AS p 
+                                    JOIN " . DB_PREFIX . "product_description AS pd 
+                                    ON (p.product_id = pd.product_id)
+                                    AND p.status = 1 ORDER BY p.date_modified ASC");
+        
+        foreach($query->rows as $result) {
+            $data[] = array(
+                'product_id'       => $result['product_id'],
+				'name'             => $result['name'],
+				'model'            => $result['model'],
+				'location'         => $result['location'],
+				'image'            => $result['image']
+            );
+        }
+
+        return $data;
+    }
 }

@@ -24,9 +24,12 @@ class ModelBlogArticle extends Model {
 				'noindex'          => $query->row['noindex'],
 				'meta_h1'          => $query->row['meta_h1'],
 				'article_id'       => $query->row['article_id'],
+				'product_case_id'  => $query->row['product_case_id'],
 				'name'             => $query->row['name'],
+				'sub_name'         => $query->row['sub_name'],
 				'description'      => $query->row['description'],
 				'short_description'=> $query->row['short_description'],
+				'detail'           => $query->row['detail'],
 				'meta_description' => $query->row['meta_description'],
 				'meta_keyword'     => $query->row['meta_keyword'],
 				'image'            => $query->row['image'],
@@ -439,6 +442,12 @@ class ModelBlogArticle extends Model {
 		$query = $this->db->query("SELECT article_id AS nextid FROM " . DB_PREFIX . "article WHERE article_id > '".(int)$article_id."' AND status = 1 ORDER BY article_id ASC LIMIT 1");
 		
 		return $query->rows;
+	}
+	
+	public function getCountArticles($category_case_id){
+		$query = $this->db->query("SELECT COUNT(*) FROM (SELECT article_id FROM  oc_article_to_blog_category AS atbc JOIN oc_category AS c ON (c.category_case_id = atbc.blog_category_id) AND c.category_case_id = '" . (int)$category_case_id . "') AS T");
+		
+		return $query->row['COUNT(*)'];
 	}
 }
 ?>

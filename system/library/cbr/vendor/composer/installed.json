@@ -1,1 +1,215 @@
-[]
+[
+    {
+        "name": "infrajs/ans",
+        "version": "1.0.8",
+        "version_normalized": "1.0.8.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/infrajs/ans.git",
+            "reference": "9233d3e9616a847df9af56a1a48bc50259565f95"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/infrajs/ans/zipball/9233d3e9616a847df9af56a1a48bc50259565f95",
+            "reference": "9233d3e9616a847df9af56a1a48bc50259565f95",
+            "shasum": ""
+        },
+        "time": "2017-05-06T10:44:52+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "infrajs\\ans\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL3"
+        ],
+        "description": "Standart json-answer for php handlers",
+        "homepage": "https://github.com/infrajs/ans"
+    },
+    {
+        "name": "infrajs/cache",
+        "version": "1.0.7",
+        "version_normalized": "1.0.7.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/infrajs/cache.git",
+            "reference": "d6d582e5a75d801489f10d48edbfed59444a7036"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/infrajs/cache/zipball/d6d582e5a75d801489f10d48edbfed59444a7036",
+            "reference": "d6d582e5a75d801489f10d48edbfed59444a7036",
+            "shasum": ""
+        },
+        "require": {
+            "infrajs/mem": "~1",
+            "infrajs/nostore": "~1",
+            "infrajs/once": "~1",
+            "infrajs/path": "~1"
+        },
+        "time": "2018-02-10T09:32:08+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "infrajs\\cache\\": "/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "description": "Cache based on files and modified time",
+        "homepage": "https://github.com/infrajs/cache"
+    },
+    {
+        "name": "infrajs/each",
+        "version": "v1.0.6",
+        "version_normalized": "1.0.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/infrajs/each.git",
+            "reference": "f0da30c6513a0b43c271dd73a662a74155aa510c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/infrajs/each/zipball/f0da30c6513a0b43c271dd73a662a74155aa510c",
+            "reference": "f0da30c6513a0b43c271dd73a662a74155aa510c",
+            "shasum": ""
+        },
+        "time": "2018-10-10T12:01:05+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "infrajs\\each\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "homepage": "https://github.com/infrajs/each"
+    },
+    {
+        "name": "infrajs/mem",
+        "version": "v1.0.13",
+        "version_normalized": "1.0.13.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/infrajs/mem.git",
+            "reference": "640a33f7b41867dd2205a9cec694bd0091638714"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/infrajs/mem/zipball/640a33f7b41867dd2205a9cec694bd0091638714",
+            "reference": "640a33f7b41867dd2205a9cec694bd0091638714",
+            "shasum": ""
+        },
+        "require": {
+            "infrajs/ans": "~1",
+            "infrajs/path": "~1"
+        },
+        "require-dev": {
+            "infrajs/rest": "~1"
+        },
+        "time": "2018-08-18T16:27:13+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "infrajs\\mem\\": "/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "description": "Simple API for work with filecache or memcache",
+        "homepage": "https://github.com/infrajs/mem"
+    },
+    {
+        "name": "infrajs/nostore",
+        "version": "v1.1.10",
+        "version_normalized": "1.1.10.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/infrajs/nostore.git",
+            "reference": "45210213b4b34e2841c74511667b7439cde0082e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/infrajs/nostore/zipball/45210213b4b34e2841c74511667b7439cde0082e",
+            "reference": "45210213b4b34e2841c74511667b7439cde0082e",
+            "shasum": ""
+        },
+        "require": {
+            "infrajs/ans": "~1",
+            "infrajs/each": "~1"
+        },
+        "time": "2018-05-19T11:15:42+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "infrajs\\nostore\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "description": "Procces header Cache-Control no-store and no-cache"
+    },
+    {
+        "name": "infrajs/once",
+        "version": "v1.0.10",
+        "version_normalized": "1.0.10.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/infrajs/once.git",
+            "reference": "58d11e695c024266739666cc352a99cd01a7d443"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/infrajs/once/zipball/58d11e695c024266739666cc352a99cd01a7d443",
+            "reference": "58d11e695c024266739666cc352a99cd01a7d443",
+            "shasum": ""
+        },
+        "require": {
+            "infrajs/nostore": "~1"
+        },
+        "time": "2018-08-16T16:12:26+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "infrajs\\once\\": "/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "homepage": "https://github.com/infrajs/once"
+    },
+    {
+        "name": "infrajs/path",
+        "version": "v1.1.22",
+        "version_normalized": "1.1.22.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/infrajs/path.git",
+            "reference": "9563fb484d66152eacea363fab27abc40d7b8064"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/infrajs/path/zipball/9563fb484d66152eacea363fab27abc40d7b8064",
+            "reference": "9563fb484d66152eacea363fab27abc40d7b8064",
+            "shasum": ""
+        },
+        "require": {
+            "infrajs/nostore": "~1",
+            "infrajs/once": "~1"
+        },
+        "time": "2018-04-08T12:33:21+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "infrajs\\path\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "description": "Resolve paths on the file system. Provide point of view on form of paths to files and folders..",
+        "homepage": "https://github.com/infrajs/path"
+    }
+]

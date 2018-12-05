@@ -57,5 +57,11 @@ class ModelBlogCategory extends Model {
 	public function getTotalCategoriesByCategoryId($parent_id = 0) {
 		return count($this->getCategories((int)$parent_id));
 	}
+	
+	public function getCategoryByArticleId($article_id){
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "blog_category c LEFT JOIN " . DB_PREFIX . "blog_category_description cd ON (c.blog_category_id = cd.blog_category_id) LEFT JOIN " . DB_PREFIX . "blog_category_to_store c2s ON (c.blog_category_id = c2s.blog_category_id) LEFT JOIN " . DB_PREFIX . "article_to_blog_category atbc ON (c.blog_category_id = atbc.blog_category_id) WHERE cd.language_id = '" . (int)$this->config->get('config_language_id') . "' AND c2s.store_id = '" . (int)$this->config->get('config_store_id') . "' AND c.status = '1' AND c.parent_id <> '0' AND atbc.article_id = '" . (int) $article_id . "'");
+		
+		return $query->rows;
+	}
 }
 ?>

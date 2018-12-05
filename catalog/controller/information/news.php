@@ -119,15 +119,14 @@ class ControllerInformationNews extends Controller {
 				if($result['image']){
 					$image = $this->model_tool_image->resize($result['image'], $news_setting['news_thumb_width'], $news_setting['news_thumb_height']);
 				}else{
-					$image = false;
+					$image = $this->model_tool_image->resize('placeholder.png', $news_setting['news_thumb_width'], $news_setting['news_thumb_height']);
 				}
 
 				$data['news_list'][] = array(
 					'title' => $result['title'],
 					'thumb' => $image,
 					'viewed' => sprintf($this->language->get('text_viewed'), $result['viewed']),
-					'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES,
-						'UTF-8')), 0, $news_setting['description_limit']),
+					'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $news_setting['description_limit']) . '...',
 					'href' => $this->url->link('information/news/info', 'news_id=' . $result['news_id']),
 					'posted' => date($this->language->get('date_format_short'), strtotime($result['date_added']))
 				);
@@ -297,6 +296,7 @@ class ControllerInformationNews extends Controller {
 				'canonical');
 
 			$data['description'] = html_entity_decode($news_info['description']);
+			$data['sub_title'] = html_entity_decode($news_info['sub_title']);
 
 			$data['viewed'] = sprintf($this->language->get('text_viewed'), $news_info['viewed']);
 			$data['posted'] = date($this->language->get('date_format_short'), strtotime($news_info['date_added']));
@@ -359,47 +359,9 @@ class ControllerInformationNews extends Controller {
 			$data['header'] = $this->load->controller('common/header');
 
 			$this->response->setOutput($this->load->view('information/news', $data));
-
-		} else {
-			$url = '';
-
-			if (isset($this->request->get['news_id'])) {
-				$url .= '&news_id=' . $this->request->get['news_id'];
-			}
-
-			if (isset($this->request->get['sort'])) {
-				$url .= '&sort=' . $this->request->get['sort'];
-			}
-
-			if (isset($this->request->get['order'])) {
-				$url .= '&order=' . $this->request->get['order'];
-			}
-
-			if (isset($this->request->get['page'])) {
-				$url .= '&page=' . $this->request->get['page'];
-			}
-
-			if (isset($this->request->get['limit'])) {
-				$url .= '&limit=' . $this->request->get['limit'];
-			}
-
-			$data['breadcrumbs'][] = array(
-				'text' => $this->language->get('text_error'),
-				'href' => $this->url->link('information/news/info', $url)
-			);
-
-			$this->document->setTitle($this->language->get('text_error'));
-
-			$data['heading_title'] = $this->language->get('text_error');
-
-			$data['text_error'] = $this->language->get('text_error');
-
-			$data['button_continue'] = $this->language->get('button_continue');
-
-			$data['continue'] = $this->url->link('common/home');
-
-			$this->response->addHeader($this->request->server['SERVER_PROTOCOL'] . ' 404 Not Found');
-
+		}else{
+			$this->document->setTitle($this->language->get('error_page'));
+			
 			$data['column_left'] = $this->load->controller('common/column_left');
 			$data['column_right'] = $this->load->controller('common/column_right');
 			$data['content_top'] = $this->load->controller('common/content_top');
@@ -407,7 +369,7 @@ class ControllerInformationNews extends Controller {
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
 
-			$this->response->setOutput($this->load->view('error/not_found', $data));
+			$this->response->setOutput($this->load->view('information/error_news', $data));
 		}
 	}
 }

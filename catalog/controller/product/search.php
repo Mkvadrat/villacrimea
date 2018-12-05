@@ -8,6 +8,8 @@ class ControllerProductSearch extends Controller {
 		$this->load->model('catalog/product');
 
 		$this->load->model('tool/image');
+		
+		$this->load->model('catalog/ocfilter');
 
 		if (isset($this->request->get['search'])) {
 			$search = $this->request->get['search'];
@@ -27,6 +29,12 @@ class ControllerProductSearch extends Controller {
 			$description = $this->request->get['description'];
 		} else {
 			$description = '';
+		}
+		
+		if (isset($this->request->get['model'])) {
+			$model = $this->request->get['model'];
+		} else {
+			$model = '';
 		}
 
 		if (isset($this->request->get['category_id'])) {
@@ -93,6 +101,10 @@ class ControllerProductSearch extends Controller {
 		if (isset($this->request->get['description'])) {
 			$url .= '&description=' . $this->request->get['description'];
 		}
+		
+		if (isset($this->request->get['model'])) {
+			$url .= '&model=' . $this->request->get['model'];
+		}
 
 		if (isset($this->request->get['category_id'])) {
 			$url .= '&category_id=' . $this->request->get['category_id'];
@@ -155,6 +167,8 @@ class ControllerProductSearch extends Controller {
 		$data['button_grid'] = $this->language->get('button_grid');
 
 		$data['compare'] = $this->url->link('product/compare');
+		
+		$data['i'] = '';
 
 		$this->load->model('catalog/category');
 
@@ -201,6 +215,7 @@ class ControllerProductSearch extends Controller {
 				'filter_name'         => $search,
 				'filter_tag'          => $tag,
 				'filter_description'  => $description,
+				'filter_model'        => $model,
 				'filter_category_id'  => $category_id,
 				'filter_sub_category' => $sub_category,
 				'sort'                => $sort,
@@ -220,14 +235,30 @@ class ControllerProductSearch extends Controller {
 					$image = $this->model_tool_image->resize('placeholder.png', $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
 				}
 
-				if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
-					$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
-				} else {
-					$price = false;
+				$this->load->model('localisation/currency');
+				
+				$this->load->model('catalog/ocfilter');
+
+				$currencys = $this->model_localisation_currency->getCurrency($result['currency_id']);
+
+				foreach($currencys as $currency){
+					if ($result['currency_id'] != 5) {
+						$price_rub = $this->currency->convert($result['price'], $currency['code'], 'RUB');
+						$rub = $this->currency->format($this->tax->calculate($price_rub, $result['tax_class_id'], $this->config->get('config_tax')), 'RUB', 1, $format= true);
+					} else {
+						$rub = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')), 'RUB', 1, $format= true);
+					}
+
+				   if ($result['currency_id'] != 2) {
+						$price_dollar = $this->currency->convert($result['price'], $currency['code'], 'USD');
+						$price = $this->currency->format($this->tax->calculate($price_dollar, $result['tax_class_id'], $this->config->get('config_tax')), 'USD', 1, $format= true);
+					} else {
+						$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')), 'USD', 1, $format= true);
+					}
 				}
 
 				if ((float)$result['special']) {
-					$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+					$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')), 'USD', $format= true);
 				} else {
 					$special = false;
 				}
@@ -243,19 +274,40 @@ class ControllerProductSearch extends Controller {
 				} else {
 					$rating = false;
 				}
+				
+				$stickers = $this->getStickers($result['product_id']);
 
 				$data['products'][] = array(
 					'product_id'  => $result['product_id'],
 					'thumb'       => $image,
 					'name'        => $result['name'],
+					'model'       => $result['model'],
 					'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get($this->config->get('config_theme') . '_product_description_length')) . '..',
 					'price'       => $price,
+					'rub'		  => $rub,
+					'sticker'     => $stickers,
 					'special'     => $special,
 					'tax'         => $tax,
+					'options'     => $this->model_catalog_product->getProductOptions($result['product_id']),//options
+					'filter_options' => $this->model_catalog_ocfilter->getValueOptionsByProduct($result['product_id']),//options
 					'minimum'     => ($result['minimum'] > 0) ? $result['minimum'] : 1,
 					'rating'      => $rating,
 					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url)
 				);
+			}
+			
+			$arrow = $this->request->server['REQUEST_URI'];
+			
+			$parts = explode('order=', $arrow);
+			
+			$arrow_data = isset($parts[1]) ? $parts[1] : null;
+			
+			if($arrow_data == 'ASC'){
+				$data['arrow'] = 'active-asc';
+			}elseif($arrow_data == 'DESC'){
+				$data['arrow'] = 'active-desc';
+			}else{
+				$data['arrow'] = '';
 			}
 
 			$url = '';
@@ -270,6 +322,10 @@ class ControllerProductSearch extends Controller {
 
 			if (isset($this->request->get['description'])) {
 				$url .= '&description=' . $this->request->get['description'];
+			}
+			
+			if (isset($this->request->get['model'])) {
+				$url .= '&model=' . $this->request->get['model'];
 			}
 
 			if (isset($this->request->get['category_id'])) {
@@ -316,20 +372,6 @@ class ControllerProductSearch extends Controller {
 				'href'  => $this->url->link('product/search', 'sort=p.price&order=DESC' . $url)
 			);
 
-			if ($this->config->get('config_review_status')) {
-				$data['sorts'][] = array(
-					'text'  => $this->language->get('text_rating_desc'),
-					'value' => 'rating-DESC',
-					'href'  => $this->url->link('product/search', 'sort=rating&order=DESC' . $url)
-				);
-
-				$data['sorts'][] = array(
-					'text'  => $this->language->get('text_rating_asc'),
-					'value' => 'rating-ASC',
-					'href'  => $this->url->link('product/search', 'sort=rating&order=ASC' . $url)
-				);
-			}
-
 			$data['sorts'][] = array(
 				'text'  => $this->language->get('text_model_asc'),
 				'value' => 'p.model-ASC',
@@ -355,6 +397,10 @@ class ControllerProductSearch extends Controller {
 			if (isset($this->request->get['description'])) {
 				$url .= '&description=' . $this->request->get['description'];
 			}
+			
+			if (isset($this->request->get['model'])) {
+				$url .= '&model=' . $this->request->get['model'];
+			}
 
 			if (isset($this->request->get['category_id'])) {
 				$url .= '&category_id=' . $this->request->get['category_id'];
@@ -374,7 +420,7 @@ class ControllerProductSearch extends Controller {
 
 			$data['limits'] = array();
 
-			$limits = array_unique(array($this->config->get($this->config->get('config_theme') . '_product_limit'), 25, 50, 75, 100));
+			$limits = array_unique(array($this->config->get($this->config->get('config_theme') . '_product_limit'), 20, 30, 50, 100));
 
 			sort($limits);
 
@@ -399,6 +445,11 @@ class ControllerProductSearch extends Controller {
 			if (isset($this->request->get['description'])) {
 				$url .= '&description=' . $this->request->get['description'];
 			}
+			
+			if (isset($this->request->get['model'])) {
+				$url .= '&model=' . $this->request->get['model'];
+			}
+
 
 			if (isset($this->request->get['category_id'])) {
 				$url .= '&category_id=' . $this->request->get['category_id'];
@@ -463,6 +514,7 @@ class ControllerProductSearch extends Controller {
 					'category_id'   => $category_id,
 					'sub_category'  => $sub_category,
 					'description'   => $description,
+					'model'   		=> $model,
 					'products'      => $product_total,
 					'customer_id'   => $customer_id,
 					'ip'            => $ip
@@ -474,6 +526,7 @@ class ControllerProductSearch extends Controller {
 
 		$data['search'] = $search;
 		$data['description'] = $description;
+		$data['model'] = $model;
 		$data['category_id'] = $category_id;
 		$data['sub_category'] = $sub_category;
 
@@ -489,5 +542,22 @@ class ControllerProductSearch extends Controller {
 		$data['header'] = $this->load->controller('common/header');
 
 		$this->response->setOutput($this->load->view('product/search', $data));
+	}
+	
+	private function getStickers($product_id) {
+		$stickers = $this->model_catalog_product->getProductStickerbyProductId($product_id) ;	
+		
+		if (!$stickers) {
+			return;
+		}
+				
+		foreach ($stickers as $sticker) {
+			$stick[] = array(
+				'position' => $sticker['position'],
+				'image'    => HTTP_SERVER . 'image/' . $sticker['image']
+			);		
+		}
+		
+		return $stick;
 	}
 }

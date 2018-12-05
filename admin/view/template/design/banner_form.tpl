@@ -65,7 +65,6 @@
                     <td class="text-left"><?php echo $entry_link; ?></td>
                     <td class="text-center"><?php echo $entry_image; ?></td>
                     <td class="text-right">Стоимость:</td>
-                    <td class="text-right">Выбор валюты:</td>
                     <td class="text-right"><?php echo $entry_sort_order; ?></td>
                     <td></td>
                   </tr>
@@ -82,17 +81,6 @@
                     <td class="text-center"><a href="" id="thumb-image-<?php echo $image_row; ?>" data-toggle="image" class="img-thumbnail"><img src="<?php echo $banner_image['thumb']; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a>
                       <input type="hidden" name="banner_image[<?php echo $language['language_id']; ?>][<?php echo $image_row; ?>][image]" value="<?php echo $banner_image['image']; ?>" id="input-image<?php echo $image_row; ?>" /></td>
                     <td class="text-right" style="width: 10%;"><input type="text" name="banner_image[<?php echo $language['language_id']; ?>][<?php echo $image_row; ?>][price]" value="<?php echo $banner_image['price']; ?>" placeholder="Стоимость" class="form-control" /></td>
-                    <td class="text-left" style="width: 30%;">
-                      <select name="banner_image[<?php echo $language['language_id']; ?>][<?php echo $image_row; ?>][currency]" id="input-valute" class="form-control">
-                        <?php foreach ($currencies as $_currency): ?>
-                            <?php if ($_currency['currency_id']==$banner_image['currency_id']): ?>
-                              <option value="<?php echo $_currency['currency_id'] ?>" selected><?php echo $_currency['title'] ?></option>
-                            <?php else: ?>
-                              <option value="<?php echo $_currency['currency_id'] ?>"><?php echo $_currency['title'] ?></option>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
-                      </select>
-                    </td>
                     <td class="text-right" style="width: 10%;"><input type="text" name="banner_image[<?php echo $language['language_id']; ?>][<?php echo $image_row; ?>][sort_order]" value="<?php echo $banner_image['sort_order']; ?>" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>
                     <td class="text-left"><button type="button" onclick="$('#image-row<?php echo $image_row; ?>, .tooltip').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>
                   </tr>
@@ -123,11 +111,6 @@ function addImage(language_id) {
 	html += '  <td class="text-left" style="width: 30%;"><input type="text" name="banner_image[' + language_id + '][' + image_row + '][link]" value="" placeholder="<?php echo $entry_link; ?>" class="form-control" /></td>';	
 	html += '  <td class="text-center"><a href="" id="thumb-image' + image_row + '" data-toggle="image" class="img-thumbnail"><img src="<?php echo $placeholder; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a><input type="hidden" name="banner_image[' + language_id + '][' + image_row + '][image]" value="" id="input-image' + image_row + '" /></td>';
 	html += '  <td class="text-right" style="width: 10%;"><input type="text" name="banner_image[' + language_id + '][' + image_row + '][price]" value="" placeholder="Стоимость" class="form-control" /></td>';
-  html += '  <td class="text-right" style="width: 10%;"><select name="banner_image[' + language_id + '][' + image_row + '][currency]" id="input-valute" class="form-control">';
-  <?php foreach ($currencies as $_currency){ ?>
-    html += '  <option value="<?php echo $_currency['currency_id'] ?>" selected><?php echo $_currency['title'] ?></option>';
-  <?php } ?>
-  html += '</td>';
   html += '  <td class="text-right" style="width: 10%;"><input type="text" name="banner_image[' + language_id + '][' + image_row + '][sort_order]" value="" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>';
 	html += '  <td class="text-left"><button type="button" onclick="$(\'#image-row' + image_row  + ', .tooltip\').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
 	html += '</tr>';

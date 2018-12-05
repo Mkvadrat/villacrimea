@@ -103,39 +103,41 @@ class ControllerCommonHeader extends Controller {
 			foreach($download_ids as $download_id){
 				$results = $this->model_account_download->getDownloadData($download_id);
 				
-				$download_data = array(
-					'download_id' => $results['download_id'],
-					'filename'    => $results['filename'],
-					'name'        => $results['name'],
-				);
-	
-				if (file_exists(DIR_DOWNLOAD . $download_data['filename'])) {
-					$size = filesize(DIR_DOWNLOAD . $download_data['filename']);
-						
-					$i = 0;
-	
-					$suffix = array(
-						'B',
-						'KB',
-						'MB',
-						'GB',
-						'TB',
-						'PB',
-						'EB',
-						'ZB',
-						'YB'
+				if($results){
+					$download_data = array(
+						'download_id' => $results['download_id'],
+						'filename'    => $results['filename'],
+						'name'        => $results['name'],
 					);
-	
-					while (($size / 1024) > 1) {
-						$size = $size / 1024;
-						$i++;
+		
+					if (file_exists(DIR_DOWNLOAD . $download_data['filename'])) {
+						$size = filesize(DIR_DOWNLOAD . $download_data['filename']);
+							
+						$i = 0;
+		
+						$suffix = array(
+							'B',
+							'KB',
+							'MB',
+							'GB',
+							'TB',
+							'PB',
+							'EB',
+							'ZB',
+							'YB'
+						);
+		
+						while (($size / 1024) > 1) {
+							$size = $size / 1024;
+							$i++;
+						}
+		
+						$data['downloads'][] = array(
+							'name'       => $download_data['name'],
+							'href'       => $this->url->link('common/header/download', 'download_id=' . $download_data['download_id'], true)
+						);
+					
 					}
-	
-					$data['downloads'][] = array(
-						'name'       => $download_data['name'],
-						'href'       => $this->url->link('common/header/download', 'download_id=' . $download_data['download_id'], true)
-					);
-				
 				}
 			}
 		}

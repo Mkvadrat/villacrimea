@@ -107,7 +107,7 @@ class ControllerExtensionModuleFeaturedHtml extends Controller {
 	}
 	
 	private function getStickers($product_id) {
-	
+		
 		$stickers = $this->model_catalog_product->getProductStickerbyProductId($product_id) ;	
 		
 		if (!$stickers) {

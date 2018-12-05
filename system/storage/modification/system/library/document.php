@@ -55,6 +55,17 @@ class Document {
 		);
 	}
 
+
+  // OCFilter canonical fix start
+	public function deleteLink($rel) {
+    foreach ($this->links as $href => $link) {
+      if ($link['rel'] == $rel) {
+      	unset($this->links[$href]);
+      }
+    }
+	}
+  // OCFilter canonical fix end
+      
 	public function getLinks() {
 		return $this->links;
 	}

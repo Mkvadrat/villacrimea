@@ -406,14 +406,6 @@ class ControllerCatalogInformation extends Controller {
 			$data['keyword'] = '';
 		}
 
-		if (isset($this->request->post['bottom'])) {
-			$data['bottom'] = $this->request->post['bottom'];
-		} elseif (!empty($information_info)) {
-			$data['bottom'] = $information_info['bottom'];
-		} else {
-			$data['bottom'] = 0;
-		}
-
 		if (isset($this->request->post['status'])) {
 			$data['status'] = $this->request->post['status'];
 		} elseif (!empty($information_info)) {

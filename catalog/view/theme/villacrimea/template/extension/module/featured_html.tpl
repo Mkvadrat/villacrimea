@@ -2,6 +2,8 @@
     <div class="agent">
       <?php echo $html; ?>
     </div>
+    
+    <?php if($products){ ?>
     <div class="cards">
         <?php foreach ($products as $product) { ?>
         <div class="card">
@@ -17,16 +19,16 @@
              
             <a class="name" href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
         
-            <?php if($product['filter_options']){ ?>
+            <!--<?php /*if($product['filter_options']){ ?>
             <div class="tags">
-                <?php $i == 0; ?>
+                <?php $i = 0; ?>
                 <?php foreach($product['filter_options'] as $option){ ?>
                     <?php echo $option['name']; ?>: <span><?php echo $option['value'] . $option['postfix']; ?></span>
                     <?php $i++; ?>
-                    <?php if($i == 3 ){break;} ?>
+                    <?php if($i > 2) break; ?>
                 <?php } ?>
             </div>
-            <?php } ?>
+            <?php }*/ ?>-->
             
             <?php if ($product['price'] || $product['rub']) { ?>
             <?php if (!$product['special']) { ?>
@@ -38,8 +40,9 @@
             <?php } ?>
             <?php } ?>
             
-            <span class="object_id">№ <?php echo $product['model']; ?></span>
+            <span class="object_id">Обьект № <?php echo $product['model']; ?></span>
         </div>
         <?php } ?>
     </div>
+    <?php } ?>
 </div>

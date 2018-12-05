@@ -450,20 +450,49 @@ class ControllerCatalogCategory extends Controller {
 		} else {
 			$filters = array();
 		}
+		
+		//case
+		$this->load->model('blog/category');
+		
+		$filter_data = array(
+			'sort'        => 'name',
+			'order'       => 'ASC',
+		);
 
-		$data['category_filters'] = array();
-
-		foreach ($filters as $filter_id) {
-			$filter_info = $this->model_catalog_filter->getFilter($filter_id);
-
-			if ($filter_info) {
-				$data['category_filters'][] = array(
-					'filter_id' => $filter_info['filter_id'],
-					'name'      => $filter_info['group'] . ' &gt; ' . $filter_info['name']
-				);
-			}
+		$case_category_data = $this->model_blog_category->getCategories($filter_data);
+		
+		$data['case_category'] = array();
+		
+		foreach($case_category_data as $case){
+			$data['case_category'][] = array(
+				'name' => $case['name'],
+				'category_case_id' => $case['blog_category_id']
+			);
 		}
+		
+		if (!empty($category_info)) {
+			$data['current_case_category'] = $category_info['category_case_id'];
+		}else{
+			$data['current_case_category'] = '';
+		}
+		
+		$this->load->model('blog/article');
+		
+		$case_data = $this->model_blog_article->getArticles($filter_data);
 
+		foreach($case_data as $case){
+			$data['case'][] = array(
+				'name' => $case['name'],
+				'case_id' => $case['article_id']
+			);
+		}
+		
+		if (!empty($category_info)) {
+			$data['current_case'] = $category_info['case_id'];
+		}else{
+			$data['current_case'] = '';
+		}
+		
 		$this->load->model('setting/store');
 
 		$data['stores'] = $this->model_setting_store->getStores();
@@ -482,6 +511,22 @@ class ControllerCatalogCategory extends Controller {
 			$data['keyword'] = $category_info['keyword'];
 		} else {
 			$data['keyword'] = '';
+		}
+		
+		if (isset($this->request->post['category_case_id'])) {
+			$data['category_case_id'] = $this->request->post['category_case_id'];
+		} elseif (!empty($category_info)) {
+			$data['category_case_id'] = $category_info['category_case_id'];
+		} else {
+			$data['category_case_id'] = '';
+		}
+		
+		if (isset($this->request->post['case_id'])) {
+			$data['case_id'] = $this->request->post['case_id'];
+		} elseif (!empty($category_info)) {
+			$data['case_id'] = $category_info['case_id'];
+		} else {
+			$data['case_id'] = '';
 		}
 
 		if (isset($this->request->post['image'])) {
@@ -510,6 +555,14 @@ class ControllerCatalogCategory extends Controller {
 			$data['top'] = $category_info['top'];
 		} else {
 			$data['top'] = 0;
+		}
+		
+		if (isset($this->request->post['agent'])) {
+			$data['agent'] = $this->request->post['agent'];
+		} elseif (!empty($category_info)) {
+			$data['agent'] = $category_info['agent'];
+		} else {
+			$data['agent'] = 0;
 		}
 
 		if (isset($this->request->post['column'])) {

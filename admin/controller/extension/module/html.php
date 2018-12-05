@@ -114,6 +114,8 @@ class ControllerExtensionModuleHTML extends Controller {
 		} else {
 			$data['module_description'] = array();
 		}
+		
+		$data['lang'] = $this->config->get('config_language');
 
 		$this->load->model('localisation/language');
 

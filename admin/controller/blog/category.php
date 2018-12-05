@@ -676,6 +676,7 @@ class ControllerBlogCategory extends Controller {
 		}
 		return $output;
 	}
+	
 	private function getAllCategories($categories, $parent_id = 0, $parent_name = '') {
 		$output = array();
 		if (array_key_exists($parent_id, $categories)) {
@@ -691,5 +692,5 @@ class ControllerBlogCategory extends Controller {
 			}
 		}
 		return $output;
-		}
+	}
 }

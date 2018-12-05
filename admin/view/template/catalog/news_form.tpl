@@ -48,6 +48,12 @@
 												<?php } ?>
 											</div>
 										</div>
+										<div class="form-group required">
+											<label class="col-sm-2 control-label" for="input-sub-title<?php echo $language['language_id']; ?>">Подзаголовок</label>
+											<div class="col-sm-10">
+												<input type="text" name="news_description[<?php echo $language['language_id']; ?>][sub_title]" value="<?php echo isset($news_description[$language['language_id']]) ? $news_description[$language['language_id']]['sub_title'] : ''; ?>" placeholder="Подзаголовок" id="input-sub-title<?php echo $language['language_id']; ?>" class="form-control" />
+											</div>
+										</div>
 										<div class="form-group">
 											<label class="col-sm-2 control-label" for="input-meta-title<?php echo $language['language_id']; ?>"><?php echo $entry_meta_title; ?></label>
 											<div class="col-sm-10">

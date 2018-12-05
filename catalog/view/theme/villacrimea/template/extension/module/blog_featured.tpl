@@ -25,5 +25,5 @@
           <?php } ?>
         </div>
     </div>
-    <a href="#" class="watch_cases">Смотреть все кейсы</a>
+    <a href="<?php echo $view_all_featured_cases; ?>" class="watch_cases">Смотреть все кейсы</a>
 </div>

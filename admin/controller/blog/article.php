@@ -314,7 +314,7 @@ class ControllerBlogArticle extends Controller {
 				'edit'       => $this->url->link('blog/article/edit', 'token=' . $this->session->data['token'] . '&article_id=' . $result['article_id'] . $url, true)
 			);
 		}
-
+		
 		$data['heading_title'] = $this->language->get('heading_title');
 
 		$data['text_list'] = $this->language->get('text_list');
@@ -568,7 +568,7 @@ class ControllerBlogArticle extends Controller {
 		if (isset($this->request->get['article_id']) && ($this->request->server['REQUEST_METHOD'] != 'POST')) {
 			$article_info = $this->model_blog_article->getArticle($this->request->get['article_id']);
 		}
-
+		
 		$data['token'] = $this->session->data['token'];
 
 		$this->load->model('localisation/language');
@@ -651,7 +651,39 @@ class ControllerBlogArticle extends Controller {
 		} else {
 			$data['noindex'] = 1;
 		}
+		
+		$data['requred_products'] = array();
+		
+		$products_filter_data = array(
+			'sort'        => 'name',
+			'order'       => 'ASC'
+		);
+		
+		$this->load->model('catalog/product');
 
+		$requred_products = $this->model_catalog_product->getProducts($products_filter_data);
+		
+		foreach($requred_products as $product){
+			$data['requred_products'][] = array(
+				'product_case_id' => $product['product_id'],
+				'name' 	     => $product['name'],
+			);
+		}
+		
+		if (!empty($article_info)) {
+			$data['current_product'] = $article_info['product_case_id'];
+		} else {
+			$data['current_product'] = '';
+		}
+		
+		if (isset($this->request->post['product_case_id'])) {
+			$data['product_case_id'] = $this->request->post['product_case_id'];
+		} elseif (!empty($article_info)) {
+			$data['product_case_id'] = $article_info['product_case_id'];
+		} else {
+			$data['product_case_id'] = 0;
+		}
+		
 		// Categories
 		$this->load->model('blog/category');
 		

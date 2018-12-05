@@ -38,7 +38,7 @@ $_['entry_category']         = 'Показывать в категориях';
 $_['entry_main_category']    = 'Главная категория';
 $_['entry_download']         = 'Загрузки';
 $_['entry_related']          = 'Рекомендуемые кейсы';
-$_['entry_related_product']  = 'Рекомендуемые товары';
+$_['entry_related_product']  = 'Рекомендуемые обьекты';
 $_['entry_tag']          	 = 'Теги кейса';
 $_['entry_layout']           = 'Выбрать макет';
 

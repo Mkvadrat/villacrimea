@@ -1,144 +1,161 @@
 <?php echo $header; ?>
-<div class="container">
-  <ul class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-    <?php } ?>
-  </ul>
-  <div class="row"><?php echo $column_left; ?>
-    <?php if ($column_left && $column_right) { ?>
-    <?php $class = 'col-sm-6'; ?>
-    <?php } elseif ($column_left || $column_right) { ?>
-    <?php $class = 'col-sm-9'; ?>
-    <?php } else { ?>
-    <?php $class = 'col-sm-12'; ?>
-    <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <h1><?php echo $heading_title; ?></h1>
-      <h3><?php echo $text_location; ?></h3>
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <div class="row">
-            <?php if ($image) { ?>
-            <div class="col-sm-3"><img src="<?php echo $image; ?>" alt="<?php echo $store; ?>" title="<?php echo $store; ?>" class="img-thumbnail" /></div>
-            <?php } ?>
-            <div class="col-sm-3"><strong><?php echo $store; ?></strong><br />
-              <address>
-              <?php echo $address; ?>
-              </address>
-              <?php if ($geocode) { ?>
-              <a href="https://maps.google.com/maps?q=<?php echo urlencode($geocode); ?>&hl=<?php echo $geocode_hl; ?>&t=m&z=15" target="_blank" class="btn btn-info"><i class="fa fa-map-marker"></i> <?php echo $button_map; ?></a>
+  <div class="contacts_page">
+    
+    <?php echo $content_top; ?>
+    
+    <div class="object_title">
+        <p class="title"><?php echo $heading_title; ?></p>
+    </div>                
+    <div class="contacts_inner">
+        <div class="left_side">
+            <?php echo $comment; ?>
+            
+            <p class="sub-title">Мы на карте:</p>
+            <div class="map">
+              <div id="map-contacts" style="width:100%; height:100%; position: absolute;"></div>
+              <?php if($geocode){ ?>
+                <script type="text/javascript">
+                  var myMap;
+                  ymaps.ready(init);
+                  
+                  function init(){
+                    var myCoords = [<?php echo $geocode; ?>];  
+                    var myGeocoder = ymaps.geocode(myCoords);
+                    myGeocoder.then(
+                    function (res){
+                      var firstGeoObject = res.geoObjects.get(0),
+                      myMap = new ymaps.Map
+                      ("map-contacts",{
+                        center: firstGeoObject.geometry.getCoordinates(),
+                        zoom: 17
+                      });
+                      var myPlacemark = new ymaps.Placemark(
+                      firstGeoObject.geometry.getCoordinates(),
+                      {
+                        iconContent: ''
+                      },
+                      {
+                        preset: 'twirl#blueStretchyIcon'
+                      });
+                        myMap.geoObjects.add(myPlacemark);
+                        myMap.behaviors.disable('scrollZoom');
+                        myMap.controls.add(new ymaps.control.ScaleLine()).add('typeSelector');
+                    },
+                    function (err){
+                      alert(err.message);
+                    });
+                  }
+                </script>
               <?php } ?>
-            </div>
-            <div class="col-sm-3"><strong><?php echo $text_telephone; ?></strong><br>
-              <?php echo $telephone; ?><br />
-              <br />
-              <?php if ($fax) { ?>
-              <strong><?php echo $text_fax; ?></strong><br>
-              <?php echo $fax; ?>
-              <?php } ?>
-            </div>
-            <div class="col-sm-3">
-              <?php if ($open) { ?>
-              <strong><?php echo $text_open; ?></strong><br />
-              <?php echo $open; ?><br />
-              <br />
-              <?php } ?>
-              <?php if ($comment) { ?>
-              <strong><?php echo $text_comment; ?></strong><br />
-              <?php echo $comment; ?>
-              <?php } ?>
-            </div>
-          </div>
+            </div>                        
         </div>
-      </div>
-      <?php if ($locations) { ?>
-      <h3><?php echo $text_store; ?></h3>
-      <div class="panel-group" id="accordion">
-        <?php foreach ($locations as $location) { ?>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title"><a href="#collapse-location<?php echo $location['location_id']; ?>" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"><?php echo $location['name']; ?> <i class="fa fa-caret-down"></i></a></h4>
-          </div>
-          <div class="panel-collapse collapse" id="collapse-location<?php echo $location['location_id']; ?>">
-            <div class="panel-body">
-              <div class="row">
-                <?php if ($location['image']) { ?>
-                <div class="col-sm-3"><img src="<?php echo $location['image']; ?>" alt="<?php echo $location['name']; ?>" title="<?php echo $location['name']; ?>" class="img-thumbnail" /></div>
-                <?php } ?>
-                <div class="col-sm-3"><strong><?php echo $location['name']; ?></strong><br />
-                  <address>
-                  <?php echo $location['address']; ?>
-                  </address>
-                  <?php if ($location['geocode']) { ?>
-                  <a href="https://maps.google.com/maps?q=<?php echo urlencode($location['geocode']); ?>&hl=<?php echo $geocode_hl; ?>&t=m&z=15" target="_blank" class="btn btn-info"><i class="fa fa-map-marker"></i> <?php echo $button_map; ?></a>
-                  <?php } ?>
-                </div>
-                <div class="col-sm-3"> <strong><?php echo $text_telephone; ?></strong><br>
-                  <?php echo $location['telephone']; ?><br />
-                  <br />
-                  <?php if ($location['fax']) { ?>
-                  <strong><?php echo $text_fax; ?></strong><br>
-                  <?php echo $location['fax']; ?>
-                  <?php } ?>
-                </div>
-                <div class="col-sm-3">
-                  <?php if ($location['open']) { ?>
-                  <strong><?php echo $text_open; ?></strong><br />
-                  <?php echo $location['open']; ?><br />
-                  <br />
-                  <?php } ?>
-                  <?php if ($location['comment']) { ?>
-                  <strong><?php echo $text_comment; ?></strong><br />
-                  <?php echo $location['comment']; ?>
-                  <?php } ?>
-                </div>
+        <div class="right_side">
+            <div class="contact_details">
+                <?php echo $address; ?>
+            </div>
+            <div class="call_me_back_inner">
+              <p class="title">Форма обратной связи</p>
+              <div>
+                  <input type="text" id="name" placeholder="Имя*">
+                  <input type="text" id="phone" placeholder="Телефон*">
+                  <input type="text" id="email" placeholder="E-mail">
+                  <div class="textarea">
+                      <textarea id="message" onkeyup="textAreaAdjust(this);" placeholder="Вопрос"></textarea>
+                      <script>
+                          function textAreaAdjust(o) {
+                              o.style.height = "1px";
+                              o.style.height = (5+o.scrollHeight)+"px";
+                          }
+                      </script>
+                  </div>
+                  <input type="checkbox" name="" id="conf_politics_one">
+                  <label for="conf_politics_one">
+                          я согласен(согласна)<br>
+                          с <a href="#">политикой конфиденциальности</a>
+                  </label>
+                  <button type="submit" onclick="sendContactsForm();" class="casual_button">Отправить</button>
               </div>
             </div>
-          </div>
         </div>
-        <?php } ?>
+        
+        <div class="realtors">
+            <?php if($agent_results){ ?>
+            <p class="sub-title">Наша команда:</p>
+            <?php foreach($agent_results as $agent){ ?>
+            <div class="realtor">
+                <div class="img" style="background-image: url('<?php echo $agent['image']; ?>')"></div>
+                <p class="name"><?php echo $agent['name']; ?></p>
+                <p class="job"><?php echo $agent['specialization']; ?></p>
+                <a href="<?php echo $agent['all_object']; ?>" class="realtor_objects"><img src="catalog/view/theme/villacrimea/image/home1.png" alt="">Посмотреть все объекты агента</a>
+                <a href="<?php echo $agent['all_cases']; ?>" class="cases"><img src="catalog/view/theme/villacrimea/image/case.png" alt="">Посмотреть все кейсы агента</a>
+                <p class="tel">Телефон: <a href="tel:<?php echo $agent['phone']; ?>"><?php echo $agent['phone']; ?></a></p>
+                <p class="tel">E-mail: <a href="mailto:<?php echo $agent['email']; ?>"><?php echo $agent['email']; ?></a></p>
+                <a href="#call_me_back_agent_<?php echo $agent['agent_id']; ?>" class="casual_button callback">Написать сообщение</a>
+            </div>
+            <?php } ?>
+            <?php } ?>
+            <br>
+            <br>
+            <?php echo $manager; ?>
+        </div>
+    </div>
+  </div>
+  <?php if($agent_results){ ?>
+  <?php foreach($agent_results as $agent){ ?>
+  <div id="call_me_back_agent_<?php echo $agent['agent_id']; ?>" style="display: none;">
+      <button data-fancybox-close="" class="fancybox-close-small" title="Close"><span>X</span></button>
+      <div class="call_me_back_inner">
+          <p class="title">Форма обратной связи</p>
+          <div>
+              <input type="text" id="name_agent_<?php echo $agent['agent_id']; ?>" placeholder="Имя*">
+              <input type="text" id="phone_agent_<?php echo $agent['agent_id']; ?>" placeholder="Телефон*">
+              <input type="text" id="email_agent_<?php echo $agent['agent_id']; ?>" placeholder="E-mail">
+              <input type="hidden" value="<?php echo $agent['email']; ?>" id="hidden_email_<?php echo $agent['agent_id']; ?>">
+              <div class="textarea">
+                  <textarea id="message_agent_<?php echo $agent['agent_id']; ?>" onkeyup="textAreaAdjust(this);" placeholder="Вопрос"></textarea>
+                  <script>
+                      function textAreaAdjust(o) {
+                          o.style.height = "1px";
+                          o.style.height = (5+o.scrollHeight)+"px";
+                      }
+                  </script>
+              </div>
+              
+              <input type="checkbox" id="conf_politics_agent_<?php echo $agent['agent_id']; ?>">
+              <label for="conf_politics_agent_<?php echo $agent['agent_id']; ?>">
+                      я согласен(согласна)<br>
+                      с <a href="#">политикой конфиденциальности</a>
+              </label>
+              <button type="submit" onclick="sendFormAgent_<?php echo $agent['agent_id']; ?>();" class="casual_button">Отправить</button>
+          </div>
       </div>
-      <?php } ?>
-      <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
-        <fieldset>
-          <legend><?php echo $text_contact; ?></legend>
-          <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-name"><?php echo $entry_name; ?></label>
-            <div class="col-sm-10">
-              <input type="text" name="name" value="<?php echo $name; ?>" id="input-name" class="form-control" />
-              <?php if ($error_name) { ?>
-              <div class="text-danger"><?php echo $error_name; ?></div>
-              <?php } ?>
-            </div>
-          </div>
-          <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-email"><?php echo $entry_email; ?></label>
-            <div class="col-sm-10">
-              <input type="text" name="email" value="<?php echo $email; ?>" id="input-email" class="form-control" />
-              <?php if ($error_email) { ?>
-              <div class="text-danger"><?php echo $error_email; ?></div>
-              <?php } ?>
-            </div>
-          </div>
-          <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-enquiry"><?php echo $entry_enquiry; ?></label>
-            <div class="col-sm-10">
-              <textarea name="enquiry" rows="10" id="input-enquiry" class="form-control"><?php echo $enquiry; ?></textarea>
-              <?php if ($error_enquiry) { ?>
-              <div class="text-danger"><?php echo $error_enquiry; ?></div>
-              <?php } ?>
-            </div>
-          </div>
-          <?php echo $captcha; ?>
-        </fieldset>
-        <div class="buttons">
-          <div class="pull-right">
-            <input class="btn btn-primary" type="submit" value="<?php echo $button_submit; ?>" />
-          </div>
-        </div>
-      </form>
-      <?php echo $content_bottom; ?></div>
-    <?php echo $column_right; ?></div>
-</div>
+  </div>
+  <script type="text/javascript">
+  function sendFormAgent_<?php echo $agent['agent_id']; ?>(){
+      $.ajax({
+          url: 'index.php?route=information/contact/sendFormAgent',
+          type: 'post',
+          data: {  
+              'name' : $('#name_agent_<?php echo $agent['agent_id']; ?>').val(),
+              'tel' : $('#phone_agent_<?php echo $agent['agent_id']; ?>').val(),
+              'email' : $('#email_agent_<?php echo $agent['agent_id']; ?>').val(),
+              'email_agent' : $('#hidden_email_<?php echo $agent['agent_id']; ?>').val(),
+              'message' : $('#message_agent_<?php echo $agent['agent_id']; ?>').val(),
+          },
+          dataType: 'json',
+          success: function(data) {
+              swal({
+                  title: data.message,
+                  text: "",
+                  timer: 1000,
+                  showConfirmButton: false
+              });
+  
+              $.fancybox.close();
+          }
+      });
+  }
+  </script>
+  <?php } ?>
+  <?php } ?>
 <?php echo $footer; ?>
