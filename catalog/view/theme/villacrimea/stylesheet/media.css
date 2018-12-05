@@ -104,9 +104,12 @@
 
 }
 @media screen and (max-width:1024px) {
+<<<<<<< HEAD
     /* .panel>.list-group .list-group-item[id^='option'].scalable + .scalable {
         width: 100%;
     } */
+=======
+>>>>>>> 587e356511f34c417f633a2b1ed30c596080fc5c
     .panel>.list-group .list-group-item[data-toggle="popover-price"] {
         width: 80%;
     }
@@ -296,7 +299,11 @@
         width: 7%;
     }
     .panel>.list-group .list-group-item[id^='option'] {
+<<<<<<< HEAD
         width: 33.3335%;
+=======
+        width: 25%;
+>>>>>>> 587e356511f34c417f633a2b1ed30c596080fc5c
         padding-top: 0px;
     }
     section .about_us_page .about_inner,
@@ -876,7 +883,10 @@
     .currency-wraper .btn.currencys {
         padding: 6px 7px;
     }
+<<<<<<< HEAD
     .panel>.list-group {
         align-items: flex-end;
     }
+=======
+>>>>>>> 587e356511f34c417f633a2b1ed30c596080fc5c
 }

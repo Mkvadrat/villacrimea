@@ -45,9 +45,15 @@
         <?php } ?>
       </div>
       <?php }else{ ?>
+<<<<<<< HEAD
       <div class="have_no_items">
         <p class="center"><?php echo $text_empty; ?></p>
         <p class="center"><a href="<?php echo $continue; ?>" class="casual_button"><?php echo $button_continue; ?></a></p>
+=======
+      <p><?php echo $text_empty; ?></p>
+      <div class="buttons">
+        <div class="pull-right"><a href="<?php echo $continue; ?>" class="btn btn-primary"><?php echo $button_continue; ?></a></div>
+>>>>>>> 587e356511f34c417f633a2b1ed30c596080fc5c
       </div>
       <?php } ?>
       

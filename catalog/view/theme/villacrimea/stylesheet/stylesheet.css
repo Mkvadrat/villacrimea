@@ -5213,6 +5213,7 @@ section .right-img img {
 }
 section .left-img p:last-of-type {
     margin-bottom: 0;
+<<<<<<< HEAD
 }
 .have_no_items p {
     margin-bottom: 20px;
@@ -5225,4 +5226,6 @@ section .left-img p:last-of-type {
 .panel>.list-group .list-group-item[id^='option'].scalable + .scalable {
     padding-left: 15px;
     padding-top: 5px;
+=======
+>>>>>>> 587e356511f34c417f633a2b1ed30c596080fc5c
 }

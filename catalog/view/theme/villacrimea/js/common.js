@@ -324,6 +324,7 @@ $(document).ready(function () {
             var holder = masser[iterator].attr('href');
             var masserStart = masser[0].attr('href');
             masser[iterator].attr('href', masserStart).children('img').animate({
+<<<<<<< HEAD
                 /* 'opacity': '0.1', */
             }, 0, function () {
                 $(this).attr('src', masserStart);/* .animate({
@@ -336,6 +337,20 @@ $(document).ready(function () {
                 $(this).attr('src', holder); /*.animate({
                     'opacity': '1', 
                 }, )*/
+=======
+                'opacity': '0.1',
+            }, 50, function () {
+                $(this).attr('src', masserStart).animate({
+                    'opacity': '1',
+                }, 50)
+            });
+            masser[0].attr('href', holder).children('img').animate({
+                'opacity': '0.1',
+            }, 50, function () {
+                $(this).attr('src', holder).animate({
+                    'opacity': '1',
+                }, 50)
+>>>>>>> 587e356511f34c417f633a2b1ed30c596080fc5c
             });
             //console.log(iterator);
         });
@@ -344,6 +359,7 @@ $(document).ready(function () {
             var holder = masser[iterator].attr('href');
             var masserStart = masser[0].attr('href');
             masser[iterator].attr('href', masserStart).children('img').animate({
+<<<<<<< HEAD
                 /* 'opacity': '0.1', */
             }, 0, function () {
                 $(this).attr('src', masserStart);/* .animate({
@@ -356,6 +372,20 @@ $(document).ready(function () {
                 $(this).attr('src', holder);/* .animate({
                     'opacity': '1',
                 }, 50) */
+=======
+                'opacity': '0.1',
+            }, 50, function () {
+                $(this).attr('src', masserStart).animate({
+                    'opacity': '1',
+                }, 50)
+            });
+            masser[0].attr('href', holder).children('img').animate({
+                'opacity': '0.1',
+            }, 50, function () {
+                $(this).attr('src', holder).animate({
+                    'opacity': '1',
+                }, 50)
+>>>>>>> 587e356511f34c417f633a2b1ed30c596080fc5c
             });
             if(iterator+1 == masser.length) iterator=1; else iterator++;
             //console.log(iterator);

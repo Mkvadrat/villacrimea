@@ -578,9 +578,24 @@ class ControllerProductProduct extends Controller {
 					$lat_lng = '44.616687, 33.525432';
 				}
 				
+<<<<<<< HEAD
 				$data['maps'][] = array(
 					'product_id'  => $result['product_id'],
 					'model'       => $result['model'],
+=======
+				if ($result['image'] && file_exists(DIR_IMAGE . $result['image'])){
+					list($width_orig, $height_orig) = getimagesize(DIR_IMAGE . $result['image']);
+								
+					$image = $this->model_tool_image->resize($result['image'], 100, 100);
+				}else{
+					$image = $this->model_tool_image->resize('placeholder.png', 100, 100);
+				}
+				
+				$data['maps'][] = array(
+					'product_id'  => $result['product_id'],
+					'model'       => $result['model'],
+					'image'       => $image,
+>>>>>>> 587e356511f34c417f633a2b1ed30c596080fc5c
 					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id']),
 					'name'        => utf8_substr(strip_tags(html_entity_decode($result['name'], ENT_QUOTES, 'UTF-8')), 0, 60),
 					'lat_lng'     =>  $lat_lng
