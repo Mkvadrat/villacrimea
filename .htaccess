@@ -62,3 +62,10 @@ RewriteRule ^([^?]*) index.php?_route_=$1 [L,QSA]
 # php_flag html_errors on
 # php_flag track_errors on
 # php_value error_reporting "E_ALL"
+FileETag MTime Size
+<ifmodule mod_expires.c>
+<filesmatch ".(jpg|jpeg|gif|png|ico|css|js)$">
+ExpiresActive on
+ExpiresDefault "access plus 1 month"
+</filesmatch>
+</ifmodule>
