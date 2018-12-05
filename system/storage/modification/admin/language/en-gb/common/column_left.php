@@ -35,7 +35,10 @@ $_['text_modification']              = 'Modifications';
 $_['text_manufacturer']              = 'Manufacturers';
 
 // OCFilter start
-$_['text_ocfilter'] = 'Product Filter OCFilter';
+$_['text_ocfilter']                    = 'OCFilter';
+$_['text_ocfilter_option']             = 'Filters';
+$_['text_ocfilter_page']               = 'SEO Pages';
+$_['text_ocfilter_setting']            = 'Settings';
 // OCFilter end
       
 $_['text_option']                    = 'Options';

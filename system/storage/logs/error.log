@@ -5409,3 +5409,7 @@
 2018-12-04 16:42:36 - PHP Notice:  Uninitialized string offset: 0 in /home/mkvadrat/villacrim/system/library/tcpdf/tcpdf.php on line 16685
 2018-12-04 16:42:36 - PHP Notice:  Uninitialized string offset: 0 in /home/mkvadrat/villacrim/system/library/tcpdf/tcpdf.php on line 16685
 2018-12-04 16:47:16 - PHP Notice:  Undefined index: None in /home/mkvadrat/villacrim/system/library/tcpdf/include/tcpdf_colors.php on line 260
+2018-12-05 11:27:40 - PHP Warning:  rmdir(D:/OpenServer/domains/villacrimea.loc/system/storage/modification/system/library): Permission denied in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\modification.php on line 105
+2018-12-05 11:27:40 - PHP Warning:  rmdir(D:/OpenServer/domains/villacrimea.loc/system/storage/modification/system): Directory not empty in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\modification.php on line 105
+2018-12-05 11:27:46 - PHP Warning:  rmdir(D:/OpenServer/domains/villacrimea.loc/system/storage/modification/system/library): Permission denied in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\modification.php on line 105
+2018-12-05 11:27:46 - PHP Warning:  rmdir(D:/OpenServer/domains/villacrimea.loc/system/storage/modification/system): Directory not empty in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\modification.php on line 105
