@@ -23,11 +23,7 @@
 
   <?php } ?>
 </div>
-<<<<<<< HEAD
 <button type="button" class="btn btn-default btn-block more-options" data-toggle="collapse" data-target="#ocfilter-hidden-options" aria-expanded="false" style="font-size: 12px;padding: 5px 0;"><!-- <i class="fa"></i> -->Дополнительные опции фильтра</button>
-=======
-<button type="button" class="btn btn-default btn-block" data-toggle="collapse" data-target="#ocfilter-hidden-options" aria-expanded="false"><i class="fa"></i></button>
->>>>>>> 587e356511f34c417f633a2b1ed30c596080fc5c
 <?php } ?>
 
 

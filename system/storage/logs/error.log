@@ -55,7 +55,6 @@
 2018-11-16 10:12:49 - PHP Notice:  Undefined index: price_usd in W:\domains\villacrimea.loc\system\storage\modification\catalog\model\catalog\product.php on line 41
 2018-11-16 10:12:49 - PHP Notice:  Undefined index: price_usd in W:\domains\villacrimea.loc\system\storage\modification\catalog\model\catalog\product.php on line 41
 2018-11-16 10:12:49 - PHP Notice:  Undefined index: price_usd in W:\domains\villacrimea.loc\system\storage\modification\catalog\model\catalog\product.php on line 41
-<<<<<<< HEAD
 2018-11-20 11:18:10 - PHP Warning:  Error while sending QUERY packet. PID=5329 in /home/mkvadrat/villacrim/system/library/db/mysqli.php on line 18
 2018-11-20 11:18:10 - PHP Warning:  Error while sending QUERY packet. PID=5239 in /home/mkvadrat/villacrim/system/library/db/mysqli.php on line 18
 2018-11-20 11:18:11 - PHP Warning:  Error while sending QUERY packet. PID=5253 in /home/mkvadrat/villacrim/system/library/db/mysqli.php on line 18
@@ -5410,177 +5409,56 @@
 2018-12-04 16:42:36 - PHP Notice:  Uninitialized string offset: 0 in /home/mkvadrat/villacrim/system/library/tcpdf/tcpdf.php on line 16685
 2018-12-04 16:42:36 - PHP Notice:  Uninitialized string offset: 0 in /home/mkvadrat/villacrim/system/library/tcpdf/tcpdf.php on line 16685
 2018-12-04 16:47:16 - PHP Notice:  Undefined index: None in /home/mkvadrat/villacrim/system/library/tcpdf/include/tcpdf_colors.php on line 260
-2018-12-05 11:27:40 - PHP Warning:  rmdir(D:/OpenServer/domains/villacrimea.loc/system/storage/modification/system/library): Permission denied in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\modification.php on line 105
-2018-12-05 11:27:40 - PHP Warning:  rmdir(D:/OpenServer/domains/villacrimea.loc/system/storage/modification/system): Directory not empty in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\modification.php on line 105
-2018-12-05 11:27:46 - PHP Warning:  rmdir(D:/OpenServer/domains/villacrimea.loc/system/storage/modification/system/library): Permission denied in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\modification.php on line 105
-2018-12-05 11:27:46 - PHP Warning:  rmdir(D:/OpenServer/domains/villacrimea.loc/system/storage/modification/system): Directory not empty in D:\OpenServer\domains\villacrimea.loc\admin\controller\extension\modification.php on line 105
-=======
-2018-11-22 16:27:44 - PHP Warning:  getimagesize(D:/OpenServer/domains/villacrimea.loc/image/catalog/watermark/wm-vc.png): failed to open stream: No such file or directory in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 168
-2018-11-22 16:27:44 - PHP Notice:  Undefined variable: watermark in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 188
-2018-11-22 16:27:44 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 189
-2018-11-22 16:27:44 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 200
-2018-11-22 16:27:44 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 202
-2018-11-22 16:27:44 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, null given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 203
-2018-11-22 16:27:44 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 243
-2018-11-22 16:27:46 - PHP Warning:  getimagesize(D:/OpenServer/domains/villacrimea.loc/image/catalog/watermark/wm-vc.png): failed to open stream: No such file or directory in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 168
-2018-11-22 16:27:46 - PHP Notice:  Undefined variable: watermark in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 188
-2018-11-22 16:27:46 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 189
-2018-11-22 16:27:46 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 200
-2018-11-22 16:27:46 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 202
-2018-11-22 16:27:46 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, null given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 203
-2018-11-22 16:27:46 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 243
-2018-11-22 16:27:49 - PHP Warning:  getimagesize(D:/OpenServer/domains/villacrimea.loc/image/catalog/watermark/wm-vc.png): failed to open stream: No such file or directory in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 168
-2018-11-22 16:27:49 - PHP Notice:  Undefined variable: watermark in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 188
-2018-11-22 16:27:49 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 189
-2018-11-22 16:27:49 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 200
-2018-11-22 16:27:49 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 202
-2018-11-22 16:27:49 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, null given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 203
-2018-11-22 16:27:49 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 243
-2018-11-22 16:27:49 - PHP Warning:  getimagesize(D:/OpenServer/domains/villacrimea.loc/image/catalog/watermark/wm-vc.png): failed to open stream: No such file or directory in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 168
-2018-11-22 16:27:49 - PHP Notice:  Undefined variable: watermark in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 188
-2018-11-22 16:27:49 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 189
-2018-11-22 16:27:49 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 200
-2018-11-22 16:27:49 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 202
-2018-11-22 16:27:49 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, null given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 203
-2018-11-22 16:27:49 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 243
-2018-11-22 16:27:52 - PHP Warning:  getimagesize(D:/OpenServer/domains/villacrimea.loc/image/catalog/watermark/wm-vc.png): failed to open stream: No such file or directory in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 168
-2018-11-22 16:27:52 - PHP Notice:  Undefined variable: watermark in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 188
-2018-11-22 16:27:52 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 189
-2018-11-22 16:27:52 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 200
-2018-11-22 16:27:52 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 202
-2018-11-22 16:27:52 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, null given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 203
-2018-11-22 16:27:52 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 243
-2018-11-22 16:27:53 - PHP Warning:  getimagesize(D:/OpenServer/domains/villacrimea.loc/image/catalog/watermark/wm-vc.png): failed to open stream: No such file or directory in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 168
-2018-11-22 16:27:53 - PHP Notice:  Undefined variable: watermark in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 188
-2018-11-22 16:27:53 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 189
-2018-11-22 16:27:53 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 200
-2018-11-22 16:27:53 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 202
-2018-11-22 16:27:53 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, null given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 203
-2018-11-22 16:27:53 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 243
-2018-11-22 16:27:54 - PHP Warning:  getimagesize(D:/OpenServer/domains/villacrimea.loc/image/catalog/watermark/wm-vc.png): failed to open stream: No such file or directory in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 168
-2018-11-22 16:27:54 - PHP Notice:  Undefined variable: watermark in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 188
-2018-11-22 16:27:54 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 189
-2018-11-22 16:27:54 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 200
-2018-11-22 16:27:54 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 202
-2018-11-22 16:27:54 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, null given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 203
-2018-11-22 16:27:54 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 243
-2018-11-22 16:27:54 - PHP Warning:  getimagesize(D:/OpenServer/domains/villacrimea.loc/image/catalog/watermark/wm-vc.png): failed to open stream: No such file or directory in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 168
-2018-11-22 16:27:54 - PHP Notice:  Undefined variable: watermark in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 188
-2018-11-22 16:27:54 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 189
-2018-11-22 16:27:54 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 200
-2018-11-22 16:27:54 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 202
-2018-11-22 16:27:54 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, null given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 203
-2018-11-22 16:27:54 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 243
-2018-11-22 16:27:54 - PHP Warning:  getimagesize(D:/OpenServer/domains/villacrimea.loc/image/catalog/watermark/wm-vc.png): failed to open stream: No such file or directory in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 168
-2018-11-22 16:27:54 - PHP Notice:  Undefined variable: watermark in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 188
-2018-11-22 16:27:54 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 189
-2018-11-22 16:27:54 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 200
-2018-11-22 16:27:54 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 202
-2018-11-22 16:27:54 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, null given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 203
-2018-11-22 16:27:54 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 243
-2018-11-22 16:27:54 - PHP Warning:  getimagesize(D:/OpenServer/domains/villacrimea.loc/image/catalog/watermark/wm-vc.png): failed to open stream: No such file or directory in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 168
-2018-11-22 16:27:54 - PHP Notice:  Undefined variable: watermark in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 188
-2018-11-22 16:27:54 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 189
-2018-11-22 16:27:54 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 200
-2018-11-22 16:27:54 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 202
-2018-11-22 16:27:54 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, null given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 203
-2018-11-22 16:27:54 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 243
-2018-11-22 16:27:55 - PHP Warning:  getimagesize(D:/OpenServer/domains/villacrimea.loc/image/catalog/watermark/wm-vc.png): failed to open stream: No such file or directory in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 168
-2018-11-22 16:27:55 - PHP Notice:  Undefined variable: watermark in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 188
-2018-11-22 16:27:55 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 189
-2018-11-22 16:27:55 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 200
-2018-11-22 16:27:55 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 202
-2018-11-22 16:27:55 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, null given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 203
-2018-11-22 16:27:55 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 243
-2018-11-22 16:27:55 - PHP Warning:  getimagesize(D:/OpenServer/domains/villacrimea.loc/image/catalog/watermark/wm-vc.png): failed to open stream: No such file or directory in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 168
-2018-11-22 16:27:55 - PHP Notice:  Undefined variable: watermark in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 188
-2018-11-22 16:27:55 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 189
-2018-11-22 16:27:55 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 200
-2018-11-22 16:27:55 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 202
-2018-11-22 16:27:55 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, null given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 203
-2018-11-22 16:27:55 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 243
-2018-11-22 16:27:55 - PHP Warning:  getimagesize(D:/OpenServer/domains/villacrimea.loc/image/catalog/watermark/wm-vc.png): failed to open stream: No such file or directory in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 168
-2018-11-22 16:27:55 - PHP Notice:  Undefined variable: watermark in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 188
-2018-11-22 16:27:55 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 189
-2018-11-22 16:27:55 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 200
-2018-11-22 16:27:55 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 202
-2018-11-22 16:27:55 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, null given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 203
-2018-11-22 16:27:55 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 243
-2018-11-22 16:27:55 - PHP Warning:  getimagesize(D:/OpenServer/domains/villacrimea.loc/image/catalog/watermark/wm-vc.png): failed to open stream: No such file or directory in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 168
-2018-11-22 16:27:55 - PHP Notice:  Undefined variable: watermark in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 188
-2018-11-22 16:27:55 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 189
-2018-11-22 16:27:55 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 200
-2018-11-22 16:27:55 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 202
-2018-11-22 16:27:55 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, null given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 203
-2018-11-22 16:27:55 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 243
-2018-11-22 16:27:55 - PHP Warning:  getimagesize(D:/OpenServer/domains/villacrimea.loc/image/catalog/watermark/wm-vc.png): failed to open stream: No such file or directory in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 168
-2018-11-22 16:27:55 - PHP Notice:  Undefined variable: watermark in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 188
-2018-11-22 16:27:55 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 189
-2018-11-22 16:27:55 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 200
-2018-11-22 16:27:55 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 202
-2018-11-22 16:27:55 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, null given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 203
-2018-11-22 16:27:55 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 243
-2018-11-22 16:27:56 - PHP Warning:  getimagesize(D:/OpenServer/domains/villacrimea.loc/image/catalog/watermark/wm-vc.png): failed to open stream: No such file or directory in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 168
-2018-11-22 16:27:56 - PHP Notice:  Undefined variable: watermark in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 188
-2018-11-22 16:27:56 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 189
-2018-11-22 16:27:56 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 200
-2018-11-22 16:27:56 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 202
-2018-11-22 16:27:56 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, null given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 203
-2018-11-22 16:27:56 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 243
-2018-11-22 16:27:57 - PHP Warning:  getimagesize(D:/OpenServer/domains/villacrimea.loc/image/catalog/watermark/wm-vc.png): failed to open stream: No such file or directory in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 168
-2018-11-22 16:27:57 - PHP Notice:  Undefined variable: watermark in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 188
-2018-11-22 16:27:57 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 189
-2018-11-22 16:27:57 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 200
-2018-11-22 16:27:57 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 202
-2018-11-22 16:27:57 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, null given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 203
-2018-11-22 16:27:57 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 243
-2018-11-22 16:28:16 - PHP Warning:  getimagesize(D:/OpenServer/domains/villacrimea.loc/image/catalog/watermark/wm-vc.png): failed to open stream: No such file or directory in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 168
-2018-11-22 16:28:16 - PHP Notice:  Undefined variable: watermark in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 188
-2018-11-22 16:28:16 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 189
-2018-11-22 16:28:16 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 200
-2018-11-22 16:28:16 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 202
-2018-11-22 16:28:16 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, null given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 203
-2018-11-22 16:28:16 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 243
-2018-11-22 16:28:16 - PHP Warning:  getimagesize(D:/OpenServer/domains/villacrimea.loc/image/catalog/watermark/wm-vc.png): failed to open stream: No such file or directory in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 168
-2018-11-22 16:28:16 - PHP Notice:  Undefined variable: watermark in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 188
-2018-11-22 16:28:16 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 189
-2018-11-22 16:28:16 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 200
-2018-11-22 16:28:16 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 202
-2018-11-22 16:28:16 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, null given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 203
-2018-11-22 16:28:16 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 243
-2018-11-22 16:28:17 - PHP Warning:  getimagesize(D:/OpenServer/domains/villacrimea.loc/image/catalog/watermark/wm-vc.png): failed to open stream: No such file or directory in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 168
-2018-11-22 16:28:17 - PHP Notice:  Undefined variable: watermark in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 188
-2018-11-22 16:28:17 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 189
-2018-11-22 16:28:17 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 200
-2018-11-22 16:28:17 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 202
-2018-11-22 16:28:17 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, null given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 203
-2018-11-22 16:28:17 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 243
-2018-11-22 16:28:17 - PHP Warning:  getimagesize(D:/OpenServer/domains/villacrimea.loc/image/catalog/watermark/wm-vc.png): failed to open stream: No such file or directory in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 168
-2018-11-22 16:28:17 - PHP Notice:  Undefined variable: watermark in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 188
-2018-11-22 16:28:17 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 189
-2018-11-22 16:28:17 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 200
-2018-11-22 16:28:17 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 202
-2018-11-22 16:28:17 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, null given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 203
-2018-11-22 16:28:17 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 243
-2018-11-22 16:28:17 - PHP Warning:  getimagesize(D:/OpenServer/domains/villacrimea.loc/image/catalog/watermark/wm-vc.png): failed to open stream: No such file or directory in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 168
-2018-11-22 16:28:17 - PHP Notice:  Undefined variable: watermark in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 188
-2018-11-22 16:28:17 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 189
-2018-11-22 16:28:17 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 200
-2018-11-22 16:28:17 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 202
-2018-11-22 16:28:17 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, null given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 203
-2018-11-22 16:28:17 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 243
-2018-11-22 16:28:17 - PHP Warning:  getimagesize(D:/OpenServer/domains/villacrimea.loc/image/catalog/watermark/wm-vc.png): failed to open stream: No such file or directory in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 168
-2018-11-22 16:28:17 - PHP Notice:  Undefined variable: watermark in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 188
-2018-11-22 16:28:17 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 189
-2018-11-22 16:28:17 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 200
-2018-11-22 16:28:17 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 202
-2018-11-22 16:28:17 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, null given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 203
-2018-11-22 16:28:17 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 243
-2018-11-22 16:28:18 - PHP Warning:  getimagesize(D:/OpenServer/domains/villacrimea.loc/image/catalog/watermark/wm-vc.png): failed to open stream: No such file or directory in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 168
-2018-11-22 16:28:18 - PHP Notice:  Undefined variable: watermark in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 188
-2018-11-22 16:28:18 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 189
-2018-11-22 16:28:18 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 200
-2018-11-22 16:28:18 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 202
-2018-11-22 16:28:18 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, null given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 203
-2018-11-22 16:28:18 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in D:\OpenServer\domains\villacrimea.loc\catalog\model\extension\module\watermark\image.watermark.php on line 243
->>>>>>> 587e356511f34c417f633a2b1ed30c596080fc5c
+2018-12-05 13:27:11 - PHP Notice:  Undefined variable: price in /home/mkvadrat/villacrim/system/storage/modification/catalog/controller/product/product.php on line 494
+2018-12-05 13:27:11 - PHP Notice:  Undefined variable: rub in /home/mkvadrat/villacrim/system/storage/modification/catalog/controller/product/product.php on line 495
+2018-12-05 13:27:24 - PHP Notice:  Undefined variable: price in /home/mkvadrat/villacrim/system/storage/modification/catalog/controller/product/product.php on line 494
+2018-12-05 13:27:24 - PHP Notice:  Undefined variable: rub in /home/mkvadrat/villacrim/system/storage/modification/catalog/controller/product/product.php on line 495
+2018-12-05 13:28:45 - PHP Notice:  Undefined variable: price in /home/mkvadrat/villacrim/system/storage/modification/catalog/controller/product/product.php on line 494
+2018-12-05 13:28:45 - PHP Notice:  Undefined variable: rub in /home/mkvadrat/villacrim/system/storage/modification/catalog/controller/product/product.php on line 495
+2018-12-05 13:29:24 - PHP Notice:  Undefined variable: price in /home/mkvadrat/villacrim/system/storage/modification/catalog/controller/product/product.php on line 494
+2018-12-05 13:29:24 - PHP Notice:  Undefined variable: rub in /home/mkvadrat/villacrim/system/storage/modification/catalog/controller/product/product.php on line 495
+2018-12-05 13:29:35 - PHP Notice:  Undefined variable: price in /home/mkvadrat/villacrim/system/storage/modification/catalog/controller/product/product.php on line 494
+2018-12-05 13:29:35 - PHP Notice:  Undefined variable: rub in /home/mkvadrat/villacrim/system/storage/modification/catalog/controller/product/product.php on line 495
+2018-12-05 13:30:17 - PHP Notice:  Undefined variable: price in /home/mkvadrat/villacrim/system/storage/modification/catalog/controller/product/product.php on line 494
+2018-12-05 13:30:17 - PHP Notice:  Undefined variable: rub in /home/mkvadrat/villacrim/system/storage/modification/catalog/controller/product/product.php on line 495
+2018-12-05 14:03:42 - PHP Notice:  Undefined variable: price in /home/mkvadrat/villacrim/system/storage/modification/catalog/controller/product/product.php on line 494
+2018-12-05 14:03:42 - PHP Notice:  Undefined variable: rub in /home/mkvadrat/villacrim/system/storage/modification/catalog/controller/product/product.php on line 495
+2018-12-05 14:03:55 - PHP Notice:  Undefined variable: price in /home/mkvadrat/villacrim/system/storage/modification/catalog/controller/product/product.php on line 494
+2018-12-05 14:03:55 - PHP Notice:  Undefined variable: rub in /home/mkvadrat/villacrim/system/storage/modification/catalog/controller/product/product.php on line 495
+2018-12-05 14:03:58 - PHP Notice:  Undefined variable: price in /home/mkvadrat/villacrim/system/storage/modification/catalog/controller/product/product.php on line 494
+2018-12-05 14:03:58 - PHP Notice:  Undefined variable: rub in /home/mkvadrat/villacrim/system/storage/modification/catalog/controller/product/product.php on line 495
+2018-12-05 14:04:40 - PHP Notice:  Undefined variable: price in /home/mkvadrat/villacrim/system/storage/modification/catalog/controller/product/product.php on line 494
+2018-12-05 14:04:40 - PHP Notice:  Undefined variable: rub in /home/mkvadrat/villacrim/system/storage/modification/catalog/controller/product/product.php on line 495
+2018-12-05 14:04:55 - PHP Notice:  Undefined variable: price in /home/mkvadrat/villacrim/system/storage/modification/catalog/controller/product/product.php on line 494
+2018-12-05 14:04:55 - PHP Notice:  Undefined variable: rub in /home/mkvadrat/villacrim/system/storage/modification/catalog/controller/product/product.php on line 495
+2018-12-05 16:23:51 - PHP Notice:  Undefined index: sort_order in /home/mkvadrat/villacrim/admin/model/catalog/ocfilter.php on line 78
+2018-12-05 16:23:51 - PHP Notice:  Undefined index: language in /home/mkvadrat/villacrim/admin/model/catalog/ocfilter.php on line 78
+2018-12-05 16:23:51 - PHP Notice:  Undefined index: color in /home/mkvadrat/villacrim/admin/model/catalog/ocfilter.php on line 78
+2018-12-05 16:23:51 - PHP Notice:  Undefined index: language in /home/mkvadrat/villacrim/admin/model/catalog/ocfilter.php on line 80
+2018-12-05 16:23:51 - PHP Warning:  Invalid argument supplied for foreach() in /home/mkvadrat/villacrim/admin/model/catalog/ocfilter.php on line 80
+2018-12-05 16:23:51 - PHP Notice:  Undefined index: sort_order in /home/mkvadrat/villacrim/admin/model/catalog/ocfilter.php on line 78
+2018-12-05 16:23:51 - PHP Notice:  Undefined index: language in /home/mkvadrat/villacrim/admin/model/catalog/ocfilter.php on line 78
+2018-12-05 16:23:51 - PHP Notice:  Undefined index: image in /home/mkvadrat/villacrim/admin/model/catalog/ocfilter.php on line 78
+2018-12-05 16:23:51 - PHP Notice:  Undefined index: language in /home/mkvadrat/villacrim/admin/model/catalog/ocfilter.php on line 80
+2018-12-05 16:23:51 - PHP Warning:  Invalid argument supplied for foreach() in /home/mkvadrat/villacrim/admin/model/catalog/ocfilter.php on line 80
+2018-12-05 16:23:51 - PHP Notice:  Undefined index: language in /home/mkvadrat/villacrim/admin/model/catalog/ocfilter.php on line 78
+2018-12-05 16:23:51 - PHP Notice:  Undefined index: color in /home/mkvadrat/villacrim/admin/model/catalog/ocfilter.php on line 78
+2018-12-05 16:23:51 - PHP Notice:  Undefined index: image in /home/mkvadrat/villacrim/admin/model/catalog/ocfilter.php on line 78
+2018-12-05 16:23:51 - PHP Notice:  Undefined index: language in /home/mkvadrat/villacrim/admin/model/catalog/ocfilter.php on line 80
+2018-12-05 16:23:51 - PHP Warning:  Invalid argument supplied for foreach() in /home/mkvadrat/villacrim/admin/model/catalog/ocfilter.php on line 80
+2018-12-05 16:23:51 - PHP Notice:  Undefined index: sort_order in /home/mkvadrat/villacrim/admin/model/catalog/ocfilter.php on line 78
+2018-12-05 16:23:51 - PHP Notice:  Undefined index: color in /home/mkvadrat/villacrim/admin/model/catalog/ocfilter.php on line 78
+2018-12-05 16:23:51 - PHP Notice:  Undefined index: image in /home/mkvadrat/villacrim/admin/model/catalog/ocfilter.php on line 78
+2018-12-05 16:23:56 - PHP Notice:  Undefined index: sort_order in /home/mkvadrat/villacrim/admin/model/catalog/ocfilter.php on line 78
+2018-12-05 16:23:56 - PHP Notice:  Undefined index: language in /home/mkvadrat/villacrim/admin/model/catalog/ocfilter.php on line 78
+2018-12-05 16:23:56 - PHP Notice:  Undefined index: color in /home/mkvadrat/villacrim/admin/model/catalog/ocfilter.php on line 78
+2018-12-05 16:23:56 - PHP Notice:  Undefined index: language in /home/mkvadrat/villacrim/admin/model/catalog/ocfilter.php on line 80
+2018-12-05 16:23:56 - PHP Warning:  Invalid argument supplied for foreach() in /home/mkvadrat/villacrim/admin/model/catalog/ocfilter.php on line 80
+2018-12-05 16:24:44 - PHP Notice:  Undefined offset: 1 in /home/mkvadrat/villacrim/admin/controller/catalog/ocfilter.php on line 345
+2018-12-05 16:24:44 - PHP Notice:  Undefined index: sort_order in /home/mkvadrat/villacrim/admin/controller/catalog/ocfilter.php on line 374
+2018-12-05 16:24:44 - PHP Notice:  Undefined index: status in /home/mkvadrat/villacrim/admin/controller/catalog/ocfilter.php on line 382
+2018-12-05 16:24:44 - PHP Notice:  Undefined index: type in /home/mkvadrat/villacrim/admin/controller/catalog/ocfilter.php on line 397
+2018-12-05 16:24:44 - PHP Notice:  Undefined index: keyword in /home/mkvadrat/villacrim/admin/controller/catalog/ocfilter.php on line 405
+2018-12-05 16:24:44 - PHP Notice:  Undefined index: selectbox in /home/mkvadrat/villacrim/admin/controller/catalog/ocfilter.php on line 413
+2018-12-05 16:24:44 - PHP Notice:  Undefined index: color in /home/mkvadrat/villacrim/admin/controller/catalog/ocfilter.php on line 421
+2018-12-05 16:24:44 - PHP Notice:  Undefined index: image in /home/mkvadrat/villacrim/admin/controller/catalog/ocfilter.php on line 429

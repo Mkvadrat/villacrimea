@@ -120,20 +120,12 @@
           
           <?php if($product['filter_options']){ ?>
           <div class="tags">
-<<<<<<< HEAD
           <!--<?php /*$i = 0; ?>
-=======
-          <?php $i = 0; ?>
->>>>>>> 587e356511f34c417f633a2b1ed30c596080fc5c
           <?php foreach($product['filter_options'] as $option){ ?>
             <span><?php echo $option['name']; ?>: <?php echo $option['value'] . $option['postfix']; ?></span>
             <?php $i++; ?>
             <?php if($i > 2) break; ?>
-<<<<<<< HEAD
           <?php }*/ ?>-->
-=======
-          <?php } ?>
->>>>>>> 587e356511f34c417f633a2b1ed30c596080fc5c
           
           <div>
           <?php $i = 0; ?>

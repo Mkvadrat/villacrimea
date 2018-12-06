@@ -191,11 +191,7 @@
 											getPointData<?php echo $i; ?> = function () {
 												return {
 													balloonContentHeader: 'Объект №' + <?php echo $product['model']; ?>,
-<<<<<<< HEAD
 													balloonContent: '<div class="ballon"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a><br/><a href="<?php echo $product['href']; ?>"><span>Подробнее</span></a></div>',
-=======
-													balloonContent: '<div class="ballon"><img src="<?php echo $product['image']; ?>" class="ll"/><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a><br/><a href="<?php echo $product['href']; ?>"><span>Подробнее</span></a></div>',
->>>>>>> 587e356511f34c417f633a2b1ed30c596080fc5c
 													balloonContentFooter: '',
 												};
 											},
@@ -396,11 +392,7 @@
                   
                   <a class="name" href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
                   
-<<<<<<< HEAD
                   <!--<?php /*if($product['filter_options']){ ?>
-=======
-                  <?php if($product['filter_options']){ ?>
->>>>>>> 587e356511f34c417f633a2b1ed30c596080fc5c
                   <div class="tags">
                       <?php $i = 0; ?>
                       <?php foreach($product['filter_options'] as $option){ ?>
@@ -409,11 +401,7 @@
                           <?php if($i > 2) break; ?>
                       <?php } ?>
                   </div>
-<<<<<<< HEAD
                   <?php }*/ ?>-->
-=======
-                  <?php } ?>
->>>>>>> 587e356511f34c417f633a2b1ed30c596080fc5c
                   
                   <?php if ($product['price'] || $product['rub']) { ?>
                   <?php if (!$product['special']) { ?>
