@@ -69,6 +69,9 @@
                           <?php }*/ ?>-->
                           
                           <div>
+                            <?php foreach($product['slider_filter_options'] as $option){ ?>
+                              <p><?php echo $option['name']; ?> <span><?php echo $option['value'] . ' ' . $option['postfix']; ?></span></p>
+                            <?php } ?>
                             <?php $i = 0; ?>
                             <?php foreach($product['filter_options'] as $option){ ?>
                               <p><?php echo $option['name']; ?> <span><?php echo $option['value'] . $option['postfix']; ?></span></p>

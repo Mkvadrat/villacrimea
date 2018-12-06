@@ -87,6 +87,11 @@
                     <?php } ?>
                   <?php } ?>	
                 <?php }else{ ?>
+                  <?php if($slider_filter_options){ ?>
+                    <?php foreach($slider_filter_options as $slider_option){ ?>
+                      <p><?php echo $slider_option['name']; ?>: <span><?php echo $slider_option['value']; ?> <?php echo $slider_option['postfix']; ?></span></p>
+                    <?php } ?>
+                  <?php } ?>
                   <?php if($filter_options){ ?>
                     <?php foreach($filter_options as $option){ ?>
                       <p><?php echo $option['name']; ?>: <span><?php echo $option['value']; ?></span></p>
@@ -304,6 +309,11 @@
                     <?php } ?>
                   <?php } ?>	
                 <?php }else{ ?>
+                  <?php if($slider_filter_options){ ?>
+                    <?php foreach($slider_filter_options as $slider_option){ ?>
+                      <p><?php echo $slider_option['name']; ?>: <span><?php echo $slider_option['value']; ?> <?php echo $slider_option['postfix']; ?></span></p>
+                    <?php } ?>
+                  <?php } ?>
                   <?php if($filter_options){ ?>
                     <?php foreach($filter_options as $option){ ?>
                       <p><?php echo $option['name']; ?>: <span><?php echo $option['value']; ?></span></p>

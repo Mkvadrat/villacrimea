@@ -811,6 +811,16 @@ class ModelCatalogOCFilter extends Model {
 	
 		return $query->rows;
 	}
+  
+  public function getValueOptionsSliderRangeByProduct($product_id){
+		$query = $this->db->query("SELECT ood.name AS name, ROUND(oovtp.slide_value_max, 0) AS value, ood.postfix AS postfix FROM " . DB_PREFIX . "ocfilter_option AS oo
+                              JOIN " . DB_PREFIX . "ocfilter_option_description AS ood ON (oo.option_id = ood.option_id) 
+                              JOIN " . DB_PREFIX . "ocfilter_option_to_store AS oots ON (oo.option_id = oots.option_id)
+                              JOIN " . DB_PREFIX . "ocfilter_option_value_to_product AS oovtp ON (oo.option_id = oovtp.option_id) 
+                              AND (oovtp.product_id = '" . (int)$product_id . "') AND (ood.language_id = '" . (int)$this->config->get('config_language_id') . "') AND (oots.store_id = '" . (int)$this->config->get('config_store_id') . "') AND (oo.status = '1') AND (oovtp.value_id = '0') AND (oovtp.slide_value_min <> '0') AND (oovtp.slide_value_max <> '0') ORDER BY oo.sort_order");
+	
+		return $query->rows;
+	}
 	
   public function getData($option_id){
 		$query = $this->db->query("SELECT DISTINCT ood.name AS name,oovd.name AS value, ood.postfix AS postfix, oov.value_id AS value_id FROM " . DB_PREFIX . "ocfilter_option_description ood JOIN " . DB_PREFIX . "ocfilter_option oo ON (ood.option_id = oo.option_id) AND (ood.language_id = '" . (int)$this->config->get('config_language_id') . "')

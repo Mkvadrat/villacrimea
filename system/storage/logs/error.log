@@ -5462,3 +5462,34 @@
 2018-12-05 16:24:44 - PHP Notice:  Undefined index: selectbox in /home/mkvadrat/villacrim/admin/controller/catalog/ocfilter.php on line 413
 2018-12-05 16:24:44 - PHP Notice:  Undefined index: color in /home/mkvadrat/villacrim/admin/controller/catalog/ocfilter.php on line 421
 2018-12-05 16:24:44 - PHP Notice:  Undefined index: image in /home/mkvadrat/villacrim/admin/controller/catalog/ocfilter.php on line 429
+2018-12-06 11:51:23 - PHP Notice:  Undefined variable: slider_filter_options in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\product.tpl on line 307
+2018-12-06 12:33:07 - PHP Notice:  Undefined index: slider_filter_options in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 78
+2018-12-06 12:33:07 - PHP Warning:  Invalid argument supplied for foreach() in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 78
+2018-12-06 12:33:07 - PHP Notice:  Undefined index: slider_filter_options in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 78
+2018-12-06 12:33:07 - PHP Warning:  Invalid argument supplied for foreach() in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 78
+2018-12-06 12:33:07 - PHP Notice:  Undefined index: slider_filter_options in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 78
+2018-12-06 12:33:07 - PHP Warning:  Invalid argument supplied for foreach() in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 78
+2018-12-06 12:33:07 - PHP Notice:  Undefined index: slider_filter_options in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 78
+2018-12-06 12:33:07 - PHP Warning:  Invalid argument supplied for foreach() in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 78
+2018-12-06 12:33:07 - PHP Notice:  Undefined index: slider_filter_options in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 78
+2018-12-06 12:33:07 - PHP Warning:  Invalid argument supplied for foreach() in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 78
+2018-12-06 12:33:07 - PHP Notice:  Undefined index: slider_filter_options in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 78
+2018-12-06 12:33:07 - PHP Warning:  Invalid argument supplied for foreach() in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 78
+2018-12-06 12:33:07 - PHP Notice:  Undefined index: slider_filter_options in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 78
+2018-12-06 12:33:07 - PHP Warning:  Invalid argument supplied for foreach() in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 78
+2018-12-06 12:33:07 - PHP Notice:  Undefined index: slider_filter_options in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 78
+2018-12-06 12:33:07 - PHP Warning:  Invalid argument supplied for foreach() in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 78
+2018-12-06 12:33:07 - PHP Notice:  Undefined index: slider_filter_options in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 78
+2018-12-06 12:33:07 - PHP Warning:  Invalid argument supplied for foreach() in D:\OpenServer\domains\villacrimea.loc\catalog\view\theme\villacrimea\template\product\category.tpl on line 78
+2018-12-06 12:33:34 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\catalog\controller\product\category.php on line 335
+2018-12-06 12:33:34 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\catalog\controller\product\category.php on line 335
+2018-12-06 12:33:34 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\catalog\controller\product\category.php on line 335
+2018-12-06 12:33:34 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\catalog\controller\product\category.php on line 335
+2018-12-06 12:33:34 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\catalog\controller\product\category.php on line 335
+2018-12-06 12:33:34 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\catalog\controller\product\category.php on line 335
+2018-12-06 12:33:34 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\catalog\controller\product\category.php on line 335
+2018-12-06 12:33:34 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\catalog\controller\product\category.php on line 335
+2018-12-06 12:33:34 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\catalog\controller\product\category.php on line 335
+2018-12-06 12:33:34 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\catalog\controller\product\category.php on line 335
+2018-12-06 12:33:34 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\catalog\controller\product\category.php on line 335
+2018-12-06 12:33:34 - PHP Notice:  Undefined variable: product_info in D:\OpenServer\domains\villacrimea.loc\system\storage\modification\catalog\controller\product\category.php on line 335
