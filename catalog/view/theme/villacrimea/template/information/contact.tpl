@@ -71,7 +71,7 @@
                   <input type="checkbox" name="" id="conf_politics_one">
                   <label for="conf_politics_one">
                           я согласен(согласна)<br>
-                          с <a href="#">политикой конфиденциальности</a>
+                          с <a href="/privacy-policy/">политикой конфиденциальности</a>
                   </label>
                   <button type="submit" onclick="sendContactsForm();" class="casual_button">Отправить</button>
               </div>
@@ -124,7 +124,7 @@
               <input type="checkbox" id="conf_politics_agent_<?php echo $agent['agent_id']; ?>">
               <label for="conf_politics_agent_<?php echo $agent['agent_id']; ?>">
                       я согласен(согласна)<br>
-                      с <a href="#">политикой конфиденциальности</a>
+                      с <a href="/privacy-policy/">политикой конфиденциальности</a>
               </label>
               <button type="submit" onclick="sendFormAgent_<?php echo $agent['agent_id']; ?>();" class="casual_button">Отправить</button>
           </div>

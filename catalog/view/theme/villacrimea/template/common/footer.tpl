@@ -20,7 +20,7 @@
                     <input type="checkbox" name="" id="conf_politics">
                     <label for="conf_politics">
                             я согласен(согласна)<br>
-                            с <a href="#">политикой конфиденциальности</a>
+                            с <a href="/privacy-policy/">политикой конфиденциальности</a>
                     </label>
                     <button type="submit" onclick="sendForm();" class="casual_button">Отправить</button>
                 </div>
@@ -47,7 +47,7 @@
                     <input type="checkbox" id="conf_politics_three">
                     <label for="conf_politics_three">
                             я согласен(согласна)<br>
-                            с <a href="#">политикой конфиденциальности</a>
+                            с <a href="/privacy-policy/">политикой конфиденциальности</a>
                     </label>
                     <button type="submit" onclick="orderSelection();" class="casual_button">Отправить</button>
                 </div>

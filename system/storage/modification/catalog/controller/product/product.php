@@ -422,6 +422,7 @@ class ControllerProductProduct extends Controller {
 			}
 
 			$data['reviews'] = sprintf($this->language->get('text_reviews'), (int)$product_info['reviews']);
+			
 			$data['rating'] = (int)$product_info['rating'];
 
 			// Captcha
@@ -932,6 +933,7 @@ class ControllerProductProduct extends Controller {
 			$data['product_options'] = $this->model_catalog_product->getProductOptions((int)$this->request->get['product_id']);
 			$data['options'] = $this->model_catalog_product->getProductOptions($product_info['product_id']);
 			$data['filter_options'] = $this->model_catalog_ocfilter->getValueOptionsByProduct($product_info['product_id']);
+			$data['slider_filter_options'] = $this->model_catalog_ocfilter->getValueOptionsSliderRangeByProduct($product_info['product_id']);
 			$data['uniq_options'] = $product_info['uniq_options'] = 1 ? $product_info['uniq_options'] : 0;
 			$data['href'] = $this->url->link('product/product', 'product_id=' . $product_info['product_id']);
 			
