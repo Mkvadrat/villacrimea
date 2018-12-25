@@ -856,6 +856,18 @@ class ControllerProductProduct extends Controller {
 		}else{
 			$email_agent = $this->config->get('config_email');
 		}
+		
+		if (isset($this->request->post['product_agent'])) {
+			$product_id = $this->request->post['product_agent'];
+			
+			$this->load->model('catalog/product');
+		
+			$product_info = $this->model_catalog_product->getProduct($product_id);
+			
+			$product_name = $product_info['name'];
+		}else{
+			$product_name = '';
+		}
 	
 		if (isset($name) && isset($tel)){
 			$mail = new Mail();
@@ -872,7 +884,7 @@ class ControllerProductProduct extends Controller {
 			$mail->setSender(html_entity_decode($this->request->post['name'], ENT_QUOTES, 'UTF-8'));
 			$mail->setSubject(html_entity_decode(sprintf($this->language->get($site_url), $this->request->post['name']), ENT_QUOTES, 'UTF-8'));
 			
-			$mail->setHtml(html_entity_decode(sprintf('Имя: ' . $name . '<br>' . 'Телефон: ' . $tel . '<br>' . 'Email: ' . $email . '<br>' . 'Сообщение: ' . $message), ENT_QUOTES, 'UTF-8'));
+			$mail->setHtml(html_entity_decode(sprintf('Объект: ' . $product_name . '<br>' . ' Имя: ' . $name . '<br>' . 'Телефон: ' . $tel . '<br>' . 'Email: ' . $email . '<br>' . 'Сообщение: ' . $message), ENT_QUOTES, 'UTF-8'));
 			$send = $mail->send();
 						
 			if ($mail){
