@@ -96,7 +96,9 @@
 						
 						<?php if ($price || $rub) { ?>
 						<?php if (!$special) { ?>
-						<p>Цена: <span><?php echo $rub; ?> / <?php echo $price; ?></span></p>
+						<!-- <p>Цена: <span><?php echo $rub; ?> / <?php echo $price; ?></span></p> -->
+						<p class="price_rub"><?php echo $rub; ?></p>
+						<p class="price_usd"><?php echo $price; ?></p>
 						<?php } else { ?>
 						<p>Цена: <span><?php echo $special; ?></span><sup><strike><?php echo $price; ?></strike></sup></p>
 						<?php } ?>

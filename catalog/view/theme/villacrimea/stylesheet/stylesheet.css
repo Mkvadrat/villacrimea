@@ -3179,6 +3179,7 @@ section .case_in_page .case_inner .right_side .card .price_rub {
 section .case_in_page .case_inner .right_side .card .price_usd {
     font-family: "GothamPro_Med";
     font-size: 16px;
+    color: #c09d74;
 }
 
 section .case_in_page .case_inner .right_side .card .object_id {
@@ -3280,6 +3281,7 @@ section .case_in_page .same_objects .card .price_rub {
 section .case_in_page .same_objects .card .price_usd {
     font-family: "GothamPro_Med";
     font-size: 16px;
+    color: #c09d74;
 }
 
 section .case_in_page .same_objects .card .object_id {
