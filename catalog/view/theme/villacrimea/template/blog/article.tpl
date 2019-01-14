@@ -83,7 +83,7 @@
 						</div>
 						<a class="name" href="<?php echo $product_href; ?>"><?php echo $product_name; ?></a>
 						
-						<?php if($filter_options){ ?>
+						<!--<?php /*if($filter_options){ ?>
 						<div class="tags">
 							<?php $i = 0; ?>
 							<?php foreach($filter_options as $option){ ?>
@@ -92,7 +92,7 @@
 								<?php if($i > 2) break; ?>
 							<?php } ?>
 						</div>
-						<?php } ?>
+						<?php }*/ ?>-->
 						
 						<?php if ($price || $rub) { ?>
 						<?php if (!$special) { ?>
@@ -156,7 +156,7 @@
 					
 					<a class="name" href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
 					
-					<?php if($product['filter_options']){ ?>
+					<!--<?php /*if($product['filter_options']){ ?>
 					<div class="tags">
 						<?php $i == 0; ?>
 						<?php foreach($product['filter_options'] as $option){ ?>
@@ -165,7 +165,7 @@
 							<?php if($i == 3 ){break;} ?>
 						<?php } ?>
 					</div>
-					<?php } ?>
+					<?php }*/ ?>-->
 					
 					<?php if ($product['price'] || $product['rub']) { ?>
 					<?php if (!$product['special']) { ?>

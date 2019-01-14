@@ -362,6 +362,7 @@
                               <input type="text" id="phone_agent" placeholder="Телефон*">
                               <input type="text" id="email_agent" placeholder="E-mail">
                               <input type="hidden" value="<?php echo $email; ?>" id="hidden_email">
+                              <input type="hidden" value="<?php echo $product_id; ?>" id="hidden_product_id">
                               <div class="textarea">
                                   <textarea id="message_agent" onkeyup="textAreaAdjust(this);" placeholder="Вопрос"></textarea>
                                   <script>

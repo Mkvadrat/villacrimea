@@ -435,6 +435,7 @@ function sendFormAgent() {
             'tel': $('#phone_agent').val(),
             'email': $('#email_agent').val(),
             'email_agent': $('#hidden_email').val(),
+            'product_agent': $('#hidden_product_id').val(),
             'message': $('#message_agent').val(),
         },
         dataType: 'json',
