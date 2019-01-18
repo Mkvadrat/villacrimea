@@ -155,7 +155,10 @@ $(document).ready(function () {
     $("#menu").mmenu({
         "extensions": [
             "pagedim-black"
-        ]
+        ],
+        navbar : {
+			title : 'АН "Вилла Крым"'
+		},
     });
     $('.callback').fancybox({
         modal: true,
