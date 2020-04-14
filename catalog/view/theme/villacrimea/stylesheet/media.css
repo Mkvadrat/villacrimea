@@ -250,6 +250,19 @@
         right: 10px;
         z-index: 99;
     }
+	.messengers.mobile{
+		display: block;  
+		position: fixed;
+		top: 61px;
+		right: 17px;
+		z-index: 99;
+	}	
+	header .header_right_side{
+		display: none;
+	}
+	header .logo {
+		left: 0;
+	}
     section .about .buy_sell {
         max-width: 100%;
     }
@@ -879,4 +892,10 @@
     .panel>.list-group {
         align-items: flex-end;
     }
+	.anketa__block {
+		flex-wrap: wrap;
+	}
+	.anketa__img {
+		margin-bottom: 5px;
+	}
 }

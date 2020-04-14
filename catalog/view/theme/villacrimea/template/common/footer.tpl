@@ -87,6 +87,13 @@
                     <?php } ?>
                 </ul>
                 <?php } ?>
+				<div class="anketa__block">
+					<div class="anketa__img"><a href="https://www.rncb.ru/fizicheskkim-litsam/ipoteka/novostroyka/?TO_ONLINEANKETA=Y" target="_blank"><img src="/image/catalog/rnkb.png" alt="РНКБ" width="49"/></a></div>					
+					<div class="anketa__text">
+					<p><?php echo $text_anketa_text ?></p>
+					<p><a href="https://www.rncb.ru/fizicheskkim-litsam/ipoteka/novostroyka/?TO_ONLINEANKETA=Y" target="_blank"><?php echo $text_anketa_link ?></a></p>
+					</div>
+				</div>
             </div>
             
             <div class="footer_right_side">

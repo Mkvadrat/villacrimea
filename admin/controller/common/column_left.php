@@ -433,6 +433,14 @@ class ControllerCommonColumnLeft extends Controller {
 				);
 			}
 			
+			$data['menus'][] = array(
+				'id'       => 'menu-cache',
+				'icon'	   => 'fa-paint-brush',
+				'name'	   => $this->language->get('Очистка кеша'),
+				'href'     => $this->url->link('extension/module/cacheremove', 'token=' . $this->session->data['token'], true),
+				'children' => array()
+			);
+			
 			// Stats
 			$data['text_complete_status'] = $this->language->get('text_complete_status');
 			$data['text_processing_status'] = $this->language->get('text_processing_status');

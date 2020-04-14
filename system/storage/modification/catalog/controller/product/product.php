@@ -769,7 +769,7 @@ class ControllerProductProduct extends Controller {
 		foreach ($stickers as $sticker) {
 			$stick[] = array(
 				'position' => $sticker['position'],
-				'image'    => HTTP_SERVER . 'image/' . $sticker['image']
+				'image'    => HTTPS_SERVER . 'image/' . $sticker['image']
 			);		
 		}
 		

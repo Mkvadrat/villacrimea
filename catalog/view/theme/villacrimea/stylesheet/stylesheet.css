@@ -1788,7 +1788,7 @@ section .category_page .cards .card:nth-of-type(3n) {
 section .category_page .cards .card .img {
     display: block;
     padding-bottom: 65%;
-    background-size: 100.5% auto;
+    background-size: 111% auto;
     background-position: center;
     margin-left: -10px;
     margin-right: -10px;
@@ -5227,4 +5227,48 @@ section .left-img p:last-of-type {
 .panel>.list-group .list-group-item[id^='option'].scalable + .scalable {
     padding-left: 15px;
     padding-top: 5px;
+}
+.anketa__text p{
+    font-family: "Ubuntu";
+    line-height: normal;	
+    font-size: 14px;
+    color: #92918F;
+}
+.anketa__block{
+	display: flex;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.anketa__img{
+	    width: 68px;
+    flex: none;
+}
+.anketa__text p a{
+	font-family: "Ubuntu";
+    line-height: normal;	
+    font-size: 14px;
+	display: inline-block;
+	margin-top: 10px;
+}
+.messengers {
+    display: inline-block;
+    padding: 5px 0;
+    float: left;
+}
+.messengers .viber, .messengers .whatsapp {
+    display: inline-block;
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+.messengers .viber img, .messengers .whatsapp img {
+    width: 100%;
+    display: inline-block;
+    float: left;
+}
+.messengers.mobile{
+	display: none;
 }

@@ -37,7 +37,7 @@
 <script src="catalog/view/theme/villacrimea/js/sweetalert.min.js"></script>
 <script src="catalog/view/theme/villacrimea/js/printThis.js"></script>
 <script src="https://cdn.rawgit.com/leafo/sticky-kit/v1.1.2/jquery.sticky-kit.min.js"></script>
-<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script src="https://api-maps.yandex.ru/2.1/?apikey=6febc1ce-7df3-4205-996a-9690688cca4e&load=package.full&lang=ru-RU" type="text/javascript"></script>
 
 <link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/nomalize.css">
 <link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/jquery.mmenu.all.css">
@@ -62,6 +62,7 @@
 
 <link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/stylesheet.css">
 <link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/media.css">
+<meta name="yandex-verification" content="3186afbdc54eacd7" /> 
 
 </head>
   <body>
@@ -114,5 +115,8 @@
         <?php echo $contact_header; ?>
       </div>
       <a class="mobile callback mob-callback" href="#call_me_back"><img src="catalog/view/theme/villacrimea/image/tel.png"></a>
+	  <div class="messengers mob__mess mobile">
+                                     <a class="viber" href="viber://chat?number=+79788881618"><img src="catalog/view/theme/villacrimea/image/viber.png" alt="Viber"></a><br>
+                                      <a class="whatsapp" href="https://api.whatsapp.com/send?phone=79788881618"><img src="catalog/view/theme/villacrimea/image/whatsapp.png" alt="Whatsapp"></a></div>
     </header>    
     <section>

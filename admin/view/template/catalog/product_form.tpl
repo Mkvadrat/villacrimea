@@ -160,7 +160,7 @@
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
                 <div class="col-sm-10">
-                  <script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
+                  <script src="https://api-maps.yandex.ru/2.0/?apikey=6febc1ce-7df3-4205-996a-9690688cca4e&load=package.full&lang=ru-RU" type="text/javascript"></script>
 									<script type="text/javascript">
 										var myMap, myPlacemark, coords;
 										ymaps.ready(init);

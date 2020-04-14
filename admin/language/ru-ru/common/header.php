@@ -21,3 +21,4 @@ $_['text_homepage']          	= 'Главная';
 $_['text_support']          	= 'Форум ocStore';
 $_['text_documentation']        = 'Документация';
 $_['text_logout']          		= 'Выход';
+$_['text_cacheremove'] = 'Очистка кеша';
