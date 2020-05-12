@@ -162,7 +162,7 @@ $(document).ready(function () {
     });
     $('.callback').fancybox({
         modal: true,
-    });
+    });    
     $('#conf_politics').on('click', function () {
         if ($(this).is(':checked')) {
             $(this).siblings('button').addClass('checked_button');
@@ -192,6 +192,13 @@ $(document).ready(function () {
         }
     });
     $('#conf_politics_cont').on('click', function () {
+        if ($(this).is(':checked')) {
+            $(this).siblings('button').addClass('checked_button');
+        } else {
+            $(this).siblings('button').removeClass('checked_button');
+        }
+    });
+    $('#conf_politics_datetime').on('click', function () {
         if ($(this).is(':checked')) {
             $(this).siblings('button').addClass('checked_button');
         } else {
@@ -388,6 +395,32 @@ function sendForm() {
             'tel': $('#phone').val(),
             'email': $('#email').val(),
             'message': $('#message').val(),
+        },
+        dataType: 'json',
+        success: function (data) {
+            swal({
+                title: data.message,
+                text: "",
+                timer: 1000,
+                showConfirmButton: false
+            });
+
+            $.fancybox.close();
+        }
+    });
+}
+
+//Call me view
+function callMeView() {
+    $.ajax({
+        url: 'index.php?route=extension/module/featured_html/callMeView',
+        type: 'post',
+        data: {
+            'name': $('#name_view').val(),
+            'tel': $('#phone_view').val(),
+            'email': $('#email_view').val(),
+            'datetime': $('#datetime').val(),
+            'message': $('#message_view').val(),
         },
         dataType: 'json',
         success: function (data) {

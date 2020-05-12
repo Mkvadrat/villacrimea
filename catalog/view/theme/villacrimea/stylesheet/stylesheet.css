@@ -1384,7 +1384,7 @@ section .category_page .realtor_category {
 }
 
 section .category_page .realtor_category .realtor_item {
-    width: 19%;
+    width: 16%;
     border: 1px solid #dbdbdb;
     border-radius: 5px;
     box-sizing: border-box;
@@ -1403,8 +1403,8 @@ section .category_page .realtor_category .realtor_item a {
 }
 
 section .category_page .realtor_category .realtor_item a .img {
-    width: 180px;
-    padding-bottom: 180px;
+    width: 150px;
+    padding-bottom: 150px;
     background-size: cover;
     background-position: center;
     border-radius: 90px;
@@ -2749,7 +2749,7 @@ section .cases_page .realtor_category {
 }
 
 section .cases_page .realtor_category .realtor_item {
-    width: 19%;
+    width: 16%;
     border: 1px solid #dbdbdb;
     border-radius: 5px;
     box-sizing: border-box;
@@ -2767,8 +2767,8 @@ section .cases_page .realtor_category .realtor_item a {
 }
 
 section .cases_page .realtor_category .realtor_item a .img {
-    width: 180px;
-    padding-bottom: 180px;
+    width: 150px;
+    padding-bottom: 150px;
     background-size: cover;
     background-position: center;
     border-radius: 90px;

@@ -46,3 +46,32 @@
     </div>
     <?php } ?>
 </div>
+
+<div id="call_me_view" style="display: none;">
+    <button data-fancybox-close="" class="fancybox-close-small" title="Close"><span>X</span></button>
+    <div class="call_me_back_inner">
+        <p class="title">Форма обратной связи</p>
+        <div>
+            <input type="text" id="name_view" placeholder="Имя*">
+            <input type="text" id="phone_view" placeholder="Телефон*">
+            <input type="text" id="email_view" placeholder="E-mail">
+            <input type="text" id="datetime" placeholder="Удобное время">
+            <div class="textarea">
+                <textarea id="message_view" placeholder="Вопрос"></textarea>
+            </div>
+            <input type="checkbox" name="" id="conf_politics_datetime">
+            <label for="conf_politics">
+                    я согласен(согласна)<br>
+                    с <a href="/privacy-policy/">политикой конфиденциальности</a>
+            </label>
+            <button type="submit" onclick="callMeView();" class="casual_button">Отправить</button>
+        </div>
+    </div>
+</div>
+<script>
+$(function () {
+    $('#datetime').datetimepicker({
+        locale: 'ru'                                                    
+    });
+});
+</script>
