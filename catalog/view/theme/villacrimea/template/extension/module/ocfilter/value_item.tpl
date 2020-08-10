@@ -7,6 +7,7 @@
 <?php } ?>
 
 <?php if ($value['selected']) { ?>
+
 <label id="v-<?php echo $value['id']; ?>" class="ocf-selected" data-option-id="<?php echo $option['option_id']; ?>">
   <input type="<?php echo $option['type']; ?>" name="ocf[<?php echo $option['option_id']; ?>]" value="<?php echo $value['params']; ?>" checked="checked" class="ocf-target" autocomplete="off" />
   <?php echo $value['name']; ?>

@@ -48,6 +48,17 @@ class ModelCatalogOCFilter extends Model {
 
         $option_data['values'] = $values_query->rows;
       }
+      
+      if ($option['type'] == 'text') {
+        $values_query = $this->db->query("SELECT DISTINCT * FROM " . DB_PREFIX . "ocfilter_option_value oov
+                                         LEFT JOIN " . DB_PREFIX . "ocfilter_option_value_description oovd ON (oov.value_id = oovd.value_id)
+                                         LEFT JOIN " . DB_PREFIX . "ocfilter_option_value_to_product oovtp ON (oov.value_id = oovtp.value_id)
+                                         WHERE oov.option_id = '" . (int)$option['option_id'] . "'
+                                         AND oovd.language_id = '" . (int)$this->config->get('config_language_id') . "' GROUP BY oovtp.text
+                                         ORDER BY oov.sort_order, (oovd.name = '-') DESC, (oovd.name = '0') DESC, (oovd.name + 0 > 0) DESC, (oovd.name + 0), oovd.name");
+        
+        $option_data['values'] = $values_query->rows;
+      }
 
       $options_data[] = $option_data;
     }
@@ -465,7 +476,7 @@ class ModelCatalogOCFilter extends Model {
         }
 
         if ($i > 1) {
-          $implode_join[] = "ocfilter_option_value_to_product oov2p" . (int)$i . " ON (oov2p1.product_id = oov2p" . (int)$i . ".product_id)";
+          $implode_join[] = "ocfilter_option_value_to_product oov2p" . (int)$i . " ON (oov2p1.product_id = oov2p" . (int)$i . ".product_id) ";
         }
 
         $i++;
@@ -831,6 +842,35 @@ class ModelCatalogOCFilter extends Model {
 	
 		return $query->rows;
 	}
+  
+  public function getAutocomplete($data = array()) {
+    //$sql = "SELECT DISTINCT * FROM " . DB_PREFIX . "ocfilter_option_value_to_product WHERE option_id = '" . $this->db->escape($data['option_id']) . "'";
+    $sql = "SELECT * FROM " . DB_PREFIX . "ocfilter_option_value_to_product oov2p LEFT JOIN " . DB_PREFIX . "product p ON (oov2p.product_id = p.product_id) LEFT JOIN " . DB_PREFIX . "product_to_category p2c ON (p.product_id = p2c.product_id)";
+		
+    $sql .= " WHERE p.status = '1' AND p2c.category_id = '" . (int)$data['filter_category_id'] . "' AND oov2p.option_id = '" . (int)$data['option_id'] . "'";
+    
+    if (!empty($data['filter_name'])) {
+			$sql .= " AND oov2p.text LIKE '%" . strval($this->db->escape($data['filter_name'])) . "%' AND TRIM(COALESCE(oov2p.text, '')) <>'' GROUP BY oov2p.text";
+		}
+    
+    $sql .= " ORDER BY oov2p.product_id ASC ";
+
+		if (isset($data['start']) || isset($data['limit'])) {
+			if ($data['start'] < 0) {
+				$data['start'] = 0;
+			}
+
+			if ($data['limit'] < 1) {
+				$data['limit'] = 20;
+			}
+
+			$sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
+		}
+
+		$query = $this->db->query($sql);
+
+		return $query->rows;
+  }
 }
 
 ?>

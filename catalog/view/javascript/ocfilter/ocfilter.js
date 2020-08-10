@@ -1,5 +1,4 @@
 // https://codepen.io/martinAnsty/pen/BCotE
-
 Math.easeIn = function (val, min, max, strength) {
 	val /= max;
 
@@ -15,19 +14,18 @@ Math.easeIn = function (val, min, max, strength) {
 
     for (i = 0; i < sURLVariables.length; i++) {
         sParameterName = sURLVariables[i].split('=');
-
+				
         if (sParameterName[0] === sParam) {
             return sParameterName[1] === undefined ? true : sParameterName[1];
         }
     }
 	};
-		
+	
 	var filter_ocfilter = getUrlParameter('filter_ocfilter');
 	
 	$(document).on('change', "select[name='currencys']", function() {
 		ocfilter.currencys_update();
 	});
-	
 	
   function setSlider(_, target) {
     var
@@ -46,7 +44,7 @@ Math.easeIn = function (val, min, max, strength) {
         range: {
           'min': min,
           'max': max
-        }
+        },
       };
 
     // Logarithmic scale
@@ -113,7 +111,7 @@ Math.easeIn = function (val, min, max, strength) {
         }
 
         if ($element.data().controlMin && $($element.data().controlMin).length) {
-          $($element.data().controlMin).val(noformat[0].toFixed(decimals));
+          $($element.data().controlMin).val(parseFloat(noformat[0].toFixed(decimals)).toLocaleString('ru')); //Установка значений для input
         }
       }
 
@@ -123,12 +121,13 @@ Math.easeIn = function (val, min, max, strength) {
         }
 
         if ($element.data().controlMax && $($element.data().controlMax).length) {
-          $($element.data().controlMax).val(noformat[1].toFixed(decimals));
+          $($element.data().controlMax).val(parseFloat(noformat[1].toFixed(decimals)).toLocaleString('ru')); //Установка значений для input
         }
       }
     });
 
     $element.get(0).noUiSlider.on('change', function(_, __, values, tap, positions) {
+			
       that.params.remove.call(that, $element.data().optionId);
 
       if ((positions[1] - positions[0]) < 100) {
@@ -148,7 +147,7 @@ Math.easeIn = function (val, min, max, strength) {
           this.value = min;
         }
 
-        $element.get(0).noUiSlider.set([this.value, null]);
+        $element.get(0).noUiSlider.set([this.value.split(' ').join(''), null]); //удаление пробелов при маске
       });
     }
 
@@ -162,7 +161,7 @@ Math.easeIn = function (val, min, max, strength) {
           this.value = max;
         }
 
-        $element.get(0).noUiSlider.set([null, this.value]);
+        $element.get(0).noUiSlider.set([null, this.value.split(' ').join('')]); //удаление пробелов при маске
       });
     }
   };
@@ -179,13 +178,55 @@ Math.easeIn = function (val, min, max, strength) {
       this.$fields = $('.option-values input', this.$element);
 
       this.$target = $('.ocf-target', this.$element);
+			
       this.$values = $('label', this.$element);
+			
+			this.$summ = $('.input-sm', this.$element); 
 
       var that = this;
 
       this.$values.each(function() {
         that.values[$(this).attr('id')] = this;
       });
+			
+			//Автозаполнение
+			this.$target.bind('keydown', function(e){
+        var
+          $element = $(this),
+          $buttonTarget = $element.closest('label');
+					
+					var valopt = [];
+					$('.value-target').each(function() {
+						valopt.push($(this).val());
+					});
+	
+					if ($element.val().length >= 0) {
+						that.atocom($element, $buttonTarget);
+					}else if ($element.val().length > 0) {
+						that.options.php.params = $('.value-target:first').val();
+					}else if (filter_ocfilter) {
+						that.options.php.params = filter_ocfilter;
+					}else{
+						$element.nextAll(":hidden").first().val("");
+						that.options.php.params = $element.nextAll(":hidden").first().val();
+						$element.closest('.ocf-option-values').find('label.ocf-selected').removeClass('ocf-selected');
+					}
+
+					if (event.keyCode == 13 && $element.val().length > 0) {
+						that.options.php.params = valopt.join(';');
+					}else if ($element.val().length > 0) {
+						that.options.php.params = $('.value-target:first').val();
+					}else if (filter_ocfilter) {
+						that.options.php.params = filter_ocfilter;
+					}else {
+						$element.nextAll(":hidden").first().val("");
+						that.options.php.params = $element.nextAll(":hidden").first().val();
+						$element.closest('.ocf-option-values').find('label.ocf-selected').removeClass('ocf-selected');
+					}
+				
+					that.update($buttonTarget);
+			});
+			//Автозаполнение
 
       this.$target.on('change', function(e) {
         e.preventDefault();
@@ -195,24 +236,28 @@ Math.easeIn = function (val, min, max, strength) {
           $buttonTarget = $element.closest('label'),
           $dropdown = $element.closest('.dropdown');
 
-        that.options.php.params = $element.val();
-
+				if (!$element.is(':text')) {
+					that.options.php.params = $element.val();
+				}
+				
         if ($element.is(':radio')) {
           $element.closest('.ocf-option-values').find('label.ocf-selected').removeClass('ocf-selected');
         }
-
-        $buttonTarget.toggleClass('ocf-selected', $element.prop('checked'));
-
-        that.update($buttonTarget);
+				
+				if (!$element.is(':text')) {
+					$buttonTarget.toggleClass('ocf-selected', $element.prop('checked'));
+	
+					that.update($buttonTarget);
+				}
       });
-
+			
       this.$element.on('click.ocf', '.dropdown-menu', function(e) {
         $(this).closest('.dropdown').one('hide.bs.dropdown', function(e) {
           return false;
         });
       });
-
-      this.$element.on('click.ocf', '.disabled, [disabled]', function(e) {
+						
+      this.$element.on('click.ocf', '.disabled, [disabled]', function(e) {		
         e.stopPropagation();
         e.preventDefault();
       });
@@ -243,7 +288,7 @@ Math.easeIn = function (val, min, max, strength) {
       });
 
       if (this.options.php.manualPrice) {
-        $('[data-toggle="popover-price"]').popover({
+        /*$('[data-toggle="popover-price"]').popover({
           content: function() {
             return '' +
               '<div class="form-inline">' +
@@ -262,14 +307,83 @@ Math.easeIn = function (val, min, max, strength) {
           container: '#ocfilter',
           title: 'Указать цену',
           trigger: 'hover'
-        });
+        });*/
+				
+				this.$summ.bind('keyup', function(e){
+					var
+						$element = $(this),
+						$buttonTarget = $element.closest('.summ');
+
+					//if (event.keyCode == 13 && $('input[name=\'price[min]\']').val().length >= 0 && $('input[name=\'price[min]\']').val().length > 0) {
+						that.options.php.params = 'p:' + $('input[name=\'price[min]\']').val().split(' ').join('') + '-' + $('input[name=\'price[max]\']').val().split(' ').join('');;
+						that.update($buttonTarget);
+						
+						$('#ocfilter .scale').removeAttr('disabled');
+					//}
+				});
       }
 
       // Set sliders
       $('#ocfilter .scale').each($.proxy(setSlider, this));
     },
 		
-		currencys_update: function(){
+		atocom: function($target, $buttonTarget){
+			var that = this;
+
+			$($target).autocomplete({
+				'source': function(request, response) {
+					if (encodeURIComponent(request) != 0) {
+						$.ajax({
+							url: 'index.php?route=extension/module/ocfilter/autocomplete&option_id=' + $target.attr('data-value-id') + '&filter_name=' +  encodeURIComponent(request) + '&filter_ocfilter=' + encodeURIComponent(filter_ocfilter) + '&path=' + $("input[name='path']").val(),
+							dataType: 'json',
+							success: function(json) {
+								response($.map(json, function(item) {
+									return {
+										option_id: item.option_id,
+										label: item.name,
+										value: item.params,
+										id: item.id
+									};
+								}));
+							}
+						});
+					}
+				},
+				'focus': function( event ) {
+					$($target).val(event.label);
+					return false;
+				},
+				'select': function( event ) {
+					$($target).val(event.label);
+					//console.log($target.nextAll(":hidden").first());
+					$buttonTarget.attr('id', 'v-' + event.id);
+
+					$buttonTarget.toggleClass('ocf-selected', $target.nextAll(":hidden").first().val());
+
+					if(filter_ocfilter){
+						$target.nextAll(":hidden").first().val(filter_ocfilter + ';' + event.value);
+						
+						that.options.php.params = $target.nextAll(":hidden").first().val();
+					}else{
+						$target.nextAll(":hidden").first().val(event.value);
+						
+						var valopt = [];
+						
+						$('.value-target').each(function() {
+							valopt.push($(this).val());
+						});
+
+						that.options.php.params = valopt.join(';');
+					}
+
+					that.update($buttonTarget);
+
+					return false;
+				},
+			});
+		},
+		
+		currencys_update: function(){		
 			var data = {
 				'change_currencys' : $("select[name='currencys']").val(),
 				'path' : $("input[name='path']").val(),
@@ -280,10 +394,14 @@ Math.easeIn = function (val, min, max, strength) {
 				url: 'index.php?route=extension/module/ocfilter/setCurrencys',
 				data: data, 
 				success: function(json) {
-					$('#price-from').replaceWith('<span id="price-from">'+json.sliders.min+'</span>');
-					$('#price-to').replaceWith('<span id="price-to">'+json.sliders.max+'</span>');
+					var get_min = json.sliders.min_price_get ? json.sliders.min_price_get : json.sliders.min;
+					var get_max = json.sliders.max_price_get ? json.sliders.max_price_get : json.sliders.max;
+					$('#price-from').replaceWith('<span id="price-from">' + json.sliders.min + '</span>');
+					$('#price-to').replaceWith('<span id="price-to">' + json.sliders.max + '</span>');
+					$('input[name=\'price[min]\']').val(get_min.toLocaleString('ru'));
+					$('input[name=\'price[max]\']').val(get_max.toLocaleString('ru'));
 					$('.symbol_right').replaceWith('<span class="symbol_right">'+json.currencys+'</span>');
-					
+				
 					//var updateSlider = document.getElementById('scale-price');
 					function updateSliderRange(min, max) {
 							var
@@ -335,7 +453,7 @@ Math.easeIn = function (val, min, max, strength) {
 	
 							$element.noUiSlider.updateOptions(_options);
 					}
-					
+
 					updateSliderRange(json.sliders.min, json.sliders.max);
 				}
 			});
@@ -350,7 +468,8 @@ Math.easeIn = function (val, min, max, strength) {
 					currencys: $( "[name=currencys]" ).val(),
           option_id: scrollTarget.data().optionId
         };
-
+				
+			//console.log(data);
       if (this.options.php.params) {
         data[this.options.php.index] = this.options.php.params;
       }
@@ -365,7 +484,8 @@ Math.easeIn = function (val, min, max, strength) {
             total = value.t,
             selected = value.s,
             params = value.p;
-
+						
+					//
           if (target.length > 0) {
             if (target.is('label')) {
               if (total === 0 && !selected) {
@@ -408,7 +528,7 @@ Math.easeIn = function (val, min, max, strength) {
         if (typeof scrollTarget != 'undefined') {
           that.scroll(scrollTarget);
         }
-
+				
         if (isSlider) {
           scrollTarget.removeAttr('disabled');
         }
@@ -419,60 +539,63 @@ Math.easeIn = function (val, min, max, strength) {
 				
 				if($('.scale[data-option-id]').length > 1)
         for (var option_id in json.sliders) {
-          var
-            $element = $('.scale[data-option-id="' + option_id + '"]').removeAttr('disabled'),
-            slider = $element.get(0).noUiSlider,
-            hasParam = that.params.has.call(that, option_id),
-            min = parseFloat(json.sliders[option_id]['min']),
-            max = parseFloat(json.sliders[option_id]['max']),
-            min_value = min,
-            max_value = max,
-            set = slider.get();
-
-          if (!$.isArray(set)) {
-            set = [set, set];
-          }
-
-          if (hasParam) {
-            if (set[1] <= max) {
-              max_value = set[1];
-            }
-
-            if (set[0] >= min) {
-              min_value = set[0];
-            }
-          }
-
-          if (min != max) {
-            slider.destroy();
-
-            $element.data({
-              startMin: min_value,
-              startMax: max_value,
-              rangeMin: min,
-              rangeMax: max
-            });
-
-            if ($element.data().controlMin && $($element.data().controlMin).length) {
-              $($element.data().controlMin).val(min_value);
-            }
-
-            if ($element.data().controlMax && $($element.data().controlMax).length) {
-              $($element.data().controlMax).val(max_value);
-            }
-
-            if ($element.data().elementMin && $($element.data().elementMin).length) {
-              $($element.data().elementMin).html(min_value);
-            }
-
-            if ($element.data().elementMax && $($element.data().elementMax).length) {
-              $($element.data().elementMax).html(max_value);
-            }
-
-            setSlider.call(that, 0, $element.get(0));
-          } else {
-            $element.attr('disabled', 'disabled');
-          }
+					if ($('.scale[data-option-id="' + option_id + '"]').length > 0) {
+						var
+							$element = $('.scale[data-option-id="' + option_id + '"]').removeAttr('disabled'),
+							slider = $element.get(0).noUiSlider,
+							hasParam = that.params.has.call(that, option_id),
+							min = parseFloat(json.sliders[option_id]['min']),
+							max = parseFloat(json.sliders[option_id]['max']),
+							min_value = min,
+							max_value = max,
+							set = slider.get();
+						
+						
+						if (!$.isArray(set)) {
+							set = [set, set];
+						}
+	
+						if (hasParam) {
+							if (set[1] <= max) {
+								max_value = set[1];
+							}
+	
+							if (set[0] >= min) {
+								min_value = set[0];
+							}
+						}
+	
+						if (min != max) {
+							slider.destroy();
+	
+							$element.data({
+								startMin: min_value,
+								startMax: max_value,
+								rangeMin: min,
+								rangeMax: max
+							});
+	
+							if ($element.data().controlMin && $($element.data().controlMin).length) {
+								$($element.data().controlMin).val(min_value);
+							}
+	
+							if ($element.data().controlMax && $($element.data().controlMax).length) {
+								$($element.data().controlMax).val(max_value);
+							}
+	
+							if ($element.data().elementMin && $($element.data().elementMin).length) {
+								$($element.data().elementMin).html(min_value);
+							}
+	
+							if ($element.data().elementMax && $($element.data().elementMax).length) {
+								$($element.data().elementMax).html(max_value);
+							}
+	
+							setSlider.call(that, 0, $element.get(0));
+						} else {
+							$element.attr('disabled', 'disabled');
+						}
+					}
         }
         /* End update */
       }, 'json');
@@ -538,7 +661,7 @@ Math.easeIn = function (val, min, max, strength) {
       if ($('.ocfilter-option-popover').length) {
         $('.ocfilter-option-popover button').button('loading');
       }
-						
+		
       this.$element.find('.scale').attr('disabled', 'disabled');
       setTimeout(function(that) {
         that.$values.addClass('disabled').find('small').text('0');

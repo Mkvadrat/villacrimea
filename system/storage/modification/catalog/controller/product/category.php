@@ -133,7 +133,7 @@ class ControllerProductCategory extends Controller {
 			$data['button_continue'] = $this->language->get('button_continue');
 			$data['button_list'] = $this->language->get('button_list');
 			$data['button_grid'] = $this->language->get('button_grid');
-
+			
 			// Set the last category breadcrumb
 			$data['breadcrumbs'][] = array(
 				'text' => $category_info['name'],
@@ -147,12 +147,100 @@ class ControllerProductCategory extends Controller {
 				$data['thumb'] = '';
 			}
 			
+			if ($category_info['image']) {
+				$data['popup'] = $this->model_tool_image->resize($category_info['image'], $this->config->get($this->config->get('config_theme') . '_image_popup_width'), $this->config->get($this->config->get('config_theme') . '_image_popup_height'));
+			} else {
+				$data['popup'] = $this->model_tool_image->resize('placeholder.png', $this->config->get($this->config->get('config_theme') . '_image_popup_width'), $this->config->get($this->config->get('config_theme') . '_image_popup_height'));
+			}
+			
+			//newbuilding
+			$data['newbuilding'] = $category_info['newbuilding'] == 1 ? true : false;
+			
+			$data['newbuildings_img'] = array();
+
+			$newbuildings_img = $this->model_catalog_category->getCategoryImages($category_id);
+
+			foreach ($newbuildings_img as $newbuilding_img) {
+				$data['newbuildings_img'][] = array(
+					'popup' => $this->model_tool_image->resize($newbuilding_img['image'], $this->config->get($this->config->get('config_theme') . '_image_popup_width'), $this->config->get($this->config->get('config_theme') . '_image_popup_height')),
+					'thumb' => $this->model_tool_image->resize($newbuilding_img['image'], $this->config->get($this->config->get('config_theme') . '_image_additional_width'), $this->config->get($this->config->get('config_theme') . '_image_additional_height'))
+				);
+			}
+			
+			if ($category_info['meta_h1']) {
+				$data['heading_title'] = $category_info['meta_h1'];
+			} else {
+				$data['heading_title'] = $category_info['name'];
+			}
+			
 			$data['top_name'] = $category_info['top_name'];
 			$data['case_name'] = $category_info['case_name'];
 			$data['description'] = html_entity_decode($category_info['description'], ENT_QUOTES, 'UTF-8');
 			$data['bottom_description'] = html_entity_decode($category_info['bottom_description'], ENT_QUOTES, 'UTF-8');
 			$data['compare'] = $this->url->link('product/compare');
 			$data['view_all_cases'] = $this->url->link('blog/category', '&blog_category_id=3');
+			$data['category_spec'] = html_entity_decode($category_info['category_spec'], ENT_QUOTES, 'UTF-8');
+			
+			$data['smallblocks'] = array();
+
+			$smallblocks = $this->model_catalog_category->getCategorySmallblocks($category_id);
+
+			foreach ($smallblocks as $smallblock) {
+				$data['smallblocks'][] = array(
+					'category_id' => $smallblock['category_id'],
+					'text'		  => html_entity_decode($smallblock['text'], ENT_QUOTES, 'UTF-8')
+				);
+			}
+			
+			//Download
+			$this->load->model('account/download');
+			
+			$data['category_downloads'] = array();
+			
+			$category_downloads_ids = $this->model_catalog_category->getCategoryDownloads($category_id);
+
+			$download_data = array();
+				
+			if($category_downloads_ids){
+				foreach($category_downloads_ids as $download_id){
+					$results = $this->model_account_download->getDownloadData($download_id['download_id']);
+					
+					$download_data = array(
+						'download_id' => $results['download_id'],
+						'filename'    => $results['filename'],
+						'name'        => $results['name'],
+					);
+		
+					if (file_exists(DIR_DOWNLOAD . $download_data['filename'])) {
+						$size = filesize(DIR_DOWNLOAD . $download_data['filename']);
+							
+						$i = 0;
+		
+						$suffix = array(
+							'B',
+							'KB',
+							'MB',
+							'GB',
+							'TB',
+							'PB',
+							'EB',
+							'ZB',
+							'YB'
+						);
+		
+						while (($size / 1024) > 1) {
+							$size = $size / 1024;
+							$i++;
+						}
+		
+						$data['category_downloads'][] = array(
+							'name'       => $download_data['name'],
+							'href'       => $this->url->link('extension/module/presentation/download', 'download_id=' . $download_data['download_id'], true)
+						);
+					
+					}
+				}
+			}
 
 			$url = '';
 

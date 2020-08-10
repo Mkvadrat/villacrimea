@@ -144,14 +144,23 @@
           },
           dataType: 'json',
           success: function(data) {
-              swal({
-                  title: data.message,
-                  text: "",
-                  timer: 1000,
-                  showConfirmButton: false
-              });
-  
-              $.fancybox.close();
+            if (data.status == 500) {
+                swal({
+                    title: data.message,
+                    text: "",
+                    timer: 2500,
+                    showConfirmButton: false
+                });
+            }else{
+                swal({
+                    title: data.message,
+                    text: "",
+                    timer: 2000,
+                    showConfirmButton: false
+                });
+    
+                $.fancybox.close();
+            }
           }
       });
   }

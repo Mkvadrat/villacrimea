@@ -50,6 +50,24 @@ class ModelCatalogCategory extends Model {
 
 		return $filter_group_data;
 	}
+	
+	public function getCategoryImages($category_id) {
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "category_image WHERE category_id = '" . (int)$category_id . "' ORDER BY sort_order ASC");
+
+		return $query->rows;
+	}
+	
+	public function getCategorySmallblocks($category_id) {
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "category_smallblock WHERE category_id = '" . (int)$category_id . "' ORDER BY sort_order ASC");
+
+		return $query->rows;
+	}
+	
+	public function getCategoryDownloads($category_id) {
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "category_to_download WHERE category_id = '" . (int)$category_id . "'");
+
+		return $query->rows;
+	}
 
 	public function getCategoryLayoutId($category_id) {
 		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "category_to_layout WHERE category_id = '" . (int)$category_id . "' AND store_id = '" . (int)$this->config->get('config_store_id') . "'");

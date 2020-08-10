@@ -28,6 +28,8 @@
           <ul class="nav nav-tabs">
             <li class="active"><a href="#tab-general" data-toggle="tab"><?php echo $tab_general; ?></a></li>
             <li><a href="#tab-data" data-toggle="tab"><?php echo $tab_data; ?></a></li>
+            <li><a href="#tab-image" data-toggle="tab"><?php echo $tab_image; ?></a></li>
+            <li><a href="#tab-newbuilding" data-toggle="tab">Описание новостройки</a></li>
             <li><a href="#tab-design" data-toggle="tab"><?php echo $tab_design; ?></a></li>
           </ul>
           <div class="tab-content">
@@ -121,6 +123,20 @@
                     <?php } ?>
                     <?php } ?>
                   </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-newbuilding">Новостройка</label>
+                <div class="col-sm-10">
+                  <div class="checkbox">
+                    <label>
+                      <?php if ($newbuilding) { ?>
+                      <input type="checkbox" name="newbuilding" value="1" checked="checked" id="input-newbuilding" />
+                      <?php } else { ?>
+                      <input type="checkbox" name="newbuilding" value="1" id="input-agent" />
+                      <?php } ?>
+                      &nbsp; </label>
+                  </div>
                 </div>
               </div>
               <div class="form-group">
@@ -254,6 +270,87 @@
                 </div>
               </div>
             </div>
+            <div class="tab-pane" id="tab-image">
+              <div class="table-responsive">
+                <table id="images" class="table table-striped table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <td class="text-left"><?php echo $entry_additional_image; ?></td>
+                      <td class="text-right"><?php echo $entry_sort_order; ?></td>
+                      <td></td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php $image_row = 0; ?>
+                    <?php foreach ($category_images as $category_image) { ?>
+                    <tr id="image-row<?php echo $image_row; ?>">
+                      <td class="text-left"><a href="" id="thumb-image<?php echo $image_row; ?>" data-toggle="image" class="img-thumbnail"><img src="<?php echo $category_image['thumb']; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a><input type="hidden" name="category_image[<?php echo $image_row; ?>][image]" value="<?php echo $category_image['image']; ?>" id="input-image<?php echo $image_row; ?>" /></td>
+                      <td class="text-right"><input type="text" name="category_image[<?php echo $image_row; ?>][sort_order]" value="<?php echo $category_image['sort_order']; ?>" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>
+                      <td class="text-left"><button type="button" onclick="$('#image-row<?php echo $image_row; ?>').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>
+                    </tr>
+                    <?php $image_row++; ?>
+                    <?php } ?>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="2"></td>
+                      <td class="text-left"><button type="button" onclick="addImage();" data-toggle="tooltip" title="<?php echo $button_image_add; ?>" class="btn btn-primary"><i class="fa fa-plus-circle"></i></button></td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+            <div class="tab-pane" id="tab-newbuilding">
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-spec">Спецификации новостройки</label>
+                <div class="col-sm-10">
+                  <textarea name="category_spec" placeholder="Спецификации новостройки" id="input-description" class="form-control summernote"><?php echo $category_spec; ?></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-download"><span data-toggle="tooltip" title="<?php echo $help_download; ?>"><?php echo $entry_download; ?></span></label>
+                <div class="col-sm-10">
+                  <input type="text" name="download" value="" placeholder="<?php echo $entry_download; ?>" id="input-download" class="form-control" />
+                  <div id="category-download" class="well well-sm" style="height: 150px; overflow: auto;">
+                    <?php foreach ($category_downloads as $category_download) { ?>
+                    <div id="category-download<?php echo $category_download['download_id']; ?>"><i class="fa fa-minus-circle"></i> <?php echo $category_download['name']; ?>
+                      <input type="hidden" name="category_download[]" value="<?php echo $category_download['download_id']; ?>" />
+                    </div>
+                    <?php } ?>
+                  </div>
+                </div>
+              </div>
+              <div class="table-responsive">
+                <table id="smallblocks" class="table table-striped table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <td class="text-left">Описание:</td>
+                      <td class="text-right"><?php echo $entry_sort_order; ?></td>
+                      <td></td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php $smallblock_row = 0; ?>
+                    <?php foreach ($category_smallblocks as $category_smallblock) { ?>
+                    <tr id="smallblock-row<?php echo $smallblock_row; ?>">
+                      <td class="text-left"><textarea name="category_smallblock[<?php echo $smallblock_row; ?>][text]" rows="3" class="form-control"><?php echo $category_smallblock['text']; ?></textarea></td>
+                      <td class="text-right"><input type="text" name="category_smallblock[<?php echo $smallblock_row; ?>][sort_order]" value="<?php echo $category_smallblock['sort_order']; ?>" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>
+                      <td class="text-left"><button type="button" onclick="$('#smallblock-row<?php echo $smallblock_row; ?>').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>
+                    </tr>
+                    <?php $smallblock_row++; ?>
+                    <?php } ?>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="2"></td>
+                      <td class="text-left"><button type="button" onclick="addSmallblock();" data-toggle="tooltip" title="Добавить блок" class="btn btn-primary"><i class="fa fa-plus-circle"></i></button></td>
+                    </tr>
+                  </tfoot>
+                </table>
+
+                
+              </div>
+            </div>
             <div class="tab-pane" id="tab-design">
               <div class="table-responsive">
                 <table class="table table-bordered table-hover">
@@ -363,7 +460,79 @@ $('input[name=\'filter\']').autocomplete({
 $('#category-filter').delegate('.fa-minus-circle', 'click', function() {
 	$(this).parent().remove();
 });
-//--></script> 
+//--></script>
+  <script type="text/javascript"><!--
+var image_row = <?php echo $image_row; ?>;
+
+function addImages(files, path, item) {
+  html  = '<tr class="separator" id="image-row' + image_row + '">';
+  html += '  <td class="text-left"><a href="" id="thumb-image' + image_row + '"data-toggle="image" class="img-thumbnail"><img src="' + files + '" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /><input type="hidden" name="category_image[' + image_row + '][image]" value="' + path + '" id="input-image' + image_row + '" /></td>';
+  html += '  <td class="text-right"><input type="text" name="category_image[' + image_row + '][sort_order]" value="' + item + '" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>';
+  html += '  <td class="text-left"><button type="button" onclick="$(\'#image-row' + image_row  + '\').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
+  html += '</tr>';
+  
+  $('#images tbody').append(html);
+  
+  image_row++;
+}
+      
+function addImage() {
+	html  = '<tr id="image-row' + image_row + '">';
+	html += '  <td class="text-left"><a href="" id="thumb-image' + image_row + '"data-toggle="image" class="img-thumbnail"><img src="<?php echo $placeholder; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a><input type="hidden" name="category_image[' + image_row + '][image]" value="" id="input-image' + image_row + '" /></td>';
+	html += '  <td class="text-right"><input type="text" name="category_image[' + image_row + '][sort_order]" value="" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>';
+	html += '  <td class="text-left"><button type="button" onclick="$(\'#image-row' + image_row  + '\').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
+	html += '</tr>';
+
+	$('#images tbody').append(html);
+
+	image_row++;
+}
+//--></script>
+  <script type="text/javascript"><!--
+var smallblock_row = <?php echo $smallblock_row; ?>;
+
+function addSmallblock() {
+	html  = '<tr id="image-row' + smallblock_row + '">';
+	html += '  <td class="text-left"><textarea name="category_smallblock[' + smallblock_row + '][text]" rows="3" class="form-control"></textarea></td>';
+	html += '  <td class="text-right"><input type="text" name="category_smallblock[' + smallblock_row + '][sort_order]" value="" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>';
+	html += '  <td class="text-left"><button type="button" onclick="$(\'#smallblock-row' + smallblock_row  + '\').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
+	html += '</tr>';
+
+	$('#smallblocks tbody').append(html);
+
+	smallblock_row++;
+}
+//--></script>
+  <script type="text/javascript"><!--
+// Downloads
+$('input[name=\'download\']').autocomplete({
+	'source': function(request, response) {
+		$.ajax({
+			url: 'index.php?route=catalog/download/autocomplete&token=<?php echo $token; ?>&filter_name=' +  encodeURIComponent(request),
+			dataType: 'json',
+			success: function(json) {
+				response($.map(json, function(item) {
+					return {
+						label: item['name'],
+						value: item['download_id']
+					}
+				}));
+			}
+		});
+	},
+	'select': function(item) {
+		$('input[name=\'download\']').val('');
+
+		$('#category-download' + item['value']).remove();
+
+		$('#category-download').append('<div id="category-download' + item['value'] + '"><i class="fa fa-minus-circle"></i> ' + item['label'] + '<input type="hidden" name="category_download[]" value="' + item['value'] + '" /></div>');
+	}
+});
+
+$('#category-download').delegate('.fa-minus-circle', 'click', function() {
+	$(this).parent().remove();
+});
+//--></script>
   <script type="text/javascript"><!--
 $('#language a:first').tab('show');
 //--></script></div>

@@ -889,12 +889,12 @@ class ControllerProductProduct extends Controller {
 						
 			if ($mail){
 				$json = array(
-					'status' => 1,
+					'status' => 200,
 					'message' => 'Ваше сообщение отправлено'
 				);
 			}else{
 				$json = array(
-					'status' => 1,
+					'status' => 500,
 					'message' => 'Ошибка, сообщение не отправлено!'
 				);
 			}
@@ -909,7 +909,7 @@ class ControllerProductProduct extends Controller {
 				unset($tel);
 				
 				$json = array(
-					'status' => 1,
+					'status' => 500,
 					'message' => 'Ошибка, сообщение не отправлено! Заполните все поля!'
 				);
 			}

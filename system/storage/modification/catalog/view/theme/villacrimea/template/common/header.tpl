@@ -44,7 +44,7 @@
 <script src="catalog/view/theme/villacrimea/js/sweetalert.min.js"></script>
 <script src="catalog/view/theme/villacrimea/js/printThis.js"></script>
 <script src="catalog/view/theme/villacrimea/js/moment-with-locales.min.js"></script>
-<script src="catalog/view/theme/villacrimea/js/bootstrap-datetimepicker.min.js"></script>
+<script src="catalog/view/theme/villacrimea/js/jquery.inputmask.min.js"></script>
 <script src="https://cdn.rawgit.com/leafo/sticky-kit/v1.1.2/jquery.sticky-kit.min.js"></script>
 <script src="https://api-maps.yandex.ru/2.1/?apikey=6febc1ce-7df3-4205-996a-9690688cca4e&load=package.full&lang=ru-RU" type="text/javascript"></script>
 
@@ -54,8 +54,8 @@
 <link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/owl.carousel.min.css">
 <link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/owl.theme.default.min.css">
 <link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/jquery.fancybox.min.css">
-<link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/bootstrap-datetimepicker.min.css">
-<link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/bootstrap-datetimepicker-standalone.css">
+<!--<link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/bootstrap-datetimepicker.min.css">
+<link rel="stylesheet" href="catalog/view/theme/villacrimea/stylesheet/bootstrap-datetimepicker-standalone.css">-->
 
 <?php foreach ($styles as $style) { ?>
 <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />

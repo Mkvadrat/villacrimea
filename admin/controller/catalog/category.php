@@ -332,18 +332,25 @@ class ControllerCatalogCategory extends Controller {
 		$data['entry_sort_order'] = $this->language->get('entry_sort_order');
 		$data['entry_status'] = $this->language->get('entry_status');
 		$data['entry_layout'] = $this->language->get('entry_layout');
+		$data['entry_additional_image'] = $this->language->get('entry_additional_image');
+		$data['entry_download'] = $this->language->get('entry_download');
 
 		$data['help_filter'] = $this->language->get('help_filter');
 		$data['help_keyword'] = $this->language->get('help_keyword');
 		$data['help_top'] = $this->language->get('help_top');
 		$data['help_column'] = $this->language->get('help_column');
+		$data['help_download'] = $this->language->get('help_download');
+		
 
 		$data['button_save'] = $this->language->get('button_save');
 		$data['button_cancel'] = $this->language->get('button_cancel');
+		$data['button_image_add'] = $this->language->get('button_image_add');
+		$data['button_remove'] = $this->language->get('button_remove');
 
 		$data['tab_general'] = $this->language->get('tab_general');
 		$data['tab_data'] = $this->language->get('tab_data');
 		$data['tab_design'] = $this->language->get('tab_design');
+		$data['tab_image'] = $this->language->get('tab_image');
 
 		if (isset($this->error['warning'])) {
 			$data['error_warning'] = $this->error['warning'];
@@ -564,6 +571,22 @@ class ControllerCatalogCategory extends Controller {
 		} else {
 			$data['agent'] = 0;
 		}
+		
+		if (isset($this->request->post['newbuilding'])) {
+			$data['newbuilding'] = $this->request->post['newbuilding'];
+		} elseif (!empty($category_info)) {
+			$data['newbuilding'] = $category_info['newbuilding'];
+		} else {
+			$data['newbuilding'] = 0;
+		}
+		
+		if (isset($this->request->post['category_spec'])) {
+			$data['category_spec'] = $this->request->post['category_spec'];
+		} elseif (!empty($category_info)) {
+			$data['category_spec'] = $category_info['category_spec'];
+		} else {
+			$data['category_spec'] = '';
+		}
 
 		if (isset($this->request->post['column'])) {
 			$data['column'] = $this->request->post['column'];
@@ -596,7 +619,78 @@ class ControllerCatalogCategory extends Controller {
 		} else {
 			$data['category_layout'] = array();
 		}
+		
+		$data['placeholder'] = $this->model_tool_image->resize('no_image.png', 100, 100);
 
+		// Images
+		if (isset($this->request->post['category_image'])) {
+			$category_images = $this->request->post['category_image'];
+		} elseif (isset($this->request->get['category_id'])) {
+			$category_images = $this->model_catalog_category->getCategoryImages($this->request->get['category_id']);
+		} else {
+			$category_images = array();
+		}
+
+		$data['category_images'] = array();
+
+		foreach ($category_images as $category_image) {
+			if (is_file(DIR_IMAGE . $category_image['image'])) {
+				$image = $category_image['image'];
+				$thumb = $category_image['image'];
+			} else {
+				$image = '';
+				$thumb = 'no_image.png';
+			}
+
+			$data['category_images'][] = array(
+				'image'      => $image,
+				'thumb'      => $this->model_tool_image->resize($thumb, 100, 100),
+				'sort_order' => $category_image['sort_order']
+			);
+		}
+		
+		// Downloads
+		$this->load->model('catalog/download');
+
+		if (isset($this->request->post['category_download'])) {
+			$category_downloads = $this->request->post['category_download'];
+		} elseif (isset($this->request->get['category_id'])) {
+			$category_downloads = $this->model_catalog_category->getCategoryDownloads($this->request->get['category_id']);
+		} else {
+			$category_downloads = array();
+		}
+
+		$data['category_downloads'] = array();
+
+		foreach ($category_downloads as $download_id) {
+			$download_info = $this->model_catalog_download->getDownload($download_id);
+
+			if ($download_info) {
+				$data['category_downloads'][] = array(
+					'download_id' => $download_info['download_id'],
+					'name'        => $download_info['name']
+				);
+			}
+		}
+		
+		// Smallblocks
+		if (isset($this->request->post['category_smallblock'])) {
+			$category_smallblocks = $this->request->post['category_smallblock'];
+		} elseif (isset($this->request->get['category_id'])) {
+			$category_smallblocks = $this->model_catalog_category->getCategorySmallBlock($this->request->get['category_id']);
+		} else {
+			$category_smallblocks = array();
+		}
+		
+		$data['category_smallblocks'] = array();
+		
+		foreach ($category_smallblocks as $category_smallblock) {
+			$data['category_smallblocks'][] = array(
+				'text'       => html_entity_decode($category_smallblock['text'], ENT_QUOTES, 'UTF-8'),
+				'sort_order' => $category_smallblock['sort_order']
+			);
+		}
+	
 		$this->load->model('design/layout');
 
 		$data['layouts'] = $this->model_design_layout->getLayouts();

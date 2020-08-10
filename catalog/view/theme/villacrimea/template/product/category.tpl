@@ -1,11 +1,109 @@
 <?php echo $header; ?>
   <div class="category_page"><?php echo $column_left; ?>
       
-       <?php echo $content_top; ?>
-      
-      <?php if ($top_name || $description) { ?>
-        <!-- <p class="title"><?php echo $top_name; ?></p> -->
-        <?php echo $description; ?>
+      <?php echo $content_top; ?>
+       
+      <?php if($newbuilding){ ?>     
+        <?php if ($top_name || $description) { ?>
+          <div class="object_page" style="padding:40px 0 0;">
+              <div class="actual_object">
+                  <h1 class="title" style="padding: 0 0 35px;margin: 0 auto;width: 100%;"><?php echo $heading_title; ?></h1>
+                  <div class="left_side">
+                      <div class="object_photo">
+                          <?php if ($popup || $newbuildings_img) { ?>
+                          <?php if ($popup) { ?>
+                          <div class="custom_product_photo_slider">
+                            <button class="prev_slide"></button>
+                            <a href="<?php echo $popup; ?>" data-fancybox="gallery" class="main_photo">
+                                <img src='<?php echo $popup; ?>'>
+                            </a>
+                            <button class="next_slide"></button>
+                          </div>
+                          <?php } ?>
+                          <?php if ($newbuildings_img) { ?>
+                          <?php foreach ($newbuildings_img as $image) { ?>
+                          <a href="<?php echo $image['popup']; ?>" data-fancybox="gallery">
+                            <img src="<?php echo $image['thumb']; ?>">
+                          </a>
+                          <?php } ?>
+                          <?php } ?>
+                        <?php } ?>
+                      </div>
+                      <?php if ($smallblocks) { ?>
+                      <?php foreach ($smallblocks as $smallblock) { ?>
+                        <div class="details mobile">
+                          <?php echo $smallblock['text']; ?>
+                        </div>
+                      <?php } ?>
+                      <?php } ?>
+                      <div class="object_description spec_object_description">
+                          <?php echo $category_spec; ?>
+                      </div>
+                      <div class="object_description">
+                        <?php echo $description; ?>
+                      </div>
+                      <div class="realtor mobile">
+                          <p class="tel">Телефон: <a href="«tel:88006000019&quot;">8 800 600 00 19</a></p>
+                          <p class="tel">E-mail: <a href="mailto:villa-crimea@mail.ru">villa-crimea@mail.ru</a></p>
+                          <a href="#callback_agent" class="casual_button callback">Написать сообщение</a>
+                      </div>
+                  </div>
+                  <div class="right_side">
+                      <?php if($category_downloads){ ?>
+                     <div class="link-demo">
+                        <?php foreach ($category_downloads as $download) { ?> 
+                      <a href="<?php echo $download['href']; ?>"><span><img src="catalog/view/theme/villacrimea/image/dw.svg"></span><?php echo $download['name']; ?></a>
+                      <?php } ?>
+                     </div>
+                      <?php } ?>
+                      <?php if ($smallblocks) { ?>
+                      <?php foreach ($smallblocks as $smallblock) { ?>
+                        <div class="details">
+                          <?php echo $smallblock['text']; ?>
+                        </div>
+                      <?php } ?>
+                      <?php } ?>
+                      <div class="realtor">
+                          <p class="tel">Телефон: <a href="«tel:88006000019&quot;">8 800 600 00 19</a></p>
+                          <p class="tel">E-mail: <a href="mailto:villa-crimea@mail.ru">villa-crimea@mail.ru</a></p>
+                          <a href="#callback_agent" class="casual_button callback">Написать сообщение</a>
+                          <div id="callback_agent" style="display: none;">
+                              <button data-fancybox-close="" class="fancybox-close-small" title="Close"><span>X</span></button>
+                              <div class="call_me_back_inner">
+                                  <p class="title">Форма обратной связи</p>
+                                  <div>
+                                      <input type="text" id="name_agent" placeholder="Имя*">
+                                      <input type="text" id="phone_agent" placeholder="Телефон*">
+                                      <input type="text" id="email_agent" placeholder="E-mail">
+                                      <input type="hidden" value="villa-crimea@mail.ru" id="hidden_email">
+                                      <div class="textarea">
+                                          <textarea id="message_agent" onkeyup="textAreaAdjust(this);" placeholder="Вопрос"></textarea>
+                          <script>
+                            function textAreaAdjust(o) {
+                              o.style.height = "1px";
+                              o.style.height = (5+o.scrollHeight)+"px";
+                            }
+                          </script>
+                                      </div>
+                                      <input type="checkbox" name="" id="conf_politics_one">
+                                      <label for="conf_politics_one">
+                                          я согласен(согласна)<br>
+                                          с <a href="/privacy-policy">политикой конфиденциальности</a>
+                                      </label>
+                                      <button type="submit" onclick="sendFormAgent();" class="casual_button">Отправить</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        <?php } ?>
+      <?php }else{ ?>
+        <?php if ($top_name || $description) { ?>
+          <!-- <p class="title"><?php echo $top_name; ?></p> -->
+          <?php echo $description; ?>
+        <?php } ?>
       <?php } ?>
   
       <?php if($products) { ?>
@@ -112,27 +210,31 @@
         </div>
       </div>
       <?php } ?>
-      
+
       <?php if ($categories) { ?>
       <div class="realtor_category">
-        <?php foreach ($categories as $category) { ?>
-          <div class="realtor_item">
-              <a href="<?php echo $category['href']; ?>" class="realtor">
-                  <div class="img" style="background-image: url('<?php echo $category['image']; ?>')"></div>
-                  <div>
-                    <p class="name"><?php echo $category['name']; ?></p>
-                    <p class="job"><?php echo $category['specialization']; ?></p>
-                    <p class="obj_count">Объектов в продаже –
-                        <span><?php echo $category['count']; ?></span>
-                    </p>
-                  </div>
-              </a>
-              <?php //if ($category['view_case']) { ?>
-                <a href="<?php echo $category['href']; ?>" class="watch_cases">Посмотреть объекты агента</a>
-                <!-- <a href="<?php /*echo $category['view_case'];*/ ?>" class="watch_cases">Посмотреть кейсы агента</a> -->
-              <?php //} ?>
+        <div  class="owlDemo owl-carousel owl-theme">
+          <?php foreach ($categories as $category) { ?>
+          <div class="item">
+             <div class="realtor_item">
+                <a href="<?php echo $category['href']; ?>" class="realtor">
+                    <div class="img" style="background-image: url('<?php echo $category['image']; ?>')"></div>
+                    <div>
+                      <p class="name"><?php echo $category['name']; ?></p>
+                      <p class="job"><?php echo $category['specialization']; ?></p>
+                      <p class="obj_count">Объектов в продаже –
+                          <span><?php echo $category['count']; ?></span>
+                      </p>
+                    </div>
+                </a>
+                <?php //if ($category['view_case']) { ?>
+                  <a href="<?php echo $category['href']; ?>" class="watch_cases">Посмотреть объекты агента</a>
+                  <!-- <a href="<?php /*echo $category['view_case'];*/ ?>" class="watch_cases">Посмотреть кейсы агента</a> -->
+                <?php //} ?>
+            </div>
           </div>
-        <?php } ?>
+          <?php } ?>
+        </div>
       </div>
       <?php } ?>
       
@@ -140,8 +242,7 @@
           <div class="agent">
               <div class="img" style="background-image: url('/image/catalog/persons/elenacopy.png');"></div>
               <p class="name">Коцеблюк Елена</p>
-              <p>Решили купить недвижимость в Крыму?<br>
-Сделайте заявку на подбор недвижимости в Крыму прямо сейчас и получите сопровождение сделки в подарок.</p>
+              <p>Решили купить недвижимость в Крыму?<br>Сделайте заявку на подбор недвижимости в Крыму прямо сейчас и получите сопровождение сделки в подарок.</p>
               <a class="casual_button callback" href="#order_selection">Заказать подбор</a>
           </div>
           <div class="text">

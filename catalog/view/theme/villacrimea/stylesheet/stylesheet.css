@@ -74,7 +74,56 @@ a:hover {
     color: #000;
     outline: none;
 }
+/*02.06.20*/
+.link-demo{
+    display: flex;
+    flex-direction: column;
+}
+.link-demo a{
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.link-demo a img{
+    margin: 0 5px 0 0;
+}
+#print6{
+    margin-bottom: 20px;
+}
+/**/
+/*btn-fix*/
+#call_me_view label{
+     font-family: "GothamPro_Ita";
+font-size: 12px;
+line-height: 24px;
+display: inline-block;
+position: relative;
+margin-bottom: 15px;
+cursor: pointer;
+}
+#call_me_view{
+    max-width: 450px;
+}
+.casual_button.callback.callback-fix{
+    position: fixed!important;
+    right: 20px;
+    bottom: 70px;
+    z-index: 99;
+     padding: 15px 25px 15px 35px;
+}
+.casual_button.callback.callback-fix:before{
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #26b026;
+    position: absolute;
+    left: 10px;
+    top: 20px;
+   
+    border: 3px solid #ffffff ;
 
+}
 a.casual_button {
     color: #fff;
     background: #c09d74;
@@ -1384,12 +1433,14 @@ section .category_page .realtor_category {
 }
 
 section .category_page .realtor_category .realtor_item {
-    width: 16%;
+    /*width: 16%;*/
+    width: 100%;
     border: 1px solid #dbdbdb;
     border-radius: 5px;
     box-sizing: border-box;
     transition: all 0.5s;
-    min-height: 366px;
+    /*min-height: 366px;*/
+    min-height: 200px;
     margin-bottom: 30px;
 }
 
@@ -1448,6 +1499,7 @@ section .category_page .catalog .sort_filter {
     font-size: 14px;
     line-height: 14px;
     color: #666666;
+    margin-top: -20px;
 }
 
 section .category_page .catalog .sort_filter .change_view {
@@ -1507,6 +1559,7 @@ section .category_page .catalog .tabs_catalog {
     justify-content: flex-start;
     align-items: stretch;
     flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 
 section .category_page .catalog .tabs_catalog .catalog_item {
@@ -1850,7 +1903,7 @@ section .category_page .cards .card .tags span {
 }
 
 section .catalog {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 section .pagination {
     padding: 0;
@@ -2190,6 +2243,7 @@ section .object_page .actual_object .left_side .object_photo .main_photo {
 
 section .object_page .actual_object .left_side .object_photo a img {
     width: 100%;
+    border: 1px solid #fbfbfb;
 }
 
 section .object_page .actual_object .left_side .object_description {

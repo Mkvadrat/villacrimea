@@ -201,6 +201,26 @@ class ControllerExtensionModuleOCFilter extends Controller {
     } else {
       $data['selecteds'] = array();
     }
+    
+    
+    ////////////////////////////////////////////////////////////
+    /*$opt = $this->getOCFilterOptions();
+    
+    $array_opt_val = array();
+    foreach($opt as $option){
+      if($option['type'] == 'text' && $this->options_get) {
+        foreach($option['values'] as $value){
+          if($value['selected'] == true){
+           
+            
+           
+           
+          }
+        }
+        
+      }
+    }*/
+    ///////////////////////////////////////////////////////////
 
 		if ($this->config->get('ocfilter_show_options_limit') && $this->config->get('ocfilter_show_options_limit') < count($data['options'])) {
     	$data['show_options_limit'] = $this->config->get('ocfilter_show_options_limit');
@@ -209,10 +229,11 @@ class ControllerExtensionModuleOCFilter extends Controller {
 		}
 
     $this->document->addStyle('catalog/view/javascript/ocfilter/nouislider.min.css');
-    //$this->document->addStyle('catalog/view/theme/villacrimea/stylesheet/ocfilter/ocfilter.css');
+    $this->document->addStyle('catalog/view/theme/villacrimea/stylesheet/ocfilter/ocfilter.css');
 
     $this->document->addScript('catalog/view/javascript/ocfilter/nouislider.min.js');
     $this->document->addScript('catalog/view/javascript/ocfilter/ocfilter.js');
+    $this->document->addScript('catalog/view/javascript/ocfilter/jquery.mask.min.js');
 
 		return $this->load->view('extension/module/ocfilter/module', $data);
 	}
@@ -290,12 +311,12 @@ class ControllerExtensionModuleOCFilter extends Controller {
         $option['type'] = 'radio';
         $option['selectbox'] = true;
       }
-
+      
       $this_option = isset($this->options_get[$option['option_id']]);
 
 			$values = array();
 
-      if ($option['type'] != 'slide' && $option['type'] != 'slide_dual') {
+      if ($option['type'] != 'slide' && $option['type'] != 'slide_dual' && $option['type'] != 'text') {
 				foreach ($option['values'] as $value) {
 					$this_value = isset($this->options_get[$option['option_id']]) && in_array($value['value_id'], $this->options_get[$option['option_id']]);
 
@@ -308,7 +329,7 @@ class ControllerExtensionModuleOCFilter extends Controller {
 							$count = $this->counters[$option['option_id'] . $value['value_id']];
 						}
 					}
-
+      
           if ($count || !$this->config->get('ocfilter_hide_empty_values')) {
 						if (isset($option['image']) && $option['image'] && isset($value['image']) && $value['image'] && file_exists(DIR_IMAGE . $value['image'])) {
               $image = $this->model_tool_image->resize($value['image'], 19, 19);
@@ -335,7 +356,39 @@ class ControllerExtensionModuleOCFilter extends Controller {
         if (!$values) {
         	continue;
         }
-      } else {
+      } elseif($option['type'] == 'text') {
+        foreach ($option['values'] as $value) {
+					$this_value = isset($this->options_get[$option['option_id']]) && in_array($value['value_id'], $this->options_get[$option['option_id']]);
+          
+          $count = 0;
+
+					if (isset($this->counters[$option['option_id'] . $value['value_id']])) {
+						if ($this_option && $option['type'] == 'text') {
+							$count = '+' . $this->counters[$option['option_id'] . $value['value_id']];
+						} else {
+							$count = $this->counters[$option['option_id'] . $value['value_id']];
+						}
+					}
+          
+          $params = $this->getValueParams($option['option_id'], $value['value_id'], $option['type']);
+          
+          if ($count) {
+            $values[] = array(
+              'value_id' => $value['value_id'],
+              'id'       => $option['option_id'] . $value['value_id'],
+              'name'     => html_entity_decode($value['text'] . (isset($option['postfix']) ? $option['postfix'] : ''), ENT_QUOTES, 'UTF-8'),
+              'params'   => $params,
+              'count'    => $count,
+              'selected' => $this_value
+            );
+          }
+        }
+
+        if (!$values) {
+        	continue;
+        }
+        
+      }else{
         $range = $this->model_catalog_ocfilter->getSliderRange($option['option_id'], array(
     			'filter_category_id' => $this->category_id,
           'filter_ocfilter' => $this->cancelOptionParams($option['option_id']),
@@ -413,7 +466,7 @@ class ControllerExtensionModuleOCFilter extends Controller {
 	protected function getValueParams($option_id, $value_id, $type = 'checkbox') {
 		$decoded_params = decodeParamsFromString($this->params, $this->config);
 
-		if ($type == 'checkbox') {
+		if ($type == 'checkbox' || $type == 'text') {
 			if (isset($decoded_params[$option_id])) {
 				if (false !== $key = array_search($value_id, $decoded_params[$option_id])) {
 					unset($decoded_params[$option_id][$key]);
@@ -483,7 +536,7 @@ class ControllerExtensionModuleOCFilter extends Controller {
 			  $params = '';
 
         if (count($this->options_get) > 1 || count($this->options_get[$option_id]) > 1) {
-          if ($option['type'] == 'radio' || $option['type'] == 'select' || $option['type'] == 'slide' || $option['type'] == 'slide_dual') {
+          if ($option['type'] == 'radio' || $option['type'] == 'select' || $option['type'] == 'slide' || $option['type'] == 'slide_dual' || $option['type'] == 'text') {
             $params .= $this->cancelOptionParams($option_id);
           } else {
             $params .= $value['params'];
@@ -1017,7 +1070,7 @@ class ControllerExtensionModuleOCFilter extends Controller {
 					's' => false
         );
 			}
-
+      
       foreach ($option['values'] as $value) {
         $json['values'][$value['id']] = array(
           't' => $value['count'],
@@ -1060,6 +1113,21 @@ class ControllerExtensionModuleOCFilter extends Controller {
     }else{
       $category_id = 0;
     }
+    
+    if ($this->params) {
+      $options_get = decodeParamsFromString($this->params, $this->config);
+  
+      $this->options_get = $options_get;
+  
+      if (!empty($options_get['p'])) {
+        $range = getRangeParts(end($options_get['p']));
+ 
+        if (isset($range['from']) && isset($range['to'])) {
+          $this->min_price_get = $range['from'];
+          $this->max_price_get = $range['to'];
+        }
+      }
+    }
         
     if (isset($this->request->get['filter_ocfilter'])) {
       $this->params = cleanParamsString($this->request->get['filter_ocfilter'], $this->config);
@@ -1080,15 +1148,16 @@ class ControllerExtensionModuleOCFilter extends Controller {
     $product_prices = $this->model_catalog_ocfilter->getProductPrices($filter_data);
 
     $symbol_right = $this->model_localisation_currency->getCurrencyByCode($url);
-  
+      
     if ($product_prices) {
       $product_prices_min = 0;
 
       $json['sliders'] = array(
         'min' => $this->currency->format($product_prices_min, $this->session->data['currency'], '', false),
         'max' => $this->currency->format(ceil($product_prices['max']), $this->session->data['currency'], '', false),
+        'min_price_get' => $this->min_price_get,
+        'max_price_get' => $this->max_price_get,
       );
-      
     }
 
     $json['currencys'] = $symbol_right['symbol_right'];
@@ -1096,5 +1165,65 @@ class ControllerExtensionModuleOCFilter extends Controller {
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
   }
+  
+  public function autocomplete() {
+		$json = array();
+
+		if (isset($this->request->get['filter_name'])) {
+			$this->load->model('catalog/ocfilter');
+      
+      $this->load->model('catalog/ocfilter');
+      
+      if (isset($this->request->get['path'])) {
+        $path = '';
+  
+        $parts = explode('_', (string)$this->request->get['path']);
+  
+        $category_id = (int)array_pop($parts);
+  
+        foreach ($parts as $path_id) {
+          if (!$path) {
+            $path = (int)$path_id;
+          } else {
+            $path .= '_' . (int)$path_id;
+          }
+        }
+      }else{
+        $category_id = 0;
+      }
+
+			$filter_data = array(
+        'filter_category_id' => $category_id,
+				'filter_name' => $this->request->get['filter_name'],
+        'option_id'   => $this->request->get['option_id'],
+				'start'       => 0,
+				'limit'       => 5,
+        'filter_ocfilter' => $this->request->get['filter_ocfilter'],
+			);
+
+			$results = $this->model_catalog_ocfilter->getAutocomplete($filter_data);
+
+			foreach ($results as $result) {
+          $json[] = array(
+            'option_id' => $result['option_id'],
+            'name'      => strip_tags(html_entity_decode($result['text'], ENT_QUOTES, 'UTF-8')),
+            'params'    => $this->getValueParams($result['option_id'], $result['value_id'], 'text'),
+            'id'        => $result['option_id'] . $result['value_id']
+          );
+
+			}
+		}
+
+		$sort_order = array();
+
+		foreach ($json as $key => $value) {
+			$sort_order[$key] = $value['name'];
+		}
+
+		array_multisort($sort_order, SORT_ASC, $json);
+
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+	}
 }
 ?>

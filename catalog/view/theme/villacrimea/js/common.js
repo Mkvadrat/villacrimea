@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    $('#datetime').inputmask('99-99-9999 99:99', { "placeholder": "ДД-ММ-ГГГГ ЧЧ:ММ" });
+        
     $('.seling_carousel').owlCarousel({
         items: 1,
         pullDrag: true,
@@ -9,6 +11,30 @@ $(document).ready(function () {
         autoplayTimeout: 6000,
         autoplayHoverPause: true
     });
+    $('.owlDemo').owlCarousel({
+        loop: true,
+        margin: 30,
+        dots: false,
+        nav: false,
+        items: 5,
+        autoplay:true,
+        autoplayTimeout:2000,
+        responsive:{ 
+            0:{
+                items:1
+            },
+            600:{
+                items:2
+            },
+            1024:{
+                items:3
+            },
+            1025:{
+                items:5
+            }
+
+        }
+    })
     $('.cases_carousel').owlCarousel({
         items: 1,
         dots: false,
@@ -398,14 +424,23 @@ function sendForm() {
         },
         dataType: 'json',
         success: function (data) {
-            swal({
-                title: data.message,
-                text: "",
-                timer: 1000,
-                showConfirmButton: false
-            });
-
-            $.fancybox.close();
+            if (data.status == 500) {
+                swal({
+                    title: data.message,
+                    text: "",
+                    timer: 2500,
+                    showConfirmButton: false
+                });
+            }else{
+                swal({
+                    title: data.message,
+                    text: "",
+                    timer: 2000,
+                    showConfirmButton: false
+                });
+    
+                $.fancybox.close();
+            }
         }
     });
 }
@@ -413,7 +448,7 @@ function sendForm() {
 //Call me view
 function callMeView() {
     $.ajax({
-        url: 'index.php?route=extension/module/featured_html/callMeView',
+        url: 'index.php?route=common/footer/callMeView',
         type: 'post',
         data: {
             'name': $('#name_view').val(),
@@ -421,17 +456,27 @@ function callMeView() {
             'email': $('#email_view').val(),
             'datetime': $('#datetime').val(),
             'message': $('#message_view').val(),
+            'location' : window.location.href
         },
         dataType: 'json',
         success: function (data) {
-            swal({
-                title: data.message,
-                text: "",
-                timer: 1000,
-                showConfirmButton: false
-            });
-
-            $.fancybox.close();
+            if (data.status == 500) {
+                swal({
+                    title: data.message,
+                    text: "",
+                    timer: 2500,
+                    showConfirmButton: false
+                });
+            }else{
+                swal({
+                    title: data.message,
+                    text: "",
+                    timer: 2000,
+                    showConfirmButton: false
+                });
+    
+                $.fancybox.close();
+            }
         }
     });
 }
@@ -449,14 +494,23 @@ function orderSelection() {
         },
         dataType: 'json',
         success: function (data) {
-            swal({
-                title: data.message,
-                text: "",
-                timer: 1000,
-                showConfirmButton: false
-            });
-
-            $.fancybox.close();
+            if (data.status == 500) {
+                swal({
+                    title: data.message,
+                    text: "",
+                    timer: 2500,
+                    showConfirmButton: false
+                });
+            }else{
+                swal({
+                    title: data.message,
+                    text: "",
+                    timer: 2000,
+                    showConfirmButton: false
+                });
+    
+                $.fancybox.close();
+            }
         }
     });
 }
@@ -476,14 +530,23 @@ function sendFormAgent() {
         },
         dataType: 'json',
         success: function (data) {
-            swal({
-                title: data.message,
-                text: "",
-                timer: 1000,
-                showConfirmButton: false
-            });
-
-            $.fancybox.close();
+            if (data.status == 500) {
+                swal({
+                    title: data.message,
+                    text: "",
+                    timer: 2500,
+                    showConfirmButton: false
+                });
+            }else{
+                swal({
+                    title: data.message,
+                    text: "",
+                    timer: 2000,
+                    showConfirmButton: false
+                });
+    
+                $.fancybox.close();
+            }
         }
     });
 }
@@ -501,14 +564,23 @@ function sendContactsForm() {
         },
         dataType: 'json',
         success: function (data) {
-            swal({
-                title: data.message,
-                text: "",
-                timer: 1000,
-                showConfirmButton: false
-            });
-
-            $.fancybox.close();
+           if (data.status == 500) {
+                swal({
+                    title: data.message,
+                    text: "",
+                    timer: 2500,
+                    showConfirmButton: false
+                });
+            }else{
+                swal({
+                    title: data.message,
+                    text: "",
+                    timer: 2000,
+                    showConfirmButton: false
+                });
+    
+                $.fancybox.close();
+            }
         }
     });
 }
