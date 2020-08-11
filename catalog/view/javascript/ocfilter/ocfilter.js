@@ -107,7 +107,7 @@ Math.easeIn = function (val, min, max, strength) {
     $element.get(0).noUiSlider.on('slide', function(values, handle, noformat) {
       if (typeof values[0] != 'undefined') {
         if (elementMin) {
-          elementMin.html(values[0]);
+          elementMin.html(parseFloat(values[0]).toLocaleString('ru'));
         }
 
         if ($element.data().controlMin && $($element.data().controlMin).length) {
@@ -117,7 +117,7 @@ Math.easeIn = function (val, min, max, strength) {
 
       if (typeof values[1] != 'undefined') {
         if (elementMax) {
-          elementMax.html(values[1]);
+          elementMax.html(parseFloat(values[1]).toLocaleString('ru'));
         }
 
         if ($element.data().controlMax && $($element.data().controlMax).length) {
@@ -312,12 +312,32 @@ Math.easeIn = function (val, min, max, strength) {
 				this.$summ.bind('keyup', function(e){
 					var
 						$element = $(this),
-						$buttonTarget = $element.closest('.summ');
+						$buttonTarget = $element.closest('.summ'),
+						min_price = $('input[name=\'price[min]\']').val().split(' ').join(''),
+						max_price = $('input[name=\'price[max]\']').val().split(' ').join('');
 
 					//if (event.keyCode == 13 && $('input[name=\'price[min]\']').val().length >= 0 && $('input[name=\'price[min]\']').val().length > 0) {
-						that.options.php.params = 'p:' + $('input[name=\'price[min]\']').val().split(' ').join('') + '-' + $('input[name=\'price[max]\']').val().split(' ').join('');;
+						that.options.php.params = 'p:' + min_price + '-' + max_price;
 						that.update($buttonTarget);
 						
+						var data = {
+							'change_currencys' : $("select[name='currencys']").val(),
+							'path' : $("input[name='path']").val(),
+							'filter_ocfilter' : filter_ocfilter
+						};
+							
+						$.ajax({
+							url: 'index.php?route=extension/module/ocfilter/setCurrencys',
+							data: data, 
+							success: function(json) {
+								var get_min = min_price ? parseFloat(min_price).toLocaleString('ru') : json.sliders.min.toLocaleString('ru');
+								var get_max = max_price ? parseFloat(max_price).toLocaleString('ru') : json.sliders.max.toLocaleString('ru');
+								
+								$('#price-from').html('<span id="price-from">' + get_min + '</span>');
+								$('#price-to').html('<span id="price-to">' + get_max + '</span>');
+							}
+						});
+							
 						$('#ocfilter .scale').removeAttr('disabled');
 					//}
 				});
@@ -396,11 +416,11 @@ Math.easeIn = function (val, min, max, strength) {
 				success: function(json) {
 					var get_min = json.sliders.min_price_get ? json.sliders.min_price_get : json.sliders.min;
 					var get_max = json.sliders.max_price_get ? json.sliders.max_price_get : json.sliders.max;
-					$('#price-from').replaceWith('<span id="price-from">' + json.sliders.min + '</span>');
-					$('#price-to').replaceWith('<span id="price-to">' + json.sliders.max + '</span>');
+					$('#price-from').html('<span id="price-from">' + json.sliders.min.toLocaleString('ru') + '</span>');
+					$('#price-to').html('<span id="price-to">' + json.sliders.max.toLocaleString('ru') + '</span>');
 					$('input[name=\'price[min]\']').val(get_min.toLocaleString('ru'));
 					$('input[name=\'price[max]\']').val(get_max.toLocaleString('ru'));
-					$('.symbol_right').replaceWith('<span class="symbol_right">'+json.currencys+'</span>');
+					$('.symbol_right').html('<span class="symbol_right">'+json.currencys+'</span>');
 				
 					//var updateSlider = document.getElementById('scale-price');
 					function updateSliderRange(min, max) {
@@ -576,19 +596,19 @@ Math.easeIn = function (val, min, max, strength) {
 							});
 	
 							if ($element.data().controlMin && $($element.data().controlMin).length) {
-								$($element.data().controlMin).val(min_value);
+								$($element.data().controlMin).val(min_value.toLocaleString('ru'));
 							}
 	
 							if ($element.data().controlMax && $($element.data().controlMax).length) {
-								$($element.data().controlMax).val(max_value);
+								$($element.data().controlMax).val(max_value.toLocaleString('ru'));
 							}
 	
 							if ($element.data().elementMin && $($element.data().elementMin).length) {
-								$($element.data().elementMin).html(min_value);
+								$($element.data().elementMin).html(min_value.toLocaleString('ru'));
 							}
 	
 							if ($element.data().elementMax && $($element.data().elementMax).length) {
-								$($element.data().elementMax).html(max_value);
+								$($element.data().elementMax).html(max_value.toLocaleString('ru'));
 							}
 	
 							setSlider.call(that, 0, $element.get(0));

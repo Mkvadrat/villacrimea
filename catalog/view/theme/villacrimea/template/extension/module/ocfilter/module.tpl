@@ -25,6 +25,10 @@ $(function() {
     reverse: true,
   });
   
+  $('#price-from').html('<span id="price-from"><?php echo number_format($min_price_get, 0, '', ' '); ?></span>');
+  
+  $('#price-to').html('<span id="price-to"><?php echo number_format($max_price_get, 0, '', ' '); ?></span>');
+  
 	var options = {
     mobile: $('.ocfilter-mobile').is(':visible'),
     php: {
